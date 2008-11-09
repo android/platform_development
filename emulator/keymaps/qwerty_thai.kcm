@@ -1,0 +1,64 @@
+[type=QWERTY]                                           
+                                                        
+# keycode       display number  base    caps    fn      caps_fn
+                                                        
+A               'A'     '2'     0x0E1F  0x0E24  '#'     0x00
+B               'B'     '2'     0x0E34  0x0E3A  '<'     0x00
+C               'C'     '2'     0x0E41  0x0E09  '9'     0x00E7
+D               'D'     '3'     0x0E01  0x0E0F  '5'     0x00
+E               'E'     '3'     0x0E33  0x0E0E  '2'     0x0301
+F               'F'     '3'     0x0E14  0x0E42  '6'     0x00A5
+G               'G'     '4'     0x0E40  0x0E0C  '-'     '_'
+H               'H'     '4'     0x0E49  0x0E47  '['     '{'
+I               'I'     '4'     0x0E23  0x0E13  '$'     0x0302
+J               'J'     '5'     0x0E48  0x0E4B  ']'     '}'
+K               'K'     '5'     0x0E32  0x0E29  '"'     '~'
+L               'L'     '5'     0x0E2A  0x0E28  '''     '`'
+M               'M'     '6'     0x0E17  '?'     '!'     0x00
+N               'N'     '6'     0x0E37  0x0E4C  '>'     0x0303
+O               'O'     '6'     0x0E19  0x0E2F  '('     0x00
+P               'P'     '7'     0x0E22  0x0E0D  ')'     0x00
+Q               'Q'     '7'     0x0E46  0x0E50  '*'     0x0300
+R               'R'     '7'     0x0E1E  0x0E11  '3'     0x20AC
+S               'S'     '7'     0x0E2B  0x0E06  '4'     0x00DF
+T               'T'     '8'     0x0E30  0x0E18  '+'     0x00A3
+U               'U'     '8'     0x0E35  0x0E4A  '&'     0x0308
+V               'V'     '8'     0x0E2D  0x0E2E  '='     '^'
+W               'W'     '9'     0x0E44  '"'     '1'     0x00
+X               'X'     '9'     0x0E1B  ')'     '8'     0xEF00
+Y               'Y'     '9'     0x0E31  0x0E4D  '%'     0x00A1
+Z               'Z'     '9'     0x0E1C  '('     '7'     0x00
+                                                        
+# on pc keyboards
+COMMA           ','     ','     0x0E21  0x0E12  ';'     '|'
+PERIOD          '.'     '.'     0x0E43  0x0E2C  ':'     0x2026
+AT              '@'     '0'     '@'     '0'     '0'     0x2022
+SLASH           '/'     '/'     0x0E1D  0x0E26  '?'     '\'
+                                                        
+SPACE           0x20    0x20    0x20    0x20    0xEF01  0xEF01
+ENTER           0xa     0xa     0xa     0xa     0xa     0xa
+                                                        
+TAB             0x9     0x9     0x9     0x9     0x9     0x9
+0               '0'     '0'     0x0E08  0x0E57  ')'     ')'
+1               '1'     '1'     0x0E45  '+'     '!'     '!'
+2               '2'     '2'     '/'     0x0E51  '@'     '@'
+3               '3'     '3'     '-'     0x0E52  '#'     '#'
+4               '4'     '4'     0x0E20  0x0E53  '$'     '$'
+5               '5'     '5'     0x0E16  0x0E54  '%'     '%'
+6               '6'     '6'     0x0E38  0x0E39  '^'     '^'
+7               '7'     '7'     0x0E36  0x0E3F  '&'     '&'
+8               '8'     '8'     0x0E04  0x0E55  '*'     '*'
+9               '9'     '9'     0x0E15  0x0E56  '('     '('
+                                                        
+GRAVE           '`'     '`'     '`'     '~'     '`'     '~'
+MINUS           '-'     '-'     0x0E02  0x0E58  '-'     '_'
+EQUALS          '='     '='     0x0E0A  0x0E59  '='     '+'
+LEFT_BRACKET    '['     '['     0x0E1A  0x0E10  '['     '{'
+RIGHT_BRACKET   ']'     ']'     0x0E25  ','     ']'     '}'
+BACKSLASH       '\'     '\'     0x0E03  0x0E05  '\'     '|'
+SEMICOLON       ';'     ';'     0x0E27  0x0E0B  ';'     ':'
+APOSTROPHE      '''     '''     0x0E07  '.'     '''     '"'
+STAR            '*'     '*'     '*'     '*'     '*'     '*'
+POUND           '#'     '#'     '#'     '#'     '#'     '#'
+PLUS            '+'     '+'     '+'     '+'     '+'     '+'
+                                                        
