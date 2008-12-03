@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "z5139a3b9570b437097847ad3e7586cbe",
+        "filename": "apps/SdkSetup/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2008-12-03T16:11:35Z",
+      "side": 1,
+      "message": "That might not be the correct fix. The problem is that there is also the SetupWizard that gets compiled in our internal builds, and that SetupWizard is the app that provisions the device in that case. That would probably conflict.",
+      "revId": "74135ffcad642fdb74c35abfd7a61674a63ff317",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
