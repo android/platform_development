@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "zfcf033574fe262887ee3ca31ddfed62d",
+        "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2008-12-03T16:11:42Z",
+      "side": 1,
+      "message": "Could you update the javadoc of both installTemplate methods to reflect how they differ?",
+      "revId": "8e988007f7138969b2d610bab1448eea03f90d04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "z62216734348fb698b1bed6f3f65636a9",
         "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
         "patchSetId": 1
