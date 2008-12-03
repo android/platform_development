@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "zb215048e8797874d73c9367a75f881b0",
+        "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2008-12-03T16:11:42Z",
+      "side": 1,
+      "message": "style: 100 col max.",
+      "revId": "8e988007f7138969b2d610bab1448eea03f90d04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "z959af1fabe8ae88e576b1805a02eb448",
         "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
         "patchSetId": 1
