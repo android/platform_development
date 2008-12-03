@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "zc684b6b48dd17ee79817f52abbd44cc5",
+        "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2008-12-03T16:11:42Z",
+      "side": 1,
+      "message": "This template needs an entry for each java file.",
+      "revId": "8e988007f7138969b2d610bab1448eea03f90d04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "za04c49fcfcd41e51e6cf705a239ffe26",
         "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
         "patchSetId": 1
