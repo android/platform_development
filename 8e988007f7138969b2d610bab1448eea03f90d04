@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "zb2db38a96ffcbb1b6dd0388df5b63716",
+        "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2008-12-03T16:11:42Z",
+      "side": 1,
+      "message": "On 2008/11/13 23:40:55, Raphael Moll wrote:\n\u003e This template has an entry per source folder.\n\nWhat is needed here is adding the intellij project files for the test project.",
+      "revId": "8e988007f7138969b2d610bab1448eea03f90d04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "za04c49fcfcd41e51e6cf705a239ffe26",
         "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
         "patchSetId": 1
