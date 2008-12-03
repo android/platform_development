@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "za04c49fcfcd41e51e6cf705a239ffe26",
+        "filename": "tools/activitycreator/src/com/android/activitycreator/ActivityCreator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2008-12-03T16:11:42Z",
+      "side": 1,
+      "message": "Could you update the javadoc of both isDirEmpty methods to reflect how they differ?",
+      "revId": "8e988007f7138969b2d610bab1448eea03f90d04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "zf5133be613f38e2ffee62a74cedc508e",
         "filename": "tools/scripts/AndroidManifest.tests.template",
         "patchSetId": 1
