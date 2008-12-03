@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "z431b1bdf820fd6fd9c0376ccf5b9c0c2",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/AlertDialogSamples.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2008-12-03T16:11:11Z",
+      "side": 1,
+      "message": "You should use a string from the resources",
+      "revId": "e9195e954c9ba2da1bd6cfef9c83cbef49bc46d8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
