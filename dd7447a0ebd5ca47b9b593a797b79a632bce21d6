@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "z8bc1bdc7d5c5d57504f1ca757abc0acd",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/AlertDialogSamples.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2008-12-03T16:11:37Z",
+      "side": 1,
+      "message": "Either do something here (like showing a message with the selection, or print a log) or do not leave this code",
+      "revId": "dd7447a0ebd5ca47b9b593a797b79a632bce21d6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "zd28a3d9d1a921fdc88bf5a1bc3972454",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/AlertDialogSamples.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2008-12-03T16:11:37Z",
+      "side": 1,
+      "message": "One line comment must use // and not /* */ (same goes for other comments below)",
+      "revId": "dd7447a0ebd5ca47b9b593a797b79a632bce21d6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "z2cbac5a700a5baef82b3a3613eed0d18",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/AlertDialogSamples.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2008-12-03T16:11:37Z",
+      "side": 1,
+      "message": "Either do something here (like showing a message with the selection, or print a log) or do not leave this code",
+      "revId": "dd7447a0ebd5ca47b9b593a797b79a632bce21d6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
