@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "zaa633fe727ab205aeb4b0ba13bee7ea2",
+        "filename": "tools/eclipse/plugins/README.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2008-12-05T22:54:32Z",
+      "side": 1,
+      "message": "typo: \"in\"",
+      "revId": "84b1b8e57313a6d8ccb8d2032b77090a5d026a44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "z7b4a6c7518663dba33c08b2225a2a7a5",
+        "filename": "tools/eclipse/plugins/README.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2008-12-05T22:54:32Z",
+      "side": 1,
+      "message": "typo: depend (no s)",
+      "revId": "84b1b8e57313a6d8ccb8d2032b77090a5d026a44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "zb9d7f3c546bea9b2ba48b797b5b1de43",
+        "filename": "tools/eclipse/plugins/README.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2008-12-05T22:54:32Z",
+      "side": 1,
+      "message": "warning not necessary anymore as libs/ is now in git and mkdir bug has been fixed.",
+      "revId": "84b1b8e57313a6d8ccb8d2032b77090a5d026a44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
