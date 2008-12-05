@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "z631435a3ec676ca24bf640d1de651f84",
+        "filename": "tools/eclipse/plugins/README.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2008-12-05T23:02:55Z",
+      "side": 1,
+      "message": "Looks good.",
+      "revId": "712bebb0fae9801f3c492501a2432730a8b67ba0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
