@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEX///7o\u003d",
+        "filename": "build/tools/make_windows_sdk.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2009-02-12T18:51:18Z",
+      "side": 1,
+      "message": "The actual list is:\n- Required packages: autoconf, bison, curl, flex, gcc, g++, git, gnupg, make, mingw-zlib, python, zip, unzip.\n- Packages that must not be installed: readline (its GPL license might taint the SDK if it gets compiled in).\n\nWould you mind updating your comment accordingly?",
+      "revId": "13c5f08024a245a1e501331682dda8fd57df95a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEX///7g\u003d",
+        "filename": "build/tools/make_windows_sdk.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2009-02-12T18:51:18Z",
+      "side": 1,
+      "message": "You\u0027re right. Maybe I should make the script check for this early. Right now it will fail later in a non-obvious way.",
+      "revId": "13c5f08024a245a1e501331682dda8fd57df95a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
