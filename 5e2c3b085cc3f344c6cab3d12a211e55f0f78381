@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJX///+Y\u003d",
+        "filename": "apps/GPSTest/AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2009-03-04T19:35:02Z",
+      "side": 1,
+      "message": "tabs. same for the 2 lines below.",
+      "revId": "5e2c3b085cc3f344c6cab3d12a211e55f0f78381",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
