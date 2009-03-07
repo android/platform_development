@@ -16,6 +16,7 @@
 
 package com.android.sdkmanager;
 
+import com.android.sdklib.ISdkLog;
 import com.android.sdklib.SdkManager;
 
 
@@ -30,7 +31,6 @@ public class SdkCommandLine extends CommandLineProcessor {
     public static final String ARG_TARGET = "target";
     public static final String ARG_ALL = "all";
     
-    public static final String KEY_IN = "in";
     public static final String KEY_ACTIVITY = ARG_ACTIVITY;
     public static final String KEY_PACKAGE = "package";
     public static final String KEY_MODE = "mode";
@@ -38,6 +38,8 @@ public class SdkCommandLine extends CommandLineProcessor {
     public static final String KEY_NAME = "name";
     public static final String KEY_OUT = "out";
     public static final String KEY_FILTER = "filter";
+    public static final String KEY_SKIN = "skin";
+    public static final String KEY_SDCARD = "sdcard";
 
     public final static String ACTION_LIST = "list";
     public final static String ACTION_NEW_VM = ARG_VM;
@@ -52,11 +54,11 @@ public class SdkCommandLine extends CommandLineProcessor {
         { ACTION_NEW_PROJECT,
             "Creates a new project using a template." },
         { ACTION_UPDATE_PROJECT,
-            "Updates a new project from existing source (must have an AndroidManifest.xml)." },
+            "Updates a project from existing source (must have an AndroidManifest.xml)." },
         };
     
-    public SdkCommandLine() {
-        super(ACTIONS);
+    public SdkCommandLine(ISdkLog logger) {
+        super(logger, ACTIONS);
 
         define(MODE.ENUM, false, ACTION_LIST, "f", KEY_FILTER,
                 "List filter", new String[] { ARG_ALL, ARG_TARGET, ARG_VM });
@@ -67,24 +69,30 @@ public class SdkCommandLine extends CommandLineProcessor {
                 "Name of the new VM", null);
         define(MODE.INTEGER, true, ACTION_NEW_VM, "t", KEY_TARGET_ID,
                 "Target id of the new VM", null);
+        define(MODE.STRING, true, ACTION_NEW_VM, "s", KEY_SKIN,
+                "Skin of the new VM", null);
+        define(MODE.STRING, false, ACTION_NEW_VM, "c", KEY_SDCARD,
+                "Path to a shared SD card image, or size of a new sdcard for the new VM", null);
 
         define(MODE.ENUM, true, ACTION_NEW_PROJECT, "m", KEY_MODE,
                 "Project mode", new String[] { ARG_ACTIVITY, ARG_ALIAS });
-        define(MODE.STRING, false, ACTION_NEW_PROJECT, "o", KEY_OUT,
+        define(MODE.STRING, true, ACTION_NEW_PROJECT, "o", KEY_OUT,
                 "Location path of new project", null);
-        define(MODE.STRING, true, ACTION_NEW_PROJECT, "n", KEY_NAME,
-                "Name of the new project", null);
         define(MODE.INTEGER, true, ACTION_NEW_PROJECT, "t", KEY_TARGET_ID,
                 "Target id of the new project", null);
         define(MODE.STRING, true, ACTION_NEW_PROJECT, "p", KEY_PACKAGE,
                 "Package name", null);
         define(MODE.STRING, true, ACTION_NEW_PROJECT, "a", KEY_ACTIVITY,
                 "Activity name", null);
+        define(MODE.STRING, false, ACTION_NEW_PROJECT, "n", KEY_NAME,
+                "Project name", null);
 
-        define(MODE.STRING, false, ACTION_UPDATE_PROJECT, "i", KEY_IN,
-                "Directory location of the project", null);
-        define(MODE.STRING, true, ACTION_UPDATE_PROJECT, "t", KEY_TARGET_ID,
-                "Target id to set for the project", null);
+        define(MODE.STRING, true, ACTION_UPDATE_PROJECT, "o", KEY_OUT,
+                "Location path of the project", null);
+        define(MODE.INTEGER, true, ACTION_UPDATE_PROJECT, "t", KEY_TARGET_ID,
+                "Target id to set for the project", -1);
+        define(MODE.STRING, false, ACTION_UPDATE_PROJECT, "n", KEY_NAME,
+                "Project name", null);
     }
     
     // -- some helpers for list action flags
@@ -110,6 +118,17 @@ public class SdkCommandLine extends CommandLineProcessor {
     public String getNewVmName() {
         return ((String) getValue(ACTION_NEW_VM, KEY_NAME));
     }
+    
+    /** Helper to retrieve the --skin name for the new vm action. */
+    public String getNewVmSkin() {
+        return ((String) getValue(ACTION_NEW_VM, KEY_SKIN));
+    }
+
+    /** Helper to retrieve the --sdcard data for the new vm action. */
+    public String getNewVmSdCard() {
+        return ((String) getValue(ACTION_NEW_VM, KEY_SDCARD));
+    }
+
 
     // -- some helpers for project action flags
     
@@ -148,5 +167,10 @@ public class SdkCommandLine extends CommandLineProcessor {
     /** Helper to retrieve the --target id for the update project action. */
     public int getUpdateProjectTargetId() {
         return ((Integer) getValue(ACTION_UPDATE_PROJECT, KEY_TARGET_ID)).intValue();
+    }
+
+    /** Helper to retrieve the --name for the update project action. */
+    public String getUpdateProjectName() {
+        return ((String) getValue(ACTION_UPDATE_PROJECT, KEY_NAME));
     }
 }

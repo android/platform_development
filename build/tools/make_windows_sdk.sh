@@ -1,11 +1,17 @@
 #!/bin/bash
 # Quick semi-auto file to build Windows SDK tools.
 #
-# Limitations:
+# Limitations and requirements:
 # - Expects the emulator has been built first, will pick it up from prebuilt.
 # - Run in Cygwin
-# - Needs Cygwin package zip
 # - Expects to have one of the existing SDK (Darwin or Linux) to build the Windows one
+# - Needs Cygwin packages: autoconf, bison, curl, flex, gcc, g++, git,
+#   gnupg, make, mingw-zlib, python, zip, unzip
+# - Must NOT have cygwin package readline (its GPL license might taint the SDK if
+#   it gets compiled in)
+# - Does not need a Java Development Kit or any other tools outside of cygwin.
+# - If you think you may have Windows versions of tools (e.g. make) installed, it may
+#   reduce confusion levels to 'export PATH=/usr/bin'
 
 set -e  # Fail this script as soon as a command fails -- fail early, fail fast
 
@@ -36,6 +42,10 @@ function check() {
         # the LAST couple of underscores. You can have underscores *before* the
         # SDK number if you want, but not after, e.g these are valid:
         #    android_sdk_4242_platform.zip or blah_42_.zip
+        #
+        # Note that the root directory name in the zip must match the zip
+        # name, too, so there's no point just changing the zip name to match
+        # the above format.
         #
         # SDK_NUMBER will be empty if nothing matched.
         filename=`basename "$SDK_ZIP"`
@@ -78,14 +88,16 @@ function package() {
     unzip "$SDK_ZIP" -d "$DIST_DIR"
     mv -v "$UNZIPPED" "$DEST"
     
-    # USB Driver is not in tools
-    mkdir -pv $DEST/usb_driver
-    cp -rv development/host/windows/prebuilt/usb/driver/* $DEST/usb_driver
+    # USB Driver for ADB
+    mkdir -pv $DEST/usb_driver/x86
+    cp -rv development/host/windows/prebuilt/usb/driver/* $DEST/usb_driver/x86/
+    mkdir -pv $DEST/usb_driver/amd64
+    cp -rv development/host/windows/prebuilt/usb/driver_amd_64/* $DEST/usb_driver/amd64/
 
     # Remove obsolete stuff from tools
     TOOLS="$DEST/tools"
     LIB="$DEST/tools/lib"
-    rm -v "$TOOLS"/{aapt,aidl,adb,emulator,traceview,draw9patch,hierarchyviewer,dx,dexdump,apkbuilder,ddms,dmtracedump,mksdcard,sqlite3,activitycreator,android}
+    rm -v "$TOOLS"/{aapt,aidl,adb,emulator,traceview,draw9patch,hierarchyviewer,dx,dexdump,apkbuilder,ddms,dmtracedump,mksdcard,sqlite3,android}
     rm -v --force "$LIB"/*.so "$LIB"/*.jnilib
 
     # Copy all the new stuff in tools
@@ -106,7 +118,6 @@ function package() {
     cp -v development/tools/traceview/etc/traceview.bat "$TOOLS"
     cp -v development/tools/hierarchyviewer/etc/hierarchyviewer.bat "$TOOLS"
     cp -v development/tools/draw9patch/etc/draw9patch.bat "$TOOLS"
-    cp -v development/tools/activitycreator/etc/activitycreator.bat "$TOOLS"
     cp -v development/tools/sdkmanager/app/etc/android.bat "$TOOLS"
 
     # Fix EOL chars to make window users happy - fix all files at the top level only
