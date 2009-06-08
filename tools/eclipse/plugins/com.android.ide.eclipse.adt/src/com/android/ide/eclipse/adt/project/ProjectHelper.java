@@ -19,9 +19,11 @@ package com.android.ide.eclipse.adt.project;
 import com.android.ide.eclipse.adt.AdtPlugin;
 import com.android.ide.eclipse.adt.project.internal.AndroidClasspathContainerInitializer;
 import com.android.ide.eclipse.common.AndroidConstants;
-import com.android.ide.eclipse.common.project.AndroidManifestHelper;
 import com.android.ide.eclipse.common.project.AndroidManifestParser;
+import com.android.ide.eclipse.common.project.BaseProjectHelper;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -34,12 +36,14 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.jdt.core.IClasspathEntry;
+import org.eclipse.jdt.core.IJavaModel;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.launching.JavaRuntime;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utility class to manipulate Project parameters/properties.
@@ -361,7 +365,7 @@ public final class ProjectHelper {
     }
 
     /**
-     * Returns a {@link IProject} by its running application name, as it returned by the VM.
+     * Returns a {@link IProject} by its running application name, as it returned by the AVD.
      * <p/>
      * <var>applicationName</var> will in most case be the package declared in the manifest, but
      * can, in some cases, be a custom process name declared in the manifest, in the
@@ -389,19 +393,20 @@ public final class ProjectHelper {
                     continue;
                 }
 
-                AndroidManifestHelper androidManifest = new AndroidManifestHelper(p);
-                
                 // check that there is indeed a manifest file.
-                if (androidManifest.getManifestIFile() == null) {
+                IFile manifestFile = AndroidManifestParser.getManifest(p);
+                if (manifestFile == null) {
                     // no file? skip this project.
                     continue;
                 }
 
                 AndroidManifestParser parser = null;
                 try {
-                    parser = AndroidManifestParser.parseForData(
-                        androidManifest.getManifestIFile());
+                    parser = AndroidManifestParser.parseForData(manifestFile);
                 } catch (CoreException e) {
+                    // ignore, handled below.
+                }
+                if (parser == null) {
                     // skip this project.
                     continue;
                 }
@@ -664,5 +669,85 @@ public final class ProjectHelper {
         }
 
         return false;
+    }
+    
+    /**
+     * Returns the apk filename for the given project
+     * @param project The project.
+     * @param config An optional config name. Can be null.
+     */
+    public static String getApkFilename(IProject project, String config) {
+        if (config != null) {
+            return project.getName() + "-" + config + AndroidConstants.DOT_ANDROID_PACKAGE; //$NON-NLS-1$ 
+        }
+        
+        return project.getName() + AndroidConstants.DOT_ANDROID_PACKAGE;
+    }
+
+    /**
+     * Find the list of projects on which this JavaProject is dependent on at the compilation level.
+     * 
+     * @param javaProject Java project that we are looking for the dependencies.
+     * @return A list of Java projects for which javaProject depend on.
+     * @throws JavaModelException
+     */
+    public static List<IJavaProject> getAndroidProjectDependencies(IJavaProject javaProject) 
+        throws JavaModelException {
+        String[] requiredProjectNames = javaProject.getRequiredProjectNames();
+    
+        // Go from java project name to JavaProject name
+        IJavaModel javaModel = javaProject.getJavaModel();
+    
+        // loop through all dependent projects and keep only those that are Android projects
+        List<IJavaProject> projectList = new ArrayList<IJavaProject>(requiredProjectNames.length);
+        for (String javaProjectName : requiredProjectNames) {
+            IJavaProject androidJavaProject = javaModel.getJavaProject(javaProjectName);
+            
+            //Verify that the project has also the Android Nature
+            try {
+                if (!androidJavaProject.getProject().hasNature(AndroidConstants.NATURE)) {
+                    continue;
+                }
+            } catch (CoreException e) {
+                continue;
+            }
+            
+            projectList.add(androidJavaProject);
+        }
+        
+        return projectList;
+    }
+
+    /**
+     * Returns the android package file as an IFile object for the specified
+     * project.
+     * @param project The project
+     * @return The android package as an IFile object or null if not found.
+     */
+    public static IFile getApplicationPackage(IProject project) {
+        // get the output folder
+        IFolder outputLocation = BaseProjectHelper.getOutputFolder(project);
+    
+        if (outputLocation == null) {
+            AdtPlugin.printErrorToConsole(project,
+                    "Failed to get the output location of the project. Check build path properties"
+                    );
+            return null;
+        }
+        
+    
+        // get the package path
+        String packageName = project.getName() + AndroidConstants.DOT_ANDROID_PACKAGE;
+        IResource r = outputLocation.findMember(packageName);
+    
+        // check the package is present
+        if (r instanceof IFile && r.exists()) {
+            return (IFile)r;
+        }
+    
+        String msg = String.format("Could not find %1$s!", packageName);
+        AdtPlugin.printErrorToConsole(project, msg);
+    
+        return null;
     }
 }

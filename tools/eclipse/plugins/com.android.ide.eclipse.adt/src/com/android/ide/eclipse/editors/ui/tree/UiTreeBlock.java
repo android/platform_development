@@ -17,6 +17,7 @@
 package com.android.ide.eclipse.editors.ui.tree;
 
 import com.android.ide.eclipse.adt.AdtPlugin;
+import com.android.ide.eclipse.adt.sdk.Sdk.ITargetChangeListener;
 import com.android.ide.eclipse.editors.AndroidEditor;
 import com.android.ide.eclipse.editors.IconFactory;
 import com.android.ide.eclipse.editors.descriptors.ElementDescriptor;
@@ -26,6 +27,7 @@ import com.android.ide.eclipse.editors.uimodel.IUiUpdateListener;
 import com.android.ide.eclipse.editors.uimodel.UiDocumentNode;
 import com.android.ide.eclipse.editors.uimodel.UiElementNode;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
@@ -179,6 +181,17 @@ public final class UiTreeBlock extends MasterDetailsBlock implements ICommitXml 
         return mMasterPart;
     }
 
+    /**
+     * Returns the {@link UiElementNode} for the current model.
+     * <p/>
+     * This is used by the content provider attached to {@link #mTreeViewer} since
+     * the uiRootNode changes after each call to
+     * {@link #changeRootAndDescriptors(UiElementNode, ElementDescriptor[], boolean)}. 
+     */
+    public UiElementNode getRootNode() {
+        return mUiRootNode;
+    }
+
     @Override
     protected void createMasterPart(final IManagedForm managedForm, Composite parent) {
         FormToolkit toolkit = managedForm.getToolkit();
@@ -237,8 +250,7 @@ public final class UiTreeBlock extends MasterDetailsBlock implements ICommitXml 
         tree.setLayoutData(gd);
 
         mTreeViewer = new TreeViewer(tree);
-        mTreeViewer.setContentProvider(new UiModelTreeContentProvider(
-                mUiRootNode, mDescriptorFilters));
+        mTreeViewer.setContentProvider(new UiModelTreeContentProvider(mUiRootNode, mDescriptorFilters));
         mTreeViewer.setLabelProvider(new UiModelTreeLabelProvider());
         mTreeViewer.setInput("unused"); //$NON-NLS-1$
 
@@ -285,13 +297,21 @@ public final class UiTreeBlock extends MasterDetailsBlock implements ICommitXml 
             }
         };
 
-        final Runnable resourceRefreshListener = new Runnable() {
-            public void run() {
+        /** Listener to update the root node if the target of the file is changed because of a
+         * SDK location change or a project target change */
+        final ITargetChangeListener targetListener = new ITargetChangeListener() {
+            public void onProjectTargetChange(IProject changedProject) {
+                if (changedProject == mEditor.getProject()) {
+                    onTargetsLoaded();
+                }
+            }
+
+            public void onTargetsLoaded() {
                 // If a details part has been created, we need to "refresh" it too.
                 if (mDetailsPart != null) {
                     // The details part does not directly expose access to its internal
                     // page book. Instead it is possible to resize the page book to 0 and then
-                    // back to its original value, which as the side effect of removing all
+                    // back to its original value, which has the side effect of removing all
                     // existing cached pages.
                     int limit = mDetailsPart.getPageLimit();
                     mDetailsPart.setPageLimit(0);
@@ -306,7 +326,7 @@ public final class UiTreeBlock extends MasterDetailsBlock implements ICommitXml 
         changeRootAndDescriptors(mUiRootNode, mDescriptorFilters, false /* refresh */);
 
         // Listen on resource framework changes to refresh the tree
-        AdtPlugin.getDefault().addResourceChangedListener(resourceRefreshListener);
+        AdtPlugin.getDefault().addTargetListener(targetListener);
 
         // Remove listeners when the tree widget gets disposed.
         tree.addDisposeListener(new DisposeListener() {
@@ -318,7 +338,7 @@ public final class UiTreeBlock extends MasterDetailsBlock implements ICommitXml 
                 node.removeUpdateListener(mUiRefreshListener);
                 mUiRootNode.removeUpdateListener(mUiEnableListener);
 
-                AdtPlugin.getDefault().removeResourceChangedListener(resourceRefreshListener);
+                AdtPlugin.getDefault().removeTargetListener(targetListener);
                 if (mClipboard != null) {
                     mClipboard.dispose();
                     mClipboard = null;
@@ -358,6 +378,8 @@ public final class UiTreeBlock extends MasterDetailsBlock implements ICommitXml 
         
         mUiRootNode = uiRootNode;
         mDescriptorFilters = descriptorFilters;
+
+        mTreeViewer.setContentProvider(new UiModelTreeContentProvider(mUiRootNode, mDescriptorFilters));
 
         // Listen on structural changes on the root node of the tree
         // If the node has a parent, listen on the parent instead.
@@ -580,7 +602,11 @@ public final class UiTreeBlock extends MasterDetailsBlock implements ICommitXml 
                         ui_node = ui_node.getUiParent()) {
                     segments.add(0, ui_node);
                 }
-                mTreeViewer.setSelection(new TreeSelection(new TreePath(segments.toArray())));
+                if (segments.size() > 0) {
+                    mTreeViewer.setSelection(new TreeSelection(new TreePath(segments.toArray())));
+                } else {
+                    mTreeViewer.setSelection(null);
+                }
             }
         }
 

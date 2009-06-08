@@ -17,14 +17,14 @@
 package com.android.ide.eclipse.editors.resources.explorer;
 
 import com.android.ide.eclipse.adt.AdtPlugin;
+import com.android.ide.eclipse.adt.ui.ResourceContentProvider;
+import com.android.ide.eclipse.adt.ui.ResourceLabelProvider;
 import com.android.ide.eclipse.common.AndroidConstants;
 import com.android.ide.eclipse.editors.resources.manager.ProjectResourceItem;
 import com.android.ide.eclipse.editors.resources.manager.ProjectResources;
 import com.android.ide.eclipse.editors.resources.manager.ResourceFile;
 import com.android.ide.eclipse.editors.resources.manager.ResourceManager;
 import com.android.ide.eclipse.editors.resources.manager.ResourceMonitor.IResourceEventListener;
-import com.android.ide.eclipse.editors.wizards.ResourceContentProvider;
-import com.android.ide.eclipse.editors.wizards.ResourceLabelProvider;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -159,6 +159,13 @@ public class ResourceExplorerView extends ViewPart implements ISelectionListener
         
         // set up the resource manager to send us resource change notification
         AdtPlugin.getDefault().getResourceMonitor().addResourceEventListener(this);
+    }
+    
+    @Override
+    public void dispose() {
+        AdtPlugin.getDefault().getResourceMonitor().removeResourceEventListener(this);
+
+        super.dispose();
     }
 
     @Override

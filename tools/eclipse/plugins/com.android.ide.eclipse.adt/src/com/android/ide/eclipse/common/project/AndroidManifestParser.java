@@ -16,12 +16,15 @@
 
 package com.android.ide.eclipse.common.project;
 
+import com.android.ide.eclipse.adt.AdtPlugin;
 import com.android.ide.eclipse.common.AndroidConstants;
 import com.android.ide.eclipse.common.project.XmlErrorHandler.XmlErrorListener;
 import com.android.sdklib.SdkConstants;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
 import org.xml.sax.Attributes;
@@ -30,6 +33,9 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
@@ -46,6 +52,8 @@ public class AndroidManifestParser {
     private final static String ATTRIBUTE_PROCESS = "process"; //$NON-NLS-$
     private final static String ATTRIBUTE_DEBUGGABLE = "debuggable"; //$NON-NLS-$
     private final static String ATTRIBUTE_MIN_SDK_VERSION = "minSdkVersion"; //$NON-NLS-$
+    private final static String ATTRIBUTE_TARGET_PACKAGE = "targetPackage"; //$NON-NLS-1$
+    private final static String ATTRIBUTE_EXPORTED = "exported"; //$NON-NLS-1$
     private final static String NODE_MANIFEST = "manifest"; //$NON-NLS-1$
     private final static String NODE_APPLICATION = "application"; //$NON-NLS-1$
     private final static String NODE_ACTIVITY = "activity"; //$NON-NLS-1$
@@ -56,6 +64,8 @@ public class AndroidManifestParser {
     private final static String NODE_ACTION = "action"; //$NON-NLS-1$
     private final static String NODE_CATEGORY = "category"; //$NON-NLS-1$
     private final static String NODE_USES_SDK = "uses-sdk"; //$NON-NLS-1$
+    private final static String NODE_INSTRUMENTATION = "instrumentation"; //$NON-NLS-1$
+    private final static String NODE_USES_LIBRARY = "uses-library"; //$NON-NLS-1$
 
     private final static int LEVEL_MANIFEST = 0;
     private final static int LEVEL_APPLICATION = 1;
@@ -66,6 +76,95 @@ public class AndroidManifestParser {
     private final static String ACTION_MAIN = "android.intent.action.MAIN"; //$NON-NLS-1$
     private final static String CATEGORY_LAUNCHER = "android.intent.category.LAUNCHER"; //$NON-NLS-1$
     
+    public final static int INVALID_MIN_SDK = -1;
+    
+    /**
+     * Instrumentation info obtained from manifest
+     */
+    public static class Instrumentation {
+        private final String mName;
+        private final String mTargetPackage;
+        
+        Instrumentation(String name, String targetPackage) {
+            mName = name;
+            mTargetPackage = targetPackage;
+        }
+        
+        /**
+         * Returns the fully qualified instrumentation class name
+         */
+        public String getName() {
+            return mName;
+        }
+        
+        /**
+         * Returns the Android app package that is the target of this instrumentation
+         */
+        public String getTargetPackage() {
+            return mTargetPackage;
+        }
+    }
+    
+    /**
+     * Activity info obtained from the manifest.
+     */
+    public static class Activity {
+        private final String mName;
+        private final boolean mExported;
+        private boolean mHasAction = false;
+        private boolean mHasMainAction = false;
+        private boolean mHasLauncherCategory = false;
+        
+        public Activity(String name, boolean exported) {
+            mName = name;
+            mExported = exported;
+        }
+        
+        public String getName() {
+            return mName;
+        }
+        
+        public boolean getExported() {
+            return mExported;
+        }
+        
+        public boolean hasAction() {
+            return mHasAction;
+        }
+        
+        public boolean isHomeActivity() {
+            return mHasMainAction && mHasLauncherCategory;
+        }
+        
+        void setHasAction(boolean hasAction) {
+            mHasAction = hasAction;
+        }
+        
+        /** If the activity doesn't yet have a filter set for the launcher, this resets both
+         * flags. This is to handle multiple intent-filters where one could have the valid
+         * action, and another one of the valid category.
+         */
+        void resetIntentFilter() {
+            if (isHomeActivity() == false) {
+                mHasMainAction = mHasLauncherCategory = false;
+            }
+        }
+        
+        void setHasMainAction(boolean hasMainAction) {
+            mHasMainAction = hasMainAction;
+        }
+        
+        void setHasLauncherCategory(boolean hasLauncherCategory) {
+            mHasLauncherCategory = hasLauncherCategory;
+        }
+    }
+    
+    /**
+     * XML error & data handler used when parsing the AndroidManifest.xml file.
+     * <p/>
+     * This serves both as an {@link XmlErrorHandler} to report errors and as a data repository
+     * to collect data from the manifest.
+     */
     private static class ManifestHandler extends XmlErrorHandler {
         
         //--- data read from the parsing
@@ -73,15 +172,21 @@ public class AndroidManifestParser {
         /** Application package */
         private String mPackage;
         /** List of all activities */
-        private final ArrayList<String> mActivities = new ArrayList<String>();
+        private final ArrayList<Activity> mActivities = new ArrayList<Activity>();
         /** Launcher activity */
-        private String mLauncherActivity = null;
+        private Activity mLauncherActivity = null;
         /** list of process names declared by the manifest */
         private Set<String> mProcesses = null;
         /** debuggable attribute value. If null, the attribute is not present. */
         private Boolean mDebuggable = null;
-        /** API level requirement. if 0 the attribute was not present. */
-        private int mApiLevelRequirement = 0;
+        /** API level requirement. if {@link AndroidManifestParser#INVALID_MIN_SDK}
+         * the attribute was not present. */
+        private int mApiLevelRequirement = INVALID_MIN_SDK;
+        /** List of all instrumentations declared by the manifest */
+        private final ArrayList<Instrumentation> mInstrumentations =
+            new ArrayList<Instrumentation>();
+        /** List of all libraries in use declared by the manifest */
+        private final ArrayList<String> mLibraries = new ArrayList<String>();
 
         //--- temporary data/flags used during parsing
         private IJavaProject mJavaProject;
@@ -89,18 +194,17 @@ public class AndroidManifestParser {
         private boolean mMarkErrors = false;
         private int mCurrentLevel = 0;
         private int mValidLevel = 0;
-        private boolean mFoundMainAction = false;
-        private boolean mFoundLauncherCategory = false;
-        private String mCurrentActivity = null;
+        private Activity mCurrentActivity = null;
         private Locator mLocator;
         
         /**
-         * 
-         * @param manifestFile
-         * @param errorListener
-         * @param gatherData
-         * @param javaProject
-         * @param markErrors
+         * Creates a new {@link ManifestHandler}, which is also an {@link XmlErrorHandler}.
+         *  
+         * @param manifestFile The manifest file being parsed. Can be null.
+         * @param errorListener An optional error listener.
+         * @param gatherData True if data should be gathered.
+         * @param javaProject The java project holding the manifest file. Can be null.
+         * @param markErrors True if errors should be marked as Eclipse Markers on the resource.
          */
         ManifestHandler(IFile manifestFile, XmlErrorListener errorListener,
                 boolean gatherData, IJavaProject javaProject, boolean markErrors) {
@@ -122,8 +226,8 @@ public class AndroidManifestParser {
          * Returns the list of activities found in the manifest.
          * @return An array of fully qualified class names, or empty if no activity were found.
          */
-        String[] getActivities() {
-            return mActivities.toArray(new String[mActivities.size()]);
+        Activity[] getActivities() {
+            return mActivities.toArray(new Activity[mActivities.size()]);
         }
         
         /**
@@ -131,7 +235,7 @@ public class AndroidManifestParser {
          * up in the HOME screen.  
          * @return the fully qualified name of a HOME activity or null if none were found. 
          */
-        String getLauncherActivity() {
+        Activity getLauncherActivity() {
             return mLauncherActivity;
         }
         
@@ -154,10 +258,28 @@ public class AndroidManifestParser {
         }
         
         /**
-         * Returns the <code>minSdkVersion</code> attribute, or 0 if it's not set. 
+         * Returns the <code>minSdkVersion</code> attribute, or
+         * {@link AndroidManifestParser#INVALID_MIN_SDK} if it's not set. 
          */
         int getApiLevelRequirement() {
             return mApiLevelRequirement;
+        }
+        
+        /** 
+         * Returns the list of instrumentations found in the manifest.
+         * @return An array of {@link Instrumentation}, or empty if no instrumentations were 
+         * found.
+         */
+        Instrumentation[] getInstrumentations() {
+            return mInstrumentations.toArray(new Instrumentation[mInstrumentations.size()]);
+        }
+        
+        /** 
+         * Returns the list of libraries in use found in the manifest.
+         * @return An array of library names, or empty if no libraries were found.
+         */
+        String[] getUsesLibraries() {
+            return mLibraries.toArray(new String[mLibraries.size()]);
         }
         
         /* (non-Javadoc)
@@ -217,7 +339,9 @@ public class AndroidManifestParser {
                                 } catch (NumberFormatException e) {
                                     handleError(e, -1 /* lineNumber */);
                                 }
-                            }
+                            } else if (NODE_INSTRUMENTATION.equals(localName)) {
+                                processInstrumentationNode(attributes);
+                            }    
                             break;
                         case LEVEL_ACTIVITY:
                             if (NODE_ACTIVITY.equals(localName)) {
@@ -232,32 +356,37 @@ public class AndroidManifestParser {
                             } else if (NODE_PROVIDER.equals(localName)) {
                                 processNode(attributes, AndroidConstants.CLASS_CONTENTPROVIDER);
                                 mValidLevel++;
-                            }
+                            } else if (NODE_USES_LIBRARY.equals(localName)) {
+                                value = getAttributeValue(attributes, ATTRIBUTE_NAME,
+                                        true /* hasNamespace */);
+                                if (value != null) {
+                                    mLibraries.add(value);
+                                }
+                            }    
                             break;
                         case LEVEL_INTENT_FILTER:
                             // only process this level if we are in an activity
                             if (mCurrentActivity != null && NODE_INTENT.equals(localName)) {
-                                // if we're at the intent level, lets reset some flag to
-                                // be used when parsing the children
-                                mFoundMainAction = false;
-                                mFoundLauncherCategory = false;
+                                mCurrentActivity.resetIntentFilter();
                                 mValidLevel++;
                             }
                             break;
                         case LEVEL_CATEGORY:
-                            if (mCurrentActivity != null && mLauncherActivity == null) {
+                            if (mCurrentActivity != null) {
                                 if (NODE_ACTION.equals(localName)) {
                                     // get the name attribute
-                                    if (ACTION_MAIN.equals(
-                                            getAttributeValue(attributes, ATTRIBUTE_NAME,
-                                                    true /* hasNamespace */))) {
-                                        mFoundMainAction = true;
+                                    String action = getAttributeValue(attributes, ATTRIBUTE_NAME,
+                                            true /* hasNamespace */);
+                                    if (action != null) {
+                                        mCurrentActivity.setHasAction(true);
+                                        mCurrentActivity.setHasMainAction(
+                                                ACTION_MAIN.equals(action));
                                     }
                                 } else if (NODE_CATEGORY.equals(localName)) {
-                                    if (CATEGORY_LAUNCHER.equals(
-                                            getAttributeValue(attributes, ATTRIBUTE_NAME,
-                                                    true /* hasNamespace */))) {
-                                        mFoundLauncherCategory = true;
+                                    String category = getAttributeValue(attributes, ATTRIBUTE_NAME,
+                                            true /* hasNamespace */);
+                                    if (CATEGORY_LAUNCHER.equals(category)) {
+                                        mCurrentActivity.setHasLauncherCategory(true);
                                     }
                                 }
                                 
@@ -301,8 +430,7 @@ public class AndroidManifestParser {
                         case LEVEL_INTENT_FILTER:
                             // if we found both a main action and a launcher category, this is our
                             // launcher activity!
-                            if (mCurrentActivity != null &&
-                                    mFoundMainAction && mFoundLauncherCategory) {
+                            if (mCurrentActivity != null && mCurrentActivity.isHomeActivity()) {
                                 mLauncherActivity = mCurrentActivity;
                             }
                             break;
@@ -355,18 +483,23 @@ public class AndroidManifestParser {
             String activityName = getAttributeValue(attributes, ATTRIBUTE_NAME,
                     true /* hasNamespace */);
             if (activityName != null) {
-                mCurrentActivity = AndroidManifestHelper.combinePackageAndClassName(mPackage,
-                        activityName);
+                activityName = combinePackageAndClassName(mPackage, activityName);
+                
+                // get the exported flag.
+                String exportedStr = getAttributeValue(attributes, ATTRIBUTE_EXPORTED, true);
+                boolean exported = exportedStr == null ||
+                        exportedStr.toLowerCase().equals("true"); // $NON-NLS-1$
+                mCurrentActivity = new Activity(activityName, exported);
                 mActivities.add(mCurrentActivity);
                 
                 if (mMarkErrors) {
-                    checkClass(mCurrentActivity, AndroidConstants.CLASS_ACTIVITY,
+                    checkClass(activityName, AndroidConstants.CLASS_ACTIVITY,
                             true /* testVisibility */);
                 }
             } else {
                 // no activity found! Aapt will output an error,
                 // so we don't have to do anything
-                mCurrentActivity = activityName;
+                mCurrentActivity = null;
             }
             
             String processName = getAttributeValue(attributes, ATTRIBUTE_PROCESS,
@@ -387,8 +520,7 @@ public class AndroidManifestParser {
             String serviceName = getAttributeValue(attributes, ATTRIBUTE_NAME,
                     true /* hasNamespace */);
             if (serviceName != null) {
-                serviceName = AndroidManifestHelper.combinePackageAndClassName(mPackage,
-                        serviceName);
+                serviceName = combinePackageAndClassName(mPackage, serviceName);
                 
                 if (mMarkErrors) {
                     checkClass(serviceName, superClassName, false /* testVisibility */);
@@ -399,6 +531,27 @@ public class AndroidManifestParser {
                     true /* hasNamespace */);
             if (processName != null) {
                 addProcessName(processName);
+            }
+        }
+        
+        /**
+         * Processes the instrumentation nodes.
+         * @param attributes the attributes for the activity node.
+         * node is representing
+         */
+        private void processInstrumentationNode(Attributes attributes) {
+            // lets get the class name, and check it if required.
+            String instrumentationName = getAttributeValue(attributes, ATTRIBUTE_NAME,
+                    true /* hasNamespace */);
+            if (instrumentationName != null) {
+                String instrClassName = combinePackageAndClassName(mPackage, instrumentationName);
+                String targetPackage = getAttributeValue(attributes, ATTRIBUTE_TARGET_PACKAGE,
+                        true /* hasNamespace */);
+                mInstrumentations.add(new Instrumentation(instrClassName, targetPackage));
+                if (mMarkErrors) {
+                    checkClass(instrClassName, AndroidConstants.CLASS_INSTRUMENTATION,
+                            true /* testVisibility */);
+                }
             }
         }
 
@@ -412,6 +565,9 @@ public class AndroidManifestParser {
          * the class or of its constructors.
          */
         private void checkClass(String className, String superClassName, boolean testVisibility) {
+            if (mJavaProject == null) {
+                return;
+            }
             // we need to check the validity of the activity.
             String result = BaseProjectHelper.testClassForManifest(mJavaProject,
                     className, superClassName, testVisibility);
@@ -433,8 +589,7 @@ public class AndroidManifestParser {
                     } catch (CoreException e) {
                     }
                 }
-            }
-            
+            }           
         }
 
         /**
@@ -472,11 +627,13 @@ public class AndroidManifestParser {
     private static SAXParserFactory sParserFactory;
     
     private final String mJavaPackage;
-    private final String[] mActivities;
-    private final String mLauncherActivity;
+    private final Activity[] mActivities;
+    private final Activity mLauncherActivity;
     private final String[] mProcesses;
     private final Boolean mDebuggable;
     private final int mApiLevelRequirement;
+    private final Instrumentation[] mInstrumentations;
+    private final String[] mLibraries;
 
     static {
         sParserFactory = SAXParserFactory.newInstance();
@@ -484,8 +641,12 @@ public class AndroidManifestParser {
     }
     
     /**
-     * Parses the Android Manifest, and returns an object containing
-     * the result of the parsing.
+     * Parses the Android Manifest, and returns an object containing the result of the parsing.
+     * <p/>
+     * This method is useful to parse a specific {@link IFile} in a Java project.
+     * <p/>
+     * If you only want to gather data, consider {@link #parseForData(IFile)} instead.
+     * 
      * @param javaProject The java project.
      * @param manifestFile the {@link IFile} representing the manifest file.
      * @param errorListener
@@ -496,29 +657,110 @@ public class AndroidManifestParser {
      * @return an {@link AndroidManifestParser} or null if the parsing failed.
      * @throws CoreException
      */
-    public static AndroidManifestParser parse(IJavaProject javaProject, IFile manifestFile,
-            XmlErrorListener errorListener, boolean gatherData, boolean markErrors)
+    public static AndroidManifestParser parse(
+                IJavaProject javaProject,
+                IFile manifestFile,
+                XmlErrorListener errorListener,
+                boolean gatherData,
+                boolean markErrors)
             throws CoreException {
         try {
             SAXParser parser = sParserFactory.newSAXParser();
 
             ManifestHandler manifestHandler = new ManifestHandler(manifestFile,
                     errorListener, gatherData, javaProject, markErrors);
-
             parser.parse(new InputSource(manifestFile.getContents()), manifestHandler);
             
             // get the result from the handler
             
             return new AndroidManifestParser(manifestHandler.getPackage(),
-                    manifestHandler.getActivities(), manifestHandler.getLauncherActivity(),
-                    manifestHandler.getProcesses(), manifestHandler.getDebuggable(),
-                    manifestHandler.getApiLevelRequirement());
+                    manifestHandler.getActivities(),
+                    manifestHandler.getLauncherActivity(),
+                    manifestHandler.getProcesses(),
+                    manifestHandler.getDebuggable(),
+                    manifestHandler.getApiLevelRequirement(),
+                    manifestHandler.getInstrumentations(),
+                    manifestHandler.getUsesLibraries());
         } catch (ParserConfigurationException e) {
+            AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                    "Bad parser configuration for %s: %s",
+                    manifestFile.getFullPath(),
+                    e.getMessage());
         } catch (SAXException e) {
+            AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                    "Parser exception for %s: %s",
+                    manifestFile.getFullPath(),
+                    e.getMessage());
         } catch (IOException e) {
-        } finally {
-        }
+            // Don't log a console error when failing to read a non-existing file
+            if (!(e instanceof FileNotFoundException)) {
+                AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                        "I/O error for %s: %s",
+                        manifestFile.getFullPath(),
+                        e.getMessage());
+            }
+        } 
 
+        return null;
+    }
+
+    /**
+     * Parses the Android Manifest, and returns an object containing the result of the parsing.
+     * <p/>
+     * This version parses a real {@link File} file given by an actual path, which is useful for
+     * parsing a file that is not part of an Eclipse Java project.
+     * <p/>
+     * It assumes errors cannot be marked on the file and that data gathering is enabled.
+     * 
+     * @param manifestFile the manifest file to parse.
+     * @return an {@link AndroidManifestParser} or null if the parsing failed.
+     * @throws CoreException
+     */
+    private static AndroidManifestParser parse(File manifestFile)
+            throws CoreException {
+        try {
+            SAXParser parser = sParserFactory.newSAXParser();
+
+            ManifestHandler manifestHandler = new ManifestHandler(
+                    null, //manifestFile
+                    null, //errorListener
+                    true, //gatherData
+                    null, //javaProject
+                    false //markErrors
+                    );
+            
+            parser.parse(new InputSource(new FileReader(manifestFile)), manifestHandler);
+            
+            // get the result from the handler
+            
+            return new AndroidManifestParser(manifestHandler.getPackage(),
+                    manifestHandler.getActivities(),
+                    manifestHandler.getLauncherActivity(),
+                    manifestHandler.getProcesses(),
+                    manifestHandler.getDebuggable(),
+                    manifestHandler.getApiLevelRequirement(),
+                    manifestHandler.getInstrumentations(),
+                    manifestHandler.getUsesLibraries());
+        } catch (ParserConfigurationException e) {
+            AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                    "Bad parser configuration for %s: %s",
+                    manifestFile.getAbsolutePath(),
+                    e.getMessage());
+        } catch (SAXException e) {
+            AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                    "Parser exception for %s: %s",
+                    manifestFile.getAbsolutePath(),
+                    e.getMessage());
+        } catch (IOException e) {
+            // Don't log a console error when failing to read a non-existing file
+            if (!(e instanceof FileNotFoundException)) {
+                AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                        "I/O error for %s: %s",
+                        manifestFile.getAbsolutePath(),
+                        e.getMessage());
+            }
+        }
+        
         return null;
     }
 
@@ -535,13 +777,18 @@ public class AndroidManifestParser {
      * @return an {@link AndroidManifestParser} or null if the parsing failed.
      * @throws CoreException
      */
-    public static AndroidManifestParser parse(IJavaProject javaProject,
-            XmlErrorListener errorListener, boolean gatherData, boolean markErrors)
+    public static AndroidManifestParser parse(
+                IJavaProject javaProject,
+                XmlErrorListener errorListener,
+                boolean gatherData,
+                boolean markErrors)
             throws CoreException {
+        
+        IFile manifestFile = getManifest(javaProject.getProject());
+        
         try {
             SAXParser parser = sParserFactory.newSAXParser();
-            
-            IFile manifestFile = AndroidManifestHelper.getManifest(javaProject.getProject());
+
             if (manifestFile != null) {
                 ManifestHandler manifestHandler = new ManifestHandler(manifestFile,
                         errorListener, gatherData, javaProject, markErrors);
@@ -552,13 +799,19 @@ public class AndroidManifestParser {
                 return new AndroidManifestParser(manifestHandler.getPackage(),
                         manifestHandler.getActivities(), manifestHandler.getLauncherActivity(),
                         manifestHandler.getProcesses(), manifestHandler.getDebuggable(),
-                        manifestHandler.getApiLevelRequirement());
+                        manifestHandler.getApiLevelRequirement(), 
+                        manifestHandler.getInstrumentations(), manifestHandler.getUsesLibraries());
             }
         } catch (ParserConfigurationException e) {
+            AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                    "Bad parser configuration for %s", manifestFile.getFullPath());
         } catch (SAXException e) {
+            AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                    "Parser exception for %s", manifestFile.getFullPath());
         } catch (IOException e) {
-        } finally {
-        }
+            AdtPlugin.logAndPrintError(e, AndroidManifestParser.class.getCanonicalName(), 
+                    "I/O error for %s", manifestFile.getFullPath());
+        } 
         
         return null;
     }
@@ -581,11 +834,28 @@ public class AndroidManifestParser {
      * Parses the manifest file, and collects data.
      * @param manifestFile The manifest file to parse.
      * @return an {@link AndroidManifestParser} or null if the parsing failed.
-     * @throws CoreException
+     * @throws CoreException for example the file does not exist in the workspace or
+     *         the workspace needs to be refreshed.
      */
     public static AndroidManifestParser parseForData(IFile manifestFile) throws CoreException {
         return parse(null /* javaProject */, manifestFile, null /* errorListener */,
                 true /* gatherData */, false /* markErrors */);
+    }
+
+    /**
+     * Parses the manifest file, and collects data.
+     * 
+     * @param osManifestFilePath The OS path of the manifest file to parse.
+     * @return an {@link AndroidManifestParser} or null if the parsing failed.
+     */
+    public static AndroidManifestParser parseForData(String osManifestFilePath) {
+        try {
+            return parse(new File(osManifestFilePath));
+        } catch (CoreException e) {
+            // Ignore workspace errors (unlikely to happen since this parses an actual file,
+            // not a workspace resource).
+            return null;
+        }
     }
 
     /**
@@ -598,18 +868,18 @@ public class AndroidManifestParser {
 
     /** 
      * Returns the list of activities found in the manifest.
-     * @return An array of fully qualified class names, or empty if no activity were found.
+     * @return An array of {@link Activity}, or empty if no activity were found.
      */
-    public String[] getActivities() {
+    public Activity[] getActivities() {
         return mActivities;
     }
 
     /**
      * Returns the name of one activity found in the manifest, that is configured to show
      * up in the HOME screen.  
-     * @return the fully qualified name of a HOME activity or null if none were found. 
+     * @return The {@link Activity} representing a HOME activity or null if none were found. 
      */
-    public String getLauncherActivity() {
+    public Activity getLauncherActivity() {
         return mLauncherActivity;
     }
     
@@ -628,10 +898,27 @@ public class AndroidManifestParser {
     }
     
     /**
-     * Returns the <code>minSdkVersion</code> attribute, or 0 if it's not set. 
+     * Returns the <code>minSdkVersion</code> attribute, or {@link #INVALID_MIN_SDK}
+     * if it's not set. 
      */
     public int getApiLevelRequirement() {
         return mApiLevelRequirement;
+    }
+    
+    /**
+     * Returns the list of instrumentations found in the manifest.
+     * @return An array of {@link Instrumentation}, or empty if no instrumentations were found.
+     */
+    public Instrumentation[] getInstrumentations() {
+        return mInstrumentations;
+    }
+    
+    /**
+     * Returns the list of libraries in use found in the manifest.
+     * @return An array of library names, or empty if no uses-library declarations were found.
+     */
+    public String[] getUsesLibraries() {
+        return mLibraries;
     }
 
     
@@ -647,15 +934,92 @@ public class AndroidManifestParser {
      * @param processes the list of custom processes declared in the manifest.
      * @param debuggable the debuggable attribute, or null if not set.
      * @param apiLevelRequirement the minSdkVersion attribute value or 0 if not set.
+     * @param instrumentations the list of instrumentations parsed from the manifest.
+     * @param libraries the list of libraries in use parsed from the manifest.
      */
-    private AndroidManifestParser(String javaPackage, String[] activities,
-            String launcherActivity, String[] processes, Boolean debuggable,
-            int apiLevelRequirement) {
+    private AndroidManifestParser(String javaPackage, Activity[] activities,
+            Activity launcherActivity, String[] processes, Boolean debuggable,
+            int apiLevelRequirement, Instrumentation[] instrumentations, String[] libraries) {
         mJavaPackage = javaPackage;
         mActivities = activities;
         mLauncherActivity = launcherActivity;
         mProcesses = processes;
         mDebuggable = debuggable;
         mApiLevelRequirement = apiLevelRequirement;
+        mInstrumentations = instrumentations;
+        mLibraries = libraries;
+    }
+
+    /**
+     * Returns an IFile object representing the manifest for the specified
+     * project.
+     *
+     * @param project The project containing the manifest file.
+     * @return An IFile object pointing to the manifest or null if the manifest
+     *         is missing.
+     */
+    public static IFile getManifest(IProject project) {
+        IResource r = project.findMember(AndroidConstants.WS_SEP
+                + AndroidConstants.FN_ANDROID_MANIFEST);
+
+        if (r == null || r.exists() == false || (r instanceof IFile) == false) {
+            return null;
+        }
+        return (IFile) r;
+    }
+
+    /**
+     * Combines a java package, with a class value from the manifest to make a fully qualified
+     * class name
+     * @param javaPackage the java package from the manifest.
+     * @param className the class name from the manifest. 
+     * @return the fully qualified class name.
+     */
+    public static String combinePackageAndClassName(String javaPackage, String className) {
+        if (className == null || className.length() == 0) {
+            return javaPackage;
+        }
+        if (javaPackage == null || javaPackage.length() == 0) {
+            return className;
+        }
+
+        // the class name can be a subpackage (starts with a '.'
+        // char), a simple class name (no dot), or a full java package
+        boolean startWithDot = (className.charAt(0) == '.');
+        boolean hasDot = (className.indexOf('.') != -1);
+        if (startWithDot || hasDot == false) {
+
+            // add the concatenation of the package and class name
+            if (startWithDot) {
+                return javaPackage + className;
+            } else {
+                return javaPackage + '.' + className;
+            }
+        } else {
+            // just add the class as it should be a fully qualified java name.
+            return className;
+        }
+    }
+
+    /**
+     * Given a fully qualified activity name (e.g. com.foo.test.MyClass) and given a project
+     * package base name (e.g. com.foo), returns the relative activity name that would be used
+     * the "name" attribute of an "activity" element.
+     *    
+     * @param fullActivityName a fully qualified activity class name, e.g. "com.foo.test.MyClass" 
+     * @param packageName The project base package name, e.g. "com.foo"
+     * @return The relative activity name if it can be computed or the original fullActivityName.
+     */
+    public static String extractActivityName(String fullActivityName, String packageName) {
+        if (packageName != null && fullActivityName != null) {
+            if (packageName.length() > 0 && fullActivityName.startsWith(packageName)) {
+                String name = fullActivityName.substring(packageName.length());
+                if (name.length() > 0 && name.charAt(0) == '.') {
+                    return name;
+                }
+            }
+        }
+
+        return fullActivityName;
     }
 }

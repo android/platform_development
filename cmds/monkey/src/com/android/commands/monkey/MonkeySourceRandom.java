@@ -50,6 +50,7 @@ public class MonkeySourceRandom implements MonkeyEventSource{
         KeyEvent.KEYCODE_HOME, KeyEvent.KEYCODE_BACK,
         KeyEvent.KEYCODE_CALL, KeyEvent.KEYCODE_ENDCALL,
         KeyEvent.KEYCODE_VOLUME_UP, KeyEvent.KEYCODE_VOLUME_DOWN,
+        KeyEvent.KEYCODE_MUTE,
     };
     /** Nice names for all key events. */
     private static final String[] KEY_NAMES = {
@@ -144,6 +145,7 @@ public class MonkeySourceRandom implements MonkeyEventSource{
         "KEYCODE_PREVIOUSSONG",
         "KEYCODE_REWIND",
         "KEYCODE_FORWARD",
+        "KEYCODE_MUTE",
         
         "TAG_LAST_KEYCODE"      // EOL.  used to keep the lists in sync
     };
@@ -169,6 +171,7 @@ public class MonkeySourceRandom implements MonkeyEventSource{
     private LinkedList<MonkeyEvent> mQ = new LinkedList<MonkeyEvent>();
     private Random mRandom;    
     private int mVerbose = 0;
+    private long mThrottle = 0;
 
     private boolean mKeyboardOpen = false;
 
@@ -183,7 +186,7 @@ public class MonkeySourceRandom implements MonkeyEventSource{
         return KEY_NAMES[keycode];
     }
     
-    public MonkeySourceRandom(long seed, ArrayList<ComponentName> MainApps) {
+    public MonkeySourceRandom(long seed, ArrayList<ComponentName> MainApps, long throttle) {
         // default values for random distributions
         // note, these are straight percentages, to match user input (cmd line args)
         // but they will be converted to 0..1 values before the main loop runs.
@@ -200,6 +203,7 @@ public class MonkeySourceRandom implements MonkeyEventSource{
         mRandom = new SecureRandom();
         mRandom.setSeed((seed == 0) ? -1 : seed);
         mMainApps = MainApps;
+        mThrottle = throttle;
     }
 
     /**
@@ -332,6 +336,7 @@ public class MonkeySourceRandom implements MonkeyEventSource{
                 downAt, MotionEvent.ACTION_UP, x, y, 0);        
         e.setIntermediateNote(false);        
         mQ.addLast(e);
+        addThrottle();
     }
   
     /**
@@ -382,6 +387,7 @@ public class MonkeySourceRandom implements MonkeyEventSource{
             e.setIntermediateNote(false);        
             mQ.addLast(e);
         }        
+        addThrottle();
     }
     
     /** 
@@ -414,11 +420,13 @@ public class MonkeySourceRandom implements MonkeyEventSource{
             MonkeyActivityEvent e = new MonkeyActivityEvent(mMainApps.get(
                     mRandom.nextInt(mMainApps.size())));
             mQ.addLast(e);
+            addThrottle();
             return;
         } else if (cls < mFactors[FACTOR_FLIP]) {
             MonkeyFlipEvent e = new MonkeyFlipEvent(mKeyboardOpen);
             mKeyboardOpen = !mKeyboardOpen;
             mQ.addLast(e);
+            addThrottle();
             return;
         } else {
             lastKey = 1 + mRandom.nextInt(KeyEvent.getMaxKeyCode() - 1);
@@ -429,6 +437,8 @@ public class MonkeySourceRandom implements MonkeyEventSource{
         
         e = new MonkeyKeyEvent(KeyEvent.ACTION_UP, lastKey);
         mQ.addLast(e);
+        
+        addThrottle();
     }
     
     public boolean validate() {
@@ -461,5 +471,9 @@ public class MonkeySourceRandom implements MonkeyEventSource{
         MonkeyEvent e = mQ.getFirst();        
         mQ.removeFirst();        
         return e;
+    }
+    
+    private void addThrottle() {
+        mQ.addLast(new MonkeyThrottleEvent(MonkeyEvent.EVENT_TYPE_THROTTLE, mThrottle));
     }
 }

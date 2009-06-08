@@ -30,12 +30,11 @@ import java.util.ArrayList;
  */
 class UiModelTreeContentProvider implements ITreeContentProvider {
     
-    /** The root {@link UiElementNode} which contains all the elements that are to be 
-     *  manipulated by this tree view. In general this is the manifest UI node. */
-    private UiElementNode mUiRootNode;
     /** The descriptor of the elements to be displayed as root in this tree view. All elements
      *  of the same type in the root will be displayed. */
     private ElementDescriptor[] mDescriptorFilters;
+    /** The uiRootNode of the model. */
+    private final UiElementNode mUiRootNode;
 
     public UiModelTreeContentProvider(UiElementNode uiRootNode,
             ElementDescriptor[] descriptorFilters) {
