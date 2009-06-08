@@ -17,6 +17,7 @@
 package com.android.sdklib;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
@@ -69,6 +70,7 @@ final class AddOnTarget implements IAndroidTarget {
     private final String mVendor;
     private final String mDescription;
     private String[] mSkins;
+    private String mDefaultSkin;
     private IOptionalLibrary[] mLibraries;
 
     /**
@@ -123,6 +125,10 @@ final class AddOnTarget implements IAndroidTarget {
         return String.format("%1$s (%2$s)", mName, mVendor);
     }
     
+    public String getClasspathName() {
+        return String.format("%1$s [%2$s]", mName, mBasePlatform.getName());
+    }
+
     public String getDescription() {
         return mDescription;
     }
@@ -141,6 +147,10 @@ final class AddOnTarget implements IAndroidTarget {
         return false;
     }
     
+    public IAndroidTarget getParent() {
+        return mBasePlatform;
+    }
+    
     public String getPath(int pathId) {
         switch (pathId) {
             case IMAGES:
@@ -148,7 +158,23 @@ final class AddOnTarget implements IAndroidTarget {
             case SKINS:
                 return mLocation + SdkConstants.OS_SKINS_FOLDER;
             case DOCS:
-                return mLocation + SdkConstants.FD_DOCS + File.separator;
+                return mLocation + SdkConstants.FD_DOCS + File.separator
+                        + SdkConstants.FD_DOCS_REFERENCE;
+            case SAMPLES:
+                // only return the add-on samples folder if there is actually a sample (or more)
+                File sampleLoc = new File(mLocation, SdkConstants.FD_SAMPLES);
+                if (sampleLoc.isDirectory()) {
+                    File[] files = sampleLoc.listFiles(new FileFilter() {
+                        public boolean accept(File pathname) {
+                            return pathname.isDirectory();
+                        }
+                        
+                    });
+                    if (files != null && files.length > 0) {
+                        return sampleLoc.getAbsolutePath();
+                    }
+                }
+                // INTENT FALL-THROUGH
             default :
                 return mBasePlatform.getPath(pathId);
         }
@@ -156,6 +182,10 @@ final class AddOnTarget implements IAndroidTarget {
 
     public String[] getSkins() {
         return mSkins;
+    }
+    
+    public String getDefaultSkin() {
+        return mDefaultSkin;
     }
 
     public IOptionalLibrary[] getOptionalLibraries() {
@@ -236,7 +266,9 @@ final class AddOnTarget implements IAndroidTarget {
     // ---- local methods.
 
 
-    public void setSkins(String[] skins) {
+    public void setSkins(String[] skins, String defaultSkin) {
+        mDefaultSkin = defaultSkin;
+
         // we mix the add-on and base platform skins
         HashSet<String> skinSet = new HashSet<String>();
         skinSet.addAll(Arrays.asList(skins));

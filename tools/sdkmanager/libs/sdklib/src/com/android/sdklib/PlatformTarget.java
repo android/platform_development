@@ -28,7 +28,7 @@ final class PlatformTarget implements IAndroidTarget {
     /** String used to get a hash to the platform target */
     private final static String PLATFORM_HASH = "android-%d";
     
-    private final static String PLATFORM_VENDOR = "Android";
+    private final static String PLATFORM_VENDOR = "Android Open Source Project";
     private final static String PLATFORM_NAME = "Android %s";
 
     private final String mLocation;
@@ -75,8 +75,13 @@ final class PlatformTarget implements IAndroidTarget {
                 SdkConstants.FN_INTENT_ACTIONS_SERVICE);
         mPaths.put(CATEGORIES, mLocation + SdkConstants.OS_PLATFORM_DATA_FOLDER +
                 SdkConstants.FN_INTENT_CATEGORIES);
+        mPaths.put(AAPT, mLocation + SdkConstants.OS_SDK_TOOLS_FOLDER + SdkConstants.FN_AAPT);
+        mPaths.put(AIDL, mLocation + SdkConstants.OS_SDK_TOOLS_FOLDER + SdkConstants.FN_AIDL);
+        mPaths.put(DX, mLocation + SdkConstants.OS_SDK_TOOLS_FOLDER + SdkConstants.FN_DX);
+        mPaths.put(DX_JAR, mLocation + SdkConstants.OS_SDK_TOOLS_LIB_FOLDER +
+                SdkConstants.FN_DX_JAR);
     }
-
+    
     public String getLocation() {
         return mLocation;
     }
@@ -97,6 +102,10 @@ final class PlatformTarget implements IAndroidTarget {
     }
     
     public String getFullName() {
+        return mName;
+    }
+    
+    public String getClasspathName() {
         return mName;
     }
 
@@ -123,12 +132,21 @@ final class PlatformTarget implements IAndroidTarget {
         return true;
     }
     
+    public IAndroidTarget getParent() {
+        return null;
+    }
+    
     public String getPath(int pathId) {
         return mPaths.get(pathId);
     }
     
     public String[] getSkins() {
         return mSkins;
+    }
+    
+    public String getDefaultSkin() {
+        // at this time, this is the default skin for all the platform.
+        return "HVGA";
     }
 
     /*

@@ -21,6 +21,11 @@ import com.android.ide.eclipse.adt.sdk.AndroidTargetData;
 import com.android.ide.eclipse.adt.sdk.LoadStatus;
 import com.android.ide.eclipse.adt.sdk.Sdk;
 import com.android.ide.eclipse.adt.sdk.AndroidTargetData.LayoutBridge;
+import com.android.ide.eclipse.adt.sdk.Sdk.ITargetChangeListener;
+import com.android.ide.eclipse.adt.ui.ConfigurationSelector.DensityVerifier;
+import com.android.ide.eclipse.adt.ui.ConfigurationSelector.DimensionVerifier;
+import com.android.ide.eclipse.adt.ui.ConfigurationSelector.LanguageRegionVerifier;
+import com.android.ide.eclipse.adt.ui.ConfigurationSelector.MobileCodeVerifier;
 import com.android.ide.eclipse.common.resources.ResourceType;
 import com.android.ide.eclipse.editors.IconFactory;
 import com.android.ide.eclipse.editors.layout.LayoutEditor.UiEditorActions;
@@ -54,14 +59,12 @@ import com.android.ide.eclipse.editors.ui.tree.CopyCutAction;
 import com.android.ide.eclipse.editors.ui.tree.PasteAction;
 import com.android.ide.eclipse.editors.uimodel.UiDocumentNode;
 import com.android.ide.eclipse.editors.uimodel.UiElementNode;
-import com.android.ide.eclipse.editors.wizards.ConfigurationSelector.DensityVerifier;
-import com.android.ide.eclipse.editors.wizards.ConfigurationSelector.DimensionVerifier;
-import com.android.ide.eclipse.editors.wizards.ConfigurationSelector.LanguageRegionVerifier;
-import com.android.ide.eclipse.editors.wizards.ConfigurationSelector.MobileCodeVerifier;
 import com.android.layoutlib.api.ILayoutLog;
 import com.android.layoutlib.api.ILayoutResult;
+import com.android.layoutlib.api.IProjectCallback;
 import com.android.layoutlib.api.IResourceValue;
 import com.android.layoutlib.api.IStyleResourceValue;
+import com.android.layoutlib.api.IXmlPullParser;
 import com.android.layoutlib.api.ILayoutResult.ILayoutViewInfo;
 import com.android.sdklib.IAndroidTarget;
 
@@ -85,8 +88,6 @@ import org.eclipse.gef.dnd.TemplateTransferDropTargetListener;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.requests.CreationFactory;
-import org.eclipse.gef.ui.parts.GraphicalEditorWithPalette;
-import org.eclipse.gef.ui.parts.SelectionSynchronizer;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
@@ -140,7 +141,7 @@ import java.util.Set;
  * <p/>
  * To understand Drag'n'drop: http://www.eclipse.org/articles/Article-Workbench-DND/drag_drop.html
  */
-public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
+public class GraphicalLayoutEditor extends AbstractGraphicalLayoutEditor
         implements ILayoutReloadListener {
     
     private final static String THEME_SEPARATOR = "----------"; //$NON-NLS-1$
@@ -198,13 +199,21 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     private ProjectCallback mProjectCallback;
     private ILayoutLog mLogger;
 
+    private boolean mNeedsXmlReload = false;
     private boolean mNeedsRecompute = false;
     private int mPlatformThemeCount = 0;
     private boolean mDisableUpdates = false;
-    private boolean mActive = false;
 
-    private Runnable mFrameworkResourceChangeListener = new Runnable() {
-        public void run() {
+    /** Listener to update the root node if the target of the file is changed because of a
+     * SDK location change or a project target change */
+    private ITargetChangeListener mTargetListener = new ITargetChangeListener() {
+        public void onProjectTargetChange(IProject changedProject) {
+            if (changedProject == getLayoutEditor().getProject()) {
+                onTargetsLoaded();
+            }
+        }
+
+        public void onTargetsLoaded() {
             // because the SDK changed we must reset the configured framework resource.
             mConfiguredFrameworkRes = null;
             
@@ -215,7 +224,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
             // updateUiFromFramework will reset language/region combo, so we must call
             // setConfiguration after, or the settext on language/region will be lost.
             if (mEditedConfig != null) {
-                setConfiguration(mEditedConfig);
+                setConfiguration(mEditedConfig, false /*force*/);
             }
 
             // make sure we remove the custom view loader, since its parent class loader is the
@@ -228,7 +237,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
 
     private final Runnable mConditionalRecomputeRunnable = new Runnable() {
         public void run() {
-            if (mActive) {
+            if (mLayoutEditor.isGraphicalEditorActive()) {
                 recomputeLayout();
             } else {
                 mNeedsRecompute = true;
@@ -253,7 +262,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         mMatchImage = factory.getIcon("match"); //$NON-NLS-1$
         mErrorImage = factory.getIcon("error"); //$NON-NLS-1$
 
-        AdtPlugin.getDefault().addResourceChangedListener(mFrameworkResourceChangeListener);
+        AdtPlugin.getDefault().addTargetListener(mTargetListener);
     }
 
     // ------------------------------------
@@ -561,10 +570,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
 
     @Override
     public void dispose() {
-        if (mFrameworkResourceChangeListener != null) {
-            AdtPlugin.getDefault().removeResourceChangedListener(
-                    mFrameworkResourceChangeListener);
-            mFrameworkResourceChangeListener = null;
+        if (mTargetListener != null) {
+            AdtPlugin.getDefault().removeTargetListener(mTargetListener);
+            mTargetListener = null;
         }
 
         LayoutReloadMonitor.getMonitor().removeListener(mEditedFile.getProject(), this);
@@ -587,6 +595,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         return mPaletteRoot;
     }
 
+    @Override
     public Clipboard getClipboard() {
         return mClipboard;
     }
@@ -708,7 +717,8 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
      * 
      * @param uiNodeModel The {@link UiElementNode} to select.
      */
-    public void selectModel(UiElementNode uiNodeModel) {
+    @Override
+    void selectModel(UiElementNode uiNodeModel) {
         GraphicalViewer viewer = getGraphicalViewer();
         
         // Give focus to the graphical viewer (in case the outline has it)
@@ -726,6 +736,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     // Local methods
     //--------------
 
+    @Override
     public LayoutEditor getLayoutEditor() {
         return mLayoutEditor;
     }
@@ -855,9 +866,10 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
      * Sets the UI for the edition of a new file.
      * @param configuration the configuration of the new file.
      */
-    public void editNewFile(FolderConfiguration configuration) {
+    @Override
+    void editNewFile(FolderConfiguration configuration) {
         // update the configuration UI
-        setConfiguration(configuration);
+        setConfiguration(configuration, true /*force*/);
         
         // enable the create button if the current and edited config are not equals
         mCreateButton.setEnabled(mEditedConfig.equals(mCurrentConfig) == false);
@@ -965,18 +977,14 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
                 int themeIndex = mThemeCombo.getSelectionIndex();
                 if (themeIndex != -1) {
                     String theme = mThemeCombo.getItem(themeIndex);
-                    
-                    // change the string if it's a custom theme to make sure we can
-                    // differentiate them
-                    if (themeIndex >= mPlatformThemeCount) {
-                        theme = "*" + theme; //$NON-NLS-1$
-                    }
 
                     // Render a single object as described by the ViewElementDescriptor.
                     WidgetPullParser parser = new WidgetPullParser(descriptor);
-                    ILayoutResult result = bridge.bridge.computeLayout(parser,
+                    ILayoutResult result = computeLayout(bridge, parser,
                             null /* projectKey */,
-                            300 /* width */, 300 /* height */, theme,
+                            300 /* width */, 300 /* height */, 160 /*density*/,
+                            160.f /*xdpi*/, 160.f /*ydpi*/, theme,
+                            themeIndex >= mPlatformThemeCount /*isProjectTheme*/,
                             configuredProjectResources, frameworkResources, projectCallback,
                             null /* logger */);
 
@@ -1007,6 +1015,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     /**
      * Reloads this editor, by getting the new model from the {@link LayoutEditor}.
      */
+    @Override
     void reloadEditor() {
         GraphicalViewer viewer = getGraphicalViewer();
         viewer.setContents(getModel());
@@ -1026,35 +1035,50 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     }
 
     /**
-     * Update the layout editor when the Xml model is changed.
+     * Callback for XML model changed. Only update/recompute the layout if the editor is visible
      */
+    @Override
     void onXmlModelChanged() {
-        GraphicalViewer viewer = getGraphicalViewer();
-
-        // try to preserve the selection before changing the content
-        SelectionManager selMan = viewer.getSelectionManager();
-        ISelection selection = selMan.getSelection();
-
-        try {
-            viewer.setContents(getModel());
-        } finally {
-            selMan.setSelection(selection);
-        }
-
         if (mLayoutEditor.isGraphicalEditorActive()) {
+            doXmlReload(true /* force */);
             recomputeLayout();
         } else {
-            mNeedsRecompute = true;
+            mNeedsXmlReload = true;
+        }
+    }
+    
+    /**
+     * Actually performs the XML reload
+     * @see #onXmlModelChanged()
+     */
+    private void doXmlReload(boolean force) {
+        if (force || mNeedsXmlReload) {
+            GraphicalViewer viewer = getGraphicalViewer();
+            
+            // try to preserve the selection before changing the content
+            SelectionManager selMan = viewer.getSelectionManager();
+            ISelection selection = selMan.getSelection();
+    
+            try {
+                viewer.setContents(getModel());
+            } finally {
+                selMan.setSelection(selection);
+            }
+            
+            mNeedsXmlReload = false;
         }
     }
 
     /**
      * Update the UI controls state with a given {@link FolderConfiguration}.
-     * <p/>If a qualifier is not present in the {@link FolderConfiguration} object, the UI control
-     * is not modified. However if the value in the control is not the default value, a warning
-     * icon is showed.
+     * <p/>If <var>force</var> is set to <code>true</code> the UI will be changed to exactly reflect
+     * <var>config</var>, otherwise, if a qualifier is not present in <var>config</var>,
+     * the UI control is not modified. However if the value in the control is not the default value,
+     * a warning icon is shown.
+     * @param config The {@link FolderConfiguration} to set.
+     * @param force Whether the UI should be changed to exactly match the received configuration.
      */
-    void setConfiguration(FolderConfiguration config) {
+    void setConfiguration(FolderConfiguration config, boolean force) {
         mDisableUpdates = true; // we do not want to trigger onXXXChange when setting new values in the widgets.
 
         mEditedConfig = config;
@@ -1065,6 +1089,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (countryQualifier != null) {
             mCountry.setText(String.format("%1$d", countryQualifier.getCode()));
             mCurrentConfig.setCountryCodeQualifier(countryQualifier);
+        } else if (force) {
+            mCountry.setText(""); //$NON-NLS-1$
+            mCurrentConfig.setCountryCodeQualifier(null);
         } else if (mCountry.getText().length() > 0) {
             mCountryIcon.setImage(mWarningImage);
         }
@@ -1074,6 +1101,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (networkQualifier != null) {
             mNetwork.setText(String.format("%1$d", networkQualifier.getCode()));
             mCurrentConfig.setNetworkCodeQualifier(networkQualifier);
+        } else if (force) {
+            mNetwork.setText(""); //$NON-NLS-1$
+            mCurrentConfig.setNetworkCodeQualifier(null);
         } else if (mNetwork.getText().length() > 0) {
             mNetworkIcon.setImage(mWarningImage);
         }
@@ -1083,6 +1113,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (languageQualifier != null) {
             mLanguage.setText(languageQualifier.getValue());
             mCurrentConfig.setLanguageQualifier(languageQualifier);
+        } else if (force) {
+            mLanguage.setText(""); //$NON-NLS-1$
+            mCurrentConfig.setLanguageQualifier(null);
         } else if (mLanguage.getText().length() > 0) {
             mLanguageIcon.setImage(mWarningImage);
         }
@@ -1092,6 +1125,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (regionQualifier != null) {
             mRegion.setText(regionQualifier.getValue());
             mCurrentConfig.setRegionQualifier(regionQualifier);
+        } else if (force) {
+            mRegion.setText(""); //$NON-NLS-1$
+            mCurrentConfig.setRegionQualifier(null);
         } else if (mRegion.getText().length() > 0) {
             mRegionIcon.setImage(mWarningImage);
         }
@@ -1102,6 +1138,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
             mOrientation.select(
                     ScreenOrientation.getIndex(orientationQualifier.getValue()) + 1);
             mCurrentConfig.setScreenOrientationQualifier(orientationQualifier);
+        } else if (force) {
+            mOrientation.select(0);
+            mCurrentConfig.setScreenOrientationQualifier(null);
         } else if (mOrientation.getSelectionIndex() != 0) {
             mOrientationIcon.setImage(mWarningImage);
         }
@@ -1111,6 +1150,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (densityQualifier != null) {
             mDensity.setText(String.format("%1$d", densityQualifier.getValue()));
             mCurrentConfig.setPixelDensityQualifier(densityQualifier);
+        } else if (force) {
+            mDensity.setText(""); //$NON-NLS-1$
+            mCurrentConfig.setPixelDensityQualifier(null);
         } else if (mDensity.getText().length() > 0) {
             mDensityIcon.setImage(mWarningImage);
         }
@@ -1120,6 +1162,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (touchQualifier != null) {
             mTouch.select(TouchScreenType.getIndex(touchQualifier.getValue()) + 1);
             mCurrentConfig.setTouchTypeQualifier(touchQualifier);
+        } else if (force) {
+            mTouch.select(0);
+            mCurrentConfig.setTouchTypeQualifier(null);
         } else if (mTouch.getSelectionIndex() != 0) {
             mTouchIcon.setImage(mWarningImage);
         }
@@ -1129,6 +1174,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (keyboardQualifier != null) {
             mKeyboard.select(KeyboardState.getIndex(keyboardQualifier.getValue()) + 1);
             mCurrentConfig.setKeyboardStateQualifier(keyboardQualifier);
+        } else if (force) {
+            mKeyboard.select(0);
+            mCurrentConfig.setKeyboardStateQualifier(null);
         } else if (mKeyboard.getSelectionIndex() != 0) {
             mKeyboardIcon.setImage(mWarningImage);
         }
@@ -1138,6 +1186,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         if (inputQualifier != null) {
             mTextInput.select(TextInputMethod.getIndex(inputQualifier.getValue()) + 1);
             mCurrentConfig.setTextInputMethodQualifier(inputQualifier);
+        } else if (force) {
+            mTextInput.select(0);
+            mCurrentConfig.setTextInputMethodQualifier(null);
         } else if (mTextInput.getSelectionIndex() != 0) {
             mTextInputIcon.setImage(mWarningImage);
         }
@@ -1148,6 +1199,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
             mNavigation.select(
                     NavigationMethod.getIndex(navigationQualifiter.getValue()) + 1);
             mCurrentConfig.setNavigationMethodQualifier(navigationQualifiter);
+        } else if (force) {
+            mNavigation.select(0);
+            mCurrentConfig.setNavigationMethodQualifier(null);
         } else if (mNavigation.getSelectionIndex() != 0) {
             mNavigationIcon.setImage(mWarningImage);
         }
@@ -1158,6 +1212,10 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
             mSize1.setText(String.format("%1$d", sizeQualifier.getValue1()));
             mSize2.setText(String.format("%1$d", sizeQualifier.getValue2()));
             mCurrentConfig.setScreenDimensionQualifier(sizeQualifier);
+        } else if (force) {
+            mSize1.setText(""); //$NON-NLS-1$
+            mSize2.setText(""); //$NON-NLS-1$
+            mCurrentConfig.setScreenDimensionQualifier(null);
         } else if (mSize1.getText().length() > 0 && mSize2.getText().length() > 0) {
             mSizeIcon.setImage(mWarningImage);
         }
@@ -1246,10 +1304,12 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         mCurrentLayoutLabel.setText(current != null ? current : "(Default)");
     }
 
+    @Override
     UiDocumentNode getModel() {
         return mLayoutEditor.getUiRootNode();
     }
     
+    @Override
     void reloadPalette() {
         PaletteFactory.createPaletteRoot(mPaletteRoot, mLayoutEditor.getTargetData());
     }
@@ -1582,7 +1642,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
             // at this point, we have not opened a new file.
 
             // update the configuration icons with the new edited config.
-            setConfiguration(mEditedConfig);
+            setConfiguration(mEditedConfig, false /*force*/);
             
             // enable the create button if the current and edited config are not equals
             mCreateButton.setEnabled(mEditedConfig.equals(mCurrentConfig) == false);
@@ -1648,7 +1708,10 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     /**
      * Recomputes the layout with the help of layoutlib.
      */
+    @Override
+    @SuppressWarnings("deprecation")
     void recomputeLayout() {
+        doXmlReload(false /* force */);
         try {
             // check that the resource exists. If the file is opened but the project is closed
             // or deleted for some reason (changed from outside of eclipse), then this will
@@ -1691,7 +1754,7 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
                     // In this case data could be null, but this is not an error.
                     // We can just silently return, as all the opened editors are automatically
                     // refreshed once the SDK finishes loading.
-                    if (AdtPlugin.getDefault().getSdkLoadStatus(null) != LoadStatus.LOADING) {
+                    if (AdtPlugin.getDefault().getSdkLoadStatus() != LoadStatus.LOADING) {
                         showErrorInEditor(String.format(
                                 "The project target (%s) was not properly loaded.",
                                 target.getName()));
@@ -1763,21 +1826,19 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
                         if (themeIndex != -1) {
                             String theme = mThemeCombo.getItem(themeIndex);
                             
-                            // change the string if it's a custom theme to make sure we can
-                            // differentiate them
-                            if (themeIndex >= mPlatformThemeCount) {
-                                theme = "*" + theme; //$NON-NLS-1$
-                            }
-    
                             // Compute the layout
                             UiElementPullParser parser = new UiElementPullParser(getModel());
                             Rectangle rect = getBounds();
-                            ILayoutResult result = bridge.bridge.computeLayout(parser,
+                            boolean isProjectTheme = themeIndex >= mPlatformThemeCount;
+
+                            // FIXME pass the density/dpi from somewhere (resource config or skin).
+                            ILayoutResult result = computeLayout(bridge, parser,
                                     iProject /* projectKey */,
-                                    rect.width, rect.height, theme,
+                                    rect.width, rect.height, 160, 160.f, 160.f, 
+                                    theme, isProjectTheme,
                                     mConfiguredProjectRes, frameworkResources, mProjectCallback,
                                     mLogger);
-    
+
                             // update the UiElementNode with the layout info.
                             if (result.getSuccess() == ILayoutResult.SUCCESS) {
                                 model.setEditData(result.getImage());
@@ -1920,9 +1981,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     /**
      * Responds to a page change that made the Graphical editor page the activated page.
      */
+    @Override
     void activated() {
-    	mActive = true;
-        if (mNeedsRecompute) {
+        if (mNeedsRecompute || mNeedsXmlReload) {
             recomputeLayout();
         }
     }
@@ -1930,8 +1991,9 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     /**
      * Responds to a page change that made the Graphical editor page the deactivated page
      */
+    @Override
     void deactivated() {
-    	mActive = false;
+        // nothing to be done here for now.
     }
 
     /**
@@ -2187,31 +2249,6 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
     }
 
     /**
-     * Returns the selection synchronizer object.
-     * The synchronizer can be used to sync the selection of 2 or more EditPartViewers.
-     * <p/>
-     * This is changed from protected to public so that the outline can use it.
-     *
-     * @return the synchronizer
-     */
-    @Override
-    public SelectionSynchronizer getSelectionSynchronizer() {
-        return super.getSelectionSynchronizer();
-    }
-
-    /**
-     * Returns the edit domain.
-     * <p/>
-     * This is changed from protected to public so that the outline can use it.
-     *
-     * @return the edit domain
-     */
-    @Override
-    public DefaultEditDomain getEditDomain() {
-        return super.getEditDomain();
-    }
-
-    /**
      * Creates a new layout file from the specificed {@link FolderConfiguration}.
      */
     private void createAlternateLayout(final FolderConfiguration config) {
@@ -2351,5 +2388,49 @@ public class GraphicalLayoutEditor extends GraphicalEditorWithPalette
         }
 
         return null;
+    }
+    
+    /**
+     * Computes a layout by calling the correct computeLayout method of ILayoutBridge based on
+     * the implementation API level.
+     */
+    @SuppressWarnings("deprecation")
+    private ILayoutResult computeLayout(LayoutBridge bridge,
+            IXmlPullParser layoutDescription, Object projectKey,
+            int screenWidth, int screenHeight, int density, float xdpi, float ydpi,
+            String themeName, boolean isProjectTheme,
+            Map<String, Map<String, IResourceValue>> projectResources,
+            Map<String, Map<String, IResourceValue>> frameworkResources,
+            IProjectCallback projectCallback, ILayoutLog logger) {
+        
+        if (bridge.apiLevel >= 3) {
+            // newer api with boolean for separation of project/framework theme,
+            // and density support.
+            return bridge.bridge.computeLayout(layoutDescription,
+                    projectKey, screenWidth, screenHeight, density, xdpi, ydpi, 
+                    themeName, isProjectTheme,
+                    projectResources, frameworkResources, projectCallback,
+                    logger);
+        } else if (bridge.apiLevel == 2) {
+            // api with boolean for separation of project/framework theme
+            return bridge.bridge.computeLayout(layoutDescription,
+                    projectKey, screenWidth, screenHeight, themeName, isProjectTheme,
+                    mConfiguredProjectRes, frameworkResources, mProjectCallback,
+                    mLogger);
+        } else {
+            // oldest api with no density/dpi, and project theme boolean mixed
+            // into the theme name.
+
+            // change the string if it's a custom theme to make sure we can
+            // differentiate them
+            if (isProjectTheme) {
+                themeName = "*" + themeName; //$NON-NLS-1$
+            }
+
+            return bridge.bridge.computeLayout(layoutDescription,
+                    projectKey, screenWidth, screenHeight, themeName,
+                    mConfiguredProjectRes, frameworkResources, mProjectCallback,
+                    mLogger);
+        }
     }
 }

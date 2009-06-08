@@ -62,6 +62,27 @@ public class ProjectCreator {
     
     private final static String FOLDER_TESTS = "tests";
     
+    /** Pattern for characters accepted in a project name. Since this will be used as a
+     * directory name, we're being a bit conservative on purpose: dot and space cannot be used. */
+    public static final Pattern RE_PROJECT_NAME = Pattern.compile("[a-zA-Z0-9_]+");
+    /** List of valid characters for a project name. Used for display purposes. */
+    public final static String CHARS_PROJECT_NAME = "a-z A-Z 0-9 _";
+
+    /** Pattern for characters accepted in a package name. A package is list of Java identifier
+     * separated by a dot. We need to have at least one dot (e.g. a two-level package name). 
+     * A Java identifier cannot start by a digit. */
+    public static final Pattern RE_PACKAGE_NAME =
+        Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*(?:\\.[a-zA-Z_][a-zA-Z0-9_]*)+");
+    /** List of valid characters for a project name. Used for display purposes. */
+    public final static String CHARS_PACKAGE_NAME = "a-z A-Z 0-9 _";
+
+    /** Pattern for characters accepted in an activity name, which is a Java identifier. */
+    public static final Pattern RE_ACTIVITY_NAME =
+        Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*");
+    /** List of valid characters for a project name. Used for display purposes. */
+    public final static String CHARS_ACTIVITY_NAME = "a-z A-Z 0-9 _";
+
+    
     public enum OutputLevel {
         /** Silent mode. Project creation will only display errors. */
         SILENT,
@@ -106,11 +127,17 @@ public class ProjectCreator {
     
     /**
      * Creates a new project.
+     * <p/>
+     * The caller should have already checked and sanitized the parameters.
      * 
      * @param folderPath the folder of the project to create.
-     * @param projectName the name of the project.
-     * @param packageName the package of the project.
-     * @param activityName the activity of the project as it will appear in the manifest.
+     * @param projectName the name of the project. The name must match the
+     *          {@link #RE_PROJECT_NAME} regex.
+     * @param packageName the package of the project. The name must match the
+     *          {@link #RE_PACKAGE_NAME} regex.
+     * @param activityName the activity of the project as it will appear in the manifest. Can be
+     *          null if no activity should be created. The name must match the
+     *          {@link #RE_ACTIVITY_NAME} regex. 
      * @param target the project target.
      * @param isTestProject whether the project to create is a test project.
      */
@@ -209,7 +236,7 @@ public class ProjectCreator {
             }
             
             // create the source folder and the java package folders.
-            final String srcFolderPath = SdkConstants.FD_SOURCES + File.separator + packagePath;
+            String srcFolderPath = SdkConstants.FD_SOURCES + File.separator + packagePath;
             File sourceFolder = createDirs(projectFolder, srcFolderPath);
             String javaTemplate = "java_file.template";
             String activityFileName = activityName + ".java";
@@ -219,6 +246,10 @@ public class ProjectCreator {
             }
             installTemplate(javaTemplate, new File(sourceFolder, activityFileName),
                     keywords, target);
+
+            // create the generate source folder
+            srcFolderPath = SdkConstants.FD_GEN_SOURCES + File.separator + packagePath;
+            sourceFolder = createDirs(projectFolder, srcFolderPath);
 
             // create other useful folders
             File resourceFodler = createDirs(projectFolder, SdkConstants.FD_RESOURCES);
@@ -314,9 +345,14 @@ public class ProjectCreator {
             }
         }
 
-        // Update default.prop iif --target was specified
+        // Update default.prop if --target was specified
         if (target != null) {
-            props = ProjectProperties.create(folderPath, PropertyType.DEFAULT);
+            // we already attempted to load the file earlier, if that failed, create it.
+            if (props == null) {
+                props = ProjectProperties.create(folderPath, PropertyType.DEFAULT);
+            }
+            
+            // set or replace the target
             props.setAndroidTarget(target);
             try {
                 props.save();
@@ -330,7 +366,14 @@ public class ProjectCreator {
         }
         
         // Refresh/create "sdk" in local.properties
-        props = ProjectProperties.create(folderPath, PropertyType.LOCAL);
+        // because the file may already exists and contain other values (like apk config),
+        // we first try to load it.
+        props = ProjectProperties.load(folderPath, PropertyType.LOCAL);
+        if (props == null) {
+            props = ProjectProperties.create(folderPath, PropertyType.LOCAL);
+        }
+        
+        // set or replace the sdk location.
         props.setProperty(ProjectProperties.PROPERTY_SDK, mSdkFolder);
         try {
             props.save();

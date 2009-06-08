@@ -17,7 +17,7 @@
 
 package com.android.ide.eclipse.editors.layout;
 
-import com.android.ide.eclipse.common.EclipseUiHelper;
+import com.android.ide.eclipse.adt.ui.EclipseUiHelper;
 import com.android.ide.eclipse.editors.IconFactory;
 import com.android.ide.eclipse.editors.layout.parts.UiDocumentTreeEditPart;
 import com.android.ide.eclipse.editors.layout.parts.UiElementTreeEditPart;
@@ -70,7 +70,7 @@ import java.util.List;
  */
 class UiContentOutlinePage extends ContentOutlinePage {
 
-    private GraphicalLayoutEditor mEditor;
+    private AbstractGraphicalLayoutEditor mEditor;
     
     private Action mAddAction;
     private Action mDeleteAction;
@@ -79,7 +79,7 @@ class UiContentOutlinePage extends ContentOutlinePage {
     
     private UiOutlineActions mUiActions = new UiOutlineActions();
 
-    public UiContentOutlinePage(GraphicalLayoutEditor editor, final EditPartViewer viewer) {
+    public UiContentOutlinePage(AbstractGraphicalLayoutEditor editor, final EditPartViewer viewer) {
         super(viewer);
         mEditor = editor;
         IconFactory factory = IconFactory.getInstance();

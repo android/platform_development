@@ -35,45 +35,56 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 
-import java.util.ArrayList;
-
 
 /**
  * The SDK target selector is a table that is added to the given parent composite.
  * <p/>
  * To use, create it using {@link #SdkTargetSelector(Composite, IAndroidTarget[], boolean)} then
  * call {@link #setSelection(IAndroidTarget)}, {@link #setSelectionListener(SelectionListener)}
- * and finally use {@link #getFirstSelected()} or {@link #getAllSelected()} to retrieve the
+ * and finally use {@link #getSelected()} to retrieve the
  * selection.
  */
 public class SdkTargetSelector {
     
-    private final IAndroidTarget[] mTargets;
-    private final boolean mAllowMultipleSelection;
+    private IAndroidTarget[] mTargets;
+    private final boolean mAllowSelection;
     private SelectionListener mSelectionListener;
     private Table mTable;
     private Label mDescription;
+    private Composite mInnerGroup;
+    
+    /**
+     * Creates a new SDK Target Selector.
+     * 
+     * @param parent The parent composite where the selector will be added.
+     * @param targets The list of targets. This is <em>not</em> copied, the caller must not modify.
+     *                Targets can be null or an empty array, in which case the table is disabled.
+     */
+    public SdkTargetSelector(Composite parent, IAndroidTarget[] targets) {
+        this(parent, targets, true /*allowSelection*/);
+    }
 
     /**
      * Creates a new SDK Target Selector.
      * 
      * @param parent The parent composite where the selector will be added.
      * @param targets The list of targets. This is <em>not</em> copied, the caller must not modify.
-     * @param allowMultipleSelection True if more than one SDK target can be selected at the same
-     *        time.
+     *                Targets can be null or an empty array, in which case the table is disabled.
+     * @param allowSelection True if selection is enabled.
      */
-    public SdkTargetSelector(Composite parent, IAndroidTarget[] targets,
-            boolean allowMultipleSelection) {
-        mTargets = targets;
-
+    public SdkTargetSelector(Composite parent, IAndroidTarget[] targets, boolean allowSelection) {
         // Layout has 1 column
-        Composite group = new Composite(parent, SWT.NONE);
-        group.setLayout(new GridLayout());
-        group.setLayoutData(new GridData(GridData.FILL_BOTH));
-        group.setFont(parent.getFont());
+        mInnerGroup = new Composite(parent, SWT.NONE);
+        mInnerGroup.setLayout(new GridLayout());
+        mInnerGroup.setLayoutData(new GridData(GridData.FILL_BOTH));
+        mInnerGroup.setFont(parent.getFont());
         
-        mAllowMultipleSelection = allowMultipleSelection;
-        mTable = new Table(group, SWT.CHECK | SWT.FULL_SELECTION | SWT.SINGLE | SWT.BORDER);
+        mAllowSelection = allowSelection;
+        int style = SWT.BORDER | SWT.SINGLE | SWT.FULL_SELECTION;
+        if (allowSelection) {
+            style |= SWT.CHECK;
+        }
+        mTable = new Table(mInnerGroup, style);
         mTable.setHeaderVisible(true);
         mTable.setLinesVisible(false);
 
@@ -84,23 +95,34 @@ public class SdkTargetSelector {
         data.verticalAlignment = GridData.FILL;
         mTable.setLayoutData(data);
 
-        mDescription = new Label(group, SWT.WRAP);
+        mDescription = new Label(mInnerGroup, SWT.WRAP);
         mDescription.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
         // create the table columns
         final TableColumn column0 = new TableColumn(mTable, SWT.NONE);
-        column0.setText("SDK Target");
+        column0.setText("Target Name");
         final TableColumn column1 = new TableColumn(mTable, SWT.NONE);
         column1.setText("Vendor");
         final TableColumn column2 = new TableColumn(mTable, SWT.NONE);
-        column2.setText("API Level");
+        column2.setText("Platform");
         final TableColumn column3 = new TableColumn(mTable, SWT.NONE);
-        column3.setText("SDK");
+        column3.setText("API Level");
 
         adjustColumnsWidth(mTable, column0, column1, column2, column3);
         setupSelectionListener(mTable);
-        fillTable(mTable);
+        setTargets(targets);
         setupTooltip(mTable);
+    }
+
+    /**
+     * Returns the layout data of the inner composite widget that contains the target selector.
+     * By default the layout data is set to a {@link GridData} with a {@link GridData#FILL_BOTH}
+     * mode.
+     * <p/>
+     * This can be useful if you want to change the {@link GridData#horizontalSpan} for example.
+     */
+    public Object getLayoutData() {
+        return mInnerGroup.getLayoutData();
     }
 
     /**
@@ -113,6 +135,16 @@ public class SdkTargetSelector {
     }
 
     /**
+     * Changes the targets of the SDK Target Selector.
+     * 
+     * @param targets The list of targets. This is <em>not</em> copied, the caller must not modify.
+     */
+    public void setTargets(IAndroidTarget[] targets) {
+        mTargets = targets;
+        fillTable(mTable);
+    }
+
+    /**
      * Sets a selection listener. Set it to null to remove it.
      * The listener will be called <em>after</em> this table processed its selection
      * events so that the caller can see the updated state.
@@ -120,8 +152,7 @@ public class SdkTargetSelector {
      * The event's item contains a {@link TableItem}.
      * The {@link TableItem#getData()} contains an {@link IAndroidTarget}.
      * <p/>
-     * It is recommended that the caller uses the {@link #getFirstSelected()} and
-     * {@link #getAllSelected()} methods instead.
+     * It is recommended that the caller uses the {@link #getSelected()} method instead.
      * 
      * @param selectionListener The new listener or null to remove it.
      */
@@ -139,18 +170,25 @@ public class SdkTargetSelector {
      * @return true if the target could be selected, false otherwise.
      */
     public boolean setSelection(IAndroidTarget target) {
+        if (!mAllowSelection) {
+            return false;
+        }
+        
         boolean found = false;
         boolean modified = false;
-        for (TableItem i : mTable.getItems()) {
-            if ((IAndroidTarget) i.getData() == target) {
-                found = true;
-                if (!i.getChecked()) {
+
+        if (mTable != null && !mTable.isDisposed()) {
+            for (TableItem i : mTable.getItems()) {
+                if ((IAndroidTarget) i.getData() == target) {
+                    found = true;
+                    if (!i.getChecked()) {
+                        modified = true;
+                        i.setChecked(true);
+                    }
+                } else if (i.getChecked()) {
                     modified = true;
-                    i.setChecked(true);
+                    i.setChecked(false);
                 }
-            } else if (i.getChecked()) {
-                modified = true;
-                i.setChecked(false);
             }
         }
         
@@ -162,30 +200,15 @@ public class SdkTargetSelector {
     }
 
     /**
-     * Returns all selected items.
-     * This is useful when the table is in multiple-selection mode.
+     * Returns the selected item.
      * 
-     * @see #getFirstSelected()
-     * @return An array of selected items. The list can be empty but not null.
+     * @return The selected item or null.
      */
-    public IAndroidTarget[] getAllSelected() {
-        ArrayList<IAndroidTarget> list = new ArrayList<IAndroidTarget>();
-        for (TableItem i : mTable.getItems()) {
-            if (i.getChecked()) {
-                list.add((IAndroidTarget) i.getData());
-            }
+    public IAndroidTarget getSelected() {
+        if (mTable == null || mTable.isDisposed()) {
+            return null;
         }
-        return list.toArray(new IAndroidTarget[list.size()]);
-    }
 
-    /**
-     * Returns the first selected item.
-     * This is useful when the table is in single-selection mode.
-     * 
-     * @see #getAllSelected()
-     * @return The first selected item or null.
-     */
-    public IAndroidTarget getFirstSelected() {
         for (TableItem i : mTable.getItems()) {
             if (i.getChecked()) {
                 return (IAndroidTarget) i.getData();
@@ -224,6 +247,10 @@ public class SdkTargetSelector {
      * double-clicked (aka "the default selection").
      */
     private void setupSelectionListener(final Table table) {
+        if (!mAllowSelection) {
+            return;
+        }
+
         // Add a selection listener that will check/uncheck items when they are double-clicked
         table.addSelectionListener(new SelectionListener() {
             /** Default selection means double-click on "most" platforms */
@@ -257,7 +284,7 @@ public class SdkTargetSelector {
              * items when this one is selected.
              */
             private void enforceSingleSelection(TableItem item) {
-                if (!mAllowMultipleSelection && item.getChecked()) {
+                if (item.getChecked()) {
                     Table parentTable = item.getParent();
                     for (TableItem i2 : parentTable.getItems()) {
                         if (i2 != item && i2.getChecked()) {
@@ -281,6 +308,13 @@ public class SdkTargetSelector {
      * </ul>
      */
     private void fillTable(final Table table) {
+
+        if (table == null || table.isDisposed()) {
+            return;
+        }
+
+        table.removeAll();
+        
         if (mTargets != null && mTargets.length > 0) {
             table.setEnabled(true);
             for (IAndroidTarget target : mTargets) {
@@ -309,6 +343,11 @@ public class SdkTargetSelector {
      * display the description in a label under the table.
      */
     private void setupTooltip(final Table table) {
+
+        if (table == null || table.isDisposed()) {
+            return;
+        }
+
         /*
          * Reference: 
          * http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet125.java?view=markup

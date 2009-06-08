@@ -22,9 +22,12 @@
 
 package com.android.ide.eclipse.adt.wizards.newproject;
 
+import com.android.ide.eclipse.adt.AdtPlugin;
 import com.android.ide.eclipse.adt.sdk.Sdk;
+import com.android.ide.eclipse.adt.sdk.Sdk.ITargetChangeListener;
 import com.android.ide.eclipse.common.AndroidConstants;
-import com.android.ide.eclipse.common.project.AndroidManifestHelper;
+import com.android.ide.eclipse.common.project.AndroidManifestParser;
+import com.android.ide.eclipse.common.project.AndroidManifestParser.Activity;
 import com.android.sdklib.IAndroidTarget;
 import com.android.sdklib.SdkConstants;
 import com.android.sdklib.project.ProjectProperties;
@@ -122,6 +125,7 @@ public class NewProjectCreationPage extends WizardPage {
     private Button mCreateActivityCheck;
     private Text mMinSdkVersionField;
     private SdkTargetSelector mSdkTargetSelector;
+    private ITargetChangeListener mSdkTargetChangeListener;
 
     private boolean mInternalLocationPathUpdate;
     protected boolean mInternalProjectNameUpdate;
@@ -215,7 +219,7 @@ public class NewProjectCreationPage extends WizardPage {
     
     /** Returns the current sdk target or null if none has been selected yet. */
     public IAndroidTarget getSdkTarget() {
-        return mSdkTargetSelector == null ? null : mSdkTargetSelector.getFirstSelected();
+        return mSdkTargetSelector == null ? null : mSdkTargetSelector.getSelected();
     }
 
     /**
@@ -262,6 +266,17 @@ public class NewProjectCreationPage extends WizardPage {
 
         // Validate. This will complain about the first empty field.
         setPageComplete(validatePage());
+    }
+    
+    @Override
+    public void dispose() {
+        
+        if (mSdkTargetChangeListener != null) {
+            AdtPlugin.getDefault().removeTargetListener(mSdkTargetChangeListener);
+            mSdkTargetChangeListener = null;
+        }
+        
+        super.dispose();
     }
 
     /**
@@ -389,18 +404,35 @@ public class NewProjectCreationPage extends WizardPage {
         group.setFont(parent.getFont());
         group.setText("Target");
         
-        // get the targets from the sdk
-        IAndroidTarget[] targets = null;
-        if (Sdk.getCurrent() != null) {
-            targets = Sdk.getCurrent().getTargets();
-        }
+        // The selector is created without targets. They are added below in the change listener.
+        mSdkTargetSelector = new SdkTargetSelector(group, null);
 
-        mSdkTargetSelector = new SdkTargetSelector(group, targets, false /*multi-selection*/);
+        mSdkTargetChangeListener = new ITargetChangeListener() {
+            public void onProjectTargetChange(IProject changedProject) {
+                // Ignore
+            }
 
-        // If there's only one target, select it
-        if (targets != null && targets.length == 1) {
-            mSdkTargetSelector.setSelection(targets[0]);
-        }
+            public void onTargetsLoaded() {
+                // Update the sdk target selector with the new targets
+
+                // get the targets from the sdk
+                IAndroidTarget[] targets = null;
+                if (Sdk.getCurrent() != null) {
+                    targets = Sdk.getCurrent().getTargets();
+                }
+                mSdkTargetSelector.setTargets(targets);
+
+                // If there's only one target, select it
+                if (targets != null && targets.length == 1) {
+                    mSdkTargetSelector.setSelection(targets[0]);
+                }
+            }
+        };
+        
+        AdtPlugin.getDefault().addTargetListener(mSdkTargetChangeListener);
+        
+        // Invoke it once to initialize the targets
+        mSdkTargetChangeListener.onTargetsLoaded();
         
         mSdkTargetSelector.setSelectionListener(new SelectionAdapter() {
             @Override
@@ -629,7 +661,7 @@ public class NewProjectCreationPage extends WizardPage {
                                                  abs_dir.equals(sCustomLocationOsPath);
                     sCustomLocationOsPath = TextProcessor.process(abs_dir);
                 } else  if (sAutoComputeCustomLocation ||
-                            !new File(sCustomLocationOsPath).isDirectory()) {
+                            (!is_new_project && !new File(sCustomLocationOsPath).isDirectory())) {
                     // By default select the samples directory of the current target
                     IAndroidTarget target = getSdkTarget();
                     if (target != null) {
@@ -821,25 +853,39 @@ public class NewProjectCreationPage extends WizardPage {
 
         Path path = new Path(f.getPath());
         String osPath = path.append(AndroidConstants.FN_ANDROID_MANIFEST).toOSString();
-        AndroidManifestHelper manifest = new AndroidManifestHelper(osPath);
-        if (!manifest.exists()) {
+        
+        AndroidManifestParser manifestData = AndroidManifestParser.parseForData(osPath);
+        if (manifestData == null) {
             return;
         }
         
         String packageName = null;
+        Activity activity = null;
         String activityName = null;
-        String minSdkVersion = null;
+        int minSdkVersion = AndroidManifestParser.INVALID_MIN_SDK;
         try {
-            packageName = manifest.getPackageName();
-            activityName = manifest.getActivityName(1);
-            minSdkVersion = manifest.getMinSdkVersion();
+            packageName = manifestData.getPackage();
+            minSdkVersion = manifestData.getApiLevelRequirement();
+
+            // try to get the first launcher activity. If none, just take the first activity.
+            activity = manifestData.getLauncherActivity();
+            if (activity == null) {
+                Activity[] activities = manifestData.getActivities();
+                if (activities != null && activities.length > 0) {
+                    activity = activities[0];
+                }
+            }
         } catch (Exception e) {
             // ignore exceptions
         }
 
-
         if (packageName != null && packageName.length() > 0) {
             mPackageNameField.setText(packageName);
+        }
+        
+        if (activity != null) {
+            activityName = AndroidManifestParser.extractActivityName(activity.getName(),
+                    packageName);
         }
 
         if (activityName != null && activityName.length() > 0) {
@@ -917,12 +963,10 @@ public class NewProjectCreationPage extends WizardPage {
             }
         }
 
-        if (!foundTarget && minSdkVersion != null) {
+        if (!foundTarget && minSdkVersion != AndroidManifestParser.INVALID_MIN_SDK) {
             try {
-                int sdkVersion = Integer.parseInt(minSdkVersion); 
-
                 for (IAndroidTarget target : mSdkTargetSelector.getTargets()) {
-                    if (target.getApiVersionNumber() == sdkVersion) {
+                    if (target.getApiVersionNumber() == minSdkVersion) {
                         mSdkTargetSelector.setSelection(target);
                         foundTarget = true;
                         break;
@@ -945,7 +989,9 @@ public class NewProjectCreationPage extends WizardPage {
 
         if (!foundTarget) {
             mInternalMinSdkVersionUpdate = true;
-            mMinSdkVersionField.setText(minSdkVersion == null ? "" : minSdkVersion); //$NON-NLS-1$
+            mMinSdkVersionField.setText(
+                    minSdkVersion == AndroidManifestParser.INVALID_MIN_SDK ? "" :
+                        Integer.toString(minSdkVersion)); //$NON-NLS-1$
             mInternalMinSdkVersionUpdate = false;
         }
     }
@@ -1072,8 +1118,8 @@ public class NewProjectCreationPage extends WizardPage {
             
             // Check there's an android manifest in the directory
             String osPath = path.append(AndroidConstants.FN_ANDROID_MANIFEST).toOSString();
-            AndroidManifestHelper manifest = new AndroidManifestHelper(osPath);
-            if (!manifest.exists()) {
+            File manifestFile = new File(osPath);
+            if (!manifestFile.isFile()) {
                 return setStatus(
                         String.format("File %1$s not found in %2$s.",
                                 AndroidConstants.FN_ANDROID_MANIFEST, f.getName()),
@@ -1081,15 +1127,22 @@ public class NewProjectCreationPage extends WizardPage {
             }
 
             // Parse it and check the important fields.
-            String packageName = manifest.getPackageName();
+            AndroidManifestParser manifestData = AndroidManifestParser.parseForData(osPath);
+            if (manifestData == null) {
+                return setStatus(
+                        String.format("File %1$s could not be parsed.", osPath),
+                        MSG_ERROR);
+            }
+
+            String packageName = manifestData.getPackage();
             if (packageName == null || packageName.length() == 0) {
                 return setStatus(
                         String.format("No package name defined in %1$s.", osPath),
                         MSG_ERROR);
             }
 
-            String activityName = manifest.getActivityName(1);
-            if (activityName == null || activityName.length() == 0) {
+            Activity[] activities = manifestData.getActivities();
+            if (activities == null || activities.length == 0) {
                 // This is acceptable now as long as no activity needs to be created
                 if (isCreateActivity()) {
                     return setStatus(
@@ -1097,7 +1150,7 @@ public class NewProjectCreationPage extends WizardPage {
                             MSG_ERROR);
                 }
             }
-            
+
             // If there's already a .project, tell the user to use import instead.
             if (path.append(".project").toFile().exists()) {  //$NON-NLS-1$
                 return setStatus("An Eclipse project already exists in this directory. Consider using File > Import > Existing Project instead.",
@@ -1132,7 +1185,7 @@ public class NewProjectCreationPage extends WizardPage {
             return MSG_NONE;
         }
 
-        int version = -1;
+        int version = AndroidManifestParser.INVALID_MIN_SDK;
         try {
             // If not empty, it must be a valid integer > 0
             version = Integer.parseInt(getMinSdkVersion());
