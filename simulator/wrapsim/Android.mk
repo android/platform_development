@@ -4,6 +4,7 @@
 # Build instructions for simulator LD_PRELOAD wrapper.
 #
 ifneq ($(TARGET_ARCH),arm)
+ifneq ($(TARGET_ARCH),sh)
 ifeq ($(TARGET_SIMULATOR),true)
 
 LOCAL_PATH:= $(call my-dir)
@@ -54,5 +55,7 @@ LOCAL_MODULE := launch-wrapper
 include $(BUILD_EXECUTABLE)
 
 endif # ifeq ($(TARGET_SIMULATOR),true)
+endif
+# ifneq ($(TARGET_ARCH),sh)
 endif
 # ifneq ($(TARGET_ARCH),arm)
