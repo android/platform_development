@@ -431,6 +431,7 @@ $$(_OBJ): PRIVATE_CXXFLAGS := $$($$(my)CXXFLAGS) \
                               $$(LOCAL_C_INCLUDES:%=-I%) \
                               -I$$(LOCAL_PATH) \
                               $$(LOCAL_CFLAGS) \
+                              $$(LOCAL_CPPFLAGS) \
                               $$(NDK_APP_CPPFLAGS) \
                               $$(NDK_APP_CXXFLAGS) \
 
