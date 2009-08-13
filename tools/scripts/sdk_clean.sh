@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # This script processes a set of files given as arguments as sample code to be  released
 # in the SDK.
@@ -17,7 +17,7 @@ DIR=$1
 #
 # sed on Mac OS takes -i SUFFIX and sed on Linux takes -iSUFFIX
 #
-if [ $HOST_OS = darwin ] ; then
+if [ $HOST_OS = darwin -o $HOST_OS = freebsd ] ; then
 find $DIR -name "*.java" -o -name "*.xml" | xargs -n 1 \
     sed \
         -e "s/.*BEGIN_INCLUDE(.*//" \
