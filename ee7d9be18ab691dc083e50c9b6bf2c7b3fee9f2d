@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAm3///lo\u003d",
+        "filename": "apps/Term/src/com/android/term/Term.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000748
+      },
+      "writtenOn": "2009-09-17T14:54:22Z",
+      "side": 1,
+      "message": "I wouldn\u0027t change the default values. Everybody will have their own personal preference.",
+      "revId": "ee7d9be18ab691dc083e50c9b6bf2c7b3fee9f2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAm3///lg\u003d",
+        "filename": "apps/Term/src/com/android/term/Term.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000748
+      },
+      "writtenOn": "2009-09-17T14:54:22Z",
+      "side": 1,
+      "message": "It might be more wise to have the preference select the foreground and background color separately. Otherwise, we\u0027ll have an explosion of possible combinations when someone else wants red on black or \u003cinsert another color combination here\u003e.",
+      "revId": "ee7d9be18ab691dc083e50c9b6bf2c7b3fee9f2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAm3///lc\u003d",
+        "filename": "apps/Term/src/com/android/term/Term.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000748
+      },
+      "writtenOn": "2009-09-17T14:54:22Z",
+      "side": 1,
+      "message": "I\u0027m not sure why the initial command was setting the path to /data/local/bin, but I don\u0027t see a reason to remove it.",
+      "revId": "ee7d9be18ab691dc083e50c9b6bf2c7b3fee9f2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAm3///lY\u003d",
+        "filename": "apps/Term/src/com/android/term/Term.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000748
+      },
+      "writtenOn": "2009-09-17T14:54:22Z",
+      "side": 1,
+      "message": "I\u0027d take this out since it changes the functionality of Terminal itself. What if someone accidentally set their DEFAULT_INITIAL_COMMAND to something that calls \"exit\"?",
+      "revId": "ee7d9be18ab691dc083e50c9b6bf2c7b3fee9f2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
