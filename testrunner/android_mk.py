@@ -22,7 +22,10 @@ development/ndk/docs/ANDROID-MK.txt
 """
 
 import re
-from sets import Set
+try:
+  set
+except NameError:
+  from sets import Set as set
 
 
 class AndroidMK(object):
@@ -35,7 +38,7 @@ class AndroidMK(object):
   PACKAGE_NAME = "LOCAL_PACKAGE_NAME"
 
   def __init__(self, app_path=None):
-    self._includes = Set() # variables included in makefile
+    self._includes = set() # variables included in makefile
     self._variables = {} # variables defined in makefile
 
     if app_path:

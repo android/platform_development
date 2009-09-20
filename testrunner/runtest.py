@@ -23,8 +23,11 @@ Based on previous <androidroot>/development/tools/runtest shell script.
 import glob
 import optparse
 import os
-from sets import Set
 import sys
+try:
+  set
+except NameError:
+  from sets import Set as set
 
 # local imports
 import adb_interface
@@ -192,8 +195,8 @@ class TestRunner(object):
 
   def _DoBuild(self):
     logger.SilentLog("Building tests...")
-    target_set = Set()
-    extra_args_set = Set()
+    target_set = set()
+    extra_args_set = set()
     for test_suite in self._GetTestsToRun():
       self._AddBuildTarget(test_suite, target_set, extra_args_set)
 
