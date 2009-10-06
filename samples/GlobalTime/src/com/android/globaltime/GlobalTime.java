@@ -1414,7 +1414,8 @@ class GTView extends SurfaceView implements SurfaceHolder.Callback {
 
                 // Use the message's time, it's good enough and
                 // allows us to avoid a system call.
-                if ((msg.getWhen() - mLastSunPositionTime) >= ONE_MINUTE) {
+                if ((mLastSunPositionTime == 0) ||
+                    ((msg.getWhen() - mLastSunPositionTime) >= ONE_MINUTE)) {
                     // Recompute the sun's position once per minute
                     // Place the light at the Sun's direction
                     computeSunDirection();
