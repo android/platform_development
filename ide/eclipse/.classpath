@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="packages/apps/AlarmClock/src"/>
+	<classpathentry kind="src" path="out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/vpn/java"/>
+	<classpathentry kind="src" path="frameworks/base/keystore/java"/>
+	<classpathentry kind="src" path="frameworks/base/vpn/java"/>
 	<classpathentry kind="src" path="packages/apps/Browser/src"/>
 	<classpathentry kind="src" path="packages/apps/Calendar/src"/>
 	<classpathentry kind="src" path="packages/apps/Calculator/src"/>
@@ -25,7 +28,6 @@
 	<classpathentry kind="src" path="packages/providers/ContactsProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/DownloadProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/DrmProvider/src"/>
-	<classpathentry kind="src" path="packages/providers/ImProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/MediaProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/TelephonyProvider/src"/>
 	<classpathentry kind="src" path="frameworks/base/awt"/>
