@@ -1463,13 +1463,18 @@ public class GlobalTime extends Activity {
 
     @Override protected void onPause() {
         super.onPause();
-        gtView.onPause();
+        if (gtView != null) {
+            gtView.onPause();
+        }
     }
 
     @Override protected void onStop() {
         super.onStop();
-        gtView.destroy();
-        gtView = null;
+        // Check if the gtView is already destroyed
+        if (gtView != null) {
+            gtView.destroy();
+            gtView = null;
+        }
     }
 
     // Allow the activity to go idle before its animation starts
