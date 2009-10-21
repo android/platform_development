@@ -111,6 +111,12 @@
             android:summaryOn="@string/summary_on_maps_compass"
             android:summaryOff="@string/summary_off_maps_compass"/>
         
+        <CheckBoxPreference
+            android:key="pin_home"
+            android:title="@string/title_pin_home"
+            android:summaryOn="@string/summary_on_pin_home"
+            android:summaryOff="@string/summary_off_pin_home" />
+
     </PreferenceCategory>
         
 </PreferenceScreen>

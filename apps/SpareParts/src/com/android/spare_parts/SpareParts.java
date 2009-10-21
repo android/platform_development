@@ -59,6 +59,7 @@ public class SpareParts extends PreferenceActivity
     private static final String END_BUTTON_PREF = "end_button";
     private static final String MAPS_COMPASS_PREF = "maps_compass";
     private static final String KEY_COMPATIBILITY_MODE = "compatibility_mode";
+    private static final String PIN_HOME_PREF = "pin_home";
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -70,6 +71,7 @@ public class SpareParts extends PreferenceActivity
     private ListPreference mEndButtonPref;
     private CheckBoxPreference mShowMapsCompassPref;
     private CheckBoxPreference mCompatibilityMode;
+    private CheckBoxPreference mPinHomePref;
 
     private IWindowManager mWindowManager;
 
@@ -126,6 +128,8 @@ public class SpareParts extends PreferenceActivity
         mEndButtonPref = (ListPreference) prefSet.findPreference(END_BUTTON_PREF);
         mEndButtonPref.setOnPreferenceChangeListener(this);
         mShowMapsCompassPref = (CheckBoxPreference) prefSet.findPreference(MAPS_COMPASS_PREF);
+        mPinHomePref = (CheckBoxPreference) prefSet.findPreference(PIN_HOME_PREF);
+
         mCompatibilityMode = (CheckBoxPreference) findPreference(KEY_COMPATIBILITY_MODE);
         mCompatibilityMode.setPersistent(false);
         mCompatibilityMode.setChecked(Settings.System.getInt(getContentResolver(),
@@ -155,6 +159,9 @@ public class SpareParts extends PreferenceActivity
             Context c = createPackageContext("com.google.android.apps.maps", 0);
             mShowMapsCompassPref.setChecked(c.getSharedPreferences("extra-features", MODE_WORLD_READABLE)
                 .getBoolean("compass", false));
+            mPinHomePref.setChecked(Settings.System.getInt(
+                    getContentResolver(),
+                    "pin_home_in_memory", 0) != 0);
         } catch (NameNotFoundException e) {
             Log.w(TAG, "Failed reading maps compass");
             e.printStackTrace();
@@ -272,6 +279,9 @@ public class SpareParts extends PreferenceActivity
                 Log.w(TAG, "Failed setting maps compass");
                 e.printStackTrace();
             }
+        } else if (PIN_HOME_PREF.equals(key)) {
+            Settings.System.putInt(getContentResolver(), "pin_home_in_memory",
+                    mPinHomePref.isChecked() ? 1 : 0);
         }
     }
     

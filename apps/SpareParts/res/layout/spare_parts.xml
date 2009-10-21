@@ -45,6 +45,13 @@
             android:layout_alignParentLeft="true"
             android:text="@string/development_settings_show_maps_compass_text" />
             
+        <CheckBox android:id="@+id/pin_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_maps_compass"
+            android:layout_alignParentLeft="true"
+            android:text="@string/title_pin_home" />
+
     </RelativeLayout>
 
 </ScrollView>
