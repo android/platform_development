@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Quick script used to setup Eclipse for the ADT plugin build.
 #

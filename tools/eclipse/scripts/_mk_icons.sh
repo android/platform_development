@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function icon() {
   # $1=letter, $2=letter's color (e.g. A red), $3=filename

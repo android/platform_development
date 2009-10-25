@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # $1 = output directory of generated docs: out/target/product/generic/obj/PACKAGING/pdkdocs_intermediates/generatedDocs/html
 # fix a bug in doxygen 1.5.6 and higher...
 # insert the line: '</div>\n' after line 25 in each generated source file: 

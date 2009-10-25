@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! -d development ]; then
     echo "Error: Run from the root of the tree."

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #----------------------------------------------------------------------------|
 # Creates the links to use ddm{ui}lib in the eclipse-ide plugin.
 # Run this from device/tools/eclipse/scripts

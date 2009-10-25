@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! -f buildspec.mk.default ]; then
     echo "Error: Please run from the root of the tree."

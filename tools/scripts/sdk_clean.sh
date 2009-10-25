@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # This script processes a set of files given as arguments as sample code to be  released
 # in the SDK.

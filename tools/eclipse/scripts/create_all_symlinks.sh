@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 HOST=`uname`
 if [ "${HOST:0:6}" == "CYGWIN" ]; then

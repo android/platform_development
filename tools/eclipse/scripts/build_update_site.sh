@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Entry point to build the Eclipse plugins for local deployment.
 #
 # Input parameters:
