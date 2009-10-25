@@ -69,7 +69,7 @@ def RunOnce(cmd, timeout_time=None, return_output=True):
       output_dest = None
     pipe = subprocess.Popen(
         cmd,
-        executable='/bin/bash',
+        executable='/usr/bin/env bash',
         stdout=output_dest,
         stderr=subprocess.STDOUT,
         shell=True)

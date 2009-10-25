@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Entry point to build the Eclipse plugins for the build server.
 #
 # Input parameters:

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Quick semi-auto file to build Windows SDK tools.
 #
 # Limitations and requirements:

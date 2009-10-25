@@ -121,7 +121,7 @@ init, creates the appropriate local_manifest.xml, does a repo sync as
 needed and tell git to ignore the offending files:
 
 ------------
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e  # fail on errors
 

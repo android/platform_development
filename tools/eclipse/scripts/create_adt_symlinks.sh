@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 function die() {
     echo "Error: $*"
     exit 1
