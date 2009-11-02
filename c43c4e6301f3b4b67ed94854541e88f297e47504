@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAoX////I\u003d",
+        "filename": "build/tools/make_windows_sdk.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2009-11-02T03:27:29Z",
+      "side": 1,
+      "message": "Why do you want to change this script if you\u0027re trying to build on FreeBDS? As the name says, this is for Windows/Cygwin. You don\u0027t run this under FreeBSD.",
+      "revId": "c43c4e6301f3b4b67ed94854541e88f297e47504",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAoX////E\u003d",
+        "filename": "docs/copyright-templates/bash.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2009-11-02T03:27:29Z",
+      "side": 1,
+      "message": "Hmm this is a TXT. This line shouldn\u0027t even be there.",
+      "revId": "c43c4e6301f3b4b67ed94854541e88f297e47504",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAoX////A\u003d",
+        "filename": "docs/howto_SDK_git_cygwin.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2009-11-02T03:27:29Z",
+      "side": 1,
+      "message": "Same as earlier: cygwin/freebsd... why?",
+      "revId": "c43c4e6301f3b4b67ed94854541e88f297e47504",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
