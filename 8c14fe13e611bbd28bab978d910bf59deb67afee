@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAo3//+sA\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.ddms/src/com/android/ide/eclipse/ddms/views/LogCatView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2009-12-11T00:53:29Z",
+      "side": 1,
+      "message": "Looks like you reorganized the imports but you don\u0027t have the proper import order for Android.\nCode style is at http://source.android.com/submit-patches/code-style-guide#import_style\n\nThere\u0027s a setting file you can import into your eclipse at http://android.git.kernel.org/?p\u003dplatform/development.git;a\u003dblob;f\u003dide/eclipse/android.importorder;h\u003d09966ec9b3014c525f683aa34afbba47cfde14f7;hb\u003dmaster",
+      "revId": "8c14fe13e611bbd28bab978d910bf59deb67afee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAo3//+r8\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.ddms/src/com/android/ide/eclipse/ddms/views/LogCatView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2009-12-11T00:53:29Z",
+      "side": 1,
+      "message": "please log in the workspace using the ILog interface gotten through org.eclipse.core.runtime.Plugin.getLog()",
+      "revId": "8c14fe13e611bbd28bab978d910bf59deb67afee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAo3//+rs\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.ddms/src/com/android/ide/eclipse/ddms/views/LogCatView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2009-12-11T00:53:29Z",
+      "side": 1,
+      "message": "please log in the workspace using the ILog interface gotten through org.eclipse.core.runtime.Plugin.getLog()",
+      "revId": "8c14fe13e611bbd28bab978d910bf59deb67afee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAo3//+r4\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.ddms/src/com/android/ide/eclipse/ddms/views/LogCatView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2009-12-11T00:53:29Z",
+      "side": 1,
+      "message": "please log in the workspace using the ILog interface gotten through org.eclipse.core.runtime.Plugin.getLog()",
+      "revId": "8c14fe13e611bbd28bab978d910bf59deb67afee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
