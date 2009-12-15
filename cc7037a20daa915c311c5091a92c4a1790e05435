@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAApH///8s\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.ddms/META-INF/MANIFEST.MF",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2009-12-15T02:31:39Z",
+      "side": 1,
+      "message": "is 3.5.1 really required? We are currently supporting 3.4 and 3.5.1",
+      "revId": "cc7037a20daa915c311c5091a92c4a1790e05435",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
