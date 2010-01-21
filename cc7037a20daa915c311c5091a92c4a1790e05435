@@ -16,6 +16,23 @@
       "revId": "cc7037a20daa915c311c5091a92c4a1790e05435",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAr3///f4\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.ddms/src/com/android/ide/eclipse/ddms/views/LogCatView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2010-01-21T19:11:50Z",
+      "side": 1,
+      "message": "Please remove this line (var is unused), as well as the one below, and the commented out debug code.",
+      "revId": "cc7037a20daa915c311c5091a92c4a1790e05435",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
