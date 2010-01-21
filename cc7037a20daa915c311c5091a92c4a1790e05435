@@ -33,6 +33,24 @@
       "revId": "cc7037a20daa915c311c5091a92c4a1790e05435",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAr3///fw\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.ddms/src/com/android/ide/eclipse/ddms/views/LogCatView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1002974
+      },
+      "writtenOn": "2010-01-21T19:33:07Z",
+      "side": 1,
+      "message": "I thought I might keep a reference here to the filename and line number groupings for posterity, as with some more effort they could be used to make a more accurate match with the occurrence of the error in the source file.  As is, the line that I \"go to\" is the declaration of the class.  It might be preferred to jump to the \"reference\" of the class instead, letting the filename and line number disambiguate the search results.\n\nI could comment out these two lines and add a TODO describing this approach, or should I just go ahead and delete the lines?",
+      "parentUuid": "AAAAr3///f4\u003d",
+      "revId": "cc7037a20daa915c311c5091a92c4a1790e05435",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
