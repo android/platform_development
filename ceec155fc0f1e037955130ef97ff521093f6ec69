@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAtX///+c\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/actions/RenamePackageAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2010-02-24T21:49:49Z",
+      "side": 1,
+      "message": "android style says it should be mOldPackageName and mNewPackageName",
+      "revId": "ceec155fc0f1e037955130ef97ff521093f6ec69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAtX///90\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/actions/RenamePackageAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2010-02-24T21:49:49Z",
+      "side": 1,
+      "message": "This is not guaranteed to be the prefix used by the user. It could be anything. you\u0027d have to look for any attribute where the value match CUSTOM_RESOURCE_NAMESPACE_PREFIX/\u003cpackage\u003e and get the prefix from the attribute name.",
+      "revId": "ceec155fc0f1e037955130ef97ff521093f6ec69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAtX///9w\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/actions/RenamePackageAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2010-02-24T21:49:49Z",
+      "side": 1,
+      "message": "see comment at the top. I think instead you need to pass the old namespace value, and look for an attribute in the top node that contains the given value.",
+      "revId": "ceec155fc0f1e037955130ef97ff521093f6ec69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAtX///+E\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/actions/RenamePackageAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2010-02-24T21:49:49Z",
+      "side": 1,
+      "message": "mChanges",
+      "revId": "ceec155fc0f1e037955130ef97ff521093f6ec69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAtX///+A\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/actions/RenamePackageAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2010-02-24T21:49:49Z",
+      "side": 1,
+      "message": "mParser",
+      "revId": "ceec155fc0f1e037955130ef97ff521093f6ec69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAtX///98\u003d",
+        "filename": "tools/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/actions/RenamePackageAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2010-02-24T21:49:49Z",
+      "side": 1,
+      "message": "mProject",
+      "revId": "ceec155fc0f1e037955130ef97ff521093f6ec69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
