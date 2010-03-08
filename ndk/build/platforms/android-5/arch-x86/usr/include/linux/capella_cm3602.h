@@ -1,0 +1,1 @@
+../../../../common/include/linux/capella_cm3602.h

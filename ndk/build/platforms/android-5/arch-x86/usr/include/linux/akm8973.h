@@ -1,0 +1,1 @@
+../../../../common/include/linux/akm8973.h
