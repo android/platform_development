@@ -70,7 +70,6 @@ OPTION_GDB_VERSION=
 OPTION_PACKAGE=
 OPTION_RELEASE=
 OPTION_BUILD_OUT=
-OPTION_LIST_TOOLCHAINS=no
 OPTION_BUILD_TOOLCHAINS=
 
 VERBOSE=no
@@ -113,9 +112,6 @@ for opt do
         ;;
     --force-build)
         OPTION_FORCE_BUILD=yes
-        ;;
-    --list-toolchains)
-        OPTION_LIST_TOOLCHAINS=yes
         ;;
     --build-toolchains=*)
         OPTION_BUILD_TOOLCHAINS="$OPTION_BUILD_TOOLCHAINS $optarg"
@@ -241,16 +237,6 @@ TIMESTAMP_OUT=$OUT/timestamps
 # where the sysroot is located
 ANDROID_TOOLCHAIN_SRC=$OUT/src
 ANDROID_SYSROOT=$ANDROID_NDK_ROOT/build/platforms/$PLATFORM/arch-${ABI}
-
-# List of available toolchains (source)
-ANDROID_TOOLCHAIN_LIST=`ls -1 $ANDROID_TOOLCHAIN_SRC/gcc | grep gcc- | sed "s/gcc-/${ABI_X}-/"`
-
-if [ "$OPTION_LIST_TOOLCHAINS" = "yes" ]; then
-    echo "The following toolchains may be specified for the --toolchain-build option."
-    echo "Specify the option multiple times as required. The default is to build all toolchains".
-    echo Available toolchains: $ANDROID_TOOLCHAIN_LIST
-    exit 0
-fi
 
 # Let's check that we have a working md5sum here
 A_MD5=`echo "A" | md5sum | cut -d' ' -f1`
@@ -680,7 +666,11 @@ build_toolchain ()
 #
 if [ "$OPTION_BUILD_TOOLCHAINS" ]; then
     ANDROID_TOOLCHAIN_LIST="$OPTION_BUILD_TOOLCHAINS"
+else
+    # List of available toolchains (source)
+    ANDROID_TOOLCHAIN_LIST=`ls -1 $ANDROID_TOOLCHAIN_SRC/gcc | grep gcc- | sed "s/gcc-/${ABI_X}-/"`
 fi
+
 
 for _toolchain in $ANDROID_TOOLCHAIN_LIST; do
     if timestamp_check toolchain build; then
@@ -726,7 +716,7 @@ if ! timestamp_check package toolchain; then
     for _toolchain in $ANDROID_TOOLCHAIN_LIST; do
         TOOLCHAIN_SRC_DIRS="$TOOLCHAIN_SRC_DIRS build/prebuilt/$HOST_TAG/${_toolchain}"
     done
-    run tar $TARFLAGS $TOOLCHAIN_TARBALL -C $OUT $TOOLCHAIN_SRC_DIRS
+    run tar $TARFLAGS $TOOLCHAIN_TARBALL -C $OUT $TOOLCHAIN_SRC_DIRS .
     if [ $? != 0 ] ; then
         echo "ERROR: Cannot package prebuilt toolchain binaries. See $TMPLOG"
         exit 1
