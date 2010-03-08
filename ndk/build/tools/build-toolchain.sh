@@ -23,6 +23,33 @@
 # include common function and variable definitions
 . `dirname $0`/../core/ndk-common.sh
 
+print_help() {
+    echo "Rebuild the prebuilt binaries for the Android NDK toolchain."
+    echo "This script will automatically download the sources from the"
+    echo "Internet, unless you use the --package=<file> option to specify"
+    echo "the exact source package to use."
+    echo ""
+    echo "See build/tools/download-toolchain-sources.sh for a tool that"
+    echo "can create a compatible source package from the current"
+    echo "git repositories."
+    echo ""
+    echo "options (defaults are within brackets):"
+    echo ""
+    echo "  --help                   print this message"
+    echo "  --gcc-version=<version>  select GCC version [$GCC_VERSION]"
+    echo "  --gdb-version=<version>  select GDB version [$GDB_VERSION]"
+    echo "  --package=<file>         specify download source package"
+    echo "  --platform=<name>        generate toolchain from platform <name> [$PLATFORM]"
+    echo "  --build-toolchain=<tc>   Only bulid these toolchains (specifiy multiple times)"
+    echo "  --list-toolchains        List available toolchains to build"
+    echo "  --abi=<name>             generate toolchain from abi <name> [$ABI]"
+    echo "  --release=<name>         specify prebuilt release name [$RELEASE]"
+    echo "  --build-out=<path>       set temporary build out directory [/tmp/<random>]"
+    echo "  --force-download         force a download and unpacking of the toolchain sources"
+    echo "  --force-build            force a rebuild of the sources"
+    echo ""
+}
+
 # number of jobs to run in parallel when running make
 JOBS=$HOST_NUM_CPUS
 
@@ -43,13 +70,15 @@ OPTION_GDB_VERSION=
 OPTION_PACKAGE=
 OPTION_RELEASE=
 OPTION_BUILD_OUT=
+OPTION_LIST_TOOLCHAINS=no
+OPTION_BUILD_TOOLCHAINS=
 
 VERBOSE=no
 for opt do
     optarg=`expr "x$opt" : 'x[^=]*=\(.*\)'`
     case "$opt" in
     --help|-h|-\?) OPTION_HELP=yes
-    ;;
+        ;;
     --verbose)
         if [ "$VERBOSE" = "yes" ] ; then
             VERBOSE2=yes
@@ -85,6 +114,12 @@ for opt do
     --force-build)
         OPTION_FORCE_BUILD=yes
         ;;
+    --list-toolchains)
+        OPTION_LIST_TOOLCHAINS=yes
+        ;;
+    --build-toolchains=*)
+        OPTION_BUILD_TOOLCHAINS="$OPTION_BUILD_TOOLCHAINS $optarg"
+        ;;
     --verbose)
         VERBOSE=yes
         ;;
@@ -95,28 +130,7 @@ for opt do
 done
 
 if [ $OPTION_HELP = "yes" ] ; then
-    echo "Rebuild the prebuilt binaries for the Android NDK toolchain."
-    echo "This script will automatically download the sources from the"
-    echo "Internet, unless you use the --package=<file> option to specify"
-    echo "the exact source package to use."
-    echo ""
-    echo "See build/tools/download-toolchain-sources.sh for a tool that"
-    echo "can create a compatible source package from the current"
-    echo "git repositories."
-    echo ""
-    echo "options (defaults are within brackets):"
-    echo ""
-    echo "  --help                   print this message"
-    echo "  --gcc-version=<version>  select GCC version [$GCC_VERSION]"
-    echo "  --gdb-version=<version>  select GDB version [$GDB_VERSION]"
-    echo "  --package=<file>         specify download source package"
-    echo "  --platform=<name>        generate toolchain from platform <name> [$PLATFORM]"
-    echo "  --abi=<name>             generate toolchain from abi <name> [$ABI]"
-    echo "  --release=<name>         specify prebuilt release name [$RELEASE]"
-    echo "  --build-out=<path>       set temporary build out directory [/tmp/<random>]"
-    echo "  --force-download         force a download and unpacking of the toolchain sources"
-    echo "  --force-build            force a rebuild of the sources"
-    echo ""
+    print_help
     exit 0
 fi
 
@@ -127,6 +141,28 @@ case $HOST_TAG in
         HOST_LDFLAGS="$HOST_LDFLAGS -m32"
         force_32bit_binaries  # to modify HOST_TAG and others
         ;;
+esac
+
+# ABI_X    : $ABI with optional -eabi extension
+# ABI_T    : TOOLCHAIN prefix
+# ABI_H    : HOST for configuring GDB
+case "$ABI" in
+arm )
+    ABI_X="arm-eabi"
+    ABI_T="arm-eabi"
+    ABI_H="arm-eabi-linux"
+    ;;
+x86 )
+    ABI_X="x86"
+    ABI_T="i686-android-linux-gnu"
+    ABI_H="i686-linux"
+    ;;
+* )
+    echo "Invalid ABI specified ($ABI). Expected [arm | x86]"
+    echo
+    print_help
+    exit 1
+    ;;
 esac
 
 TMPLOG=/tmp/android-toolchain-build-$$.log
@@ -156,6 +192,7 @@ else
         echo "$@" > /dev/null
     }
 fi
+
 
 if [ -n "$OPTION_GCC_VERSION" ] ; then
     GCC_VERSION="$OPTION_GCC_VERSION"
@@ -203,7 +240,17 @@ TIMESTAMP_OUT=$OUT/timestamps
 
 # where the sysroot is located
 ANDROID_TOOLCHAIN_SRC=$OUT/src
-ANDROID_SYSROOT=$ANDROID_NDK_ROOT/build/platforms/$PLATFORM/arch-$ABI
+ANDROID_SYSROOT=$ANDROID_NDK_ROOT/build/platforms/$PLATFORM/arch-${ABI}
+
+# List of available toolchains (source)
+ANDROID_TOOLCHAIN_LIST=`ls -1 $ANDROID_TOOLCHAIN_SRC/gcc | grep gcc- | sed "s/gcc-/${ABI_X}-/"`
+
+if [ "$OPTION_LIST_TOOLCHAINS" = "yes" ]; then
+    echo "The following toolchains may be specified for the --toolchain-build option."
+    echo "Specify the option multiple times as required. The default is to build all toolchains".
+    echo Available toolchains: $ANDROID_TOOLCHAIN_LIST
+    exit 0
+fi
 
 # Let's check that we have a working md5sum here
 A_MD5=`echo "A" | md5sum | cut -d' ' -f1`
@@ -479,7 +526,7 @@ build_toolchain ()
         if [ ! -d $BUILD_SRCDIR ] ; then
             BUILD_SRCDIR=$TOOLCHAIN_SRC
         fi
-        OLD_ABI="$ABI"
+        OLD_ABI="${ABI}"
         OLD_CFLAGS="$CFLAGS"
         OLD_LDFLAGS="$LDFLAGS"
         mkdir -p $TOOLCHAIN_BUILD &&
@@ -487,7 +534,7 @@ build_toolchain ()
         export ABI="32" &&  # needed to build a 32-bit gmp
         export CFLAGS="$HOST_CFLAGS" &&
         export LDFLAGS="$HOST_LDFLAGS" && run \
-        $BUILD_SRCDIR/configure --target=arm-eabi \
+        $BUILD_SRCDIR/configure --target=${ABI_T} \
                                 --disable-nls \
                                 --prefix=$TOOLCHAIN_PREFIX \
                                 --with-sysroot=$ANDROID_SYSROOT \
@@ -543,12 +590,22 @@ build_toolchain ()
         rm -rf $TOOLCHAIN_PREFIX/man $TOOLCHAIN_PREFIX/info
         # strip binaries to reduce final package size
         strip $TOOLCHAIN_PREFIX/bin/*
-        strip $TOOLCHAIN_PREFIX/arm-eabi/bin/*
+        strip $TOOLCHAIN_PREFIX/${ABI_X}/bin/*
         strip $TOOLCHAIN_PREFIX/libexec/gcc/*/*/cc1
         strip $TOOLCHAIN_PREFIX/libexec/gcc/*/*/cc1plus
         strip $TOOLCHAIN_PREFIX/libexec/gcc/*/*/collect2
         timestamp_set   $TOOLCHAIN_NAME install
         timestamp_force $TOOLCHAIN_NAME-gdbserver configure
+    fi
+
+    # gdbserver builds Require -mandroid to work in the toolchain
+    # That isn't there for x86 just yet... so we'll skip gdbserver
+    # and skip to the next step
+    if [ "$ABI" = "x86" ]; then 
+        timestamp_set $TOOLCHAIN_NAME-gdbserver configure
+        timestamp_set $TOOLCHAIN_NAME-gdbserver build
+        timestamp_set $TOOLCHAIN_NAME-gdbserver install
+        timestamp_force package toolchain
     fi
 
     # configure the gdbserver build now
@@ -566,11 +623,11 @@ build_toolchain ()
         OLD_CFLAGS="$CFLAGS"
         OLD_LDFLAGS="$LDFLAGS"
         cd $GDBSERVER_BUILD &&
-        export CC="$TOOLCHAIN_PREFIX/bin/arm-eabi-gcc" &&
+        export CC="$TOOLCHAIN_PREFIX/bin/${ABI_T}-gcc" &&
         export CFLAGS="-g -O2 -static -mandroid"  &&
         export LDFLAGS= &&
         run $GDB_SRCDIR/gdb/gdbserver/configure \
-        --host=arm-eabi-linux \
+        --host=${ABI_H} \
         --with-sysroot=$ANDROID_SYSROOT
         if [ $? != 0 ] ; then
             echo "Could not configure gdbserver build. See $TMPLOG"
@@ -605,7 +662,7 @@ build_toolchain ()
         echo "Install  : $TOOLCHAIN_NAME gdbserver."
         DEST=$TOOLCHAIN_PREFIX/bin
         mkdir -p $DEST &&
-        $TOOLCHAIN_PREFIX/bin/arm-eabi-strip $GDBSERVER_BUILD/gdbserver &&
+        $TOOLCHAIN_PREFIX/bin/${ABI_T}-strip $GDBSERVER_BUILD/gdbserver &&
         run cp -f $GDBSERVER_BUILD/gdbserver $DEST/gdbserver
         if [ $? != 0 ] ; then
             echo "Could not install gdbserver. See $TMPLOG"
@@ -621,11 +678,8 @@ build_toolchain ()
 # The old source tarball only contained gcc 4.2.1, the new
 # ones contain multiple toolchains
 #
-if [ -d $ANDROID_TOOLCHAIN_SRC/gcc-4.2.1 ] ; then
-    # An old toolchain source package
-    ANDROID_TOOLCHAIN_LIST=arm-eabi-4.2.1
-else
-    ANDROID_TOOLCHAIN_LIST="arm-eabi-4.2.1 arm-eabi-4.4.0"
+if [ "$OPTION_BUILD_TOOLCHAINS" ]; then
+    ANDROID_TOOLCHAIN_LIST="$OPTION_BUILD_TOOLCHAINS"
 fi
 
 for _toolchain in $ANDROID_TOOLCHAIN_LIST; do
@@ -633,14 +687,24 @@ for _toolchain in $ANDROID_TOOLCHAIN_LIST; do
         timestamp_force ${_toolchain} configure
         timestamp_force ${_toolchain}-gdbserver configure
     fi
-    # Gcc 4.2.1 needs binutils 2.17
-    if [ ${_toolchain} = arm-eabi-4.2.1 ] ; then
+    case "${_toolchain}" in
+    x86-4.2.1 )
+        GCC_VERSION=4.2.1
+        BINUTILS_VERSION=2.19
+        ;;
+    arm*-4.2.1 )
         GCC_VERSION=4.2.1
         BINUTILS_VERSION=2.17
-    else
+        ;;
+    x86-4.4.0 )
         GCC_VERSION=4.4.0
         BINUTILS_VERSION=2.19
-    fi
+        ;;
+    arm*-4.4.0 )
+        GCC_VERSION=4.4.0
+        BINUTILS_VERSION=2.19
+        ;;
+    esac
     build_toolchain ${_toolchain}
 done
 
@@ -650,7 +714,7 @@ if ! timestamp_check package toolchain; then
     echo "Cleanup  : Removing unuseful stuff"
     rm -rf $OUT/build/prebuilt/$HOST_TAG/*/share
     find $OUT/build/prebuilt/$HOST_TAG -name "libiberty.a" | xargs rm -f
-    find $OUT/build/prebuilt/$HOST_TAG -name "libarm-elf-linux-sim.a" | xargs rm -f
+    find $OUT/build/prebuilt/$HOST_TAG -name "lib${ABI}-elf-linux-sim.a" | xargs rm -f
     echo "Package  : $HOST_ARCH toolchain binaries"
     echo "           into $TOOLCHAIN_TARBALL"
     cd $ANDROID_NDK_ROOT &&
