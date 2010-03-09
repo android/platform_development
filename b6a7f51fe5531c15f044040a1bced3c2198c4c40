@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAvX///3k\u003d",
+        "filename": "ndk/build/host-setup.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-09T01:04:10Z",
+      "side": 1,
+      "message": "This only works on Linux, breaks on Windows and OS X.\nWhat about using `ls build/prebuilt/$HOST_OS` instead ?",
+      "revId": "b6a7f51fe5531c15f044040a1bced3c2198c4c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAvX///3Y\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-09T01:04:10Z",
+      "side": 1,
+      "message": "I would prefer less cryptic names, since using something so short is prone to error when later maintaining the script. What about:\n\nABI_X \u003d\u003e ABI_INSTALL_NAME\nABI_T \u003d\u003e ABI_TOOLCHAIN_PREFIX\nABI_H \u003d\u003e ABI_CONFIGURE_HOST",
+      "revId": "b6a7f51fe5531c15f044040a1bced3c2198c4c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAvX///3U\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-09T01:04:10Z",
+      "side": 1,
+      "message": "How can this work ? As far as I understand the toolchain sources have not been unpacked yet here ?",
+      "revId": "b6a7f51fe5531c15f044040a1bced3c2198c4c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAvX///3g\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-09T01:04:10Z",
+      "side": 1,
+      "message": "tailing space here.",
+      "revId": "b6a7f51fe5531c15f044040a1bced3c2198c4c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAvX///3c\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-09T01:04:10Z",
+      "side": 1,
+      "message": "I don\u0027t think we need x86-4.2.1, we only provide the 4.2.1 toolchain as a compatibility feature because some invalid C++ source code that compiled fine for it are rejected by 4.4.0.\n\nI would suggest going directly to 4.4.0 (or higher) for x86 support.",
+      "revId": "b6a7f51fe5531c15f044040a1bced3c2198c4c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
