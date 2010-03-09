@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAvX///3M\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-09T01:06:07Z",
+      "side": 1,
+      "message": "just curious, why is the dot needed here ?",
+      "revId": "5883cc1c5642d3d8c01a37d20c9412f026528460",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
