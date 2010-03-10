@@ -16,6 +16,24 @@
       "revId": "5883cc1c5642d3d8c01a37d20c9412f026528460",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAvn////I\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 1003360
+      },
+      "writtenOn": "2010-03-10T16:32:03Z",
+      "side": 1,
+      "message": "Worked fine without it on Ubuntu... failed on Fedora-11.\nI did a manual run of tar on Fedora... it requires the \".\".\nSince it doesn\u0027t hurt... one can certainly argue that the \".\" is more correct.",
+      "parentUuid": "AAAAvX///3M\u003d",
+      "revId": "5883cc1c5642d3d8c01a37d20c9412f026528460",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
