@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAvn////E\u003d",
+        "filename": "ndk/build/host-setup.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1003360
+      },
+      "writtenOn": "2010-03-10T16:34:49Z",
+      "side": 1,
+      "message": "Thanks for the catch. Clearly wrong",
+      "parentUuid": "AAAAvX///3k\u003d",
+      "revId": "b6a7f51fe5531c15f044040a1bced3c2198c4c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAvX///3Y\u003d",
         "filename": "ndk/build/tools/build-toolchain.sh",
         "patchSetId": 1
