@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAv3///44\u003d",
+        "filename": "ndk/build/toolchains/x86-4.2.1/setup.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-16T19:07:08Z",
+      "side": 1,
+      "message": "I\u0027m a bit puzzled. How is this supposed to work since there is no place where the x86 tag is set on the source files in the build scripts.\n\nAlso what would this tag be used for exactly ? the \u0027arm\u0027 tag is being used with ARM-based toolchains to select the 32-bit ARM instruction set (instead of the default thumb one), but I don\u0027t think there is a need for something like that here.",
+      "revId": "db12b19416a0b5f107b445303e44d4d4e7cd13ce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
