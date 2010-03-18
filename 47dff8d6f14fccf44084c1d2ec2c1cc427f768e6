@@ -121,6 +121,24 @@
       "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAwH////w\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-18T23:13:00Z",
+      "side": 1,
+      "message": "my bad, I didn\u0027t read the script correctly ! thanks for the clarification",
+      "parentUuid": "AAAAwH////4\u003d",
+      "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
