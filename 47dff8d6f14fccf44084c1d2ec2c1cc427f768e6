@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAv3///sY\u003d",
+        "filename": "ndk/build/tools/build-ndk-sysroot.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1003360
+      },
+      "writtenOn": "2010-03-18T21:43:03Z",
+      "side": 1,
+      "message": "I think you\u0027re correct. I\u0027ll tweak, retest and update.",
+      "parentUuid": "AAAAv3///wg\u003d",
+      "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAv3///wc\u003d",
         "filename": "ndk/build/tools/build-toolchain.sh",
         "patchSetId": 4
