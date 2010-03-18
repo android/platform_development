@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAv3///wg\u003d",
+        "filename": "ndk/build/tools/build-ndk-sysroot.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-18T01:05:36Z",
+      "side": 1,
+      "message": "you probably want to use build/platforms/$PLATFORM/arch-$ARCH here to only select the appropriate files in the final archive. Otherwise, you\u0027re going to put both arm and x86 stuff in it.",
+      "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAv3///wc\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-18T01:05:36Z",
+      "side": 1,
+      "message": "\"bulid\" should probably be \"build\"\nAlso the option doesn\u0027t seem to be used by the script.",
+      "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAv3///wY\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-18T01:05:36Z",
+      "side": 1,
+      "message": "the --product option doesn\u0027t seem to be used by this script. probably a left-over of experimentation",
+      "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAv3///wU\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2010-03-18T01:05:36Z",
+      "side": 1,
+      "message": "these two options are probably not needed anymore.",
+      "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
