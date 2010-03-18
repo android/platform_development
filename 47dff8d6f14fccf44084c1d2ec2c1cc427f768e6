@@ -67,6 +67,24 @@
       "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAv3///tE\u003d",
+        "filename": "ndk/build/tools/build-toolchain.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1003360
+      },
+      "writtenOn": "2010-03-18T21:41:02Z",
+      "side": 1,
+      "message": "Not all of the toolchains build for x86/android (yet). This allows me to select the one to build.",
+      "parentUuid": "AAAAv3///wU\u003d",
+      "revId": "47dff8d6f14fccf44084c1d2ec2c1cc427f768e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
