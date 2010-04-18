@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAwn///tE\u003d",
+        "filename": "docs/howto_build_SDK.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2010-04-18T07:23:35Z",
+      "side": 1,
+      "message": "I\u0027ve never used \"lunch sdk-eng\", what does it do?\nInstead I don\u0027t use lunch and just do \"make PRODUCT-sdk-sdk\" or just a plain \"make sdk\".",
+      "revId": "728457dc742ebff184ca6489a3d8226e7ad8420f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
