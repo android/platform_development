@@ -16,6 +16,24 @@
       "revId": "811e1d3b22ea54fd154df7c0865c6c2a86c8b8b2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAwn///nY\u003d",
+        "filename": "docs/howto_build_SDK.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2010-04-20T01:51:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAwn///qw\u003d",
+      "revId": "811e1d3b22ea54fd154df7c0865c6c2a86c8b8b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
