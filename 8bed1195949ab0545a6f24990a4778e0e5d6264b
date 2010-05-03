@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAx3///Tg\u003d",
+        "filename": "ide/eclipse/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-03T20:15:11Z",
+      "side": 1,
+      "message": "This removes one dalvik too many",
+      "revId": "8bed1195949ab0545a6f24990a4778e0e5d6264b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
