@@ -288,6 +288,13 @@ See test_defs.xsd for more information.
     coverage_target="framework"
     cts="true" />
 
+<test name="cts-sax"
+    build_path="cts/tests/tests/sax"
+    package="com.android.cts.sax"
+    runner="android.test.InstrumentationCtsTestRunner"
+    coverage_target="framework"
+    cts="true" />
+
 <test name="cts-text"
     build_path="cts/tests/tests/text"
     package="com.android.cts.text"
