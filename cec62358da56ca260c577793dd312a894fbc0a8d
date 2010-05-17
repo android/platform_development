@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///hA\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/AlertDialogSamples.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-17T21:32:49Z",
+      "side": 1,
+      "message": "It\u0027d be good to use the opportunity to wrap this line to 100 columns",
+      "revId": "cec62358da56ca260c577793dd312a894fbc0a8d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///g8\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/AlertDialogSamples.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-17T21:32:49Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "cec62358da56ca260c577793dd312a894fbc0a8d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
