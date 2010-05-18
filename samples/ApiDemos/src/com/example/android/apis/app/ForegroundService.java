@@ -43,9 +43,9 @@ public class ForegroundService extends Service {
     static final String ACTION_FOREGROUND = "com.example.android.apis.FOREGROUND";
     static final String ACTION_BACKGROUND = "com.example.android.apis.BACKGROUND";
     
-    private static final Class[] mStartForegroundSignature = new Class[] {
+    private static final Class<?>[] mStartForegroundSignature = new Class[] {
         int.class, Notification.class};
-    private static final Class[] mStopForegroundSignature = new Class[] {
+    private static final Class<?>[] mStopForegroundSignature = new Class[] {
         boolean.class};
     
     private NotificationManager mNM;
@@ -112,6 +112,7 @@ public class ForegroundService extends Service {
      * This is a wrapper around the new startForeground method, using the older
      * APIs if it is not available.
      */
+    @SuppressWarnings("deprecation")
     void startForegroundCompat(int id, Notification notification) {
         // If we have the new startForeground API, then use it.
         if (mStartForeground != null) {
@@ -138,6 +139,7 @@ public class ForegroundService extends Service {
      * This is a wrapper around the new stopForeground method, using the older
      * APIs if it is not available.
      */
+    @SuppressWarnings("deprecation")
     void stopForegroundCompat(int id) {
         // If we have the new stopForeground API, then use it.
         if (mStopForeground != null) {

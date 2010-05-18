@@ -16,14 +16,9 @@
 
 package com.example.android.apis.graphics;
 
-import com.example.android.apis.R;
-
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
-import android.graphics.drawable.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.*;
 
 import java.nio.IntBuffer;
@@ -41,7 +36,6 @@ public class BitmapPixels extends GraphicsActivity {
         private Bitmap mBitmap1;
         private Bitmap mBitmap2;
         private Bitmap mBitmap3;
-        private Bitmap mBitmap4;
 
         // access the red component from a premultiplied color
         private static int getR32(int c) { return (c >>  0) & 0xFF; }

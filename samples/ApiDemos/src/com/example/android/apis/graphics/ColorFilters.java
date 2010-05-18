@@ -23,7 +23,6 @@ import android.content.Context;
 import android.graphics.*;
 import android.graphics.drawable.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.*;
 
 public class ColorFilters extends GraphicsActivity {

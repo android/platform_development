@@ -16,16 +16,12 @@
 
 package com.example.android.apis.graphics;
 
-import com.example.android.apis.R;
-
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.*;
 
 public class ShapeDrawable1 extends GraphicsActivity {
