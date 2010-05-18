@@ -18,13 +18,11 @@ package com.example.android.apis.graphics;
 
 import com.example.android.apis.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.graphics.drawable.*;
 import android.view.animation.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 
 public class AnimateDrawables extends GraphicsActivity {

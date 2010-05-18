@@ -16,7 +16,6 @@
 
 package com.example.android.apis.graphics;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.os.Bundle;
@@ -57,10 +56,6 @@ public class FingerPaint extends GraphicsActivity
     }
 
     public class MyView extends View {
-        
-        private static final float MINP = 0.25f;
-        private static final float MAXP = 0.75f;
-        
         private Bitmap  mBitmap;
         private Canvas  mCanvas;
         private Path    mPath;

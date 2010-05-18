@@ -17,7 +17,6 @@
 package com.example.android.apis.view;
 
 import android.app.Activity;
-import android.content.Context;
 import android.database.Cursor;
 import android.provider.Contacts.People;
 import android.os.Bundle;

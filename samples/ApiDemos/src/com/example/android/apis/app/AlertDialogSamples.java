@@ -32,6 +32,7 @@ import android.widget.Toast;
 import android.database.Cursor;
 import android.provider.Contacts;
 
+import com.android.mms.data.Contact;
 import com.example.android.apis.R;
 
 /**

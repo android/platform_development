@@ -92,7 +92,6 @@ public class MediaPlayerDemo_Audio extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // TODO Auto-generated method stub
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
