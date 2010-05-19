@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///TA\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/graphics/Compass.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-19T06:56:57Z",
+      "side": 1,
+      "message": "Tabs",
+      "revId": "52fec2f9300850c30b65745e4b63a04e9310bec7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///S8\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/graphics/Compass.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-19T06:56:57Z",
+      "side": 1,
+      "message": "Tabs",
+      "revId": "52fec2f9300850c30b65745e4b63a04e9310bec7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
