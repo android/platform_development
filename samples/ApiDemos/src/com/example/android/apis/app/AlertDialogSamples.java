@@ -30,7 +30,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 import android.database.Cursor;
-import android.provider.Contacts;
+import android.provider.ContactsContract;
 
 import com.example.android.apis.R;
 
@@ -201,17 +201,17 @@ public class AlertDialogSamples extends Activity {
                .create();
             case DIALOG_MULTIPLE_CHOICE_CURSOR:
                 String[] projection = new String[] {
-                        Contacts.People._ID,
-                        Contacts.People.NAME,
-                        Contacts.People.SEND_TO_VOICEMAIL
+                        ContactsContract.Contacts._ID,
+                        ContactsContract.Contacts.DISPLAY_NAME,
+                        ContactsContract.Contacts.SEND_TO_VOICEMAIL
                 };
-                Cursor cursor = managedQuery(Contacts.People.CONTENT_URI, projection, null, null, null);
+                Cursor cursor = managedQuery(ContactsContract.Contacts.CONTENT_URI, projection, null, null, null);
                 return new AlertDialog.Builder(AlertDialogSamples.this)
                     .setIcon(R.drawable.ic_popup_reminder)
                     .setTitle(R.string.alert_dialog_multi_choice_cursor)
                     .setMultiChoiceItems(cursor,
-                            Contacts.People.SEND_TO_VOICEMAIL,
-                            Contacts.People.NAME,
+                            ContactsContract.Contacts.SEND_TO_VOICEMAIL,
+                            ContactsContract.Contacts.DISPLAY_NAME,
                             new DialogInterface.OnMultiChoiceClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton,
                                         boolean isChecked) {
