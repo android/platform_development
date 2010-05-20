@@ -109,9 +109,9 @@
     <string name="local_service_connected">Connected to local service</string>
     <string name="local_service_disconnected">Disconnected from local service</string>
 
-    <string name="activity_messenger_service_binding">App/Service/Messenger Service</string>
-    <string name="messenger_service_binding">This demonstrates how you can communicate with
-        a remote service using Messenger.</string>
+	<string name="activity_messenger_service_binding">App/Service/Messenger Service</string>
+	<string name="messenger_service_binding">This demonstrates how you can communicate with
+		a remote service using Messenger.</string>
 
     <string name="remote_service_started">Remote service has started</string>
     <string name="remote_service_stopped">Remote service has stopped</string>
@@ -232,9 +232,9 @@
     <!--  app/content examples strings  -->
     <!-- ============================== -->
 
-    <string name="activity_external_storage">Content/Storage/External Storage</string>
-    <string name="create">Create</string>
-    <string name="delete">Delete</string>
+	<string name="activity_external_storage">Content/Storage/External Storage</string>
+	<string name="create">Create</string>
+	<string name="delete">Delete</string>
 
     <string name="activity_styled_text">Content/Resources/<i>Styled</i> <b>Text</b></string>
     <string name="styled_text_rsrc">Initialized from a resource:</string>
@@ -441,31 +441,31 @@
     <string name="msg_launcher_shortcuts">This activity creates shortcuts for the launcher (home screen), and receives intents from those shortcuts.  To try it, return to the launcher and long-press to create a shortcut.</string>
     <string name="label_intent">Intent:</string>
 
-    <!-- ============================== -->
-    <!--  app/device policies examples strings     -->
-    <!-- ============================== -->
+	<!-- ============================== -->	436	    <!-- ============================== -->
+	<!--  app/device policies examples strings     -->
+	<!-- ============================== -->
 
-    <string name="activity_sample_device_admin">App/Device Admin</string>
-    <string name="sample_device_admin">Sample Device Admin</string>
-    <string name="sample_device_admin_description">Sample code for writing
-        a DeviceAdmin class.  This implementation provides a UI (in ApiDemos)
-        for you to directly control what the DeviceAdmin does with the
-        system.</string>
+	<string name="activity_sample_device_admin">App/Device Admin</string>
+	<string name="sample_device_admin">Sample Device Admin</string>
+	<string name="sample_device_admin_description">Sample code for writing
+		a DeviceAdmin class.  This implementation provides a UI (in ApiDemos)
+		for you to directly control what the DeviceAdmin does with the
+		system.</string>
 
-    <string name="sample_device_admin_summary">Demonstration of a DeviceAdmin
-        class for administering the user\'s device.</string>
-    <string name="enable_admin">Enable Admin</string>
-    <string name="disable_admin">Disable Admin</string>
-    <string name="password_quality">Password Quality</string>
-    <string name="password_length_hint">Minimum Length</string>
-    <string name="set_password">Set Password</string>
-    <string name="password_hint">Password</string>
-    <string name="reset_password">Reset Password</string>
-    <string name="max_failed_pw_hint">Password Attempts Wipe Data</string>
-    <string name="force_lock">Force Lock</string>
-    <string name="wipe_data">Wipe Data</string>
-    <string name="timeout_hint">Max screen timeout</string>
-    <string name="set_timeout_label">Set Timeout</string>
+	<string name="sample_device_admin_summary">Demonstration of a DeviceAdmin
+		class for administering the user\'s device.</string>
+	<string name="enable_admin">Enable Admin</string>
+	<string name="disable_admin">Disable Admin</string>
+	<string name="password_quality">Password Quality</string>
+	<string name="password_length_hint">Minimum Length</string>
+	<string name="set_password">Set Password</string>
+	<string name="password_hint">Password</string>
+	<string name="reset_password">Reset Password</string>
+	<string name="max_failed_pw_hint">Password Attempts Wipe Data</string>
+	<string name="force_lock">Force Lock</string>
+	<string name="wipe_data">Wipe Data</string>
+	<string name="timeout_hint">Max screen timeout</string>
+	<string name="set_timeout_label">Set Timeout</string>
 
     <!-- ============================== -->
     <!--  app/voice recognition examples strings  -->
@@ -506,7 +506,6 @@
     <string name="linear_layout_8_right">Right</string>
     <string name="linear_layout_10_from">From:</string>
     <string name="linear_layout_10_to">To:</string>
-    <string name="list_7_nothing">Nothing\u2026</string>
     <string name="radio_group_snack">Snack</string>
     <string name="radio_group_selection">"You have selected: "</string>
     <string name="radio_group_none">(none)</string>
@@ -882,20 +881,19 @@
     <string name="appwidget_prefix_default">Oh hai</string>
     <string name="appwidget_text_format"><xliff:g id="prefix">%1$s</xliff:g>: <xliff:g id="time">%2$s</xliff:g></string>
 
-    <!-- ============================ -->
-    <!--  SMS Messaging examples strings  -->
-    <!-- ============================ -->
+	<!-- ============================ -->
+	<!--  SMS Messaging examples strings  -->
+	<!-- ============================ -->
 
-    <string name="sms_warning">
-      WARNING: this demo can send actual text messages (one at a time), so be sure to
-      test with the Android emulator or have a text messaging plan with your carrier.
-    </string>
-    <string name="sms_enable_receiver">Enable SMS broadcast receiver</string>
-    <string name="sms_recipient_label">Recipient #</string>
-    <string name="sms_content_label">Message Body</string>
-    <string name="sms_send_message">Send</string>
-    <string name="sms_speak_string_format">Message from "%1$s": %2$s</string>
-    <string name="reply">Reply</string>
-    <string name="dismiss">Dismiss</string>
+	<string name="sms_warning">
+		WARNING: this demo can send actual text messages (one at a time), so be sure to
+		test with the Android emulator or have a text messaging plan with your carrier.
+	</string>
+	<string name="sms_enable_receiver">Enable SMS broadcast receiver</string>
+	<string name="sms_recipient_label">Recipient #</string>
+	<string name="sms_content_label">Message Body</string>
+	<string name="sms_send_message">Send</string>
+	<string name="sms_speak_string_format">Message from "%1$s": %2$s</string>
+	<string name="reply">Reply</string>
+	<string name="dismiss">Dismiss</string>
 </resources>
-
