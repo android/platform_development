@@ -18,16 +18,10 @@ package com.example.android.apis.graphics;
 
 import com.example.android.apis.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
-import android.graphics.drawable.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.*;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 public class Vertices extends GraphicsActivity {
 
@@ -41,7 +35,6 @@ public class Vertices extends GraphicsActivity {
         private final Paint mPaint = new Paint();
         private final float[] mVerts = new float[10];
         private final float[] mTexs = new float[10];
-        private final int[] mColors = new int[10];
         private final short[] mIndices = { 0, 1, 2, 3, 4, 1 };
         
         private final Matrix mMatrix = new Matrix();

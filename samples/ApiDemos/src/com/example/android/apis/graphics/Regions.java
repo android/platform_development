@@ -16,7 +16,6 @@
 
 package com.example.android.apis.graphics;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.os.Bundle;
@@ -91,7 +90,8 @@ public class Regions extends GraphicsActivity {
                        r.right - inset, r.bottom - inset, p);
         }
         
-        @Override protected void onDraw(Canvas canvas) {
+        @Override
+        protected void onDraw(Canvas canvas) {
             canvas.drawColor(Color.GRAY);            
 
             canvas.save();

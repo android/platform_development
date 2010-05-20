@@ -16,7 +16,6 @@
 
 package com.example.android.apis.graphics;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.os.Bundle;
@@ -92,9 +91,8 @@ public class ScaleToFit extends GraphicsActivity {
             canvas.drawRect(mDstR, mHairPaint);
         }
 
-        @Override protected void onDraw(Canvas canvas) {
-            Paint paint = mPaint;
-
+        @Override
+        protected void onDraw(Canvas canvas) {
             canvas.drawColor(Color.WHITE);
 
             canvas.translate(10, 10);
@@ -121,4 +119,3 @@ public class ScaleToFit extends GraphicsActivity {
         }
     }
 }
-

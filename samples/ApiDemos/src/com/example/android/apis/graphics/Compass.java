@@ -38,7 +38,7 @@ public class Compass extends GraphicsActivity {
     
     private final SensorEventListener mListener = new SensorEventListener() {
         public void onSensorChanged(SensorEvent event) {
-            if (Config.LOGD) Log.d(TAG,
+            if (Config.DEBUG) Log.d(TAG,
                     "sensorChanged (" + event.values[0] + ", " + event.values[1] + ", " + event.values[2] + ")");
             mValues = event.values;
             if (mView != null) {
@@ -62,7 +62,7 @@ public class Compass extends GraphicsActivity {
     @Override
     protected void onResume()
     {
-        if (Config.LOGD) Log.d(TAG, "onResume");
+        if (Config.DEBUG) Log.d(TAG, "onResume");
         super.onResume();
 
         mSensorManager.registerListener(mListener, mSensor,
@@ -72,7 +72,7 @@ public class Compass extends GraphicsActivity {
     @Override
     protected void onStop()
     {
-        if (Config.LOGD) Log.d(TAG, "onStop");
+        if (Config.DEBUG) Log.d(TAG, "onStop");
         mSensorManager.unregisterListener(mListener);
         super.onStop();
     }
@@ -81,7 +81,6 @@ public class Compass extends GraphicsActivity {
         private Paint   mPaint = new Paint();
         private Path    mPath = new Path();
         private boolean mAnimate;
-        private long    mNextTime;
 
         public SampleView(Context context) {
             super(context);
@@ -118,14 +117,15 @@ public class Compass extends GraphicsActivity {
         @Override
         protected void onAttachedToWindow() {
             mAnimate = true;
+            if (Config.DEBUG) Log.d(TAG, "onAttachedToWindow. mAnimate=" + mAnimate);
             super.onAttachedToWindow();
         }
         
         @Override
         protected void onDetachedFromWindow() {
             mAnimate = false;
+            if (Config.DEBUG) Log.d(TAG, "onDetachedFromWindow. mAnimate=" + mAnimate);
             super.onDetachedFromWindow();
         }
     }
 }
-

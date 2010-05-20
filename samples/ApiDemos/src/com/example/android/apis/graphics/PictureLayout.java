@@ -26,7 +26,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-
 public class PictureLayout extends ViewGroup {
     private final Picture mPicture = new Picture();
 
