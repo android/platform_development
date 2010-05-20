@@ -23,7 +23,8 @@ import android.content.Context;
 import android.graphics.*;
 import android.graphics.drawable.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.util.Config;
+import android.util.Log;
 import android.view.*;
 
 public class ColorFilters extends GraphicsActivity {
@@ -160,8 +161,8 @@ public class ColorFilters extends GraphicsActivity {
 
         @Override
         public boolean onTouchEvent(MotionEvent event) {
-            float x = event.getX();
-            float y = event.getY();
+            if (Config.DEBUG) Log.d("ColorFilters", "X: " + event.getX() +
+                    ", Y: " + event.getY());
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     break;
@@ -181,4 +182,3 @@ public class ColorFilters extends GraphicsActivity {
         }
     }
 }
-

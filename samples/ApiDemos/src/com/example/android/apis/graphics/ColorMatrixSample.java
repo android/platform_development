@@ -18,11 +18,9 @@ package com.example.android.apis.graphics;
 
 import com.example.android.apis.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 
 public class ColorMatrixSample extends GraphicsActivity {
@@ -35,9 +33,7 @@ public class ColorMatrixSample extends GraphicsActivity {
     
     private static class SampleView extends View {
         private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        private ColorMatrix mCM = new ColorMatrix();
         private Bitmap mBitmap;
-        private float mSaturation;
         private float mAngle;
         
         public SampleView(Context context) {

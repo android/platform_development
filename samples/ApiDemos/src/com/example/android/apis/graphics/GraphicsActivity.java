@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
 class GraphicsActivity extends Activity {
     @Override
@@ -30,7 +29,9 @@ class GraphicsActivity extends Activity {
 
     @Override
     public void setContentView(View view) {
-        if (false) { // set to true to test Picture
+        // set to true to test Picture
+        Boolean testPicture = false;
+        if (testPicture) {
             ViewGroup vg = new PictureLayout(this);
             vg.addView(view);
             view = vg;
@@ -39,4 +40,3 @@ class GraphicsActivity extends Activity {
         super.setContentView(view);
     }
 }
-

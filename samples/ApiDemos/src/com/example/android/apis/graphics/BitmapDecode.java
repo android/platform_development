@@ -18,15 +18,12 @@ package com.example.android.apis.graphics;
 
 import com.example.android.apis.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.graphics.drawable.*;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.*;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.ByteArrayOutputStream;
 
@@ -101,7 +98,9 @@ public class BitmapDecode extends GraphicsActivity {
             mDrawable.setBounds(150, 20, 300, 100);
             
             is = context.getResources().openRawResource(R.drawable.animated_gif);
-            if (true) {
+            //Set to false to use decodeByteArray
+            Boolean decodeStream = true;
+            if (decodeStream) {
                 mMovie = Movie.decodeStream(is);
             } else {
                 byte[] array = streamToBytes(is);
@@ -109,7 +108,8 @@ public class BitmapDecode extends GraphicsActivity {
             }
         }
         
-        @Override protected void onDraw(Canvas canvas) {
+        @Override
+        protected void onDraw(Canvas canvas) {
             canvas.drawColor(0xFFCCCCCC);            
             
             Paint p = new Paint();
@@ -140,4 +140,3 @@ public class BitmapDecode extends GraphicsActivity {
         }
     }
 }
-

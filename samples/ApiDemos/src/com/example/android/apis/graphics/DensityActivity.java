@@ -21,7 +21,6 @@ package com.example.android.apis.graphics;
 import com.example.android.apis.R;
 
 import android.app.Activity;
-import android.app.Application;
 import android.os.Bundle;
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap;
@@ -34,8 +33,6 @@ import android.widget.ScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 

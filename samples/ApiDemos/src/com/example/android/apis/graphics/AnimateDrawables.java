@@ -18,14 +18,14 @@ package com.example.android.apis.graphics;
 
 import com.example.android.apis.R;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.*;
-import android.graphics.drawable.*;
-import android.view.animation.*;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 
 public class AnimateDrawables extends GraphicsActivity {
 
@@ -55,7 +55,8 @@ public class AnimateDrawables extends GraphicsActivity {
             an.startNow();
         }
         
-        @Override protected void onDraw(Canvas canvas) {
+        @Override
+        protected void onDraw(Canvas canvas) {
             canvas.drawColor(Color.WHITE);
 
             mDrawable.draw(canvas);

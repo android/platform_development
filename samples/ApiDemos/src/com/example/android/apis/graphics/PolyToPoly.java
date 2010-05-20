@@ -20,7 +20,6 @@ package com.example.android.apis.graphics;
 // class is in a sub-package.
 //import com.example.android.apis.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.os.Bundle;
@@ -73,9 +72,8 @@ public class PolyToPoly extends GraphicsActivity {
             mFontMetrics = mPaint.getFontMetrics();
         }
         
-        @Override protected void onDraw(Canvas canvas) {
-            Paint paint = mPaint;
-
+        @Override
+        protected void onDraw(Canvas canvas) {
             canvas.drawColor(Color.WHITE);
 
             canvas.save();
@@ -107,4 +105,3 @@ public class PolyToPoly extends GraphicsActivity {
         }
     }
 }
-

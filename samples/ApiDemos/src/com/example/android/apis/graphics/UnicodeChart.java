@@ -16,7 +16,6 @@
 
 package com.example.android.apis.graphics;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 import android.os.Bundle;
@@ -64,7 +63,7 @@ public class UnicodeChart extends GraphicsActivity {
             float[] pos = mPos;
             int index = 0;
             for (int col = 0; col < 16; col++) {
-                final float x = col * 20 + 10;
+                final float x = col * XMUL + 10;
                 for (int row = 0; row < 16; row++) {
                     pos[index++] = x;
                     pos[index++] = row * YMUL + YBASE;
@@ -73,7 +72,7 @@ public class UnicodeChart extends GraphicsActivity {
         }
         
         private float computeX(int index) {
-            return (index >> 4) * 20 + 10;
+            return (index >> 4) * XMUL + 10;
         }
 
         private float computeY(int index) {
@@ -118,4 +117,3 @@ public class UnicodeChart extends GraphicsActivity {
         }
     }
 }
-
