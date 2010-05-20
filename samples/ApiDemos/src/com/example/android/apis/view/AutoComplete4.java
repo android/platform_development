@@ -23,7 +23,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.Contacts;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,8 +39,8 @@ public class AutoComplete4 extends Activity {
         setContentView(R.layout.autocomplete_4);
 
         ContentResolver content = getContentResolver();
-        Cursor cursor = content.query(Contacts.People.CONTENT_URI,
-                PEOPLE_PROJECTION, null, null, Contacts.People.DEFAULT_SORT_ORDER);
+        Cursor cursor = content.query(ContactsContract.Contacts.CONTENT_URI,
+                PEOPLE_PROJECTION, null, null, null);
         ContactListAdapter adapter = new ContactListAdapter(this, cursor);
 
         AutoCompleteTextView textView = (AutoCompleteTextView)
@@ -86,25 +86,23 @@ public class AutoComplete4 extends Activity {
             if (constraint != null) {
                 buffer = new StringBuilder();
                 buffer.append("UPPER(");
-                buffer.append(Contacts.ContactMethods.NAME);
+                buffer.append(ContactsContract.Contacts.DISPLAY_NAME);
                 buffer.append(") GLOB ?");
                 args = new String[] { constraint.toString().toUpperCase() + "*" };
             }
 
-            return mContent.query(Contacts.People.CONTENT_URI, PEOPLE_PROJECTION,
-                    buffer == null ? null : buffer.toString(), args,
-                    Contacts.People.DEFAULT_SORT_ORDER);
+            return mContent.query(ContactsContract.Contacts.CONTENT_URI, PEOPLE_PROJECTION,
+                    buffer == null ? null : buffer.toString(), args, null);
         }
 
         private ContentResolver mContent;        
     }
 
     private static final String[] PEOPLE_PROJECTION = new String[] {
-        Contacts.People._ID,
-        Contacts.People.PRIMARY_PHONE_ID,
-        Contacts.People.TYPE,
-        Contacts.People.NUMBER,
-        Contacts.People.LABEL,
-        Contacts.People.NAME,
+        ContactsContract.Contacts._ID,
+        ContactsContract.CommonDataKinds.Phone.TYPE,
+        ContactsContract.CommonDataKinds.Phone.NUMBER,
+        ContactsContract.CommonDataKinds.Phone.LABEL,
+        ContactsContract.Contacts.DISPLAY_NAME
     };
 }

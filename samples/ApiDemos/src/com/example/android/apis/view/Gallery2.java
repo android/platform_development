@@ -17,9 +17,8 @@
 package com.example.android.apis.view;
 
 import android.app.Activity;
-import android.content.Context;
 import android.database.Cursor;
-import android.provider.Contacts.People;
+import android.provider.ContactsContract;
 import android.os.Bundle;
 import android.widget.Gallery;
 import android.widget.SimpleCursorAdapter;
@@ -37,7 +36,8 @@ public class Gallery2 extends Activity {
         setContentView(R.layout.gallery_2);
 
         // Get a cursor with all people
-        Cursor c = getContentResolver().query(People.CONTENT_URI, null, null, null, null);
+        Cursor c = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI,
+                null, null, null, null);
         startManagingCursor(c);
         
         SpinnerAdapter adapter = new SimpleCursorAdapter(this,
@@ -46,12 +46,11 @@ public class Gallery2 extends Activity {
                 // Give the cursor to the list adatper
                 c,
                 // Map the NAME column in the people database to...
-                new String[] {People.NAME},
+                new String[] {ContactsContract.Contacts.DISPLAY_NAME},
                 // The "text1" view defined in the XML template
                 new int[] { android.R.id.text1 });
 
         Gallery g = (Gallery) findViewById(R.id.gallery);
         g.setAdapter(adapter);
     }
-
 }

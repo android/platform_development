@@ -18,7 +18,7 @@ package com.example.android.apis.view;
 
 import android.app.ListActivity;
 import android.database.Cursor;
-import android.provider.Contacts.People;
+import android.provider.ContactsContract;
 import android.os.Bundle;
 import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
@@ -34,7 +34,8 @@ public class List2 extends ListActivity {
         super.onCreate(savedInstanceState);
 
         // Get a cursor with all people
-        Cursor c = getContentResolver().query(People.CONTENT_URI, null, null, null, null);
+        Cursor c = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI,
+                null, null, null, null);
         startManagingCursor(c);
 
         ListAdapter adapter = new SimpleCursorAdapter(this, 
@@ -43,7 +44,7 @@ public class List2 extends ListActivity {
                 // Give the cursor to the list adatper
                 c, 
                 // Map the NAME column in the people database to...
-                new String[] {People.NAME} ,
+                new String[] {ContactsContract.Contacts.DISPLAY_NAME},
                 // The "text1" view defined in the XML template
                 new int[] {android.R.id.text1}); 
         setListAdapter(adapter);
