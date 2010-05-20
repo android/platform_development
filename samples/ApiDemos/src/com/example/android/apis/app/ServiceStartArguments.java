@@ -49,7 +49,6 @@ import com.example.android.apis.R;
  */
 public class ServiceStartArguments extends Service {
     private NotificationManager mNM;
-    private Intent mInvokeIntent;
     private volatile Looper mServiceLooper;
     private volatile ServiceHandler mServiceHandler;
     
@@ -102,10 +101,6 @@ public class ServiceStartArguments extends Service {
 
         Toast.makeText(this, R.string.service_created,
                 Toast.LENGTH_SHORT).show();
-        
-        // This is who should be launched if the user selects our persistent
-        // notification.
-        mInvokeIntent = new Intent(this, ServiceStartArgumentsController.class);
 
         // Start up the thread running the service.  Note that we create a
         // separate thread because the service normally runs in the process's
@@ -177,7 +172,7 @@ public class ServiceStartArguments extends Service {
 
         // The PendingIntent to launch our activity if the user selects this notification
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, AlarmService.class), 0);
+                new Intent(this, ServiceStartArgumentsController.class), 0);
 
         // Set the info for the views that show in the notification panel.
         notification.setLatestEventInfo(this, getText(R.string.service_start_arguments_label),
