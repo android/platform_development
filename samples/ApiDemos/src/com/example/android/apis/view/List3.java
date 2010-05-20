@@ -16,36 +16,73 @@
 
 package com.example.android.apis.view;
 
-
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.Contacts.Phones;
-import android.widget.ListAdapter;
+import android.provider.ContactsContract;
+import android.view.View;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
  /**
- * A list view example where the 
+ * A list view example where the
  * data comes from a cursor, and a
  * SimpleCursorListAdapter is used to map each item to a two-line
  * display.
  */
 public class List3 extends ListActivity {
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Get a cursor with all phones
-        Cursor c = getContentResolver().query(Phones.CONTENT_URI, null, null, null, null);
+        Cursor c = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                PHONE_PROJECTION, null, null, null);
         startManagingCursor(c);
-        
+
+        mColumnType = c.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE);
+        mColumnLabel = c.getColumnIndex(ContactsContract.CommonDataKinds.Phone.LABEL);
+
         // Map Cursor columns to views defined in simple_list_item_2.xml
-        ListAdapter adapter = new SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_2, c, 
-                        new String[] { Phones.NAME, Phones.NUMBER }, 
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+                android.R.layout.simple_list_item_2, c,
+                        new String[] {
+                            ContactsContract.CommonDataKinds.Phone.TYPE,
+                            ContactsContract.CommonDataKinds.Phone.NUMBER
+                        },
                         new int[] { android.R.id.text1, android.R.id.text2 });
+        //Used to display a readable string for the phone type
+        adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
+            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+                //Let the adapter handle the binding if the column is not TYPE
+                if (columnIndex != mColumnType) {
+                    return false;
+                }
+                int type = cursor.getInt(mColumnType);
+                String label = null;
+                //Custom type? Then get the custom label
+                if (type == ContactsContract.CommonDataKinds.Phone.TYPE_CUSTOM) {
+                    label = cursor.getString(mColumnLabel);
+                }
+                //Get the readable string
+                String text = (String) ContactsContract.CommonDataKinds.Phone.getTypeLabel(
+                        getResources(), type, label);
+                //Set text
+                ((TextView) view).setText(text);
+                return true;
+            }
+        });
         setListAdapter(adapter);
     }
-  
+
+    private static final String[] PHONE_PROJECTION = new String[] {
+        ContactsContract.CommonDataKinds.Phone._ID,
+        ContactsContract.CommonDataKinds.Phone.TYPE,
+        ContactsContract.CommonDataKinds.Phone.LABEL,
+        ContactsContract.CommonDataKinds.Phone.NUMBER
+    };
+
+    private int mColumnType;
+    private int mColumnLabel;
 }
