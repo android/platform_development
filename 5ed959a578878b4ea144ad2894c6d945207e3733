@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///Os\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/AlertDialogSamples.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-05-20T00:52:02Z",
+      "side": 1,
+      "message": "Long line",
+      "revId": "5ed959a578878b4ea144ad2894c6d945207e3733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
