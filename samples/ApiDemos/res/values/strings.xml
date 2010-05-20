@@ -43,7 +43,7 @@
     <string name="activity_setwallpaper">App/Activity/SetWallpaper</string>
     <string name="set_wallpaper">Set Wallpaper</string>
     <string name="randomize">Randomize</string>
-    
+
     <string name="activity_translucent">App/Activity/Translucent</string>
     <string name="translucent_background">Example of how you can make an
             activity have a translucent background, compositing over
@@ -142,7 +142,7 @@
     <string name="startfail_service">Start failed delivery</string>
     <string name="service_created">Service created.</string>
     <string name="service_destroyed">Service destroyed.</string>
-    
+
     <string name="foreground_service_started">Service is in the foreground</string>
     <string name="foreground_service_label">Sample Foreground Service</string>
 
@@ -241,11 +241,11 @@
     <!-- ============================== -->
     <!--  app/intents examples strings     -->
     <!-- ============================== -->
-    
+
     <string name="activity_intents">App/Intents</string>
     <string name="intents">Example of launching various Intents.</string>
     <string name="get_music">Get Music</string>
-        
+
     <!-- =================================== -->
     <!--  app/notification examples strings  -->
     <!-- =================================== -->
@@ -432,7 +432,7 @@
 
     <string name="msg_launcher_shortcuts">This activity creates shortcuts for the launcher (home screen), and receives intents from those shortcuts.  To try it, return to the launcher and long-press to create a shortcut.</string>
     <string name="label_intent">Intent:</string>
-    
+
     <!-- ============================== -->
     <!--  app/voice recognition examples strings  -->
     <!-- ============================== -->
@@ -440,7 +440,7 @@
     <string name="voice_recognition_prompt">This activity demonstrates the voice recognition APIs.</string>
     <string name="speak_button">Speak!</string>
     <string name="voice_recognition_results">Results:</string>
-    
+
     <!-- ============================ -->
     <!--  graphics examples strings  -->
     <!-- ============================ -->
@@ -448,7 +448,7 @@
     <string name="hide_me">Hide Me!</string>
 
     <string name="density_title">Density: Unknown Screen</string>
-    
+
     <!-- ============================ -->
     <!--  media examples strings  -->
     <!-- ============================ -->
@@ -472,7 +472,6 @@
     <string name="linear_layout_8_right">Right</string>
     <string name="linear_layout_10_from">From:</string>
     <string name="linear_layout_10_to">To:</string>
-    <string name="list_7_nothing">Nothing\u2026</string>
     <string name="radio_group_snack">Snack</string>
     <string name="radio_group_selection">"You have selected: "</string>
     <string name="radio_group_none">(none)</string>
