@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///JQ\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/ForegroundService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:08:29Z",
+      "side": 1,
+      "message": "Don\u0027t do that, either fix the deprecated call or leave it be.",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///JM\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/ForegroundService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:08:29Z",
+      "side": 1,
+      "message": "Don\u0027t do that, either fix the deprecated call or leave it be.",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///JI\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/MyPreference.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:08:29Z",
+      "side": 1,
+      "message": "Remove this warning, this is used.",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///JE\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/RedirectGetter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:08:29Z",
+      "side": 1,
+      "message": "Space after the //, and why are you putting capital letters on Stored Values and Empty?",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///JA\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/RedirectGetter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:08:29Z",
+      "side": 1,
+      "message": "The style is:\n} else {\n\nNo new line after the first }\n\nYou are also changing the behavior of the sample, can you explain why?",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///I8\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/ServiceStartArguments.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:08:29Z",
+      "side": 1,
+      "message": "Why are you changing the class used by the Intent?",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
