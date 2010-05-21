@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAzH///H0\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/MyPreference.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:43:32Z",
+      "side": 1,
+      "message": "Then it\u0027s not needed, please remove it.",
+      "parentUuid": "AAAAzH///IE\u003d",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAzH///JE\u003d",
         "filename": "samples/ApiDemos/src/com/example/android/apis/app/RedirectGetter.java",
         "patchSetId": 1
@@ -152,6 +170,24 @@
       "side": 1,
       "message": "Because there was an unused Variable mInvokeIntent for the Notification. It starts another Android sample. So i changed it to the \"old\" behaviour",
       "parentUuid": "AAAAzH///I8\u003d",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///Hw\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/ServiceStartArguments.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:43:32Z",
+      "side": 1,
+      "message": "Don\u0027t change this behavior please.",
+      "parentUuid": "AAAAzH///IA\u003d",
       "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
