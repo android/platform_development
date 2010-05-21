@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAzH///IE\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/MyPreference.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1003856
+      },
+      "writtenOn": "2010-05-21T05:40:53Z",
+      "side": 1,
+      "message": "I know its used, but eclipse does not know. Thats why i added the supresswarnings, so it will not show a warning for this used field",
+      "parentUuid": "AAAAzH///JI\u003d",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAzH///JE\u003d",
         "filename": "samples/ApiDemos/src/com/example/android/apis/app/RedirectGetter.java",
         "patchSetId": 1
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAzH///H8\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/RedirectGetter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1003856
+      },
+      "writtenOn": "2010-05-21T05:40:53Z",
+      "side": 1,
+      "message": "Because loadPrefs was unused before. So i removed the return value cause it was not used, and called it in onCreate to initialize the TextView with a value",
+      "parentUuid": "AAAAzH///JA\u003d",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAzH///I8\u003d",
         "filename": "samples/ApiDemos/src/com/example/android/apis/app/ServiceStartArguments.java",
         "patchSetId": 1
@@ -98,6 +134,24 @@
       "writtenOn": "2010-05-21T05:08:29Z",
       "side": 1,
       "message": "Why are you changing the class used by the Intent?",
+      "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///IA\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/app/ServiceStartArguments.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1003856
+      },
+      "writtenOn": "2010-05-21T05:40:53Z",
+      "side": 1,
+      "message": "Because there was an unused Variable mInvokeIntent for the Notification. It starts another Android sample. So i changed it to the \"old\" behaviour",
+      "parentUuid": "AAAAzH///I8\u003d",
       "revId": "8164b7136a8fc84695fb5e3eb430284eb4af6c96",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
