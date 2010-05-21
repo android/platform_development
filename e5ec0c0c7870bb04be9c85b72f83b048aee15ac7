@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///JY\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/ApiDemos.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:03:55Z",
+      "side": 1,
+      "message": "Why are you using Map\u003cString, ?\u003e? It should be Map\u003cString, Object\u003e",
+      "revId": "e5ec0c0c7870bb04be9c85b72f83b048aee15ac7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
