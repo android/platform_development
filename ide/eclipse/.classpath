@@ -6,6 +6,7 @@
 	<classpathentry kind="src" path="packages/apps/Calculator/src"/>
 	<classpathentry kind="src" path="packages/apps/Camera/src"/>
 	<classpathentry kind="src" path="packages/apps/Contacts/src"/>
+	<classpathentry kind="src" path="packages/apps/DeskClock/src"/>
 	<classpathentry kind="src" path="packages/apps/Email/src"/>
 	<classpathentry kind="src" path="packages/apps/GoogleSearch/src"/>
 	<classpathentry kind="src" path="packages/apps/HTMLViewer/src"/>
