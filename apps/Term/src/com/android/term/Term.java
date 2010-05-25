@@ -2806,7 +2806,7 @@ class EmulatorView extends View implements GestureDetector.OnGestureListener {
         mBackgroundPaint = new Paint();
         mTopRow = 0;
         mLeftColumn = 0;
-        mGestureDetector = new GestureDetector(this);
+        mGestureDetector = new GestureDetector(null, this, null);
         mGestureDetector.setIsLongpressEnabled(false);
         setVerticalScrollBarEnabled(true);
     }
