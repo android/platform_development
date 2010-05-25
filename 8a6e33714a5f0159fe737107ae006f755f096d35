@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH//+/U\u003d",
+        "filename": "apps/Term/src/com/android/term/Term.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2809,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-25T18:04:17Z",
+      "side": 1,
+      "message": "This doesn\u0027t change anything. You should pass a Context to do the right thing.",
+      "revId": "8a6e33714a5f0159fe737107ae006f755f096d35",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
