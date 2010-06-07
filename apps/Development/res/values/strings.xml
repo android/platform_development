@@ -94,6 +94,7 @@
     <string name="development_settings_always_finish_text">Immediately destroy activities</string>
     <string name="development_settings_show_load_text">Show running processes</string>
     <string name="development_settings_show_updates_text">Show screen updates</string>
+    <string name="development_settings_night_mode_text">Night mode effect</string>
     <string name="development_settings_compatibility_mode_text">Disable compatibility mode</string>
     <string name="development_settings_compatibility_mode_toast">Reboot required for
             change to take effect.</string>

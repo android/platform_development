@@ -57,6 +57,7 @@ public class DevelopmentSettings extends Activity {
     private CheckBox mShowCpuCB;
     private CheckBox mEnableGLCB;
     private CheckBox mShowUpdatesCB;
+    private Spinner mRenderEffectSpinner;
     private CheckBox mShowBackgroundCB;
     private CheckBox mShowSleepCB;
     private CheckBox mShowXmppCB;
@@ -70,6 +71,7 @@ public class DevelopmentSettings extends Activity {
     private boolean mWaitForDebugger;
     private boolean mAlwaysFinish;
     private int mPointerLocation;
+    private int mRenderEffect;
     private int mProcessLimit;
     private boolean mShowSleep;
     private boolean mShowXmpp;
@@ -115,6 +117,10 @@ public class DevelopmentSettings extends Activity {
         mEnableGLCB.setOnCheckedChangeListener(new SurfaceFlingerClicker(1004));
         mShowUpdatesCB = (CheckBox)findViewById(R.id.show_updates);
         mShowUpdatesCB.setOnCheckedChangeListener(new SurfaceFlingerClicker(1002));
+
+        mRenderEffectSpinner = (Spinner)findViewById(R.id.render_effect);
+        mRenderEffectSpinner.setOnItemSelectedListener(mRenderEffectChanged);
+
         mShowBackgroundCB = (CheckBox)findViewById(R.id.show_background);
         mShowBackgroundCB.setOnCheckedChangeListener(new SurfaceFlingerClicker(1003));
         mShowSleepCB = (CheckBox)findViewById(R.id.show_sleep);
@@ -239,6 +245,20 @@ public class DevelopmentSettings extends Activity {
                 Settings.System.POINTER_LOCATION, mPointerLocation);
     }
 
+    private void writeRenderEffect() {
+        try {
+            IBinder flinger = ServiceManager.getService("SurfaceFlinger");
+            if (flinger != null) {
+                Parcel data = Parcel.obtain();
+                data.writeInterfaceToken("android.ui.ISurfaceComposer");
+                data.writeInt(mRenderEffect);
+                flinger.transact(1014, data, null, 0);
+                data.recycle();
+            }
+        } catch (RemoteException ex) {
+        }
+    }
+
     private void updatePointerLocationOptions() {
         mPointerLocation = Settings.System.getInt(getContentResolver(),
                 Settings.System.POINTER_LOCATION, 0);
@@ -294,6 +314,10 @@ public class DevelopmentSettings extends Activity {
                 mShowUpdatesCB.setChecked(v != 0);
                 v = reply.readInt();
                 mShowBackgroundCB.setChecked(v != 0);
+
+                mRenderEffect = reply.readInt();
+                mRenderEffectSpinner.setSelection(mRenderEffect);
+
                 reply.recycle();
                 data.recycle();
             }
@@ -450,6 +474,18 @@ public class DevelopmentSettings extends Activity {
                                     int position, long id) {
             mPointerLocation = position;
             writePointerLocationOptions();
+        }
+
+        public void onNothingSelected(android.widget.AdapterView av) {
+        }
+    };
+
+    private Spinner.OnItemSelectedListener mRenderEffectChanged
+                                    = new Spinner.OnItemSelectedListener() {
+        public void onItemSelected(android.widget.AdapterView av, View v,
+                                    int position, long id) {
+            mRenderEffect = position;
+            writeRenderEffect();
         }
 
         public void onNothingSelected(android.widget.AdapterView av) {

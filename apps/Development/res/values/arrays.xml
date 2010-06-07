@@ -26,6 +26,15 @@
     <item>cl</item>
     <item>cp</item>
   </string-array>
+
+  <string-array name="render_effect">
+    <item>No render effect</item>
+    <item>Night mode (red)</item>
+    <item>Terminal (green)</item>
+    <item>Amber</item>
+    <item>Salmon</item>
+  </string-array>
+
 </resources>
 
 			
