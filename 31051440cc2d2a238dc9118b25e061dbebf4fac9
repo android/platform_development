@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzX//+ms\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/AutoComplete4.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-12T01:05:40Z",
+      "side": 1,
+      "message": "Why 5?\n\nFirst, if all we need from the projection is the 5th element, we should drop all other fields.\n\nSecond, I think we should have a constant instead of a magic number.",
+      "revId": "31051440cc2d2a238dc9118b25e061dbebf4fac9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+m4\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/AutoComplete4.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-12T01:05:40Z",
+      "side": 1,
+      "message": "Two issues here.  First, we should really be using the Contacts.CONTENT_FILTER_URI to find people matching a pattern.\n\nThe other issue is more subtle.  I have been told that GLOB does not like the \"?\" notation.  Even though this code will work, sqlite will not be able to optimize it properly and use the index - at the compilation/optimization time it has no way of knowing that the actual pattern will be a prefix.  Therefore, whenever I use GLOB or LIKE I always inline the argument:  \"GLOB(\" + DatabaseUtils.sqlEscapeString(constraint) + \")\"",
+      "revId": "31051440cc2d2a238dc9118b25e061dbebf4fac9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+m0\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/AutoComplete4.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-12T01:05:40Z",
+      "side": 1,
+      "message": "I am surprised this actually works - there is no phone number information on the Contacts row.",
+      "revId": "31051440cc2d2a238dc9118b25e061dbebf4fac9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+mo\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/AutoComplete5.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-12T01:05:40Z",
+      "side": 1,
+      "message": "Same deal - we shouldn\u0027t need the phone information here.",
+      "revId": "31051440cc2d2a238dc9118b25e061dbebf4fac9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+mk\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/Gallery2.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-12T01:05:40Z",
+      "side": 1,
+      "message": "As always, it would be nice to have an explicit projection for this query.  It only needs one field, but pulls a dozen.",
+      "revId": "31051440cc2d2a238dc9118b25e061dbebf4fac9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+mg\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List2.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-12T01:05:40Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "31051440cc2d2a238dc9118b25e061dbebf4fac9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+mc\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List3.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-12T01:05:40Z",
+      "side": 1,
+      "message": "Ditto.  Phone returns even more fields than Contact - lots and lots of wasted RAM.",
+      "revId": "31051440cc2d2a238dc9118b25e061dbebf4fac9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
