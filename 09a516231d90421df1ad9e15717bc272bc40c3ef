@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzX//+mM\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/graphics/BitmapDecode.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-06-12T01:40:37Z",
+      "side": 1,
+      "message": "Don\u0027t use a Boolean, use a primitive type boolean. Turn this into a constant: private static final boolean DECODE_STREAM",
+      "revId": "09a516231d90421df1ad9e15717bc272bc40c3ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+mI\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/graphics/ColorFilters.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-06-12T01:40:37Z",
+      "side": 1,
+      "message": "If the variables are unused, just remove them. Don\u0027t add a log.",
+      "revId": "09a516231d90421df1ad9e15717bc272bc40c3ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+mE\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/graphics/GraphicsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-06-12T01:40:37Z",
+      "side": 1,
+      "message": "Don\u0027t use Boolean, use boolean. If it\u0027s dead code, just remove it. Or use a constant.",
+      "revId": "09a516231d90421df1ad9e15717bc272bc40c3ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
