@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAzX//+j8\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List7.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1003856
+      },
+      "writtenOn": "2010-06-13T22:40:11Z",
+      "side": 1,
+      "message": "hm the original demo also showed contacts without phonenumbers. you still want me to change it? i think it would be ok, since this sample should mainly demonstrate a list",
+      "parentUuid": "AAAAzX//+kE\u003d",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAzX//+kI\u003d",
         "filename": "samples/ApiDemos/src/com/example/android/apis/view/List7.java",
         "patchSetId": 5
