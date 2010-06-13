@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzX//+kc\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/AutoComplete4.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-13T22:17:37Z",
+      "side": 1,
+      "message": "mColumnDisplayName \u003d\u003d 1 always.  I don\u0027t think we need to compute it if we already know what it is from our own projection list.\n\nI would use a constant instead:\n\np s f int DISPLAY_NAME_COLUMN_INDEX \u003d 1;",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+kY\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/ExpandableList2.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-13T22:17:37Z",
+      "side": 1,
+      "message": "Is there any reason to fully qualify the class?",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+kU\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/ExpandableList2.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-13T22:17:37Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+kQ\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/ExpandableList2.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-13T22:17:37Z",
+      "side": 1,
+      "message": "Long line",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+kM\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List3.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-13T22:17:37Z",
+      "side": 1,
+      "message": "Again, mColumnType \u003d\u003d 1, mColumnLabel \u003d\u003d 2 - no need to compute them.  Query always returns columns in the exact order of the supplied projection.",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+kE\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List7.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-13T22:17:37Z",
+      "side": 1,
+      "message": "Perhaps, this code is bit overcomplicated.  We want to display phone numbers and corresponding people\u0027s names, right?\n\nIn that case we just need to run one query, against the Phone.CONTENT_URI.  It will return phones with the contact names.  Contact is always joined with a Data row.  \n\nThe only other precaution would be to make sure we don\u0027t return rows with NULL phone numbers, so selection would be Phone.NUMBER + \" NOT NULL\"",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+kI\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List7.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-13T22:17:37Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
