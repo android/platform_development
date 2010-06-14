@@ -122,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAzX//+j0\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List7.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-14T01:08:55Z",
+      "side": 1,
+      "message": "Yes, I agree.  Otherwise, the contacts API details may overshadow the list API details.",
+      "parentUuid": "AAAAzX//+j8\u003d",
+      "revId": "1c0871a6cbd60491a96b253489671879945f88a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAzX//+kI\u003d",
         "filename": "samples/ApiDemos/src/com/example/android/apis/view/List7.java",
         "patchSetId": 5
