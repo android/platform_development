@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzX//+e4\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/AutoComplete4.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-14T21:02:33Z",
+      "side": 1,
+      "message": "Can we rename this to \"CONTACT_PROJECTION\" in this file and the others?",
+      "revId": "c73f1f02e78eccd92b173cc30fabf23bb574ecf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+e8\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/ExpandableList2.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-14T21:02:33Z",
+      "side": 1,
+      "message": "Sorry about nit-picking, but this can also be a constant (1).",
+      "revId": "c73f1f02e78eccd92b173cc30fabf23bb574ecf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+e0\u003d",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/view/List7.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-14T21:02:33Z",
+      "side": 1,
+      "message": "I would have these constants declared right next to PHONE_PROJECTION to make it easier to see the correlation between these values and the order of fields in the projection.",
+      "revId": "c73f1f02e78eccd92b173cc30fabf23bb574ecf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
