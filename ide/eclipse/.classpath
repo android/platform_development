@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="cts/tests/ApiDemosReferenceTest/src"/>
+	<classpathentry kind="src" path="cts/tests/core/runner/src"/>
+	<classpathentry kind="src" path="cts/tests/ProcessTest/src"/>
+	<classpathentry kind="src" path="cts/tests/ProcessTest/NoShareUidApp/src"/>
+	<classpathentry kind="src" path="cts/tests/ProcessTest/ShareUidApp/src"/>
+	<classpathentry kind="src" path="cts/tests/SignatureTest/src"/>
+	<classpathentry kind="src" path="cts/tests/SignatureTest/tests/src"/>
+	<classpathentry kind="src" path="cts/tests/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/accounts/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/app/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/bluetooth/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/content/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/database/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/dpi/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/dpi2/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/example/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/gesture/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/graphics/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/hardware/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/jni/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/location/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/media/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/net/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/os/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/performance/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/performance2/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/performance3/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/performance4/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/performance5/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/permission/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/permission2/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/provider/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/speech/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/telephony/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/text/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/util/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/view/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/webkit/src"/>
+	<classpathentry kind="src" path="cts/tests/tests/widget/src"/>
+	<classpathentry kind="src" path="cts/tools/cts-reference-app-lib/src"/>
 	<classpathentry kind="src" path="packages/apps/AlarmClock/src"/>
 	<classpathentry kind="src" path="packages/apps/Bluetooth/src"/>
 	<classpathentry kind="src" path="packages/apps/Browser/src"/>
@@ -95,6 +135,7 @@
 	<classpathentry kind="src" path="libcore/x-net/src/main/java"/>
 	<classpathentry kind="src" path="libcore/xml/src/main/java"/>
 	<classpathentry kind="src" path="out/target/common/obj/APPS/ApiDemos_intermediates/src/src"/>
+	<classpathentry kind="src" path="out/target/common/obj/APPS/CtsTestStubs_intermediates/src/src"/>
 	<classpathentry kind="src" path="out/target/common/obj/APPS/Email_intermediates/src/src"/>
 	<classpathentry kind="src" path="out/target/common/obj/APPS/Music_intermediates/src/src"/>
 	<classpathentry kind="src" path="out/target/common/obj/APPS/Phone_intermediates/src/src"/>
