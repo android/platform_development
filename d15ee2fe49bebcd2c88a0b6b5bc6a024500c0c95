@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA0X///9c\u003d",
+        "filename": "ide/eclipse/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1003566
+      },
+      "writtenOn": "2010-06-17T23:22:53Z",
+      "side": 1,
+      "message": "What about the other tools directories like \"device-setup\"?",
+      "revId": "d15ee2fe49bebcd2c88a0b6b5bc6a024500c0c95",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
