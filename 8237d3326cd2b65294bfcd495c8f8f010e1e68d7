@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA3H///8o\u003d",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/Monkey.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-07-20T21:29:17Z",
+      "side": 1,
+      "message": "Standard Android code style is to limit code width to 100 columns",
+      "revId": "8237d3326cd2b65294bfcd495c8f8f010e1e68d7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA3H///8k\u003d",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/Monkey.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-07-20T21:29:17Z",
+      "side": 1,
+      "message": "Standard Android code style uses spaces around the conditional, i.e.\n\n-----\n\nif (mLocalRequestAnrTraces) {\n\n-----",
+      "revId": "8237d3326cd2b65294bfcd495c8f8f010e1e68d7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
