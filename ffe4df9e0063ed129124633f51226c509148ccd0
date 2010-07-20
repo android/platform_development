@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA3H///6c\u003d",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/Monkey.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 1000980
+      },
+      "writtenOn": "2010-07-20T22:52:37Z",
+      "side": 1,
+      "message": "please only use the m prefix for member variables, not local variables.\n\nAlso, I find the \"local\" prefix here a little unclear.  Maybe something like:\n\nhasSignaledRequestAnrTraces or shouldReportAnrTraces or something like that would be clearer.",
+      "revId": "ffe4df9e0063ed129124633f51226c509148ccd0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
