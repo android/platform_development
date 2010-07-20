@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA23////c\u003d",
+        "filename": "ide/eclipse/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1001252
+      },
+      "writtenOn": "2010-07-20T01:28:31Z",
+      "side": 1,
+      "message": "right, please reverse these",
+      "revId": "1f7d67eb14d97196c182723d3010e5d543a38938",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
