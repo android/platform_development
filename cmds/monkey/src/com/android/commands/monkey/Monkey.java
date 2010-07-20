@@ -857,6 +857,9 @@ public class Monkey {
         int eventCounter = 0;
         int cycleCounter = 0;
 
+        boolean mLocalRequestAnrTraces = false;
+        boolean mLocalRequestDumpsysMemInfo = false;
+        boolean mLocalAbort = false;
         boolean systemCrashed = false;
 
         while (!systemCrashed && cycleCounter < mCount) {
@@ -866,12 +869,12 @@ public class Monkey {
                     mRequestProcRank = false;
                 }
                 if (mRequestAnrTraces) {
-                    reportAnrTraces();
                     mRequestAnrTraces = false;
+                    mLocalRequestAnrTraces = true;
                 }
                 if (mRequestDumpsysMemInfo) {
-                    reportDumpsysMemInfo();
                     mRequestDumpsysMemInfo = false;
+                    mLocalRequestDumpsysMemInfo = true;
                 }
                 if (mMonitorNativeCrashes) {
                     // first time through, when eventCounter == 0, just set up
@@ -882,10 +885,27 @@ public class Monkey {
                     }
                 }
                 if (mAbort) {
-                    System.out.println("** Monkey aborted due to error.");
-                    System.out.println("Events injected: " + eventCounter);
-                    return eventCounter;
+                    mLocalAbort = true;
                 }
+            }
+
+            // Report ANR, dumpsys after releasing lock on this.
+            // This ensures the availability of the lock to Activity controller's appNotResponding
+            if (mLocalRequestAnrTraces) {
+               mLocalRequestAnrTraces = false;
+               reportAnrTraces();
+            }
+
+            if (mLocalRequestDumpsysMemInfo) {
+               mLocalRequestDumpsysMemInfo = false;
+               reportDumpsysMemInfo();
+            }
+
+            if (mLocalAbort) {
+               mLocalAbort = false;
+               System.out.println("** Monkey aborted due to error.");
+               System.out.println("Events injected: " + eventCounter);
+               return eventCounter;
             }
 
             // In this debugging mode, we never send any events. This is
