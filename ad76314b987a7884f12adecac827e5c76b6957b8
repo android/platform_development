@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA4n///No\u003d",
+        "filename": "samples/GlobalTime/src/com/android/globaltime/GlobalTime.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-08-16T23:19:23Z",
+      "side": 1,
+      "message": "Please use spaces instead of tabs",
+      "revId": "ad76314b987a7884f12adecac827e5c76b6957b8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
