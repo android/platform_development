@@ -208,4 +208,12 @@
     <string name="bad_behavior_anr_service_label">ANR starting a Service</string>
     <string name="bad_behavior_anr_system_label">System ANR (in ActivityManager)</string>
     <string name="bad_behavior_wedge_system_label">Wedge system (5 minute system ANR)</string>
+
+    <!-- Permission dialog -->
+    <!-- Title of permission Screen -->
+    <string name="permissions_title">Show Permissions</string>
+    <!-- Loading text displayed while loading permissions -->
+    <string name="permissions_loading">Loading</string>
+    <!-- Text displayed on Refresh Menu option -->
+    <string name="permissions_refresh">Refresh List</string>
 </resources>
