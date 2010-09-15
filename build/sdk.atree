@@ -110,6 +110,8 @@ framework/org.eclipse.core.commands_3.4.0.I20080509-2000.jar  tools/lib/org.ecli
 framework/org.eclipse.equinox.common_3.4.0.v20080421-2006.jar tools/lib/org.eclipse.equinox.common_3.4.0.v20080421-2006.jar
 framework/org.eclipse.jface_3.4.2.M20090107-0800.jar          tools/lib/org.eclipse.jface_3.4.2.M20090107-0800.jar
 framework/osgi.jar                                            tools/lib/osgi.jar
+framework/proguard.jar                                        tools/lib/proguard.jar
+framework/retrace.jar                                         tools/lib/retrace.jar
 
 ##############################################################################
 # Platform Tools Component
