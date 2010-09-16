@@ -1,0 +1,56 @@
+page.title=Building for a Nexus One
+doc.type=source
+@jd:body
+<p><i>Please Note: Messing around with the firmware and OS on any device can render the device unusable. Please do not attempt to modify your firmware or OS unless you are confident you know what you are doing. I offer no guarantees and do not accept any liability for anything which may go wrong if you follow the information in this post.</i></p>
+
+<ol>
+<li><b>Make sure you have a Nexus One running Froyo (FRF91 is the current build).</b>
+It would be nice to be able to build everything from source, but, unfortunately, there are some copyrighted files needed to build the Nexus One AOSP froyo build which have to be copied from an existing Froyo installation on a Nexus One.</li>
+<li><b>Make sure the Nexus One you wish to run the AOSP build on has had its' boot loader unlocked.</b>
+This is a one-way process, once unlocked it can not be re-locked and it will be obvious to anyone using the 'phone that it has been unlocked (due to the open padlock which appears on the boot screen).
+Instructions on how to unlock your boot loader can be found <a href="http://www.google.co.uk/search?sourceid=chrome&amp;ie=UTF-8&amp;q=Nexus+One+unlock+bootloader" target="_blank">in many places</a>.
+</li>
+<li><b>Follow the <a href="http://source.android.com/source/download.html" target="_blank">normal steps</a> to setup repo and check out the sources.</b>
+You want to check out the <i>froyo</i> branch, so don't forget to use "-b froyo" on the repo init command.</li>
+<li><b>At the root of your source tree, run ". build/envsetup.sh" like you normally would for an emulator build.</b></li>
+<li><b>Run "make adb" if you don't already have adb in your path.</b></li>
+<li><b>Run "adb root" either as root or using sudo.</b></li>
+<li><b>Connect your Nexus One running the stock Froyo build to your computer and run the script called "extract-files.sh" in device/htc/passion/ from that directory.</b>
+This will extract some proprietary binaries from your device. You only need to do this once.</li>
+<li><b>Run "lunch full_passion-userdebug" to specifically configure the build system for Nexus One</b>
+The default is the equivalent of "lunch generic-eng", which doesn't contain Nexus One specific files.</li>
+<li><b>Run "make" from the top of the source tree.</b></li> 
+<li><b>If the build stops with an error about being unable to find librpc then do the following;
+- Run "make librpc" from the top of the source tree.
+- Run "make" again from the top of the source tree.</b>
+** Do not run make clean at any point.  **</li>
+<li><b>Make sure the phone you wish to install the AOSP build onto is turned off.</b></li>
+<li><b>Boot the phone you wish to install AOSP on into fastboot mode.</b>
+You can do this by holding down the volume down key whilst pressing the power key until a screen which has 3 skateboarding androids at the bottom of it appears. Wait a further 15 to 30 seconds whilst the system checks for some files, and then press the power button again to select fastboot mode. When your in fastboot mode you will see FASTBOOT shown in white text on a red background about 1/4 of the way down the screen.</li>
+<li><b>Connect the 'phone to the machine you've just compiled the AOSP build on using a USB cable.</b></li>
+<li><b>From the top of the source tree, in the same window you built the code in, run the fastboot tool to flash the AOSP build onto the device by running "fastboot -w flashall".</b></li>
+</ol>
+
+<p>Your Nexus One should now be running the AOSP version of Froyo. There is an easy way to tell, if the search widget has a "g" then it's still running the stock build. If it has a magnifying glass then it's the AOSP build.</p>
+
+<p>If you have any problems please read the notes below;</p>
+
+<p><b>Notes</b></p>
+<ul>
+<li>You may need to run the fastboot comment as root or using sudo. If you do need to do this please ensure you run the version of fastboot from the source tree which is located in at out/host/<i>{host-type}</i>/bin/fastboot where <i>{host-type}</i> will vary depending on the type of machine you've compiled AOSP on.</li>
+<li>If you receive the error message "error: neither -p product specified nor ANDROID_PRODUCT_OUT set" you should run fastboot in the following way from the top of the source tree; "out/host/<i>{host-type}</i>/bin/fastboot -p passion -w flashall" where <i>{host-type}</i> will vary depending on the type of machine you've compiled AOSP on.</li>
+<li>If you receive an error message about the baseband being out of date you have two options;
+- Update the 'phone to the latest Froyo build before trying to install the AOSP build (the latest baseband is part of the stock froyo update).
+- Install each of the image files by hand. This is not recommended because you should always install the correct baseband version for the Android version you're running. If you absolutely can not install the correct baseband version you can do the following using the version of fastboot from the AOSP source tree; 
+<ol>
+<li>From the top of the source tree go to out/target/product/passion/</li>
+<li>Run "fastboot flash system system.img"</li>
+<li>Then run "fastboot flash boot boot.img"</li>
+<li>Then run "fastboot flash recovery recovery.img"</li>
+<li>Then run "fastboot flash userdata userdata.img"</li>
+<li>Then run "fastboot reboot"</li>
+</ol>
+
+</li></ul>
+
+<p>Enjoy.</p>
