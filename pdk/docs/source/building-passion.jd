@@ -1,0 +1,41 @@
+page.title=Building for a Nexus One
+doc.type=source
+@jd:body
+<ol>
+<li><b>Make sure you have a Nexus One running Froyo (FRG83D is the current build).</b>
+Some lower level firmware and drivers aren't directly available through the
+Android Open-Source Project,  so it's important to start from a known state.
+</li>
+<li><b>Make sure that you know how to build code from the Android Open-Source Project.</b>
+See the <a href="{@docRoot}source/download.html">base instructions</a>. Select the
+appropriate target build with "full_passion-userdebug". Build the base tools
+with "make adb fastboot".
+</li>
+<li><b>Make sure the Nexus One you wish to run your custom build on has had its
+boot loader unlocked.</b>
+This is a one-way process, once unlocked it can not be re-locked. This also erases
+your user data, for security reasons. Boot into the bootloader by holding the
+trackball down when powering up, or by running "adb reboot bootloader" when the
+device is connected. Once in the bootloader, run "fastboot oem unlock" and follow
+the on-screen instructions.
+</li>
+<li><b>If you're authorized to do so, you can extract the drivers from your
+Nexus One to re-use them in your own build. From the device/htc/passion directory,
+run "./extract-files.sh". This will extract some proprietary binaries from your
+device. You only need to do this once.
+</li>
+<li><b>Run "make" from the top of the source tree.</b>
+</li>
+<li><b>Boot into the bootloader.</b> (hold the trackball at power-up, or run
+"adb reboot bootloader").
+</li>
+<li><b>Erase the existing user data.</b> The contents of the data partition
+aren't compatible between builds and need to be erased between builds:
+"fastboot erase userdata". You should also erase the cache partition:
+"fastboot erase cache".
+</li>
+<li><b>Flash the resulting build.</b> "fastboot flashall" sanity-checks
+that you're running the proper underlying components, flashes all 3 partitions
+that contain code from the Android platform, and reboots.
+</li>
+</ol>

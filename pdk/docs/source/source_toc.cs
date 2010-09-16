@@ -20,6 +20,7 @@ function nothing() {}
     <li><a href="<?cs var:toroot ?>source/using-eclipse.html">Using Eclipse</a></li>
     <li><a href="<?cs var:toroot ?>source/code-style.html">Code Style</a></li>
     <li><a href="<?cs var:toroot ?>source/building-dream.html">Building for an ADP</a></li>
+    <li><a href="<?cs var:toroot ?>source/building-passion.html">Building for a Nexus One</a></li>
   </ul>
 
   <li><h2>Contributing</h2><ul>
