@@ -1,0 +1,5 @@
+# Copyright 2010 The Android Open Source Project
+#
+
+# swt
+prebuilt/linux-ppc/swt/swt.jar tools/lib/ppc/swt.jar
