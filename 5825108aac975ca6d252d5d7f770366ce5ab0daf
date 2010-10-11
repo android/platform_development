@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA73//+5M\u003d",
+        "filename": "samples/GlobalTime/src/com/android/globaltime/GlobalTime.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1460,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-10-11T21:30:17Z",
+      "side": 1,
+      "message": "Style nitpick: please set the opening brace on the same line as the if. Also, please insert a space right after the if.",
+      "revId": "5825108aac975ca6d252d5d7f770366ce5ab0daf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
