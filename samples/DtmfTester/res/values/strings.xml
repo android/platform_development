@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sendDtmfString">Send DTMF String</string>
+    <string name="sendDtmfStringBroadcast">Send DTMF String (broadcast)</string>
+    <string name="startDtmf">Start DTMF</string>
+    <string name="stopDtmf">Stop DTMF</string>
+    <string name="app_name">DtmfTester</string>
+</resources>
