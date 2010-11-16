@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA9n///8w\u003d",
+        "filename": "samples/DtmfTester/res/layout/main.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003871
+      },
+      "writtenOn": "2010-11-16T23:53:20Z",
+      "side": 1,
+      "message": "tail space.",
+      "revId": "6a9e28e36ade93d566e2aae43fa17931f04416e1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA9n///80\u003d",
+        "filename": "samples/DtmfTester/res/layout/main.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003871
+      },
+      "writtenOn": "2010-11-16T23:53:20Z",
+      "side": 1,
+      "message": "Change TAB to space.",
+      "revId": "6a9e28e36ade93d566e2aae43fa17931f04416e1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA9n///84\u003d",
+        "filename": "samples/DtmfTester/src/com/android/dtmftester/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1003871
+      },
+      "writtenOn": "2010-11-16T23:53:20Z",
+      "side": 1,
+      "message": "extra white space.",
+      "revId": "6a9e28e36ade93d566e2aae43fa17931f04416e1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA9n///8s\u003d",
+        "filename": "samples/DtmfTester/src/com/android/dtmftester/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1003871
+      },
+      "writtenOn": "2010-11-16T23:53:20Z",
+      "side": 1,
+      "message": "I\u0027d see more tests on mutation of parameters, i.e., negative number, large number, zero length string etc.",
+      "revId": "6a9e28e36ade93d566e2aae43fa17931f04416e1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
