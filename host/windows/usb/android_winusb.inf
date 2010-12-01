@@ -6,7 +6,7 @@ Signature           = "$Windows NT$"
 Class               = AndroidUsbDeviceClass
 ClassGuid           = {3F966BD9-FA04-4ec5-991C-D326973B5128}
 Provider            = %ProviderName%
-DriverVer           = 08/11/2009,2.0.0010.00002
+DriverVer           = 12/01/2010,2.0.0010.00003
 CatalogFile.NTx86   = androidwinusb86.cat
 CatalogFile.NTamd64 = androidwinusba64.cat
 
@@ -26,16 +26,6 @@ HKR,,Icon,,-1
 %ProviderName% = Google, NTx86, NTamd64
 
 [Google.NTx86]
-; HTC Dream
-%SingleAdbInterface%        = USB_Install, USB\VID_0BB4&PID_0C01
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C02&MI_01
-%SingleBootLoaderInterface% = USB_Install, USB\VID_0BB4&PID_0FFF
-; HTC Magic
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C03&MI_01
-;
-;Moto Sholes
-%SingleAdbInterface%        = USB_Install, USB\VID_22B8&PID_41DB
-%CompositeAdbInterface%     = USB_Install, USB\VID_22B8&PID_41DB&MI_01
 ;
 ;Google NexusOne
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_0D02
@@ -43,21 +33,8 @@ HKR,,Icon,,-1
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E11
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E12&MI_01
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
-;
-; Dell's Mini5
-%CompositeAdbInterface%     = USB_Install, USB\VID_413C&PID_B007&MI_01
 
 [Google.NTamd64]
-; HTC Dream
-%SingleAdbInterface%        = USB_Install, USB\VID_0BB4&PID_0C01
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C02&MI_01
-%SingleBootLoaderInterface% = USB_Install, USB\VID_0BB4&PID_0FFF
-; HTC Magic
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C03&MI_01
-;
-;Moto Sholes
-%SingleAdbInterface%        = USB_Install, USB\VID_22B8&PID_41DB
-%CompositeAdbInterface%     = USB_Install, USB\VID_22B8&PID_41DB&MI_01
 ;
 ;Google NexusOne
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_0D02
@@ -65,9 +42,6 @@ HKR,,Icon,,-1
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E11
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E12&MI_01
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
-;
-; Dell's Mini5
-%CompositeAdbInterface%     = USB_Install, USB\VID_413C&PID_B007&MI_01
 
 [USB_Install]
 Include = winusb.inf
