@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA9n//9iQ\u003d",
+        "filename": "ide/eclipse/README.importing-to-eclipse",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2010-12-06T17:55:16Z",
+      "side": 1,
+      "message": "There is no //device/ide path...",
+      "revId": "5b3853a6d130ce6c7ba7145d4798318f5946f320",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
