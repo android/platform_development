@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA+3//61E\u003d",
+        "filename": "apps/CustomLocale/AndroidManifest.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2011-01-31T23:17:04Z",
+      "side": 1,
+      "message": "Ah bummer. I need to setup AnyEdit again: the Eclipse integrated option to convert tabs \u0026 remove trailing white space in Eclipse is only for the Java editor, the XML editor has different settings/capabilities :-/",
+      "parentUuid": "AAAA+3//62E\u003d",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA+3//62A\u003d",
         "filename": "apps/CustomLocale/res/layout/main.xml",
         "patchSetId": 2
@@ -81,6 +99,24 @@
       "writtenOn": "2011-01-31T22:36:48Z",
       "side": 1,
       "message": "move this to false?",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//61Q\u003d",
+        "filename": "apps/CustomLocale/src/com/android/customlocale2/ChangeLocale.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2011-01-31T23:17:04Z",
+      "side": 1,
+      "message": "It\u0027s convenient to see the status in logcat.",
+      "parentUuid": "AAAA+3//610\u003d",
       "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
