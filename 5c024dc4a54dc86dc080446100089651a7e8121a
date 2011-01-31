@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA+3//62E\u003d",
+        "filename": "apps/CustomLocale/AndroidManifest.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2011-01-31T22:36:48Z",
+      "side": 1,
+      "message": "mix of tabs and spaces.",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//62A\u003d",
+        "filename": "apps/CustomLocale/res/layout/main.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2011-01-31T22:36:48Z",
+      "side": 1,
+      "message": "tabs here too.",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//618\u003d",
+        "filename": "apps/CustomLocale/res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2011-01-31T22:36:48Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//614\u003d",
+        "filename": "apps/CustomLocale/res/values/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2011-01-31T22:36:48Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//610\u003d",
+        "filename": "apps/CustomLocale/src/com/android/customlocale2/ChangeLocale.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2011-01-31T22:36:48Z",
+      "side": 1,
+      "message": "move this to false?",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//61w\u003d",
+        "filename": "apps/CustomLocale/src/com/android/customlocale2/NewLocaleDialog.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2011-01-31T22:36:48Z",
+      "side": 1,
+      "message": "This import should not be needed.",
+      "revId": "5c024dc4a54dc86dc080446100089651a7e8121a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
