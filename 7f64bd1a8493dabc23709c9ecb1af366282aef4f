@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA+3//5Uk\u003d",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2011-02-09T22:52:18Z",
+      "side": 1,
+      "message": "This means the SDK will build only one target, and we\u0027ll need another higher level script to combine the ARM and the x86 SDKs to make a single one with both ABI.\n\nIs there anyway to have make SDK do (optionally, because when I build SDKs to test tools I don\u0027t want to have to build 2 ABIs) all ABIs in a single make command?",
+      "revId": "7f64bd1a8493dabc23709c9ecb1af366282aef4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
