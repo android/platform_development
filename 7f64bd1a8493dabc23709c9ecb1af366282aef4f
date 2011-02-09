@@ -16,6 +16,24 @@
       "revId": "7f64bd1a8493dabc23709c9ecb1af366282aef4f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//5UU\u003d",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1003360
+      },
+      "writtenOn": "2011-02-09T22:55:03Z",
+      "side": 1,
+      "message": "Unfortunately, it does.\n\nGetting the SDK to build all targets is not going to be fun or quick.\n\nOTOH... once you build the sdk... it *will* work for all targets... you just have to load in (via the android command) the various API sets that you want.",
+      "parentUuid": "AAAA+3//5Uk\u003d",
+      "revId": "7f64bd1a8493dabc23709c9ecb1af366282aef4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
