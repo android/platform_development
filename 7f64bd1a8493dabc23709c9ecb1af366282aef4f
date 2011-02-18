@@ -34,6 +34,24 @@
       "revId": "7f64bd1a8493dabc23709c9ecb1af366282aef4f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA+3//4Vw\u003d",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1005616
+      },
+      "writtenOn": "2011-02-18T00:30:54Z",
+      "side": 1,
+      "message": "But for an ARM build, TARGET_ARCH is \"arm\" so this would place the files under \"arm\" directory, instead of \"armeabi\" which would contradict with the comments from Xavier regarding IDE integration(https://review.source.android.com/#change,20959). \n\nshould the directory for an ARM build be arm or armeabi?",
+      "parentUuid": "AAAA+3//5UU\u003d",
+      "revId": "7f64bd1a8493dabc23709c9ecb1af366282aef4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
