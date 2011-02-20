@@ -24,6 +24,11 @@ parts {
             image   controls.png
         }
         buttons {
+            camera {
+                    image button.png
+                    x 0
+                    y 0
+            }
             soft-left {
                     image button.png
                     x 56
