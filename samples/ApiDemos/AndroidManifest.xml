@@ -1487,7 +1487,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".graphics.CameraPreview" android:label="Graphics/CameraPreview" android:screenOrientation="landscape">
+        <activity android:name=".graphics.CameraPreview"
+                android:label="Graphics/CameraPreview"
+                android:screenOrientation="landscape"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
