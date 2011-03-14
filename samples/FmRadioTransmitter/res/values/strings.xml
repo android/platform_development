@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FM Radio Transmitter</string>
+    <string name="band_select">Select Band</string>
+    <string name="band_us">U.S</string>
+    <string name="band_eu">Europe</string>
+    <string name="band_ja">Japan</string>
+    <string name="band_ch">China</string>
+    <string name="dashes">----</string>
+</resources>

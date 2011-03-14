@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/MainWindow"
+	android:gravity="center">
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/fmradio"
+		android:textSize="50px" android:id="@+id/PSNTextView" android:gravity="center"></TextView>
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/FrequencyTextView"
+		android:lines="1" android:textSize="90px" android:gravity="center"
+		android:text="@string/dashes"></TextView>
+	<LinearLayout android:id="@+id/TopRow"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:gravity="center">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:gravity="right" android:paddingRight="10px">
+			<Button android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/ScanDown"
+				android:background="@drawable/backwardbutton"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:gravity="left" android:paddingLeft="10px">
+			<Button android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/ScanUp"
+				android:background="@drawable/forwardbutton" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/BottonRow"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:gravity="center">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:gravity="right" android:paddingRight="10px">
+			<Button android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/FullScan"
+				android:background="@drawable/rescanbutton"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:gravity="left" android:paddingLeft="10px">
+			<Button android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/Pause"
+				android:background="@drawable/pausebutton" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout> 

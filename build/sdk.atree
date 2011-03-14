@@ -154,6 +154,8 @@ development/samples/BluetoothChat            samples/${PLATFORM_NAME}/BluetoothC
 development/samples/ContactManager           samples/${PLATFORM_NAME}/ContactManager
 development/samples/CrossCompatibility       samples/${PLATFORM_NAME}/CrossCompatibility
 development/samples/CubeLiveWallpaper        samples/${PLATFORM_NAME}/CubeLiveWallpaper
+development/samples/FmRadioReceiver          samples/${PLATFORM_NAME}/FmRadioReceiver
+development/samples/FmRadioTransmitter       samples/${PLATFORM_NAME}/FmRadioTransmitter
 development/samples/Home                     samples/${PLATFORM_NAME}/Home
 development/samples/JetBoy                   samples/${PLATFORM_NAME}/JetBoy
 development/samples/LunarLander              samples/${PLATFORM_NAME}/LunarLander

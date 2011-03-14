@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="vertical"
+	android:gravity="center" xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/MainWindow">
+	<ImageView android:layout_y="40px" android:layout_height="80px"
+		android:layout_x="120px" android:id="@+id/TransmitIcon"
+		android:layout_width="160px"></ImageView>
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+		android:text="@string/dashes" android:padding="40px" android:id="@+id/FrequencyTextView"
+		android:lines="1" android:textSize="60px"></TextView>
+	<LinearLayout android:layout_width="fill_parent"
+		android:orientation="horizontal" android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal" android:id="@+id/ButtonRow"
+		android:paddingBottom="40px">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:gravity="center" android:id="@+id/Left">
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:padding="10px"
+				android:id="@+id/BlockScan" android:background="@drawable/rescanbutton" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:gravity="center" android:id="@+id/Centre">
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:padding="10px"
+				android:id="@+id/ScanDown" android:background="@drawable/backwardbutton" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:gravity="center" android:id="@+id/Right">
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:padding="10px"
+				android:id="@+id/ScanUp" android:background="@drawable/forwardbutton" />
+
+		</LinearLayout>
+	</LinearLayout>
+	<Button android:id="@+id/Transmit" android:layout_x="40px"
+		android:layout_y="300px" android:layout_height="60px"
+		android:layout_width="200px" android:background="@drawable/transmitgobutton" />
+</LinearLayout>
