@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X///vs\u003d",
+        "filename": "tools/emulator/opengl/host/libs/GLESv1_dec/GLDecoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "Fwiw, I think a destructor would be a welcome addition in order to release m_contextData and the m_glesDso members.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+70\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/FixedBuffer.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "I would suggest adding a test to set m_bufferLen to 0 if the allocation returns NULL here. Otherwise, another call to alloc() would return m_buffer, i.e. NULL is \u0027size\u0027 is smaller than the previous request value.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X///vk\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/GLDecoderContextData.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure this needs a destructor too :)",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X///vY\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/IOStream.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "technically, len is not always \u003e m_bufsize :)",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X///dc\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/TcpStream.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "I\u0027m not sure that this is a great idea. The effect of not using this flag (or the Windows equivalent) is that once your renderer process has quit, you won\u0027t be able to restart it (i.e. bind to the same port) for at least 2 minutes because the socket/port will be in lingering state.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X///vU\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/TcpStream.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "It looks like the hints are never used? Is this intentional? If so, can you remove this code?",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X///dU\u003d",
+        "filename": "tools/emulator/opengl/tests/EGL_host_wrapper/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "this is not multi-core safe. Can you use a pthread_once_t here or Windows equivalent to ensure single initialization and not double-loading the library.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+7w\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ServerConnection.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "You must call free() for memory blocks allocated with strdup().\nThis call will likely result in memory corruption at runtime otherwise.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+7s\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ThreadInfo.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "for the record, delete does a NULL check for you, so the \"if (..)\" is redundant.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+7o\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ThreadInfo.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "same here, the if() is redundant since delete always performs a NULL check.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+7k\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "I don\u0027t see a reason to define procname as a non-const pointer here, and this cast looks dangerous, though it\u0027s probably harmless if one looks at the rest of the code.\n\nI\u0027d suggest defining it as static const char* instead.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+7Q\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/RendererObject.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-23T18:28:16Z",
+      "side": 1,
+      "message": "Can you clarify the usefulness of this base class here? I don\u0027t see the ref()/unref() method used elsewhere (though I may have missed it).\n\nMoreover, more refcount implementations do:\n1/ Initialize the count to 1 in the constructor\n2/ delete the object when the count reaches 0\n\nThis is not the case here and is a bit surprising. I would welcome a comment to explain why.\n\nThanks.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
