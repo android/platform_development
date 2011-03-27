@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+4E\u003d",
+        "filename": "tools/emulator/opengl/host/libs/GLESv1_dec/GLDecoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "GLDecoder is using a reference to ContextData but it is owned by the Renderer (as part of RendererContext).\nm_glesDso should be \u0027closed\u0027 after the initialization.",
+      "parentUuid": "AAAA/X///vs\u003d",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X//+70\u003d",
         "filename": "tools/emulator/opengl/system/OpenglCodecCommon/FixedBuffer.h",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-03-23T18:28:16Z",
       "side": 1,
       "message": "I would suggest adding a test to set m_bufferLen to 0 if the allocation returns NULL here. Otherwise, another call to alloc() would return m_buffer, i.e. NULL is \u0027size\u0027 is smaller than the previous request value.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+wg\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/FixedBuffer.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+70\u003d",
       "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+34\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/GLDecoderContextData.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Note that m_pointerData is just a fixed size array. Am I missing anything?",
+      "parentUuid": "AAAA/X///vk\u003d",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X///vY\u003d",
         "filename": "tools/emulator/opengl/system/OpenglCodecCommon/IOStream.h",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2011-03-23T18:28:16Z",
       "side": 1,
       "message": "technically, len is not always \u003e m_bufsize :)",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+wY\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/IOStream.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Done, error message is fixed",
+      "parentUuid": "AAAA/X///vY\u003d",
       "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+lo\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/TcpStream.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X///vU\u003d",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X///dU\u003d",
         "filename": "tools/emulator/opengl/tests/EGL_host_wrapper/egl.cpp",
         "patchSetId": 1
@@ -115,6 +205,24 @@
       "writtenOn": "2011-03-23T18:28:16Z",
       "side": 1,
       "message": "this is not multi-core safe. Can you use a pthread_once_t here or Windows equivalent to ensure single initialization and not double-loading the library.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+wM\u003d",
+        "filename": "tools/emulator/opengl/tests/EGL_host_wrapper/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Done.\nNote that code is to test the GLESv1 codec and will not make it to the final code used by users.",
+      "parentUuid": "AAAA/X///dU\u003d",
       "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+tg\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ServerConnection.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+7w\u003d",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X//+7s\u003d",
         "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ThreadInfo.cpp",
         "patchSetId": 1
@@ -149,6 +275,24 @@
       "writtenOn": "2011-03-23T18:28:16Z",
       "side": 1,
       "message": "for the record, delete does a NULL check for you, so the \"if (..)\" is redundant.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+tk\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ThreadInfo.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+7s\u003d",
       "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+3s\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ThreadInfo.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "old habits of using malloc/free :-). I wasn\u0027t aware to the NULL check defined in C++",
+      "parentUuid": "AAAA/X//+7o\u003d",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X//+7k\u003d",
         "filename": "tools/emulator/opengl/tests/gles_android_wrapper/egl.cpp",
         "patchSetId": 1
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+to\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+7k\u003d",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X//+7Q\u003d",
         "filename": "tools/emulator/opengl/tests/ut_renderer/RendererObject.h",
         "patchSetId": 1
@@ -200,6 +380,24 @@
       "writtenOn": "2011-03-23T18:28:16Z",
       "side": 1,
       "message": "Can you clarify the usefulness of this base class here? I don\u0027t see the ref()/unref() method used elsewhere (though I may have missed it).\n\nMoreover, more refcount implementations do:\n1/ Initialize the count to 1 in the constructor\n2/ delete the object when the count reaches 0\n\nThis is not the case here and is a bit surprising. I would welcome a comment to explain why.\n\nThanks.",
+      "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+3w\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/RendererObject.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-27T12:21:42Z",
+      "side": 1,
+      "message": "The reference count is used for count the number of RenderingThread\u0027s that are bound to this object (RendererContext and RendererSurface sub classes). See RendererContext::destroy and Renderer::destroyContext for usage.\n\nThis class is also a placeholder for shared functionality of renderer objects.",
+      "parentUuid": "AAAA/X//+7Q\u003d",
       "revId": "cc718d368090e66d86315d87e9ca2503690d0102",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
