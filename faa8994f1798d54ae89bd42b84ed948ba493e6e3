@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+dE\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/Android.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-28T17:29:37Z",
+      "side": 1,
+      "message": "Note the change in dependencies relative to patch set 1",
+      "revId": "faa8994f1798d54ae89bd42b84ed948ba493e6e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
