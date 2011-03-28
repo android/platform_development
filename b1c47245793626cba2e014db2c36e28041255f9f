@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+e0\u003d",
+        "filename": "tools/emulator/opengl/host/libs/GLESv1_dec/GLDecoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-28T16:06:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+jc\u003d",
+      "revId": "b1c47245793626cba2e014db2c36e28041255f9f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X//+jY\u003d",
         "filename": "tools/emulator/opengl/host/libs/GLESv1_dec/GLDecoder.cpp",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-03-28T12:56:43Z",
       "side": 1,
       "message": "I think you probably want a destructor to call dlclose() on m_glesDso if it is not NULL.",
+      "revId": "b1c47245793626cba2e014db2c36e28041255f9f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+ew\u003d",
+        "filename": "tools/emulator/opengl/host/libs/GLESv1_dec/GLDecoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-28T16:06:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+jY\u003d",
       "revId": "b1c47245793626cba2e014db2c36e28041255f9f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
