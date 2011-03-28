@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+jU\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/ThreadInfo.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:06:35Z",
+      "side": 1,
+      "message": "minor: redundant if",
+      "revId": "d97d27bda2b61c3366edcd7dec43d72978b4e787",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+jM\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:06:35Z",
+      "side": 1,
+      "message": "I would really appreciate if you would put a big disclaimer/warning at the top of this source file to indicate that it should not be used in a production system, since it is not thread-safe.\n\nI realize that this is only a test/prototype, but these things tend to very easily transform themselves into full-feature products. Having the comment there will help remind anyone doing the work not to rely blindly on it.\n\nApart from that, the preferred form is to use a pthread_once_t associated with a function that will read the process name and dispatch library only once per process.",
+      "revId": "d97d27bda2b61c3366edcd7dec43d72978b4e787",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+jQ\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:06:35Z",
+      "side": 1,
+      "message": "Can you also mark this as not thread-safe with a big comment?",
+      "revId": "d97d27bda2b61c3366edcd7dec43d72978b4e787",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+iw\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/egl_dispatch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:06:35Z",
+      "side": 1,
+      "message": "A lot of this stuff looks like something that could be more easily generated with a set of macros and a multiply-included header files containing definitions for each one of the dispatched functions.\n\nIs there a specific reason for using the manual writing route? (Or did you use a code generator, and then why not include it in the patch, even if you don\u0027t intend to re-run it on each build)",
+      "revId": "d97d27bda2b61c3366edcd7dec43d72978b4e787",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+is\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/egl_ftable.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:06:35Z",
+      "side": 1,
+      "message": "This too looks something that could better be handled by a script or a macro list. And ordering the strings alphabetically might allow you to perform a binary search for each symbol, instead of a linear one.",
+      "revId": "d97d27bda2b61c3366edcd7dec43d72978b4e787",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+io\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/gles.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:06:35Z",
+      "side": 1,
+      "message": "Could most of these functions be auto-generated instead?",
+      "revId": "d97d27bda2b61c3366edcd7dec43d72978b4e787",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+ik\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/gles_dispatch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:06:35Z",
+      "side": 1,
+      "message": "ok, it definitely looks like auto-generated. Can I ask you to also upload the generation script with the patch? That will come handy in the future if we need to update this code.",
+      "revId": "d97d27bda2b61c3366edcd7dec43d72978b4e787",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
