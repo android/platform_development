@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+eY\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-28T16:20:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+iM\u003d",
+      "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X//+iU\u003d",
         "filename": "tools/emulator/opengl/tests/ut_renderer/Renderer.cpp",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/X//+eU\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/Renderer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-28T16:20:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+iU\u003d",
+      "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/X//+iY\u003d",
         "filename": "tools/emulator/opengl/tests/ut_renderer/Renderer.cpp",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2011-03-28T13:49:54Z",
       "side": 1,
       "message": "minor suggestion, use something like:\n\n  #ifdef _WIN32\n  #  error WINDOWS IS UNSUPPORTED AT THE MOMENT\n  #elif defined __APPLE__\n  #  error OS X IS UNSUPPORTED AT THE MOMENT\n  #else\n  #  m_nw \u003d new X11Windowing;\n  #endif\n\nThis way, the code becomes trivially portable to other Unix systems, and there is a simple way to know at build time that it is incomplete for Windows and OS X.",
+      "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+eQ\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/Renderer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-28T16:20:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA/X//+iY\u003d",
       "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
