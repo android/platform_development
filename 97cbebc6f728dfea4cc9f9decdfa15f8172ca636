@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+hE\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/IOStream.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T14:20:13Z",
+      "side": 1,
+      "message": "can you remove the tabs?",
+      "revId": "97cbebc6f728dfea4cc9f9decdfa15f8172ca636",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+hI\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/TcpStream.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T14:20:13Z",
+      "side": 1,
+      "message": "argh tabs!",
+      "revId": "97cbebc6f728dfea4cc9f9decdfa15f8172ca636",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
