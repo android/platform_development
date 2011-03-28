@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+j0\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/IOStream.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T12:13:43Z",
+      "side": 1,
+      "message": "I would suggest adding a comment stating that the derived class is responsible for free-ing the buffer in its destructor (see other comment).\n\nAnother option would be to add an abstract free() method to explicitely de-allocate the buffer in this destructor.",
+      "revId": "89529e92f8f3b1ca9af2e6660d0a7dff98ef2b9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+j4\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglCodecCommon/TcpStream.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T12:13:43Z",
+      "side": 1,
+      "message": "It looks like m_buf is never freed, once allocated.\n\nThis is due to the fact that the IOStream destructor doesn\u0027t do anything to the buffer.",
+      "revId": "89529e92f8f3b1ca9af2e6660d0a7dff98ef2b9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
