@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+iE\u003d",
+        "filename": "tools/emulator/opengl/tests/EGL_host_wrapper/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:54:56Z",
+      "side": 1,
+      "message": "It looks like the library won\u0027t compile on Windows due to the use of pthread. I would prefer if you could conditionalize the whole module declaration with ifneq ($(HOST_OS),windows) .. endif then to avoid to see this problem.\n\nDoes it build on OS X without -ldl -lpthread?",
+      "revId": "8fe958058d640153935b101131ad50c36ec4af1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
