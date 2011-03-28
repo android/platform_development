@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+iM\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:49:54Z",
+      "side": 1,
+      "message": "minor: May I suggest adding a comment here explaining what this macro does exactly? Thanks",
+      "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+iU\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/Renderer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:49:54Z",
+      "side": 1,
+      "message": "See note below.",
+      "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+iY\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/Renderer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:49:54Z",
+      "side": 1,
+      "message": "minor suggestion, use something like:\n\n  #ifdef _WIN32\n  #  error WINDOWS IS UNSUPPORTED AT THE MOMENT\n  #elif defined __APPLE__\n  #  error OS X IS UNSUPPORTED AT THE MOMENT\n  #else\n  #  m_nw \u003d new X11Windowing;\n  #endif\n\nThis way, the code becomes trivially portable to other Unix systems, and there is a simple way to know at build time that it is incomplete for Windows and OS X.",
+      "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+iQ\u003d",
+        "filename": "tools/emulator/opengl/tests/ut_renderer/RenderingThread.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T13:49:54Z",
+      "side": 1,
+      "message": "Minor: For the record, __thread is not supported on OS X as far as I know. It works on Mingw starting from GCC 4.4 though.",
+      "revId": "26befe4a8878455627d634bd77b7bfcd0bdc0e6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
