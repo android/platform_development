@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+jw\u003d",
+        "filename": "tools/emulator/opengl/system/GLESv1_enc/GLEncoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T12:56:22Z",
+      "side": 1,
+      "message": "minor: shouldn\u0027t these constant be static const GLUByte* instead?",
+      "revId": "812e9c91e050c5af1c8e6e6b55a88d16f3e9067f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+jk\u003d",
+        "filename": "tools/emulator/opengl/system/GLESv1_enc/GLEncoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T12:56:22Z",
+      "side": 1,
+      "message": "minor: shouldn\u0027t this return a const GLubyte* instead?",
+      "revId": "812e9c91e050c5af1c8e6e6b55a88d16f3e9067f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+jg\u003d",
+        "filename": "tools/emulator/opengl/system/GLESv1_enc/GLEncoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T12:56:22Z",
+      "side": 1,
+      "message": "minor type: immediate instead of immidate",
+      "revId": "812e9c91e050c5af1c8e6e6b55a88d16f3e9067f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/X//+js\u003d",
+        "filename": "tools/emulator/opengl/system/GLESv1_enc/GLEncoder.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-03-28T12:56:22Z",
+      "side": 1,
+      "message": "minor: redundant if",
+      "revId": "812e9c91e050c5af1c8e6e6b55a88d16f3e9067f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
