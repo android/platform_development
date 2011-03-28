@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/X//+c8\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/Android.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-03-28T17:30:51Z",
+      "side": 1,
+      "message": "Note the change in dependencies relative to patchset 1",
+      "revId": "a4205ba264bd96ddf44429de7973291ce437249e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
