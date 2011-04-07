@@ -182,6 +182,7 @@ int TcpStream::writeFully(const void *buf, size_t len)
         if (stat < 0) {
             if (errno != EINTR) {
                 retval =  stat;
+                ERR("TcpStream::writeFully failed, errno = %d\n", errno);
                 break;
             }
         } else {
@@ -194,7 +195,10 @@ int TcpStream::writeFully(const void *buf, size_t len)
 const unsigned char *TcpStream::readFully(void *buf, size_t len)
 {
     if (!valid()) return NULL;
-    if (!buf) return NULL;  // do not allow NULL buf in that implementation
+    if (!buf) {
+      ERR("TcpStream::readFully failed, buf=NULL");
+      return NULL;  // do not allow NULL buf in that implementation
+    }
     size_t res = len;
     while (res > 0) {
         ssize_t stat = ::recv(m_sock, (unsigned char *)(buf) + len - res, len, MSG_WAITALL);
@@ -205,6 +209,7 @@ const unsigned char *TcpStream::readFully(void *buf, size_t len)
             if (errno == EINTR) {
                 continue;
             } else {
+                ERR("TcpStream::readFully failed, errno = %d\n", errno);
                 return NULL;
             }
         } else {
