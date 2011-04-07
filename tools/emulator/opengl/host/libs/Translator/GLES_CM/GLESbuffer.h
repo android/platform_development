@@ -18,11 +18,12 @@
 
 #include <stdio.h>
 #include <GLES/gl.h>
+#include <GLcommon/objectNameManager.h>
 #include "RangeManip.h"
 
-class GLESbuffer {
+class GLESbuffer: public ObjectData {
 public:
-   GLESbuffer():m_size(0),m_usage(GL_STATIC_DRAW),m_data(NULL){}
+   GLESbuffer():m_size(0),m_usage(GL_STATIC_DRAW),m_data(NULL),m_wasBinded(false){}
    GLuint getSize(){return m_size;};
    GLuint getUsage(){return m_usage;};
    GLvoid* getData(){ return m_data;}
@@ -30,6 +31,8 @@ public:
    bool  setSubBuffer(GLint offset,GLuint size,const GLvoid* data);
    void  getConversions(const RangeList& rIn,RangeList& rOut);
    bool  fullyConverted(){return m_conversionManager.size() == 0;};
+   void  setBinded(){m_wasBinded = true;};
+   bool  wasBinded(){return m_wasBinded;};
    ~GLESbuffer();
 
 private:
@@ -37,6 +40,8 @@ private:
     GLuint         m_usage;
     unsigned char* m_data;
     RangeList      m_conversionManager;
+    bool           m_wasBinded;
 };
 
+typedef SmartPtr<GLESbuffer> GLESbufferPtr;
 #endif
