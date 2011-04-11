@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//++I\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osDynLibrary.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "For the record, everything thing protected by __linux__ here will also work on OS X and other Unix systems. I thus recommend to simple use a #else /* !_WIN32 */ instead.",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+94\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osProcessWin.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "The hProcess and hThread handles in child-\u003em_proc must be closed at some point. If you don\u0027t do this you\u0027re going to leak system resources.\n\nYou should probably close the child-\u003em_proc.hThread here.",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+9w\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osProcessWin.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "You should close the m_proc.hProcess here.",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//++A\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osProcessWin.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "This probably is missing a CloseHandle(hProc) here",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+98\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osProcessWin.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+9s\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osThread.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "will work with other unixes too.",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+9c\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osThreadUnix.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "note: this is already performed by thread_main() when the callback returns.",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+9g\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglOsUtils/osThreadUnix.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:07:48Z",
+      "side": 1,
+      "message": "You could do this by doing the following:\n1/ in thread_main, store the result value into a member variable like m_exitValue\n2/ here, check for m_isRunning \u003d\u003d false. If true, read the value from m_exitValue\n3/ to avoid any threading issues, use a small mutex to protect read/writes to both m_isRunning and m_exitValue",
+      "revId": "bdf3d5e39e1701cee00a0213bf0042b6f761407a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
