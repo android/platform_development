@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+9I\u003d",
+        "filename": "tools/emulator/opengl/host/renderer/main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:10:46Z",
+      "side": 1,
+      "message": "you probably want to use strcmp().\nAlso, please check that i+1 \u003c argc as well before dereferencing argv[++i], as in:\n\n  if (!strcmp(argv[i], \"-option\")) {\n    if (++i \u003e\u003d argc || sscanf(argv[i],\"%d\", \u0026value) !\u003d 1) {\n      printUsage(argv[0]);\n    }\n  }",
+      "revId": "a25a979f497d958f6b0be62b861d14e7930ef482",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
