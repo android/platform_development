@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+80\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/GLESbuffer.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:14:42Z",
+      "side": 1,
+      "message": "just a minor thing, but you probably want \"m_wasBound\" here :-)",
+      "revId": "79799694a97a033c4fec202bbafa8b402dab361c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+88\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/GLESimp.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:14:42Z",
+      "side": 1,
+      "message": "this comment is probably superfluous. I\u0027d suggest removing it, or simply using buffer !\u003d 0 in the condition.",
+      "revId": "79799694a97a033c4fec202bbafa8b402dab361c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+84\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/GLESimp.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:14:42Z",
+      "side": 1,
+      "message": "can you get rid of this tab and other trailing white space?",
+      "revId": "79799694a97a033c4fec202bbafa8b402dab361c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
