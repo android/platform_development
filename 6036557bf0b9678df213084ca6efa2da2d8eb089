@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//++w\u003d",
+        "filename": "tools/emulator/opengl/system/renderControl_enc/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T16:42:06Z",
+      "side": 1,
+      "message": "minor typo here: I think you meant encoded on the guest and decoded + executed on the host.",
+      "revId": "6036557bf0b9678df213084ca6efa2da2d8eb089",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
