@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+8g\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLcommon/GLutils.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:43:30Z",
+      "side": 1,
+      "message": "For the record, you can use \"(num \u0026 (num-1)) \u003d\u003d 0)\"\nSee http://graphics.stanford.edu/~seander/bithacks.html#DetermineIfPowerOf2",
+      "revId": "65f17d92b39c55117cc7aebc0c522bf4c53649e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+8c\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/include/GLcommon/GLutils.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T17:43:30Z",
+      "side": 1,
+      "message": "that\u0027s not a very efficient sort. Can you use an insertion sort instead? I.e.:\n\n  for (int i \u003d 1; i \u003c size; i++) {\n    for (int j \u003d i-1; j \u003e\u003d 0; j--) {\n      if (*arr[j] \u003c\u003d *arr[j+1])\n        break;\n      swap\u003cT*)(arr[j],arr[j+1]);\n    }\n  }",
+      "revId": "65f17d92b39c55117cc7aebc0c522bf4c53649e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
