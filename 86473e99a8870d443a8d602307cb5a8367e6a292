@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+/M\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglCodecCommon/TcpStream.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T16:33:52Z",
+      "side": 1,
+      "message": "You want -1 here, not 0, which is a valid file descriptor number (and will read from stdin)",
+      "revId": "86473e99a8870d443a8d602307cb5a8367e6a292",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+/I\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglCodecCommon/TcpStream.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-11T16:33:52Z",
+      "side": 1,
+      "message": "please add a loop around EINTR here.",
+      "revId": "86473e99a8870d443a8d602307cb5a8367e6a292",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
