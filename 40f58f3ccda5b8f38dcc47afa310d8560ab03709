@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+nc\u003d",
+        "filename": "tools/emulator/opengl/system/gralloc/gralloc.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1001056
+      },
+      "writtenOn": "2011-04-13T15:46:16Z",
+      "side": 1,
+      "message": "lock/unlock can be greatly simplified because we will NEVER call lock with a non \"SW\" usage parameter. That is lock is only used to lock a buffer for SW access. Other values are illegal and should return an error.\n\nfurthermore, it is also illegal to lock a buffer for SW_WRITE if this buffer\u0027s usage is \"HW_RENDER\". That is we don\u0027t allow to SW render into a HW render buffer.\n\nin practice, lock is only called with SW_READ and/or SW_WRITE on buffers with usage bits of SW_READ | SW_WRITE | HW_TEXTURE.\n\nthat is, you should never have to read a h/w rendered buffer back for sw access.",
+      "revId": "40f58f3ccda5b8f38dcc47afa310d8560ab03709",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+nY\u003d",
+        "filename": "tools/emulator/opengl/system/gralloc/gralloc.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1001056
+      },
+      "writtenOn": "2011-04-13T15:46:16Z",
+      "side": 1,
+      "message": "yes, it is ok.",
+      "revId": "40f58f3ccda5b8f38dcc47afa310d8560ab03709",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
