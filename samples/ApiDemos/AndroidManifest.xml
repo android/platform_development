@@ -696,6 +696,13 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".os.DetachableAsyncTaskDemo" android:label="OS/Detachable AsyncTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
         <!-- ************************************* -->
         <!--     ANIMATION PACKAGE SAMPLES         -->
         <!-- ************************************* -->

@@ -957,4 +957,17 @@
     <string name="sms_speak_string_format">Message from "%1$s": %2$s</string>
     <string name="reply">Reply</string>
     <string name="dismiss">Dismiss</string>
+
+    <!-- ============================ -->
+    <!--  Detachable AsyncTask strings  -->
+    <!-- ============================ -->
+
+    <string name="app_name">DetachableAsyncTaskTest</string>
+    <string name="start_task">Start Task</string>
+    <string name="task_aborted">Task aborted</string>
+    <string name="running">Running</string>
+    <plurals name="run_length">
+        <item quantity="one"><xliff:g id="duration">%d</xliff:g> second</item>
+        <item quantity="other"><xliff:g id="duration">%d</xliff:g> seconds</item>
+    </plurals>
 </resources>
