@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+Z8\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/Android.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T16:21:05Z",
+      "side": 1,
+      "message": "It looks like there is no EglMacApi.cpp in this patch, which will break the darwin build.\n\nCan I ask you, if you don\u0027t have the file ready yet, to at least provide a stub that implements the API (by returning error codes / doing nothing).",
+      "revId": "63d2451b80b4b46be4c77c5b559336e10f126a65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+aM\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglContext.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T16:21:05Z",
+      "side": 1,
+      "message": "wow, can you reformat this source file to be a bit more legible with only 80 or 100 columns? Thanks.",
+      "revId": "63d2451b80b4b46be4c77c5b559336e10f126a65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+aA\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglLinuxApi.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T16:21:05Z",
+      "side": 1,
+      "message": "Can you rename this file EglX11Api.cpp instead?",
+      "revId": "63d2451b80b4b46be4c77c5b559336e10f126a65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+Z4\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/ThreadInfo.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T16:21:05Z",
+      "side": 1,
+      "message": "this is Linux specific and won\u0027t work on OS X. Does it work on Windows?",
+      "revId": "63d2451b80b4b46be4c77c5b559336e10f126a65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
