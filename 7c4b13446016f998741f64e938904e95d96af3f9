@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+aI\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/GLESbuffer.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T16:16:45Z",
+      "side": 1,
+      "message": "minorL setBound/wasBound is probably more correct. But the code is ok.",
+      "revId": "7c4b13446016f998741f64e938904e95d96af3f9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
