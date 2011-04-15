@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+bA\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/Android.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T14:16:43Z",
+      "side": 1,
+      "message": "You probably don\u0027t want this uncommented in the patch.",
+      "revId": "ec44b5448121f53459b91820e8c3cc25cd192db8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+bM\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/render_api.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T14:16:43Z",
+      "side": 1,
+      "message": "Do you know if this needs the .exe extension on Windows?",
+      "revId": "ec44b5448121f53459b91820e8c3cc25cd192db8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n//+bQ\u003d",
+        "filename": "tools/emulator/opengl/shared/OpenglCodecCommon/TimeUtils.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T14:16:43Z",
+      "side": 1,
+      "message": "This is missing a #include \u003cunistd.h\u003e here, otherwise the OS X build will break.",
+      "revId": "ec44b5448121f53459b91820e8c3cc25cd192db8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
