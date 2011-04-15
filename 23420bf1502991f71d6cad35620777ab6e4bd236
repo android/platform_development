@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+aU\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/GLfixed_ops.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-04-15T15:45:01Z",
+      "side": 1,
+      "message": "You probably want to put the whole definition inside parentheses. Otherwise things are going to be problematic when used with certain operations.\n\nE.g. consider a computation like  10000/X2F(x), which will not do what you expect with this definition.\n\nSame for other definitions below.",
+      "revId": "23420bf1502991f71d6cad35620777ab6e4bd236",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
