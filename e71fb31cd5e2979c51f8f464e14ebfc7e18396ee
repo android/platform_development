@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/n//+Vw\u003d",
+        "filename": "tools/emulator/opengl/system/gralloc/gralloc.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 1001056
+      },
+      "writtenOn": "2011-04-16T01:33:02Z",
+      "side": 1,
+      "message": "yes, you can remove the XXX comment :-)",
+      "revId": "e71fb31cd5e2979c51f8f464e14ebfc7e18396ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
