@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAA/n//+VI\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/render_api.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1005655
+      },
+      "writtenOn": "2011-04-16T07:01:30Z",
+      "side": 1,
+      "message": "yes, the .exe can be ommitted with no problems.\nI did not actually tried to run this code on windows yet but I know that for\nsure from other projects...",
+      "parentUuid": "AAAA/n//+bM\u003d",
+      "revId": "ec44b5448121f53459b91820e8c3cc25cd192db8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA/n//+bQ\u003d",
         "filename": "tools/emulator/opengl/shared/OpenglCodecCommon/TimeUtils.cpp",
         "patchSetId": 3
