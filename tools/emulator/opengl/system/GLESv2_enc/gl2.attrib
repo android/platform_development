@@ -344,11 +344,12 @@ glMultiDrawArraysEXT
 glMultiDrawElementsEXT
 	flag unsupported
 
+
+# handled by encoder
 #void glShaderSource(GLuint shader, GLsizei count, GLstr *string, const GLint *length)
 glShaderSource
-   len length (count * sizeof(GLint))
-   len string (glUtilsSumArrayValues(length, count)) 
-   custom_pack string glUtilsPackStrings(ptr, string, length, count)
+	flag unsupported
+
 
 
 #void glGetPerfMonitorGroupsAMD(GLint *numGroups, GLsizei groupsSize, GLuint *groups)
@@ -537,4 +538,9 @@ glDrawElementsOffset
 glGetCompressedTextureFormats
 	dir formats out
 	len formats (count * sizeof(GLint))
+	flag custom_decoder
+
+#GL_ENTRY(void, glShaderString, GLuint shader, GLchar *string, GLsizei len)
+glShaderString
+	len string len
 	flag custom_decoder
