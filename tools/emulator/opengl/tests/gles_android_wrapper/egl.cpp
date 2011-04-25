@@ -408,7 +408,7 @@ EGLBoolean eglQuerySurface(EGLDisplay dpy, EGLSurface surface, EGLint attribute,
 {
     EGLBoolean res = getDispatch()->eglQuerySurface(dpy, surface, attribute, value);
     if (res && attribute == EGL_RENDERABLE_TYPE) {
-        value |= EGL_OPENGL_ES2_BIT;
+        *value |= EGL_OPENGL_ES2_BIT;
     }
     return res;
 }
