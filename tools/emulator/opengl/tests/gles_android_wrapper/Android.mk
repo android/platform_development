@@ -22,10 +22,11 @@ emulatorOpengl := $(LOCAL_PATH)/../..
 
 LOCAL_C_INCLUDES := $(emulatorOpengl)/shared/OpenglCodecCommon \
         $(emulatorOpengl)/host/include/libOpenglRender \
+        $(emulatorOpengl)/system/OpenglSystemCommon \
 		$(call intermediates-dir-for, SHARED_LIBRARIES, libut_rendercontrol_enc) \
 		$(call intermediates-dir-for, SHARED_LIBRARIES, libGLESv1_enc) \
         $(emulatorOpengl)/system/GLESv1_enc \
-        $(emulatorOpengl)/tests/ut_rendercontrol_enc 
+        $(emulatorOpengl)/tests/ut_rendercontrol_enc
 
 
 LOCAL_CFLAGS := -DLOG_TAG=\"eglWrapper\"
@@ -36,7 +37,7 @@ LOCAL_PRELINK_MODULE := false
 
 #LOCAL_LDLIBS := -lpthread -ldl
 LOCAL_SHARED_LIBRARIES := libdl libcutils libGLESv1_enc libut_rendercontrol_enc
-LOCAL_STATIC_LIBRARIES := libOpenglCodecCommon
+LOCAL_STATIC_LIBRARIES := libOpenglCodecCommon libOpenglSystemCommon libqemu
 
 include $(BUILD_SHARED_LIBRARY)
 

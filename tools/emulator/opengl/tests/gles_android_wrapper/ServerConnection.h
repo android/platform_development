@@ -17,7 +17,7 @@
 #define _SERVER_CONNECTION_H
 
 #include "GLEncoder.h"
-#include "TcpStream.h"
+#include "IOStream.h"
 #include "codec_defs.h"
 #include "ut_rendercontrol_enc.h"
 #include <pthread.h>
@@ -41,7 +41,7 @@ private:
     static pthread_key_t s_glKey;
     static pthread_key_t s_connectionKey;
     static void s_initKeys();
-    TcpStream *m_stream;
+    IOStream *m_stream;
     GLEncoder *m_glEnc;
     ut_rendercontrol_encoder_context_t *m_ut_enc;
 
