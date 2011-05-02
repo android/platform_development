@@ -32,10 +32,21 @@ public:
     void       setApi(EGLenum api){m_api = api;}
     EGLenum    getApi(){return m_api;}
 
+#ifdef __linux__
+    static EglThreadInfo**  getPtr(void) { return &__egl_thread_info; }
+#else
+    static EglThreadInfo**  getPtr(void) __attribute__((const));
+#endif
+
 private:
     EglDisplay*     m_currentDisplay;
     EGLint          m_err;
     EGLenum         m_api;
 };
+
+/* __thread is ELF-specific and not support on Darwin */
+#ifdef __linux__
+extern __thread EglThreadInfo  __egl_thread_info;
+#endif
 
 #endif

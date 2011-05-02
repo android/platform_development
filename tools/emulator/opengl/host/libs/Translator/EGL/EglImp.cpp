@@ -34,14 +34,15 @@
 #define MINOR          1
 #define MAJOR          4
 
-//declerations
+//declarations
+
 EglImage *attachEGLImage(unsigned int imageId);
 void detachEGLImage(unsigned int imageId);
 
+#define tls_thread  (*EglThreadInfo::getPtr())
 
 EglGlobalInfo* g_eglInfo = EglGlobalInfo::getInstance();
 
-__thread EglThreadInfo*    tls_thread  = NULL;
 static EGLiface            s_eglIface = {
     getThreadInfo    : getThreadInfo,      // implemented in ThreadInfo.cpp
     eglAttachEGLImage:attachEGLImage,
