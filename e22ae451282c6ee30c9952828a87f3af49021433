@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA/3//+/Y\u003d",
+        "filename": "tools/emulator/opengl/tests/gles_android_wrapper/CleanSpec.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1005670
+      },
+      "writtenOn": "2011-05-03T15:01:43Z",
+      "side": 1,
+      "message": "add-clean-stepp - this must be a typo?\nAlso, would that remove out/target/product/generic/system/lib/egl/libGLES_emul.so from the previous build as well?",
+      "revId": "e22ae451282c6ee30c9952828a87f3af49021433",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
