@@ -19,11 +19,36 @@
 #include <stdlib.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include "EventTracker.h"
+#include "RenderingThread.h"
+
+void X11Windowing::initialize()
+{
+    XInitThreads();
+}
 
 NativeDisplayType X11Windowing::getNativeDisplay()
 {
+    NativeDisplayType ret = RenderingThread::getNativeDisplay();
+    if (ret) {
+        return ret;  // display already openned in that thread
+    }
+
+    // Open display
     Display *dpy = XOpenDisplay(NULL);
-    return (NativeDisplayType)dpy;
+    ret = (NativeDisplayType)dpy;
+
+    // set display connection in tls
+    RenderingThread::setNativeDisplay(ret);
+
+    return ret;
+}
+
+void X11Windowing::destroyNativeDisplay(NativeDisplayType dpy)
+{
+    if (dpy) {
+        XCloseDisplay((Display *)dpy);
+    }
 }
 
 NativeWindowType X11Windowing::createNativeWindow(NativeDisplayType _dpy, int width, int height)
@@ -56,7 +81,8 @@ NativeWindowType X11Windowing::createNativeWindow(NativeDisplayType _dpy, int wi
                                CopyFromParent, attributes_mask, &sWA);
 
     XMapWindow(dpy, win);
-    XFlush(dpy);
+    XSync(dpy, False);
+    EventTracker::addWindow(dpy, win);
     return NativeWindowType(win);
 }
 

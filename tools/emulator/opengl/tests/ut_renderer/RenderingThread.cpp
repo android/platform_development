@@ -287,6 +287,18 @@ void RenderingThread::initBackendCaps()
     m_backendCaps.initialized = true;
 }
 
+NativeDisplayType RenderingThread::getNativeDisplay()
+{
+    if (m_tls) return m_tls->m_nativeDisplay;
+    return (NativeDisplayType)0;
+}
+
+void RenderingThread::setNativeDisplay(NativeDisplayType dpy)
+{
+    if (m_tls) m_tls->m_nativeDisplay = dpy;
+    else fprintf(stderr,"ERROR: setNativeDisplay called from non rendering thread\n");
+}
+
 void *RenderingThread::thread()
 {
 
@@ -380,6 +392,9 @@ void *RenderingThread::thread()
     }
     // shutdown
     if (m_currentContext != NULL) {
+        if (m_nativeDisplay) {
+            Renderer::instance()->destroyNativeDisplay(m_nativeDisplay);
+        }
         m_currentContext->unref();
     }
 

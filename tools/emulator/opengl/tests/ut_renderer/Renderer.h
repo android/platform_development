@@ -47,6 +47,9 @@ public:
                     const ClientHandle & drawSurface, const ClientHandle & readSurface, const ClientHandle & ctx);
     int swapBuffers(RenderingThread *thread, const ClientHandle & surface);
 
+    void destroyNativeDisplay(NativeDisplayType dpy) {
+        m_nw->destroyNativeDisplay(dpy);
+    }
 private:
     typedef std::map<ClientHandle, RendererSurface *> SurfaceMap;
     typedef std::map<ClientHandle, RendererContext *> ContextMap;

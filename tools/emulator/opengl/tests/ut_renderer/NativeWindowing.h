@@ -21,6 +21,7 @@
 class NativeWindowing {
 public:
     virtual NativeDisplayType getNativeDisplay() = 0;
+    virtual void destroyNativeDisplay(NativeDisplayType dpy) = 0;
     virtual NativeWindowType createNativeWindow(NativeDisplayType dpy, int width, int height) = 0;
     virtual int destroyNativeWindow(NativeDisplayType dpy, NativeWindowType win) = 0;
 };

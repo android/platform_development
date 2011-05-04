@@ -31,7 +31,8 @@ LOCAL_SRC_FILES := ut_renderer.cpp \
 	Renderer.cpp \
 	RendererContext.cpp \
 	RendererSurface.cpp \
-	X11Windowing.cpp 
+	X11Windowing.cpp \
+    EventTracker.cpp
 
 # define PVR_WAR to support imgtec PVR opengl-ES implementation
 #

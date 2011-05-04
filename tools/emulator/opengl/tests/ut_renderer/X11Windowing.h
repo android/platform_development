@@ -20,8 +20,12 @@
 
 class X11Windowing : public NativeWindowing {
     NativeDisplayType getNativeDisplay();
+    void destroyNativeDisplay(NativeDisplayType dpy);
     NativeWindowType createNativeWindow(NativeDisplayType _dpy, int width, int height);
     int destroyNativeWindow(NativeDisplayType dpy, NativeWindowType win);
+
+public:
+    static void initialize();
 };
 
 #endif

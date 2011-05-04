@@ -20,17 +20,41 @@
 #include "codec_defs.h"
 #include "RenderingThread.h"
 #include "TcpStream.h"
+#include "EventTracker.h"
 
+void printUsage(const char *progName)
+{
+    fprintf(stderr,"Usage: %s [-emulatorPort <portNum>]\n", progName);
+}
 
 int main(int argc, char **argv)
 {
+    int emulatorPort = 5554;
 
+    for (int i=1; i<argc; i++) {
+        if (!strcmp(argv[i], "-emulatorPort")) {
+            if (++i >= argc || sscanf(argv[i],"%d",&emulatorPort) != 1) {
+                printUsage(argv[0]);
+                return -1;
+            }
+        }
+        else {
+            printUsage(argv[0]);
+            return -1;
+        }
+    }
+    
     TcpStream *socket = new TcpStream;
 
     if (socket->listen(CODEC_SERVER_PORT) < 0) {
         perror("listen");
         exit(1);
     }
+
+    //
+    // Start the event tracker thread
+    //
+    EventTracker::start(emulatorPort);
 
     printf("waiting for client connection on port: %d\n", CODEC_SERVER_PORT);
     while (1) {

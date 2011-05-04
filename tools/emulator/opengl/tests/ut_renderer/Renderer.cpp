@@ -45,6 +45,7 @@ Renderer::Renderer()
 {
     // Unix specific, use your platform specific windowing implementation
 #ifdef __unix__
+    X11Windowing::initialize();
     m_nw = new X11Windowing;
 #endif
 

@@ -46,6 +46,9 @@ public:
     GLDecoder & glDecoder() { return m_glDec; }
     GL2Decoder & gl2Decoder() { return m_gl2Dec; }
 
+    static NativeDisplayType getNativeDisplay();
+    static void setNativeDisplay(NativeDisplayType dpy);
+
 private:
     void initBackendCaps();
 
@@ -57,6 +60,7 @@ private:
     TcpStream   *m_stream;
     pthread_t m_thread;
     RendererContext * m_currentContext;
+    NativeDisplayType m_nativeDisplay;
 
     struct BackendCaps {
         bool initialized;
