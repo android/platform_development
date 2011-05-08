@@ -117,6 +117,7 @@ struct egl_surface_t {
 	EGLDisplay          dpy;
 	EGLConfig           config;
 
+
 	egl_surface_t(EGLDisplay dpy, EGLConfig config);
 	virtual     ~egl_surface_t();
 	
@@ -131,17 +132,39 @@ struct egl_surface_t {
 	uint32_t 	getRcSurface(){ return rcSurface; }
 
 	virtual 	EGLBoolean	isValid(){ return valid; }
-	virtual     EGLint      getWidth() const = 0;
-	virtual     EGLint      getHeight() const = 0;
+
+	void		setWidth(EGLint w){ width = w; }
+	EGLint      getWidth(){ return width; }
+	void 		setHeight(EGLint h){ height = h; }
+	EGLint      getHeight(){ return height; }
+	void		setTextureFormat(EGLint _texFormat){ texFormat = _texFormat; }
+	EGLint		getTextureFormat(){ return texFormat; }
+	void 		setTextureTarget(EGLint _texTarget){ texTarget = _texTarget; }
+	EGLint		getTextureTarget(){ return texTarget; }
+
+private:
+	//
+	//Surface attributes
+	//
+	EGLint 	width;
+	EGLint 	height;
+	EGLint	texFormat;
+	EGLint	texTarget;
 
 protected:
 	EGLBoolean	valid;
 	uint32_t 	rcSurface; //handle to surface created via remote control
+
+
 };
 
 egl_surface_t::egl_surface_t(EGLDisplay dpy, EGLConfig config)
     : dpy(dpy), config(config), valid(EGL_FALSE), rcSurface(0)
 {
+	width = 0;
+	height = 0;
+	texFormat = EGL_NO_TEXTURE;
+	texTarget = EGL_NO_TEXTURE;
 }
 
 egl_surface_t::~egl_surface_t()
@@ -165,15 +188,9 @@ struct egl_window_surface_t : public egl_surface_t {
     virtual     EGLBoolean  connect();
     virtual     void        disconnect();
 	virtual     EGLBoolean  swapBuffers();
-	
-	virtual     EGLint      getWidth() const    { return width;  }
-	virtual     EGLint      getHeight() const   { return height; }
-
 
 private:
 	ANativeWindow* 	nativeWindow;
-	int width;
-	int height;
 	android_native_buffer_t*   buffer;
 
 };
@@ -188,8 +205,11 @@ egl_window_surface_t::egl_window_surface_t (
 {
 	// keep a reference on the window
 	nativeWindow->common.incRef(&nativeWindow->common);
-	nativeWindow->query(nativeWindow, NATIVE_WINDOW_WIDTH, &width);
-	nativeWindow->query(nativeWindow, NATIVE_WINDOW_HEIGHT, &height);
+	EGLint w,h;
+	nativeWindow->query(nativeWindow, NATIVE_WINDOW_WIDTH, &w);
+	setWidth(w);
+	nativeWindow->query(nativeWindow, NATIVE_WINDOW_HEIGHT, &h);
+	setHeight(h);
 }
 
 egl_window_surface_t::~egl_window_surface_t() {
@@ -271,13 +291,8 @@ EGLBoolean egl_window_surface_t::swapBuffers()
 
 struct egl_pbuffer_surface_t : public egl_surface_t {
      
-	int width;
-	int height;
 	GLenum	format;
 
-	virtual     EGLint      getWidth() const    { return width;  }
-	virtual     EGLint      getHeight() const   { return height; }
-	
 	egl_pbuffer_surface_t(
 			EGLDisplay dpy, EGLConfig config, 
 			int32_t w, int32_t h, GLenum format);
@@ -298,9 +313,10 @@ private:
 egl_pbuffer_surface_t::egl_pbuffer_surface_t(
 		EGLDisplay dpy, EGLConfig config,
 		int32_t w, int32_t h, GLenum pixelFormat)
-	: egl_surface_t(dpy, config), 
-	width(w), height(h), format(pixelFormat)
+	: egl_surface_t(dpy, config), format(pixelFormat)
 {
+	setWidth(w);
+	setHeight(h);
 }
 
 egl_pbuffer_surface_t::~egl_pbuffer_surface_t()
@@ -540,10 +556,30 @@ EGLSurface eglCreatePbufferSurface(EGLDisplay dpy, EGLConfig config, const EGLin
 
 	int32_t w = 0;
 	int32_t h = 0;
+	EGLint texFormat = EGL_NO_TEXTURE;
+	EGLint texTarget = EGL_NO_TEXTURE;
 	while (attrib_list[0]) {
-		if (attrib_list[0] == EGL_WIDTH)  w = attrib_list[1];
-		if (attrib_list[0] == EGL_HEIGHT) h = attrib_list[1];
+		switch (attrib_list[0]) {
+			case EGL_WIDTH:
+				w = attrib_list[1];
+				break;
+			case EGL_HEIGHT:
+				h = attrib_list[1];
+				break;
+			case EGL_TEXTURE_FORMAT:
+				texFormat = attrib_list[1];
+				break;
+			case EGL_TEXTURE_TARGET:
+				texTarget = attrib_list[1];
+				break;
+			default:
+				break;
+		};
 		attrib_list+=2;
+	}
+	if (((texFormat == EGL_NO_TEXTURE)&&(texTarget != EGL_NO_TEXTURE)) ||
+		((texFormat != EGL_NO_TEXTURE)&&(texTarget == EGL_NO_TEXTURE))) {
+		return setError(EGL_BAD_MATCH, EGL_NO_SURFACE);
 	}
     // TODO: check EGL_TEXTURE_FORMAT - need to support eglBindTexImage
 
@@ -558,6 +594,10 @@ EGLSurface eglCreatePbufferSurface(EGLDisplay dpy, EGLConfig config, const EGLin
 		delete surface;
 		return setError(EGL_BAD_ALLOC, EGL_NO_SURFACE);
 	}
+
+	//setup attributes
+	surface->setTextureFormat(texFormat);
+	surface->setTextureTarget(texTarget);
 
 	return surface;
 }
@@ -598,6 +638,12 @@ EGLBoolean eglQuerySurface(EGLDisplay dpy, EGLSurface eglSurface, EGLint attribu
 			break;
 		case EGL_HEIGHT:
 			*value = surface->getHeight();
+			break;
+		case EGL_TEXTURE_FORMAT:
+			*value = surface->getTextureFormat();
+			break;
+		case EGL_TEXTURE_TARGET:
+			*value = surface->getTextureTarget();
 			break;
 			//TODO: complete other attributes
 		default:
