@@ -70,7 +70,7 @@ void GLClientState::enable(int location, int state)
     m_states[location].enabled = state;
 }
 
-void GLClientState::setState(int location, int size, GLenum type, GLboolean normalized, GLsizei stride, void *data)
+void GLClientState::setState(int location, int size, GLenum type, GLboolean normalized, GLsizei stride, const void *data)
 {
     if (!validLocation(location)) {
         return;
