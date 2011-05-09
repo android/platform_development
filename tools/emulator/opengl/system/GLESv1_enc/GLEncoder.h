@@ -77,9 +77,9 @@ private:
     static void s_glColorPointer(void *self, int size, GLenum type, GLsizei stride, const void *data);
     static void s_glPointsizePointer(void *self, GLenum type, GLsizei stride, const void *data);
     static void s_glClientActiveTexture(void *self, GLenum texture);
-    static void s_glTexcoordPointer(void *self, int size, GLenum type, GLsizei stride, void *data);
-    static void s_glMatrixIndexPointerOES(void *self, int size, GLenum type, GLsizei stride, void * data);
-    static void s_glWeightPointerOES(void *self, int size, GLenum type, GLsizei stride, void * data);
+    static void s_glTexcoordPointer(void *self, int size, GLenum type, GLsizei stride, const void *data);
+    static void s_glMatrixIndexPointerOES(void *self, int size, GLenum type, GLsizei stride, const void * data);
+    static void s_glWeightPointerOES(void *self, int size, GLenum type, GLsizei stride, const void * data);
     static void s_glDisableClientState(void *self, GLenum state);
     static void s_glEnableClientState(void *self, GLenum state);
     static GLboolean s_glIsEnabled(void *self, GLenum cap);
