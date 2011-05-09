@@ -100,7 +100,7 @@ int ApiGen::genFuncTable(const std::string &filename, SideType side)
 
     for (size_t i = 0; i < size(); i++) {
         EntryPoint *e = &at(i);
-		if (e->notApi()) continue;
+		if ((e->notApi())||(e->unsupported())) continue;
         fprintf(fp, "\t{\"%s\", (void*)%s},\n", e->name().c_str(), e->name().c_str());	
 	}
 	fprintf(fp, "};\n");
@@ -202,9 +202,9 @@ int ApiGen::genEntryPoints(const std::string & filename, SideType side)
 
     fprintf(fp,
             "void %s_%s_context_t::setContextAccessor(CONTEXT_ACCESSOR_TYPE *f) { getCurrentContext = f; }\n",
-            m_basename.c_str(), sideString(CLIENT_SIDE));
+            m_basename.c_str(), sideString(side));
 	fprintf(fp, "#define GET_CONTEXT %s_%s_context_t * ctx = getCurrentContext() \n",
-                m_basename.c_str(), sideString(CLIENT_SIDE));
+                m_basename.c_str(), sideString(side));
 	fprintf(fp, "#endif\n\n");
 
 
