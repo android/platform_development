@@ -186,7 +186,7 @@ void GLEncoder::s_glTexcoordPointer(void *self, int size, GLenum type, GLsizei s
     ctx->m_state->setState(loc, size, type, false, stride, data);
 }
 
-void GLEncoder::s_glMatrixIndexPointerOES(void *self, int size, GLenum type, GLsizei stride, void * data)
+void GLEncoder::s_glMatrixIndexPointerOES(void *self, int size, GLenum type, GLsizei stride, const void * data)
 {
     GLEncoder *ctx = (GLEncoder *)self;
     assert(ctx->m_state != NULL);
@@ -194,7 +194,7 @@ void GLEncoder::s_glMatrixIndexPointerOES(void *self, int size, GLenum type, GLs
     ctx->m_state->setState(loc, size, type, false, stride, data);
 }
 
-void GLEncoder::s_glWeightPointerOES(void * self, int size, GLenum type, GLsizei stride, void * data)
+void GLEncoder::s_glWeightPointerOES(void * self, int size, GLenum type, GLsizei stride, const void * data)
 {
     GLEncoder *ctx = (GLEncoder *)self;
     assert(ctx->m_state != NULL);
