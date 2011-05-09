@@ -84,6 +84,7 @@ public class CameraPreview extends Activity {
 
         // Open the default i.e. the first rear facing camera.
         mCamera = Camera.open();
+        if (mCamera == null) return;
         cameraCurrentlyLocked = defaultCameraId;
         mPreview.setCamera(mCamera);
     }
@@ -304,8 +305,10 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
         parameters.setPreviewSize(mPreviewSize.width, mPreviewSize.height);
         requestLayout();
 
-        mCamera.setParameters(parameters);
-        mCamera.startPreview();
+        if (mCamera != null) {
+            mCamera.setParameters(parameters);
+            mCamera.startPreview();
+        }
     }
 
 }
