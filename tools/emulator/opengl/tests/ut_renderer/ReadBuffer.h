@@ -23,9 +23,11 @@ public:
     ReadBuffer(TcpStream *stream, size_t bufSize);
     ~ReadBuffer();
     int getData(); // get fresh data from the stream
+    int getDataAsync();  // same as getData() but doesn't block
     unsigned char *buf() { return m_readPtr; } // return the next read location
     size_t validData() { return m_validData; } // return the amount of valid data in readptr
     void consume(size_t amount); // notify that 'amount' data has been consumed;
+    int getSocket() { return m_stream->getSocket(); }
 private:
     unsigned char *m_buf;
     unsigned char *m_readPtr;

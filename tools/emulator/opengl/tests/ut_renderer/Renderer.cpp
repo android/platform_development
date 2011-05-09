@@ -69,6 +69,7 @@ int Renderer::createSurface(RenderingThread *thread, const ClientHandle & handle
             return -1;
         }
         m_surfaces.insert(SurfaceMap::value_type(handle, surface));
+        thread->setSurface(surface);
     }
     return 0;
 }
@@ -82,6 +83,7 @@ int Renderer::destroySurface(RenderingThread *thread, const ClientHandle &handle
         printf("removing surface that doesn't exists\n");
         return -1;
     }
+    thread->setSurface(NULL);
     if (i->second->destroy(m_nw)) {
         m_surfaces.erase(handle);
     }

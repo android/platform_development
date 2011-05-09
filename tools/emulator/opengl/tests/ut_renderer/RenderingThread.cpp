@@ -23,6 +23,9 @@
 #include "TimeUtils.h"
 
 #include <GLES/glext.h>
+#include "iolooper.h"
+#include "sockets.h"
+#include "emulator-console.h"
 
 __thread RenderingThread * RenderingThread::m_tls;
 
@@ -257,7 +260,8 @@ void RenderingThread::s_swapBuffers(uint32_t pid, uint32_t surface)
 
 RenderingThread::RenderingThread(TcpStream *stream) :
     m_stream(stream),
-    m_currentContext(NULL)
+    m_currentContext(NULL),
+    m_surface(NULL)
 {
     m_backendCaps.initialized = false;
 }
@@ -325,15 +329,63 @@ void *RenderingThread::thread()
 
     int stats_totalBytes = 0;
     long long stats_t0 = GetCurrentTimeMS();
+    IoLooper*  ioloop = iolooper_new();
+
+    // XXX: ALLOW OTHER PORT NUMBERS
+    EmulatorConsole*  console = emulatorConsole_connect(5554, ioloop);
+
+    /* We want to wait for incoming data in the read buffer socket */
+    int fd = readBuf.getSocket();
+    socket_set_nonblock(fd);
+    iolooper_add_read(ioloop, fd);
 
     while (1) {
 
-        int stat = readBuf.getData();
+        // Wait for socket events for a maximum of 1/15 seconds
+        // to be able to handle user events properly.
+        iolooper_wait(ioloop, 1000/15);
+
+        // Process the emulator console connection if needed
+        emulatorConsole_poll(console);
+
+
+        // Process user input events
+        if (m_surface) {
+            NativeWindowing::InputEvent  ev;
+            char temp[128];
+            while (m_surface->pollEvent(ev)) {
+                switch (ev.itype) {
+                    case NativeWindowing::INPUT_EVENT_MOUSE_DOWN:
+                        emulatorConsole_sendMouseDown(console, ev.pos_x, ev.pos_y);
+                        break;
+                    case NativeWindowing::INPUT_EVENT_MOUSE_UP:
+                        emulatorConsole_sendMouseUp(console, ev.pos_x, ev.pos_y);
+                        break;
+                    case NativeWindowing::INPUT_EVENT_MOUSE_MOTION:
+                        emulatorConsole_sendMouseMotion(console, ev.pos_x, ev.pos_y);
+                        break;
+                    case NativeWindowing::INPUT_EVENT_KEY_DOWN:
+                        emulatorConsole_sendKey(console, ev.key_code,1);
+                        break;
+                    case NativeWindowing::INPUT_EVENT_KEY_UP:
+                        emulatorConsole_sendKey(console, ev.key_code,0);
+                        break;
+                    default:
+                        ;
+                }
+            }
+        }
+
+        // Process any incoming data from the control socket
+        if (!iolooper_is_read(ioloop, readBuf.getSocket()))
+            continue;
+
+        int stat = readBuf.getDataAsync();
         if (stat == 0) {
             fprintf(stderr, "client shutdown\n");
             break;
         } else if (stat < 0) {
-            perror("getData");
+            perror("getDataAsync");
             break;
         }
 

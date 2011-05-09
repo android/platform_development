@@ -22,6 +22,14 @@ class X11Windowing : public NativeWindowing {
     NativeDisplayType getNativeDisplay();
     NativeWindowType createNativeWindow(NativeDisplayType _dpy, int width, int height);
     int destroyNativeWindow(NativeDisplayType dpy, NativeWindowType win);
+    int pollEvent(NativeDisplayType dpy, NativeWindowType win, InputEvent& ev );
+public:
+    X11Windowing(void) : mMouseLastX(0), mMouseLastY(0), mMousePressed(0), mDpy(0) {}
+private:
+    int mMouseLastX;
+    int mMouseLastY;
+    int mMousePressed;
+    void *mDpy;
 };
 
 #endif

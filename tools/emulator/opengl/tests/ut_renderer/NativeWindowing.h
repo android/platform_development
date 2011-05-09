@@ -20,9 +20,49 @@
 
 class NativeWindowing {
 public:
+    typedef enum {
+        INPUT_EVENT_KEY_DOWN,
+        INPUT_EVENT_KEY_UP,
+        INPUT_EVENT_MOUSE_DOWN,
+        INPUT_EVENT_MOUSE_UP,
+        INPUT_EVENT_MOUSE_MOTION,  /* only with button down */
+    } InputEventType;
+
+    typedef enum {
+        INPUT_KEY_BACK = 1000,
+        INPUT_KEY_HOME,
+        INPUT_KEY_MENU,
+        INPUT_KEY_DPAD_LEFT,
+        INPUT_KEY_DPAD_RIGHT,
+        INPUT_KEY_DPAD_UP,
+        INPUT_KEY_DPAD_DOWN,
+        INPUT_KEY_VOLUME_UP,
+        INPUT_KEY_VOLUME_DOWN,
+        INPUT_KEY_CALL,
+        INPUT_KEY_END_CALL,
+        INPUT_KEY_ENTER,
+    } InputKey;
+
+    typedef struct {
+        InputEventType  itype;
+        union {
+            /* for mouse events */
+            struct {
+                int      pos_x;
+                int      pos_y;
+                unsigned button_mask;
+            };
+            struct {
+                int      key_code;
+                int      key_unicode;
+            };
+        };
+    } InputEvent;
+
     virtual NativeDisplayType getNativeDisplay() = 0;
     virtual NativeWindowType createNativeWindow(NativeDisplayType dpy, int width, int height) = 0;
     virtual int destroyNativeWindow(NativeDisplayType dpy, NativeWindowType win) = 0;
+    virtual int pollEvent(NativeDisplayType dpy, NativeWindowType win, InputEvent& ev ) = 0;
 };
 
 #endif

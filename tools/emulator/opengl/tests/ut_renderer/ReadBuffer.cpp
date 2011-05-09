@@ -16,6 +16,8 @@
 #include "ReadBuffer.h"
 #include <string.h>
 #include <assert.h>
+#include <errno.h>
+#include <stdio.h>
 
 ReadBuffer::ReadBuffer(TcpStream *stream, size_t bufsize)
 {
@@ -43,6 +45,27 @@ int ReadBuffer::getData()
         m_validData += (size_t) stat;
     }
     return stat;
+}
+
+int ReadBuffer::getDataAsync()
+{
+    if (m_validData > 0) {
+        memcpy(m_buf, m_readPtr, m_validData);
+    }
+    m_readPtr = m_buf;
+    // get fresh data into the buffer;
+    int stat = m_stream->recv(m_buf + m_validData, m_size - m_validData);
+    if (stat > 0) {
+        m_validData += (size_t) stat;
+        return stat;
+    }
+    if (stat == 0) {
+        return 0;  // disconnection
+    }
+    if (errno == EAGAIN || errno == EWOULDBLOCK) {
+        return 1;  // normal for non-blocking sockets
+    }
+    return -1;  // a real error occured.
 }
 
 void ReadBuffer::consume(size_t amount)

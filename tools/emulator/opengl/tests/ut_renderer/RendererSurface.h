@@ -35,18 +35,21 @@ public:
     static EGLConfig getEglConfig(EGLDisplay eglDisplay, SurfaceConfig config);
 
     int destroy(NativeWindowing *nw);
+    int pollEvent(NativeWindowing::InputEvent &ev);
 
 private:
-    RendererSurface(EGLDisplay display, NativeWindowType window, EGLSurface surface, EGLConfig config) :
+    RendererSurface(EGLDisplay display, NativeWindowType window, EGLSurface surface, EGLConfig config, NativeWindowing* nw) :
         m_eglDisplay(display),
         m_config(config),
         m_window(window),
-        m_eglSurface(surface)
+        m_eglSurface(surface),
+        m_nw(nw)
     {}
 
     EGLDisplay m_eglDisplay;
     EGLConfig m_config;
     NativeWindowType m_window;
     EGLSurface m_eglSurface;
+    NativeWindowing* m_nw;
 };
 #endif

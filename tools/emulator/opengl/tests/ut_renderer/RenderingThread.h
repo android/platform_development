@@ -35,6 +35,7 @@
 #define DECODER_BUF_SIZE (4 * 1024 * 1024)
 
 class RendererContext;
+class RendererSurface;
 
 class RenderingThread {
 public:
@@ -43,6 +44,7 @@ public:
     void *thread();
     RendererContext *currentContext() { return m_currentContext; }
     void setCurrentContext(RendererContext *ctx) { m_currentContext = ctx; }
+    void setSurface(RendererSurface *surf) { m_surface = surf; }
     GLDecoder & glDecoder() { return m_glDec; }
     GL2Decoder & gl2Decoder() { return m_gl2Dec; }
 
@@ -57,6 +59,7 @@ private:
     TcpStream   *m_stream;
     pthread_t m_thread;
     RendererContext * m_currentContext;
+    RendererSurface * m_surface;
 
     struct BackendCaps {
         bool initialized;
