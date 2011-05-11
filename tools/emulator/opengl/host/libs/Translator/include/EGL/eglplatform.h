@@ -65,13 +65,20 @@
 #define WIN32_LEAN_AND_MEAN 1
 #endif
 #include <windows.h>
+#include <GL/gl.h>
+#define WGL_WGLEXT_PROTOTYPES
+#include <GL/wglext.h>
 
-typedef PIXELFORMATDESCRIPTOR EGLNativePixelFormatType;
-typedef HGLRC                 EGLNativeContextType;
-typedef HPBUFFERARB           EGLNativePbufferType;
-typedef HDC                   EGLNativeDisplayType;
-typedef HBITMAP               EGLNativePixmapType;
-typedef HWND                  EGLNativeWindowType;
+class WinDisplay; //defined in EglWindows.cpp
+typedef WinDisplay* DISPLAY;
+
+
+typedef PIXELFORMATDESCRIPTOR  EGLNativePixelFormatType;
+typedef HGLRC                  EGLNativeContextType;
+typedef HPBUFFERARB            EGLNativePbufferType;
+typedef DISPLAY                EGLNativeDisplayType;
+typedef HBITMAP                EGLNativePixmapType;
+typedef HWND                   EGLNativeWindowType;
 
 #elif defined(__APPLE__)
 
