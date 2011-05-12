@@ -17,6 +17,7 @@
 #include <dlfcn.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdio.h>
 #include <GLcommon/ThreadInfo.h>
 #include <GLcommon/TranslatorIfaces.h>
 
@@ -149,6 +150,17 @@ static __translator_getGLESIfaceFunc loadIfaces(const char* libName){
     return func;
 }
 
+#ifdef _WIN32
+#define LIB_GLES_CM_NAME "libGLES_CM_translator"
+#define LIB_GLES_V2_NAME "libGLES_V2_translator"
+#elif __linux__
+#define LIB_GLES_CM_NAME "libGLES_CM_translator.so"
+#define LIB_GLES_V2_NAME "libGLES_V2_translator.so"
+#else
+#define LIB_GLES_CM_NAME "libGLES_CM_translator"
+#define LIB_GLES_V2_NAME "libGLES_V2_translator"
+#endif
+
 EGLAPI EGLBoolean EGLAPIENTRY eglInitialize(EGLDisplay display, EGLint *major, EGLint *minor) {
     EglDisplay* dpy = g_eglInfo->getDisplay(display);
     if(!dpy) {
@@ -158,11 +170,23 @@ EGLAPI EGLBoolean EGLAPIENTRY eglInitialize(EGLDisplay display, EGLint *major, E
     if(major) *major = MAJOR;
     if(minor) *minor = MINOR;
 
-     if(!g_eglInfo->getIface(GLES_1_1)) {
-        __translator_getGLESIfaceFunc func  = loadIfaces("libGLES_CM_translator.so");
+    __translator_getGLESIfaceFunc func  = NULL;
+
+    if(!g_eglInfo->getIface(GLES_1_1)) {
+        func  = loadIfaces(LIB_GLES_CM_NAME);
         if(func){
             g_eglInfo->setIface(func(&s_eglIface),GLES_1_1);
         } else {
+           fprintf(stderr,"could not find ifaces for GLES CM 1.1\n");
+           return EGL_FALSE;
+        }
+    }
+    if(!g_eglInfo->getIface(GLES_2_0)) {
+        func  = loadIfaces(LIB_GLES_V2_NAME);
+        if(func){
+            g_eglInfo->setIface(func(&s_eglIface),GLES_2_0);
+        } else {
+           fprintf(stderr,"could not find ifaces for GLES 2.0\n");
            return EGL_FALSE;
         }
     }
@@ -170,7 +194,6 @@ EGLAPI EGLBoolean EGLAPIENTRY eglInitialize(EGLDisplay display, EGLint *major, E
     return EGL_TRUE;
 }
 
-//TODO check this func definitions later on
 EGLAPI EGLBoolean EGLAPIENTRY eglTerminate(EGLDisplay display) {
     VALIDATE_DISPLAY(display);
     dpy->terminate();

@@ -8,21 +8,21 @@ translator_path := $(LOCAL_PATH)/..
 ifeq (, $(findstring $(HOST_OS), darwin))
 
 LOCAL_SRC_FILES :=      \
-     GLEScmImp.cpp      \
-     GLEScmUtils.cpp    \
-     TextureUtils.cpp   \
-     GLEScmContext.cpp  \
-     GLEScmValidate.cpp 
+     GLESv2Context.cpp    \
+     GLESv2Validate.cpp \
+     GLESv2Imp.cpp
 
 LOCAL_C_INCLUDES += \
                  $(translator_path)/include \
+
 
 LOCAL_SHARED_LIBRARIES := \
     libGLcommon
 
 LOCAL_CFLAGS := -g -O0
 LOCAL_MODULE_TAGS := debug
-LOCAL_MODULE := libGLES_CM_translator
+LOCAL_MODULE := libGLES_V2_translator
+
 
 include $(BUILD_HOST_SHARED_LIBRARY)
 
