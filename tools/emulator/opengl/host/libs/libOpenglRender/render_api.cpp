@@ -143,10 +143,12 @@ IOStream *createRenderThread(int p_stream_buffer_size)
 {
     TcpStream *stream = new TcpStream(p_stream_buffer_size);
     if (!stream) {
+		ERR("createRenderThread failed to create stream\n");
         return NULL;
     }
 
     if (stream->connect("localhost", s_renderPort) < 0) {
+		ERR("createRenderThread failed to connect\n");
         delete stream;
         return NULL;
     }
