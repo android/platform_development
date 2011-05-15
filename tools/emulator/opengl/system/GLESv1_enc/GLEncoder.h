@@ -89,6 +89,8 @@ private:
     static void s_glPixelStorei(void *self, GLenum param, GLint value);
 
 	static void s_glFinish(void *self);
-    void sendVertexData(unsigned first, unsigned count);
+    static void s_glEGLImageTargetTexture2DOES(void * self, GLenum target, GLeglImageOES image);
+	void sendVertexData(unsigned first, unsigned count);
+	
 };
 #endif
