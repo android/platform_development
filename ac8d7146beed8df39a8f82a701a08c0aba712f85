@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABAX///xM\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglConfig.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-16T13:44:29Z",
+      "side": 1,
+      "message": "what\u0027s the reason for this change? Note that you use the function with an un-initialized value in this patch.",
+      "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABAX///xY\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglImp.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-16T13:44:29Z",
+      "side": 1,
+      "message": "Is this really needed? It seems all other uses of osUtils::dynLibrary::open do not use any .so suffix on Linux.\n\nIf it is, it would be simpler to modify the dynLibrary::open() implementation to add the suffix if it is missing from the library name instead.",
+      "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABAX///xc\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglImp.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-16T13:44:29Z",
+      "side": 1,
+      "message": "I would prefer that you would initialize this variable.",
+      "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABAX///xU\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglWindowsApi.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-16T13:44:29Z",
+      "side": 1,
+      "message": "Can you fix indentation here?",
+      "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABAX///xQ\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/GLDispatch.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-16T13:44:29Z",
+      "side": 1,
+      "message": "this probably belongs to a separate patch.",
+      "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
