@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAABAn///9M\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglConfig.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006131
+      },
+      "writtenOn": "2011-05-16T14:59:23Z",
+      "side": 1,
+      "message": "the reason was is that the type EGLNativePixelFormatType is defined differently for Linux \u0026 windows ( it is defined in eglplatform.h) , and initialization of it with 0 does not compile on windows , i am fixing it right now.",
+      "parentUuid": "AAABAX///xM\u003d",
+      "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAABAX///xY\u003d",
         "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglImp.cpp",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-05-16T13:44:29Z",
       "side": 1,
       "message": "Is this really needed? It seems all other uses of osUtils::dynLibrary::open do not use any .so suffix on Linux.\n\nIf it is, it would be simpler to modify the dynLibrary::open() implementation to add the suffix if it is missing from the library name instead.",
+      "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABAn///9k\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglImp.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1006131
+      },
+      "writtenOn": "2011-05-16T14:59:23Z",
+      "side": 1,
+      "message": "The .so suffix is needed on Linux !\nIt is better to leave it as is since at some cases the caller will want to use \".so.1\"\nor some other suffix.",
+      "parentUuid": "AAABAX///xY\u003d",
       "revId": "ac8d7146beed8df39a8f82a701a08c0aba712f85",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
