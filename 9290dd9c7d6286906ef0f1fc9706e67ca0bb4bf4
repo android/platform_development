@@ -1,0 +1,9 @@
+Change-Id: I9290dd9c7d6286906ef0f1fc9706e67ca0bb4bf4
+Code-Review+2: Xavier Ducrohet <xav@android.com>
+Code-Review+1: Brett Chabot <brettchabot@android.com>
+Verified+1: Brett Chabot <brettchabot@android.com>
+Submitted-by: Jean-Baptiste Queru <jbq@google.com>
+Submitted-at: Fri, 08 Oct 2010 13:43:42 -0700
+Reviewed-on: https://review.source.android.com/16608
+Project: platform/development
+Branch: refs/heads/master

@@ -1,0 +1,8 @@
+Change-Id: Idd7447a0ebd5ca47b9b593a797b79a632bce21d6
+Verified+1: Jean-Baptiste Queru <jbq@google.com>
+Code-Review+2: Romain Guy <romainguy@android.com>
+Submitted-by: Romain Guy <romainguy@android.com>
+Submitted-at: Wed, 26 Aug 2009 10:14:12 -0700
+Reviewed-on: https://review.source.android.com/2422
+Project: platform/development
+Branch: refs/heads/master
