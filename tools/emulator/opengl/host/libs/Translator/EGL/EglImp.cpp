@@ -644,13 +644,6 @@ EGLAPI EGLBoolean EGLAPIENTRY eglMakeCurrent(EGLDisplay display, EGLSurface draw
         RETURN_ERROR(EGL_FALSE,EGL_BAD_MATCH);
     }
 
-    VALIDATE_CONTEXT(context);
-    VALIDATE_SURFACE(draw,newDrawSrfc);
-    VALIDATE_SURFACE(read,newReadSrfc);
-
-    EglSurface* newDrawPtr = newDrawSrfc.Ptr();
-    EglSurface* newReadPtr = newReadSrfc.Ptr();
-    EglContext* newCtx     = ctx.Ptr();
     ThreadInfo* thread     = getThreadInfo();
     EglContext* prevCtx    = static_cast<EglContext*>(thread->eglContext);
 
@@ -660,11 +653,17 @@ EGLAPI EGLBoolean EGLAPIENTRY eglMakeCurrent(EGLDisplay display, EGLSurface draw
            if(!EglOS::makeCurrent(dpy->nativeType(),NULL,NULL,NULL)) {
                RETURN_ERROR(EGL_FALSE,EGL_BAD_ACCESS);
            }
-           thread->updateInfo(newCtx,dpy,NULL,newCtx->getShareGroup(),dpy->getManager(newCtx->version()));
-           g_eglInfo->getIface(prevCtx->version())->setShareGroup(newCtx->getGlesContext(),ShareGroupPtr(NULL));
-           ctx->setSurfaces(SurfacePtr(NULL),SurfacePtr(NULL));
+           thread->updateInfo(NULL,dpy,NULL,ShareGroupPtr(NULL),dpy->getManager(prevCtx->version()));
        }
     } else { //assining new context
+        VALIDATE_CONTEXT(context);
+        VALIDATE_SURFACE(draw,newDrawSrfc);
+        VALIDATE_SURFACE(read,newReadSrfc);
+
+        EglSurface* newDrawPtr = newDrawSrfc.Ptr();
+        EglSurface* newReadPtr = newReadSrfc.Ptr();
+        EglContext* newCtx     = ctx.Ptr();
+
         //surfaces compitability check
         if(!((*ctx->getConfig()).compitableWith((*newDrawPtr->getConfig()))) ||
            !((*ctx->getConfig()).compitableWith((*newReadPtr->getConfig())))) {
@@ -728,6 +727,8 @@ EGLAPI EGLBoolean EGLAPIENTRY eglMakeCurrent(EGLDisplay display, EGLSurface draw
                 dpy->removeContext(prevCtxPtr);
            }
         }
+
+        prevCtx->setSurfaces(SurfacePtr(NULL),SurfacePtr(NULL));
     }
     return EGL_TRUE;
 }
