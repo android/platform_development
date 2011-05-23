@@ -785,7 +785,13 @@ EGLAPI EGLContext EGLAPIENTRY eglGetCurrentContext(void) {
     EglDisplay* dpy    = static_cast<EglDisplay*>(thread->eglDisplay);
     EglContext* ctx    = static_cast<EglContext*>(thread->eglContext);
     if(dpy && ctx){
-        return dpy->getContext(ctx).Ptr();
+        // This double check is required because a context might still be current after it is destroyed - in which case
+        // its handle should be invalid, that is EGL_NO_CONTEXT should be returned even though the context is current
+        EGLContext c = (EGLContext)ctx->getHndl();
+        if(dpy->getContext(c).Ptr())
+        {
+            return c;
+        }
     }
     return EGL_NO_CONTEXT;
 }
@@ -803,9 +809,12 @@ EGLAPI EGLSurface EGLAPIENTRY eglGetCurrentSurface(EGLint readdraw) {
         {
             // This double check is required because a surface might still be current after it is destroyed - in which case
             // its handle should be invalid, that is EGL_NO_SURFACE should be returned even though the surface is current
-            surface = dpy->getSurface(surface.Ptr());
+            EGLSurface s = (EGLSurface)surface->getHndl();
+            surface = dpy->getSurface(s);
             if(surface.Ptr())
-                return surface.Ptr();
+            {
+                return s;
+            }
         }
     }
     return EGL_NO_SURFACE;
