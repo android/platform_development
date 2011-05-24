@@ -61,6 +61,8 @@ void getPaletteInfo(GLenum internalFormat,unsigned int& indexSizeBits,unsigned i
             colorFrmt = GL_RGBA;
         break;
 
+    case GL_PALETTE8_RGBA4_OES:
+        colorFrmt = GL_RGBA;
     case GL_PALETTE8_R5_G6_B5_OES:
     case GL_PALETTE8_RGB5_A1_OES:
         indexSizeBits = 8;
@@ -104,9 +106,13 @@ unsigned char* uncompressTexture(GLenum internalformat,GLenum& formatOut,GLsizei
     unsigned int indexSizeBits;  //the size of the color index in the pallete
     unsigned int colorSizeBytes; //the size of each color cell in the pallete
 
-    const unsigned char* palette = static_cast<const unsigned char *>(data);
-
     getPaletteInfo(internalformat,indexSizeBits,colorSizeBytes,formatOut);
+    if(!data)
+    {
+        return NULL;
+    }
+
+    const unsigned char* palette = static_cast<const unsigned char *>(data);
 
     //the pallete positioned in the begininng of the data
     // so we jump over it to get to the colos indices in the palette

@@ -65,6 +65,7 @@ public:
     void drawPointsElems(GLESFloatArrays& arrs,GLsizei count,GLenum type,const GLvoid* indices);
 
     void bindBuffer(GLenum target,GLuint buffer);
+    void unbindBuffer(GLuint buffer);
     bool isBuffer(GLuint buffer);
     bool isBindedBuffer(GLenum target);
     GLvoid* getBindedBuffer(GLenum target);

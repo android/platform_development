@@ -58,6 +58,7 @@ bool GLESvalidate::blendSrc(GLenum s) {
     case GL_ONE_MINUS_SRC_ALPHA:
     case GL_DST_ALPHA:
     case GL_ONE_MINUS_DST_ALPHA:
+    case GL_SRC_ALPHA_SATURATE:
         return true;
   }
   return false;
@@ -87,7 +88,7 @@ bool GLESvalidate::colorPointerParams(GLint size,GLsizei stride) {
 }
 
 bool GLESvalidate::texCoordPointerParams(GLint size,GLsizei stride) {
-    return ((size >=1) && (size <= 4)) && (stride >=0) ;
+    return ((size >=2) && (size <= 4)) && (stride >=0) ;
 }
 
 bool GLESvalidate::supportedArrays(GLenum arr) {
@@ -156,6 +157,7 @@ bool GLESvalidate::texParams(GLenum target,GLenum pname) {
 bool GLESvalidate::texEnv(GLenum target,GLenum pname) {
     switch(pname) {
     case GL_TEXTURE_ENV_MODE:
+    case GL_TEXTURE_ENV_COLOR:
     case GL_COMBINE_RGB:
     case GL_COMBINE_ALPHA:
     case GL_SRC0_RGB:
