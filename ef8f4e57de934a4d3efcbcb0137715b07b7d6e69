@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABBn///RU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-30T15:41:05Z",
+      "side": 1,
+      "message": "Please fix formatting of commit message:\n\n\u003cshort-descriptive-line\u003e\n\u003cempty line\u003e\n\u003clonger description, possibly padded to 80 chars\u003e",
+      "revId": "ef8f4e57de934a4d3efcbcb0137715b07b7d6e69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABBn///RQ\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/ThreadInfo.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-30T15:41:05Z",
+      "side": 1,
+      "message": "It might be a good idea to reformat this line into multiple ones. This would make it easier to read.",
+      "revId": "ef8f4e57de934a4d3efcbcb0137715b07b7d6e69",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
