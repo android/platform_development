@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABBn///Q4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-30T15:50:55Z",
+      "side": 1,
+      "message": "Please fix commit message formatting:\n\n\u003cshort-descriptive-line\u003e\n\u003cempty line\u003e\n\u003clonger description\u003e",
+      "revId": "e36f675b412b31413bd9d1c8dede23db7f82f31a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABBn///Q8\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/TextureUtils.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-30T15:50:55Z",
+      "side": 1,
+      "message": "If the fall-through (i.e. the lack of \"break\") is intentional, I would prefer if you made this explicit with a comment.\nFor example with a line like:\n\n    /* fall-through */\n\nJust before the next-case.",
+      "revId": "e36f675b412b31413bd9d1c8dede23db7f82f31a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
