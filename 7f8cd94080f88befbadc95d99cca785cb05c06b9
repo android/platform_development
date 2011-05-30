@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABBn///Rc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-30T15:41:19Z",
+      "side": 1,
+      "message": "Please fix the commit message formatting, i.e.\n\n\u003cshort-descriptive-line\u003e\n\u003cempty-line\u003e\n\u003clonger description, possibly wrapped to 80 columns\u003e",
+      "revId": "7f8cd94080f88befbadc95d99cca785cb05c06b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABBn///RY\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/EGL/EglImp.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-05-30T15:41:19Z",
+      "side": 1,
+      "message": "Please fix formatting, the comment is too long.",
+      "revId": "7f8cd94080f88befbadc95d99cca785cb05c06b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
