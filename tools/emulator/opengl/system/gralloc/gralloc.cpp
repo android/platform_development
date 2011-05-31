@@ -29,6 +29,7 @@
 #include <cutils/log.h>
 
 
+#define DBG_FUNC DBG("%s\n", __FUNCTION__)
 //
 // our private gralloc module structure
 //
@@ -163,7 +164,7 @@ static int gralloc_alloc(alloc_device_t* dev,
         *pStride = bpr / bpp;
     }
 
-    LOGD("gralloc_alloc ashmem_size=%d\n", ashmem_size);
+    LOGD("gralloc_alloc ashmem_size=%d, tid %d\n", ashmem_size, gettid());
 
     //
     // Allocate space in ashmem if needed
@@ -193,6 +194,8 @@ static int gralloc_alloc(alloc_device_t* dev,
             delete cb;
             return err;
         }
+
+		cb->setFd(fd);
     }
 
     //
@@ -228,18 +231,18 @@ static int gralloc_alloc(alloc_device_t* dev,
     pthread_mutex_unlock(&grdev->lock);
 
     *pHandle = cb;
-    return 0;
+	return 0;
 }
 
 static int gralloc_free(alloc_device_t* dev,
                         buffer_handle_t handle)
 {
-    const cb_handle_t *cb = (const cb_handle_t *)handle;
+	const cb_handle_t *cb = (const cb_handle_t *)handle;
     if (!cb || !cb->validate()) {
         return -EINVAL;
     }
 
-    if (cb->hostHandle != 0) {
+	if (cb->hostHandle != 0) {
         DEFINE_AND_VALIDATE_HOST_CONNECTION;
 
         rcEnc->rcDestroyColorBuffer(rcEnc, cb->hostHandle);
@@ -299,6 +302,12 @@ static int gralloc_device_close(struct hw_device_t *dev)
     return 0;
 }
 
+static int fb_compositionComplete(struct framebuffer_device_t* dev)
+{
+	LOGI("fb_compositionComplete");
+	return 0;
+}
+
 //
 // Framebuffer device functions
 //
@@ -351,7 +360,7 @@ static int fb_setUpdateRect(struct framebuffer_device_t* dev,
 static int fb_setSwapInterval(struct framebuffer_device_t* dev,
             int interval)
 {
-    fb_device_t *fbdev = (fb_device_t *)dev;
+	fb_device_t *fbdev = (fb_device_t *)dev;
 
     if (!fbdev) {
         return -EINVAL;
@@ -650,6 +659,7 @@ static int gralloc_device_open(const hw_module_t* module,
         if (NULL == dev) {
             return -ENOMEM;
         }
+		memset(dev, 0, sizeof(fb_device_t));
 
         // Initialize our device structure
         //
@@ -659,7 +669,8 @@ static int gralloc_device_open(const hw_module_t* module,
         dev->device.common.close = fb_close;
         dev->device.setSwapInterval = fb_setSwapInterval;
         dev->device.post            = fb_post;
-        dev->device.setUpdateRect   = 0; //XXX: fb_setUpdateRect;
+        dev->device.setUpdateRect   = fb_setUpdateRect;
+		dev->device.compositionComplete = fb_compositionComplete; //XXX: this is a dummy
 
         const_cast<uint32_t&>(dev->device.flags) = 0;
         const_cast<uint32_t&>(dev->device.width) = width;
