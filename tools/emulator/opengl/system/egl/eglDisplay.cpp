@@ -45,12 +45,17 @@ bool eglDisplay::initialize(EGLClient_eglInterface *eglIface)
         m_gles_iface = loadGLESClientAPI("/system/lib/egl/libGLESv1_CM_emulation.so", 
                                          eglIface);
         if (!m_gles_iface) {
+			LOGE("Failed to load gles1 iface");
             return false;
         }
 
 #ifdef WITH_GLES2
         m_gles2_iface = loadGLESClientAPI("/system/lib/egl/libGLESv2_emulation.so", 
                                           eglIface);
+        if (!m_gles2_iface) {
+			LOGE("Failed to load gles2 iface");
+            return false;
+        }
 #endif
 
         //
@@ -58,6 +63,7 @@ bool eglDisplay::initialize(EGLClient_eglInterface *eglIface)
         //
         HostConnection *hcon = HostConnection::get();
         if (!hcon) {
+			LOGE("Failed to establish connection with the host\n");
             return false;
         }
 
@@ -66,6 +72,7 @@ bool eglDisplay::initialize(EGLClient_eglInterface *eglIface)
         //
         renderControl_encoder_context_t *rcEnc = hcon->rcEncoder();
         if (!rcEnc) {
+			LOGE("Failed to get renderControl encoder instance");
             return false;
         }
 
@@ -102,7 +109,7 @@ bool eglDisplay::initialize(EGLClient_eglInterface *eglIface)
 
         uint32_t nInts = m_numConfigAttribs * (m_numConfigs + 1);
 		EGLint tmp_buf[nInts];
-        m_configs = new EGLint[nInts-1];
+        m_configs = new EGLint[nInts-m_numConfigAttribs];
         if (!m_configs) {
             return false;
         }
@@ -115,19 +122,32 @@ bool eglDisplay::initialize(EGLClient_eglInterface *eglIface)
 
 		//Fill the attributes vector.
 		//The first m_numConfigAttribs values of tmp_buf are the actual attributes enums.
-		for (int i=0; i<m_numConfigAttribs; i++)
-		{
+		for (int i=0; i<m_numConfigAttribs; i++) {
 			m_attribs.add(tmp_buf[i], i);
 		}
 
 		//Copy the actual configs data to m_configs
-		memcpy(m_configs, tmp_buf + m_numConfigAttribs, m_numConfigs*sizeof(EGLint));
+		memcpy(m_configs, tmp_buf + m_numConfigAttribs, m_numConfigs*m_numConfigAttribs*sizeof(EGLint));
 
-        m_initialized = true;
+		m_initialized = true;
     }
     pthread_mutex_unlock(&m_lock);
 
-    return true;
+	processConfigs();
+    
+	return true;
+}
+
+void eglDisplay::processConfigs()
+{
+	for (int i=0; i<m_numConfigs; i++) {
+		EGLConfig config = (EGLConfig)i;
+		//Setup the EGL_NATIVE_VISUAL_ID attribute
+		PixelFormat format; 
+		if (getConfigNativePixelFormat(config, &format)) {
+			setConfigAttrib(config, EGL_NATIVE_VISUAL_ID, format);
+		}
+	}
 }
 
 void eglDisplay::terminate()
@@ -146,12 +166,14 @@ EGLClient_glesInterface *eglDisplay::loadGLESClientAPI(const char *libName,
 {
     void *lib = dlopen(libName, RTLD_NOW);
     if (!lib) {
+		LOGE("Failed to dlopen %s", libName);
         return NULL;
     }
 
     init_emul_gles_t init_gles_func = (init_emul_gles_t)dlsym(lib,"init_emul_gles");
     if (!init_gles_func) {
-        dlclose((void*)libName);
+		LOGE("Failed to find init_emul_gles");
+        dlclose((void*)lib);
         return NULL;
     }
 
@@ -189,6 +211,8 @@ static char *buildExtensionString()
         return (char*)systemStaticEGLExtensions;
     }
 
+	//XXX: this doesn't work
+	/*
     //
     // Filter host extension list to include only extensions
     // we can support (in the systemDynamicEGLExtensions list)
@@ -219,7 +243,8 @@ static char *buildExtensionString()
         c++;
     }
     *insert = '\0';
-  
+    
+	*/
     int n = strlen(hostExt);
     if (n > 0) {
         char *str = (char *)malloc(strlen(systemStaticEGLExtensions) + n + 1);
@@ -316,7 +341,41 @@ EGLBoolean eglDisplay::getConfigAttrib(EGLConfig config, EGLint attrib, EGLint *
 	return ret; 
 }
 
-EGLBoolean eglDisplay::getConfigPixelFormat(EGLConfig config, GLenum * format)
+void eglDisplay::dumpConfig(EGLConfig config)
+{
+	EGLint value = 0;
+	DBG("^^^^^^^^^^ dumpConfig %d ^^^^^^^^^^^^^^^^^^", (int)config);
+	for (int i=0; i<m_numConfigAttribs; i++) {
+		getAttribValue(config, i, &value);
+		DBG("{%d}[%d] %d\n", (int)config, i, value);
+	}
+}
+
+/* To set the value of attribute <a> of config <c> use the following formula:
+ * *(m_configs + (int)c*m_numConfigAttribs + a) = value;
+ */
+EGLBoolean eglDisplay::setAttribValue(EGLConfig config, EGLint attribIdx, EGLint value)
+{
+	if (attribIdx == ATTRIBUTE_NONE)
+	{
+		LOGE("[%s] Bad attribute idx\n", __FUNCTION__);
+		return EGL_FALSE;
+	}
+	*(m_configs + (int)config*m_numConfigAttribs + attribIdx) = value;
+	return EGL_TRUE;
+}
+
+EGLBoolean eglDisplay::setConfigAttrib(EGLConfig config, EGLint attrib, EGLint value)
+{
+	//Though it seems that valueFor() is thread-safe, we don't take chanses
+	pthread_mutex_lock(&m_lock);
+	EGLBoolean ret = setAttribValue(config, m_attribs.valueFor(attrib), value);  
+	pthread_mutex_unlock(&m_lock);
+	return ret; 
+}
+
+
+EGLBoolean eglDisplay::getConfigNativePixelFormat(EGLConfig config, PixelFormat * format)
 {
 	EGLint redSize, blueSize, greenSize, alphaSize;
 	
@@ -330,11 +389,35 @@ EGLBoolean eglDisplay::getConfigPixelFormat(EGLConfig config, GLenum * format)
 	}
 
 	//calculate the GL internal format
-	if ((redSize==8)&&(blueSize==8)&&(greenSize==8)&&(alphaSize==8)) *format = GL_RGBA;
-	else if ((redSize==8)&&(blueSize==8)&&(greenSize==8)&&(alphaSize==0)) *format = GL_RGB; 
-	else if ((redSize==5)&&(blueSize==6)&&(greenSize==5)&&(alphaSize==0)) *format = GL_RGB565_OES;
-	else if ((redSize==5)&&(blueSize==5)&&(greenSize==5)&&(alphaSize==1)) *format = GL_RGB5_A1_OES;
-	else if ((redSize==4)&&(blueSize==4)&&(greenSize==4)&&(alphaSize==4)) *format = GL_RGBA4_OES;
+	if ((redSize==8)&&(greenSize==8)&&(blueSize==8)&&(alphaSize==8)) *format = PIXEL_FORMAT_RGBA_8888; //XXX: BGR?
+	else if ((redSize==8)&&(greenSize==8)&&(blueSize==8)&&(alphaSize==0)) *format = PIXEL_FORMAT_RGBX_8888; //XXX or PIXEL_FORMAT_RGB_888 
+	else if ((redSize==5)&&(greenSize==6)&&(blueSize==5)&&(alphaSize==0)) *format = PIXEL_FORMAT_RGB_565;
+	else if ((redSize==5)&&(greenSize==5)&&(blueSize==5)&&(alphaSize==1)) *format = PIXEL_FORMAT_RGBA_5551;
+	else if ((redSize==4)&&(greenSize==4)&&(blueSize==4)&&(alphaSize==4)) *format = PIXEL_FORMAT_RGBA_4444;
+	else {
+		return EGL_FALSE;
+	}
+	return EGL_TRUE;
+}
+EGLBoolean eglDisplay::getConfigGLPixelFormat(EGLConfig config, GLenum * format)
+{
+	EGLint redSize, blueSize, greenSize, alphaSize;
+	
+	if ( !(getAttribValue(config, m_attribs.valueFor(EGL_RED_SIZE), &redSize) &&
+		getAttribValue(config, m_attribs.valueFor(EGL_BLUE_SIZE), &blueSize) &&
+		getAttribValue(config, m_attribs.valueFor(EGL_GREEN_SIZE), &greenSize) &&
+		getAttribValue(config, m_attribs.valueFor(EGL_ALPHA_SIZE), &alphaSize)) )
+	{
+		LOGE("Couldn't find value for one of the pixel format attributes");
+		return EGL_FALSE;
+	}
+
+	//calculate the GL internal format
+	if ((redSize==8)&&(blueSize==8)&&(blueSize==8)&&(alphaSize==8)) *format = GL_RGBA;
+	else if ((redSize==8)&&(greenSize==8)&&(blueSize==8)&&(alphaSize==0)) *format = GL_RGB; 
+	else if ((redSize==5)&&(greenSize==6)&&(blueSize==5)&&(alphaSize==0)) *format = GL_RGB565_OES;
+	else if ((redSize==5)&&(greenSize==5)&&(blueSize==5)&&(alphaSize==1)) *format = GL_RGB5_A1_OES;
+	else if ((redSize==4)&&(greenSize==4)&&(blueSize==4)&&(alphaSize==4)) *format = GL_RGBA4_OES;
 	else return EGL_FALSE;
 
 	return EGL_TRUE;

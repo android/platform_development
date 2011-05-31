@@ -32,7 +32,7 @@ struct cb_handle_t : public native_handle {
         hostHandle(0)
     {
         version = sizeof(native_handle);
-        numFds = 1;
+        numFds = 0;
         numInts = CB_HANDLE_NUM_INTS(numFds);
     }
 
@@ -40,11 +40,21 @@ struct cb_handle_t : public native_handle {
         magic = 0;
     }
 
+	void setFd(int p_fd) {
+		if (p_fd >= 0) {
+            numFds = 1;
+		}
+		else {
+            numFds = 0;
+		}
+		fd = p_fd;
+        numInts = CB_HANDLE_NUM_INTS(numFds);
+	}
+
     bool validate() const {
         return (version == sizeof(native_handle) &&
                 magic == BUFFER_HANDLE_MAGIC &&
-                numInts == CB_HANDLE_NUM_INTS(1) &&
-                numFds == 1);
+                numInts == CB_HANDLE_NUM_INTS(numFds));
     }
 
     bool canBePosted() {
