@@ -32,7 +32,7 @@
 extern "C" {
 
 //decleration
-static void initContext(GLEScontext* ctx);
+static void initContext(GLEScontext* ctx,ShareGroupPtr grp);
 static void deleteGLESContext(GLEScontext* ctx);
 static void setShareGroup(GLEScontext* ctx,ShareGroupPtr grp);
 static GLEScontext* createGLESContext();
@@ -61,8 +61,12 @@ static GLESiface  s_glesIface = {
 
 extern "C" {
 
-static void initContext(GLEScontext* ctx) {
-    ctx->init();
+static void initContext(GLEScontext* ctx,ShareGroupPtr grp) {
+    if (!ctx->isInitialized()) {
+        ctx->setShareGroup(grp);
+        ctx->init();
+        glBindTexture(GL_TEXTURE_2D,0);
+    }
 }
 static GLEScontext* createGLESContext() {
     return new GLESv2Context();
@@ -135,13 +139,15 @@ GL_APICALL void  GL_APIENTRY glBindBuffer(GLenum target, GLuint buffer){
     GET_CTX();
     SET_ERROR_IF(!GLESv2Validate::bufferTarget(target),GL_INVALID_ENUM);
     //if buffer wasn't generated before,generate one
-    if(thrd->shareGroup.Ptr() && !thrd->shareGroup->isObject(VERTEXBUFFER,buffer)){
+    if(buffer && thrd->shareGroup.Ptr() && !thrd->shareGroup->isObject(VERTEXBUFFER,buffer)){
         thrd->shareGroup->genName(VERTEXBUFFER,buffer);
         thrd->shareGroup->setObjectData(VERTEXBUFFER,buffer,ObjectDataPtr(new GLESbuffer()));
     }
     ctx->bindBuffer(target,buffer);
-    GLESbuffer* vbo = (GLESbuffer*)thrd->shareGroup->getObjectData(VERTEXBUFFER,buffer).Ptr();
-    vbo->setBinded();
+    if (buffer) {
+        GLESbuffer* vbo = (GLESbuffer*)thrd->shareGroup->getObjectData(VERTEXBUFFER,buffer).Ptr();
+        vbo->setBinded();
+    }
 }
 
 GL_APICALL void  GL_APIENTRY glBindFramebuffer(GLenum target, GLuint framebuffer){
@@ -181,7 +187,7 @@ GL_APICALL void  GL_APIENTRY glBindTexture(GLenum target, GLuint texture){
     SET_ERROR_IF(!GLESv2Validate::textureTarget(target),GL_INVALID_ENUM)
 
     GLuint globalTextureName = texture;
-    if(texture && thrd->shareGroup.Ptr()){
+    if(thrd->shareGroup.Ptr()){
         globalTextureName = thrd->shareGroup->getGlobalName(TEXTURE,texture);
         //if texture wasn't generated before,generate one
         if(!globalTextureName){
@@ -189,7 +195,7 @@ GL_APICALL void  GL_APIENTRY glBindTexture(GLenum target, GLuint texture){
             globalTextureName = thrd->shareGroup->getGlobalName(TEXTURE,texture);
         }
     }
-    ctx->setBindedTexture(globalTextureName);
+    ctx->setBindedTexture(texture);
     ctx->dispatcher().glBindTexture(target,globalTextureName);
 }
 
@@ -303,7 +309,7 @@ GL_APICALL GLuint GL_APIENTRY glCreateProgram(void){
     GET_CTX_RET(0);
     const GLuint globalProgramName = ctx->dispatcher().glCreateProgram();
     if(thrd->shareGroup.Ptr() && globalProgramName) {
-            const GLuint localProgramName = thrd->shareGroup->genName(SHADER);
+            const GLuint localProgramName = thrd->shareGroup->genName(SHADER, 0, true);
             thrd->shareGroup->replaceGlobalName(SHADER,localProgramName,globalProgramName);
             return localProgramName;
     }
@@ -317,7 +323,7 @@ GL_APICALL GLuint GL_APIENTRY glCreateShader(GLenum type){
     GET_CTX_V2_RET(0);
     const GLuint globalShaderName = ctx->dispatcher().glCreateShader(type);
     if(thrd->shareGroup.Ptr() && globalShaderName) {
-            const GLuint localShaderName = thrd->shareGroup->genName(SHADER);
+            const GLuint localShaderName = thrd->shareGroup->genName(SHADER, 0, true);
             ShaderParser* sp = new ShaderParser(type);
             thrd->shareGroup->replaceGlobalName(SHADER,localShaderName,globalShaderName);
             thrd->shareGroup->setObjectData(SHADER,localShaderName,ObjectDataPtr(sp));
@@ -385,7 +391,7 @@ GL_APICALL void  GL_APIENTRY glDeleteProgram(GLuint program){
     if(thrd->shareGroup.Ptr()) {
         const GLuint globalProgramName = thrd->shareGroup->getGlobalName(SHADER,program);
         thrd->shareGroup->deleteName(SHADER,program);
-        ctx->dispatcher().glDeleteProgram(program);
+        ctx->dispatcher().glDeleteProgram(globalProgramName);
     }
 }
 
@@ -394,7 +400,7 @@ GL_APICALL void  GL_APIENTRY glDeleteShader(GLuint shader){
     if(thrd->shareGroup.Ptr()) {
         const GLuint globalShaderName = thrd->shareGroup->getGlobalName(SHADER,shader);
         thrd->shareGroup->deleteName(SHADER,shader);
-        ctx->dispatcher().glDeleteShader(shader);
+        ctx->dispatcher().glDeleteShader(globalShaderName);
     }
 }
 
@@ -522,7 +528,7 @@ GL_APICALL void  GL_APIENTRY glGenBuffers(GLsizei n, GLuint* buffers){
     SET_ERROR_IF(n<0,GL_INVALID_VALUE);
     if(thrd->shareGroup.Ptr()) {
         for(int i=0; i<n ;i++) {
-            buffers[i] = thrd->shareGroup->genName(VERTEXBUFFER);
+            buffers[i] = thrd->shareGroup->genName(VERTEXBUFFER, 0, true);
             //generating vbo object related to this buffer name
             thrd->shareGroup->setObjectData(VERTEXBUFFER,buffers[i],ObjectDataPtr(new GLESbuffer()));
         }
@@ -540,7 +546,7 @@ GL_APICALL void  GL_APIENTRY glGenFramebuffers(GLsizei n, GLuint* framebuffers){
     SET_ERROR_IF(n<0,GL_INVALID_VALUE);
     if(thrd->shareGroup.Ptr()) {
         for(int i=0; i<n ;i++) {
-            framebuffers[i] = thrd->shareGroup->genName(FRAMEBUFFER);
+            framebuffers[i] = thrd->shareGroup->genName(FRAMEBUFFER, 0 ,true);
         }
     }
 }
@@ -550,7 +556,7 @@ GL_APICALL void  GL_APIENTRY glGenRenderbuffers(GLsizei n, GLuint* renderbuffers
     SET_ERROR_IF(n<0,GL_INVALID_VALUE);
     if(thrd->shareGroup.Ptr()) {
         for(int i=0; i<n ;i++) {
-            renderbuffers[i] = thrd->shareGroup->genName(RENDERBUFFER);
+            renderbuffers[i] = thrd->shareGroup->genName(RENDERBUFFER, 0, true);
         }
     }
 }
@@ -560,7 +566,7 @@ GL_APICALL void  GL_APIENTRY glGenTextures(GLsizei n, GLuint* textures){
     SET_ERROR_IF(n<0,GL_INVALID_VALUE);
     if(thrd->shareGroup.Ptr()) {
         for(int i=0; i<n ;i++) {
-            textures[i] = thrd->shareGroup->genName(TEXTURE);
+            textures[i] = thrd->shareGroup->genName(TEXTURE, 0, true);
         }
     }
 }
@@ -710,7 +716,8 @@ GL_APICALL void  GL_APIENTRY glGetShaderSource(GLuint shader, GLsizei bufsize, G
        const char* src = ((ShaderParser*)objData.Ptr())->getOriginalSrc();
        int srcLength = strlen(src);
        SET_ERROR_IF(bufsize < 0 || srcLength > bufsize,GL_INVALID_VALUE);
-       *length = srcLength;
+       if (length)
+          *length = srcLength;
        strncpy(source,src,srcLength);
     }
 }
@@ -780,7 +787,7 @@ GL_APICALL int GL_APIENTRY glGetUniformLocation(GLuint program, const GLchar* na
 
 GL_APICALL void  GL_APIENTRY glGetVertexAttribfv(GLuint index, GLenum pname, GLfloat* params){
     GET_CTX();
-    const GLESpointer* p = ctx->getPointer(pname);
+    const GLESpointer* p = ctx->getPointer(index);
     if(p) {
         switch(pname){
         case GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING:
@@ -814,7 +821,7 @@ GL_APICALL void  GL_APIENTRY glGetVertexAttribfv(GLuint index, GLenum pname, GLf
 
 GL_APICALL void  GL_APIENTRY glGetVertexAttribiv(GLuint index, GLenum pname, GLint* params){
     GET_CTX();
-    const GLESpointer* p = ctx->getPointer(pname);
+    const GLESpointer* p = ctx->getPointer(index);
     if(p) {
         switch(pname){
         case GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING:
@@ -850,7 +857,7 @@ GL_APICALL void  GL_APIENTRY glGetVertexAttribPointerv(GLuint index, GLenum pnam
     GET_CTX();
     SET_ERROR_IF(pname != GL_VERTEX_ATTRIB_ARRAY_POINTER,GL_INVALID_ENUM); 
     
-    const GLESpointer* p = ctx->getPointer(pname);
+    const GLESpointer* p = ctx->getPointer(index);
     if(p) {
         *pointer = const_cast<void *>( p->getBufferData());
     } else {
