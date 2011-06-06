@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABB3///Ws\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T15:39:25Z",
+      "side": 1,
+      "message": "tabs (here and below)",
+      "revId": "43fb1bd49d6a82f26eda2644c5731017c7ae9fb4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Wg\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T15:39:25Z",
+      "side": 1,
+      "message": "please remove trailing spaces",
+      "revId": "43fb1bd49d6a82f26eda2644c5731017c7ae9fb4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Wo\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T15:39:25Z",
+      "side": 1,
+      "message": "Can you explain the reason in a comment?",
+      "revId": "43fb1bd49d6a82f26eda2644c5731017c7ae9fb4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
