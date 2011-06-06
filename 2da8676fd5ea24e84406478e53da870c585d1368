@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABB3///Xo\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "any reason this isn\u0027t declared static? same for other variables below.",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///XQ\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "can you specify that the list is space-separated (as I imagine), this will make the parsing code below easier to understand.",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Xk\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "please fix trailing spacing.",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Xg\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "please avoid tabs",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Xc\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "Please avoid tabs",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///XY\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "should be delete []",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///XU\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "It looks like that the library is never dlclose()-ed, is this intentional?",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///XM\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "this is not correct, you\u0027re replacing the character after the space with \\0, not the space itself.",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///XI\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "you can\u0027t really use strstr() to reliably search for \u0027ext\u0027 in a space-separated list. Please consider writing a dedicated lookup function instead that this one would call.\n\nBesides, if systemDynamicEGLExtensions is empty, like in this code, strstr() always returns the start of \u0027ext\u0027.",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///XE\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "you are copying the extension here, but not adding a separator between extensions, so everything is going to be concatenated intoaverylongstring.\n\nAlso, I\u0027m really not a fan of using insecure functions like strcpy() even if the function is supposed to ensure that it is used properly, it\u0027s nearly always tricky to code that right.",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///XA\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "consider using asprintf() to simplify the code.",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///W8\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "again, consider using asprintf()",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///W4\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///W0\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-06T14:50:15Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "2da8676fd5ea24e84406478e53da870c585d1368",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
