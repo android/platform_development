@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABB3///KE\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "mmm, you\u0027re returning here with a locked mutex",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///KA\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "please add a simple NULL check here.",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///JY\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "this lacks the free() for m_vendorString and other heap-allocated strings in the object.",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///J0\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "please define hostExt as a \"char*\" since queryHostEGLString() always returns a heap-allocated string, and you\u0027re going to overwrite-it in the parsing code below to replace spaces with zeros!",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Jw\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "the test for c !\u003d NULL seems redundant with the !hostExt on 232",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Js\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "simply using strstr() is still not correct (it can\u0027t handle correctly two extensions when one if the prefix of the other, like \"foo\" and \"foobar\"). Please write a dedicated lookup function instead.",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Jo\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "You can\u0027t do this here, because the caller expects a char* which means a heap-allocated value it will be able to later modify and/or free() explicitely.\n\nPlease use strdup() here.",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Jk\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "this is racy, i.e. you could end-up with two threads allocating m_versionString twice. You need to check the value of m_versionString inside the lock..unlock block, and do nothing if it is not NULL.",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Jg\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "Same problem here, please test m_vendorString before trying to modify it.",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABB3///Jc\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-07T16:38:51Z",
+      "side": 1,
+      "message": "and here.",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
