@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "AAABCH///uo\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1005655
+      },
+      "writtenOn": "2011-06-09T13:13:30Z",
+      "side": 1,
+      "message": "I can make a dedicated lookup function\nbut this is not really needed since every EGL extension\nis prefixed with EGL_, I will look for either \"EGL_foo \" or\n\"EGL_foobar \" (note that the suffix space is included in the\nsearch).",
+      "parentUuid": "AAABB3///Js\u003d",
+      "revId": "9818612523865161efaadd91c6e735413f6ff771",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAABB3///Jo\u003d",
         "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
         "patchSetId": 2
