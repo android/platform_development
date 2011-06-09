@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABCH///rc\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-09T16:29:02Z",
+      "side": 1,
+      "message": "bare strstr() is still not correct, even when keeping the space after the extension name. Consider \"foo \" which will be incorrect found in the list \"bar notfoo \"\n\nSeriously, please write a lookup function like this:\n\n  findInList(const char* token, int tokenlen, const char* list)\n  {\n    const char* p \u003d list;\n    while (*p !\u003d \u0027\\0\u0027) {\n      const char* q \u003d strchr(p, \u0027 \u0027);\n      if (q \u003d\u003d NULL) {\n        /* should not happen, list must be space-terminated */\n        break;\n      }\n      if (tokenlen \u003d\u003d (q - p) \u0026\u0026 !memcmp(token, p, tokenlen)) {\n        return 1;  /* found it */\n      }\n      p \u003d q+1;\n    }\n    return 0;  /* not found */\n  }\n\nand use that without modifying the string in place.",
+      "revId": "f985102e85dc0dbdbdd797b79ff8a246c2254112",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///rk\u003d",
+        "filename": "tools/emulator/opengl/system/egl/eglDisplay.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-09T16:29:02Z",
+      "side": 1,
+      "message": "it looks like you are incrementing c twice after a space!",
+      "revId": "f985102e85dc0dbdbdd797b79ff8a246c2254112",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
