@@ -52,6 +52,7 @@ void GLEScmContext::setClientActiveTexture(GLenum tex) {
 }
 
 GLEScmContext::~GLEScmContext(){
+    m_map[GL_TEXTURE_COORD_ARRAY] = NULL;
     if(m_texCoords){
         delete[] m_texCoords;
         m_texCoords = NULL;
