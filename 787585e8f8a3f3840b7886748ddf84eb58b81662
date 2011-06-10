@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABCH///bg\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T14:24:32Z",
+      "side": 1,
+      "message": "can you remove trailing spaces?",
+      "revId": "787585e8f8a3f3840b7886748ddf84eb58b81662",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///bc\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T14:24:32Z",
+      "side": 1,
+      "message": "It\u0027s probably better to completely remove it.\nOtherwise, if you intend to keep it there, please explain why with a comment (e.g. in case it makes debugging easier, etc...)",
+      "revId": "787585e8f8a3f3840b7886748ddf84eb58b81662",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
