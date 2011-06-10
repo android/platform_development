@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABCH///b0\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T14:22:27Z",
+      "side": 1,
+      "message": "can you get rid of all trailing spaces?",
+      "revId": "2492c5d8ba2d8bd2290287c0af3bf043fc7d0cd4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///bo\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T14:22:27Z",
+      "side": 1,
+      "message": "Nice comment :-)",
+      "revId": "2492c5d8ba2d8bd2290287c0af3bf043fc7d0cd4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
