@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABCH///bE\u003d",
+        "filename": "tools/emulator/opengl/system/OpenglSystemCommon/EGLClientIface.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:20:42Z",
+      "side": 1,
+      "message": "please don\u0027t use tabs",
+      "revId": "a8cbb3ff9f8fe6c25a7a93927f620141402f58ca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///bA\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:20:42Z",
+      "side": 1,
+      "message": "please don\u0027t use trailing spaces.",
+      "revId": "a8cbb3ff9f8fe6c25a7a93927f620141402f58ca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
