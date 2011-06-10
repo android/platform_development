@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABCH///a4\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/FBConfig.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:24:02Z",
+      "side": 1,
+      "message": "tab here.",
+      "revId": "eaee2067dfdecee236139656711b16aecf6cb847",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///a0\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/FBConfig.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:24:02Z",
+      "side": 1,
+      "message": "tabs + trailing spaces.",
+      "revId": "eaee2067dfdecee236139656711b16aecf6cb847",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///aw\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/FBConfig.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:24:02Z",
+      "side": 1,
+      "message": "tab",
+      "revId": "eaee2067dfdecee236139656711b16aecf6cb847",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///as\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/RenderControl.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:24:02Z",
+      "side": 1,
+      "message": "tab",
+      "revId": "eaee2067dfdecee236139656711b16aecf6cb847",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///ao\u003d",
+        "filename": "tools/emulator/opengl/system/renderControl_enc/README",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:24:02Z",
+      "side": 1,
+      "message": "trailing spaces + tabs",
+      "revId": "eaee2067dfdecee236139656711b16aecf6cb847",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCH///ak\u003d",
+        "filename": "tools/emulator/opengl/system/renderControl_enc/renderControl.attrib",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-10T15:24:02Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "eaee2067dfdecee236139656711b16aecf6cb847",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
