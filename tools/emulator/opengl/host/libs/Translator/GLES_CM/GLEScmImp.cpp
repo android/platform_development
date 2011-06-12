@@ -27,7 +27,7 @@
 #include <stdio.h>
 #include <GLcommon/gldefs.h>
 #include <GLcommon/GLDispatch.h>
-#include <GLcommon/GLfixed_ops.h>
+#include <GLcommon/GLconversion_macros.h>
 #include <GLcommon/TranslatorIfaces.h>
 #include <GLcommon/ThreadInfo.h>
 #include <GLES/gl.h>
@@ -396,9 +396,7 @@ GL_API void GL_APIENTRY  glColorMask( GLboolean red, GLboolean green, GLboolean 
 GL_API void GL_APIENTRY  glColorPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer) {
     GET_CTX()
     SET_ERROR_IF(!GLEScmValidate::colorPointerParams(size,stride),GL_INVALID_VALUE);
-
-    const GLvoid* data = ctx->setPointer(GL_COLOR_ARRAY,size,type,stride,pointer);
-    if(type != GL_FIXED) ctx->dispatcher().glColorPointer(size,type,stride,data);
+    ctx->setPointer(GL_COLOR_ARRAY,size,type,stride,pointer);
 }
 
 GL_API void GL_APIENTRY  glCompressedTexImage2D( GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const GLvoid *data) {
@@ -523,8 +521,8 @@ GL_API void GL_APIENTRY  glDrawArrays( GLenum mode, GLint first, GLsizei count) 
 
     if(!ctx->isArrEnabled(GL_VERTEX_ARRAY)) return;
 
-    GLESFloatArrays tmpArrs;
-    ctx->convertArrs(tmpArrs,first,count,0,NULL,true);
+    GLESConversionArrays tmpArrs;
+    ctx->setupArraysPointers(tmpArrs,first,count,0,NULL,true);
     if(mode != GL_POINTS || !ctx->isArrEnabled(GL_POINT_SIZE_ARRAY_OES)){
         ctx->dispatcher().glDrawArrays(mode,first,count);
     }
@@ -540,13 +538,13 @@ GL_API void GL_APIENTRY  glDrawElements( GLenum mode, GLsizei count, GLenum type
     if(!ctx->isArrEnabled(GL_VERTEX_ARRAY)) return;
 
     const GLvoid* indices = elementsIndices;
-    GLESFloatArrays tmpArrs;
+    GLESConversionArrays tmpArrs;
     if(ctx->isBindedBuffer(GL_ELEMENT_ARRAY_BUFFER)) { // if vbo is binded take the indices from the vbo
         const unsigned char* buf = static_cast<unsigned char *>(ctx->getBindedBuffer(GL_ELEMENT_ARRAY_BUFFER));
         indices = buf+reinterpret_cast<unsigned int>(elementsIndices);
     }
 
-    ctx->convertArrs(tmpArrs,0,count,type,indices,false);
+    ctx->setupArraysPointers(tmpArrs,0,count,type,indices,false);
     if(mode != GL_POINTS || !ctx->isArrEnabled(GL_POINT_SIZE_ARRAY_OES)){
         ctx->dispatcher().glDrawElements(mode,count,type,indices);
     }
@@ -1161,8 +1159,7 @@ GL_API void GL_APIENTRY  glNormal3x( GLfixed nx, GLfixed ny, GLfixed nz) {
 GL_API void GL_APIENTRY  glNormalPointer( GLenum type, GLsizei stride, const GLvoid *pointer) {
     GET_CTX()
     SET_ERROR_IF(stride < 0,GL_INVALID_VALUE);
-    const GLvoid* data = ctx->setPointer(GL_NORMAL_ARRAY,3,type,stride,pointer);//3 normal verctor
-    if(type != GL_FIXED) ctx->dispatcher().glNormalPointer(type,stride,data);
+    ctx->setPointer(GL_NORMAL_ARRAY,3,type,stride,pointer);//3 normal verctor
 }
 
 GL_API void GL_APIENTRY  glOrthof( GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar) {
@@ -1306,9 +1303,7 @@ GL_API void GL_APIENTRY  glStencilOp( GLenum fail, GLenum zfail, GLenum zpass) {
 GL_API void GL_APIENTRY  glTexCoordPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer) {
     GET_CTX()
     SET_ERROR_IF(!GLEScmValidate::texCoordPointerParams(size,stride),GL_INVALID_VALUE);
-
-    const GLvoid* data = ctx->setPointer(GL_TEXTURE_COORD_ARRAY,size,type,stride,pointer);
-    if(type != GL_FIXED) ctx->dispatcher().glTexCoordPointer(size,type,stride,data);
+    ctx->setPointer(GL_TEXTURE_COORD_ARRAY,size,type,stride,pointer);
 }
 
 GL_API void GL_APIENTRY  glTexEnvf( GLenum target, GLenum pname, GLfloat param) {
@@ -1464,9 +1459,7 @@ GL_API void GL_APIENTRY  glTranslatex( GLfixed x, GLfixed y, GLfixed z) {
 GL_API void GL_APIENTRY  glVertexPointer( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer) {
     GET_CTX()
     SET_ERROR_IF(!GLEScmValidate::vertexPointerParams(size,stride),GL_INVALID_VALUE);
-
-    const GLvoid* data = ctx->setPointer(GL_VERTEX_ARRAY,size,type,stride,pointer);
-    if(type != GL_FIXED) ctx->dispatcher().glVertexPointer(size,type,stride,data);
+    ctx->setPointer(GL_VERTEX_ARRAY,size,type,stride,pointer);
 }
 
 GL_API void GL_APIENTRY  glViewport( GLint x, GLint y, GLsizei width, GLsizei height) {
