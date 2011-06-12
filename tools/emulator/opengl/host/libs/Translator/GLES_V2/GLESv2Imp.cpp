@@ -443,9 +443,6 @@ GL_APICALL void  GL_APIENTRY glDrawArrays(GLenum mode, GLint first, GLsizei coun
     SET_ERROR_IF(count < 0,GL_INVALID_VALUE)
     SET_ERROR_IF(!GLESv2Validate::drawMode(mode),GL_INVALID_ENUM);
 
-    //if no vertex are enabled no need to convert anything
-    if(!ctx->isArrEnabled(0)) return;
-
     GLESConversionArrays tmpArrs;
     ctx->setupArraysPointers(tmpArrs,first,count,0,NULL,true);
     ctx->dispatcher().glDrawArrays(mode,first,count);
@@ -461,9 +458,6 @@ GL_APICALL void  GL_APIENTRY glDrawElements(GLenum mode, GLsizei count, GLenum t
         const unsigned char* buf = static_cast<unsigned char *>(ctx->getBindedBuffer(GL_ELEMENT_ARRAY_BUFFER));
         indices = buf+reinterpret_cast<unsigned int>(elementsIndices);
     }
-
-    //if no vertex are enabled no need to convert anything
-    if(!ctx->isArrEnabled(0)) return;
 
     GLESConversionArrays tmpArrs;
     ctx->setupArraysPointers(tmpArrs,0,count,type,indices,false);
