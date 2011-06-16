@@ -18,6 +18,12 @@ EMUGL_PATH := $(call my-dir)
 #
 EMUGL_COMMON_INCLUDES := $(EMUGL_PATH)/host/include/libOpenglRender
 
+# common cflags used by several modules
+# This is always set to a module's LOCAL_CFLAGS
+# See the definition of emugl-begin-module in common.mk
+#
+EMUGL_COMMON_CFLAGS := -DWITH_GLES2
+
 # Include common definitions used by all the modules included later
 # in this build file. This contains the definition of all useful
 # emugl-xxxx functions.
