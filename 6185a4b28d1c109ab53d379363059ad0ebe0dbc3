@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEX///0A\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/EGLDispatch.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:19:00Z",
+      "side": 1,
+      "message": "I would recommend putting the __linux__ definition here as a #else, this way it will be valid for people who want to build the code on other Unixes (e.g. FreeBSD).",
+      "revId": "6185a4b28d1c109ab53d379363059ad0ebe0dbc3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///z8\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/EGLDispatch.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:19:00Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "6185a4b28d1c109ab53d379363059ad0ebe0dbc3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///z4\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/GL2Dispatch.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:19:00Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6185a4b28d1c109ab53d379363059ad0ebe0dbc3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///z0\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/GLDispatch.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:19:00Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "6185a4b28d1c109ab53d379363059ad0ebe0dbc3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
