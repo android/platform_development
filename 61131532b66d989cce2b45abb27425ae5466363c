@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAABEX///zc\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1005655
+      },
+      "writtenOn": "2011-06-28T14:41:28Z",
+      "side": 1,
+      "message": "We are not importing from the translator here since we do not link against it.\nThe idea is that the translator is being loaded dynamically as a plugin so that\nthe renderer can be load any other translator implementation during runtime.\nWe still want to use the traslator\u0027s egl include files rather than the egl include files\nfrom framework since at framework the default native system is ANDROID and the\ntranslator\u0027s version of the include files are more suitable for host side EGL compile.",
+      "parentUuid": "AAABEX///0M\u003d",
+      "revId": "61131532b66d989cce2b45abb27425ae5466363c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAABEX///0I\u003d",
         "filename": "tools/emulator/opengl/host/libs/libOpenglRender/Android.mk",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2011-06-28T12:16:14Z",
       "side": 1,
       "message": "Same question here?",
+      "revId": "61131532b66d989cce2b45abb27425ae5466363c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///zY\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1005655
+      },
+      "writtenOn": "2011-06-28T14:41:28Z",
+      "side": 1,
+      "message": "same as above, we do not import from the translator since we do not link against it.\nWe still depend on libutils and liblog though.",
+      "parentUuid": "AAABEX///0I\u003d",
       "revId": "61131532b66d989cce2b45abb27425ae5466363c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
