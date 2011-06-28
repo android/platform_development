@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEX///0s\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/FrameBuffer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:10:56Z",
+      "side": 1,
+      "message": "please avoid tabs",
+      "revId": "16e61b1ddb93ce631f0b12c714e0f25af06b232e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///0o\u003d",
+        "filename": "tools/emulator/opengl/system/GLESv2_enc/GL2Encoder.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:10:56Z",
+      "side": 1,
+      "message": "trailing space could be removed here",
+      "revId": "16e61b1ddb93ce631f0b12c714e0f25af06b232e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///0k\u003d",
+        "filename": "tools/emulator/opengl/system/GLESv2_enc/gl2.attrib",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:10:56Z",
+      "side": 1,
+      "message": "I would prefer if the use of spaces/tabs would be consistent. I recommend using a tab in this specific file.",
+      "revId": "16e61b1ddb93ce631f0b12c714e0f25af06b232e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///0g\u003d",
+        "filename": "tools/emulator/opengl/system/GLESv2_enc/gl2.attrib",
+        "patchSetId": 1
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:10:56Z",
+      "side": 1,
+      "message": "same here, and all cases below",
+      "revId": "16e61b1ddb93ce631f0b12c714e0f25af06b232e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///0c\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:10:56Z",
+      "side": 1,
+      "message": "Can I ask you to reformat these two lines to make them a bit more expicit, as in:\n\n  if (..condition..)\n      ... iftrue\n   else\n     .... iffalse",
+      "revId": "16e61b1ddb93ce631f0b12c714e0f25af06b232e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///0Y\u003d",
+        "filename": "tools/emulator/opengl/system/egl/egl.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 1038,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:10:56Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "16e61b1ddb93ce631f0b12c714e0f25af06b232e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
