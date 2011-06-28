@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEX///0M\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:16:14Z",
+      "side": 1,
+      "message": "Is there any reason why this include path shouldn\u0027t exported by the Translator library modules (i.e. like GLcommon)",
+      "revId": "61131532b66d989cce2b45abb27425ae5466363c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEX///0I\u003d",
+        "filename": "tools/emulator/opengl/host/libs/libOpenglRender/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-28T12:16:14Z",
+      "side": 1,
+      "message": "Same question here?",
+      "revId": "61131532b66d989cce2b45abb27425ae5466363c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
