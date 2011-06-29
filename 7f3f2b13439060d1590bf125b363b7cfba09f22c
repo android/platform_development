@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEX///kA\u003d",
+        "filename": "tools/emulator/opengl/host/libs/Translator/GLES_CM/GLEScmContext.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2011-06-29T21:14:44Z",
+      "side": 1,
+      "message": "is this really needed, it looks like a repeat of line 60",
+      "revId": "7f3f2b13439060d1590bf125b363b7cfba09f22c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
