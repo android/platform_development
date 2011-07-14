@@ -12,3 +12,5 @@ include $(CLEAR_VARS)
 ALL_PREBUILT += $(TARGET_OUT)/bin/monkey
 $(TARGET_OUT)/bin/monkey : $(LOCAL_PATH)/monkey | $(ACP)
 	$(transform-prebuilt-to-target)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))

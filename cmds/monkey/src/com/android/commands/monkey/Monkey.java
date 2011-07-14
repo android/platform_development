@@ -469,6 +469,12 @@ public class Monkey {
         // Set the process name showing in "ps" or "top"
         Process.setArgV0("com.android.commands.monkey");
 
+        // Creates new process session and makes the Monkey its leader.
+        // The Monkey continues running as stand-alone application
+        // without controlling terminal. I.e. Monkey will not receive
+        // SIGHUP signal after Monkey - MonkeyRunner connection termination.
+        MonkeyProcess.createNewProcessSession();
+
         int resultCode = (new Monkey()).run(args);
         System.exit(resultCode);
     }
