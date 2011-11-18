@@ -42,7 +42,7 @@ $(call emugl-begin-host-static-library,libOpenglOsUtils)
     endif
 
     ifeq ($(HOST_OS),linux)
-        $(call emugl-export,LDLIBS,-lpthread -lrt)
+        $(call emugl-export,LDLIBS,-lpthread -lrt -lX11)
     endif
 
 $(call emugl-end-module)
