@@ -1,0 +1,9 @@
+Change-Id: I6dd4b91b326b0c385d9c68c90a255d6db799757e
+Code-Review+1: David Turner <digit@android.com>
+Verified+1: Jean-Baptiste Queru <jbq@google.com>
+Code-Review+2: Xavier Ducrohet <xav@android.com>
+Submitted-by: Jean-Baptiste Queru <jbq@google.com>
+Submitted-at: Mon, 13 Feb 2012 14:24:03 -0800
+Reviewed-on: https://android-review.googlesource.com/31790
+Project: platform/development
+Branch: refs/heads/master
