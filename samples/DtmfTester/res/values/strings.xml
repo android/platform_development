@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sendDtmfString">Send DTMF String</string>
+    <string name="sendDtmfStringBroadcast">Send DTMF String (broadcast)</string>
+    <string name="startDtmf">Start DTMF</string>
+    <string name="stopDtmf">Stop DTMF</string>
+    <string name="app_name">DtmfTester</string>
+    <string name="status">Status</string>
+    <string name="number">"Target number"</string>
+    <string name="currentNumber">"Remote number"</string>
+    <string name="copyNumber">"Copy number"</string>
+    <string name="dtmfstring">"Dtmf string"</string>
+    <string name="sendDtmfCode">Send DTMF code</string>
+</resources>

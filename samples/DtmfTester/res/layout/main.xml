@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/tabhost"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+<TabWidget android:id="@android:id/tabs"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+/>
+<FrameLayout android:id="@android:id/tabcontent"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/senderTab"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="1">
+<TableRow>
+<TextView
+    android:layout_width="fill_parent"
+    android:text="@string/status"
+/>
+<TextView
+    android:layout_width="fill_parent"
+    android:id="@+id/textStatus"
+/>
+</TableRow>
+<TableRow>
+    <TextView
+    android:layout_width="fill_parent"
+/>
+<TextView
+    android:layout_width="fill_parent"
+    android:id="@+id/textResult"
+/>
+</TableRow>
+<TableRow>
+<TextView
+    android:layout_width="fill_parent"
+    android:text="@string/currentNumber"
+/>
+<TextView
+    android:layout_width="fill_parent"
+    android:id="@+id/currentNumber"
+/>
+</TableRow>
+<TableRow>
+<Button
+    android:id="@+id/copyNumber"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/copyNumber"
+    android:layout_span="2"
+    />
+</TableRow>
+<TableRow>
+<TextView android:layout_width="fill_parent"
+          android:text="@string/number"/>
+<EditText android:id="@+id/editNumber"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:inputType="phone"></EditText>
+</TableRow>
+<TableRow>
+<TextView
+    android:layout_width="fill_parent"
+    android:text="@string/dtmfstring"/>
+<EditText android:id="@+id/editDtmf"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:inputType="phone"></EditText>
+</TableRow>
+<TableRow>
+<Button
+    android:id="@+id/sendDtmf"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/sendDtmfString"
+    android:layout_span="2"
+    />
+</TableRow>
+<TableRow>
+<Button
+    android:id="@+id/startDtmf"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/startDtmf"
+    />
+<Button
+    android:id="@+id/stopDtmf"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/stopDtmf"
+    />
+</TableRow>
+<TableRow>
+<Button
+    android:id="@+id/sendDtmfCode"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/sendDtmfCode"
+    android:layout_span="2"
+    />
+</TableRow>
+</TableLayout>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/logTab"
+  android:maxLines="1000"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:scrollbars="vertical"/>
+</FrameLayout>
+</LinearLayout>
+</TabHost>
