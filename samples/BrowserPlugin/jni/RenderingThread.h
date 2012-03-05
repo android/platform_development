@@ -26,6 +26,7 @@
 #include "SkCanvas.h"
 #include "SkBitmap.h"
 
+#include <utils/Thread.h>
 #include <EGL/egl.h>
 #include <GLES2/gl2.h>
 

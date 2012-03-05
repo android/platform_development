@@ -23,6 +23,7 @@
  */
 
 #include <YuvToJpegEncoder.h>
+#include <utils/Errors.h>
 
 namespace android {
 
