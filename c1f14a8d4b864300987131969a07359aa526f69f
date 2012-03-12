@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADx3///9g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003296
+      },
+      "writtenOn": "2012-03-12T19:23:43Z",
+      "side": 1,
+      "message": "Will update the message in the next version.",
+      "parentUuid": "AAAD0n////8\u003d",
+      "revId": "c1f14a8d4b864300987131969a07359aa526f69f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAD0n////k\u003d",
         "filename": "ndk/platforms/android-8/arch-mips/include/asm/errno.h",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAADx3///9c\u003d",
+        "filename": "ndk/platforms/android-8/arch-mips/include/asm/errno.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003296
+      },
+      "writtenOn": "2012-03-12T19:23:43Z",
+      "side": 1,
+      "message": "Thanks for explanation. In the next version, I will move to android-9",
+      "parentUuid": "AAAD0n////k\u003d",
+      "revId": "c1f14a8d4b864300987131969a07359aa526f69f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAD0n////0\u003d",
         "filename": "ndk/platforms/android-8/arch-mips/src/__dso_handle.S",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2012-03-12T11:57:50Z",
       "side": 1,
       "message": "Actually, this check was only needed for ARM for legacy reasons. For x86, and hopefully MIPS, we shouldn\u0027t have a different version of __dso_handle.S for static and dynamic executable. I propose to drop this file, and rename the other one simply \"__dso_handle.S\"",
+      "revId": "c1f14a8d4b864300987131969a07359aa526f69f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADx3///8k\u003d",
+        "filename": "ndk/platforms/android-8/arch-mips/src/__dso_handle.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1003296
+      },
+      "writtenOn": "2012-03-12T19:23:43Z",
+      "side": 1,
+      "message": "Got it. I will replace the content of this file with __dso_handle_so.S and remove __dso_handle_so.S",
+      "parentUuid": "AAAD0n////0\u003d",
       "revId": "c1f14a8d4b864300987131969a07359aa526f69f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAADx3///8U\u003d",
+        "filename": "ndk/platforms/android-8/arch-mips/src/crtbegin_dynamic.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1003296
+      },
+      "writtenOn": "2012-03-12T19:23:43Z",
+      "side": 1,
+      "message": "We will work towards moving to .init_array and .fini_array. This would involve work on the compiler front as this path has been unused on MIPS so far. We will also have to apply some patches to binutils to get this working. \n\nFor now, I request you to go with the ctors/dtors path.",
+      "parentUuid": "AAAD0n////w\u003d",
+      "revId": "c1f14a8d4b864300987131969a07359aa526f69f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAD0n////s\u003d",
         "filename": "ndk/platforms/android-8/arch-mips/src/crtbegin_so.S",
         "patchSetId": 3
@@ -115,6 +187,24 @@
       "writtenOn": "2012-03-12T11:57:50Z",
       "side": 1,
       "message": "Any specific reason why this file is needed at all?\nandroid-9 already comes with its own copy of \u003cwchar.h\u003e that looks similar.\n\nI suspect this is just a remnant of android-8 which didn\u0027t get it.",
+      "revId": "c1f14a8d4b864300987131969a07359aa526f69f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADx3///8Q\u003d",
+        "filename": "ndk/platforms/android-9/arch-mips/include/wchar.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003296
+      },
+      "writtenOn": "2012-03-12T19:23:43Z",
+      "side": 1,
+      "message": "Without \"#include \u003climits.h\u003e\" in wchar.h, the following lines will fail when configuring gnu stdlibc++ library. (INT_MAX and INT_MIN are undefined.)\n\n#define  WCHAR_MAX   INT_MAX\n#define  WCHAR_MIN   INT_MIN",
+      "parentUuid": "AAAD0n////o\u003d",
       "revId": "c1f14a8d4b864300987131969a07359aa526f69f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
