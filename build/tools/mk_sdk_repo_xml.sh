@@ -109,7 +109,9 @@ ATTRS=(
   Layoutlib.Api                 layoutlib/api            4
   Layoutlib.Revision            layoutlib/revision       4
   # for addon packages
+  vendor                        vendor-display           4
   vendor                        vendor                   1
+  name                          name-display             4
   name                          name                     1
   description                   description              1
   api                           api-level                1
