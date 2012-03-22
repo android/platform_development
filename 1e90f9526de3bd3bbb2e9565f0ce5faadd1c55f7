@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAEN3////o\u003d",
+        "filename": "build/tools/sdk_repo.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-03-22T18:26:57Z",
+      "side": 1,
+      "message": "This can\u0027t work. This file is only created by the CL after this one.",
+      "revId": "1e90f9526de3bd3bbb2e9565f0ce5faadd1c55f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
