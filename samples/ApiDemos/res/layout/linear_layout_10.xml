@@ -30,7 +30,7 @@
         android:addStatesFromChildren="true"
         android:gravity="center_vertical"
         android:paddingRight="0dip"
-        android:background="@android:drawable/edit_text">
+        android:background="@drawable/editbox_background">
 
         <!--
             TextView label goes at the left.
@@ -79,7 +79,7 @@
         android:addStatesFromChildren="true"
         android:gravity="center_vertical"
         android:paddingRight="0dip"
-        android:background="@android:drawable/edit_text">
+        android:background="@drawable/editbox_background">
 
         <!--
             TextView label goes at the left.
