@@ -1259,7 +1259,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.RelativeLayout2" android:label="Views/Layouts/RelativeLayout/2. Simple Form">
+        <!-- This sample use old style edit text drawable. So use the old style theme. -->
+        <activity android:name=".view.RelativeLayout2" android:label="Views/Layouts/RelativeLayout/2. Simple Form"
+                android:theme="@android:style/Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
@@ -1294,7 +1296,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.LinearLayout5" android:label="Views/Layouts/LinearLayout/5. Simple Form">
+        <!-- This sample use old style edit text drawable. So use the old style theme. -->
+        <activity android:name=".view.LinearLayout5" android:label="Views/Layouts/LinearLayout/5. Simple Form"
+                android:theme="@android:style/Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
@@ -1329,7 +1333,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.LinearLayout10" android:label="Views/Layouts/LinearLayout/10. Background Image">
+        <!-- This sample use old style edit text drawable. So use the old style theme. -->
+        <activity android:name=".view.LinearLayout10" android:label="Views/Layouts/LinearLayout/10. Background Image"
+                android:theme="@android:style/Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
