@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAE+3///+M\u003d",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-04-24T23:37:46Z",
+      "side": 1,
+      "message": "Tor: btw can I move these to use the latest 3.6 or is there a reason to keep them as 3.4? I\u0027m guessing we just forgot to update something that used to be \"far away\" in build.git.\n\nI\u0027ll in another CL later to move them to 3.6 and see what breaks.",
+      "revId": "fa6183c396d6dd85d302b9af940d18c2cf2890ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
