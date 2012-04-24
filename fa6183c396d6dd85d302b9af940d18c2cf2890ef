@@ -16,6 +16,24 @@
       "revId": "fa6183c396d6dd85d302b9af940d18c2cf2890ef",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAE8H///3M\u003d",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1004689
+      },
+      "writtenOn": "2012-04-24T23:40:09Z",
+      "side": 1,
+      "message": "Yeah, those are probably obsolete. The references in for example sdk/ddms/app/etc/manifest.txt are referring to the 3.6 versions; hopefully there are no other uses outside of SDK that I\u0027m not aware of.",
+      "parentUuid": "AAAE+3///+M\u003d",
+      "revId": "fa6183c396d6dd85d302b9af940d18c2cf2890ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
