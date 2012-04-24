@@ -34,6 +34,24 @@
       "revId": "fa6183c396d6dd85d302b9af940d18c2cf2890ef",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAE8H///3E\u003d",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1004689
+      },
+      "writtenOn": "2012-04-24T23:41:21Z",
+      "side": 1,
+      "message": "Actually, you can probably just remove them; I made the prebuilt file specify the \"optional\" flag such that they don\u0027t have to be declared here (that\u0027s how the 3.6 ones are in prebuilts/tools now without an entry here).",
+      "parentUuid": "AAAE8H///3M\u003d",
+      "revId": "fa6183c396d6dd85d302b9af940d18c2cf2890ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
