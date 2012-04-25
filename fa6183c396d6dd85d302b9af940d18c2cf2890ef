@@ -52,6 +52,24 @@
       "revId": "fa6183c396d6dd85d302b9af940d18c2cf2890ef",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAE/H///+8\u003d",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-04-25T17:23:12Z",
+      "side": 1,
+      "message": "I have another CL that update these numbers. I\u0027ll try tomorrow to do a build without them.\n\nThis list isn\u0027t tied to the MODULE_OPTIONAL tag (you might be referring to the \"legacy\" list in build.git). This is the list that says what needs to be built for an SDK.",
+      "parentUuid": "AAAE8H///3E\u003d",
+      "revId": "fa6183c396d6dd85d302b9af940d18c2cf2890ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
