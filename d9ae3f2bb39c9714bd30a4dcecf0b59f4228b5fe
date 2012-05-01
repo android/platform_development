@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFK3///3U\u003d",
+        "filename": "samples/Snake/AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Don\u0027t update copyright dates.\n(Per style convention, this date should be the date the file was first created.)",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///3Q\u003d",
+        "filename": "samples/Snake/res/drawable-mdpi/dpad_down.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "This is a new file, so should just be copyright 2012.\n(Make this change on other files, too.)",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///20\u003d",
+        "filename": "samples/Snake/res/drawable-mdpi/dpad_down.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Nitpick: Remove whitespace on these two lines.\n(Also present in other new files.)",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///3I\u003d",
+        "filename": "samples/Snake/res/layout/snake_layout.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Don\u0027t mangle license header. :)",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///2o\u003d",
+        "filename": "samples/Snake/res/values-nonav/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Empty string -- is this intentional?\nAlso, text_text is redundant. :)",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///2Y\u003d",
+        "filename": "samples/Snake/src/com/example/android/snake/BackgroundView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Nitpick: Stray whitespace here (and down below).",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///2Q\u003d",
+        "filename": "samples/Snake/src/com/example/android/snake/BackgroundView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Style: Remove space between assert and \"(\".",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///18\u003d",
+        "filename": "samples/Snake/src/com/example/android/snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Couldn\u0027t this line use \"\u003d\" instead of \"|\u003d\", since direction will always be 0?",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFK3///14\u003d",
+        "filename": "samples/Snake/src/com/example/android/snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2012-05-01T20:28:34Z",
+      "side": 1,
+      "message": "Nitpick: Whitespace here.\n(I\u0027ll stop mentioning this, feel free to fix elsewhere.)",
+      "revId": "d9ae3f2bb39c9714bd30a4dcecf0b59f4228b5fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
