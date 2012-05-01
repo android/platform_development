@@ -13,11 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<resources>
-  <string name="app_name">Snake</string>
-  <string name="mode_ready">Snake\nPress Up To Play</string>
-  <string name="mode_pause">Paused\nPress Up To Resume</string>
-  <string name="mode_lose">Game Over\nScore: %1$d \nPress Up To Play</string>
-  <string name="snake_layout_text_text"></string>
-</resources>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fromDegrees="-90"
+        android:toDegrees="-90"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:drawable="@drawable/dpad_up"/>

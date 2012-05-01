@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2007-2012 The Android Open Source Project
+<!-- Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 
 <resources>
   <string name="app_name">Snake</string>
-  <string name="mode_ready">Snake\nPress Up To Play</string>
-  <string name="mode_pause">Paused\nPress Up To Resume</string>
-  <string name="mode_lose">Game Over\nScore: %1$d \nPress Up To Play</string>
+  <string name="mode_ready">Snake\nTouch Screen To Play</string>
+  <string name="mode_pause">Paused\nTouch Screen To Resume</string>
+  <string name="mode_lose">Game Over\nScore: %1$d \nTouch Screen To Play</string>
   <string name="snake_layout_text_text"></string>
 </resources>
