@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFLH///s4\u003d",
+        "filename": "samples/ApiDemos/AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1263,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-02T14:07:16Z",
+      "side": 1,
+      "message": "I think it\u0027d make sense to wrap this to 80 columns along the way, if there\u0027s an opportunity.",
+      "revId": "e39cec322ac47a8b0fbc93b666c5c41bf0f9b525",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
