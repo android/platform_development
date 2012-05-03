@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFPX///+Q\u003d",
+        "filename": "build/sdk-android-mips.atree",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1010669
+      },
+      "writtenOn": "2012-05-03T21:55:19Z",
+      "side": 1,
+      "message": "This is still referring to the location of kernel-qem in the ics-mr1 branch.  In master branch, it is now located in directory\nprebuilts/qemu-kernel/${TARGET_ARCH}/",
+      "revId": "1be839fe8809597aa2e92e231c6f88a9e2c9234a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFPX///+M\u003d",
+        "filename": "sdk/images_mips_source.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1010669
+      },
+      "writtenOn": "2012-05-03T21:55:19Z",
+      "side": 1,
+      "message": "In this line, 15 should be replaced by ${PLATFORM_SDK_VERSION}",
+      "revId": "1be839fe8809597aa2e92e231c6f88a9e2c9234a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFPX///+I\u003d",
+        "filename": "sdk/images_mips_source.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1010669
+      },
+      "writtenOn": "2012-05-03T21:55:19Z",
+      "side": 1,
+      "message": "In this line, the empty string after \u003d should be replaced by ${PLATFORM_VERSION_CODENAME}.\n\nIn contrast to the other arch\u0027s prop_template files, this line for AndroidVersion.CodeName must continue being commented out, as a workaround for tools_r28 regression bug 29952 reported by duanes.",
+      "revId": "1be839fe8809597aa2e92e231c6f88a9e2c9234a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
