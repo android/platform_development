@@ -27,9 +27,10 @@ public interface MusicFocusable {
 
     /**
      * Signals that audio focus was lost.
-     *
-     * @param canDuck If true, audio can continue in "ducked" mode (low volume). Otherwise, all
-     * audio must stop.
+     * 
+     * @param canDuck
+     *         If true, audio can continue in "ducked" mode (low volume). Otherwise, all audio
+     *         must stop.
      */
     public void onLostAudioFocus(boolean canDuck);
 }

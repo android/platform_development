@@ -19,7 +19,6 @@ package com.example.android.musicplayer;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -37,7 +36,6 @@ public class MusicIntentReceiver extends BroadcastReceiver {
 
             // send an intent to our MusicService to telling it to pause the audio
             context.startService(new Intent(MusicService.ACTION_PAUSE));
-
         } else if (intent.getAction().equals(Intent.ACTION_MEDIA_BUTTON)) {
             KeyEvent keyEvent = (KeyEvent) intent.getExtras().get(Intent.EXTRA_KEY_EVENT);
             if (keyEvent.getAction() != KeyEvent.ACTION_DOWN)

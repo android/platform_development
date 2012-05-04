@@ -512,6 +512,7 @@ public class MusicService extends Service implements OnCompletionListener, OnPre
     }
 
     /** Updates the notification. */
+    @SuppressWarnings("deprecation")
     void updateNotification(String text) {
         PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0,
                 new Intent(getApplicationContext(), MainActivity.class),
@@ -583,7 +584,6 @@ public class MusicService extends Service implements OnCompletionListener, OnPre
                     null : mWhatToPlayAfterRetrieve.toString());
         }
     }
-
 
     @Override
     public void onDestroy() {
