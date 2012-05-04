@@ -28,8 +28,8 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Retrieves and organizes media to play. Before being used, you must call {@link #prepare()},
- * which will retrieve all of the music on the user's device (by performing a query on a content
+ * Retrieves and organizes media to play. Before being used, you must call {@link #prepare()}, which
+ * will retrieve all of the music on the user's device (by performing a query on a content
  * resolver). After that, it's ready to retrieve a random song, with its title and URI, upon
  * request.
  */
@@ -105,7 +105,8 @@ public class MusicRetriever {
 
     /** Returns a random Item. If there are no items available, returns null. */
     public Item getRandomItem() {
-        if (mItems.size() <= 0) return null;
+        if (mItems.size() <= 0)
+            return null;
         return mItems.get(mRandom.nextInt(mItems.size()));
     }
 
