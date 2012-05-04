@@ -50,6 +50,24 @@
       "revId": "1be839fe8809597aa2e92e231c6f88a9e2c9234a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFUX///9Q\u003d",
+        "filename": "sdk/images_mips_source.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-05-04T23:59:02Z",
+      "side": 1,
+      "message": "Thanks for pointing this out. Please see Change Ie4a02739 and let me know if it fixes the issue for you.",
+      "parentUuid": "AAAFPX///+I\u003d",
+      "revId": "1be839fe8809597aa2e92e231c6f88a9e2c9234a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
