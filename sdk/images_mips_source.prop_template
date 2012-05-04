@@ -1,0 +1,7 @@
+Pkg.Desc=Android SDK Platform ${PLATFORM_VERSION}
+Pkg.UserSrc=false
+Pkg.Revision=1
+AndroidVersion.ApiLevel=${PLATFORM_SDK_VERSION}
+#Following commented out as temp workaround for bug 29952:
+#AndroidVersion.CodeName=${PLATFORM_VERSION_CODENAME}
+SystemImage.Abi=mips
