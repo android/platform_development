@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFUX///88\u003d",
+        "filename": "sdk/images_mips_source.prop_template",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-05-05T00:00:43Z",
+      "side": 1,
+      "message": "Please see if Change Ie4a02739 solves this issue.",
+      "revId": "23c527437dfae124239d5913946b0008520baaac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
