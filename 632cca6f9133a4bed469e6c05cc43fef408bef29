@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFX3//+/c\u003d",
+        "filename": "samples/ApiDemos/AndroidManifest.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1336,
+      "author": {
+        "id": 1003263
+      },
+      "writtenOn": "2012-05-15T17:46:14Z",
+      "side": 1,
+      "message": "Do not use the legacy theme here. An update to the LinearLayout10 example should make it theme-independent. This will involve removing explicit @android:drawable references from linear_layout_10, using appropriate theme references to styles instead where relevant, and dealing with focusability/clickability on the resulting \"text field.\"\n\nIf you\u0027d like to simply update the other layouts already changed in this patch and leave the LinearLayout10 example alone for another day/patch, that\u0027s fine.",
+      "revId": "632cca6f9133a4bed469e6c05cc43fef408bef29",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
