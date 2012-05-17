@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFbX///nU\u003d",
+        "filename": "samples/DtmfTester/res/layout/main.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-17T20:24:56Z",
+      "side": 1,
+      "message": "The indentation seems off... missing.",
+      "revId": "648d333285332b2d4b10b40542ddf4482979cd83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
