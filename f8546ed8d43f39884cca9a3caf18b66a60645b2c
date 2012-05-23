@@ -16,6 +16,24 @@
       "revId": "f8546ed8d43f39884cca9a3caf18b66a60645b2c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFs3////4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-05-23T16:49:56Z",
+      "side": 1,
+      "message": "yep, I only saw it after the upload, will fix it soon.",
+      "parentUuid": "AAAFtH////8\u003d",
+      "revId": "f8546ed8d43f39884cca9a3caf18b66a60645b2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
