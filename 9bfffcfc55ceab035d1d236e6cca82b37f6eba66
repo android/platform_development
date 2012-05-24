@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFxX///98\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T16:55:39Z",
+      "side": 1,
+      "message": "If you get a chance, please wrap this to 70 columns",
+      "revId": "9bfffcfc55ceab035d1d236e6cca82b37f6eba66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
