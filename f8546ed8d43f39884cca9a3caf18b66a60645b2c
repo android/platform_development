@@ -34,6 +34,23 @@
       "revId": "f8546ed8d43f39884cca9a3caf18b66a60645b2c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAF7n////w\u003d",
+        "filename": "ndk/platforms/android-3/arch-arm/src/atexit.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2012-05-28T02:56:02Z",
+      "side": 1,
+      "message": "ARM libc.a built with CRT_LEGACY_WORKAROUND will contain atexist.   crtbeign_{dynamic,static,so}.S including this will result in multiple-definitions of atexist",
+      "revId": "f8546ed8d43f39884cca9a3caf18b66a60645b2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
