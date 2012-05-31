@@ -51,6 +51,24 @@
       "revId": "f8546ed8d43f39884cca9a3caf18b66a60645b2c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAGJX////k\u003d",
+        "filename": "ndk/platforms/android-3/arch-arm/src/atexit.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-05-31T08:56:01Z",
+      "side": 1,
+      "message": "that\u0027s true, I\u0027ll get rid of it.",
+      "parentUuid": "AAAF7n////w\u003d",
+      "revId": "f8546ed8d43f39884cca9a3caf18b66a60645b2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
