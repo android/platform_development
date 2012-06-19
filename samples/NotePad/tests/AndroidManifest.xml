@@ -27,12 +27,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.notepad.tests"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
+
     <!--
         The application element indicates that this package must be linked against the library
         android.test.runner, which is not part of the normal link path. The library contains
         code for test cases.
     -->
+
+    <uses-sdk android:minSdkVersion="11" />
+
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
@@ -42,8 +46,9 @@
         test package 'com.example.android.notepad.tests'. Android then starts the class
         'android.test.InstrumentationTestRunner', which loads the test case classes in the package.
     -->
-    <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.example.android.notepad"
-                     android:label="Tests for com.example.android.notepad"/>
-    <uses-sdk android:minSdkVersion="10"></uses-sdk>
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="Tests for com.example.android.notepad"
+        android:targetPackage="com.example.android.notepad" />
+
 </manifest>
