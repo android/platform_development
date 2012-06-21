@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_header"
+        android:gravity="center"
+        android:text="NFC Demo"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="25sp" />
+
+    <TableLayout
+        android:id="@+id/TL"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/a1"
+                style="@style/button"
+                android:tag="0" />
+
+            <ImageView
+                android:id="@+id/b1"
+                style="@style/button"
+                android:tag="1" />
+
+            <ImageView
+                android:id="@+id/c1"
+                style="@style/button"
+                android:tag="2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/a2"
+                style="@style/button"
+                android:tag="3" />
+
+            <ImageView
+                android:id="@+id/b2"
+                style="@style/button"
+                android:tag="4" />
+
+            <ImageView
+                android:id="@+id/c2"
+                style="@style/button"
+                android:tag="5" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/a3"
+                style="@style/button"
+                android:tag="6" />
+
+            <ImageView
+                android:id="@+id/b3"
+                style="@style/button"
+                android:tag="7" />
+
+            <ImageView
+                android:id="@+id/c3"
+                style="@style/button"
+                android:tag="8" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/reset"
+        style="@style/menu_button"
+        android:onClick="onReset"
+        android:text="Reset" />
+
+    <Button
+        android:id="@+id/share"
+        style="@style/menu_button"
+        android:onClick="onWriteToTag"
+        android:text="Write to Tag!" />
+
+</LinearLayout>
