@@ -16,15 +16,13 @@
 
 package com.example.android.notepad;
 
-import com.example.android.notepad.NotePad;
-
 import android.content.ClipDescription;
 import android.content.ContentProvider;
+import android.content.ContentProvider.PipeDataWriter;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.UriMatcher;
-import android.content.ContentProvider.PipeDataWriter;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -35,7 +33,6 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
-import android.provider.LiveFolders;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -71,11 +68,6 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
     private static HashMap<String, String> sNotesProjectionMap;
 
     /**
-     * A projection map used to select columns from the database
-     */
-    private static HashMap<String, String> sLiveFolderProjectionMap;
-
-    /**
      * Standard projection for the interesting columns of a normal note.
      */
     private static final String[] READ_NOTE_PROJECTION = new String[] {
@@ -95,9 +87,6 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
 
     // The incoming URI matches the Note ID URI pattern
     private static final int NOTE_ID = 2;
-
-    // The incoming URI matches the Live Folder URI pattern
-    private static final int LIVE_FOLDER_NOTES = 3;
 
     /**
      * A UriMatcher instance
@@ -126,10 +115,6 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         // to a note ID operation
         sUriMatcher.addURI(NotePad.AUTHORITY, "notes/#", NOTE_ID);
 
-        // Add a pattern that routes URIs terminated with live_folders/notes to a
-        // live folder operation
-        sUriMatcher.addURI(NotePad.AUTHORITY, "live_folders/notes", LIVE_FOLDER_NOTES);
-
         /*
          * Creates and initializes a projection map that returns all columns
          */
@@ -156,19 +141,6 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
                 NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,
                 NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE);
 
-        /*
-         * Creates an initializes a projection map for handling Live Folders
-         */
-
-        // Creates a new projection map instance
-        sLiveFolderProjectionMap = new HashMap<String, String>();
-
-        // Maps "_ID" to "_ID AS _ID" for a live folder
-        sLiveFolderProjectionMap.put(LiveFolders._ID, NotePad.Notes._ID + " AS " + LiveFolders._ID);
-
-        // Maps "NAME" to "title AS NAME"
-        sLiveFolderProjectionMap.put(LiveFolders.NAME, NotePad.Notes.COLUMN_NAME_TITLE + " AS " +
-            LiveFolders.NAME);
     }
 
     /**
@@ -253,8 +225,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
            String sortOrder) {
 
        // Constructs a new query builder and sets its table name
-       SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-       qb.setTables(NotePad.Notes.TABLE_NAME);
+       SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+       queryBuilder.setTables(NotePad.Notes.TABLE_NAME);
 
        /**
         * Choose the projection and adjust the "where" clause based on URI pattern-matching.
@@ -262,7 +234,7 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
        switch (sUriMatcher.match(uri)) {
            // If the incoming URI is for notes, chooses the Notes projection
            case NOTES:
-               qb.setProjectionMap(sNotesProjectionMap);
+               queryBuilder.setProjectionMap(sNotesProjectionMap);
                break;
 
            /* If the incoming URI is for a single note identified by its ID, chooses the
@@ -270,17 +242,12 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
             * it selects that single note
             */
            case NOTE_ID:
-               qb.setProjectionMap(sNotesProjectionMap);
-               qb.appendWhere(
+               queryBuilder.setProjectionMap(sNotesProjectionMap);
+               queryBuilder.appendWhere(
                    NotePad.Notes._ID +    // the name of the ID column
                    "=" +
                    // the position of the note ID itself in the incoming URI
                    uri.getPathSegments().get(NotePad.Notes.NOTE_ID_PATH_POSITION));
-               break;
-
-           case LIVE_FOLDER_NOTES:
-               // If the incoming URI is from a live folder, chooses the live folder projection.
-               qb.setProjectionMap(sLiveFolderProjectionMap);
                break;
 
            default:
@@ -306,7 +273,7 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         * object is returned; otherwise, the cursor variable contains null. If no records were
         * selected, then the Cursor object is empty, and Cursor.getCount() returns 0.
         */
-       Cursor c = qb.query(
+       Cursor cursor = queryBuilder.query(
            db,            // The database to query
            projection,    // The columns to return from the query
            selection,     // The columns for the where clause
@@ -317,8 +284,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
        );
 
        // Tells the Cursor what URI to watch, so it knows when its source data changes
-       c.setNotificationUri(getContext().getContentResolver(), uri);
-       return c;
+       cursor.setNotificationUri(getContext().getContentResolver(), uri);
+       return cursor;
    }
 
    /**
@@ -337,9 +304,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         */
        switch (sUriMatcher.match(uri)) {
 
-           // If the pattern is for notes or live folders, returns the general content type.
+           // If the pattern is for notes returns the general content type.
            case NOTES:
-           case LIVE_FOLDER_NOTES:
                return NotePad.Notes.CONTENT_TYPE;
 
            // If the pattern is for note IDs, returns the note ID content type.
@@ -357,7 +323,7 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
      * This describes the MIME types that are supported for opening a note
      * URI as a stream.
      */
-    static ClipDescription NOTE_STREAM_TYPES = new ClipDescription(null,
+    static ClipDescription sNoteStreamTypes = new ClipDescription(null,
             new String[] { ClipDescription.MIMETYPE_TEXT_PLAIN });
 
     /**
@@ -377,16 +343,15 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
          */
         switch (sUriMatcher.match(uri)) {
 
-            // If the pattern is for notes or live folders, return null. Data streams are not
+            // If the pattern is for notes return null. Data streams are not
             // supported for this type of URI.
             case NOTES:
-            case LIVE_FOLDER_NOTES:
                 return null;
 
             // If the pattern is for note IDs and the MIME filter is text/plain, then return
             // text/plain
             case NOTE_ID:
-                return NOTE_STREAM_TYPES.filterMimeTypes(mimeTypeFilter);
+                return sNoteStreamTypes.filterMimeTypes(mimeTypeFilter);
 
                 // If the URI pattern doesn't match any permitted patterns, throws an exception.
             default:
@@ -421,7 +386,7 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
 
             // Retrieves the note for this URI. Uses the query method defined for this provider,
             // rather than using the database query method.
-            Cursor c = query(
+            Cursor cursor = query(
                     uri,                    // The URI of a note
                     READ_NOTE_PROJECTION,   // Gets a projection containing the note's ID, title,
                                             // and contents
@@ -433,11 +398,11 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
 
 
             // If the query fails or the cursor is empty, stop
-            if (c == null || !c.moveToFirst()) {
+            if (cursor == null || !cursor.moveToFirst()) {
 
                 // If the cursor is empty, simply close the cursor and return
-                if (c != null) {
-                    c.close();
+                if (cursor != null) {
+                    cursor.close();
                 }
 
                 // If the cursor is null, throw an exception
@@ -446,7 +411,7 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
 
             // Start a new thread that pipes the stream data back to the caller.
             return new AssetFileDescriptor(
-                    openPipeHelper(uri, mimeTypes[0], opts, c, this), 0,
+                    openPipeHelper(uri, mimeTypes[0], opts, cursor, this), 0,
                     AssetFileDescriptor.UNKNOWN_LENGTH);
         }
 
@@ -472,7 +437,7 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
             pw.println("");
             pw.println(c.getString(READ_NOTE_NOTE_INDEX));
         } catch (UnsupportedEncodingException e) {
-            Log.w(TAG, "Ooops", e);
+            Log.w(TAG, "Encoding Failure", e);
         } finally {
             c.close();
             if (pw != null) {
@@ -481,6 +446,7 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
             try {
                 fout.close();
             } catch (IOException e) {
+                // In finally block, so do nothing
             }
         }
     }
@@ -610,9 +576,9 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
                  * desired note ID.
                  */
                 finalWhere =
-                        NotePad.Notes._ID +                              // The ID column name
-                        " = " +                                          // test for equality
-                        uri.getPathSegments().                           // the incoming note ID
+                        NotePad.Notes._ID + // The ID column name
+                        " = " + // test for equality
+                        uri.getPathSegments().// the incoming note ID
                             get(NotePad.Notes.NOTE_ID_PATH_POSITION)
                 ;
 
@@ -700,15 +666,15 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
                  * note ID.
                  */
                 finalWhere =
-                        NotePad.Notes._ID +                              // The ID column name
-                        " = " +                                          // test for equality
-                        uri.getPathSegments().                           // the incoming note ID
+                        NotePad.Notes._ID + // The ID column name
+                        " = " + // test for equality
+                        uri.getPathSegments().// the incoming note ID
                             get(NotePad.Notes.NOTE_ID_PATH_POSITION)
                 ;
 
                 // If there were additional selection criteria, append them to the final WHERE
                 // clause
-                if (where !=null) {
+                if (where != null) {
                     finalWhere = finalWhere + " AND " + where;
                 }
 
