@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAG/3///6w\u003d",
+        "filename": "ndk/platforms/android-9/arch-x86/src/crtbegin_dynamic.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2012-06-26T21:22:49Z",
+      "side": 1,
+      "message": "Oops.  Over-fix. (in a lame effort to make both crtbegin_dynamic.S and crtbegin_static.S \"look\" identical so both can be later replaced with crtbegin.c like arm\u0027s)",
+      "parentUuid": "AAAG8H///9M\u003d",
+      "revId": "5e30a6ae149e670c03ee614acd3fc9f1fb23ef45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAG8H///9Y\u003d",
         "filename": "ndk/platforms/android-9/arch-x86/src/crtbegin_static.S",
         "patchSetId": 1
