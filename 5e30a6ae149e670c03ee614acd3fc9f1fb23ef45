@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAG8H///9Y\u003d",
+        "filename": "ndk/platforms/android-9/arch-x86/src/crtbegin_static.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-06-26T10:12:23Z",
+      "side": 1,
+      "message": "For the record, this is needed because the C library doesn\u0027t provide atexit() itself on x86 and mips (it does on ARM for backwards-compatibility reasons, full details at development/ndk/platforms/README.CRT.TXT)\n\ncrtbegin_dynamic.S and crtbegin_so.S already provide atexit(), this patch is adding it to crtbegin_static.S which is only used to build static executables.",
+      "revId": "5e30a6ae149e670c03ee614acd3fc9f1fb23ef45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
