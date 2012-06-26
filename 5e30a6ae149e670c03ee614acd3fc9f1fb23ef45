@@ -33,6 +33,24 @@
       "revId": "5e30a6ae149e670c03ee614acd3fc9f1fb23ef45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAG/n///8Y\u003d",
+        "filename": "ndk/platforms/android-9/arch-x86/src/crtbegin_static.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1010578
+      },
+      "writtenOn": "2012-06-26T21:14:29Z",
+      "side": 1,
+      "message": "development/ndk/platforms/README.CRT.TXT probably requires slight update. Currently it says:   \n- The NDK libc.a shall provide an atexit() implementation, and\n    crtbegin_static.S shall *not* provide one to avoid conflicts.",
+      "parentUuid": "AAAG8H///9Y\u003d",
+      "revId": "5e30a6ae149e670c03ee614acd3fc9f1fb23ef45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
