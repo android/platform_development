@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAG/n///00\u003d",
+        "filename": "ndk/samples/hello-jni/src/com/example/HelloJni/HelloJni.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1002621
+      },
+      "writtenOn": "2012-06-27T00:44:45Z",
+      "side": 1,
+      "message": "actually, wouldn\u0027t it be better to change the test package name to all lower case? I believe its a standard convention to have all lower case package names",
+      "revId": "9ac3a5c43c14d996f6e13332f330198e7a3202a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
