@@ -16,6 +16,24 @@
       "revId": "556182feb40916842b52087f442ebcb4e877dbd7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAHFn///v8\u003d",
+        "filename": "ndk/platforms/android-3/arch-arm/src/crtbegin_dynamic.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2012-07-02T17:15:27Z",
+      "side": 1,
+      "message": "Will do it in future update",
+      "parentUuid": "AAAHI3////w\u003d",
+      "revId": "556182feb40916842b52087f442ebcb4e877dbd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
