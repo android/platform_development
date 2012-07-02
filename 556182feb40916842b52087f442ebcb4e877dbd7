@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAHI3////w\u003d",
+        "filename": "ndk/platforms/android-3/arch-arm/src/crtbegin_dynamic.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-07-02T09:24:30Z",
+      "side": 1,
+      "message": "I think a comment explaining why we do this would have been a good idea. I fear someone else would \"optimize it\" back to a \"bx\" in the future if he\u0027s not careful enough :)",
+      "revId": "556182feb40916842b52087f442ebcb4e877dbd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
