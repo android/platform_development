@@ -43,7 +43,7 @@ void printHexDumpEx(FILE* fp, const void* vaddr, size_t length,
     if (mode == kHexDumpLocal)
         offset = 0;
     else
-        offset = (int) addr;
+        offset = (uintptr_t) addr;
 
     memset(out, ' ', sizeof(out)-1);
     out[8] = ':';
