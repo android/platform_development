@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAH3n//99Y\u003d",
+        "filename": "tools/jdwpspy/Main.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1010123
+      },
+      "writtenOn": "2012-07-30T22:43:30Z",
+      "side": 1,
+      "message": "Yes. to build with BUILD_HOST_64bit set.\nCurrent compile option does not allow pointer cast to smaller inter. But, allow int to smaller size.\n\nFYI, this is what I saw without uintptr_t\nhost C++: jdwpspy \u003c\u003d development/tools/jdwpspy/Main.cpp\ndevelopment/tools/jdwpspy/Main.cpp: In function ‘void printHexDumpEx(FILE*, const void*, size_t, HexDumpMode, const char*)’:\ndevelopment/tools/jdwpspy/Main.cpp:46: error: cast from ‘const unsigned char*’ to ‘int’ loses precision\nmake: *** [out/host/darwin-x86/obj/EXECUTABLES/jdwpspy_intermediates/Main.o] Error 1",
+      "parentUuid": "AAAH5H///0I\u003d",
+      "revId": "53b99083a2ee4f48ca4cac99bf9ba5e695a21fce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAH5H///0M\u003d",
         "filename": "tools/jdwpspy/Main.cpp",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAH3n//980\u003d",
+        "filename": "tools/jdwpspy/Main.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1010123
+      },
+      "writtenOn": "2012-07-30T22:43:30Z",
+      "side": 1,
+      "message": "unsigned is better choice I think. But, int has still no problem with that value and operation.",
+      "parentUuid": "AAAH5H///0M\u003d",
+      "revId": "53b99083a2ee4f48ca4cac99bf9ba5e695a21fce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAH5H///0E\u003d",
         "filename": "tools/jdwpspy/Main.cpp",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2012-07-30T18:05:24Z",
       "side": 1,
       "message": "uintptr_t?",
+      "revId": "53b99083a2ee4f48ca4cac99bf9ba5e695a21fce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAH3n//97s\u003d",
+        "filename": "tools/jdwpspy/Main.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1010123
+      },
+      "writtenOn": "2012-07-30T22:43:30Z",
+      "side": 1,
+      "message": "uintptr_t is no need here.\nlineOffset has same type as offset and they are both integer.\n\noffset itself can be changed to uintptr_t. but, not mandatory for this function.",
+      "parentUuid": "AAAH5H///0E\u003d",
       "revId": "53b99083a2ee4f48ca4cac99bf9ba5e695a21fce",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
