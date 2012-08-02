@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAH+3///dI\u003d",
+        "filename": "ide/eclipse/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1001401
+      },
+      "writtenOn": "2012-08-02T18:50:23Z",
+      "side": 1,
+      "message": "My understanding is that mms-common doesn\u0027t have any generated code so this shouldn\u0027t be necessary.",
+      "revId": "4820198f2402246fb4c92edfa31f6a021d35dfb9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
