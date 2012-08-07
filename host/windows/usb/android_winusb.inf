@@ -6,7 +6,7 @@ Signature           = "$Windows NT$"
 Class               = AndroidUsbDeviceClass
 ClassGuid           = {3F966BD9-FA04-4ec5-991C-D326973B5128}
 Provider            = %ProviderName%
-DriverVer           = 05/24/2012,6.0.0000.00000
+DriverVer           = 08/07/2012,6.0.0000.00000
 CatalogFile.NTx86   = androidwinusb86.cat
 CatalogFile.NTamd64 = androidwinusba64.cat
 
@@ -39,6 +39,13 @@ HKR,,Icon,,-1
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E23
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E24&MI_01
 
+;Google Galaxy Nexus
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E30
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E30&MI_01
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_D001&REV_0216
+%CompositeAdbInterface%     = USB_Install, USB\VID_04E8&PID_6860&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_04E8&PID_6860&REV_0216&MI_01
+
 ;Google Nexus 7
 %SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E40
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E41
@@ -59,6 +66,13 @@ HKR,,Icon,,-1
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E23
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E24&MI_01
+
+;Google Galaxy Nexus
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E30
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E30&MI_01
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_D001&REV_0216
+%CompositeAdbInterface%     = USB_Install, USB\VID_04E8&PID_6860&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_04E8&PID_6860&REV_0216&MI_01
 
 ;Google Nexus 7
 %SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E40
