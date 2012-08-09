@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAIH3//+lU\u003d",
+        "filename": "ide/eclipse/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1001401
+      },
+      "writtenOn": "2012-08-09T18:11:12Z",
+      "side": 1,
+      "message": "please add the following here as there are generated \"aidl\" files that need to be picked up:\n\n\t\u003cclasspathentry kind\u003d\"src\" path\u003d\"out/target/common/obj/JAVA_LIBRARIES/telephony-common_intermediates/src/src/java\"/\u003e",
+      "revId": "eae8078ded572c9395bd043dead27d75d309a9a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
