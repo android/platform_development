@@ -99,7 +99,8 @@ static NPClass pluginClass = {
     pluginGetProperty,
     pluginSetProperty,
     pluginRemoveProperty,
-    pluginEnumerate
+    pluginEnumerate,
+    0 // construct
 };
 
 NPClass *getPluginClass(void)
