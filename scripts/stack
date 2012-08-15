@@ -237,9 +237,15 @@ STACK = "[stack]"
 
 def ConvertTrace(lines):
   """Convert strings containing native crash to a stack."""
+
   process_info_line = re.compile("(pid: [0-9]+, tid: [0-9]+.*)")
   signal_line = re.compile("(signal [0-9]+ \(.*\).*)")
-  register_line = re.compile("(([ ]*[0-9a-z]{2} [0-9a-f]{8}){4})")
+
+  ANDROID_TOOLCHAIN = os.environ["ANDROID_TOOLCHAIN"]
+  if "i686-android-linux" in ANDROID_TOOLCHAIN:
+    register_line = re.compile("((([ ]*[a-z]{3} [0-9a-f]{8}){2})+.*)")
+  else:
+    register_line = re.compile("(([ ]*[0-9a-z]{2} [0-9a-f]{8}){4})")
   thread_line = re.compile("(.*)(\-\-\- ){15}\-\-\-")
   # Note taht both trace and value line matching allow for variable amounts of
   # whitespace (e.g. \t). This is because the we want to allow for the stack
@@ -247,11 +253,18 @@ def ConvertTrace(lines):
   # strips out double spaces that are found in tombsone files and logcat output.
   #
   # Examples of matched trace lines include lines from tombstone files like:
-  #   #00  pc 001cf42e  /data/data/com.my.project/lib/libmyproject.so
-  # Or lines from AndroidFeedback crash report system logs like:
-  #   03-25 00:51:05.520 I/DEBUG ( 65): #00 pc 001cf42e /data/data/com.my.project/lib/libmyproject.so
-  # Please note the spacing differences.
-  trace_line = re.compile("(.*)\#([0-9]+)[ \t]+(..)[ \t]+([0-9a-f]{8})[ \t]+([^\r\n \t]*)( \((.*)\))?")  # pylint: disable-msg=C6310
+  if "i686-android-linux" in ANDROID_TOOLCHAIN:
+    #   #00  eip: 001cf42e  /data/data/com.my.project/lib/libmyproject.so
+    # Or lines from AndroidFeedback crash report system logs like:
+    #   03-25 00:51:05.520 I/DEBUG ( 65): #00 eip: 001cf42e /data/data/com.my.project/lib/libmyproject.so
+    # Please note the spacing differences.
+    trace_line = re.compile("(.*)\#([0-9]+)[ \t]+(...:)[ \t]+([0-9a-f]{8})[ \t]+([^\r\n \t]*)( \((.*)\))?")  # pylint: disable-msg=C6310
+  else:
+    #   #00  pc 001cf42e  /data/data/com.my.project/lib/libmyproject.so
+    # Or lines from AndroidFeedback crash report system logs like:
+    #   03-25 00:51:05.520 I/DEBUG ( 65): #00 pc 001cf42e /data/data/com.my.project/lib/libmyproject.so
+    # Please note the spacing differences.
+    trace_line = re.compile("(.*)\#([0-9]+)[ \t]+(..)[ \t]+([0-9a-f]{8})[ \t]+([^\r\n \t]*)( \((.*)\))?")  # pylint: disable-msg=C6310
   # Examples of matched value lines include:
   #   bea4170c  8018e4e9  /data/data/com.my.project/lib/libmyproject.so
   #   03-25 00:51:05.530 I/DEBUG ( 65): bea4170c 8018e4e9 /data/data/com.my.project/lib/libmyproject.so

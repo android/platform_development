@@ -15,6 +15,8 @@ ANDROID_BUILD_TOP = os.environ["ANDROID_BUILD_TOP"]
 if not ANDROID_BUILD_TOP:
   ANDROID_BUILD_TOP = "."
 
+ANDROID_TOOLCHAIN = os.environ["ANDROID_TOOLCHAIN"]
+
 def FindSymbolsDir():
   saveddir = os.getcwd()
   os.chdir(ANDROID_BUILD_TOP)
@@ -60,13 +62,22 @@ def FindToolchain():
   """
 
   ## Known toolchains, newer ones in the front.
-  known_toolchains = [
+  ARM_known_toolchains = [
     ("arm-linux-androideabi-4.4.x", "arm-linux-androideabi"),
     ("arm-eabi-4.4.3", "arm-eabi"),
     ("arm-eabi-4.4.0", "arm-eabi"),
     ("arm-eabi-4.3.1", "arm-eabi"),
     ("arm-eabi-4.2.1", "arm-eabi")
   ]
+
+  X86_known_toolchains = [
+    ("i686-android-linux-4.4.3","i686-android-linux")
+  ]
+
+  if "i686-android-linux" in ANDROID_TOOLCHAIN:
+    known_toolchains = X86_known_toolchains
+  else:
+    known_toolchains = ARM_known_toolchains
 
   # Look for addr2line to check for valid toolchain path.
   for (label, target) in known_toolchains:
