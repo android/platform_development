@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,18 +25,31 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-#ifndef _ARCH_MIPS_KERNEL_H
-#define _ARCH_MIPS_KERNEL_H
+#ifndef _LINK_H_
+#define _LINK_H_
 
-/* this file contains kernel-specific definitions that were optimized out of
-   our processed kernel headers, but still useful nonetheless... */
+#include <sys/types.h>
+#include <elf.h>
 
-typedef unsigned long   __kernel_blkcnt_t;
-typedef unsigned long   __kernel_blksize_t;
+__BEGIN_DECLS
 
-/* these aren't really defined by the kernel headers though... */
-typedef unsigned long   __kernel_fsblkcnt_t;
-typedef unsigned long   __kernel_fsfilcnt_t;
-typedef unsigned int    __kernel_id_t;
+/* bionic is currently only 32-bit. */
+#define ElfW(type) Elf32_##type
 
-#endif /* _ARCH_MIPS_KERNEL_H */
+struct dl_phdr_info {
+  ElfW(Addr) dlpi_addr;
+  const char* dlpi_name;
+  const ElfW(Phdr)* dlpi_phdr;
+  ElfW(Half) dlpi_phnum;
+};
+
+#ifdef __arm__
+typedef long unsigned int* _Unwind_Ptr;
+_Unwind_Ptr dl_unwind_find_exidx(_Unwind_Ptr pc, int* pcount);
+#else
+int dl_iterate_phdr(int (*cb)(struct dl_phdr_info*, size_t, void*), void*);
+#endif
+
+__END_DECLS
+
+#endif /* _LINK_H_ */
