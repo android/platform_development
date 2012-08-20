@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAItH///9o\u003d",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-08-20T09:48:26Z",
+      "side": 1,
+      "message": "I don\u0027t think this is correct. The proper fix is to put the fenv_t / fexcept_t definitions above inside the __BEGIN_DECLS.\n\nOtherwise, they get defined in the current C++ scope, and the code at line 56, which searchs in the extern \"C\" scope will not find fenv_t.",
+      "revId": "8bb4fd76837c5b281782407ec4f12a6bc9af52ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
