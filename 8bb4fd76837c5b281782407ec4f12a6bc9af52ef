@@ -16,6 +16,24 @@
       "revId": "8bb4fd76837c5b281782407ec4f12a6bc9af52ef",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAIuX///0Y\u003d",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2012-08-20T12:41:28Z",
+      "side": 1,
+      "message": "You are right!   I have submitted https://android-review.googlesource.com/41833 to correct it",
+      "parentUuid": "AAAItH///9o\u003d",
+      "revId": "8bb4fd76837c5b281782407ec4f12a6bc9af52ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
