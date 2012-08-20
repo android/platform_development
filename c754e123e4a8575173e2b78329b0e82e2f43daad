@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAItH///88\u003d",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-08-20T13:15:25Z",
+      "side": 1,
+      "message": "this must appear before the first typedefs above.",
+      "revId": "c754e123e4a8575173e2b78329b0e82e2f43daad",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAItH///9A\u003d",
+        "filename": "ndk/platforms/android-9/arch-mips/include/fenv.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-08-20T13:15:25Z",
+      "side": 1,
+      "message": "__BEGIN_DECLS should appear before these typedef.",
+      "revId": "c754e123e4a8575173e2b78329b0e82e2f43daad",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
