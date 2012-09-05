@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,65 +25,26 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-	.text
-	.align 4
-	.type _start,#function
-	.globl _start
 
-# this is the small startup code that is first run when
-# any executable that is statically-linked with Bionic
-# runs.
-#
-# it's purpose is to call __libc_init with appropriate
-# arguments, which are:
-#
-#    - the address of the raw data block setup by the Linux
-#      kernel ELF loader
-#
-#    - address of an "onexit" function, not used on any
-#      platform supported by Bionic
-#
-#    - address of the "main" function of the program.
-#
-#    - address of the constructor list
-#
-_start:	
-	mov	r0, sp
-	mov	r1, #0
-	ldr	r2, =main
-	adr	r3, 1f
-	ldr	r4, =__libc_init
-# Use blx intead of bx so stack unwinding past __libc_init can terminate at _start
-	blx	r4
-	mov	r0, #0
-	bx	r0
+/* The __dso_handle global variable is used by static
+   C++ constructors and destructors in the binary.
+   See http://www.codesourcery.com/public/cxx-abi/abi.html#dso-dtor
 
-1:  .long   __PREINIT_ARRAY__
-    .long   __INIT_ARRAY__
-    .long   __FINI_ARRAY__
-    .long   __CTOR_LIST__
+   CRT_LEGACY_WORKAROUND is only defined when building this file
+   for the C library. This forces __dso_handle to be exported by
+   it. This is only required to ensure binary compatibility with
+   old NDK application machine code that contains reference to
+   the symbol, but do not have a proper definition for it.
 
-	.section .preinit_array, "aw"
-	.globl __PREINIT_ARRAY__
-__PREINIT_ARRAY__:
-	.long -1
+   These binaries cannot call their destructorson dlclose(), but
+   at least they will not fail to load.
 
-	.section .init_array, "aw"
-	.globl __INIT_ARRAY__
-__INIT_ARRAY__:
-	.long -1
+   When this file is built for the NDK, CRT_LEGACY_WORKAROUND
+   should never be defined.
+ */
 
-	.section .fini_array, "aw"
-	.globl __FINI_ARRAY__
-__FINI_ARRAY__:
-	.long -1
-
-	.section .ctors, "aw"
-	.globl __CTOR_LIST__
-__CTOR_LIST__:
-	.long -1
-
-
-#include "__dso_handle.S"
-/* NOTE: atexit() is  not be provided by crtbegin_static.S, but by libc.a */
-
+#ifndef CRT_LEGACY_WORKAROUND
+__attribute__ ((visibility ("hidden")))
+#endif
+__attribute__ ((section (".bss")))
+void *__dso_handle = (void *) 0;
