@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAJA3///jQ\u003d",
+        "filename": "build/sdk-android-mips.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1010669
+      },
+      "writtenOn": "2012-09-13T22:43:59Z",
+      "side": 1,
+      "message": "Seems to work without this change, but it should keep as close as possible to the other architectures\u0027 atree scripts.",
+      "revId": "1e6df816064a395095535d6e83df146c5621f315",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
