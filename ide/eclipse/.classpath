@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="packages/apps/BasicSmsReceiver/src"/>
 	<classpathentry kind="src" path="packages/apps/Bluetooth/src"/>
 	<classpathentry kind="src" path="packages/apps/Browser/src"/>
 	<classpathentry kind="src" path="packages/apps/Calendar/src"/>
 	<classpathentry kind="src" path="packages/apps/Calculator/src"/>
 	<classpathentry kind="src" path="packages/apps/Camera/src"/>
+	<classpathentry kind="src" path="packages/apps/CellBroadcastReceiver/src"/>
 	<classpathentry kind="src" path="packages/apps/CertInstaller/src"/>
 	<classpathentry kind="src" path="packages/apps/Contacts/src"/>
 	<classpathentry kind="src" path="packages/apps/DeskClock/src"/>
@@ -15,22 +17,54 @@
 	<classpathentry kind="src" path="packages/apps/Gallery2/src_pd"/>
 	<classpathentry kind="src" path="packages/apps/Gallery2/gallerycommon/src"/>
 	<classpathentry kind="src" path="packages/apps/HTMLViewer/src"/>
+	<classpathentry kind="src" path="packages/apps/KeyChain/src"/>
 	<classpathentry kind="src" path="packages/apps/Launcher2/src"/>
+	<classpathentry kind="src" path="packages/apps/LegacyCamera/src"/>
 	<classpathentry kind="src" path="packages/apps/Mms/src"/>
+	<classpathentry kind="src" path="packages/apps/Music/src"/>
+	<classpathentry kind="src" path="packages/apps/MusicFX/src"/>
+	<classpathentry kind="src" path="packages/apps/NFC/src"/>
 	<classpathentry kind="src" path="packages/apps/PackageInstaller/src"/>
 	<classpathentry kind="src" path="packages/apps/Phone/src"/>
+	<classpathentry kind="src" path="packages/apps/Protips/src"/>
 	<classpathentry kind="src" path="packages/apps/QuickSearchBox/src"/>
 	<classpathentry kind="src" path="packages/apps/Provision/src"/>
 	<classpathentry kind="src" path="packages/apps/Settings/src"/>
+	<classpathentry kind="src" path="packages/apps/SmartCardService/src"/>
 	<classpathentry kind="src" path="packages/apps/SoundRecorder/src"/>
+	<classpathentry kind="src" path="packages/apps/SpareParts/src"/>
 	<classpathentry kind="src" path="packages/apps/Stk/src"/>
+	<classpathentry kind="src" path="packages/apps/Tag/src"/>
+	<classpathentry kind="src" path="packages/apps/VideoEditor/src"/>
 	<classpathentry kind="src" path="packages/apps/VoiceDialer/src"/>
+	<classpathentry kind="src" path="packages/experimental/BugReportSender/src"/>
+	<classpathentry kind="src" path="packages/experimental/CameraPreviewTest/src"/>
+	<classpathentry kind="src" path="packages/experimental/DreamTheater/src"/>
+	<classpathentry kind="src" path="packages/experimental/ExampleImsFramework/src"/>
+	<classpathentry kind="src" path="packages/experimental/LoaderApp/src"/>
+	<classpathentry kind="src" path="packages/experimental/NotificationLog/src"/>
+	<classpathentry kind="src" path="packages/experimental/NotificationShowcase/src"/>
+	<classpathentry kind="src" path="packages/experimental/RpcPerformance/src"/>
+	<classpathentry kind="src" path="packages/inputmethods/LatinIME/src"/>
+	<classpathentry kind="src" path="packages/inputmethods/OpenWnn/src"/>
+	<classpathentry kind="src" path="packages/inputmethods/PinyinIME/src"/>
+	<classpathentry kind="src" path="packages/providers/ApplicationsProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/CalendarProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/ContactsProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/DownloadProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/DrmProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/MediaProvider/src"/>
+	<classpathentry kind="src" path="packages/providers/PartnerBookmarksProvider/src"/>
 	<classpathentry kind="src" path="packages/providers/TelephonyProvider/src"/>
+	<classpathentry kind="src" path="packages/providers/UserDictionaryProvider/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/Basic/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/Galaxy4/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/HoloSpiral/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/LivePicker/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/MagicSmoke/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/MusicVisualization/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/NoiseField/src"/>
+	<classpathentry kind="src" path="packages/wallpapers/PhaseBeam/src"/>
 	<classpathentry kind="src" path="frameworks/base/cmds/am/src"/>
 	<classpathentry kind="src" path="frameworks/base/cmds/input/src"/>
 	<classpathentry kind="src" path="frameworks/base/cmds/pm/src"/>
