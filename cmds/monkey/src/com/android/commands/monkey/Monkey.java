@@ -54,6 +54,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import libcore.io.ErrnoException;
+import libcore.io.Libcore;
+
 /**
  * Application that injects random key events and other actions into the system.
  */
@@ -468,6 +471,17 @@ public class Monkey {
     public static void main(String[] args) {
         // Set the process name showing in "ps" or "top"
         Process.setArgV0("com.android.commands.monkey");
+
+        // Creates new process session and makes the Monkey its leader.
+        // The Monkey continues running as stand-alone application
+        // without controlling terminal. I.e. Monkey will not receive
+        // SIGHUP signal after Monkey - MonkeyRunner connection termination.
+        try {
+            Libcore.os.setsid();
+        } catch (ErrnoException errnoException) {
+            System.err.println(errnoException);
+            System.exit(1);
+        }
 
         int resultCode = (new Monkey()).run(args);
         System.exit(resultCode);
