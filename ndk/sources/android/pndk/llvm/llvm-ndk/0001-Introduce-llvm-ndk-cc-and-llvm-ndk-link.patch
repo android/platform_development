@@ -1,0 +1,646 @@
+diff --git a/tools/clang/tools/Makefile b/tools/clang/tools/Makefile
+index 5059ade..f7f6caa 100644
+--- a/tools/clang/tools/Makefile
++++ b/tools/clang/tools/Makefile
+@@ -9,7 +9,7 @@
+ 
+ CLANG_LEVEL := ..
+ DIRS := driver libclang c-index-test arcmt-test c-arcmt-test diagtool \
+-        clang-check
++        clang-check llvm-ndk-cc llvm-ndk-link
+ 
+ include $(CLANG_LEVEL)/../../Makefile.config
+ 
+diff --git a/tools/clang/tools/llvm-ndk-cc/Makefile b/tools/clang/tools/llvm-ndk-cc/Makefile
+new file mode 100644
+index 0000000..ccca6e8
+--- /dev/null
++++ b/tools/clang/tools/llvm-ndk-cc/Makefile
+@@ -0,0 +1,28 @@
++##===- tools/llvm-ndk-cc/Makefile --------------------------*- Makefile -*-===##
++#
++#                     The LLVM Compiler Infrastructure
++#
++# This file is distributed under the University of Illinois Open Source
++# License. See LICENSE.TXT for details.
++#
++##===----------------------------------------------------------------------===##
++CLANG_LEVEL := ../..
++
++TOOLNAME = llvm-ndk-cc
++TOOLALIAS = llvm-ndk-cxx
++
++# Include this here so we can get the configuration of the targets that have
++# been configured for construction. We have to do this early so we can set up
++# LINK_COMPONENTS before including Makefile.rules
++include $(CLANG_LEVEL)/../../Makefile.config
++
++LINK_COMPONENTS := $(TARGETS_TO_BUILD) asmparser bitreader bitwriter codegen \
++                   instrumentation ipo linker selectiondag
++USEDLIBS = clangFrontendTool.a clangFrontend.a clangDriver.a \
++           clangSerialization.a clangCodeGen.a clangParse.a clangSema.a \
++           clangStaticAnalyzerFrontend.a clangStaticAnalyzerCheckers.a \
++           clangStaticAnalyzerCore.a \
++           clangAnalysis.a clangARCMigrate.a clangRewrite.a \
++           clangEdit.a clangAST.a clangLex.a clangBasic.a
++
++include $(CLANG_LEVEL)/Makefile
+diff --git a/tools/clang/tools/llvm-ndk-cc/cc1_main.cpp b/tools/clang/tools/llvm-ndk-cc/cc1_main.cpp
+new file mode 100644
+index 0000000..9d92596
+--- /dev/null
++++ b/tools/clang/tools/llvm-ndk-cc/cc1_main.cpp
+@@ -0,0 +1,121 @@
++/*
++ * Copyright 2012, The Android Open Source Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#include <string>
++
++#include "clang/Basic/Diagnostic.h"
++
++#include "clang/CodeGen/CodeGenAction.h"
++
++#include "clang/Driver/Arg.h"
++#include "clang/Driver/ArgList.h"
++#include "clang/Driver/Options.h"
++#include "clang/Driver/DriverDiagnostic.h"
++#include "clang/Driver/OptTable.h"
++
++#include "clang/Frontend/CompilerInstance.h"
++#include "clang/Frontend/CompilerInvocation.h"
++#include "clang/Frontend/FrontendDiagnostic.h"
++#include "clang/Frontend/TextDiagnosticBuffer.h"
++
++#include "clang/FrontendTool/Utils.h"
++
++#include "llvm/ADT/Statistic.h"
++
++#include "llvm/Support/ErrorHandling.h"
++#include "llvm/Support/ManagedStatic.h"
++#include "llvm/Support/TargetSelect.h"
++#include "llvm/Support/Timer.h"
++
++static void LLVMErrorHandler(void* pUserData, const std::string& pMessage) {
++  clang::DiagnosticsEngine &Diags =
++      *static_cast<clang::DiagnosticsEngine*>(pUserData);
++
++  Diags.Report(clang::diag::err_fe_error_backend) << pMessage;
++
++  // We cannot recover from llvm errors.
++  exit(1);
++}
++
++
++int cc1_main(const char** pArgBegin, const char** pArgEnd,
++             const char* pArgv0, void* MainAddr) {
++  llvm::llvm_shutdown_obj _ShutdownObj;
++
++  llvm::OwningPtr<clang::CompilerInstance>
++      PCC(new clang::CompilerInstance()); // PortableCC
++  llvm::IntrusiveRefCntPtr<clang::DiagnosticIDs>
++      DiagIDs(new clang::DiagnosticIDs());
++
++  // Initialize targets first, so that --version shows registered targets.
++  llvm::InitializeAllTargets();
++  llvm::InitializeAllTargetMCs();
++  llvm::InitializeAllAsmPrinters();
++  llvm::InitializeAllAsmParsers();
++
++  // Buffer diagnostics from argument parsing so that we can output them using a
++  // well formed diagnostic object.
++  clang::TextDiagnosticBuffer *DiagsBuffer = new clang::TextDiagnosticBuffer;
++  clang::DiagnosticsEngine Diags(DiagIDs, DiagsBuffer);
++  bool Success;
++  Success = clang::CompilerInvocation::CreateFromArgs(PCC->getInvocation(),
++                                                      pArgBegin, pArgEnd, Diags);
++
++  // Infer the builtin include path if unspecified.
++  if (PCC->getHeaderSearchOpts().UseBuiltinIncludes &&
++      PCC->getHeaderSearchOpts().ResourceDir.empty()) {
++    PCC->getHeaderSearchOpts().ResourceDir =
++        clang::CompilerInvocation::GetResourcesPath(pArgv0, MainAddr);
++  }
++
++  // Create the actual diagnostics engine.
++  PCC->createDiagnostics(pArgEnd - pArgBegin, const_cast<char**>(pArgBegin));
++  if (!PCC->hasDiagnostics()) {
++    return 1;
++  }
++
++  // Set an error handler, so that any LLVM backend diagnostics go through our
++  // error handler.
++  llvm::install_fatal_error_handler(LLVMErrorHandler,
++                                  static_cast<void*>(&PCC->getDiagnostics()));
++
++  DiagsBuffer->FlushDiagnostics(PCC->getDiagnostics());
++  if (!Success) {
++    return 1;
++  }
++
++  // Execute the frontend actions.
++  Success = clang::ExecuteCompilerInvocation(PCC.get());
++
++  // If any timers were active but haven't been destroyed yet, print their
++  // results now.  This happens in -disable-free mode.
++  llvm::TimerGroup::printAll(llvm::errs());
++
++  // Our error handler depends on the Diagnostics object, which we're
++  // potentially about to delete. Uninstall the handler now so that any
++  // later errors use the default handling behavior instead.
++  llvm::remove_fatal_error_handler();
++
++  // When running with -disable-free, don't do any destruction or shutdown.
++  if (PCC->getFrontendOpts().DisableFree) {
++    if (llvm::AreStatisticsEnabled() || PCC->getFrontendOpts().ShowStats)
++      llvm::PrintStatistics();
++    PCC.take();
++    return !Success;
++  }
++
++  return !Success;
++}
+diff --git a/tools/clang/tools/llvm-ndk-cc/llvm-ndk-cc.cpp b/tools/clang/tools/llvm-ndk-cc/llvm-ndk-cc.cpp
+new file mode 100644
+index 0000000..9dd2ddc
+--- /dev/null
++++ b/tools/clang/tools/llvm-ndk-cc/llvm-ndk-cc.cpp
+@@ -0,0 +1,222 @@
++/*
++ * Copyright 2012, The Android Open Source Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#include <cassert>
++#include <cstdlib>
++#include <list>
++#include <set>
++#include <string>
++#include <utility>
++#include <vector>
++
++#include "clang/Driver/Arg.h"
++#include "clang/Driver/ArgList.h"
++#include "clang/Driver/Compilation.h"
++#include "clang/Driver/Driver.h"
++#include "clang/Driver/DriverDiagnostic.h"
++#include "clang/Driver/Job.h"
++#include "clang/Driver/Option.h"
++#include "clang/Driver/Options.h"
++#include "clang/Driver/OptTable.h"
++#include "clang/Driver/OptSpecifier.h"
++
++#include "clang/Frontend/CompilerInvocation.h"
++#include "clang/Frontend/DiagnosticOptions.h"
++#include "clang/Frontend/TextDiagnosticPrinter.h"
++#include "clang/Frontend/Utils.h"
++
++#include "llvm/ADT/SmallVector.h"
++#include "llvm/ADT/StringRef.h"
++#include "llvm/ADT/IntrusiveRefCntPtr.h"
++#include "llvm/ADT/OwningPtr.h"
++
++#include "llvm/Support/CommandLine.h"
++#include "llvm/Support/ManagedStatic.h"
++#include "llvm/Support/MemoryBuffer.h"
++#include "llvm/Support/Path.h"
++#include "llvm/Support/raw_ostream.h"
++#include "llvm/Support/system_error.h"
++
++static llvm::sys::Path getExecutablePath(const char* pArgv0,
++                                         bool pCanonicalPrefixes) {
++  if (!pCanonicalPrefixes) {
++    return llvm::sys::Path(pArgv0);
++  }
++
++  // This just needs to be some symbol in the binary; C++ doesn't
++  // allow taking the address of ::main however.
++  void *addr = (void*) (intptr_t) getExecutablePath;
++  return llvm::sys::Path::GetMainExecutable(pArgv0, addr);
++}
++
++
++static const char* saveStringInSet(std::set<std::string>& pSavedStrings,
++                                   llvm::StringRef pS) {
++  return pSavedStrings.insert(pS).first->c_str();
++}
++
++static void expandArgsFromBuf(const char *Arg,
++                              llvm::SmallVectorImpl<const char*> &ArgVector,
++                              std::set<std::string> &SavedStrings) {
++  const char *FName = Arg + 1;
++  llvm::OwningPtr<llvm::MemoryBuffer> MemBuf;
++  if (llvm::MemoryBuffer::getFile(FName, MemBuf)) {
++    ArgVector.push_back(saveStringInSet(SavedStrings, Arg));
++    return;
++  }
++
++  const char *Buf = MemBuf->getBufferStart();
++  char InQuote = ' ';
++  std::string CurArg;
++
++  for (const char *P = Buf; ; ++P) {
++    if (*P == '\0' || (isspace(*P) && InQuote == ' ')) {
++      if (!CurArg.empty()) {
++
++        if (CurArg[0] != '@') {
++          ArgVector.push_back(saveStringInSet(SavedStrings, CurArg));
++        } else {
++          expandArgsFromBuf(CurArg.c_str(), ArgVector, SavedStrings);
++        }
++
++        CurArg = "";
++      }
++      if (*P == '\0')
++        break;
++      else
++        continue;
++    }
++
++    if (isspace(*P)) {
++      if (InQuote != ' ')
++        CurArg.push_back(*P);
++      continue;
++    }
++
++    if (*P == '"' || *P == '\'') {
++      if (InQuote == *P)
++        InQuote = ' ';
++      else if (InQuote == ' ')
++        InQuote = *P;
++      else
++        CurArg.push_back(*P);
++      continue;
++    }
++
++    if (*P == '\\') {
++      ++P;
++      if (*P != '\0')
++        CurArg.push_back(*P);
++      continue;
++    }
++    CurArg.push_back(*P);
++  }
++}
++
++static void expandArgv(int pArgc, char** pArgv,
++                       llvm::SmallVectorImpl<const char*>& pArgVector,
++                       std::set<std::string>& pSavedStrings) {
++  for (int i = 0; i < pArgc; ++i) {
++    const char* Arg = pArgv[i];
++    if (Arg[0] != '@') {
++      pArgVector.push_back(saveStringInSet(pSavedStrings, std::string(Arg)));
++      continue;
++    }
++
++    expandArgsFromBuf(Arg, pArgVector, pSavedStrings);
++  }
++}
++
++
++extern int cc1_main(const char** pArgBegin, const char** pArgEnd,
++                    const char* pArgv0, void* pMainAddr);
++
++
++int main(int argc, char** argv_) {
++  llvm::llvm_shutdown_obj _ShutdownObj;
++
++  std::set<std::string> SavedStrings;
++  llvm::SmallVector<const char*, 256> argv;
++
++  expandArgv(argc, argv_, argv, SavedStrings);
++
++  // Handle -cc1 integrated tools.
++  if (argv.size() > 1 && llvm::StringRef(argv[1]).startswith("-cc1")) {
++    llvm::StringRef Tool = argv[1] + 4;
++
++    if (Tool == "") {
++      return cc1_main(argv.data()+2, argv.data()+argv.size(), argv[0],
++                      (void*) (intptr_t) getExecutablePath);
++    }
++    if (Tool == "as") {
++      return 1; // We don't support -cc1as
++    }
++
++    // Reject unknown tools.
++    llvm::errs() << "error: unknown integrated tool '" << Tool << "'\n";
++    return 1;
++  }
++
++  clang::DiagnosticOptions DiagOpts;
++  // Note that ParseDiagnosticArgs() uses the cc1 option table.
++  llvm::OwningPtr<clang::driver::OptTable>
++      CC1Opts(clang::driver::createDriverOptTable());
++  unsigned MissingArgIndex, MissingArgCount;
++  llvm::OwningPtr<clang::driver::InputArgList>
++      Args(CC1Opts->ParseArgs(argv.begin()+1, argv.end(),
++                              MissingArgIndex, MissingArgCount));
++  // We ignore MissingArgCount and the return value of ParseDiagnosticArgs.
++  // Any errors that would be diagnosed here will also be diagnosed later,
++  // when the DiagnosticsEngine actually exists.
++  // FIXME: Release_3.1 and master has slightly different on this.
++  //        I comment it directly since I trust one day we need to upgrade to
++  //        release_3.2 or more, and we can un-comment it easily.
++  //(void) clang::ParseDiagnosticArgs(DiagOpts, *Args);
++
++  bool CanonicalPrefixes = true;
++  for (int i = 1, size = argv.size(); i < size; ++i) {
++    if (llvm::StringRef(argv[i]) == "-no-canonical-prefixes") {
++      CanonicalPrefixes = false;
++      break;
++    }
++  }
++  llvm::sys::Path Path = getExecutablePath(argv[0], CanonicalPrefixes);
++
++  clang::TextDiagnosticPrinter* DiagClient =
++      new clang::TextDiagnosticPrinter(llvm::errs(), DiagOpts);
++  DiagClient->setPrefix(llvm::sys::path::stem(Path.str()));
++  llvm::IntrusiveRefCntPtr<clang::DiagnosticIDs>
++      DiagIDs(new clang::DiagnosticIDs);
++  clang::DiagnosticsEngine Diags(DiagIDs, DiagClient);
++  clang::ProcessWarningOptions(Diags, DiagOpts);
++
++  if (Diags.hasErrorOccurred()) {
++    return 1;
++  }
++
++
++  clang::driver::Driver TheDriver(Path.str(), "le32-none-ndk",
++                                  "a.out", true/* IsProduction */, Diags);
++
++  llvm::OwningPtr<clang::driver::Compilation> C(TheDriver.BuildCompilation(argv));
++  int Res = 0;
++  const clang::driver::Command* FailingCommand = 0;
++  if (C.get()) {
++    Res = TheDriver.ExecuteCompilation(*C, FailingCommand);
++  }
++
++  return Res;
++}
+diff --git a/tools/clang/tools/llvm-ndk-link/Makefile b/tools/clang/tools/llvm-ndk-link/Makefile
+new file mode 100644
+index 0000000..496596a
+--- /dev/null
++++ b/tools/clang/tools/llvm-ndk-link/Makefile
+@@ -0,0 +1,27 @@
++##===- tools/llvm-ndk-link/Makefile ------------------------*- Makefile -*-===##
++#
++#                     The LLVM Compiler Infrastructure
++#
++# This file is distributed under the University of Illinois Open Source
++# License. See LICENSE.TXT for details.
++#
++##===----------------------------------------------------------------------===##
++CLANG_LEVEL := ../..
++
++TOOLNAME = llvm-ndk-link
++
++# Include this here so we can get the configuration of the targets that have
++# been configured for construction. We have to do this early so we can set up
++# LINK_COMPONENTS before including Makefile.rules
++include $(CLANG_LEVEL)/../../Makefile.config
++
++LINK_COMPONENTS := $(TARGETS_TO_BUILD) asmparser bitreader bitwriter codegen \
++                   instrumentation ipo linker selectiondag
++USEDLIBS = clangFrontendTool.a clangFrontend.a clangDriver.a \
++           clangSerialization.a clangCodeGen.a clangParse.a clangSema.a \
++           clangStaticAnalyzerFrontend.a clangStaticAnalyzerCheckers.a \
++           clangStaticAnalyzerCore.a \
++           clangAnalysis.a clangARCMigrate.a clangRewrite.a \
++           clangEdit.a clangAST.a clangLex.a clangBasic.a
++
++include $(CLANG_LEVEL)/Makefile
+diff --git a/tools/clang/tools/llvm-ndk-link/llvm-ndk-link.cpp b/tools/clang/tools/llvm-ndk-link/llvm-ndk-link.cpp
+new file mode 100644
+index 0000000..e2f0471
+--- /dev/null
++++ b/tools/clang/tools/llvm-ndk-link/llvm-ndk-link.cpp
+@@ -0,0 +1,202 @@
++/*
++ * Copyright 2012, The Android Open Source Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#include <list>
++#include <cstring>
++#include "llvm/Linker.h"
++#include "llvm/LLVMContext.h"
++#include "llvm/Module.h"
++#include "llvm/PassManager.h"
++#include "llvm/Analysis/Verifier.h"
++#include "llvm/Bitcode/ReaderWriter.h"
++#include "llvm/Support/CommandLine.h"
++#include "llvm/Support/FileUtilities.h"
++#include "llvm/Support/ManagedStatic.h"
++#include "llvm/Support/MemoryBuffer.h"
++#include "llvm/Support/PrettyStackTrace.h"
++#include "llvm/Support/Signals.h"
++#include "llvm/Support/ToolOutputFile.h"
++#include "llvm/Target/TargetData.h"
++#include "llvm/Transforms/IPO.h"
++#include "llvm/Transforms/IPO/PassManagerBuilder.h"
++#include "llvm/Transforms/Scalar.h"
++
++using namespace llvm;
++
++static cl::list<std::string>
++InputFilenames(cl::Positional, cl::OneOrMore,
++               cl::desc("<input bitcode files>"));
++
++static cl::opt<std::string>
++OutputFilename("o", cl::desc("Override output filename"),
++                cl::value_desc("output bitcode file"));
++
++static cl::list<std::string>
++LibPaths("L", cl::Prefix,
++         cl::desc("Specify a library search path"),
++         cl::value_desc("directory"));
++
++static cl::list<std::string>
++Libraries("l", cl::Prefix,
++          cl::desc("Specify libraries to link to"),
++          cl::value_desc("library name"));
++
++static cl::opt<bool>
++Verbose("v", cl::desc("Print verbose information"));
++
++static cl::opt<bool>
++DisableOptimizations("disable-opt",
++                     cl::desc("Do not run any optimization passes"));
++
++static cl::opt<bool>
++Strip("strip-all", cl::desc("Strip all symbol info"));
++
++static cl::opt<bool>
++StripDebug("strip-debug", cl::desc("Strip debugger symbol info"));
++
++static cl::alias A0("s", cl::desc("Alias for --strip-all"),
++  cl::aliasopt(Strip));
++
++static cl::alias A1("S", cl::desc("Alias for --strip-debug"),
++  cl::aliasopt(StripDebug));
++
++static cl::alias A2("strip-unneeded", cl::desc("Alias for -strip-all"),
++  cl::aliasopt(Strip));
++
++static cl::list<std::string> CO1("Wl", cl::Prefix,
++  cl::desc("Compatibility option: ignored"));
++
++static std::string progname;
++
++// FileRemover objects to clean up output files on the event of an error.
++static FileRemover OutputRemover;
++
++// Perform link time optimizations
++void Optimize(Module *M)
++{
++  // Instantiate the pass manager to organize the passes.
++  PassManager PM;
++
++  // Check whether module is good
++  PM.add(createVerifierPass());
++
++  // Add an appropriate TargetData instance for this module.
++  PM.add(new TargetData(M));
++
++  if (!DisableOptimizations)
++    PassManagerBuilder().populateLTOPassManager(PM,
++                                                false /*Internalize*/,
++                                                true /*RunInliner*/);
++  // Strip debug info and symbols.
++  if (Strip || StripDebug)
++    PM.add(createStripSymbolsPass(StripDebug && !Strip));
++
++  // Doing clean up passes
++  if (!DisableOptimizations)
++  {
++    PM.add(createInstructionCombiningPass());
++    PM.add(createCFGSimplificationPass());
++    PM.add(createAggressiveDCEPass());
++    PM.add(createGlobalDCEPass());
++  }
++
++  // Make sure everything is still good
++  PM.add(createVerifierPass());
++
++  // Run all passes at once now.
++  PM.run(*M);
++}
++
++static void PrintAndExit(const std::string &Message, Module *M, int errcode = 1)
++{
++  errs() << progname << ": " << Message << "\n";
++  delete M;
++  llvm_shutdown();
++  exit(errcode);
++}
++
++// GenerateBitcode - generates a bitcode file from the module provided
++void GenerateBitcode(Module* M, const std::string& FileName) {
++
++  if (Verbose)
++    errs() << "Generating Bitcode To " << FileName << '\n';
++
++  // Create the output file.
++  std::string ErrorInfo;
++  tool_output_file Out(FileName.c_str(), ErrorInfo,
++                       raw_fd_ostream::F_Binary);
++  if (!ErrorInfo.empty()) {
++    PrintAndExit(ErrorInfo, M);
++    return;
++  }
++
++  // Write it out
++  WriteBitcodeToFile(M, Out.os());
++  Out.keep();
++}
++
++int main(int argc, char** argv) {
++  // Print a stack trace if we signal out.
++  sys::PrintStackTraceOnErrorSignal();
++  PrettyStackTraceProgram X(argc, argv);
++
++  llvm_shutdown_obj _ShutdownObj;   //Call llvm_shutdown() on exit
++  LLVMContext& Ctx = llvm::getGlobalContext();
++
++  progname = sys::path::stem(argv[0]);
++
++  cl::ParseCommandLineOptions(argc, argv, "P-NDK Link Tool\n", true /*ReadResponseFiles*/);
++
++  // Arrange for the output file to be delete on any errors.
++  OutputRemover.setFile(OutputFilename);
++  sys::RemoveFileOnSignal(sys::Path(OutputFilename));
++
++  // Construct a Linker
++  Linker linker(progname, OutputFilename, Ctx, Verbose);
++
++  // Add library path to the linker
++  linker.addPaths(LibPaths);
++
++  // Remove any consecutive duplication of the same library
++  Libraries.erase(std::unique(Libraries.begin(), Libraries.end()),
++                  Libraries.end());
++
++  std::vector<sys::Path> Files;
++  for (unsigned i = 0; i < InputFilenames.size(); ++i)
++    Files.push_back(sys::Path(InputFilenames[i]));
++
++  if (linker.LinkInFiles(Files))
++    return 1;
++
++  // Add native library dependents in the module
++  for (cl::list<std::string>::const_iterator I = Libraries.begin(),
++       E = Libraries.end(); I != E; ++I)
++  {
++    linker.getModule()->addLibrary(*I);
++  }
++
++  std::auto_ptr<Module> Composite(linker.releaseModule());
++
++  // Optimize the module
++  Optimize(Composite.get());
++
++  // Write Linked bitcode
++  GenerateBitcode(Composite.get(), OutputFilename);
++
++  // Operation complete
++  OutputRemover.releaseFile();
++  return 0;
++}
+-- 
+1.7.6
+
