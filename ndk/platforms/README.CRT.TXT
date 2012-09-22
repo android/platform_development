@@ -137,7 +137,7 @@ atexit() implementation:
   However, this requires that the atexit() implementation be part of the
   shared library itself, rather than the C library.
 
-  The crtbegin_shared.S and crtbegin_static.S files contain an tiny
+  The crtbegin_shared.S and crtbegin_dynamic.S files contain an tiny
   implementation of atexit() in assembler that essentially does:
 
       void atexit(void(*myfunc)(void))
@@ -183,7 +183,7 @@ is also required to build gdbserver).
   libgcc symbol from the link-time shared libraries it generates. This is done
   by using the lists under:
 
-     $NDK/build/tools/toolchain-symbols/$ARCH/libgcc.a.functions.txt
+     $NDK/build/tools/unwanted-symbols/$ARCH/libgcc.a.functions.txt
 
   You will need to update these files when the toolchain changes.
 
