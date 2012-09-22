@@ -19,5 +19,6 @@
 #ifndef _ASM_ASMMACRO_H
 #define _ASM_ASMMACRO_H
 #include <asm/hazards.h>
-#endif
+#include <asm/asmmacro-32.h>
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#endif

@@ -16,26 +16,14 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _ASM_MACH_GENERIC_SPACES_H
-#define _ASM_MACH_GENERIC_SPACES_H
-#include <linux/const.h>
-#ifndef PHYS_OFFSET
+#ifndef _ASM_GENERIC_SWAB_H
+#define _ASM_GENERIC_SWAB_H
+#include <asm/bitsperlong.h>
+#if __BITS_PER_LONG == 32
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define PHYS_OFFSET _AC(0, UL)
+#if defined(__GNUC__) && (!defined(__STRICT_ANSI__) || defined(__KERNEL__))
+#define __SWAB_64_THRU_32__
 #endif
-#define CAC_BASE _AC(0x80000000, UL)
-#define IO_BASE _AC(0xa0000000, UL)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define UNCAC_BASE _AC(0xa0000000, UL)
-#ifndef MAP_BASE
-#define MAP_BASE _AC(0xc0000000, UL)
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#ifndef HIGHMEM_START
-#define HIGHMEM_START _AC(0x20000000, UL)
-#endif
-#ifndef PAGE_OFFSET
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define PAGE_OFFSET (CAC_BASE + PHYS_OFFSET)
-#endif
 #endif
