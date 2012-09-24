@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAJUX//+XI\u003d",
+        "filename": "ndk/platforms/android-9/arch-mips/include/asm/msgbuf.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2012-09-24T16:38:36Z",
+      "side": 1,
+      "message": "The original one isn\u0027t correct because CONFIG_32BIT isn\u0027t set when bionic/libc/kernel/tools/update_all.py is run for mips.  Please see https://android-review.googlesource.com/#/c/43335 and external/kernel-headers/original/asm-mips/msgbuf.h\n\nstruct msqid64_ds {\n        struct ipc64_perm msg_perm;\n#if defined(CONFIG_32BIT) \u0026\u0026 !defined(CONFIG_CPU_LITTLE_ENDIAN)\n        unsigned long   __unused1;\n#endif\n        __kernel_time_t msg_stime;      /* last msgsnd time */\n#if defined(CONFIG_32BIT) \u0026\u0026 defined(CONFIG_CPU_LITTLE_ENDIAN)\n        unsigned long   __unused1;\n#endif\n\n....\n}",
+      "parentUuid": "AAAJUn//+0g\u003d",
+      "revId": "e566d9348b789b8bab2a55bb31e444695d8fa4af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAJUn//+0Y\u003d",
         "filename": "ndk/platforms/android-9/arch-mips/include/asm/ptrace.h",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2012-09-24T16:27:43Z",
       "side": 1,
       "message": "that\u0027s also a pretty nasty change. I guess MIPS isn\u0027t officially supported by Android yet, so this one is probably safe.",
+      "revId": "e566d9348b789b8bab2a55bb31e444695d8fa4af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAJUX//+W8\u003d",
+        "filename": "ndk/platforms/android-9/arch-mips/include/asm/ptrace.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2012-09-24T16:38:36Z",
+      "side": 1,
+      "message": "ditto:\n\nstruct pt_regs {\n#ifdef CONFIG_32BIT\n        /* Pad bytes for argument save space on the stack. */\n        unsigned long pad0[6];\n#endif\n\n        /* Saved main processor registers. */\n        unsigned long regs[32];",
+      "parentUuid": "AAAJUn//+0Y\u003d",
       "revId": "e566d9348b789b8bab2a55bb31e444695d8fa4af",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
