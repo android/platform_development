@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAJUn//+0g\u003d",
+        "filename": "ndk/platforms/android-9/arch-mips/include/asm/msgbuf.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-09-24T16:27:43Z",
+      "side": 1,
+      "message": "I always hate it when the kernel breaks the user ABI, is this intentional / safe ?",
+      "revId": "e566d9348b789b8bab2a55bb31e444695d8fa4af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAJUn//+0Y\u003d",
+        "filename": "ndk/platforms/android-9/arch-mips/include/asm/ptrace.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2012-09-24T16:27:43Z",
+      "side": 1,
+      "message": "that\u0027s also a pretty nasty change. I guess MIPS isn\u0027t officially supported by Android yet, so this one is probably safe.",
+      "revId": "e566d9348b789b8bab2a55bb31e444695d8fa4af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
