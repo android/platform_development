@@ -66,7 +66,8 @@ struct icmphdr {
  } echo;
  __u32 gateway;
  struct {
- __u16 __unused_field;
+ __u16 __linux_unused;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  __u16 mtu;
  } frag;
  } un;
