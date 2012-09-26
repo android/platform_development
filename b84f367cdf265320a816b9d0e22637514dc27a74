@@ -16,6 +16,24 @@
       "revId": "b84f367cdf265320a816b9d0e22637514dc27a74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAJaX//9vE\u003d",
+        "filename": "ndk/platforms/android-3/include/linux/sysctl.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2012-09-26T22:10:01Z",
+      "side": 1,
+      "message": "Will remove that",
+      "parentUuid": "AAAJan//+Qs\u003d",
+      "revId": "b84f367cdf265320a816b9d0e22637514dc27a74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
