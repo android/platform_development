@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAJan//+Qs\u003d",
+        "filename": "ndk/platforms/android-3/include/linux/sysctl.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2012-09-26T22:03:54Z",
+      "side": 1,
+      "message": "shouldn\u0027t these warnings be every five lines in the file? (or not appear at all if you\u0027re stripping them.)",
+      "revId": "b84f367cdf265320a816b9d0e22637514dc27a74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
