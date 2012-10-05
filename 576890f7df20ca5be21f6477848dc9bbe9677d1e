@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAJ7H///ck\u003d",
+        "filename": "tools/emulator/skins/dynamic/layout",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1010055
+      },
+      "writtenOn": "2012-10-05T23:32:38Z",
+      "side": 1,
+      "message": "yes, I\u0027m assuming that the background image for each part defines its bounds, see two lines below.",
+      "parentUuid": "AAAJ9H///QI\u003d",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAJ9H///QY\u003d",
         "filename": "tools/emulator/skins/dynamic/layout",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-10-05T23:29:16Z",
       "side": 1,
       "message": "do you plan to have a controls part without the phone dial/hangup? Most newer devices don\u0027t have these but still have vol up/down+power.",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAJ7H///cc\u003d",
+        "filename": "tools/emulator/skins/dynamic/layout",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1010055
+      },
+      "writtenOn": "2012-10-05T23:32:38Z",
+      "side": 1,
+      "message": "actually, this can be deleted as I don\u0027t dynamically show the contents. Only 3 items are shown right now: keyboard, dpad, and hw buttons.",
+      "parentUuid": "AAAJ9H///QY\u003d",
       "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
