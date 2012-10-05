@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAJ9H///QI\u003d",
+        "filename": "tools/emulator/skins/dynamic/layout",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-10-05T23:29:16Z",
+      "side": 1,
+      "message": "shouldn\u0027t each part define it\u0027s overall size? Or are you going to use the bounds of all its content to find it out?",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAJ9H///QY\u003d",
+        "filename": "tools/emulator/skins/dynamic/layout",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-10-05T23:29:16Z",
+      "side": 1,
+      "message": "do you plan to have a controls part without the phone dial/hangup? Most newer devices don\u0027t have these but still have vol up/down+power.",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
