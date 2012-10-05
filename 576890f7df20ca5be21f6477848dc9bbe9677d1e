@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAJ7H///bE\u003d",
+        "filename": "tools/emulator/skins/dynamic/dpad_on.svg",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1010055
+      },
+      "writtenOn": "2012-10-05T23:51:00Z",
+      "side": 1,
+      "message": "LOL. This is why I\u0027m not a designer. I\u0027m not even sure if this is going to support a relative path, I\u0027ll see.\n\nBut still, impressive that you read through an SVG file :)",
+      "parentUuid": "AAAJ9H///O8\u003d",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAJ9H///QI\u003d",
         "filename": "tools/emulator/skins/dynamic/layout",
         "patchSetId": 2
