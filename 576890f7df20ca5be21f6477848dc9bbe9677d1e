@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "AAAJ9H///Mw\u003d",
+        "filename": "tools/emulator/skins/dynamic/dpad_on.svg",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-10-06T00:01:39Z",
+      "side": 1,
+      "message": "SVG is pretty simple. You could remove 99% of the bloat added by inkscape and express the same in about 10 lines. Then you could put whatever relative path you want -- what matters is the generator-to-png, not the editor which could be just vi.",
+      "parentUuid": "AAAJ7H///bE\u003d",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAJ9H///Mk\u003d",
+        "filename": "tools/emulator/skins/dynamic/dpad_on.svg",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-10-06T00:01:39Z",
+      "side": 1,
+      "message": "Did I ever mention how much I like this font? Not.",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAJ9H///QI\u003d",
         "filename": "tools/emulator/skins/dynamic/layout",
         "patchSetId": 2
@@ -101,6 +136,24 @@
       "side": 1,
       "message": "actually, this can be deleted as I don\u0027t dynamically show the contents. Only 3 items are shown right now: keyboard, dpad, and hw buttons.",
       "parentUuid": "AAAJ9H///QY\u003d",
+      "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAJ9H///MQ\u003d",
+        "filename": "tools/emulator/skins/dynamic/layout",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2012-10-06T00:01:39Z",
+      "side": 1,
+      "message": "Ah, that\u0027s why the x/y coordinates are not aligned. Must be another skin you reused that had them in the corners.\n\nI think in your design it would be nice to have a row of buttons with [power] [vol-] [vol+] -- even with today\u0027s phones minimalist designs, these are bound to exist.\nOn earlier specific phone skins, they tried to match the side of the devices but that wasn\u0027t very discoverable imho. A simple horizontal row of buttons is just good enough and I believe we already have the pngs for them. It would be fine to omit phone dial/hangup at this point. Could be a 1.1 feature though.",
+      "parentUuid": "AAAJ7H///cc\u003d",
       "revId": "576890f7df20ca5be21f6477848dc9bbe9677d1e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
