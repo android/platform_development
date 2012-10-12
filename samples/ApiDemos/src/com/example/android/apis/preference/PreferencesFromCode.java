@@ -21,6 +21,7 @@ import com.example.android.apis.R;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -55,12 +56,14 @@ public class PreferencesFromCode extends PreferenceActivity {
         checkboxPref.setSummary(R.string.summary_checkbox_preference);
         inlinePrefCat.addPreference(checkboxPref);
 
-        // Switch preference
-        SwitchPreference switchPref = new SwitchPreference(this);
-        switchPref.setKey("switch_preference");
-        switchPref.setTitle(R.string.title_switch_preference);
-        switchPref.setSummary(R.string.summary_switch_preference);
-        inlinePrefCat.addPreference(switchPref);
+        if (Build.VERSION.SDK_INT >= 14) {
+            // Switch preference
+            SwitchPreference switchPref = new SwitchPreference(this);
+            switchPref.setKey("switch_preference");
+            switchPref.setTitle(R.string.title_switch_preference);
+            switchPref.setSummary(R.string.summary_switch_preference);
+            inlinePrefCat.addPreference(switchPref);
+        }
 
         // Dialog based preferences
         PreferenceCategory dialogBasedPrefCat = new PreferenceCategory(this);
