@@ -4815,18 +4815,6 @@
 		<method name="setResultData(Ljava/lang/String;)V" />
 		<method name="setResultExtras(Landroid/os/Bundle;)V" />
 	</class>
-	<class name="android/content/CancellationSignal" since="16">
-		<extends name="java/lang/Object" />
-		<method name="&lt;init>()V" />
-		<method name="cancel()V" />
-		<method name="isCanceled()Z" />
-		<method name="setOnCancelListener(Landroid/content/CancellationSignal$OnCancelListener;)V" />
-		<method name="throwIfCanceled()V" />
-	</class>
-	<class name="android/content/CancellationSignal$OnCancelListener" since="16">
-		<extends name="java/lang/Object" />
-		<method name="onCancel()V" />
-	</class>
 	<class name="android/content/ClipData" since="11">
 		<extends name="java/lang/Object" />
 		<implements name="android/os/Parcelable" />
@@ -5674,7 +5662,6 @@
 		<field name="FLAG_ACTIVITY_CLEAR_TASK" since="11" />
 		<field name="FLAG_ACTIVITY_CLEAR_TOP" />
 		<field name="FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET" since="3" />
-		<field name="FLAG_ACTIVITY_CLOSE_SYSTEM_DIALOGS" since="16" />
 		<field name="FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS" />
 		<field name="FLAG_ACTIVITY_FORWARD_RESULT" />
 		<field name="FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY" />
@@ -5870,11 +5857,6 @@
 		<method name="&lt;init>(Ljava/lang/String;Ljava/lang/Throwable;)V" />
 		<method name="&lt;init>(Ljava/lang/Throwable;)V" />
 		<method name="getNumSuccessfulYieldPoints()I" />
-	</class>
-	<class name="android/content/OperationCanceledException" since="16">
-		<extends name="java/lang/RuntimeException" />
-		<method name="&lt;init>()V" />
-		<method name="&lt;init>(Ljava/lang/String;)V" />
 	</class>
 	<class name="android/content/PeriodicSync" since="8">
 		<extends name="java/lang/Object" />
@@ -12450,35 +12432,6 @@
 		<field name="SSL_MAX_ERROR" />
 		<field name="SSL_NOTYETVALID" />
 		<field name="SSL_UNTRUSTED" />
-	</class>
-	<class name="android/net/nsd/DnsSdServiceInfo" since="16">
-		<extends name="java/lang/Object" />
-		<implements name="android/os/Parcelable" />
-		<method name="&lt;init>()V" />
-		<method name="getHost()Ljava/net/InetAddress;" />
-		<method name="getPort()I" />
-		<method name="getServiceName()Ljava/lang/String;" />
-		<method name="getServiceType()Ljava/lang/String;" />
-		<method name="setHost(Ljava/net/InetAddress;)V" />
-		<method name="setPort(I)V" />
-		<method name="setServiceName(Ljava/lang/String;)V" />
-		<method name="setServiceType(Ljava/lang/String;)V" />
-		<field name="CREATOR" />
-	</class>
-	<class name="android/net/nsd/DnsSdTxtRecord" since="16">
-		<extends name="java/lang/Object" />
-		<implements name="android/os/Parcelable" />
-		<method name="&lt;init>()V" />
-		<method name="&lt;init>(Landroid/net/nsd/DnsSdTxtRecord;)V" />
-		<method name="&lt;init>([B)V" />
-		<method name="contains(Ljava/lang/String;)Z" />
-		<method name="get(Ljava/lang/String;)Ljava/lang/String;" />
-		<method name="getRawData()[B" />
-		<method name="keyCount()I" />
-		<method name="remove(Ljava/lang/String;)I" />
-		<method name="set(Ljava/lang/String;Ljava/lang/String;)V" />
-		<method name="size()I" />
-		<field name="CREATOR" />
 	</class>
 	<class name="android/net/nsd/NsdManager" since="16">
 		<extends name="java/lang/Object" />
