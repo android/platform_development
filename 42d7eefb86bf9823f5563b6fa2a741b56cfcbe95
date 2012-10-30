@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAALFH//+iY\u003d",
+        "filename": "sdk/api-versions.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4818,
+      "author": {
+        "id": 1004689
+      },
+      "writtenOn": "2012-10-30T22:36:42Z",
+      "side": 0,
+      "message": "The right class is android/os/CancellationSignal (which is already present in the file). Perhaps the file was generated with a non-final android-16.jar file?",
+      "revId": "42d7eefb86bf9823f5563b6fa2a741b56cfcbe95",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
