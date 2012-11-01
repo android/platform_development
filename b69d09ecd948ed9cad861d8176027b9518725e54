@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAALP3///ys\u003d",
+        "filename": "samples/LunarLander/src/com/example/android/lunarlander/LunarView.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1017078
+      },
+      "writtenOn": "2012-11-01T19:55:12Z",
+      "side": 1,
+      "message": "Minor nit, fix the useless param name while you\u0027re in this chunk of code. \"run\", \"canRun\", etc.  \"b\" is like having a road sign in front of a dangerous curve that says \"This is a road sign\".",
+      "revId": "b69d09ecd948ed9cad861d8176027b9518725e54",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
