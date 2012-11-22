@@ -66,7 +66,7 @@ typedef uint8_t       uint_fast8_t;
 #  define INT_FAST8_MIN    INT8_MIN
 #  define INT_FAST8_MAX    INT8_MAX
 
-#  define UINT8_MAX           (255U)
+#  define UINT8_MAX           (255)
 #  define UINT_LEAST8_MAX     UINT8_MAX
 #  define UINT_FAST8_MAX      UINT8_MAX
 #endif
@@ -76,7 +76,7 @@ typedef uint8_t       uint_fast8_t;
 #  define INT_LEAST8_C(c)	 INT8_C(c)
 #  define INT_FAST8_C(c)	INT8_C(c)
 
-#  define UINT8_C(c)	c ## U
+#  define UINT8_C(c)	c
 #  define UINT_LEAST8_C(c)  UINT8_C(c)
 #  define UINT_FAST8_C(c)  UINT8_C(c)
 #endif
@@ -99,7 +99,7 @@ typedef uint32_t      uint_fast16_t;
 #  define INT_FAST16_MIN	INT32_MIN
 #  define INT_FAST16_MAX	INT32_MAX
 
-#  define UINT16_MAX	(65535U)
+#  define UINT16_MAX	(65535)
 #  define UINT_LEAST16_MAX UINT16_MAX
 #  define UINT_FAST16_MAX UINT32_MAX
 #endif
@@ -109,7 +109,7 @@ typedef uint32_t      uint_fast16_t;
 #  define INT_LEAST16_C(c) INT16_C(c)
 #  define INT_FAST16_C(c)	 INT32_C(c)
 
-#  define UINT16_C(c)	c ## U
+#  define UINT16_C(c)	c
 #  define UINT_LEAST16_C(c) UINT16_C(c)
 #  define UINT_FAST16_C(c) UINT32_C(c)
 #endif
@@ -224,6 +224,25 @@ typedef int64_t  intmax_t;
 #ifdef __STDINT_MACROS
 #  define INTMAX_C(c)	INT64_C(c)
 #  define UINTMAX_C(c)	UINT64_C(c)
+#endif
+
+/*
+ * sig_atomic_t, size_t, wchar_t, and wint_t.
+ */
+
+#ifdef __STDINT_LIMITS
+#  define SIG_ATOMIC_MAX INT32_MAX
+#  define SIG_ATOMIC_MIN INT32_MIN
+
+#  define SIZE_MAX UINT32_MAX
+
+#  ifndef WCHAR_MAX /* These might also have been defined by <wchar.h>. */
+#    define WCHAR_MAX INT32_MAX
+#    define WCHAR_MIN INT32_MIN
+#  endif
+
+#  define WINT_MAX INT32_MAX
+#  define WINT_MIN INT32_MIN
 #endif
 
 #define _BITSIZE 32
