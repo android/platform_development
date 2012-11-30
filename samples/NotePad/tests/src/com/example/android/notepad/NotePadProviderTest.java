@@ -78,19 +78,19 @@ public class NotePadProviderTest extends ProviderTestCase2<NotePadProvider> {
         new GregorianCalendar(2010, Calendar.JANUARY, 1, 0, 0, 0);
 
     // Stores a timestamp value, set to an arbitrary starting point
-    private final static long START_DATE = TEST_CALENDAR.getTimeInMillis();
+    private static final long START_DATE = TEST_CALENDAR.getTimeInMillis();
 
     // Sets a MIME type filter, used to test provider methods that return more than one MIME type
     // for a particular note. The filter will retrieve any MIME types supported for the content URI.
-    private final static String MIME_TYPES_ALL = "*/*";
+    private static final String MIME_TYPES_ALL = "*/*";
 
     // Sets a MIME type filter, used to test provider methods that return more than one MIME type
     // for a particular note. The filter is nonsense, so it will not retrieve any MIME types.
-    private final static String MIME_TYPES_NONE = "qwer/qwer";
+    private static final String MIME_TYPES_NONE = "qwer/qwer";
 
     // Sets a MIME type filter for plain text, used to the provider's methods that only handle
     // plain text
-    private final static String MIME_TYPE_TEXT = "text/plain";
+    private static final String MIME_TYPE_TEXT = "text/plain";
 
     /*
      * Constructor for the test case class.
@@ -165,10 +165,6 @@ public class NotePadProviderTest extends ProviderTestCase2<NotePadProvider> {
         String mimeType = mMockResolver.getType(NotePad.Notes.CONTENT_URI);
         assertEquals(NotePad.Notes.CONTENT_TYPE, mimeType);
 
-        // Tests the MIME type for the live folder URI.
-        mimeType = mMockResolver.getType(NotePad.Notes.LIVE_FOLDER_URI);
-        assertEquals(NotePad.Notes.CONTENT_TYPE, mimeType);
-
         // Creates a URI with a pattern for note ids. The id doesn't have to exist.
         Uri noteIdUri = ContentUris.withAppendedId(NotePad.Notes.CONTENT_ID_URI_BASE, 1);
 
@@ -190,10 +186,6 @@ public class NotePadProviderTest extends ProviderTestCase2<NotePadProvider> {
         // not provide a stream MIME type for multiple notes.
         assertNull(mMockResolver.getStreamTypes(NotePad.Notes.CONTENT_URI, MIME_TYPES_ALL));
 
-        // Tests the live folders URI. This should return null, since the content provider does not
-        // provide a stream MIME type for multiple notes.
-        assertNull(mMockResolver.getStreamTypes(NotePad.Notes.LIVE_FOLDER_URI, MIME_TYPES_ALL));
-
         /*
          * Tests the note id URI for a single note, using _ID value "1" which is a valid ID. Uses a
          * valid MIME type filter that will return all the supported MIME types for a content URI.
@@ -209,8 +201,8 @@ public class NotePadProviderTest extends ProviderTestCase2<NotePadProvider> {
         // Tests that the result is not null and is equal to the expected value. Also tests that
         // only one MIME type is returned.
         assertNotNull(mimeType);
-        assertEquals(mimeType[0],"text/plain");
-        assertEquals(mimeType.length,1);
+        assertEquals(mimeType[0], "text/plain");
+        assertEquals(mimeType.length, 1);
 
         /*
          * Tests with the same URI but with a filter that should not return any URIs.
@@ -332,7 +324,7 @@ public class NotePadProviderTest extends ProviderTestCase2<NotePadProvider> {
     public void testWriteDataToPipe() throws FileNotFoundException {
 
         // A string array to hold the incoming data
-        String[] inputData = {"","",""};
+        String[] inputData = {"", "", ""};
 
         // A URI for a note ID.
         Uri noteIdUri;
@@ -369,7 +361,7 @@ public class NotePadProviderTest extends ProviderTestCase2<NotePadProvider> {
         // a) Checks that the cursor is not null
         // b) Checks that it contains a single record
         assertNotNull(noteIdCursor);
-        assertEquals(1,noteIdCursor.getCount());
+        assertEquals(1, noteIdCursor.getCount());
 
         // Opens the pipe that will contain the data.
         noteIdAssetDescriptor = mMockResolver.openTypedAssetFileDescriptor(
@@ -563,7 +555,7 @@ public class NotePadProviderTest extends ProviderTestCase2<NotePadProvider> {
       );
 
       // Asserts that the cursor is null.
-      assertEquals(0,cursor.getCount());
+      assertEquals(0, cursor.getCount());
 
       // Query subtest 2.
       // Tests that a query against a table containing records returns a single record whose ID
