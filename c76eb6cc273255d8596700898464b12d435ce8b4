@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "M1Hx2m2U",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1003723
+      },
+      "writtenOn": "2012-12-11T07:28:35Z",
+      "side": 1,
+      "message": "arm_ and x86_ not ARM and X86 I believe according to the google python style guide. http://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone\u003dNaming#Naming",
+      "revId": "c76eb6cc273255d8596700898464b12d435ce8b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
