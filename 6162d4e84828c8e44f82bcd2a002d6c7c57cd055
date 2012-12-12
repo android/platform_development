@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "M1FDp-qA",
+        "filename": "ndk/platforms/android-8/include/android/bitmap.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2012-12-12T00:09:56Z",
+      "side": 1,
+      "message": "\"misspelled\"\n\ni notice also that you haven\u0027t fixed this internally in frameworks/base, which seems wrong.",
+      "revId": "6162d4e84828c8e44f82bcd2a002d6c7c57cd055",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
