@@ -93,49 +93,6 @@ extern const union __nan_un {
 #define	FP_NORMAL	0x04
 #define	FP_SUBNORMAL	0x08
 #define	FP_ZERO		0x10
-#define	fpclassify(x) \
-    ((sizeof (x) == sizeof (float)) ? __fpclassifyf(x) \
-    : (sizeof (x) == sizeof (double)) ? __fpclassifyd(x) \
-    : __fpclassifyl(x))
-
-#define	isfinite(x)					\
-    ((sizeof (x) == sizeof (float)) ? __isfinitef(x)	\
-    : (sizeof (x) == sizeof (double)) ? __isfinite(x)	\
-    : __isfinitel(x))
-#define	isinf(x)					\
-    ((sizeof (x) == sizeof (float)) ? __isinff(x)	\
-    : (sizeof (x) == sizeof (double)) ? __isinf(x)	\
-    : __isinfl(x))
-#define	isnan(x)					\
-    ((sizeof (x) == sizeof (float)) ? isnanf(x)		\
-    : (sizeof (x) == sizeof (double)) ? isnan(x)	\
-    : __isnanl(x))
-#define	isnormal(x)					\
-    ((sizeof (x) == sizeof (float)) ? __isnormalf(x)	\
-    : (sizeof (x) == sizeof (double)) ? __isnormal(x)	\
-    : __isnormall(x))
-
-#ifdef __MATH_BUILTIN_RELOPS
-#define	isgreater(x, y)		__builtin_isgreater((x), (y))
-#define	isgreaterequal(x, y)	__builtin_isgreaterequal((x), (y))
-#define	isless(x, y)		__builtin_isless((x), (y))
-#define	islessequal(x, y)	__builtin_islessequal((x), (y))
-#define	islessgreater(x, y)	__builtin_islessgreater((x), (y))
-#define	isunordered(x, y)	__builtin_isunordered((x), (y))
-#else
-#define	isgreater(x, y)		(!isunordered((x), (y)) && (x) > (y))
-#define	isgreaterequal(x, y)	(!isunordered((x), (y)) && (x) >= (y))
-#define	isless(x, y)		(!isunordered((x), (y)) && (x) < (y))
-#define	islessequal(x, y)	(!isunordered((x), (y)) && (x) <= (y))
-#define	islessgreater(x, y)	(!isunordered((x), (y)) && \
-					((x) > (y) || (y) > (x)))
-#define	isunordered(x, y)	(isnan(x) || isnan(y))
-#endif /* __MATH_BUILTIN_RELOPS */
-
-#define	signbit(x)					\
-    ((sizeof (x) == sizeof (float)) ? __signbitf(x)	\
-    : (sizeof (x) == sizeof (double)) ? __signbit(x)	\
-    : __signbitl(x))
 
 #if 0
 typedef	__double_t	double_t;
@@ -482,5 +439,104 @@ long double	truncl(long double);
 
 /* #endif */ /* __ISO_C_VISIBLE >= 1999 */
 __END_DECLS
+
+#if !defined(__cplusplus)
+#define	fpclassify(x) \
+    ((sizeof (x) == sizeof (float)) ? __fpclassifyf(x) \
+    : (sizeof (x) == sizeof (double)) ? __fpclassifyd(x) \
+    : __fpclassifyl(x))
+
+#define	isfinite(x)					\
+    ((sizeof (x) == sizeof (float)) ? __isfinitef(x)	\
+    : (sizeof (x) == sizeof (double)) ? __isfinite(x)	\
+    : __isfinitel(x))
+#define	isinf(x)					\
+    ((sizeof (x) == sizeof (float)) ? __isinff(x)	\
+    : (sizeof (x) == sizeof (double)) ? __isinf(x)	\
+    : __isinfl(x))
+#define	isnan(x)					\
+    ((sizeof (x) == sizeof (float)) ? isnanf(x)		\
+    : (sizeof (x) == sizeof (double)) ? isnan(x)	\
+    : __isnanl(x))
+#define	isnormal(x)					\
+    ((sizeof (x) == sizeof (float)) ? __isnormalf(x)	\
+    : (sizeof (x) == sizeof (double)) ? __isnormal(x)	\
+    : __isnormall(x))
+
+#ifdef __MATH_BUILTIN_RELOPS
+#define	isgreater(x, y)		__builtin_isgreater((x), (y))
+#define	isgreaterequal(x, y)	__builtin_isgreaterequal((x), (y))
+#define	isless(x, y)		__builtin_isless((x), (y))
+#define	islessequal(x, y)	__builtin_islessequal((x), (y))
+#define	islessgreater(x, y)	__builtin_islessgreater((x), (y))
+#define	isunordered(x, y)	__builtin_isunordered((x), (y))
+#else
+#define	isgreater(x, y)		(!isunordered((x), (y)) && (x) > (y))
+#define	isgreaterequal(x, y)	(!isunordered((x), (y)) && (x) >= (y))
+#define	isless(x, y)		(!isunordered((x), (y)) && (x) < (y))
+#define	islessequal(x, y)	(!isunordered((x), (y)) && (x) <= (y))
+#define	islessgreater(x, y)	(!isunordered((x), (y)) && \
+					((x) > (y) || (y) > (x)))
+#define	isunordered(x, y)	(isnan(x) || isnan(y))
+#endif /* __MATH_BUILTIN_RELOPS */
+
+#define	signbit(x)					\
+    ((sizeof (x) == sizeof (float)) ? __signbitf(x)	\
+    : (sizeof (x) == sizeof (double)) ? __signbit(x)	\
+    : __signbitl(x))
+
+#else
+/* In C++, don't use #define because the following functions
+  may be #undef in cmath */
+
+inline int fpclassify(float x) { return __fpclassifyf(x); }
+inline int fpclassify(double x) { return __fpclassifyd(x); }
+inline int fpclassify(long double x) { return __fpclassifyl(x); }
+
+inline bool isfinite(float x) { return __isfinitef(x); }
+inline bool isfinite(double x) { return __isfinite(x); }
+inline bool isfinite(long double x) { return __isfinitel(x); }
+
+inline bool isinf(float x) { return __isinff(x); }
+inline bool isinf(double x) { return __isinf(x); }
+inline bool isinf(long double x) { return __isinfl(x); }
+
+inline bool isnan(float x) { return isnanf(x); }
+/*inline bool isnan(double x) { return isnan(x); }*/
+inline bool isnan(long double x) { return __isnanl(x); }
+
+inline bool isnormal(float x) { return __isnormalf(x); }
+inline bool isnormal(double x) { return __isnormal(x); }
+inline bool isnormal(long double x) { return __isnormall(x); }
+
+inline bool isgreater(float x, float y) { return __builtin_isgreater(x, y); }
+inline bool isgreater(double x, double y) { return __builtin_isgreater(x, y); }
+inline bool isgreater(long double x, long double y) { return __builtin_isgreater(x, y); }
+
+inline bool isgreaterequal(float x, float y) { return __builtin_isgreaterequal(x, y); }
+inline bool isgreaterequal(double x, double y) { return __builtin_isgreaterequal(x, y); }
+inline bool isgreaterequal(long double x, long double y) { return __builtin_isgreaterequal(x, y); }
+
+inline bool isless(float x, float y) { return __builtin_isless(x, y); }
+inline bool isless(double x, double y) { return __builtin_isless(x, y); }
+inline bool isless(long double x, long double y) { return __builtin_isless(x, y); }
+
+inline bool islessequal(float x, float y) { return __builtin_islessequal(x, y); }
+inline bool islessequal(double x, double y) { return __builtin_islessequal(x, y); }
+inline bool islessequal(long double x, long double y) { return __builtin_islessequal(x, y); }
+
+inline bool islessgreater(float x, float y) { return __builtin_islessgreater(x, y); }
+inline bool islessgreater(double x, double y) { return __builtin_islessgreater(x, y); }
+inline bool islessgreater(long double x, long double y) { return __builtin_islessgreater(x, y); }
+
+inline bool isunordered(float x, float y) { return __builtin_isunordered(x, y); }
+inline bool isunordered(double x, double y) { return __builtin_isunordered(x, y); }
+inline bool isunordered(long double x, long double y) { return __builtin_isunordered(x, y); }
+
+inline bool signbit(float x) { return __signbitf(x); }
+inline bool signbit(double x) { return __signbit(x); }
+inline bool signbit(long double x) { return __signbitl(x); }
+
+#endif /* __cplusplus */
 
 #endif /* !_MATH_H_ */
