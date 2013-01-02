@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "NYuhibp8",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-01-02T18:26:34Z",
+      "side": 1,
+      "message": "this file is all wrong too. see current bionic for a correct ARM fenv.h.",
+      "revId": "b26682373cfafccaacee739d25a93b1024991dff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
