@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "NYmMcvx0",
+        "filename": "ndk/platforms/android-3/include/math.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-01-02T20:04:57Z",
+      "side": 1,
+      "message": "i think this is the real bug, looking at freebsd\u0027s math.h.\n\nfreebsd only defines any of this stuff if __ISO_C_VISIBLE \u003e\u003d 1999. glibc is similar, except it uses __USE_ISOC99. neither freebsd or glibc have C++-specific hacks.",
+      "revId": "25c4cc8ce322d3423deb307f4a4cb30fec0672ad",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
