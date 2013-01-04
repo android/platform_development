@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Ns.8qQek",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-01-04T20:39:39Z",
+      "side": 1,
+      "message": "indentation.",
+      "revId": "0c7bfd19c26cc191c54761c901bab097c4e3b84d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Ns88l-Rs",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-01-04T20:39:39Z",
+      "side": 1,
+      "message": "can\u0027t we use .thumb and .arm?",
+      "revId": "0c7bfd19c26cc191c54761c901bab097c4e3b84d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Ns4-ylZI",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-01-04T20:39:39Z",
+      "side": 1,
+      "message": "is this allowed? should we #error instead?",
+      "revId": "0c7bfd19c26cc191c54761c901bab097c4e3b84d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
