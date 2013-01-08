@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "N4GVxwGo",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-01-08T06:08:00Z",
+      "side": 1,
+      "message": "Will be fixed in the next patch set",
+      "parentUuid": "Ns.8qQek",
+      "revId": "0c7bfd19c26cc191c54761c901bab097c4e3b84d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Ns88l-Rs",
         "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "N4MWwzP4",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-01-08T06:08:00Z",
+      "side": 1,
+      "message": "Sure.  Will be fixed in the next patch set.",
+      "parentUuid": "Ns88l-Rs",
+      "revId": "0c7bfd19c26cc191c54761c901bab097c4e3b84d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Ns4-ylZI",
         "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-01-04T20:39:39Z",
       "side": 1,
       "message": "is this allowed? should we #error instead?",
+      "revId": "0c7bfd19c26cc191c54761c901bab097c4e3b84d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "N4EWdnHE",
+        "filename": "ndk/platforms/android-3/arch-arm/include/fenv.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-01-08T06:08:00Z",
+      "side": 1,
+      "message": "#error will fail compilation with -mfloat-abi\u003dsoft\nUse logcat make it depend on -llog\nCall dlopen(\"liblog.so\") and report the run-time error through found __android_log_print ?\nOr simply abort()?\nOther idea?",
+      "parentUuid": "Ns4-ylZI",
       "revId": "0c7bfd19c26cc191c54761c901bab097c4e3b84d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
