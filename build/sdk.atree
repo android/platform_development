@@ -33,6 +33,7 @@ development/docs/SDK_RELEASE_NOTES RELEASE_NOTES.html
 # doc redirect
 frameworks/base/docs/docs-redirect.html documentation.html
 
+
 ##############################################################################
 # Platform Tools Component
 ##############################################################################
@@ -41,15 +42,9 @@ development/sdk/plat_tools_source.properties  platform-tools/source.properties
 
 # host tools from out/host/$(HOST_OS)-$(HOST_ARCH)/
 bin/adb                                 strip platform-tools/adb
-bin/aapt                                strip platform-tools/aapt
-bin/aidl                                strip platform-tools/aidl
 bin/fastboot                            strip platform-tools/fastboot
+# TODO: seems likely we would want rs in build-tools too? Thoughts?
 bin/llvm-rs-cc                          strip platform-tools/llvm-rs-cc
-
-# dx
-bin/dx                                        platform-tools/dx
-bin/dexdump                                   platform-tools/dexdump
-framework/dx.jar                              platform-tools/lib/dx.jar
 
 # Framework include for Renderscript
 frameworks/rs/scriptc                         platform-tools/renderscript/include
@@ -58,6 +53,27 @@ external/clang/LICENSE.TXT                    platform-tools/renderscript/clang-
 
 # API database for tools such as lint
 development/sdk/api-versions.xml              platform-tools/api/api-versions.xml
+
+# dx dexdump isn't build-tool specific
+bin/dexdump                                   platform-tools/dexdump
+
+
+##############################################################################
+# Build Tools Component
+##############################################################################
+# Note that the build-tools sub-folder uses the platform-name as a placeholder
+# at build-time. Packaging will later change that to the actual build-tools
+# revision as specified in the source.properties.
+
+development/sdk/build_tools_source.properties  build-tools/${PLATFORM_NAME}/source.properties
+
+# build tools from out/host/$(HOST_OS)-$(HOST_ARCH)/
+bin/aapt                                strip build-tools/${PLATFORM_NAME}/aapt
+bin/aidl                                strip build-tools/${PLATFORM_NAME}/aidl
+# dx
+bin/dx                                        build-tools/${PLATFORM_NAME}/dx
+framework/dx.jar                              build-tools/${PLATFORM_NAME}/lib/dx.jar
+
 
 ##############################################################################
 # Platform Component
@@ -70,8 +86,8 @@ ${HOST_OUT}/development/sdk/platform_source.properties platforms/${PLATFORM_NAME
 sdk/sdk-build.prop                            platforms/${PLATFORM_NAME}/build.prop
 
 # the uper-jar file that apps link against. This is the public API
-${OUT_DIR}/target/common/obj/PACKAGING/android_jar_intermediates/android.jar platforms/${PLATFORM_NAME}/android.jar
-${OUT_DIR}/target/common/obj/JAVA_LIBRARIES/android_uiautomator_intermediates/javalib.jar           platforms/${PLATFORM_NAME}/uiautomator.jar
+${OUT_DIR}/target/common/obj/PACKAGING/android_jar_intermediates/android.jar              platforms/${PLATFORM_NAME}/android.jar
+${OUT_DIR}/target/common/obj/JAVA_LIBRARIES/android_uiautomator_intermediates/javalib.jar platforms/${PLATFORM_NAME}/uiautomator.jar
 
 # the aidl precompiled include
 obj/framework.aidl platforms/${PLATFORM_NAME}/framework.aidl
@@ -89,7 +105,7 @@ development/tools/emulator/skins/WXGA800       platforms/${PLATFORM_NAME}/skins/
 development/tools/emulator/skins/WXGA800-7in   platforms/${PLATFORM_NAME}/skins/WXGA800-7in
 
 # Platform SDK properties
-development/sdk/sdk.properties               platforms/${PLATFORM_NAME}/sdk.properties
+development/sdk/sdk.properties                 platforms/${PLATFORM_NAME}/sdk.properties
 
 # sdk.git Ant templates for project files
 development/tools/templates/AndroidManifest.template        platforms/${PLATFORM_NAME}/templates/AndroidManifest.template
@@ -121,6 +137,7 @@ sdk/files/sdk_files_NOTICE.txt platforms/${PLATFORM_NAME}/templates/NOTICE.txt
 sdk/files/sdk_files_NOTICE.txt platforms/${PLATFORM_NAME}/data/NOTICE.txt
 sdk/files/sdk_files_NOTICE.txt platforms/${PLATFORM_NAME}/skins/NOTICE.txt
 
+
 ##############################################################################
 # System image Component
 ##############################################################################
@@ -132,6 +149,7 @@ userdata.img                               system-images/${PLATFORM_NAME}/${TARG
 system/build.prop                          system-images/${PLATFORM_NAME}/${TARGET_CPU_ABI}/build.prop
 
 # Note: the kernel image is handled by sdk-android-<abi>.atree now.
+
 
 ##############################################################################
 # Docs Component
@@ -180,7 +198,7 @@ development/samples/MultiResolution            samples/${PLATFORM_NAME}/MultiRes
 development/samples/NotePad                    samples/${PLATFORM_NAME}/NotePad
 development/samples/RandomMusicPlayer          samples/${PLATFORM_NAME}/RandomMusicPlayer
 development/samples/SpellChecker/SampleSpellCheckerService samples/${PLATFORM_NAME}/SpellChecker/SampleSpellCheckerService
-development/samples/SpellChecker/HelloSpellChecker samples/${PLATFORM_NAME}/SpellChecker/HelloSpellChecker
+development/samples/SpellChecker/HelloSpellChecker         samples/${PLATFORM_NAME}/SpellChecker/HelloSpellChecker
 development/samples/SampleSyncAdapter          samples/${PLATFORM_NAME}/SampleSyncAdapter
 development/samples/SearchableDictionary       samples/${PLATFORM_NAME}/SearchableDictionary
 development/samples/SipDemo                    samples/${PLATFORM_NAME}/SipDemo
@@ -217,6 +235,7 @@ sdk/files/sdk_files_NOTICE.txt samples/${PLATFORM_NAME}/NOTICE.txt
 # empty add-on folder with just a readme copied from sdk.git
 sdk/files/README_add-ons.txt add-ons/README.txt
 
+
 ##############################################################################
 # Extra Component: Support
 ##############################################################################
@@ -243,9 +262,11 @@ frameworks/support/v7/gridlayout/res                                            
 frameworks/support/v7/gridlayout/readme                                                           extras/android/support/v7/gridlayout/src/.readme
 ${OUT_DIR}/target/common/obj/PACKAGING/android-support-v7-gridlayout_intermediates/android-support-v7-gridlayout.jar    extras/android/support/v7/gridlayout/libs/android-support-v7-gridlayout.jar
 
+
 ##############################################################################
 # Tests Component
 ##############################################################################
 framework/layoutlib-tests.jar tests/libtests/layoutlib-tests.jar
 system/app/ConnectivityTest.apk tests/emulator-test-apps/ConnectivityTest.apk
 system/app/GpsLocationTest.apk tests/emulator-test-apps/GpsLocationTest.apk
+
