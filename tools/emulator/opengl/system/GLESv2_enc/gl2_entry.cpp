@@ -104,7 +104,7 @@ extern "C" {
 	void glSampleCoverage(GLclampf value, GLboolean invert);
 	void glScissor(GLint x, GLint y, GLsizei width, GLsizei height);
 	void glShaderBinary(GLsizei n, const GLuint* shaders, GLenum binaryformat, const GLvoid* binary, GLsizei length);
-	void glShaderSource(GLuint shader, GLsizei count, const GLchar** string, const GLint* length);
+	void glShaderSource(GLuint shader, GLsizei count, const GLchar*const* string, const GLint* length);
 	void glStencilFunc(GLenum func, GLint ref, GLuint mask);
 	void glStencilFuncSeparate(GLenum face, GLenum func, GLint ref, GLuint mask);
 	void glStencilMask(GLuint mask);
@@ -819,7 +819,7 @@ void glShaderBinary(GLsizei n, const GLuint* shaders, GLenum binaryformat, const
 	 ctx->glShaderBinary(ctx, n, shaders, binaryformat, binary, length);
 }
 
-void glShaderSource(GLuint shader, GLsizei count, const GLchar** string, const GLint* length)
+void glShaderSource(GLuint shader, GLsizei count, const GLchar*const* string, const GLint* length)
 {
 	GET_CONTEXT; 
 	 ctx->glShaderSource(ctx, shader, count, string, length);

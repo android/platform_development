@@ -633,7 +633,7 @@ static bool replaceSamplerExternalWith2D(char* const str, ShaderData* const data
     return true;
 }
 
-void GL2Encoder::s_glShaderSource(void *self, GLuint shader, GLsizei count, const GLchar **string, const GLint *length)
+void GL2Encoder::s_glShaderSource(void *self, GLuint shader, GLsizei count, const GLchar *const *string, const GLint *length)
 {
     GL2Encoder* ctx = (GL2Encoder*)self;
     ShaderData* shaderData = ctx->m_shared->getShaderData(shader);
