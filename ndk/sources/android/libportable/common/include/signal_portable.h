@@ -138,13 +138,16 @@ extern int siginterrupt_portable(int  sig, int  flag);
 extern int raise_portable(int);
 extern int kill_portable(pid_t, int);
 extern int killpg_portable(int pgrp, int sig);
+extern int tkill_portable(int tid, int portable_signum);
 extern int sigaltstack_portable(const portable_stack_t *ss, portable_stack_t *oss);
+extern int timer_create_portable(clockid_t, struct sigevent *, timer_t *);
 
 
 extern __hidden char *map_portable_signum_to_name(int portable_signum);
 extern __hidden char *map_mips_signum_to_name(int mips_signum);
 extern __hidden int signum_pton(int portable_signum);
 extern __hidden int signum_ntop(int mips_signum);
+
 typedef int (*sigmask_fn)(int, const sigset_t *, sigset_t *);
 typedef int (*rt_sigmask_fn)(int, const sigset_t *, sigset_t *, size_t);
 typedef int (*sigaction_fn)(int, const struct sigaction *, struct sigaction *);
@@ -154,6 +157,7 @@ extern __hidden int do_sigmask(int portable_how, const sigset_portable_t *portab
                                sigset_portable_t *portable_oldset, sigmask_fn fn,
                                rt_sigmask_fn rt_fn);
 
+/* These functions are called from syscall.c and experimental Bionic linker. */
 extern int __rt_sigaction_portable(int portable_signum,
                                    const struct sigaction_portable *act,
                                    struct sigaction_portable *oldact,
@@ -169,7 +173,12 @@ extern int __rt_sigtimedwait_portable(const sigset_portable_t *portable_sigset,
                                       const struct timespec *timeout,
                                       size_t portable_sigsetsize);
 
-extern __hidden  int timer_create_portable(clockid_t, struct sigevent *, timer_t *);
+
+/* These functions are only called from syscall.c; not experimental Bionic linker. */
+extern __hidden int rt_sigqueueinfo_portable(pid_t pid, int sig, siginfo_portable_t *uinfo);
+
+extern __hidden int rt_tgsigqueueinfo_portable(pid_t tgid, pid_t pid, int sig,
+                                               siginfo_portable_t *uinfo);
 
 
 __END_DECLS
