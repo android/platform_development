@@ -37,7 +37,7 @@
   *     # Have logging permanently enable during development.
   *     LOCAL_CFLAGS += -DLOG_NDEBUG=0
   */
-// # define LOG_NDEBUG 0
+# define LOG_NDEBUG 0
 
 
 // #define EXTENDED_LOGGING        /* Include the current program name in the LOG_TAG */
