@@ -34,6 +34,8 @@
 #include <sys/cdefs.h>
 #include <limits.h>             /* For LONG_BIT */
 #include <string.h>             /* For memset() */
+#include <signal.h>
+#include <time.h>
 #include <sys/types.h>
 #include <asm/signal_portable.h>
 #include <asm/sigcontext_portable.h>
@@ -144,9 +146,31 @@ extern __hidden char *map_mips_signum_to_name(int mips_signum);
 extern __hidden int signum_pton(int portable_signum);
 extern __hidden int signum_ntop(int mips_signum);
 typedef int (*sigmask_fn)(int, const sigset_t *, sigset_t *);
+typedef int (*rt_sigmask_fn)(int, const sigset_t *, sigset_t *, size_t);
+typedef int (*sigaction_fn)(int, const struct sigaction *, struct sigaction *);
+typedef int (*rt_sigaction_fn)(int, const struct sigaction *, struct sigaction *, size_t);
 
 extern __hidden int do_sigmask(int portable_how, const sigset_portable_t *portable_sigset,
-                               sigset_portable_t *portable_oldset, sigmask_fn fn);
+                               sigset_portable_t *portable_oldset, sigmask_fn fn,
+                               rt_sigmask_fn rt_fn);
+
+extern int __rt_sigaction_portable(int portable_signum,
+                                   const struct sigaction_portable *act,
+                                   struct sigaction_portable *oldact,
+                                   size_t sigsetsize);
+
+extern int __rt_sigprocmask_portable(int portable_how,
+                                     const sigset_portable_t *portable_sigset,
+                                     sigset_portable_t *portable_oldset,
+                                     size_t sigsetsize);
+
+extern int __rt_sigtimedwait_portable(const sigset_portable_t *portable_sigset,
+                                      siginfo_portable_t *portable_siginfo,
+                                      const struct timespec *timeout,
+                                      size_t portable_sigsetsize);
+
+extern __hidden  int timer_create_portable(clockid_t, struct sigevent *, timer_t *);
+
 
 __END_DECLS
 
