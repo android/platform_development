@@ -122,7 +122,7 @@ const unsigned char *QemuPipeStream::readFully(void *buf, size_t len)
     }
     size_t res = len;
     while (res > 0) {
-        ssize_t stat = ::read(m_sock, (char *)(buf) + len - res, len);
+        ssize_t stat = ::read(m_sock, (char *)(buf) + len - res, res);
         if (stat == 0) {
             // client shutdown;
             return NULL;
