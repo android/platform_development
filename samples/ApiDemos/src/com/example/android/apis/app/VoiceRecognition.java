@@ -198,6 +198,7 @@ public class VoiceRecognition extends Activity implements OnClickListener {
                         showToast("No extra");
                     }
                 });
+                return;
             }
 
             if (extra.containsKey(RecognizerIntent.EXTRA_SUPPORTED_LANGUAGES)) {
