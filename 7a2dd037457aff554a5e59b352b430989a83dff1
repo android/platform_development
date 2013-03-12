@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "RgRVyBPo",
+        "filename": "build/sdk.atree",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2013-03-12T21:58:26Z",
+      "side": 1,
+      "message": "we should have notice file in both build-tools and platform-tools.",
+      "revId": "7a2dd037457aff554a5e59b352b430989a83dff1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "RgdV7fNE",
+        "filename": "sdk/build_tools_source.properties",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2013-03-12T21:58:26Z",
+      "side": 1,
+      "message": "Current one is 16.0.2 so we should start there.",
+      "revId": "7a2dd037457aff554a5e59b352b430989a83dff1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
