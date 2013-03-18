@@ -31,8 +31,8 @@
 #ifndef _SYS_TIMERFD_PORTABLE_H
 #define _SYS_TIMERFD_PORTABLE_H
 
-#include <sys/cdefs.h>
 #include <portability.h>
+#include <sys/cdefs.h>
 #include <fcntl.h>
 #include <fcntl_portable.h>
 
