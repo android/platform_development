@@ -81,7 +81,7 @@ static inline char *portable_tag() {
     _rv;                   /* Returned to caller */         \
 })
 
-#if !defined(HAS_NO_LOG_H)
+#if !defined(__HOST__)
 #include <cutils/log.h>
 
 # define PERROR(str)  {                                                                  \

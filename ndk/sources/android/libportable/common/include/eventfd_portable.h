@@ -30,8 +30,8 @@
 #ifndef _SYS_EVENTFD_PORTABLE_H
 #define _SYS_EVENTFD_PORTABLE_H
 
-#include <sys/cdefs.h>
 #include <portability.h>
+#include <sys/cdefs.h>
 #include <fcntl_portable.h>
 
 __BEGIN_DECLS
