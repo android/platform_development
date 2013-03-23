@@ -16,7 +16,6 @@
 
 #include <unistd.h>
 #include <sys/socket.h>
-#include <sys/linux-syscalls.h>
 
 int socket_portable(int domain, int type, int protocol) {
     return socket(domain, type, protocol);
