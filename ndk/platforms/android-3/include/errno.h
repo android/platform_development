@@ -42,7 +42,7 @@ __BEGIN_DECLS
 
 /* internal function that should *only* be called from system calls */
 /* use errno = xxxx instead in C code                               */
-extern int    __set_errno(int  error);
+extern int    __set_errno(int  error) __attribute__((deprecated));
 
 /* internal function returning the address of the thread-specific errno */
 extern volatile int*   __errno(void);
