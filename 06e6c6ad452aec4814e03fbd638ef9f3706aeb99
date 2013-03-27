@@ -16,6 +16,24 @@
       "revId": "06e6c6ad452aec4814e03fbd638ef9f3706aeb99",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Sk-hxxRo",
+        "filename": "ide/eclipse/android.importorder",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-03-27T00:21:39Z",
+      "side": 1,
+      "message": "in dalvik and libcore themselves, we just use alphabetical order for everything. otherwise you end up in arguments like this :-)",
+      "parentUuid": "Sk-g4pVA",
+      "revId": "06e6c6ad452aec4814e03fbd638ef9f3706aeb99",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
