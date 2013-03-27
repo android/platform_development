@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "SkyPqgps",
+        "filename": "ndk/platforms/android-3/include/elf.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-03-27T17:48:44Z",
+      "side": 1,
+      "message": "Thanks.  I tried to update all ELF dependencies from bionic but ran into problem.  Please see https://android-review.googlesource.com/#/c/54773/",
+      "parentUuid": "Sk6P9UmU",
+      "revId": "f4c0775667899fe9e46a31f090a37eb05c7e6f5f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Sk4Pjbsg",
         "filename": "ndk/platforms/android-3/include/errno.h",
         "patchSetId": 2
