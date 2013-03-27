@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "Sk8MZduY",
+        "filename": "ndk/platforms/android-3/include/elf.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-03-27T18:13:56Z",
+      "side": 1,
+      "message": "Sure.  Just filed https://code.google.com/p/android/issues/detail?id\u003d53699",
+      "parentUuid": "Sk4NNrvI",
+      "revId": "f4c0775667899fe9e46a31f090a37eb05c7e6f5f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Sk4Pjbsg",
         "filename": "ndk/platforms/android-3/include/errno.h",
         "patchSetId": 2
