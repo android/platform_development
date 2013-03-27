@@ -34,6 +34,24 @@
       "revId": "06e6c6ad452aec4814e03fbd638ef9f3706aeb99",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Sk7jencs",
+        "filename": "ide/eclipse/android.importorder",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000322
+      },
+      "writtenOn": "2013-03-27T00:28:06Z",
+      "side": 1,
+      "message": "It was a question, not an argument.  :)\n\nI don\u0027t honestly care much.  In general I vaguely expect Android-owned imports first, followed by non-Android, but com.* at position 1 interferes with that anyway.  Alphabetical is fine by me.",
+      "parentUuid": "Sk-hxxRo",
+      "revId": "06e6c6ad452aec4814e03fbd638ef9f3706aeb99",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
