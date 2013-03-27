@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Sk-g4pVA",
+        "filename": "ide/eclipse/android.importorder",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000322
+      },
+      "writtenOn": "2013-03-27T00:14:53Z",
+      "side": 1,
+      "message": "Why is libcore (which is Android-specific) placed after gov and junit, rather than in the block of Android-specific domains?",
+      "revId": "06e6c6ad452aec4814e03fbd638ef9f3706aeb99",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
