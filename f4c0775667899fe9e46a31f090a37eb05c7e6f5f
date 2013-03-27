@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "Sk4NNrvI",
+        "filename": "ndk/platforms/android-3/include/elf.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-03-27T18:03:54Z",
+      "side": 1,
+      "message": "huh. looking at glibc it looks like we\u0027re missing \u003csys/procfs.h\u003e, which should pull in linux\u0027s elfcore.h, which would get us that stuff. want to raise a bug for me to add that?",
+      "parentUuid": "SkyPqgps",
+      "revId": "f4c0775667899fe9e46a31f090a37eb05c7e6f5f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Sk4Pjbsg",
         "filename": "ndk/platforms/android-3/include/errno.h",
         "patchSetId": 2
