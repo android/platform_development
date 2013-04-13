@@ -47,7 +47,11 @@ __BEGIN_DECLS
 extern pid_t  wait(int *);
 extern pid_t  waitpid(pid_t, int *, int);
 extern pid_t  wait3(int *, int, struct rusage *);
-extern pid_t  wait4(pid_t, int *, int, struct rusage *);
+static __inline__ pid_t  wait4(pid_t p, int *s, int o, struct rusage *r)
+{
+   extern pid_t  __wait4(pid_t, int *, int, struct rusage *);
+   return __wait4(p,s,o,r);
+}
 
 __END_DECLS
 
