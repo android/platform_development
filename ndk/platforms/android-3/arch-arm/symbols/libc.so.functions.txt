@@ -915,6 +915,7 @@ vsyslog_r
 vwprintf
 wait
 wait3
+wait4
 waitid
 waitpid
 wcrtomb

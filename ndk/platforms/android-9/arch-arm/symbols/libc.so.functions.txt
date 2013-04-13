@@ -1032,6 +1032,7 @@ vwarnx
 vwprintf
 wait
 wait3
+wait4
 waitid
 waitpid
 warn
