@@ -172,6 +172,14 @@ void CallbackNotifier::releaseRecordingFrame(const void* opaque)
 {
     /* We don't really have anything to release here, since we report video
      * frames by copying them directly to the camera memory. */
+    List<camera_memory_t*>::iterator it = mCameraMemoryTs.begin();
+    for( ; it != mCameraMemoryTs.end(); ++it ) {
+        if ( (*it)->data == opaque ) {
+            (*it)->release( *it );
+            mCameraMemoryTs.erase(it);
+            break;
+        }
+    }
 }
 
 status_t CallbackNotifier::storeMetaDataInBuffers(bool enable)
@@ -214,6 +222,8 @@ void CallbackNotifier::onNextFrameAvailable(const void* frame,
             memcpy(cam_buff->data, frame, camera_dev->getFrameBufferSize());
             mDataCBTimestamp(timestamp, CAMERA_MSG_VIDEO_FRAME,
                                cam_buff, 0, mCBOpaque);
+
+            mCameraMemoryTs.push_back( cam_buff );
         } else {
             ALOGE("%s: Memory failure in CAMERA_MSG_VIDEO_FRAME", __FUNCTION__);
         }

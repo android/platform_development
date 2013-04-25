@@ -22,6 +22,8 @@
  * via set_callbacks, enable_msg_type, and disable_msg_type camera HAL API.
  */
 
+#include <utils/List.h>
+
 namespace android {
 
 class EmulatedCameraDevice;
@@ -208,6 +210,9 @@ protected:
     camera_data_timestamp_callback  mDataCBTimestamp;
     camera_request_memory           mGetMemoryCB;
     void*                           mCBOpaque;
+
+    /* video frame queue for the CameraHeapMemory destruction */
+    List<camera_memory_t*>          mCameraMemoryTs;
 
     /* Timestamp when last frame has been delivered to the framework. */
     nsecs_t                         mLastFrameTimestamp;
