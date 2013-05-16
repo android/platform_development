@@ -16,6 +16,7 @@
 
 package com.example.android.notepad;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -224,6 +225,9 @@ public class NoteEditor extends Activity {
 
         // Sets the layout for this Activity. See res/layout/note_editor.xml
         setContentView(R.layout.note_editor);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Gets a handle to the EditText in the the layout.
         mText = (EditText) findViewById(R.id.note);
@@ -445,6 +449,12 @@ public class NoteEditor extends Activity {
         case R.id.menu_revert:
             cancelNote();
             break;
+        case android.R.id.home:
+            // app icon in action bar clicked; go home
+            Intent intent = new Intent(this, NotesList.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
