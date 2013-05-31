@@ -124,10 +124,10 @@ void rcOpenColorBuffer(uint32_t colorbuffer)
 	 ctx->rcOpenColorBuffer(ctx, colorbuffer);
 }
 
-void rcCloseColorBuffer(uint32_t colorbuffer)
+void rcCloseColorBuffer(uint32_t colorbuffer, bool sync)
 {
 	GET_CONTEXT; 
-	 ctx->rcCloseColorBuffer(ctx, colorbuffer);
+	 ctx->rcCloseColorBuffer(ctx, colorbuffer, sync);
 }
 
 void rcSetWindowColorBuffer(uint32_t windowSurface, uint32_t colorBuffer)

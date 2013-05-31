@@ -366,7 +366,7 @@ static int gralloc_free(alloc_device_t* dev,
     if (cb->hostHandle != 0) {
         DEFINE_AND_VALIDATE_HOST_CONNECTION;
         D("Closing host ColorBuffer 0x%x\n", cb->hostHandle);
-        rcEnc->rcCloseColorBuffer(rcEnc, cb->hostHandle);
+        rcEnc->rcCloseColorBuffer(rcEnc, cb->hostHandle, true);
     }
 
     //
@@ -566,7 +566,7 @@ static int gralloc_unregister_buffer(gralloc_module_t const* module,
     if (cb->hostHandle != 0) {
         DEFINE_AND_VALIDATE_HOST_CONNECTION;
         D("Closing host ColorBuffer 0x%x\n", cb->hostHandle);
-        rcEnc->rcCloseColorBuffer(rcEnc, cb->hostHandle);
+        rcEnc->rcCloseColorBuffer(rcEnc, cb->hostHandle, false);
     }
 
     //

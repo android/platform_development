@@ -40,6 +40,7 @@ QemuPipeStream::QemuPipeStream(int sock, size_t bufSize) :
 QemuPipeStream::~QemuPipeStream()
 {
     if (m_sock >= 0) {
+        flush();
         ::close(m_sock);
     }
     if (m_buf != NULL) {

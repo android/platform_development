@@ -362,7 +362,7 @@ egl_pbuffer_surface_t::~egl_pbuffer_surface_t()
 {
     DEFINE_HOST_CONNECTION;
     if (rcEnc) {
-        if (rcColorBuffer) rcEnc->rcCloseColorBuffer(rcEnc, rcColorBuffer);
+        if (rcColorBuffer) rcEnc->rcCloseColorBuffer(rcEnc, rcColorBuffer, false);
         if (rcSurface)     rcEnc->rcDestroyWindowSurface(rcEnc, rcSurface);
     }
 }

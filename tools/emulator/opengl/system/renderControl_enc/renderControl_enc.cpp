@@ -298,7 +298,7 @@ void rcOpenColorBuffer_enc(void *self , uint32_t colorbuffer)
 		memcpy(ptr, &colorbuffer, 4); ptr += 4;
 }
 
-void rcCloseColorBuffer_enc(void *self , uint32_t colorbuffer)
+void rcCloseColorBuffer_enc(void *self , uint32_t colorbuffer, bool sync)
 {
 
 	renderControl_encoder_context_t *ctx = (renderControl_encoder_context_t *)self;
@@ -311,6 +311,8 @@ void rcCloseColorBuffer_enc(void *self , uint32_t colorbuffer)
 	memcpy(ptr, &packetSize, 4);  ptr += 4;
 
 		memcpy(ptr, &colorbuffer, 4); ptr += 4;
+
+	if (sync) stream->flush();
 }
 
 void rcSetWindowColorBuffer_enc(void *self , uint32_t windowSurface, uint32_t colorBuffer)

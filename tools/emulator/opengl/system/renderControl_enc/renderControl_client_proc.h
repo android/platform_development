@@ -23,7 +23,7 @@ typedef uint32_t (renderControl_APIENTRY *rcCreateWindowSurface_client_proc_t) (
 typedef void (renderControl_APIENTRY *rcDestroyWindowSurface_client_proc_t) (void * ctx, uint32_t);
 typedef uint32_t (renderControl_APIENTRY *rcCreateColorBuffer_client_proc_t) (void * ctx, uint32_t, uint32_t, GLenum);
 typedef void (renderControl_APIENTRY *rcOpenColorBuffer_client_proc_t) (void * ctx, uint32_t);
-typedef void (renderControl_APIENTRY *rcCloseColorBuffer_client_proc_t) (void * ctx, uint32_t);
+typedef void (renderControl_APIENTRY *rcCloseColorBuffer_client_proc_t) (void * ctx, uint32_t, bool);
 typedef void (renderControl_APIENTRY *rcSetWindowColorBuffer_client_proc_t) (void * ctx, uint32_t, uint32_t);
 typedef int (renderControl_APIENTRY *rcFlushWindowColorBuffer_client_proc_t) (void * ctx, uint32_t);
 typedef EGLint (renderControl_APIENTRY *rcMakeCurrent_client_proc_t) (void * ctx, uint32_t, uint32_t, uint32_t);
