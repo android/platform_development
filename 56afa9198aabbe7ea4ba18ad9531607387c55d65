@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bdde9125_4191940a",
+        "filename": "tools/emulator/opengl/system/renderControl_enc/renderControl_entry.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1010465
+      },
+      "writtenOn": "2013-05-31T17:37:05Z",
+      "side": 1,
+      "message": "nit pick, one space",
+      "revId": "56afa9198aabbe7ea4ba18ad9531607387c55d65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
