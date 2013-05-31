@@ -101,6 +101,8 @@ public class MonkeySourceRandom implements MonkeyEventSource {
     private long mThrottle = 0;
 
     private boolean mKeyboardOpen = false;
+    
+    private int mStatusBarHeight;
 
     public static String getKeyName(int keycode) {
         return KeyEvent.keyCodeToString(keycode);
@@ -243,6 +245,10 @@ public class MonkeySourceRandom implements MonkeyEventSource {
         mFactors[index] = v;
     }
 
+    public void setStatusBarHeight(int v) {
+        mStatusBarHeight = v;
+    }
+
     /**
      * Generates a random motion event. This method counts a down, move, and up as multiple events.
      *
@@ -321,7 +327,13 @@ public class MonkeySourceRandom implements MonkeyEventSource {
     }
 
     private PointF randomPoint(Random random, Display display) {
-        return new PointF(random.nextInt(display.getWidth()), random.nextInt(display.getHeight()));
+        if (mStatusBarHeight > 0.0f) {
+            return new PointF(random.nextInt(display.getWidth()),
+                    random.nextInt(display.getHeight() - mStatusBarHeight) + mStatusBarHeight);
+        } else {
+            return new PointF(random.nextInt(display.getWidth()),
+                    random.nextInt(display.getHeight()));
+		}
     }
 
     private PointF randomVector(Random random) {
