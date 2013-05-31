@@ -311,6 +311,8 @@ void rcCloseColorBuffer_enc(void *self , uint32_t colorbuffer)
 	memcpy(ptr, &packetSize, 4);  ptr += 4;
 
 		memcpy(ptr, &colorbuffer, 4); ptr += 4;
+
+	stream->flush();
 }
 
 void rcSetWindowColorBuffer_enc(void *self , uint32_t windowSurface, uint32_t colorBuffer)
