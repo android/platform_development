@@ -102,6 +102,9 @@ public class Monkey {
     /** Ignore any native crashes while running? */
     private boolean mIgnoreNativeCrashes;
 
+    /** Ignore any events on status bar */
+    private boolean mIgnoreStatusBar;
+
     /** Send no events. Use with long throttle-time to watch user operations */
     private boolean mSendNoEvents;
 
@@ -554,6 +557,15 @@ public class Monkey {
             return -4;
         }
 
+        int statusBarHeight = 0;
+        if (mIgnoreStatusBar) {
+            String density = SystemProperties.get("ro.sf.lcd_density", null);
+            if (density != null) {
+	            int lcdDensity = Integer.parseInt(density);
+	            statusBarHeight = (int) Math.round((25 * lcdDensity) / 160);
+	        }
+        }
+
         mRandom = new Random(mSeed);
 
         if (mScriptFileNames != null && mScriptFileNames.size() == 1) {
@@ -591,6 +603,10 @@ public class Monkey {
             }
             mEventSource = new MonkeySourceRandom(mRandom, mMainApps, mThrottle, mRandomizeThrottle);
             mEventSource.setVerbose(mVerbose);
+
+            if (statusBarHeight > 0) {
+                ((MonkeySourceRandom) mEventSource).setStatusBarHeight(statusBarHeight);
+            }
             // set any of the factors that has been set
             for (int i = 0; i < MonkeySourceRandom.FACTORZ_COUNT; i++) {
                 if (mFactors[i] <= 0.0f) {
@@ -729,6 +745,8 @@ public class Monkey {
                     mMonitorNativeCrashes = true;
                 } else if (opt.equals("--ignore-native-crashes")) {
                     mIgnoreNativeCrashes = true;
+                } else if (opt.equals("--ignore-statusbar")) {
+                    mIgnoreStatusBar = true;
                 } else if (opt.equals("--kill-process-after-error")) {
                     mKillProcessAfterError = true;
                 } else if (opt.equals("--hprof")) {
@@ -1289,6 +1307,7 @@ public class Monkey {
         usage.append("              [-c MAIN_CATEGORY [-c MAIN_CATEGORY] ...]\n");
         usage.append("              [--ignore-crashes] [--ignore-timeouts]\n");
         usage.append("              [--ignore-security-exceptions]\n");
+        usage.append("              [--ignore-statusbar]\n");
         usage.append("              [--monitor-native-crashes] [--ignore-native-crashes]\n");
         usage.append("              [--kill-process-after-error] [--hprof]\n");
         usage.append("              [--pct-touch PERCENT] [--pct-motion PERCENT]\n");
