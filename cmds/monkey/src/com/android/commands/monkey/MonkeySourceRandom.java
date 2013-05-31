@@ -101,7 +101,7 @@ public class MonkeySourceRandom implements MonkeyEventSource {
     private long mThrottle = 0;
 
     private boolean mKeyboardOpen = false;
-    
+
     private int mStatusBarHeight;
 
     public static String getKeyName(int keycode) {
@@ -333,7 +333,7 @@ public class MonkeySourceRandom implements MonkeyEventSource {
         } else {
             return new PointF(random.nextInt(display.getWidth()),
                     random.nextInt(display.getHeight()));
-		}
+        }
     }
 
     private PointF randomVector(Random random) {

@@ -559,8 +559,8 @@ public class Monkey {
 
         int statusBarHeight = 0;
         if (mIgnoreStatusBar) {
-        	String density = SystemProperties.get("ro.sf.lcd_density", null);
-        	if (density != null) {
+            String density = SystemProperties.get("ro.sf.lcd_density", null);
+            if (density != null) {
 	            int lcdDensity = Integer.parseInt(density);
 	            statusBarHeight = (int) Math.round((25 * lcdDensity) / 160);
 	        }
@@ -603,7 +603,7 @@ public class Monkey {
             }
             mEventSource = new MonkeySourceRandom(mRandom, mMainApps, mThrottle, mRandomizeThrottle);
             mEventSource.setVerbose(mVerbose);
-            
+
             if (statusBarHeight > 0) {
                 ((MonkeySourceRandom) mEventSource).setStatusBarHeight(statusBarHeight);
             }
