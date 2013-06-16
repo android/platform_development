@@ -267,6 +267,7 @@ public class LoaderCustomSupport extends FragmentActivity {
                 if (apps != null) {
                     onReleaseResources(apps);
                 }
+                return;
             }
             List<AppEntry> oldApps = apps;
             mApps = apps;

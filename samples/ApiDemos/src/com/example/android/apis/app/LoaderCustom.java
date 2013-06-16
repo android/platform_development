@@ -265,6 +265,7 @@ public class LoaderCustom extends Activity {
                 if (apps != null) {
                     onReleaseResources(apps);
                 }
+                return;
             }
             List<AppEntry> oldApps = apps;
             mApps = apps;
