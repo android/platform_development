@@ -97,7 +97,7 @@ int	_toupper(int);
 
 #endif /* __GNUC__ || _ANSI_LIBRARY || lint */
 
-#if defined(NDEBUG)
+#if defined(NDEBUG) && ! defined(__clang__)
 
 __CTYPE_INLINE int isalnum(int c)
 {
