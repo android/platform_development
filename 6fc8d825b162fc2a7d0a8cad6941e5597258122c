@@ -16,6 +16,24 @@
       "revId": "6fc8d825b162fc2a7d0a8cad6941e5597258122c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "73d1afe1_7b3453c3",
+        "filename": "ndk/platforms/android-3/include/stdint.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-07-18T22:27:23Z",
+      "side": 1,
+      "message": "My last comments doens\u0027t work for arm on test-stlport\n\n.//unit/macro_checks.cpp:82:4: error: #error Weird WCHAR_MIN or WCHAR_MAX macro value.\n\n#if !(WCHAR_MIN \u003c WCHAR_MAX)\n#  error Weird WCHAR_MIN or WCHAR_MAX macro value.\n#endif\n\nMaybe check __WCHAR_MAX__ against INT32_MAX in additional to _WCHAR_IS_ALWAYS_SIGNED and give specific 4294967296U and 0U if fail",
+      "parentUuid": "73d1afe1_b86c0105",
+      "revId": "6fc8d825b162fc2a7d0a8cad6941e5597258122c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
