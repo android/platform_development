@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "73d1afe1_b86c0105",
+        "filename": "ndk/platforms/android-3/include/stdint.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-07-18T21:51:52Z",
+      "side": 1,
+      "message": "Also, clang doesn\u0027t have predefined __WCHAR_MIN__.  It has __WCHAR_MAX__, so maybe use (-1-(__WCHAR_MAX__))",
+      "revId": "6fc8d825b162fc2a7d0a8cad6941e5597258122c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
