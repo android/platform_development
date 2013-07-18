@@ -75,8 +75,8 @@ typedef enum {
  * Due to the following inclusion chain:
  *   <wchar.h> -> <stdio.h> -> <sys/types.h> -> <stdint.h>
  *
- * WCHAR_MIN / WCHAR_MAX will already be defined to INT32_MIN / INT32_MAX
- * when reaching this line in the following cases:
+ * WCHAR_MIN / WCHAR_MAX will already be defined when reaching
+ * this line in the following cases:
  *    - Compiling C source code.
  *    - Compiling C++ source code AND having __STDC_LIMIT_MACROS defined.
  *
@@ -84,14 +84,17 @@ typedef enum {
  * which was to (conditionally) set the values to 0 and 255, respectively.
  */
 #ifndef WCHAR_MAX
-# ifdef _WCHAR_IS_8BIT
-#   define WCHAR_MAX  255
-#   define WCHAR_MIN  0
-# else
-/* Same values as INT32_MIN/INT32_MAX, without including <stdint.h> */
-#   define WCHAR_MAX  (2147483647)
-#   define WCHAR_MIN  (-1-2147483647)
-# endif
+#  ifdef _WCHAR_IS_8BIT
+#    define WCHAR_MAX  255
+#    define WCHAR_MIN  0
+/* Same values as <stdint.h> without including the header */
+#  elif defined(__arm__) && !defined(_WCHAR_IS_ALWAYS_SIGNED)
+#    define WCHAR_MAX  (4294967295U)
+#    define WCHAR_MIN  (0U)
+#  else
+#    define WCHAR_MAX  (2147483647)
+#    define WCHAR_MIN  (-1-2147483647)
+#  endif
 #endif
 
 /* Similarly, WEOF used to be defined as simply -1, which is
