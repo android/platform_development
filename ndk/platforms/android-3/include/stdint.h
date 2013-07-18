@@ -236,8 +236,15 @@ typedef int64_t  intmax_t;
 #ifdef __STDINT_LIMITS
    /* Also possibly defined in <wchar.h> */
 #  ifndef WCHAR_MIN
-#    define WCHAR_MIN     INT32_MIN
-#    define WCHAR_MAX     INT32_MAX
+   /* On ARM, wchar_t is unsigned int. Define _WCHAR_IS_ALWAYS_SIGNED
+    * to restore the previous behaviour. http://b.android.com/57749 */
+#    ifdef _WCHAR_IS_ALWAYS_SIGNED
+#      define WCHAR_MIN     INT32_MIN
+#      define WCHAR_MAX     INT32_MAX
+#    else
+#      define WCHAR_MIN     __WCHAR_MIN__
+#      define WCHAR_MAX     __WCHAR_MAX__
+#    endif
 #  endif
 #endif
 

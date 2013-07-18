@@ -72,8 +72,14 @@ typedef enum {
 } wctype_t;
 
 #ifndef WCHAR_MAX
-#define  WCHAR_MAX   INT_MAX
-#define  WCHAR_MIN   INT_MIN
+/* Same values as <stdint.h> without including the header */
+#  if defined(_WCHAR_IS_ALWAYS_SIGNED)
+#    define WCHAR_MAX  (2147483647)
+#    define WCHAR_MIN  (-1-2147483647)
+#  else
+#    define WCHAR_MAX  __WCHAR_MAX__
+#    define WCHAR_MIN  __WCHAR_MIN__
+#  endif
 #endif
 
 #define  WEOF        ((wint_t)(-1))
