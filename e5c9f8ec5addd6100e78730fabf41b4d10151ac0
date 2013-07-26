@@ -16,6 +16,24 @@
       "revId": "e5c9f8ec5addd6100e78730fabf41b4d10151ac0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "53210b30_dfe4d3cb",
+        "filename": "ndk/platforms/android-9/arch-x86/src/crtbegin.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1010578
+      },
+      "writtenOn": "2013-07-26T09:09:27Z",
+      "side": 1,
+      "message": "I don\u0027t know. They are currently there for all archs in both bionic and ndk crtfiles sources.",
+      "parentUuid": "934d4312_241ff3d5",
+      "revId": "e5c9f8ec5addd6100e78730fabf41b4d10151ac0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
