@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8fadc2e_5e871563",
+        "filename": "ndk/platforms/android-3/include/stdint.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1010578
+      },
+      "writtenOn": "2013-08-02T08:31:52Z",
+      "side": 1,
+      "message": "This line can be replaced with #ifdef __LP64__ which does the same.",
+      "revId": "a548bbdd8ea8dd3eaf985c5256b171ee51de3e6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
