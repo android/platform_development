@@ -64,6 +64,7 @@ typedef __uint32_t fexcept_t;
 extern const fenv_t __fe_dfl_env;
 #define FE_DFL_ENV (&__fe_dfl_env)
 
+#ifndef __ARM_ARCH_5TE__ // -march=armv5te -msoft-float didn't support vmrs,vmsr
 static __inline int fegetenv(fenv_t* __envp) {
   fenv_t _fpscr;
   __asm__ __volatile__("vmrs %0,fpscr" : "=r" (_fpscr));
@@ -76,6 +77,7 @@ static __inline int fesetenv(const fenv_t* __envp) {
   __asm__ __volatile__("vmsr fpscr,%0" : :"ri" (_fpscr));
   return 0;
 }
+#endif // __ARM_ARCH_5TE__
 
 static __inline int feclearexcept(int __excepts) {
   fexcept_t __fpscr;
