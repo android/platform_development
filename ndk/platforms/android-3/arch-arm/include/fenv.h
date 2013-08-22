@@ -64,6 +64,7 @@ typedef __uint32_t fexcept_t;
 extern const fenv_t __fe_dfl_env;
 #define FE_DFL_ENV (&__fe_dfl_env)
 
+#ifndef __SOFTFP__ /* -msoft-float didn't support vmrs,vmsr by gas */
 static __inline int fegetenv(fenv_t* __envp) {
   fenv_t _fpscr;
   __asm__ __volatile__("vmrs %0,fpscr" : "=r" (_fpscr));
@@ -170,6 +171,8 @@ static __inline int fegetexcept(void) {
 }
 
 #endif /* __BSD_VISIBLE */
+
+#endif /* __SOFTFP__ */
 
 __END_DECLS
 
