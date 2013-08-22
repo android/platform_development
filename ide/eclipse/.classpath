@@ -71,6 +71,9 @@
 	<classpathentry kind="src" path="frameworks/ex/photoviewer/src"/>
 	<classpathentry kind="src" path="frameworks/ex/variablespeed/src"/>
 	<classpathentry kind="src" path="frameworks/opt/calendar/src"/>
+	<classpathentry kind="src" path="frameworks/opt/colorpicker/src"/>
+	<classpathentry kind="src" path="frameworks/opt/datetimepicker/src"/>
+	<classpathentry kind="src" path="frameworks/opt/timezonepicker/src"/>
 	<classpathentry kind="src" path="frameworks/opt/telephony/src/java"/>
 	<classpathentry kind="src" path="frameworks/opt/mms/src/java"/>
 	<classpathentry kind="src" path="frameworks/opt/net/voip/src/java"/>
@@ -95,6 +98,7 @@
 	<classpathentry kind="src" path="development/samples/Snake/src"/>
 	<classpathentry kind="src" path="development/samples/Snake/tests/src"/>
 	<classpathentry kind="src" path="libcore/dalvik/src/main/java"/>
+	<classpathentry kind="src" path="libcore/dex/src/main/java"/>
 	<classpathentry kind="src" path="libcore/json/src/main/java"/>
 	<classpathentry kind="src" path="libcore/libdvm/src/main/java"/>
 	<classpathentry kind="src" path="libcore/luni/src/main/java"/>
@@ -125,13 +129,17 @@
 	<classpathentry kind="src" path="external/apache-http/src"/>
 	<classpathentry kind="src" path="external/bouncycastle/bcprov/src/main/java"/>
 	<classpathentry kind="src" path="external/guava/guava/src"/>
+	<classpathentry kind="src" path="external/jsr305/ri/src/main/java"/>
 	<classpathentry kind="src" path="external/libphonenumber/java/src"/>
 	<classpathentry kind="src" path="external/mp4parser/isoparser/src/main/java"/>
 	<classpathentry kind="src" path="external/nist-sip/java"/>
 	<classpathentry kind="src" path="external/tagsoup/src"/>
 	<classpathentry kind="src" path="external/xmp_toolkit/XMPCore/src"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/bouncycastle_intermediates/classes-jarjar.jar"/>
+	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/conscrypt_intermediates/classes-jarjar.jar"/>
+	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classes-jarjar.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/android-support-v4_intermediates/javalib.jar"/>
+	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/android-support-v8-renderscript_intermediates/javalib.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/core-junit_intermediates/classes.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/android-support-v13_intermediates/javalib.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/android-common_intermediates/javalib.jar"/>
