@@ -266,7 +266,7 @@ public class LoaderCustom extends Activity {
                     onReleaseResources(apps);
                 }
             }
-            List<AppEntry> oldApps = apps;
+            List<AppEntry> oldApps = mApps;
             mApps = apps;
 
             if (isStarted()) {
@@ -278,7 +278,7 @@ public class LoaderCustom extends Activity {
             // At this point we can release the resources associated with
             // 'oldApps' if needed; now that the new result is delivered we
             // know that it is no longer in use.
-            if (oldApps != null) {
+            if (oldApps != null && oldApps != apps) {
                 onReleaseResources(oldApps);
             }
         }
