@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "646c8bf1_5abdb5fa",
+        "filename": "tools/make_key",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1003723
+      },
+      "writtenOn": "2013-09-19T22:44:48Z",
+      "side": 1,
+      "message": "i think the lower casing is non-obvious and unnecessary. I\u0027d rather just say the legal values are rsa and ec and not tolerate RSA, RsA, rSa, ...",
+      "revId": "ed661574370922866631e869ff7200e9cb71dfa7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
