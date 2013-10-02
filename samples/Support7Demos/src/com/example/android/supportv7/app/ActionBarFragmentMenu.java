@@ -136,8 +136,8 @@ public class ActionBarFragmentMenu extends ActionBarActivity {
 
         @Override
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-            MenuItemCompat.setShowAsAction(menu.add("Menu 1a"), MenuItem.SHOW_AS_ACTION_IF_ROOM);
-            MenuItemCompat.setShowAsAction(menu.add("Menu 1b"), MenuItem.SHOW_AS_ACTION_IF_ROOM);
+            MenuItemCompat.setShowAsAction(menu.add("Menu 1a"), MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
+            MenuItemCompat.setShowAsAction(menu.add("Menu 1b"), MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
             super.onCreateOptionsMenu(menu, inflater);
         }
 
@@ -178,7 +178,7 @@ public class ActionBarFragmentMenu extends ActionBarActivity {
 
         @Override
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-            MenuItemCompat.setShowAsAction(menu.add("Menu 2"), MenuItem.SHOW_AS_ACTION_IF_ROOM);
+            MenuItemCompat.setShowAsAction(menu.add("Menu 2"), MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
         }
 
         @Override
