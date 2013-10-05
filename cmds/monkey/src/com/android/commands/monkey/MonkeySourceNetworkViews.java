@@ -136,7 +136,7 @@ public class MonkeySourceNetworkViews {
     private static AccessibilityNodeInfo getNodeByAccessibilityIds(
             String windowString, String viewString) {
         int windowId = Integer.parseInt(windowString);
-        int viewId = Integer.parseInt(viewString);
+        long viewId = Long.parseLong(viewString);
         int connectionId = sUiTestAutomationBridge.getConnectionId();
         AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
         return client.findAccessibilityNodeInfoByAccessibilityId(connectionId, windowId, viewId, 0);
@@ -459,18 +459,7 @@ public class MonkeySourceNetworkViews {
         public MonkeyCommandReturn query(AccessibilityNodeInfo node,
                                          List<String> args) {
             if (args.size() == 0) {
-                int viewId;
-                try {
-                    Class<?> klass = node.getClass();
-                    Field field = klass.getDeclaredField("mAccessibilityViewId");
-                    field.setAccessible(true);
-                    viewId = ((Integer) field.get(node)).intValue();
-                } catch (NoSuchFieldException e) {
-                    return new MonkeyCommandReturn(false, NO_NODE);
-                } catch (IllegalAccessException e) {
-                    return new MonkeyCommandReturn(false, "Access exception");
-                }
-                String ids = node.getWindowId() + " " + viewId;
+                String ids = node.getWindowId() + " " + node.getSourceNodeId();
                 return new MonkeyCommandReturn(true, ids);
             }
             return EARG;
