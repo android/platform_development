@@ -40,9 +40,8 @@ else
     ENDING_TYPE=unix
 fi
 find $DIR -name "*.aidl" -o -name "*.css" -o -name "*.html" -o -name "*.java" \
-                     -o -name "*.js" -o -name "*.prop" -o -name "*.py" \
-                     -o -name "*.template" -o -name "*.txt" -o -name "*.windows" \
-                     -o -name "*.xml" \
+                     -o -name "*.js" -o -name "*.prop" -o -name "*.template" \
+                     -o -name "*.txt" -o -name "*.windows" -o -name "*.xml" \
         | xargs $HOST_OUT_EXECUTABLES/line_endings $ENDING_TYPE
 
 
