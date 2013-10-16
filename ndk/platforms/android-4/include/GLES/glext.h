@@ -483,7 +483,7 @@ GL_API void GL_APIENTRY glDrawTexxOES (GLfixed x, GLfixed y, GLfixed z, GLfixed 
 GL_API void GL_APIENTRY glDrawTexsvOES (const GLshort *coords);
 GL_API void GL_APIENTRY glDrawTexivOES (const GLint *coords);
 GL_API void GL_APIENTRY glDrawTexxvOES (const GLfixed *coords);
-GL_API void GL_APIENTRY glDrawTexfOES (GLfloat x, GLfloat y, GLfloat z, GLfloat width, GLfloat height);
+GL_API void GL_APIENTRY glDrawTexfOES (GLfloat x, GLfloat y, GLfloat z, GLfloat width, GLfloat height) __NDK_FPABI__;
 GL_API void GL_APIENTRY glDrawTexfvOES (const GLfloat *coords);
 #endif
 typedef void (GL_APIENTRYP PFNGLDRAWTEXSOESPROC) (GLshort x, GLshort y, GLshort z, GLshort width, GLshort height);
@@ -492,7 +492,7 @@ typedef void (GL_APIENTRYP PFNGLDRAWTEXXOESPROC) (GLfixed x, GLfixed y, GLfixed 
 typedef void (GL_APIENTRYP PFNGLDRAWTEXSVOESPROC) (const GLshort *coords);
 typedef void (GL_APIENTRYP PFNGLDRAWTEXIVOESPROC) (const GLint *coords);
 typedef void (GL_APIENTRYP PFNGLDRAWTEXXVOESPROC) (const GLfixed *coords);
-typedef void (GL_APIENTRYP PFNGLDRAWTEXFOESPROC) (GLfloat x, GLfloat y, GLfloat z, GLfloat width, GLfloat height);
+typedef void (GL_APIENTRYP PFNGLDRAWTEXFOESPROC) (GLfloat x, GLfloat y, GLfloat z, GLfloat width, GLfloat height) __NDK_FPABI__;
 typedef void (GL_APIENTRYP PFNGLDRAWTEXFVOESPROC) (const GLfloat *coords);
 #endif
 
@@ -700,19 +700,19 @@ typedef GLbitfield (GL_APIENTRYP PFNGLQUERYMATRIXXOESPROC) (GLfixed mantissa[16]
 #ifndef GL_OES_single_precision
 #define GL_OES_single_precision 1
 #ifdef GL_GLEXT_PROTOTYPES
-GL_API void GL_APIENTRY glDepthRangefOES (GLclampf zNear, GLclampf zFar);
-GL_API void GL_APIENTRY glFrustumfOES (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar);
-GL_API void GL_APIENTRY glOrthofOES (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar);
+GL_API void GL_APIENTRY glDepthRangefOES (GLclampf zNear, GLclampf zFar) __NDK_FPABI__;
+GL_API void GL_APIENTRY glFrustumfOES (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar) __NDK_FPABI__;
+GL_API void GL_APIENTRY glOrthofOES (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar) __NDK_FPABI__;
 GL_API void GL_APIENTRY glClipPlanefOES (GLenum plane, const GLfloat *equation);
-GL_API void GL_APIENTRY glGetClipPlanefOES (GLenum pname, GLfloat eqn[4]);
-GL_API void GL_APIENTRY glClearDepthfOES (GLclampf depth);
+GL_API void GL_APIENTRY glGetClipPlanefOES (GLenum pname, GLfloat eqn[4]) __NDK_FPABI__;
+GL_API void GL_APIENTRY glClearDepthfOES (GLclampf depth) __NDK_FPABI__;
 #endif
-typedef void (GL_APIENTRYP PFNGLDEPTHRANGEFOESPROC) (GLclampf zNear, GLclampf zFar);
-typedef void (GL_APIENTRYP PFNGLFRUSTUMFOESPROC) (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar);
-typedef void (GL_APIENTRYP PFNGLORTHOFOESPROC) (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar);
+typedef void (GL_APIENTRYP PFNGLDEPTHRANGEFOESPROC) (GLclampf zNear, GLclampf zFar) __NDK_FPABI__;
+typedef void (GL_APIENTRYP PFNGLFRUSTUMFOESPROC) (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar) __NDK_FPABI__;
+typedef void (GL_APIENTRYP PFNGLORTHOFOESPROC) (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar) __NDK_FPABI__;
 typedef void (GL_APIENTRYP PFNGLCLIPPLANEFOESPROC) (GLenum plane, const GLfloat *equation);
-typedef void (GL_APIENTRYP PFNGLGETCLIPPLANEFOESPROC) (GLenum pname, GLfloat eqn[4]);
-typedef void (GL_APIENTRYP PFNGLCLEARDEPTHFOESPROC) (GLclampf depth);
+typedef void (GL_APIENTRYP PFNGLGETCLIPPLANEFOESPROC) (GLenum pname, GLfloat eqn[4]) __NDK_FPABI__;
+typedef void (GL_APIENTRYP PFNGLCLEARDEPTHFOESPROC) (GLclampf depth) __NDK_FPABI__;
 #endif
 
 /* GL_OES_stencil1 */
@@ -739,7 +739,7 @@ typedef void (GL_APIENTRYP PFNGLCLEARDEPTHFOESPROC) (GLclampf depth);
 #ifndef GL_OES_texture_cube_map
 #define GL_OES_texture_cube_map 1
 #ifdef GL_GLEXT_PROTOTYPES
-GL_API void GL_APIENTRY glTexGenfOES (GLenum coord, GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glTexGenfOES (GLenum coord, GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glTexGenfvOES (GLenum coord, GLenum pname, const GLfloat *params);
 GL_API void GL_APIENTRY glTexGeniOES (GLenum coord, GLenum pname, GLint param);
 GL_API void GL_APIENTRY glTexGenivOES (GLenum coord, GLenum pname, const GLint *params);
@@ -749,7 +749,7 @@ GL_API void GL_APIENTRY glGetTexGenfvOES (GLenum coord, GLenum pname, GLfloat *p
 GL_API void GL_APIENTRY glGetTexGenivOES (GLenum coord, GLenum pname, GLint *params);
 GL_API void GL_APIENTRY glGetTexGenxvOES (GLenum coord, GLenum pname, GLfixed *params);
 #endif
-typedef void (GL_APIENTRYP PFNGLTEXGENFOESPROC) (GLenum coord, GLenum pname, GLfloat param);
+typedef void (GL_APIENTRYP PFNGLTEXGENFOESPROC) (GLenum coord, GLenum pname, GLfloat param) __NDK_FPABI__;
 typedef void (GL_APIENTRYP PFNGLTEXGENFVOESPROC) (GLenum coord, GLenum pname, const GLfloat *params);
 typedef void (GL_APIENTRYP PFNGLTEXGENIOESPROC) (GLenum coord, GLenum pname, GLint param);
 typedef void (GL_APIENTRYP PFNGLTEXGENIVOESPROC) (GLenum coord, GLenum pname, const GLint *params);

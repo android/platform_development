@@ -3,6 +3,7 @@
 
 /* $Revision: 10601 $ on $Date:: 2010-03-04 22:15:27 -0800 #$ */
 
+#include <sys/cdefs.h>
 #include <GLES/glplatform.h>
 
 #ifdef __cplusplus
@@ -590,44 +591,44 @@ typedef khronos_ssize_t  GLsizeiptr;
 /*************************************************************/
 
 /* Available only in Common profile */
-GL_API void GL_APIENTRY glAlphaFunc (GLenum func, GLclampf ref);
-GL_API void GL_APIENTRY glClearColor (GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha);
-GL_API void GL_APIENTRY glClearDepthf (GLclampf depth);
+GL_API void GL_APIENTRY glAlphaFunc (GLenum func, GLclampf ref) __NDK_FPABI__;
+GL_API void GL_APIENTRY glClearColor (GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha) __NDK_FPABI__;
+GL_API void GL_APIENTRY glClearDepthf (GLclampf depth) __NDK_FPABI__;
 GL_API void GL_APIENTRY glClipPlanef (GLenum plane, const GLfloat *equation);
-GL_API void GL_APIENTRY glColor4f (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
-GL_API void GL_APIENTRY glDepthRangef (GLclampf zNear, GLclampf zFar);
-GL_API void GL_APIENTRY glFogf (GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glColor4f (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) __NDK_FPABI__;
+GL_API void GL_APIENTRY glDepthRangef (GLclampf zNear, GLclampf zFar) __NDK_FPABI__;
+GL_API void GL_APIENTRY glFogf (GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glFogfv (GLenum pname, const GLfloat *params);
-GL_API void GL_APIENTRY glFrustumf (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar);
-GL_API void GL_APIENTRY glGetClipPlanef (GLenum pname, GLfloat eqn[4]);
+GL_API void GL_APIENTRY glFrustumf (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar) __NDK_FPABI__;
+GL_API void GL_APIENTRY glGetClipPlanef (GLenum pname, GLfloat eqn[4]) __NDK_FPABI__;
 GL_API void GL_APIENTRY glGetFloatv (GLenum pname, GLfloat *params);
 GL_API void GL_APIENTRY glGetLightfv (GLenum light, GLenum pname, GLfloat *params);
 GL_API void GL_APIENTRY glGetMaterialfv (GLenum face, GLenum pname, GLfloat *params);
 GL_API void GL_APIENTRY glGetTexEnvfv (GLenum env, GLenum pname, GLfloat *params);
 GL_API void GL_APIENTRY glGetTexParameterfv (GLenum target, GLenum pname, GLfloat *params);
-GL_API void GL_APIENTRY glLightModelf (GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glLightModelf (GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glLightModelfv (GLenum pname, const GLfloat *params);
-GL_API void GL_APIENTRY glLightf (GLenum light, GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glLightf (GLenum light, GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glLightfv (GLenum light, GLenum pname, const GLfloat *params);
-GL_API void GL_APIENTRY glLineWidth (GLfloat width);
+GL_API void GL_APIENTRY glLineWidth (GLfloat width) __NDK_FPABI__;
 GL_API void GL_APIENTRY glLoadMatrixf (const GLfloat *m);
-GL_API void GL_APIENTRY glMaterialf (GLenum face, GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glMaterialf (GLenum face, GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glMaterialfv (GLenum face, GLenum pname, const GLfloat *params);
 GL_API void GL_APIENTRY glMultMatrixf (const GLfloat *m);
-GL_API void GL_APIENTRY glMultiTexCoord4f (GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q);
-GL_API void GL_APIENTRY glNormal3f (GLfloat nx, GLfloat ny, GLfloat nz);
-GL_API void GL_APIENTRY glOrthof (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar);
-GL_API void GL_APIENTRY glPointParameterf (GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glMultiTexCoord4f (GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q) __NDK_FPABI__;
+GL_API void GL_APIENTRY glNormal3f (GLfloat nx, GLfloat ny, GLfloat nz) __NDK_FPABI__;
+GL_API void GL_APIENTRY glOrthof (GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar) __NDK_FPABI__;
+GL_API void GL_APIENTRY glPointParameterf (GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glPointParameterfv (GLenum pname, const GLfloat *params);
-GL_API void GL_APIENTRY glPointSize (GLfloat size);
-GL_API void GL_APIENTRY glPolygonOffset (GLfloat factor, GLfloat units);
-GL_API void GL_APIENTRY glRotatef (GLfloat angle, GLfloat x, GLfloat y, GLfloat z);
-GL_API void GL_APIENTRY glScalef (GLfloat x, GLfloat y, GLfloat z);
-GL_API void GL_APIENTRY glTexEnvf (GLenum target, GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glPointSize (GLfloat size) __NDK_FPABI__;
+GL_API void GL_APIENTRY glPolygonOffset (GLfloat factor, GLfloat units) __NDK_FPABI__;
+GL_API void GL_APIENTRY glRotatef (GLfloat angle, GLfloat x, GLfloat y, GLfloat z) __NDK_FPABI__;
+GL_API void GL_APIENTRY glScalef (GLfloat x, GLfloat y, GLfloat z) __NDK_FPABI__;
+GL_API void GL_APIENTRY glTexEnvf (GLenum target, GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glTexEnvfv (GLenum target, GLenum pname, const GLfloat *params);
-GL_API void GL_APIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param);
+GL_API void GL_APIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_API void GL_APIENTRY glTexParameterfv (GLenum target, GLenum pname, const GLfloat *params);
-GL_API void GL_APIENTRY glTranslatef (GLfloat x, GLfloat y, GLfloat z);
+GL_API void GL_APIENTRY glTranslatef (GLfloat x, GLfloat y, GLfloat z) __NDK_FPABI__;
 
 /* Available in both Common and Common-Lite profiles */
 GL_API void GL_APIENTRY glActiveTexture (GLenum texture);
@@ -714,7 +715,7 @@ GL_API void GL_APIENTRY glPopMatrix (void);
 GL_API void GL_APIENTRY glPushMatrix (void);
 GL_API void GL_APIENTRY glReadPixels (GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid *pixels);
 GL_API void GL_APIENTRY glRotatex (GLfixed angle, GLfixed x, GLfixed y, GLfixed z);
-GL_API void GL_APIENTRY glSampleCoverage (GLclampf value, GLboolean invert);
+GL_API void GL_APIENTRY glSampleCoverage (GLclampf value, GLboolean invert) __NDK_FPABI__;
 GL_API void GL_APIENTRY glSampleCoveragex (GLclampx value, GLboolean invert);
 GL_API void GL_APIENTRY glScalex (GLfixed x, GLfixed y, GLfixed z);
 GL_API void GL_APIENTRY glScissor (GLint x, GLint y, GLsizei width, GLsizei height);

@@ -5,6 +5,7 @@
  * gl3.h last updated on $Date: 2013-02-12 14:37:24 -0800 (Tue, 12 Feb 2013) $
  */
 
+#include <sys/cdefs.h>
 #include <GLES3/gl3platform.h>
 
 #ifdef __cplusplus
@@ -811,7 +812,7 @@ GL_APICALL void           GL_APIENTRY glBindBuffer (GLenum target, GLuint buffer
 GL_APICALL void           GL_APIENTRY glBindFramebuffer (GLenum target, GLuint framebuffer);
 GL_APICALL void           GL_APIENTRY glBindRenderbuffer (GLenum target, GLuint renderbuffer);
 GL_APICALL void           GL_APIENTRY glBindTexture (GLenum target, GLuint texture);
-GL_APICALL void           GL_APIENTRY glBlendColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
+GL_APICALL void           GL_APIENTRY glBlendColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glBlendEquation (GLenum mode);
 GL_APICALL void           GL_APIENTRY glBlendEquationSeparate (GLenum modeRGB, GLenum modeAlpha);
 GL_APICALL void           GL_APIENTRY glBlendFunc (GLenum sfactor, GLenum dfactor);
@@ -820,8 +821,8 @@ GL_APICALL void           GL_APIENTRY glBufferData (GLenum target, GLsizeiptr si
 GL_APICALL void           GL_APIENTRY glBufferSubData (GLenum target, GLintptr offset, GLsizeiptr size, const GLvoid* data);
 GL_APICALL GLenum         GL_APIENTRY glCheckFramebufferStatus (GLenum target);
 GL_APICALL void           GL_APIENTRY glClear (GLbitfield mask);
-GL_APICALL void           GL_APIENTRY glClearColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
-GL_APICALL void           GL_APIENTRY glClearDepthf (GLfloat depth);
+GL_APICALL void           GL_APIENTRY glClearColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) __NDK_FPABI__;
+GL_APICALL void           GL_APIENTRY glClearDepthf (GLfloat depth) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glClearStencil (GLint s);
 GL_APICALL void           GL_APIENTRY glColorMask (GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);
 GL_APICALL void           GL_APIENTRY glCompileShader (GLuint shader);
@@ -840,7 +841,7 @@ GL_APICALL void           GL_APIENTRY glDeleteShader (GLuint shader);
 GL_APICALL void           GL_APIENTRY glDeleteTextures (GLsizei n, const GLuint* textures);
 GL_APICALL void           GL_APIENTRY glDepthFunc (GLenum func);
 GL_APICALL void           GL_APIENTRY glDepthMask (GLboolean flag);
-GL_APICALL void           GL_APIENTRY glDepthRangef (GLfloat n, GLfloat f);
+GL_APICALL void           GL_APIENTRY glDepthRangef (GLfloat n, GLfloat f) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glDetachShader (GLuint program, GLuint shader);
 GL_APICALL void           GL_APIENTRY glDisable (GLenum cap);
 GL_APICALL void           GL_APIENTRY glDisableVertexAttribArray (GLuint index);
@@ -892,14 +893,14 @@ GL_APICALL GLboolean      GL_APIENTRY glIsProgram (GLuint program);
 GL_APICALL GLboolean      GL_APIENTRY glIsRenderbuffer (GLuint renderbuffer);
 GL_APICALL GLboolean      GL_APIENTRY glIsShader (GLuint shader);
 GL_APICALL GLboolean      GL_APIENTRY glIsTexture (GLuint texture);
-GL_APICALL void           GL_APIENTRY glLineWidth (GLfloat width);
+GL_APICALL void           GL_APIENTRY glLineWidth (GLfloat width) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glLinkProgram (GLuint program);
 GL_APICALL void           GL_APIENTRY glPixelStorei (GLenum pname, GLint param);
-GL_APICALL void           GL_APIENTRY glPolygonOffset (GLfloat factor, GLfloat units);
+GL_APICALL void           GL_APIENTRY glPolygonOffset (GLfloat factor, GLfloat units) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glReadPixels (GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid* pixels);
 GL_APICALL void           GL_APIENTRY glReleaseShaderCompiler (void);
 GL_APICALL void           GL_APIENTRY glRenderbufferStorage (GLenum target, GLenum internalformat, GLsizei width, GLsizei height);
-GL_APICALL void           GL_APIENTRY glSampleCoverage (GLfloat value, GLboolean invert);
+GL_APICALL void           GL_APIENTRY glSampleCoverage (GLfloat value, GLboolean invert) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glScissor (GLint x, GLint y, GLsizei width, GLsizei height);
 GL_APICALL void           GL_APIENTRY glShaderBinary (GLsizei n, const GLuint* shaders, GLenum binaryformat, const GLvoid* binary, GLsizei length);
 GL_APICALL void           GL_APIENTRY glShaderSource (GLuint shader, GLsizei count, const GLchar* const* string, const GLint* length);
@@ -910,24 +911,24 @@ GL_APICALL void           GL_APIENTRY glStencilMaskSeparate (GLenum face, GLuint
 GL_APICALL void           GL_APIENTRY glStencilOp (GLenum fail, GLenum zfail, GLenum zpass);
 GL_APICALL void           GL_APIENTRY glStencilOpSeparate (GLenum face, GLenum fail, GLenum zfail, GLenum zpass);
 GL_APICALL void           GL_APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid* pixels);
-GL_APICALL void           GL_APIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param);
+GL_APICALL void           GL_APIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glTexParameterfv (GLenum target, GLenum pname, const GLfloat* params);
 GL_APICALL void           GL_APIENTRY glTexParameteri (GLenum target, GLenum pname, GLint param);
 GL_APICALL void           GL_APIENTRY glTexParameteriv (GLenum target, GLenum pname, const GLint* params);
 GL_APICALL void           GL_APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid* pixels);
-GL_APICALL void           GL_APIENTRY glUniform1f (GLint location, GLfloat x);
+GL_APICALL void           GL_APIENTRY glUniform1f (GLint location, GLfloat x) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glUniform1fv (GLint location, GLsizei count, const GLfloat* v);
 GL_APICALL void           GL_APIENTRY glUniform1i (GLint location, GLint x);
 GL_APICALL void           GL_APIENTRY glUniform1iv (GLint location, GLsizei count, const GLint* v);
-GL_APICALL void           GL_APIENTRY glUniform2f (GLint location, GLfloat x, GLfloat y);
+GL_APICALL void           GL_APIENTRY glUniform2f (GLint location, GLfloat x, GLfloat y) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glUniform2fv (GLint location, GLsizei count, const GLfloat* v);
 GL_APICALL void           GL_APIENTRY glUniform2i (GLint location, GLint x, GLint y);
 GL_APICALL void           GL_APIENTRY glUniform2iv (GLint location, GLsizei count, const GLint* v);
-GL_APICALL void           GL_APIENTRY glUniform3f (GLint location, GLfloat x, GLfloat y, GLfloat z);
+GL_APICALL void           GL_APIENTRY glUniform3f (GLint location, GLfloat x, GLfloat y, GLfloat z) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glUniform3fv (GLint location, GLsizei count, const GLfloat* v);
 GL_APICALL void           GL_APIENTRY glUniform3i (GLint location, GLint x, GLint y, GLint z);
 GL_APICALL void           GL_APIENTRY glUniform3iv (GLint location, GLsizei count, const GLint* v);
-GL_APICALL void           GL_APIENTRY glUniform4f (GLint location, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+GL_APICALL void           GL_APIENTRY glUniform4f (GLint location, GLfloat x, GLfloat y, GLfloat z, GLfloat w) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glUniform4fv (GLint location, GLsizei count, const GLfloat* v);
 GL_APICALL void           GL_APIENTRY glUniform4i (GLint location, GLint x, GLint y, GLint z, GLint w);
 GL_APICALL void           GL_APIENTRY glUniform4iv (GLint location, GLsizei count, const GLint* v);
@@ -936,13 +937,13 @@ GL_APICALL void           GL_APIENTRY glUniformMatrix3fv (GLint location, GLsize
 GL_APICALL void           GL_APIENTRY glUniformMatrix4fv (GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
 GL_APICALL void           GL_APIENTRY glUseProgram (GLuint program);
 GL_APICALL void           GL_APIENTRY glValidateProgram (GLuint program);
-GL_APICALL void           GL_APIENTRY glVertexAttrib1f (GLuint indx, GLfloat x);
+GL_APICALL void           GL_APIENTRY glVertexAttrib1f (GLuint indx, GLfloat x) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glVertexAttrib1fv (GLuint indx, const GLfloat* values);
-GL_APICALL void           GL_APIENTRY glVertexAttrib2f (GLuint indx, GLfloat x, GLfloat y);
+GL_APICALL void           GL_APIENTRY glVertexAttrib2f (GLuint indx, GLfloat x, GLfloat y) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glVertexAttrib2fv (GLuint indx, const GLfloat* values);
-GL_APICALL void           GL_APIENTRY glVertexAttrib3f (GLuint indx, GLfloat x, GLfloat y, GLfloat z);
+GL_APICALL void           GL_APIENTRY glVertexAttrib3f (GLuint indx, GLfloat x, GLfloat y, GLfloat z) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glVertexAttrib3fv (GLuint indx, const GLfloat* values);
-GL_APICALL void           GL_APIENTRY glVertexAttrib4f (GLuint indx, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+GL_APICALL void           GL_APIENTRY glVertexAttrib4f (GLuint indx, GLfloat x, GLfloat y, GLfloat z, GLfloat w) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glVertexAttrib4fv (GLuint indx, const GLfloat* values);
 GL_APICALL void           GL_APIENTRY glVertexAttribPointer (GLuint indx, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* ptr);
 GL_APICALL void           GL_APIENTRY glViewport (GLint x, GLint y, GLsizei width, GLsizei height);
@@ -1008,7 +1009,7 @@ GL_APICALL void           GL_APIENTRY glUniform4uiv (GLint location, GLsizei cou
 GL_APICALL void           GL_APIENTRY glClearBufferiv (GLenum buffer, GLint drawbuffer, const GLint* value);
 GL_APICALL void           GL_APIENTRY glClearBufferuiv (GLenum buffer, GLint drawbuffer, const GLuint* value);
 GL_APICALL void           GL_APIENTRY glClearBufferfv (GLenum buffer, GLint drawbuffer, const GLfloat* value);
-GL_APICALL void           GL_APIENTRY glClearBufferfi (GLenum buffer, GLint drawbuffer, GLfloat depth, GLint stencil);
+GL_APICALL void           GL_APIENTRY glClearBufferfi (GLenum buffer, GLint drawbuffer, GLfloat depth, GLint stencil) __NDK_FPABI__;
 GL_APICALL const GLubyte* GL_APIENTRY glGetStringi (GLenum name, GLuint index);
 GL_APICALL void           GL_APIENTRY glCopyBufferSubData (GLenum readTarget, GLenum writeTarget, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size);
 GL_APICALL void           GL_APIENTRY glGetUniformIndices (GLuint program, GLsizei uniformCount, const GLchar* const* uniformNames, GLuint* uniformIndices);
@@ -1034,7 +1035,7 @@ GL_APICALL GLboolean      GL_APIENTRY glIsSampler (GLuint sampler);
 GL_APICALL void           GL_APIENTRY glBindSampler (GLuint unit, GLuint sampler);
 GL_APICALL void           GL_APIENTRY glSamplerParameteri (GLuint sampler, GLenum pname, GLint param);
 GL_APICALL void           GL_APIENTRY glSamplerParameteriv (GLuint sampler, GLenum pname, const GLint* param);
-GL_APICALL void           GL_APIENTRY glSamplerParameterf (GLuint sampler, GLenum pname, GLfloat param);
+GL_APICALL void           GL_APIENTRY glSamplerParameterf (GLuint sampler, GLenum pname, GLfloat param) __NDK_FPABI__;
 GL_APICALL void           GL_APIENTRY glSamplerParameterfv (GLuint sampler, GLenum pname, const GLfloat* param);
 GL_APICALL void           GL_APIENTRY glGetSamplerParameteriv (GLuint sampler, GLenum pname, GLint* params);
 GL_APICALL void           GL_APIENTRY glGetSamplerParameterfv (GLuint sampler, GLenum pname, GLfloat* params);
