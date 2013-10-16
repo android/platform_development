@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3e71c4c7_1f316b14",
+        "filename": "ndk/platforms/android-18/include/GLES3/gl3.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-10-16T10:36:27Z",
+      "side": 1,
+      "message": "Sure!  This make it much simpler",
+      "parentUuid": "1edb2007_d31c4680",
+      "revId": "b7c6aedf978453484382ed04533486e82d6b7ba0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1edb2007_f3194a8d",
         "filename": "ndk/platforms/android-3/include/math.h",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-16T09:32:16Z",
       "side": 1,
       "message": "Since we probably want to build a \"hardfp\" version of libm from the same set of sources, it might be useful to use a different macro here, which could be conditionally defined to __NDK_FPABI__ or not.\n\nI.e. only use __NDK_FPABI__ for the platform build.\n\nIn theory, this is more a concern for the sources under bionic/libm/, not for the NDK headers themselves.",
+      "revId": "b7c6aedf978453484382ed04533486e82d6b7ba0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e6cb8f0_e0141699",
+        "filename": "ndk/platforms/android-3/include/math.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-10-16T10:36:27Z",
+      "side": 1,
+      "message": "Will invent new __NDK_FPABI_MATH__ in sys/cdefs.h",
+      "parentUuid": "1edb2007_f3194a8d",
       "revId": "b7c6aedf978453484382ed04533486e82d6b7ba0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
