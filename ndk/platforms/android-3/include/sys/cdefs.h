@@ -530,4 +530,14 @@
 #define  __BIONIC__   1
 #include <android/api-level.h>
 
+/* __NDK_FPABI__ is applied to APIs taking or returnin float or [long] double, to ensure
+   even at the presence of -mhard-float (which implies -mfloat-abi=hard), calling to
+   32-bit Android native APIs still follow -mfloat-abi=softfp */
+#if defined(__ANDROID__) && !__LP64__ && defined( __arm__)
+#define __NDK_FPABI__ __attribute__((pcs("aapcs")))
+#else
+#define __NDK_FPABI__
+#endif
+
+
 #endif /* !_SYS_CDEFS_H_ */
