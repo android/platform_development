@@ -530,4 +530,22 @@
 #define  __BIONIC__   1
 #include <android/api-level.h>
 
+/* __NDK_FPABI__ or __NDK_FPABI_MATH__ are applied to APIs taking or returning float or
+   [long] double, to ensure even at the presence of -mhard-float (which implies
+   -mfloat-abi=hard), calling to 32-bit Android native APIs still follow -mfloat-abi=softfp.
+
+   __NDK_FPABI_MATH__ is applied to APIs in math.h.  It normally equals to __NDK_FPABI__,
+   but allow creation of hard-float libm.a for armeabi-v7a by
+   -D__NDK_FPABI_MATH__=__attribute__\(\(pcs\(\"aapcs-vfp\"\)\)\) on source in bionic/libm.
+ */
+#if defined(__ANDROID__) && !__LP64__ && defined( __arm__)
+#define __NDK_FPABI__ __attribute__((pcs("aapcs")))
+#else
+#define __NDK_FPABI__
+#endif
+
+#if !defined(__NDK_FPABI_MATH__)
+#define __NDK_FPABI_MATH__  __NDK_FPABI__
+#endif
+
 #endif /* !_SYS_CDEFS_H_ */
