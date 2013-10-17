@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e58386f_7ab9f90a",
+        "filename": "ndk/platforms/android-9/include/sys/cdefs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-10-17T07:51:19Z",
+      "side": 1,
+      "message": "Can I ask you to make this a little easier? The parentheses are likely to cause problems in Makefiles and other build scripts.\n\nFor other features, Posix and the GNU C library uses single-underscore control macros (e.g. _GNU_SOURCE\u003d1) that can be set, and use double-underscores for stuff that is defined in the system headers and should not be redefined by client code (e.g. __USE_GNU).\n\nSo, for example:\n\n  #if !defined(_NDK_MATH_NO_SOFTFP) || _NDK_MATH_NO_SOFTFP !\u003d 1\n  #  define __NDK_FPABI_MATH__ __NDK_FPABI__\n  #else\n  #  define __NDK_FPABI_MATH__  /* nothing */\n  #endif\n\nAllows client code to add -D_NDK_MATH_NO_SOFTFP\u003d1 to the build script to indicate it doesn\u0027t want to use the softfp ABI for the math module.\n\nWhat do you think?",
+      "revId": "0f5351fdf736edd0a9a966d9ab21713fa3419346",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
