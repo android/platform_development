@@ -16,6 +16,24 @@
       "revId": "4323c972cccfb80781ad4aad6c5d055c67509ca2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e65502c_34b950be",
+        "filename": "ndk/platforms/android-9/include/sys/cdefs.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-10-17T10:39:28Z",
+      "side": 1,
+      "message": "Relax a bit to allow clang work with libm_hard.a in the following patch set",
+      "parentUuid": "3e5d4460_799aa75d",
+      "revId": "4323c972cccfb80781ad4aad6c5d055c67509ca2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
