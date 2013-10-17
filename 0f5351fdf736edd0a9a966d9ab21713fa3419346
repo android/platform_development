@@ -16,6 +16,24 @@
       "revId": "0f5351fdf736edd0a9a966d9ab21713fa3419346",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e65502c_54b4cce3",
+        "filename": "ndk/platforms/android-9/include/sys/cdefs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2013-10-17T07:58:28Z",
+      "side": 1,
+      "message": "Sure!  Will do it in next patch set.",
+      "parentUuid": "5e58386f_7ab9f90a",
+      "revId": "0f5351fdf736edd0a9a966d9ab21713fa3419346",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
