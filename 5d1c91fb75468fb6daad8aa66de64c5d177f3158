@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de8ee8b0_4123d4b4",
+        "filename": "ndk/platforms/android-18/samples/MoreTeapots/src/com/sample/helper/NDKHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-10-28T09:54:43Z",
+      "side": 1,
+      "message": "typo here :) Also, probably no need for spaces around \"Context c\"",
+      "revId": "5d1c91fb75468fb6daad8aa66de64c5d177f3158",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de8ee8b0_6130d0f5",
+        "filename": "ndk/platforms/android-18/samples/MoreTeapots/src/com/sample/moreteapots/MoreTeapotsNativeActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-10-28T09:54:43Z",
+      "side": 1,
+      "message": "A lot of these files are missing a copyright disclaimer, is this intentional?",
+      "revId": "5d1c91fb75468fb6daad8aa66de64c5d177f3158",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ec09cbf_868a2cde",
+        "filename": "ndk/platforms/android-18/samples/MoreTeapots/src/com/sample/moreteapots/MoreTeapotsNativeActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-10-28T09:54:43Z",
+      "side": 1,
+      "message": "nit: whitespace",
+      "revId": "5d1c91fb75468fb6daad8aa66de64c5d177f3158",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
