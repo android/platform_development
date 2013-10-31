@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be3934b6_70a50e45",
+        "filename": "tools/make_key",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1019164
+      },
+      "writtenOn": "2013-10-31T20:13:39Z",
+      "side": 1,
+      "message": "Should secp256k1 instead be prime256v1 aka secp256r1 aka NIST P-256?",
+      "revId": "b605e5c59c6207fa24152bfe32b837f3c90393f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
