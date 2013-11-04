@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7e15fd2d_dca56132",
+        "filename": "ndk/sources/android/ndk_helper/JNIHelper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-04T10:20:09Z",
+      "side": 1,
+      "message": "nit: I think this code is missing a ReleaseStringUTFChars() call here.",
+      "revId": "dc78373d361754a9c24306cd1efa7368e466df55",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e15fd2d_5ce15167",
+        "filename": "ndk/sources/android/ndk_helper/JNIHelper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-04T10:20:09Z",
+      "side": 1,
+      "message": "nit: I don\u0027t see a DeleteLocalRef() for str_path? If you are relying on DetachCurrentThread() to do the cleanup, add a comment to make it explicit (frankly I\u0027m not sure that DetachCurrentThread() will do it, the documentation is pretty poor :-))",
+      "revId": "dc78373d361754a9c24306cd1efa7368e466df55",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e15fd2d_dccc41fc",
+        "filename": "ndk/sources/android/ndk_helper/JNIHelper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-04T10:20:09Z",
+      "side": 1,
+      "message": "Any specific reason for this #if 0 ... #endif block of code?\nCan you remove it, or at least explain why it is disabled (e.g. not ready yet, still contains a bug, etc)?",
+      "revId": "dc78373d361754a9c24306cd1efa7368e466df55",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e446556_cf1d9d79",
+        "filename": "ndk/sources/android/ndk_helper/JNIHelper.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-04T10:20:09Z",
+      "side": 1,
+      "message": "This phrase is a bit misleading, since the class loader itself doesn\u0027t require a NativeActivity instance at all. I recommend to say \"JNIHelper requires to be initialized with a ANativeActivity handle\" instead.\n\nAlso, it looks like the only fields in ANativeActivity used by this support class are \"vm\", \"clazz\" (i.e. a Context instance) and \"assetManager\u0027.\n\nFor the future, consider adding a new Init() function that looks like:\n\n    static void Init( JavaVM* vm, jobject context_ref, const char* helper_class_name );\n\nAnd make the code more portable, so it can be used outside of NativeActivities. Note that this may require removing the use of DetachCurrentThread() though in the implementation. The AAssertManager handle can be retrieved by calling the Context\u0027s getAssets() method from Java, then sending the resulting jobject to AAssetManager_fromJava defined in \u003candroid/asset_manager_jni.h\u003e.",
+      "revId": "dc78373d361754a9c24306cd1efa7368e466df55",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e2401a3_56ec9479",
+        "filename": "ndk/sources/android/ndk_helper/JNIHelper.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-04T10:20:09Z",
+      "side": 1,
+      "message": "nit: \u0027encoding\u0027 instead of \u0027encode\u0027 is the generally accepted term for this kind of information.\n\nNote that Java uses the term \"charSet\" incorrectly (normally, a charset refers to a set of characters without any specific algorithm to encode them, the encoding is how you store these in memory. For example, Unicode is a charset, UTF-8, UTF-16BE, UTF-16LE, UTF-16+BOM and UTF-32 are several encoding for the same charset).\n\nYou might want to document that the value of \"encoding\" is any valid java.nio.charset.Charset name.",
+      "revId": "dc78373d361754a9c24306cd1efa7368e466df55",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e15fd2d_fc96e5bb",
+        "filename": "ndk/sources/android/ndk_helper/JNIHelper.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-04T10:20:09Z",
+      "side": 1,
+      "message": "nit: Please phrase this more clearly, e.g. \"return: converted input string as an UTF-8 std::string\"",
+      "revId": "dc78373d361754a9c24306cd1efa7368e466df55",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
