@@ -16,6 +16,24 @@
       "revId": "b605e5c59c6207fa24152bfe32b837f3c90393f4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe256da9_8d31e1d6",
+        "filename": "tools/make_key",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1002975
+      },
+      "writtenOn": "2013-11-04T22:56:54Z",
+      "side": 1,
+      "message": "Yes, thanks.",
+      "parentUuid": "be3934b6_70a50e45",
+      "revId": "b605e5c59c6207fa24152bfe32b837f3c90393f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
