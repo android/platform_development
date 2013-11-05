@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe93ad15_dd478b65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-05T09:56:35Z",
+      "side": 1,
+      "message": "Note that technically, you didn\u0027t switch to the Chrome style (which mandates many other things). If you intend to really do that in the future, use something like:\n\n  cd .../your/directory\n  clang-format -s Chromium -i\n\nAnd upload a new patch that only reformat stuff. Please do not do this here, I\u0027m perfectly happy with the current state of the code formatting for now :-)",
+      "revId": "13754d53c3305ba55930408ab991c1fad9b492d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dea0a95c_bc95e16e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-05T09:56:35Z",
+      "side": 1,
+      "message": "You probably don\u0027t want two Change-Id lines in your commit message. The second set of changes is superfluous and should be removed.",
+      "revId": "13754d53c3305ba55930408ab991c1fad9b492d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe93ad15_3d530f2f",
+        "filename": "ndk/sources/android/ndk_helper/JNIHelper.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-11-05T09:56:35Z",
+      "side": 1,
+      "message": "Oops, you\u0027re accessing |object| after the DeleteLocalRef() here. Maybe move this line below ReleaseStringUTFChars()?",
+      "revId": "13754d53c3305ba55930408ab991c1fad9b492d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
