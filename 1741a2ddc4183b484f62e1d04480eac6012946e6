@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a332fed0_706ee8d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-12-11T16:01:13Z",
+      "side": 1,
+      "message": "you were planning on a footnote?",
+      "revId": "1741a2ddc4183b484f62e1d04480eac6012946e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8337bac2_4f15c155",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-12-11T16:01:13Z",
+      "side": 1,
+      "message": "nit: this patch doesn\u0027t \"create a new \u003csys/wait.h\u003e\"; it brings in the actual sys/wait.h from the API level 19 bionic. (which is great.)",
+      "revId": "1741a2ddc4183b484f62e1d04480eac6012946e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "632c867b_4b5779b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-12-11T16:01:13Z",
+      "side": 1,
+      "message": "i usually paste the whole code.google.com link in so people can just click on it to go to the bug.",
+      "revId": "1741a2ddc4183b484f62e1d04480eac6012946e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
