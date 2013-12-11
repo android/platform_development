@@ -117,7 +117,7 @@ public class ContactManager {
         long currentSyncMarker = lastSyncMarker;
         final ContentResolver resolver = context.getContentResolver();
         final BatchOperation batchOperation = new BatchOperation(context, resolver);
-        final List<RawContact> newUsers = new ArrayList<RawContact>();
+        final List<RawContact> newContacts = new ArrayList<RawContact>();
 
         Log.d(TAG, "In SyncContacts");
         for (final RawContact rawContact : rawContacts) {
@@ -131,8 +131,8 @@ public class ContactManager {
                 currentSyncMarker = rawContact.getSyncState();
             }
 
-            // If the server returned a clientId for this user, then it's likely
-            // that the user was added here, and was just pushed to the server
+            // If the server returned a clientId for this contact, then it's likely
+            // that the contact was added here, and was just pushed to the server
             // for the first time. In that case, we need to update the main
             // row for this contact so that the RawContacts.SOURCE_ID value
             // contains the correct serverId.
@@ -156,7 +156,7 @@ public class ContactManager {
             } else {
                 Log.d(TAG, "In addContact");
                 if (!rawContact.isDeleted()) {
-                    newUsers.add(rawContact);
+                    newContacts.add(rawContact);
                     addContact(context, account, rawContact, groupId, true, batchOperation);
                 }
             }
@@ -178,7 +178,7 @@ public class ContactManager {
      *
      * @param context The context of Authenticator Activity
      * @param account The account that we're interested in syncing
-     * @return a list of Users that are considered "dirty"
+     * @return a list of Contacts that are considered "dirty"
      */
     public static List<RawContact> getDirtyContacts(Context context, Account account) {
         Log.i(TAG, "*** Looking for local dirty contacts");
@@ -227,12 +227,12 @@ public class ContactManager {
     }
 
     /**
-     * Update the status messages for a list of users.  This is typically called
+     * Update the status messages for a list of contacts.  This is typically called
      * for contacts we've just added to the system, since we can't monkey with
      * the contact's status until they have a profileId.
      *
      * @param context The context of Authenticator Activity
-     * @param rawContacts The list of users we want to update
+     * @param rawContacts The list of contacts we want to update
      */
     public static void updateStatusMessages(Context context, List<RawContact> rawContacts) {
         final ContentResolver resolver = context.getContentResolver();
@@ -251,7 +251,7 @@ public class ContactManager {
      * text and photo data from there instead.
      *
      * @param context The context of Authenticator Activity
-     * @param rawContacts The list of users we want to update
+     * @param rawContacts The list of contacts we want to update
      */
     public static void addStreamItems(Context context, List<RawContact> rawContacts,
              String accountName, String accountType) {
@@ -316,7 +316,7 @@ public class ContactManager {
      *
      * @param context the Authenticator Activity context
      * @param accountName the account the contact belongs to
-     * @param rawContact the sample SyncAdapter User object
+     * @param rawContact the sample SyncAdapter Contact object
      * @param groupId the id of the sample group
      * @param inSync is the add part of a client-server sync?
      * @param batchOperation allow us to batch together multiple operations
@@ -362,8 +362,8 @@ public class ContactManager {
      * @param context the Authenticator Activity context
      * @param resolver the ContentResolver to use
      * @param rawContact the sample SyncAdapter contact object
-     * @param updateStatus should we update this user's status
-     * @param updateAvatar should we update this user's avatar image
+     * @param updateStatus should we update this contact's status
+     * @param updateAvatar should we update this contact's avatar image
      * @param inSync is the update part of a client-server sync?
      * @param rawContactId the unique Id for this rawContact in contacts
      *        provider
@@ -493,17 +493,17 @@ public class ContactManager {
     }
 
     /**
-     * Return a User object with data extracted from a contact stored
+     * Return a Contact object with data extracted from a contact stored
      * in the local contacts database.
      *
      * Because a contact is actually stored over several rows in the
      * database, our query will return those multiple rows of information.
-     * We then iterate over the rows and build the User structure from
+     * We then iterate over the rows and build the Contact structure from
      * what we find.
      *
      * @param context the Authenticator Activity context
      * @param rawContactId the unique ID for the local contact
-     * @return a User object containing info on that contact
+     * @return a Contact object containing info on that contact
      */
     private static RawContact getRawContact(Context context, long rawContactId) {
         String firstName = null;
@@ -550,7 +550,7 @@ public class ContactManager {
         }
 
         // Now that we've extracted all the information we care about,
-        // create the actual User object.
+        // create the actual Contact object.
         RawContact rawContact = RawContact.create(fullName, firstName, lastName, cellPhone,
                 workPhone, homePhone, email, null, false, rawContactId, serverId);
 
@@ -558,7 +558,7 @@ public class ContactManager {
     }
 
     /**
-     * Update the status message associated with the specified user.  The status
+     * Update the status message associated with the specified contact.  The status
      * message would be something that is likely to be used by IM or social
      * networking sync providers, and less by a straightforward contact provider.
      * But it's a useful demo to see how it's done.
@@ -572,12 +572,12 @@ public class ContactManager {
         final ContentValues values = new ContentValues();
         final ContentResolver resolver = context.getContentResolver();
 
-        final long userId = rawContact.getServerContactId();
+        final long contactId = rawContact.getServerContactId();
         final String username = rawContact.getUserName();
         final String status = rawContact.getStatus();
 
-        // Look up the user's sample SyncAdapter data row
-        final long profileId = lookupProfile(resolver, userId);
+        // Look up the contact's sample SyncAdapter data row
+        final long profileId = lookupProfile(resolver, contactId);
 
         // Insert the activity into the stream
         if (profileId > 0) {
@@ -585,8 +585,8 @@ public class ContactManager {
             values.put(StatusUpdates.STATUS, status);
             values.put(StatusUpdates.PROTOCOL, Im.PROTOCOL_CUSTOM);
             values.put(StatusUpdates.CUSTOM_PROTOCOL, CUSTOM_IM_PROTOCOL);
-            values.put(StatusUpdates.IM_ACCOUNT, username);
-            values.put(StatusUpdates.IM_HANDLE, userId);
+            values.put(StatusUpdates.IM_ACCOUNT, contactname);
+            values.put(StatusUpdates.IM_HANDLE, contactId);
             values.put(StatusUpdates.STATUS_RES_PACKAGE, context.getPackageName());
             values.put(StatusUpdates.STATUS_ICON, R.drawable.icon);
             values.put(StatusUpdates.STATUS_LABEL, R.string.label);
@@ -685,24 +685,24 @@ public class ContactManager {
 
     /**
      * Returns the RawContact id for a sample SyncAdapter contact, or 0 if the
-     * sample SyncAdapter user isn't found.
+     * sample SyncAdapter contact isn't found.
      *
      * @param resolver the content resolver to use
-     * @param serverContactId the sample SyncAdapter user ID to lookup
+     * @param serverContactId the sample SyncAdapter contact ID to lookup
      * @return the RawContact id, or 0 if not found
      */
     private static long lookupRawContact(ContentResolver resolver, long serverContactId) {
 
         long rawContactId = 0;
         final Cursor c = resolver.query(
-                UserIdQuery.CONTENT_URI,
-                UserIdQuery.PROJECTION,
-                UserIdQuery.SELECTION,
+                ContactIdQuery.CONTENT_URI,
+                ContactIdQuery.PROJECTION,
+                ContactIdQuery.SELECTION,
                 new String[] {String.valueOf(serverContactId)},
                 null);
         try {
             if ((c != null) && c.moveToFirst()) {
-                rawContactId = c.getLong(UserIdQuery.COLUMN_RAW_CONTACT_ID);
+                rawContactId = c.getLong(ContactIdQuery.COLUMN_RAW_CONTACT_ID);
             }
         } finally {
             if (c != null) {
@@ -714,18 +714,18 @@ public class ContactManager {
 
     /**
      * Returns the Data id for a sample SyncAdapter contact's profile row, or 0
-     * if the sample SyncAdapter user isn't found.
+     * if the sample SyncAdapter contact isn't found.
      *
      * @param resolver a content resolver
-     * @param userId the sample SyncAdapter user ID to lookup
+     * @param contactId the sample SyncAdapter contact ID to lookup
      * @return the profile Data row id, or 0 if not found
      */
-    private static long lookupProfile(ContentResolver resolver, long userId) {
+    private static long lookupProfile(ContentResolver resolver, long contactId) {
 
         long profileId = 0;
         final Cursor c =
             resolver.query(Data.CONTENT_URI, ProfileQuery.PROJECTION, ProfileQuery.SELECTION,
-                new String[] {String.valueOf(userId)}, null);
+                new String[] {String.valueOf(contactId)}, null);
         try {
             if ((c != null) && c.moveToFirst()) {
                 profileId = c.getLong(ProfileQuery.COLUMN_ID);
@@ -779,7 +779,7 @@ public class ContactManager {
     }
 
     /**
-     * Constants for a query to find a contact given a sample SyncAdapter user
+     * Constants for a query to find a contact given a sample SyncAdapter contact
      * ID.
      */
     final private static class ProfileQuery {
@@ -797,12 +797,12 @@ public class ContactManager {
     }
 
     /**
-     * Constants for a query to find a contact given a sample SyncAdapter user
+     * Constants for a query to find a contact given a sample SyncAdapter contact
      * ID.
      */
-    final private static class UserIdQuery {
+    final private static class ContactIdQuery {
 
-        private UserIdQuery() {
+        private ContactIdQuery() {
         }
 
         public final static String[] PROJECTION = new String[] {

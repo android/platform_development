@@ -94,7 +94,6 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
             final long groupId = ContactManager.ensureSampleGroupExists(mContext, account);
 
             // Find the local 'dirty' contacts that we need to tell the server about...
-            // Find the local users that need to be sync'd to the server...
             dirtyContacts = ContactManager.getDirtyContacts(mContext, account);
 
             // Send the dirty contacts to the server, and retrieve the server-side changes

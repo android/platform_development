@@ -64,14 +64,14 @@ public class ContactOperations {
      * to the platform contacts provider.
      *
      * @param context the Authenticator Activity context
-     * @param userId the userId of the sample SyncAdapter user object
+     * @param contactId the contactId of the sample SyncAdapter contact object
      * @param accountName the username for the SyncAdapter account
      * @param isSyncOperation are we executing this as part of a sync operation?
      * @return instance of ContactOperations
      */
-    public static ContactOperations createNewContact(Context context, long userId,
+    public static ContactOperations createNewContact(Context context, long contactId,
             String accountName, boolean isSyncOperation, BatchOperation batchOperation) {
-        return new ContactOperations(context, userId, accountName, isSyncOperation, batchOperation);
+        return new ContactOperations(context, contactId, accountName, isSyncOperation, batchOperation);
     }
 
     /**
@@ -97,12 +97,12 @@ public class ContactOperations {
         mBatchOperation = batchOperation;
     }
 
-    public ContactOperations(Context context, long userId, String accountName,
+    public ContactOperations(Context context, long contactId, String accountName,
             boolean isSyncOperation, BatchOperation batchOperation) {
         this(context, isSyncOperation, batchOperation);
         mBackReference = mBatchOperation.size();
         mIsNewContact = true;
-        mValues.put(RawContacts.SOURCE_ID, userId);
+        mValues.put(RawContacts.SOURCE_ID, contactId);
         mValues.put(RawContacts.ACCOUNT_TYPE, Constants.ACCOUNT_TYPE);
         mValues.put(RawContacts.ACCOUNT_NAME, accountName);
         ContentProviderOperation.Builder builder =
@@ -216,13 +216,13 @@ public class ContactOperations {
     /**
      * Adds a profile action
      *
-     * @param userId the userId of the sample SyncAdapter user object
+     * @param contactId the contactId of the sample SyncAdapter contact object
      * @return instance of ContactOperations
      */
-    public ContactOperations addProfileAction(long userId) {
+    public ContactOperations addProfileAction(long contactId) {
         mValues.clear();
-        if (userId != 0) {
-            mValues.put(SampleSyncAdapterColumns.DATA_PID, userId);
+        if (contactId != 0) {
+            mValues.put(SampleSyncAdapterColumns.DATA_PID, contactId);
             mValues.put(SampleSyncAdapterColumns.DATA_SUMMARY, mContext
                 .getString(R.string.profile_action));
             mValues.put(SampleSyncAdapterColumns.DATA_DETAIL, mContext
@@ -250,7 +250,7 @@ public class ContactOperations {
     /**
      * Updates contact's email
      *
-     * @param email email id of the sample SyncAdapter user
+     * @param email email id of the sample SyncAdapter contact
      * @param uri Uri for the existing raw contact to be updated
      * @return instance of ContactOperations
      */
@@ -344,13 +344,13 @@ public class ContactOperations {
     /**
      * Updates contact's profile action
      *
-     * @param userId sample SyncAdapter user id
+     * @param contactId sample SyncAdapter contact id
      * @param uri Uri for the existing raw contact to be updated
      * @return instance of ContactOperations
      */
-    public ContactOperations updateProfileAction(Integer userId, Uri uri) {
+    public ContactOperations updateProfileAction(Integer contactId, Uri uri) {
         mValues.clear();
-        mValues.put(SampleSyncAdapterColumns.DATA_PID, userId);
+        mValues.put(SampleSyncAdapterColumns.DATA_PID, contactId);
         addUpdateOp(uri);
         return this;
     }
