@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "08f84737_5dea7b61",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-12-11T16:28:42Z",
+      "side": 1,
+      "message": "Oh yes, absolutely, thanks for catching this.",
+      "parentUuid": "a332fed0_706ee8d4",
+      "revId": "1741a2ddc4183b484f62e1d04480eac6012946e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8337bac2_4f15c155",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "e31f9643_c7e7e053",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-12-11T16:28:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8337bac2_4f15c155",
+      "revId": "1741a2ddc4183b484f62e1d04480eac6012946e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "632c867b_4b5779b7",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-11T16:01:13Z",
       "side": 1,
       "message": "i usually paste the whole code.google.com link in so people can just click on it to go to the bug.",
+      "revId": "1741a2ddc4183b484f62e1d04480eac6012946e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e31f9643_e7ecdc38",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2013-12-11T16:28:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "632c867b_4b5779b7",
       "revId": "1741a2ddc4183b484f62e1d04480eac6012946e6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
