@@ -25,17 +25,18 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _STDINT_H
 #define _STDINT_H
 
 #include <stddef.h>
 #include <sys/_types.h>
 
-#if !defined(__cplusplus) || defined(__STDC_LIMIT_MACROS)
+#if !defined(__cplusplus) || defined(__STDC_LIMIT_MACROS) || (__cplusplus >= 201103L)
 #  define __STDINT_LIMITS
 #endif
 
-#if !defined(__cplusplus) || defined(__STDC_CONSTANT_MACROS)
+#if !defined(__cplusplus) || defined(__STDC_CONSTANT_MACROS) || (__cplusplus >= 201103L)
 #  define  __STDINT_MACROS
 #endif
 
@@ -157,6 +158,14 @@ typedef int64_t       int_fast64_t;
 typedef uint64_t      uint_least64_t;
 typedef uint64_t      uint_fast64_t;
 
+#if __LP64__
+#  define __INT64_C(c)  c ## L
+#  define __UINT64_C(c) c ## UL
+#else
+#  define __INT64_C(c)  c ## LL
+#  define __UINT64_C(c) c ## ULL
+#endif
+
 #ifdef __STDINT_LIMITS
 #  define INT64_MIN        (__INT64_C(-9223372036854775807)-1)
 #  define INT64_MAX        (__INT64_C(9223372036854775807))
@@ -169,9 +178,6 @@ typedef uint64_t      uint_fast64_t;
 #  define UINT_LEAST64_MAX UINT64_MAX
 #  define UINT_FAST64_MAX UINT64_MAX
 #endif
-
-#define __INT64_C(c)     c ## LL
-#define __UINT64_C(c)     c ## ULL
 
 #ifdef __STDINT_MACROS
 #  define INT64_C(c)       __INT64_C(c)
@@ -187,17 +193,33 @@ typedef uint64_t      uint_fast64_t;
 #  define __PRIFAST_RANK ""
 #  define __PRIPTR_RANK  ""
 
+
 /*
  * intptr_t & uintptr_t
  */
 
 #ifdef __LP64__
-typedef long          intptr_t;
-typedef unsigned long uintptr_t;
+
+typedef long           intptr_t;
+typedef unsigned long  uintptr_t;
+
+#ifdef __STDINT_LIMITS
+#  define INTPTR_MIN    INT64_MIN
+#  define INTPTR_MAX    INT64_MAX
+#  define UINTPTR_MAX   UINT64_MAX
+#  define PTRDIFF_MIN   INT64_MIN
+#  define PTRDIFF_MAX   INT64_MAX
+#endif
+#ifdef __STDINT_MACROS
+#  define INTPTR_C(c)   INT64_C(c)
+#  define UINTPTR_C(c)  UINT64_C(c)
+#  define PTRDIFF_C(c)  INT64_C(c)
+#endif
+
 #else
+
 typedef int           intptr_t;
 typedef unsigned int  uintptr_t;
-#endif
 
 #ifdef __STDINT_LIMITS
 #  define INTPTR_MIN    INT32_MIN
@@ -206,12 +228,14 @@ typedef unsigned int  uintptr_t;
 #  define PTRDIFF_MIN   INT32_MIN
 #  define PTRDIFF_MAX   INT32_MAX
 #endif
-
 #ifdef __STDINT_MACROS
 #  define INTPTR_C(c)   INT32_C(c)
 #  define UINTPTR_C(c)  UINT32_C(c)
 #  define PTRDIFF_C(c)  INT32_C(c)
 #endif
+
+#endif /* __LP64__ */
+
 
 /*
  *  intmax_t & uintmax_t
@@ -231,30 +255,24 @@ typedef int64_t  intmax_t;
 #  define UINTMAX_C(c)	UINT64_C(c)
 #endif
 
-/* Limits of sig_atomic_t. */
+/*
+ * sig_atomic_t, size_t, wchar_t, and wint_t.
+ */
+
 #ifdef __STDINT_LIMITS
-#  define SIG_ATOMIC_MIN  INT32_MIN
-#  define SIG_ATOMIC_MAX  INT32_MAX
-#endif
+#  define SIG_ATOMIC_MAX INT32_MAX
+#  define SIG_ATOMIC_MIN INT32_MIN
 
-/* Limits of wchar_t. */
-#ifdef __STDINT_LIMITS
-#include <sys/_wchar_limits.h>
-#endif
+#  define SIZE_MAX UINT32_MAX
 
-/* Limits of wint_t. */
-#ifdef __STDINT_LIMITS
-#  define WINT_MIN        INT32_MIN
-#  define WINT_MAX        INT32_MAX
-#endif
+#  ifndef WCHAR_MAX /* These might also have been defined by <wchar.h>. */
+#    define WCHAR_MAX INT32_MAX
+#    define WCHAR_MIN INT32_MIN
+#  endif
 
-/* size_t is defined by the GCC-specific <stddef.h> */
-#ifndef _SSIZE_T_DEFINED_
-#define _SSIZE_T_DEFINED_
-typedef long int  ssize_t;
+#  define WINT_MAX INT32_MAX
+#  define WINT_MIN INT32_MIN
 #endif
-
-#define _BITSIZE 32
 
 /* Keep the kernel from trying to define these types... */
 #define __BIT_TYPES_DEFINED__
