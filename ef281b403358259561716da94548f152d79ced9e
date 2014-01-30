@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92870a29_86eb9bcc",
+        "filename": "ndk/platforms/android-3/include/stdint.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-01-30T22:31:00Z",
+      "side": 1,
+      "message": "note that this file has changed again in bionic. __STDC_LIMIT_MACROS and __STDC_CONSTANT_MACROS no longer exist.",
+      "revId": "ef281b403358259561716da94548f152d79ced9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
