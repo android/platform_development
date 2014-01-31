@@ -16,6 +16,24 @@
       "revId": "ef281b403358259561716da94548f152d79ced9e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "929c6a85_049d3810",
+        "filename": "ndk/platforms/android-3/include/stdint.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1010578
+      },
+      "writtenOn": "2014-01-31T08:05:26Z",
+      "side": 1,
+      "message": "Thanks. I\u0027ll update.",
+      "parentUuid": "92870a29_86eb9bcc",
+      "revId": "ef281b403358259561716da94548f152d79ced9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
