@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b2d6ce80_4a9f937a",
+        "filename": "samples/SystemUI/DemoModeController/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1003403
+      },
+      "writtenOn": "2014-02-05T19:37:03Z",
+      "side": 1,
+      "message": "Should we explain what the various dragging directions do?",
+      "range": {
+        "startLine": 20,
+        "startChar": 30,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "239bdb1ac315648b4c0f6c976a1f45c0e242f12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2d6ce80_aa128f3e",
+        "filename": "samples/SystemUI/DemoModeController/src/com/example/android/demomodecontroller/DemoModeController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1003403
+      },
+      "writtenOn": "2014-02-05T19:37:03Z",
+      "side": 1,
+      "message": "weird little space here",
+      "range": {
+        "startLine": 17,
+        "startChar": 46,
+        "endLine": 17,
+        "endChar": 47
+      },
+      "revId": "239bdb1ac315648b4c0f6c976a1f45c0e242f12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "32cadede_267a5692",
+        "filename": "samples/SystemUI/DemoModeController/src/com/example/android/demomodecontroller/DemoModeController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1003403
+      },
+      "writtenOn": "2014-02-05T19:37:03Z",
+      "side": 1,
+      "message": "final here, and elsewhere",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 11
+      },
+      "revId": "239bdb1ac315648b4c0f6c976a1f45c0e242f12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2a7c221_abe0c9ea",
+        "filename": "samples/SystemUI/DemoModeController/src/com/example/android/demomodecontroller/DemoModeController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1003403
+      },
+      "writtenOn": "2014-02-05T19:37:03Z",
+      "side": 1,
+      "message": "just `action` will do here",
+      "range": {
+        "startLine": 111,
+        "startChar": 12,
+        "endLine": 111,
+        "endChar": 29
+      },
+      "revId": "239bdb1ac315648b4c0f6c976a1f45c0e242f12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "32cadede_66744ea2",
+        "filename": "samples/SystemUI/DemoModeController/src/com/example/android/demomodecontroller/DemoModeController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1003403
+      },
+      "writtenOn": "2014-02-05T19:37:03Z",
+      "side": 1,
+      "message": "might be nice to dump the output rgba as well as a #%08x",
+      "range": {
+        "startLine": 132,
+        "startChar": 41,
+        "endLine": 132,
+        "endChar": 47
+      },
+      "revId": "239bdb1ac315648b4c0f6c976a1f45c0e242f12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
