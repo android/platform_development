@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "32cadede_bacc99ab",
+        "filename": "samples/SystemUI/DemoModeController/src/com/example/android/demomodecontroller/DemoModeController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1003403
+      },
+      "writtenOn": "2014-02-07T03:35:44Z",
+      "side": 1,
+      "message": "I couldn\u0027t resist. :D",
+      "parentUuid": "d2a7c221_2bbfb992",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 11
+      },
+      "revId": "239bdb1ac315648b4c0f6c976a1f45c0e242f12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2a7c221_abe0c9ea",
         "filename": "samples/SystemUI/DemoModeController/src/com/example/android/demomodecontroller/DemoModeController.java",
         "patchSetId": 1
