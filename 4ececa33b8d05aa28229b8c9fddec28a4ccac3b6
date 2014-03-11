@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dcf7d997_06622298",
+        "filename": "samples/ApiDemos/src/com/example/android/apis/preference/PreferencesFromCode.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1002956
+      },
+      "writtenOn": "2014-03-11T19:52:13Z",
+      "side": 1,
+      "message": "setKey() should be called before addPreference(), otherwise the preference won\u0027t be saved properly. (Try rotating the screen to test.)\n\nI\u0027ll fix this for you in a followup commit. No action needed.",
+      "range": {
+        "startLine": 136,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 62
+      },
+      "revId": "4ececa33b8d05aa28229b8c9fddec28a4ccac3b6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
