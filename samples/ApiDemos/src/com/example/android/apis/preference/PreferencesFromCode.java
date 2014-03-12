@@ -32,7 +32,14 @@ import android.preference.SwitchPreference;
 
 public class PreferencesFromCode extends PreferenceActivity {
 
+    private static final String CHECKBOX_PREFERENCE = "checkbox_preference";
+    private static final String SWITCH_PREFERENCE = "switch_preference";
+    private static final String EDITTEXT_PREFERENCE = "edittext_preference";
+    private static final String LIST_PREFERENCE = "list_preference";
+    private static final String SCREEN_PREFERENCE = "screen_preference";
+    private static final String NEXT_SCREEN_TOGGLE_PREFERENCE = "next_screen_toggle_preference";
     private static final String PARENT_CHECKBOX_PREFERENCE = "parent_checkbox_preference";
+    private static final String CHILD_CHECKBOX_PREFERENCE = "child_checkbox_preference";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +58,14 @@ public class PreferencesFromCode extends PreferenceActivity {
 
         // Checkbox preference
         CheckBoxPreference checkboxPref = new CheckBoxPreference(this);
-        checkboxPref.setKey("checkbox_preference");
+        checkboxPref.setKey(CHECKBOX_PREFERENCE);
         checkboxPref.setTitle(R.string.title_checkbox_preference);
         checkboxPref.setSummary(R.string.summary_checkbox_preference);
         inlinePrefCat.addPreference(checkboxPref);
 
         // Switch preference
         SwitchPreference switchPref = new SwitchPreference(this);
-        switchPref.setKey("switch_preference");
+        switchPref.setKey(SWITCH_PREFERENCE);
         switchPref.setTitle(R.string.title_switch_preference);
         switchPref.setSummary(R.string.summary_switch_preference);
         inlinePrefCat.addPreference(switchPref);
@@ -71,7 +78,7 @@ public class PreferencesFromCode extends PreferenceActivity {
         // Edit text preference
         EditTextPreference editTextPref = new EditTextPreference(this);
         editTextPref.setDialogTitle(R.string.dialog_title_edittext_preference);
-        editTextPref.setKey("edittext_preference");
+        editTextPref.setKey(EDITTEXT_PREFERENCE);
         editTextPref.setTitle(R.string.title_edittext_preference);
         editTextPref.setSummary(R.string.summary_edittext_preference);
         dialogBasedPrefCat.addPreference(editTextPref);
@@ -81,7 +88,7 @@ public class PreferencesFromCode extends PreferenceActivity {
         listPref.setEntries(R.array.entries_list_preference);
         listPref.setEntryValues(R.array.entryvalues_list_preference);
         listPref.setDialogTitle(R.string.dialog_title_list_preference);
-        listPref.setKey("list_preference");
+        listPref.setKey(LIST_PREFERENCE);
         listPref.setTitle(R.string.title_list_preference);
         listPref.setSummary(R.string.summary_list_preference);
         dialogBasedPrefCat.addPreference(listPref);
@@ -98,7 +105,7 @@ public class PreferencesFromCode extends PreferenceActivity {
          */
         // Screen preference
         PreferenceScreen screenPref = getPreferenceManager().createPreferenceScreen(this);
-        screenPref.setKey("screen_preference");
+        screenPref.setKey(SCREEN_PREFERENCE);
         screenPref.setTitle(R.string.title_screen_preference);
         screenPref.setSummary(R.string.summary_screen_preference);
         launchPrefCat.addPreference(screenPref);
@@ -110,7 +117,7 @@ public class PreferencesFromCode extends PreferenceActivity {
 
         // Example of next screen toggle preference
         CheckBoxPreference nextScreenCheckBoxPref = new CheckBoxPreference(this);
-        nextScreenCheckBoxPref.setKey("next_screen_toggle_preference");
+        nextScreenCheckBoxPref.setKey(NEXT_SCREEN_TOGGLE_PREFERENCE);
         nextScreenCheckBoxPref.setTitle(R.string.title_next_screen_toggle_preference);
         nextScreenCheckBoxPref.setSummary(R.string.summary_next_screen_toggle_preference);
         screenPref.addPreference(nextScreenCheckBoxPref);
@@ -132,8 +139,8 @@ public class PreferencesFromCode extends PreferenceActivity {
         CheckBoxPreference parentCheckBoxPref = new CheckBoxPreference(this);
         parentCheckBoxPref.setTitle(R.string.title_parent_preference);
         parentCheckBoxPref.setSummary(R.string.summary_parent_preference);
-        prefAttrsCat.addPreference(parentCheckBoxPref);
         parentCheckBoxPref.setKey(PARENT_CHECKBOX_PREFERENCE);
+        prefAttrsCat.addPreference(parentCheckBoxPref);
 
         // Visual child toggle preference
         // See res/values/attrs.xml for the <declare-styleable> that defines
@@ -145,6 +152,7 @@ public class PreferencesFromCode extends PreferenceActivity {
         childCheckBoxPref.setLayoutResource(
                 a.getResourceId(R.styleable.TogglePrefAttrs_android_preferenceLayoutChild,
                         0));
+        parentCheckBoxPref.setKey(CHILD_CHECKBOX_PREFERENCE);
         prefAttrsCat.addPreference(childCheckBoxPref);
         childCheckBoxPref.setDependency(PARENT_CHECKBOX_PREFERENCE);
         a.recycle();
