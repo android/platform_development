@@ -43,8 +43,7 @@
 __BEGIN_DECLS
 
 #define sockaddr_storage __kernel_sockaddr_storage
-typedef __sa_family_t sa_family_t;
-typedef int socklen_t;
+typedef unsigned short sa_family_t;
 
 #ifdef __mips__
 #define SOCK_DGRAM      1
