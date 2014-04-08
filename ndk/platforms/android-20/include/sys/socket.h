@@ -107,14 +107,14 @@ struct cmsghdr {
   int cmsg_type;
 };
 
-#define __CMSG_NXTHDR(ctl, len, cmsg) __cmsg_nxthdr((ctl),(len),(cmsg))
-#define CMSG_NXTHDR(mhdr, cmsg) cmsg_nxthdr((mhdr), (cmsg))
+#define CMSG_NXTHDR(mhdr, cmsg) __cmsg_nxthdr((mhdr)->msg_control, (mhdr)->msg_controllen, (cmsg))
 #define CMSG_ALIGN(len) ( ((len)+sizeof(long)-1) & ~(sizeof(long)-1) )
 #define CMSG_DATA(cmsg) ((void*)((char*)(cmsg) + CMSG_ALIGN(sizeof(struct cmsghdr))))
 #define CMSG_SPACE(len) (CMSG_ALIGN(sizeof(struct cmsghdr)) + CMSG_ALIGN(len))
 #define CMSG_LEN(len) (CMSG_ALIGN(sizeof(struct cmsghdr)) + (len))
-#define __CMSG_FIRSTHDR(ctl,len) ((len) >= sizeof(struct cmsghdr) ?   (struct cmsghdr*)(ctl) :   (struct cmsghdr*)NULL)
-#define CMSG_FIRSTHDR(msg) __CMSG_FIRSTHDR((msg)->msg_control, (msg)->msg_controllen)
+#define CMSG_FIRSTHDR(msg) \
+  ((msg)->msg_controllen >= sizeof(struct cmsghdr) \
+   ? (struct cmsghdr*) (msg)->msg_control : (struct cmsghdr*) NULL)
 #define CMSG_OK(mhdr, cmsg) ((cmsg)->cmsg_len >= sizeof(struct cmsghdr) &&   (cmsg)->cmsg_len <= (unsigned long)   ((mhdr)->msg_controllen -   ((char*)(cmsg) - (char*)(mhdr)->msg_control)))
 
 #ifdef __GNUC__
@@ -132,10 +132,6 @@ __KINLINE struct cmsghdr* __cmsg_nxthdr(void* __ctl, size_t __size, struct cmsgh
     return NULL;
   }
   return __ptr;
-}
-
-__KINLINE struct cmsghdr* cmsg_nxthdr (struct msghdr* __msg, struct cmsghdr* __cmsg) {
-  return __cmsg_nxthdr(__msg->msg_control, __msg->msg_controllen, __cmsg);
 }
 
 #define SCM_RIGHTS 0x01
@@ -288,6 +284,7 @@ struct ucred {
 #endif
 
 __socketcall int accept(int, struct sockaddr*, socklen_t*);
+__socketcall int accept4(int, struct sockaddr*, socklen_t*, int);
 __socketcall int bind(int, const struct sockaddr*, int);
 __socketcall int connect(int, const struct sockaddr*, socklen_t);
 __socketcall int getpeername(int, struct sockaddr*, socklen_t*);
