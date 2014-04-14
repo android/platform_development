@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9980137b_64f62403",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-04-14T17:04:10Z",
+      "side": 1,
+      "message": "i still think you should sort these and just fix the comment. \"newer first\" doesn\u0027t make any sense. and did we really add arm after x86? seems unlikely.\n\nwhy isn\u0027t MIPS in the AOSP version? i thought i saw it in the internal version?",
+      "revId": "9649700787e393ce0b146ad8c40fa1a60ee5a809",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
