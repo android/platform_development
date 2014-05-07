@@ -55,8 +55,8 @@ typedef unsigned long sigset_t;
 #define SIGSYS 31
 #define SIGUNUSED 31
 
-#define SIGRTMIN 32
-#define SIGRTMAX _NSIG
+#define __SIGRTMIN 32
+#define __SIGRTMAX _NSIG
 
 #define SIGSWI 32
 
