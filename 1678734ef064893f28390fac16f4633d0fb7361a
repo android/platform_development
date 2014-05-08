@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a2b80c3_8c692737",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2014-05-08T20:48:48Z",
+      "side": 1,
+      "message": "A bit of a -1 here and these other CLs: although this works fine, please take the habit of documenting *in the file* why some lines are commented out. It\u0027s hard to git blame each time a line is commented out and people looking at it later won\u0027t know why it was commented out (was it to prevent an error, was it a local test, is there something wrong elsewhere, is it obsolete?)\n\nIn this case since it\u0027s not temporary I\u0027d have preferred we totally remove the lines. If you want to keep them please at least indicate why.\n\nI\u0027d strongly encourage you to go back to this and clean this up ASAP.",
+      "revId": "1678734ef064893f28390fac16f4633d0fb7361a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
