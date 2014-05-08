@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a6cc413_65515095",
+        "filename": "ndk/platforms/android-3/arch-arm/include/asm/signal.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2014-05-08T00:58:06Z",
+      "side": 1,
+      "message": "SIGRTMIN/MAX will be undefined then, and __libc_current_sigrtmin/max aren\u0027t available in old platforms (android-3..19)",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 18
+      },
+      "revId": "5022bf50cfb3c9bd38b63ec1ae7c8efd8084391f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
