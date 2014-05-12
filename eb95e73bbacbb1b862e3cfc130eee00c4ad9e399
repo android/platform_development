@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa26584d_b6fd86d6",
+        "filename": "ndk/sources/android/libportable/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000411
+      },
+      "writtenOn": "2014-05-12T13:09:45Z",
+      "side": 1,
+      "message": "Should this be LOCAL_SHARED_LIBRARIES +\u003d libdl instead?",
+      "revId": "eb95e73bbacbb1b862e3cfc130eee00c4ad9e399",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
