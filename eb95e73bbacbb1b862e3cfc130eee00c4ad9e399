@@ -16,6 +16,24 @@
       "revId": "eb95e73bbacbb1b862e3cfc130eee00c4ad9e399",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a16bcdd_61e88c8a",
+        "filename": "ndk/sources/android/libportable/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2014-05-12T13:16:21Z",
+      "side": 1,
+      "message": "Ying\u0027s recent fix in build/ allow target to use LOCAL_LDLIBS as well: de36cd72e8e5a154c1fedf63e1ea83af9d5288aa.\n\nI found libcts* need -ldl too.  Potentially other places linnking cpu-fetures needs -ldl.  Shall we make EXPORT_LOCAL_LDLIBS work instead?",
+      "parentUuid": "aa26584d_b6fd86d6",
+      "revId": "eb95e73bbacbb1b862e3cfc130eee00c4ad9e399",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
