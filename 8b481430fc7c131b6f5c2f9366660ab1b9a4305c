@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa26584d_53b44410",
+        "filename": "ndk/platforms/android-17/samples/Teapot/jni/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1002068
+      },
+      "writtenOn": "2014-05-12T06:56:23Z",
+      "side": 1,
+      "message": "Why do these samples still add the -mhard-float flags manually? Shouldn\u0027t these flags already be added automatically if building for the armeabi-v7a-hard target, making it redundant (and confusing) to add them manually here as well?",
+      "revId": "8b481430fc7c131b6f5c2f9366660ab1b9a4305c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
