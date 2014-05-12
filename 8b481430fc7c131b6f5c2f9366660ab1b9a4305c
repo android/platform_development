@@ -16,6 +16,24 @@
       "revId": "8b481430fc7c131b6f5c2f9366660ab1b9a4305c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aa4d7811_81e59eb3",
+        "filename": "ndk/platforms/android-17/samples/Teapot/jni/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1010186
+      },
+      "writtenOn": "2014-05-12T08:04:07Z",
+      "side": 1,
+      "message": "You are absolutely right.  Thanks for catching this.  Now I remember why the author checked for armeabi-v7a to force -mhard-float: sample Teapot and MoreTeapots and ndk_helper were written before API_ABI\u003darmeabi-v7a-hard was supported in ndk-build.  Now that ndk-build automatically add those flags for armeabi-v7a-hard, we should remove this check altogether.",
+      "parentUuid": "aa26584d_53b44410",
+      "revId": "8b481430fc7c131b6f5c2f9366660ab1b9a4305c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
