@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca71cc8d_0952cf24",
+        "filename": "build/tools/sdk_repo.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001414
+      },
+      "writtenOn": "2014-05-16T04:26:40Z",
+      "side": 1,
+      "message": "super readable... :)",
+      "range": {
+        "startLine": 32,
+        "startChar": 24,
+        "endLine": 32,
+        "endChar": 45
+      },
+      "revId": "ea40d2f4c5af9744f7140a31d551a55dade128d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
