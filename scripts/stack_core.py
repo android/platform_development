@@ -62,14 +62,45 @@ def ConvertTrace(lines):
   """Convert strings containing native crash to a stack."""
   process_info_line = re.compile("(pid: [0-9]+, tid: [0-9]+.*)")
   signal_line = re.compile("(signal [0-9]+ \(.*\).*)")
-  register_line = re.compile("(([ ]*[0-9a-z]{2} [0-9a-f]{8}){4})")
   thread_line = re.compile("(.*)(\-\-\- ){15}\-\-\-")
   dalvik_jni_thread_line = re.compile("(\".*\" prio=[0-9]+ tid=[0-9]+ NATIVE.*)")
   dalvik_native_thread_line = re.compile("(\".*\" sysTid=[0-9]+ nice=[0-9]+.*)")
 
+  register_line_64_bit = re.compile("(([ ]*[0-9a-z]{2,3}[ ]+[0-9a-f]{16}){2,})")
+  register_line_32_bit = re.compile("(([ ]*[0-9a-z]{2,3}[ ]+[0-9a-f]{8}){2,})")
+
+  for ln in lines:
+    line = unicode(ln, errors='ignore')
+    register_line_64 = register_line_64_bit.search(line)
+    register_line_32 = register_line_32_bit.search(line)
+
+    register_line = ''
+    if register_line_64:
+      register_line = register_line_64.group(0).strip()
+    if register_line_32:
+      register_line = register_line_32.group(0).strip()
+
+    if register_line.startswith("x0 "):
+      symbol.ARCH = "arm64"
+    elif register_line.startswith("r0 "):
+      symbol.ARCH = "arm"
+    elif register_line.startswith("EAX "):
+      symbol.ARCH = "x86"
+    elif register_line.startswith("RAX "):
+      symbol.ARCH = "x86_64"
+    elif register_line.startswith("zr "):
+      symbol.ARCH = "mips"
+
+    # We only attempt to match the first register line, so break unconditionally
+    # if we can't match with the first register line.
+    if register_line:
+      break
+
   width = "{8}"
+  register_line = register_line_32_bit
   if symbol.ARCH == "arm64" or symbol.ARCH == "x86_64":
     width = "{16}"
+    register_line = register_line_64_bit
 
   # Note that both trace and value line matching allow for variable amounts of
   # whitespace (e.g. \t). This is because the we want to allow for the stack
