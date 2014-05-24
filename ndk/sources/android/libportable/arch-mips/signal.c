@@ -871,16 +871,21 @@ int WRAP(kill)(pid_t pid, int portable_signum)
 }
 
 
+/* tkill is no longer exported from android libc.so */
+static int mips_tkill(int tid, int mips_signum)
+{
+    return syscall(__NR_tkill, tid, mips_signum);
+}
+
 int WRAP(tkill)(int tid, int portable_signum)
 {
-    extern int REAL(tkill)(int, int);
     int rv;
 
     ALOGV(" ");
     ALOGV("%s(tid:%d, portable_signum:%d) {", __func__,
               tid,    portable_signum);
 
-    rv = do_kill(tid, portable_signum, REAL(tkill));
+    rv = do_kill(tid, portable_signum, mips_tkill);
 
     ALOGV("%s: return(rv:%d); }", __func__, rv);
     return rv;

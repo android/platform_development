@@ -23,6 +23,8 @@
 #include <log_portable.h>
 
 
+/* __sflags is no longer exported from android libc.so */
+#if 0
 /* __sflags is an internal bionic routine but the symbol is exported and there are callers... */
 extern int __sflags(const char *, int *);
 
@@ -56,3 +58,4 @@ done:
     ALOGV("%s: return(rv:%d); }", __func__, rv);
     return rv;
 }
+#endif
