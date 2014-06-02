@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfe21c19_c0f5eeec",
+        "filename": "ndk/platforms/android-20/include/sys/cdefs.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 1010578
+      },
+      "writtenOn": "2014-06-02T18:22:31Z",
+      "side": 1,
+      "message": "Can we update it from bionic? It doesn\u0027t have this issue now.",
+      "range": {
+        "startLine": 581,
+        "startChar": 12,
+        "endLine": 581,
+        "endChar": 23
+      },
+      "revId": "e85f942ec6828c1b582c5fa72caeda9c77061c07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
