@@ -146,3 +146,17 @@ ANDROID_SUPPORT_LIBRARIES := \
     android-support-v13
 
 $(foreach lib, $(ANDROID_SUPPORT_LIBRARIES), $(eval $(call _package_sdk_library,$(lib))))
+
+# ======= Lint API XML ===========
+
+ALL_SDK_FILES += $(HOST_OUT)/development/sdk/generated-api-versions.xml
+
+$(HOST_OUT)/development/sdk/generated-api-versions.xml :
+	java -cp $(TOPDIR)prebuilts/tools/common/api-generator/api-generator-22.9.0.jar:$(TOPDIR)prebuilts/tools/common/kxml2-tools/kxml2-2.3.0.jar:$(TOPDIR)prebuilts/tools/common/asm-tools/asm-4.0.jar:$(TOPDIR)prebuilts/tools/common/asm-tools/asm-tree-4.0.jar:$(TOPDIR)prebuilts/devtools/tools/lib/common.jar \
+	  com.android.apigenerator.Main \
+	  --min-api 3 \
+	  --prebuilt \
+	  $(TOPDIR)prebuilts/sdk/ \
+	  $<
+
+
