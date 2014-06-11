@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f804079_30eb768b",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-11T16:50:07Z",
+      "side": 1,
+      "message": "this is non-obvious enough that we should have a function like CleanLine and move the comment below to that function.",
+      "revId": "be41a1b7df566375d4aab01ebc9eb49501e939db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f804079_50e8fa8b",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-11T16:50:07Z",
+      "side": 1,
+      "message": "and stop there?",
+      "revId": "be41a1b7df566375d4aab01ebc9eb49501e939db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f854c8a_6fbd1d50",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-11T16:50:07Z",
+      "side": 1,
+      "message": "\u0027m\u0027 \u003c \u0027x\u0027\n\nas always, if there\u0027s no meaning to the order of things, default to alphabetical.",
+      "revId": "be41a1b7df566375d4aab01ebc9eb49501e939db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
