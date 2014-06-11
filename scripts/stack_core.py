@@ -61,6 +61,7 @@ def PrintDivider():
 def ConvertTrace(lines):
   """Convert strings containing native crash to a stack."""
   process_info_line = re.compile("(pid: [0-9]+, tid: [0-9]+.*)")
+  abi_line = re.compile("(ABI: \'.*\')")
   signal_line = re.compile("(signal [0-9]+ \(.*\).*)")
   register_line = re.compile("(([ ]*[0-9a-z]{2} [0-9a-f]{8}){4})")
   thread_line = re.compile("(.*)(\-\-\- ){15}\-\-\-")
@@ -68,7 +69,7 @@ def ConvertTrace(lines):
   dalvik_native_thread_line = re.compile("(\".*\" sysTid=[0-9]+ nice=[0-9]+.*)")
 
   width = "{8}"
-  if symbol.ARCH == "arm64" or symbol.ARCH == "x86_64":
+  if symbol.ARCH == "arm64" or symbol.ARCH == "x86_64" or symbol.ARCH == "mips64":
     width = "{16}"
 
   # Note that both trace and value line matching allow for variable amounts of
@@ -113,11 +114,11 @@ def ConvertTrace(lines):
     line = unicode(ln, errors='ignore')
     process_header = process_info_line.search(line)
     signal_header = signal_line.search(line)
-    register_header = register_line.search(line)
     thread_header = thread_line.search(line)
+    abi_header = abi_line.search(line)
     dalvik_jni_thread_header = dalvik_jni_thread_line.search(line)
     dalvik_native_thread_header = dalvik_native_thread_line.search(line)
-    if process_header or signal_header or register_header or thread_header \
+    if process_header or signal_header or thread_header or abi_header\
         or dalvik_jni_thread_header or dalvik_native_thread_header:
       if trace_lines or value_lines:
         PrintOutput(trace_lines, value_lines)
@@ -129,14 +130,14 @@ def ConvertTrace(lines):
         print process_header.group(1)
       if signal_header:
         print signal_header.group(1)
-      if register_header:
-        print register_header.group(1)
       if thread_header:
         print thread_header.group(1)
       if dalvik_jni_thread_header:
         print dalvik_jni_thread_header.group(1)
       if dalvik_native_thread_header:
         print dalvik_native_thread_header.group(1)
+      if abi_header:
+        print abi_header.group(1)
       continue
     if trace_line.match(line):
       match = trace_line.match(line)
