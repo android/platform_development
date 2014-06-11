@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f854c8a_09ce51f6",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-11T03:04:51Z",
+      "side": 1,
+      "message": "you\u0027re supposed to use the abi_line regex to match the ABI in lines and set symbol.ARCH to the abi.\n\n(so you\u0027ll need to add a \"capturing group\" to your regular expression on line 64.)\n\nyou can search (or use your IDE) to see what else ARCH is used for: https://cs.corp.google.com/#search/\u0026q\u003d%5CbARCH%5Cb%20package:%5Eandroid$%20file:(%5Edevelopment/scripts/)\u0026type\u003dcs\u0026m\u003d100\u0026sort\u003d1",
+      "parentUuid": "5f804079_07155a0e",
+      "revId": "13e9eaa91e40cb3339df24e3cc10055410cf299d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f854c8a_a61d92fc",
         "filename": "scripts/stack_core.py",
         "patchSetId": 1
@@ -30,6 +48,41 @@
       "writtenOn": "2014-06-11T00:39:56Z",
       "side": 1,
       "message": "I removed these register lines because they also seemed useful specifically for detecting the ABI, but if they were also wanted as part of the output, I\u0027ll put them back.  I\u0027m not sure what parts of this are useful.",
+      "revId": "13e9eaa91e40cb3339df24e3cc10055410cf299d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7b4460_e526b0a9",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-11T03:04:51Z",
+      "side": 1,
+      "message": "what happens currently when you paste a crash into this tool? what changes if you remove the register_header lines?",
+      "parentUuid": "3f854c8a_a61d92fc",
+      "revId": "13e9eaa91e40cb3339df24e3cc10055410cf299d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7b4460_052c7488",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-11T03:04:51Z",
+      "side": 1,
+      "message": "what does this do currently? what did you intend it to do?",
       "revId": "13e9eaa91e40cb3339df24e3cc10055410cf299d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
