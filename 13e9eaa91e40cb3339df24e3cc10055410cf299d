@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f804079_07155a0e",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1047249
+      },
+      "writtenOn": "2014-06-11T00:39:56Z",
+      "side": 1,
+      "message": "Should I be setting this symbol.ARCH to match a selection I pull out of the abi regex?  Is it even necessary if we\u0027re not matching register lengths?  I left it for now but it isn\u0027t used anywhere else in here.",
+      "revId": "13e9eaa91e40cb3339df24e3cc10055410cf299d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f854c8a_a61d92fc",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1047249
+      },
+      "writtenOn": "2014-06-11T00:39:56Z",
+      "side": 1,
+      "message": "I removed these register lines because they also seemed useful specifically for detecting the ABI, but if they were also wanted as part of the output, I\u0027ll put them back.  I\u0027m not sure what parts of this are useful.",
+      "revId": "13e9eaa91e40cb3339df24e3cc10055410cf299d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
