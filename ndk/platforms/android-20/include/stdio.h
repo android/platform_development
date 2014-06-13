@@ -296,12 +296,10 @@ __END_DECLS
  */
 #if __BSD_VISIBLE || __POSIX_VISIBLE || __XPG_VISIBLE
 #define	L_ctermid	1024	/* size for ctermid(); PATH_MAX */
-#define L_cuserid	9	/* size for cuserid(); UT_NAMESIZE + 1 */
 
 __BEGIN_DECLS
 #if 0 /* MISSING FROM BIONIC */
 char	*ctermid(char *);
-char	*cuserid(char *);
 #endif /* MISSING */
 FILE	*fdopen(int, const char *);
 int	 fileno(FILE *);
@@ -339,8 +337,6 @@ int	 asprintf(char ** __restrict, const char * __restrict, ...)
 		__printflike(2, 3);
 char	*fgetln(FILE * __restrict, size_t * __restrict);
 int	 fpurge(FILE *);
-int	 getw(FILE *);
-int	 putw(int, FILE *);
 void	 setbuffer(FILE *, char *, int);
 int	 setlinebuf(FILE *);
 int	 vasprintf(char ** __restrict, const char * __restrict,

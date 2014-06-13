@@ -1,6 +1,3 @@
-MD5_Final
-MD5_Init
-MD5_Update
 SHA1Final
 SHA1Init
 SHA1Transform
@@ -53,7 +50,6 @@ __deregister_frame_info_bases
 __dn_comp
 __dn_count_labels
 __dn_skipname
-__dorand48
 __errno
 __evAddTime
 __evCmpTime
@@ -89,7 +85,6 @@ __isnormalf
 __isnormall
 __libc_current_sigrtmax
 __libc_current_sigrtmin
-__libc_fini
 __libc_init
 __loc_aton
 __loc_ntoa
@@ -272,14 +267,13 @@ atol
 atoll
 basename
 basename_r
-bcopy
 bind
 bindresvport
 brk
-bsd_signal
 bsearch
 btowc
-bzero
+c16rtomb
+c32rtomb
 calloc
 capget
 capset
@@ -304,7 +298,6 @@ clone
 close
 closedir
 closelog
-closelog_r
 cmsg_nxthdr
 connect
 creat
@@ -318,28 +311,8 @@ dirfd
 dirname
 dirname_r
 div
-dlbulk_free
-dlcalloc
-dlfree
-dlindependent_calloc
-dlindependent_comalloc
-dlmallinfo
-dlmalloc
-dlmalloc_footprint
-dlmalloc_footprint_limit
 dlmalloc_inspect_all
-dlmalloc_max_footprint
-dlmalloc_set_footprint_limit
-dlmalloc_stats
 dlmalloc_trim
-dlmalloc_usable_size
-dlmallopt
-dlmemalign
-dlposix_memalign
-dlpvalloc
-dlrealloc
-dlrealloc_in_place
-dlvalloc
 dn_expand
 dprintf
 drand48
@@ -464,7 +437,6 @@ getchar
 getchar_unlocked
 getcwd
 getdelim
-getdents
 getdtablesize
 getegid
 getenv
@@ -537,7 +509,6 @@ if_indextoname
 if_nametoindex
 imaxabs
 imaxdiv
-index
 inet_addr
 inet_aton
 inet_lnaof
@@ -619,7 +590,6 @@ localtime
 localtime_r
 localtime_tz
 longjmp
-longjmperror
 lrand48
 lremovexattr
 lsearch
@@ -633,6 +603,8 @@ mallinfo
 malloc
 malloc_usable_size
 mbrlen
+mbrtoc16
+mbrtoc32
 mbrtowc
 mbsinit
 mbsnrtowcs
@@ -688,7 +660,6 @@ openat
 openat64
 opendir
 openlog
-openlog_r
 pathconf
 pause
 pclose
@@ -881,7 +852,6 @@ setjmp
 setlinebuf
 setlocale
 setlogmask
-setlogmask_r
 setmntent
 setns
 setpgid
@@ -991,9 +961,7 @@ syscall
 sysconf
 sysinfo
 syslog
-syslog_r
 system
-sysv_signal
 tcdrain
 tcflow
 tcflush
@@ -1070,7 +1038,6 @@ vsscanf
 vswprintf
 vswscanf
 vsyslog
-vsyslog_r
 vwarn
 vwarnx
 vwprintf
@@ -1119,7 +1086,6 @@ wcstombs
 wcstoul
 wcstoull
 wcstoumax
-wcswcs
 wcswidth
 wcsxfrm
 wctob

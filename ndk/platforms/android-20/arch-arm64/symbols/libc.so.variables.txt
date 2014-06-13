@@ -5,7 +5,6 @@ _ZSt7nothrow
 __atexit
 __atexit_invalid
 __isthreaded
-__libc_malloc_default_dispatch
 __libc_malloc_dispatch
 __p_cert_syms
 __p_class_syms
@@ -13,9 +12,6 @@ __p_key_syms
 __p_rcode_syms
 __p_type_syms
 __progname
-__rand48_add
-__rand48_mult
-__rand48_seed
 __sF
 __stack_chk_guard
 __system_property_area__

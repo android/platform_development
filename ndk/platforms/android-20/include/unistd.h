@@ -54,7 +54,7 @@ extern __noreturn void _exit(int);
 extern pid_t  fork(void);
 extern pid_t  vfork(void);
 extern pid_t  getpid(void);
-extern pid_t  gettid(void);
+extern pid_t  gettid(void) __pure2;
 extern pid_t  getpgid(pid_t);
 extern int    setpgid(pid_t, pid_t);
 extern pid_t  getppid(void);

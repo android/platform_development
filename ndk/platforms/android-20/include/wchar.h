@@ -138,7 +138,6 @@ extern long long wcstoll(const wchar_t*, wchar_t**, int);
 extern long double wcstold(const wchar_t*, wchar_t**);
 extern unsigned long wcstoul(const wchar_t*, wchar_t**, int);
 extern unsigned long long wcstoull(const wchar_t*, wchar_t**, int);
-extern wchar_t          *wcswcs(const wchar_t *, const wchar_t *);
 extern int               wcswidth(const wchar_t *, size_t);
 extern size_t            wcsxfrm(wchar_t *, const wchar_t *, size_t);
 extern int               wctob(wint_t);

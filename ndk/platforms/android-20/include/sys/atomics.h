@@ -31,19 +31,10 @@
 #include <sys/cdefs.h>
 #include <sys/time.h>
 
+/* Note: this is only in the preview release. */
+
 __BEGIN_DECLS
 
-/* Note: atomic operations that were exported by the C library didn't
- *       provide any memory barriers, which created potential issues on
- *       multi-core devices. We now define them as inlined calls to
- *       GCC sync builtins, which always provide a full barrier.
- *
- *       NOTE: The C library still exports atomic functions by the same
- *              name to ensure ABI stability for existing NDK machine code.
- *
- *       If you are an NDK developer, we encourage you to rebuild your
- *       unmodified sources against this header as soon as possible.
- */
 #define __ATOMIC_INLINE__ static __inline__ __attribute__((always_inline))
 
 __ATOMIC_INLINE__ int
@@ -75,9 +66,6 @@ __atomic_inc(volatile int *ptr)
   return __sync_fetch_and_add (ptr, 1);
 }
 
-
-int __futex_wait(volatile void *ftx, int val, const struct timespec *timeout);
-int __futex_wake(volatile void *ftx, int count);
 
 __END_DECLS
 
