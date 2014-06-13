@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e8057_376b8032",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-13T23:50:33Z",
+      "side": 1,
+      "message": "this only cleans one line.",
+      "revId": "7295420d7a488e6e83c8f2b84502e1f22d04c379",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
