@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf713c8e_e09767ef",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2014-06-14T02:02:37Z",
+      "side": 1,
+      "message": "This function is dead.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 14
+      },
+      "revId": "695243f0ba9c952f18d5ec56d43fc13dbedea0bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf713c8e_a08e4fd8",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2014-06-14T02:02:37Z",
+      "side": 1,
+      "message": "Why is this comment here? This and the one below are kind of odd.\n\nIs it supposed to be an example?",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 86
+      },
+      "revId": "695243f0ba9c952f18d5ec56d43fc13dbedea0bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e8057_a571f663",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2014-06-14T02:02:37Z",
+      "side": 1,
+      "message": "Can you add a check to verify that tc1 is set? If not, add an error about doing a lunch first or something similar?",
+      "range": {
+        "startLine": 88,
+        "startChar": 2,
+        "endLine": 88,
+        "endChar": 48
+      },
+      "revId": "695243f0ba9c952f18d5ec56d43fc13dbedea0bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
