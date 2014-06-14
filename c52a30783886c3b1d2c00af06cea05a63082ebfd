@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df74307d_77b6bac6",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-14T00:25:42Z",
+      "side": 1,
+      "message": "this bug already existed. we should come back and come up with a way to work out the appropriate GCC version. for now this means that at times like now where the primary and secondary architectures are using different versions of GCC (4.9 and 4.8 for arm64 and arm) we\u0027ll fail to find a toolchain for the secondary.\n\nyour patch fixes arm64, though, and i\u0027ve added x86_64 support on line 93 (and corrected the typo we noticed on L105).",
+      "revId": "c52a30783886c3b1d2c00af06cea05a63082ebfd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
