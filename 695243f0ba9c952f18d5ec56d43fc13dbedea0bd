@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f4e8057_600c5ccb",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-15T01:14:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf713c8e_e09767ef",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 14
+      },
+      "revId": "695243f0ba9c952f18d5ec56d43fc13dbedea0bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf713c8e_a08e4fd8",
         "filename": "scripts/symbol.py",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "df74307d_d815fb12",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-15T01:14:19Z",
+      "side": 1,
+      "message": "yeah, but anyone who cares can always print the values. (this was the obvious place to give an example, but it\u0027s actually more useful in ToolPath. yagni.)",
+      "parentUuid": "bf713c8e_a08e4fd8",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 86
+      },
+      "revId": "695243f0ba9c952f18d5ec56d43fc13dbedea0bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f4e8057_a571f663",
         "filename": "scripts/symbol.py",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2014-06-14T02:02:37Z",
       "side": 1,
       "message": "Can you add a check to verify that tc1 is set? If not, add an error about doing a lunch first or something similar?",
+      "range": {
+        "startLine": 88,
+        "startChar": 2,
+        "endLine": 88,
+        "endChar": 48
+      },
+      "revId": "695243f0ba9c952f18d5ec56d43fc13dbedea0bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e8057_c04508d4",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-15T01:14:19Z",
+      "side": 1,
+      "message": "the behavior\u0027s the same as before --- you\u0027ll get a KeyError on os.environ, only now it\u0027s looking up ANDROID_TOOLCHAIN rather than TARGET_GCC_VERSION.",
+      "parentUuid": "5f4e8057_a571f663",
       "range": {
         "startLine": 88,
         "startChar": 2,
