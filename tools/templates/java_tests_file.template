@@ -15,7 +15,7 @@ import android.test.ActivityInstrumentationTestCase2;
 public class ACTIVITY_CLASS_NAME extends ActivityInstrumentationTestCase2<ACTIVITY_TESTED_CLASS_NAME> {
 
     public ACTIVITY_CLASS_NAME() {
-        super("PACKAGE", ACTIVITY_TESTED_CLASS_NAME.class);
+        super(ACTIVITY_TESTED_CLASS_NAME.class);
     }
 
 }
