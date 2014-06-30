@@ -18,7 +18,6 @@
 
 import getopt
 import sys
-
 import stack_core
 import symbol
 
@@ -69,8 +68,9 @@ def main():
   lines = f.readlines()
   f.close()
 
+  tracer = stack_core.TraceConverter(lines)
   print "Reading symbols from", symbol.SYMBOLS_DIR
-  stack_core.ConvertTrace(lines)
+  tracer.ConvertTrace(lines)
 
 if __name__ == "__main__":
   main()
