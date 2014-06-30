@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c429c520_c90421b0",
+        "filename": "scripts/stack",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 1,
+      "message": "you could just keep a ConvertTrace function in stack_core that creates the temporary object. that way the callers don\u0027t have to change. (helpful because there\u0027s the Google-internal version of stack for production builds, and we don\u0027t want to have to change that if we don\u0027t have to.)",
+      "revId": "1ce79f0432b4d2b1abbcafa7f47c86ab39f9f330",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04759d3d_54b68418",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 1,
+      "message": "?",
+      "revId": "1ce79f0432b4d2b1abbcafa7f47c86ab39f9f330",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04759d3d_943e2ca7",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 1,
+      "message": "these must be lower case. they\u0027re supposed to match the strings in /proc/maps. honestly, i don\u0027t think there\u0027s any value to making them variables. especially since they\u0027re only used in two places, and it\u0027s more obvious what they are if you see \"[heap]\". (don\u0027t assume that whoever touched this file last knew what they were doing!)\n\n(also, checking for \"[stack]\" but not \"[stack:%d]\" seems odd.)",
+      "revId": "1ce79f0432b4d2b1abbcafa7f47c86ab39f9f330",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04759d3d_549f647e",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 1,
+      "message": "you typically don\u0027t want to do so much work in a constructor. will we even have all the lines available at this point in adbs? if we do, why do we need this refactoring at all? surely then we could just use the existing function?",
+      "revId": "1ce79f0432b4d2b1abbcafa7f47c86ab39f9f330",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e45a49dc_0599b297",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 1,
+      "message": "so this is your basic problem, right? you have some regular expressions that depend on the ABI.\n\nwhat you need is a state machine. luckily, it\u0027s a really simple one. basically, you check whether every line you get is an \"ABI\" line. if it is, you update your ABI-dependent regular expressions. if it isn\u0027t, you check whether it\u0027s one of the other kinds of line you care about.\n\none thing to watch out for is if you see one of the special lines before you see an ABI line. imagine the ABI line just scrolled off the top of the logcat output, for example, or someone copies \u0026 pastes incorrectly. even though it _shouldn\u0027t_ happen, it can, and we don\u0027t want to just crash.",
+      "revId": "1ce79f0432b4d2b1abbcafa7f47c86ab39f9f330",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04759d3d_f449b047",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 1,
+      "message": "(we do need to remember to check that \u0027stack\u0027 can cope with the whole of a new tombstone file. we should probably add some unit tests; a 32-bit crash, a 64-bit crash, a small tombstone [from crasher thread-abort, say].)",
+      "revId": "1ce79f0432b4d2b1abbcafa7f47c86ab39f9f330",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04759d3d_d41b545d",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 1,
+      "message": "yeah, this probably isn\u0027t useful unless you turn it into a global function; the only use is to keep the existing \u0027stack\u0027 tool running, right?",
+      "revId": "1ce79f0432b4d2b1abbcafa7f47c86ab39f9f330",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}

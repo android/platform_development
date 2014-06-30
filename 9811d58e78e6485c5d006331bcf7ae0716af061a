@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04759d3d_b4d00831",
+        "filename": "scripts/stack",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-06-30T23:39:42Z",
+      "side": 0,
+      "message": "(i think the intention here was to separate \"system\" libraries from home-grown ones. it\u0027s quite common to do this in many languages.)",
+      "revId": "9811d58e78e6485c5d006331bcf7ae0716af061a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
