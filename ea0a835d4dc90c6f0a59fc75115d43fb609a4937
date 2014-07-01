@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04f3dd1b_e4a04e50",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-01T18:57:06Z",
+      "side": 1,
+      "message": "maybe use None and then have \"if register_line is not None and register_line...\" instead? or we could default to 32 or 64.",
+      "revId": "ea0a835d4dc90c6f0a59fc75115d43fb609a4937",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
