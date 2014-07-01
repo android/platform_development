@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "04f3dd1b_e434ce01",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1047249
+      },
+      "writtenOn": "2014-07-01T18:18:26Z",
+      "side": 1,
+      "message": "I wanted a regex that won\u0027t match anything at first, since until these are set they are still going to be checked in the ProcessLine function (i.e. in a case where the ABI line comes in the wrong order).  $a was the answer that stack overflow gave for something that won\u0027t match anything (since when will a single line have anything after the end of it), but if there\u0027s a better option for that here, I can do that.",
+      "parentUuid": "a454d1b1_c6a0849b",
+      "revId": "514834d11349e1b2853aef388916bc1aec5c85b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e45a49dc_88adb777",
         "filename": "scripts/stack_core.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2014-07-01T18:12:21Z",
       "side": 1,
       "message": "unused?",
+      "revId": "514834d11349e1b2853aef388916bc1aec5c85b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24ee2135_a5012a2a",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1047249
+      },
+      "writtenOn": "2014-07-01T18:18:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a454d1b1_e6a580a8",
       "revId": "514834d11349e1b2853aef388916bc1aec5c85b0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
