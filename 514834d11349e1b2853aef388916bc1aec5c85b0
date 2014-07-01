@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a454d1b1_c6a0849b",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-01T18:12:21Z",
+      "side": 1,
+      "message": "why $a?",
+      "revId": "514834d11349e1b2853aef388916bc1aec5c85b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a454d1b1_e6a580a8",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-01T18:12:21Z",
+      "side": 1,
+      "message": "unused?",
+      "revId": "514834d11349e1b2853aef388916bc1aec5c85b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
