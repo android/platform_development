@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "440235bc_f86c718b",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-01T19:25:39Z",
+      "side": 1,
+      "message": "although it\u0027s .../aarch64/aarch64-linux-..., it\u0027s .../mips/mipsel-linux-..., so i\u0027ve removed the first part and added the \"linux-\" to try to compensate.",
+      "revId": "1ba94df0c91c3a4cca34d4a41d641f59b454d8f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
