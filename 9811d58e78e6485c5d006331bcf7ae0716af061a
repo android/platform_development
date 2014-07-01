@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04f3dd1b_b85e6953",
+        "filename": "scripts/stack",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-01T23:34:23Z",
+      "side": 0,
+      "message": "this change is already in. do you need to rebase?",
+      "revId": "9811d58e78e6485c5d006331bcf7ae0716af061a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84d6ed80_8ad86b8a",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-01T23:34:23Z",
+      "side": 0,
+      "message": "yeah, this diff looks very wrong. the red stuff should be your previous comment, where we have the class but without the tweaks like using None instead of \"$a\", but it looks like it\u0027s actually the previous commit (from before your refactoring).\n\ndid you \"repo start\" without doing a sync/prune first?",
+      "revId": "9811d58e78e6485c5d006331bcf7ae0716af061a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
