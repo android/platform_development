@@ -16,6 +16,24 @@
       "revId": "8e928f8aab4cc3f6eddd14913418666c1fcd4051",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4462542_75341a64",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1047249
+      },
+      "writtenOn": "2014-07-07T18:02:24Z",
+      "side": 1,
+      "message": "I do, it\u0027s just that python\u0027s scoping-via-whitespace makes this annoying difficult to decipher.",
+      "parentUuid": "c4c385c9_58b92d62",
+      "revId": "8e928f8aab4cc3f6eddd14913418666c1fcd4051",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
