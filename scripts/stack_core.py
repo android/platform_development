@@ -137,6 +137,7 @@ class TraceConverter:
     self.PrintOutput(self.trace_lines, self.value_lines)
 
   def ProcessLine(self, line):
+    ret = False
     process_header = self.process_info_line.search(line)
     signal_header = self.signal_line.search(line)
     abort_message_header = self.abort_message_line.search(line)
@@ -147,6 +148,7 @@ class TraceConverter:
     dalvik_native_thread_header = self.dalvik_native_thread_line.search(line)
     if process_header or signal_header or abort_message_header or thread_header or abi_header or \
         register_header or dalvik_jni_thread_header or dalvik_native_thread_header:
+      ret = True
       if self.trace_lines or self.value_lines:
         self.PrintOutput(self.trace_lines, self.value_lines)
         self.PrintDivider()
@@ -237,7 +239,7 @@ class TraceConverter:
                             object_symbol_with_offset,
                             source_location))
 
-    #self.PrintOutput(self.trace_lines, self.value_lines)
+    return ret
 
 
 example_arm_crash = """
