@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4c385c9_58b92d62",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-07T17:46:29Z",
+      "side": 1,
+      "message": "why don\u0027t you need True here too?",
+      "revId": "8e928f8aab4cc3f6eddd14913418666c1fcd4051",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
