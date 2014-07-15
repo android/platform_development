@@ -58,6 +58,8 @@ class TraceConverter:
   def UpdateAbiRegexes(self):
     if symbol.ARCH == "arm64" or symbol.ARCH == "mips64" or symbol.ARCH == "x86_64":
       self.width = "{16}"
+    else:
+      self.width = "{8}"
 
     self.register_line = re.compile("(([ ]*\\b(" + self.register_names[symbol.ARCH] + ")\\b +[0-9a-f]" + self.width + "){2,5})")
 

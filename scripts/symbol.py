@@ -42,8 +42,6 @@ def FindSymbolsDir():
 
 SYMBOLS_DIR = FindSymbolsDir()
 
-ARCH = "arm"
-
 TOOLCHAIN = None
 
 def ToolPath(tool, toolchain=None):
