@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39f48cd0_efc9013c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-07-16T23:42:42Z",
+      "side": 1,
+      "message": "more importantly, it lets people decode stacks from \"old\" builds. like if you have a KitKat crash, say.",
+      "revId": "15142f793a5418be7337846c1b3b628d90716f3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
