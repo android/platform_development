@@ -31,6 +31,25 @@
 #include <linux/prctl.h>
 #include <sys/cdefs.h>
 
+/* These should appear in the uapi headers at some point, but they're not there right now. */
+#if !defined(PR_SET_TIMERSLACK_PID)
+#define PR_SET_TIMERSLACK_PID 41
+#else
+#error PR_SET_TIMERSLACK_PID defined twice
+#endif
+
+#if !defined(PR_SET_VMA)
+#define PR_SET_VMA 0x53564d41
+#else
+#error PR_SET_VMA defined twice
+#endif
+
+#if !defined(PR_SET_VMA_ANON_NAME)
+#define PR_SET_VMA_ANON_NAME 0
+#else
+#error PR_SET_VMA_ANON_NAME defined twice
+#endif
+
 __BEGIN_DECLS
 
 /* IMPORTANT NOTE: This function is declared as taking a variable number

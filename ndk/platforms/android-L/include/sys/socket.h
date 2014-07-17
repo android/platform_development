@@ -40,6 +40,13 @@
 #include <linux/types.h>
 #include <linux/compiler.h>
 
+/* This is an Android extension that won't be in the uapi headers for the common kernel. */
+#if !defined(SIOCKILLADDR)
+#define SIOCKILLADDR 0x8939
+#else
+#error SIOCKILLADDR defined twice
+#endif
+
 __BEGIN_DECLS
 
 #define sockaddr_storage __kernel_sockaddr_storage

@@ -151,6 +151,13 @@ extern wchar_t          *wmemset(wchar_t *, wchar_t, size_t);
 extern int               wprintf(const wchar_t *, ...);
 extern int               wscanf(const wchar_t *, ...);
 
+extern long long          wcstoll_l(const wchar_t *, wchar_t **, size_t, locale_t);
+extern unsigned long long wcstoull_l(const wchar_t *, wchar_t **, size_t, locale_t);
+extern long double        wcstold_l(const wchar_t *, wchar_t **, locale_t );
+
+extern int    wcscoll_l(const wchar_t *, const wchar_t *, locale_t);
+extern size_t wcsxfrm_l(wchar_t *, const wchar_t *, size_t, locale_t);
+
 extern size_t wcslcat(wchar_t*, const wchar_t*, size_t);
 extern size_t wcslcpy(wchar_t*, const wchar_t*, size_t);
 

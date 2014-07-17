@@ -75,6 +75,10 @@ extern double strtod(const char*, char**) __LIBC_ABI_PUBLIC__;
 extern float strtof(const char*, char**) __LIBC_ABI_PUBLIC__;
 extern long double strtold(const char*, char**) __LIBC_ABI_PUBLIC__;
 
+extern long double strtold_l(const char *, char **, locale_t) __LIBC_ABI_PUBLIC__;
+extern long long strtoll_l(const char *, char **, size_t, locale_t) __LIBC_ABI_PUBLIC__;
+extern unsigned long long strtoull_l(const char *, char **, size_t, locale_t) __LIBC_ABI_PUBLIC__;
+
 extern int atoi(const char*) __purefunc;
 extern long atol(const char*) __purefunc;
 extern long long atoll(const char*) __purefunc;
