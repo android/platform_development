@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9fb70cc_872f08a8",
+        "filename": "ndk/platforms/android-20/include/search.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1002068
+      },
+      "writtenOn": "2014-07-17T13:59:59Z",
+      "side": 1,
+      "message": "This added a declaration of the \u0027twalk\u0027 function into the public NDK headers (now in android-L in the newly released NDK r10) - but no such function exist in libc.so nor in bionic. See https://code.google.com/p/android/issues/detail?id\u003d73719 for a report on this issue.\n\nThis issue can be traced back to commit 21eab513e7eec280a7a8bcb9482a1a8b61e59442 (\"New additions/bug fixes required/found when porting perf\") in bionic, which claims to add a set of new functions, including tfind, tsearch, tdelete, twalk and tdestroy. All of these do exist, except twalk which has never been imported into bionic.\n\nThis should be remedied by importing an implementation of twalk from NetBSD along with the other functions (it\u0027s a quite simple function, the implementation should only be a couple dozen lines).\n\nPosting here, to get the attention of people actually involved in these matters.",
+      "revId": "73a5a3baaa5089f1ab2049e5934fa5d8a3f3e76a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
