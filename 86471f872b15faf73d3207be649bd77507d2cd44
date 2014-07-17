@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9711454_ad40bd1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003957
+      },
+      "writtenOn": "2014-07-17T18:20:12Z",
+      "side": 1,
+      "message": "Please don\u0027t refer to GMS Core in AOSP framework commits!",
+      "revId": "86471f872b15faf73d3207be649bd77507d2cd44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
