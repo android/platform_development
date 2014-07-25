@@ -424,6 +424,7 @@ inotify_add_watch
 inotify_init
 inotify_init1
 inotify_rm_watch
+insque
 ioctl
 isalnum
 isalnum_l
@@ -717,6 +718,7 @@ regexec
 regfree
 remove
 removexattr
+remque
 rename
 renameat
 res_init
@@ -934,6 +936,7 @@ truncate64
 tsearch
 ttyname
 ttyname_r
+twalk
 tzset
 umask
 umount

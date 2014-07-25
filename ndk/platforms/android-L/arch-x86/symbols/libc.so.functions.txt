@@ -290,7 +290,6 @@ clone
 close
 closedir
 closelog
-closelog_r
 connect
 creat
 creat64
@@ -523,6 +522,7 @@ inotify_add_watch
 inotify_init
 inotify_init1
 inotify_rm_watch
+insque
 ioctl
 isalnum
 isalnum_l
@@ -685,7 +685,6 @@ openat
 openat64
 opendir
 openlog
-openlog_r
 pathconf
 pause
 pclose
@@ -830,6 +829,7 @@ regexec
 regfree
 remove
 removexattr
+remque
 rename
 renameat
 res_init
@@ -884,7 +884,6 @@ setjmp
 setlinebuf
 setlocale
 setlogmask
-setlogmask_r
 setmntent
 setns
 setpgid
@@ -1007,7 +1006,6 @@ syscall
 sysconf
 sysinfo
 syslog
-syslog_r
 system
 sysv_signal
 tcdrain
@@ -1056,6 +1054,7 @@ truncate64
 tsearch
 ttyname
 ttyname_r
+twalk
 tzset
 umask
 umount
@@ -1094,7 +1093,6 @@ vsscanf
 vswprintf
 vswscanf
 vsyslog
-vsyslog_r
 vwarn
 vwarnx
 vwprintf
