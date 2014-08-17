@@ -19,10 +19,6 @@ _Unwind_VRS_Get
 _Unwind_VRS_Pop
 _Unwind_VRS_Set
 _Z16__libc_init_vdsov
-_ZN11ScopedTraceC1EPKc
-_ZN11ScopedTraceC2EPKc
-_ZN11ScopedTraceD1Ev
-_ZN11ScopedTraceD2Ev
 _ZdaPv
 _ZdaPvRKSt9nothrow_t
 _ZdlPv
@@ -39,7 +35,6 @@ ___Unwind_ForcedUnwind
 ___Unwind_RaiseException
 ___Unwind_Resume
 ___Unwind_Resume_or_Rethrow
-___mtctxres
 __accept4
 __adddf3
 __addsf3
@@ -119,6 +114,7 @@ __brk
 __cmpdf2
 __cmsg_nxthdr
 __connect
+__ctype_get_mb_cur_max
 __cxa_atexit
 __cxa_finalize
 __cxa_guard_abort
@@ -277,7 +273,6 @@ __sched_cpualloc
 __sched_cpucount
 __sched_cpufree
 __sched_getaffinity
-__set_errno
 __set_tid_address
 __set_tls
 __sigaction
@@ -340,6 +335,7 @@ _exit
 _getlong
 _getshort
 _longjmp
+_resolv_delete_cache_for_net
 _resolv_flush_cache_for_net
 _resolv_set_nameservers_for_net
 _setjmp
@@ -997,6 +993,8 @@ setbuffer
 setegid
 setenv
 seteuid
+setfsgid
+setfsuid
 setgid
 setgroups
 setitimer
