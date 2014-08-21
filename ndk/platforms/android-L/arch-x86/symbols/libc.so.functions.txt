@@ -264,6 +264,8 @@ dirfd
 dirname
 dirname_r
 div
+dlmemalign
+dlposix_memalign
 dn_expand
 dprintf
 drand48

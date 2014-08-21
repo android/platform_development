@@ -200,6 +200,8 @@ difftime
 dirfd
 dirname
 div
+dlmemalign
+dlposix_memalign
 dn_expand
 dprintf
 drand48

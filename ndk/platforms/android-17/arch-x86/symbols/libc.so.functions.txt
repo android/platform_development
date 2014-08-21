@@ -278,6 +278,7 @@ dlmalloc_trim
 dlmalloc_usable_size
 dlmallopt
 dlmemalign
+dlposix_memalign
 dlpvalloc
 dlrealloc
 dlvalloc
@@ -558,6 +559,7 @@ pipe
 pipe2
 poll
 popen
+posix_memalign
 prctl
 pread
 pread64
