@@ -52,6 +52,7 @@ public class MonkeySourceNetwork implements MonkeyEventSource {
     public static final int MONKEY_NETWORK_VERSION = 2;
     private static DeferredReturn deferredReturn;
 
+    private static long sDownTime = -1;
     /**
      * ReturnValue from the MonkeyCommand that indicates whether the
      * command was sucessful or not.
@@ -152,6 +153,7 @@ public class MonkeySourceNetwork implements MonkeyEventSource {
                 int action = -1;
                 if ("down".equals(actionName)) {
                     action = MotionEvent.ACTION_DOWN;
+                    sDownTime = SystemClock.uptimeMillis();
                 } else if ("up".equals(actionName)) {
                     action = MotionEvent.ACTION_UP;
                 } else if ("move".equals(actionName)) {
@@ -163,6 +165,7 @@ public class MonkeySourceNetwork implements MonkeyEventSource {
                 }
 
                 queue.enqueueEvent(new MonkeyTouchEvent(action)
+                        .setDownTime(sDownTime)
                         .addPointer(0, x, y));
                 return OK;
             }
