@@ -1,0 +1,5 @@
+The Mock IME is a lightweight IME implementation that performs the sanity check
+on a given Android custom input field to determine if it is compatible with
+IMEs. The tool simulates common and edge cases of the IMEs
+(particularly for CJK IMEs) and checks if an input action behaves correctly.
+
