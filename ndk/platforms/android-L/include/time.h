@@ -87,6 +87,8 @@ extern clock_t clock(void) __LIBC_ABI_PUBLIC__;
 
 extern int clock_getres(int, struct timespec*) __LIBC_ABI_PUBLIC__;
 extern int clock_gettime(int, struct timespec*) __LIBC_ABI_PUBLIC__;
+extern int clock_settime(int, const struct timespec *) __LIBC_ABI_PUBLIC__;
+extern int clock_nanosleep(int, int, const struct timespec *, struct timespec *) __LIBC_ABI_PUBLIC__;
 
 extern int timer_create(int, struct sigevent*, timer_t*) __LIBC_ABI_PUBLIC__;
 extern int timer_delete(timer_t) __LIBC_ABI_PUBLIC__;
