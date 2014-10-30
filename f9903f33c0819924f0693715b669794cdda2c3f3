@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "15f87289_51dd1470",
+        "filename": "apps/MockIME/AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1045708
+      },
+      "writtenOn": "2014-10-30T18:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35c2d657_f416d869",
+      "range": {
+        "startLine": 16,
+        "startChar": 29,
+        "endLine": 16,
+        "endChar": 36
+      },
+      "revId": "f9903f33c0819924f0693715b669794cdda2c3f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5d09a11_308bf6ff",
         "filename": "apps/MockIME/README",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2014-10-30T17:58:19Z",
       "side": 1,
       "message": "field?",
+      "range": {
+        "startLine": 2,
+        "startChar": 32,
+        "endLine": 2,
+        "endChar": 37
+      },
+      "revId": "f9903f33c0819924f0693715b669794cdda2c3f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15f87289_b1e1d830",
+        "filename": "apps/MockIME/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1045708
+      },
+      "writtenOn": "2014-10-30T18:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5d09a11_308bf6ff",
       "range": {
         "startLine": 2,
         "startChar": 32,
