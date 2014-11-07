@@ -16,6 +16,24 @@
       "revId": "081fa57c7b491891858e72e43f22f72469eb1e46",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f564bec9_e03e96e1",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-11-07T02:42:20Z",
+      "side": 1,
+      "message": "does uname()[0].lower() or platform.system().lower() give \u0027darwin\u0027 on the Mac?",
+      "parentUuid": "558caab9_8386c26e",
+      "revId": "081fa57c7b491891858e72e43f22f72469eb1e46",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
