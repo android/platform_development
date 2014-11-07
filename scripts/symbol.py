@@ -23,6 +23,7 @@ import glob
 import os
 import re
 import subprocess
+import sys
 import unittest
 
 ANDROID_BUILD_TOP = os.environ["ANDROID_BUILD_TOP"]
@@ -75,7 +76,11 @@ def FindToolchain():
   elif gcc_dir == "x86_64":
     gcc_dir = "x86"
 
-  available_toolchains = glob.glob("%s/prebuilts/gcc/linux-x86/%s/*-linux-*/bin/" % (ANDROID_BUILD_TOP, gcc_dir))
+  os_name = sys.platform;
+  if os_name == 'linux2':
+    os_name = 'linux'
+
+  available_toolchains = glob.glob("%s/prebuilts/gcc/%s-x86/%s/*-linux-*/bin/" % (ANDROID_BUILD_TOP, os_name, gcc_dir))
   if len(available_toolchains) == 0:
     raise Exception("Could not find tool chain for %s" % (ARCH))
 
