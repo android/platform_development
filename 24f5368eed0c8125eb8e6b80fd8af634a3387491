@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da38c75e_014f4ab5",
+        "filename": "testrunner/tests/Android_gtestlib.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2014-11-17T22:26:27Z",
+      "side": 1,
+      "message": "is this needed? (since they don\u0027t appear to link against icu4c...)",
+      "revId": "24f5368eed0c8125eb8e6b80fd8af634a3387491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
