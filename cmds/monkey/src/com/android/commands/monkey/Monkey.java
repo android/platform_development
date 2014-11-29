@@ -327,6 +327,10 @@ public class Monkey {
             StrictMode.setThreadPolicy(savedPolicy);
 
             if (!mIgnoreCrashes || mRequestBugreport) {
+                if (isBugReportInProgress()) {
+                    return !mKillProcessAfterError;
+                }
+
                 synchronized (Monkey.this) {
                     if (!mIgnoreCrashes) {
                         mAbort = true;
@@ -351,6 +355,10 @@ public class Monkey {
             System.err.println(processStats);
             StrictMode.setThreadPolicy(savedPolicy);
 
+            if(isBugReportInProgress()) {
+                return (mKillProcessAfterError) ? -1 : 1;
+            }
+
             synchronized (Monkey.this) {
                 mRequestAnrTraces = true;
                 mRequestDumpsysMemInfo = true;
@@ -372,6 +380,10 @@ public class Monkey {
             StrictMode.ThreadPolicy savedPolicy = StrictMode.allowThreadDiskWrites();
             System.err.println("// WATCHDOG: " + message);
             StrictMode.setThreadPolicy(savedPolicy);
+
+            if(isBugReportInProgress()) {
+                return (mKillProcessAfterError) ? -1 : 1;
+            }
 
             synchronized (Monkey.this) {
                 if (!mIgnoreCrashes) {
@@ -495,6 +507,27 @@ public class Monkey {
         reportName += MonkeyUtils.toCalendarTime(System.currentTimeMillis());
         String bugreportName = reportName.replaceAll("[ ,:]", "_");
         commandLineReport(bugreportName + ".txt", "bugreport");
+    }
+
+    private boolean isBugReportInProgress() {
+        if (mRequestAppCrashBugreport) {
+            System.out.println("// An App Crash Bugreport collection is in progress");
+            return true;
+        }
+        if (mRequestAnrBugreport) {
+            System.out.println("// An ANR Bugreport collection is in progress");
+            return true;
+        }
+        if (mRequestWatchdogBugreport) {
+            System.out.println("// A Watchdog Bugreport collection is in progress");
+            return true;
+        }
+        if (mRequestPeriodicBugreport) {
+            System.out.println("// A Periodic Bugreport collection is in progress");
+            return true;
+        }
+
+        return false;
     }
 
     /**
