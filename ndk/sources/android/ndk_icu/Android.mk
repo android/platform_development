@@ -1,0 +1,9 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ndk_icu
+LOCAL_CFLAGS := -DBUILD_LIBICU
+LOCAL_SRC_FILES := ndk_icu.c
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
+include $(BUILD_STATIC_LIBRARY)
+
