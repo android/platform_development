@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e2481a4_56493402",
+        "filename": "testrunner/tests/Android_gtestlib.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-05T17:16:33Z",
+      "side": 1,
+      "message": "did you try without this? seems suspicious to me that they were adding the include files to the include path but not linking. the last person to touch the include path line was me (when we moved icu) and i asked rhetorically in the checkin comment then \"what is this for?\".",
+      "revId": "63d5daba39e8a497c54c08bd5c5f91d69257c8cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
