@@ -52,6 +52,24 @@
       "revId": "63d5daba39e8a497c54c08bd5c5f91d69257c8cd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c180e07b_b0178670",
+        "filename": "testrunner/tests/Android_gtestlib.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2015-01-05T17:42:16Z",
+      "side": 1,
+      "message": "d\u0027oh... in my head i was thinking \"it\u0027s best if this file remains correct\" but then it doesn\u0027t make a difference whether or not icu is in the list of shared libraries. how stupid of me... i\u0027ll remove it.",
+      "parentUuid": "4e217d94_75a668ca",
+      "revId": "63d5daba39e8a497c54c08bd5c5f91d69257c8cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
