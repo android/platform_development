@@ -34,6 +34,24 @@
       "revId": "63d5daba39e8a497c54c08bd5c5f91d69257c8cd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e217d94_75a668ca",
+        "filename": "testrunner/tests/Android_gtestlib.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-05T17:20:44Z",
+      "side": 1,
+      "message": "ugh. yeah, looks like you\u0027re right.\n\nso can we remove this then?\n\n(and maybe add a comment to this makefile? it\u0027s pretty confusing that it looks like the kind of makefile you might expect to see in a directory with a name like this.)",
+      "parentUuid": "0144b839_d4f232ab",
+      "revId": "63d5daba39e8a497c54c08bd5c5f91d69257c8cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
