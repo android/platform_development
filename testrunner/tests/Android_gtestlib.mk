@@ -23,15 +23,13 @@ shared_libraries := \
         libz \
         liblog \
         libcutils \
-        libutils \
+        libutils
 
 static_libraries := \
         libgtest \
         libgtest_main
 
 c_includes := \
-    external/zlib \
-    external/icu/icu4c/source/common \
     external/gtest/include \
 
 module_tags := eng tests
