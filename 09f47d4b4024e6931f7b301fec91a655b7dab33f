@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "0e9ea522_feb35d67",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T23:22:54Z",
+      "side": 1,
+      "message": "no, i think it would be more useful if you just added an android-specific function that lets callers check. or, like i said, abort. because they\u0027re fucked if you couldn\u0027t initialize. what can they possibly do to recover?",
+      "parentUuid": "4e941dff_23d3ee69",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce3acdc4_00b7f057",
         "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
         "patchSetId": 1
@@ -168,6 +186,24 @@
       "side": 1,
       "message": "i\u0027ll use the cintltst testsuite in icu4c and compare three versions (1) w/o caching dlsym results; (2) looking up on demand but w/ caching; (3) all initialized in ctor.\n\nalso i\u0027ll add some check to the dlsym result and process similarly to the missing icudata case to avoid an instant segfault. when ptr is NULL, it will return some value and set up UErrorCode to some value (maybe U_INTERNAL_PROGRAM_ERROR?) whenever available.",
       "parentUuid": "0e3065e8_14005a73",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e9ea522_7e818d61",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T23:22:54Z",
+      "side": 1,
+      "message": "yes, that\u0027s a much better idea than a microbenchmark! (i\u0027m still curious though. whether we need to hassle dimitry to speed things up :-) )\n\nas for the \"what do we do about newer API\" question... don\u0027t worry about that for now. crashing is fine to begin with.",
+      "parentUuid": "2ea1a95e_7f72ebd2",
       "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
