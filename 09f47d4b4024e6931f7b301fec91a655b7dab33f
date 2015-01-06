@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e3065e8_14e97a3d",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "on the assumption that people need to install extra stuff to import clang.cindex and mako.template, you should probably include the appropriate apt-get line.\n\n(do you really need mako.template?)",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3065e8_7418bee6",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "but Android is always little-endian, so we only support \u0027l\u0027.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee5eb12a_6dafd126",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "type*",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee5eb12a_4db40d75",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "this may as well be fatal since there\u0027s no way for calling code to check, and you\u0027ll segfault when you dereference the null returned from dlsym the first time you try to invoke a function.\n\n(also prefer to return rather than have most of the function\u0027s code live in an \u0027else\u0027.)\n\nif you change L101 to end \"\u003d NULL\", you can lose this \u0027if\u0027 and rely on the error check on L127 anyway.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3acdc4_00b7f057",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "\u0027filter\u0027 hasn\u0027t actually checked that these characters are digits, and atoi doesn\u0027t report errors. you always want strto*l instead of atoi.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3acdc4_e0b3cc67",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "why the _android?",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee5eb12a_ed574199",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "this you can do with an __attribute__((constructor)) instead, so you only pay for this once at dlopen time.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3065e8_14005a73",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "but we should cache the dlsym results.\n\nwhat does one dlsym cost? i\u0027m wondering whether we should just look them all up in the constructor function, or look them up one at a time (but amortized by caching).\n\nit\u0027s a pity there\u0027s no dl_iterate_sym :-)",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3065e8_349fd6c7",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu_tmpl.mako",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "above here is all constant and could just be in a regular .cpp file.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3acdc4_c0c0c8bb",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu_tmpl.mako",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T06:32:34Z",
+      "side": 1,
+      "message": "i\u0027m not sure this is more readable than just writing it in regular python in the .py file.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
