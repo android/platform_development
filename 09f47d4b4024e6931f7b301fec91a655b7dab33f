@@ -19,6 +19,57 @@
     },
     {
       "key": {
+        "uuid": "0e9ea522_1e7169fb",
+        "filename": "ndk/sources/android/ndk_icu/icu4c_stable_api_matrix.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T23:28:23Z",
+      "side": 1,
+      "message": "if we add a header to this explaining that, for example, 44 is what shipped in gingerbread, this is great documentation. i\u0027m not sure whether you did this for your own benefit or deliberately for the end users, but we should definitely make it available to them.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e9ea522_be61552a",
+        "filename": "ndk/sources/android/ndk_icu/icu4c_stable_api_matrix.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T23:28:23Z",
+      "side": 1,
+      "message": "is this a bug in the header file? seems odd for it to appear, disappear, then re-appear!",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e9ea522_41d87683",
+        "filename": "ndk/sources/android/ndk_icu/icu4c_stable_api_matrix.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-06T23:28:23Z",
+      "side": 1,
+      "message": "we should probably remove anything that\u0027s been removed in the current release.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e3065e8_7418bee6",
         "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
         "patchSetId": 1
