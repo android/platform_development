@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "4e941dff_23d3ee69",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-06T23:14:57Z",
+      "side": 1,
+      "message": "i will propose a fix that tries to return something _hopefully_ useful to indicate the error. in case of missing icudata file, it will use NULL/(int32_t)0/(double)0/.../\u003cempty\u003e as the return value; AND if there is a UErrorCode* in the parameter list, it will be set to U_FILE_ACCESS_ERROR, as in linux.",
+      "parentUuid": "ee5eb12a_4db40d75",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce3acdc4_00b7f057",
         "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
         "patchSetId": 1
@@ -132,6 +150,24 @@
       "writtenOn": "2015-01-06T06:32:34Z",
       "side": 1,
       "message": "but we should cache the dlsym results.\n\nwhat does one dlsym cost? i\u0027m wondering whether we should just look them all up in the constructor function, or look them up one at a time (but amortized by caching).\n\nit\u0027s a pity there\u0027s no dl_iterate_sym :-)",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea1a95e_7f72ebd2",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-06T23:14:57Z",
+      "side": 1,
+      "message": "i\u0027ll use the cintltst testsuite in icu4c and compare three versions (1) w/o caching dlsym results; (2) looking up on demand but w/ caching; (3) all initialized in ctor.\n\nalso i\u0027ll add some check to the dlsym result and process similarly to the missing icudata case to avoid an instant segfault. when ptr is NULL, it will return some value and set up UErrorCode to some value (maybe U_INTERNAL_PROGRAM_ERROR?) whenever available.",
+      "parentUuid": "0e3065e8_14005a73",
       "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
