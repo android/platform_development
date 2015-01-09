@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ce380d5f_a1245ed6",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-09T23:32:28Z",
+      "side": 1,
+      "message": "ok. i\u0027m also finding it less helpful for our need. i\u0027m replacing it with regular python.",
+      "parentUuid": "0e3065e8_14e97a3d",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e9ea522_1e7169fb",
         "filename": "ndk/sources/android/ndk_icu/icu4c_stable_api_matrix.txt",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "0e9ea522_44316489",
+        "filename": "ndk/sources/android/ndk_icu/icu4c_stable_api_matrix.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-09T23:32:28Z",
+      "side": 1,
+      "message": "i also noticed it when generating the file. and yes, it should be a bug in icu4c 50 header file. the function is documented as draft in the doc and comments, but marked with a stable flag in the code. the bug got fixed later in icu4c 51 with a correct draft mark and so it disappeared from the table. since it doesn\u0027t affect anything, i have manually changed the icu 50 header file to avoid the weirdness.",
+      "parentUuid": "0e9ea522_be61552a",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e9ea522_41d87683",
         "filename": "ndk/sources/android/ndk_icu/icu4c_stable_api_matrix.txt",
         "patchSetId": 1
@@ -64,6 +100,24 @@
       "writtenOn": "2015-01-06T23:28:23Z",
       "side": 1,
       "message": "we should probably remove anything that\u0027s been removed in the current release.",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce380d5f_e1c826bb",
+        "filename": "ndk/sources/android/ndk_icu/icu4c_stable_api_matrix.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-09T23:32:28Z",
+      "side": 1,
+      "message": "yes. i have added a blacklist for deprecated functions when generating ndk_icu wrapper functions.",
+      "parentUuid": "0e9ea522_41d87683",
       "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -151,6 +205,24 @@
       "side": 1,
       "message": "no, i think it would be more useful if you just added an android-specific function that lets callers check. or, like i said, abort. because they\u0027re fucked if you couldn\u0027t initialize. what can they possibly do to recover?",
       "parentUuid": "4e941dff_23d3ee69",
+      "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2efc49c4_d9483f02",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-09T23:32:28Z",
+      "side": 1,
+      "message": "i\u0027m adding a new function for user checking the ndk icu initialization status.",
+      "parentUuid": "0e9ea522_feb35d67",
       "revId": "09f47d4b4024e6931f7b301fec91a655b7dab33f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
