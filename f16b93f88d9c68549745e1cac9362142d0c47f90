@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "2efc49c4_2b913a5b",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-01-09T23:53:37Z",
+      "side": 1,
+      "message": "oops. want to upload an icu change to fix that?",
+      "parentUuid": "0ef945d6_f7d2e815",
+      "revId": "f16b93f88d9c68549745e1cac9362142d0c47f90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ef945d6_972614a4",
         "filename": "ndk/sources/android/ndk_icu/include/ndkicu.h",
         "patchSetId": 2
