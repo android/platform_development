@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0ef945d6_526e6a6d",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-10T01:07:58Z",
+      "side": 1,
+      "message": "did a quick try and found that icu4c won\u0027t compile by simply defining \"U_HIDE_DEPRECATED_API\", because function definitions are not wrapped by the macro.\n\nalso did some search just now. it seems the \"deprecated\" apis will intentionally be kept forever, while the \"obsoleted\" ones will be removed after 1-yr. according to the discussion below, using such deprecated apis should be always safe, although not encouraged.\n\nURL as follows (the original page has been removed)\n\nhttp://webcache.googleusercontent.com/search?q\u003dcache:mbVCsLMllsUJ:sourceforge.net/p/icu/mailman/message/9990462/+\u0026cd\u003d8\u0026hl\u003den\u0026ct\u003dclnk\u0026gl\u003dus",
+      "parentUuid": "2efc49c4_2b913a5b",
+      "revId": "f16b93f88d9c68549745e1cac9362142d0c47f90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ef945d6_972614a4",
         "filename": "ndk/sources/android/ndk_icu/include/ndkicu.h",
         "patchSetId": 2
