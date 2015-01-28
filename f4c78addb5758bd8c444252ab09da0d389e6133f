@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7ba679b_cd8b3d32",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 3255,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2015-01-28T19:18:22Z",
+      "side": 1,
+      "message": "switched back to pthread_once instead of __attribute__((constructor)), due to a bug/limitation in the linker which didn\u0027t get fixed until jelly bean.",
+      "range": {
+        "startLine": 3255,
+        "startChar": 2,
+        "endLine": 3255,
+        "endChar": 14
+      },
+      "revId": "f4c78addb5758bd8c444252ab09da0d389e6133f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
