@@ -79,8 +79,8 @@
 	((a)->s6_addr[1] & 0x0f)
 
 #define IN6_IS_ADDR_MC_NODELOCAL(a)     \
-        (IN6_IS_ADDR_MULTICAST(a) &&  \
-         (IPV6_ADDR_MC_SCOPE(a) == IPV6_ADDR_SCOPE_NODELOCAL))
+	(IN6_IS_ADDR_MULTICAST(a) &&  \
+	 (IPV6_ADDR_MC_SCOPE(a) == IPV6_ADDR_SCOPE_NODELOCAL))
 #define IN6_IS_ADDR_MC_LINKLOCAL(a)	\
 	(IN6_IS_ADDR_MULTICAST(a) &&  \
 	 (IPV6_ADDR_MC_SCOPE(a) == IPV6_ADDR_SCOPE_LINKLOCAL))
@@ -91,8 +91,8 @@
 	(IN6_IS_ADDR_MULTICAST(a) &&  \
 	 (IPV6_ADDR_MC_SCOPE(a) == IPV6_ADDR_SCOPE_ORGLOCAL))
 #define IN6_IS_ADDR_MC_GLOBAL(a)       \
-        (IN6_IS_ADDR_MULTICAST(a) &&  \
-         (IPV6_ADDR_MC_SCOPE(a) == IPV6_ADDR_SCOPE_GLOBAL))
+	(IN6_IS_ADDR_MULTICAST(a) &&  \
+	 (IPV6_ADDR_MC_SCOPE(a) == IPV6_ADDR_SCOPE_GLOBAL))
 
 #define IN6_ARE_ADDR_EQUAL(a, b)			\
     (memcmp(&(a)->s6_addr[0], &(b)->s6_addr[0], sizeof(struct in6_addr)) == 0)
@@ -103,6 +103,7 @@
 #define IPV6_LEAVE_GROUP IPV6_DROP_MEMBERSHIP
 
 #define IN6ADDR_ANY_INIT {{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}}}
+#define IN6ADDR_LOOPBACK_INIT {{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}}}
 
 #define ipv6mr_interface ipv6mr_ifindex
 

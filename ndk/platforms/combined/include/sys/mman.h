@@ -31,7 +31,6 @@
 #include <sys/cdefs.h>
 #include <sys/types.h>
 #include <asm/mman.h>
-#include <asm/page.h>
 
 __BEGIN_DECLS
 
@@ -44,22 +43,31 @@ __BEGIN_DECLS
 #define MREMAP_MAYMOVE  1
 #define MREMAP_FIXED    2
 
-extern void*  mmap(void *, size_t, int, int, int, off_t);
-extern int    munmap(void *, size_t);
-extern int    msync(const void *, size_t, int);
-extern int    mprotect(const void *, size_t, int);
-extern void*  mremap(void *, size_t, size_t, unsigned long);
+#define POSIX_MADV_NORMAL     MADV_NORMAL
+#define POSIX_MADV_RANDOM     MADV_RANDOM
+#define POSIX_MADV_SEQUENTIAL MADV_SEQUENTIAL
+#define POSIX_MADV_WILLNEED   MADV_WILLNEED
+#define POSIX_MADV_DONTNEED   MADV_DONTNEED
 
-extern int    mlockall(int);
-extern int    munlockall(void);
-extern int    mlock(const void *, size_t);
-extern int    munlock(const void *, size_t);
-extern int    madvise(const void *, size_t, int);
+extern void* mmap(void*, size_t, int, int, int, off_t);
+extern void* mmap64(void*, size_t, int, int, int, off64_t);
+extern int munmap(void*, size_t);
+extern int msync(const void*, size_t, int);
+extern int mprotect(const void*, size_t, int);
+extern void* mremap(void*, size_t, size_t, unsigned long);
 
-extern int    mlock(const void *addr, size_t len);
-extern int    munlock(const void *addr, size_t len);
+extern int mlockall(int);
+extern int munlockall(void);
+extern int mlock(const void*, size_t);
+extern int munlock(const void*, size_t);
+extern int madvise(void*, size_t, int);
 
-extern int    mincore(void*  start, size_t  length, unsigned char*  vec);
+extern int mlock(const void*, size_t);
+extern int munlock(const void*, size_t);
+
+extern int mincore(void*, size_t, unsigned char*);
+
+extern int posix_madvise(void*, size_t, int);
 
 __END_DECLS
 

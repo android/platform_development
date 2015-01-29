@@ -25,21 +25,27 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _NETINET_IN_H_
 #define _NETINET_IN_H_
 
 #include <endian.h>
-#include <linux/socket.h>
+#include <netinet/in6.h>
+#include <sys/cdefs.h>
+#include <sys/socket.h>
+
 #include <linux/in.h>
 #include <linux/in6.h>
 #include <linux/ipv6.h>
-#include <netinet/in6.h>
 
 __BEGIN_DECLS
 
 #define IPPORT_RESERVED  1024
 
 #define INET_ADDRSTRLEN 16
+
+typedef uint16_t in_port_t;
+typedef uint32_t in_addr_t;
 
 extern int bindresvport (int sd, struct sockaddr_in *sin);
 

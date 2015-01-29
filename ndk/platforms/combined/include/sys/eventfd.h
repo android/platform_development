@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_EVENTFD_H
 #define _SYS_EVENTFD_H
 
@@ -33,17 +34,16 @@
 
 __BEGIN_DECLS
 
-#define  EFD_CLOEXEC   O_CLOEXEC
-#define  EFD_NONBLOCK  O_NONBLOCK
+#define EFD_CLOEXEC O_CLOEXEC
+#define EFD_NONBLOCK O_NONBLOCK
 
 /* type of event counter */
-typedef uint64_t  eventfd_t;
+typedef uint64_t eventfd_t;
 
-extern int eventfd(unsigned int initval, int flags);
+extern int eventfd(unsigned int initial_value, int flags);
 
-/* Compatibility with GLibc */
-extern int eventfd_read(int fd, eventfd_t *counter);
-extern int eventfd_write(int fd, const eventfd_t counter);
+extern int eventfd_read(int fd, eventfd_t* value);
+extern int eventfd_write(int fd, eventfd_t value);
 
 __END_DECLS
 
