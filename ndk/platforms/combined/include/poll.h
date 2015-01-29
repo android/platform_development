@@ -25,17 +25,21 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _POLL_H_
 #define _POLL_H_
 
 #include <sys/cdefs.h>
 #include <linux/poll.h>
+#include <signal.h> /* For sigset_t. */
+#include <time.h> /* For timespec. */
 
 __BEGIN_DECLS
 
-typedef unsigned int  nfds_t;
+typedef unsigned int nfds_t;
 
-extern int poll(struct pollfd *, nfds_t, int);
+extern int poll(struct pollfd*, nfds_t, int);
+extern int ppoll(struct pollfd*, nfds_t, const struct timespec*, const sigset_t*);
 
 __END_DECLS
 

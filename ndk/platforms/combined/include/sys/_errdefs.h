@@ -36,6 +36,7 @@
 #ifndef __BIONIC_ERRDEF
 #error "__BIONIC_ERRDEF must be defined before including this file"
 #endif
+__BIONIC_ERRDEF( 0              ,   0, "Success" )
 __BIONIC_ERRDEF( EPERM          ,   1, "Operation not permitted" )
 __BIONIC_ERRDEF( ENOENT         ,   2, "No such file or directory" )
 __BIONIC_ERRDEF( ESRCH          ,   3, "No such process" )
@@ -44,7 +45,7 @@ __BIONIC_ERRDEF( EIO            ,   5, "I/O error" )
 __BIONIC_ERRDEF( ENXIO          ,   6, "No such device or address" )
 __BIONIC_ERRDEF( E2BIG          ,   7, "Argument list too long" )
 __BIONIC_ERRDEF( ENOEXEC        ,   8, "Exec format error" )
-__BIONIC_ERRDEF( EBADF          ,   9, "Bad file number" )
+__BIONIC_ERRDEF( EBADF          ,   9, "Bad file descriptor" )
 __BIONIC_ERRDEF( ECHILD         ,  10, "No child processes" )
 __BIONIC_ERRDEF( EAGAIN         ,  11, "Try again" )
 __BIONIC_ERRDEF( ENOMEM         ,  12, "Out of memory" )
@@ -165,8 +166,5 @@ __BIONIC_ERRDEF( EKEYREVOKED    , 128, "Key has been revoked" )
 __BIONIC_ERRDEF( EKEYREJECTED   , 129, "Key was rejected by service" )
 __BIONIC_ERRDEF( EOWNERDEAD     , 130, "Owner died" )
 __BIONIC_ERRDEF( ENOTRECOVERABLE, 131, "State not recoverable" )
-
-/* the following is not defined by Linux but needed for the BSD portions of the C library */
-__BIONIC_ERRDEF( EFTYPE, 1000, "Stupid C library hack !!" )
 
 #undef __BIONIC_ERRDEF

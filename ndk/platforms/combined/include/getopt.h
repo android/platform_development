@@ -1,5 +1,5 @@
-/*	$OpenBSD: getopt.h,v 1.1 2002/12/03 20:24:29 millert Exp $	*/
 /*	$NetBSD: getopt.h,v 1.4 2000/07/07 10:43:54 ad Exp $	*/
+/*	$FreeBSD$ */
 
 /*-
  * Copyright (c) 2000 The NetBSD Foundation, Inc.
@@ -16,13 +16,6 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 3. All advertising materials mentioning features or use of this software
- *    must display the following acknowledgement:
- *        This product includes software developed by the NetBSD
- *        Foundation, Inc. and its contributors.
- * 4. Neither the name of The NetBSD Foundation nor the names of its
- *    contributors may be used to endorse or promote products derived
- *    from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE NETBSD FOUNDATION, INC. AND CONTRIBUTORS
  * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -43,7 +36,8 @@
 #include <sys/cdefs.h>
 
 /*
- * GNU-like getopt_long() and 4.4BSD getsubopt()/optreset extensions
+ * GNU-like getopt_long()/getopt_long_only() with 4.4BSD optreset extension.
+ * getopt() is declared here too for GNU programs.
  */
 #define no_argument        0
 #define required_argument  1
@@ -64,27 +58,21 @@ struct option {
 };
 
 __BEGIN_DECLS
-int	 getopt_long(int, char * const *, const char *,
-	    const struct option *, int *);
-int	 getopt_long_only(int, char * const *, const char *,
-	    const struct option *, int *);
-#ifndef _GETOPT_DEFINED_
-#define _GETOPT_DEFINED_
-int	 getopt(int, char * const *, const char *);
+int	getopt_long(int, char * const *, const char *,
+	const struct option *, int *);
+int	getopt_long_only(int, char * const *, const char *,
+	const struct option *, int *);
+#ifndef _GETOPT_DECLARED
+#define	_GETOPT_DECLARED
+int	 getopt(int, char * const [], const char *);
 
-
-extern   char *optarg;                  /* getopt(3) external variables */
-extern   int opterr;
-extern   int optind;
-extern   int optopt;
-extern   int optreset;
-
-#if 0 /* MISSING FROM BIONIC */
-int       getsubopt(char **, char * const *, char **);
-extern   char *suboptarg;   /* getsubopt(3) external variable */
-#endif /* MISSING */
-
+extern char *optarg;			/* getopt(3) external variables */
+extern int optind, opterr, optopt;
+#endif
+#ifndef _OPTRESET_DECLARED
+#define	_OPTRESET_DECLARED
+extern int optreset;			/* getopt(3) external variable */
 #endif
 __END_DECLS
-
+ 
 #endif /* !_GETOPT_H_ */

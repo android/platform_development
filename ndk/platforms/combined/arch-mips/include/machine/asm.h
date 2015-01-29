@@ -28,25 +28,22 @@
 #ifndef _MIPS64_ASM_H
 #define _MIPS64_ASM_H
 
-#include <machine/regdef.h>
+#define __bionic_asm_align 4
 
-#ifdef NEED_OLD_RM7KFIX
-#define ITLBNOPFIX      nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;
-#else
-#define ITLBNOPFIX      nop;nop;nop;nop
-#endif
+#undef __bionic_asm_custom_entry
+#undef __bionic_asm_custom_end
+#define __bionic_asm_custom_entry(f) .ent f
+#define __bionic_asm_custom_end(f) .end f
+
+#include <machine/regdef.h>
 
 #define	_MIPS_ISA_MIPS1	1	/* R2000/R3000 */
 #define	_MIPS_ISA_MIPS2	2	/* R4000/R6000 */
 #define	_MIPS_ISA_MIPS3	3	/* R4000 */
 #define	_MIPS_ISA_MIPS4	4	/* TFP (R1x000) */
-#ifdef __linux__
 #define	_MIPS_ISA_MIPS5 5
 #define	_MIPS_ISA_MIPS32 6
 #define	_MIPS_ISA_MIPS64 7
-#else
-#define	_MIPS_ISA_MIPS32 32	/* MIPS32 */
-#endif
 
 #if !defined(ABICALLS) && !defined(_NO_ABICALLS)
 #define	ABICALLS	.abicalls
@@ -55,8 +52,6 @@
 #if defined(ABICALLS) && !defined(_KERNEL)
 	ABICALLS
 #endif
-
-#define _C_LABEL(x) x		/* XXX Obsolete but keep for a while */
 
 #if !defined(__MIPSEL__) && !defined(__MIPSEB__)
 #error "__MIPSEL__ or __MIPSEB__ must be defined"
@@ -89,15 +84,6 @@
  *  Define programming environment for ABI.
  */
 #if defined(ABICALLS) && !defined(_KERNEL) && !defined(_STANDALONE)
-
-#ifndef _MIPS_SIM
-#define _MIPS_SIM 1
-#define _ABIO32	1
-#endif
-#ifndef _MIPS_ISA
-#define _MIPS_ISA 2
-#define _MIPS_ISA_MIPS2 2
-#endif
 
 #if (_MIPS_SIM == _ABIO32) || (_MIPS_SIM == _ABI32)
 #define NARGSAVE	4
@@ -151,7 +137,7 @@
 #define	CF_RA_OFFS	20	/* Call ra save offset */
 #endif
 
-#if (_MIPS_ISA == _MIPS_ISA_MIPS3 || _MIPS_ISA == _MIPS_ISA_MIPS4)
+#if (_MIPS_ISA == _MIPS_ISA_MIPS3 || _MIPS_ISA == _MIPS_ISA_MIPS4 || _MIPS_ISA == _MIPS_ISA_MIPS64)
 #define REGSZ		8	/* 64 bit mode register size */
 #define LOGREGSZ	3	/* log rsize */
 #define	REG_S	sd
@@ -190,28 +176,6 @@
 #endif
 
 /*
- * Define -pg profile entry code.
- */
-#if defined(XGPROF) || defined(XPROF)
-#define	MCOUNT			\
-	PTR_SUBU sp, sp, 32;	\
-	SAVE_GP(16);		\
-	sw	ra, 28(sp);	\
-	sw	gp, 24(sp);	\
-	.set	noat;		\
-	.set	noreorder;	\
-	move	AT, ra;		\
-	jal	_mcount;	\
-	PTR_SUBU sp, sp, 8;	\
-	lw	ra, 28(sp);	\
-	PTR_ADDU sp, sp, 32;	\
-	.set reorder;		\
-	.set	at;
-#else
-#define	MCOUNT
-#endif
-
-/*
  * LEAF(x, fsize)
  *
  *	Declare a leaf routine.
@@ -221,26 +185,9 @@
 	.globl x;		\
 	.ent x, 0;		\
 x: ;				\
+	.cfi_startproc; \
 	.frame sp, fsize, ra;	\
 	SETUP_GP		\
-	MCOUNT
-
-#define	ALEAF(x)		\
-	.globl	x;		\
-x:
-
-/*
- * NLEAF(x)
- *
- *	Declare a non-profiled leaf routine.
- */
-#define NLEAF(x, fsize)		\
-	.align	3;		\
-	.globl x;		\
-	.ent x, 0;		\
-x: ;				\
-	.frame sp, fsize, ra;	\
-	SETUP_GP
 
 /*
  * NON_LEAF(x)
@@ -252,54 +199,8 @@ x: ;				\
 	.globl x;		\
 	.ent x, 0;		\
 x: ;				\
+	.cfi_startproc; \
 	.frame sp, fsize, retpc; \
 	SETUP_GP		\
-	MCOUNT
-
-/*
- * NNON_LEAF(x)
- *
- *	Declare a non-profiled non-leaf routine
- *	(a routine that makes other C calls).
- */
-#define NNON_LEAF(x, fsize, retpc) \
-	.align	3;		\
-	.globl x;		\
-	.ent x, 0;		\
-x: ;				\
-	.frame sp, fsize, retpc	\
-	SETUP_GP
-
-/*
- * END(x)
- *
- *	Mark end of a procedure.
- */
-#define END(x) \
-	.end x
-
-/*
- * Macros to panic and printf from assembly language.
- */
-#define PANIC(msg) \
-	LA	a0, 9f; \
-	jal	panic;	\
-	nop	;	\
-	MSG(msg)
-
-#define	PRINTF(msg) \
-	la	a0, 9f; \
-	jal	printf; \
-	nop	;	\
-	MSG(msg)
-
-#define	MSG(msg) \
-	.rdata; \
-9:	.asciiz	msg; \
-	.text
-
-#define ASMSTR(str) \
-	.asciiz str; \
-	.align	3
 
 #endif /* !_MIPS_ASM_H */

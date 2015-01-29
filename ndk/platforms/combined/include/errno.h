@@ -41,18 +41,10 @@ __BEGIN_DECLS
 #endif
 
 /* internal function returning the address of the thread-specific errno */
-extern volatile int*   __errno(void);
+extern volatile int* __errno(void) __pure2;
 
 /* a macro expanding to the errno l-value */
 #define  errno   (*__errno())
-
-/* internal function that should *only* be called from system calls */
-/* use errno = xxxx instead in C code                               */
-static __inline__ int __attribute__((deprecated)) 
-__set_errno(int n) {
-  errno = n;
-  return -1;
-}
 
 __END_DECLS
 

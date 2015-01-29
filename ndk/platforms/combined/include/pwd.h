@@ -100,12 +100,15 @@
 
 struct passwd
 {
-    char* pw_name;
-    char* pw_passwd;
-    uid_t pw_uid;
-    gid_t pw_gid;
-    char* pw_dir;
-    char* pw_shell;
+  char* pw_name;
+  char* pw_passwd;
+  uid_t pw_uid;
+  gid_t pw_gid;
+#ifdef __LP64__
+  char* pw_gecos;
+#endif
+  char* pw_dir;
+  char* pw_shell;
 };
 
 __BEGIN_DECLS
@@ -113,14 +116,12 @@ __BEGIN_DECLS
 struct passwd* getpwnam(const char*);
 struct passwd* getpwuid(uid_t);
 
-void endpwent(void);
-
-#if 0 /* MISSING FROM BIONIC */
 int getpwnam_r(const char*, struct passwd*, char*, size_t, struct passwd**);
 int getpwuid_r(uid_t, struct passwd*, char*, size_t, struct passwd**);
+
+void endpwent(void);
 struct passwd* getpwent(void);
 int setpwent(void);
-#endif /* MISSING */
 
 __END_DECLS
 

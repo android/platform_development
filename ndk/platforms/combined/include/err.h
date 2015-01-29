@@ -33,57 +33,25 @@
  */
 
 #ifndef _ERR_H_
-#define	_ERR_H_
+#define _ERR_H_
 
-/*
- * Don't use va_list in the err/warn prototypes.   Va_list is typedef'd in two
- * places (<machine/varargs.h> and <machine/stdarg.h>), so if we include one
- * of them here we may collide with the utility's includes.  It's unreasonable
- * for utilities to have to include one of them to include err.h, so we get
- * __va_list from <machine/_types.h> and use it.
- */
 #include <sys/cdefs.h>
-#include <machine/_types.h>
+#include <sys/types.h>
 
 __BEGIN_DECLS
 
-__noreturn void	err(int, const char *, ...)
-			__attribute__((__format__ (printf, 2, 3)));
-__noreturn void	verr(int, const char *, __va_list)
-			__attribute__((__format__ (printf, 2, 0)));
-__noreturn void	errx(int, const char *, ...)
-			__attribute__((__format__ (printf, 2, 3)));
-__noreturn void	verrx(int, const char *, __va_list)
-			__attribute__((__format__ (printf, 2, 0)));
-void		warn(const char *, ...)
-			__attribute__((__format__ (printf, 1, 2)));
-void		vwarn(const char *, __va_list)
-			__attribute__((__format__ (printf, 1, 0)));
-void		warnx(const char *, ...)
-			__attribute__((__format__ (printf, 1, 2)));
-void		vwarnx(const char *, __va_list)
-			__attribute__((__format__ (printf, 1, 0)));
+/* printf's format string isn't nullable; the err family's one is,
+ * so we can't use __errlike here. */
+#define __errlike(x, y) __attribute__((__format__(printf, x, y)))
 
-/*
- * The _* versions are for use in library functions so user-defined
- * versions of err*,warn* do not get used.
- */
-__noreturn void	_err(int, const char *, ...)
-			__attribute__((__format__ (printf, 2, 3)));
-__noreturn void	_verr(int, const char *, __va_list)
-			__attribute__((__format__ (printf, 2, 0)));
-__noreturn void	_errx(int, const char *, ...)
-			__attribute__((__format__ (printf, 2, 3)));
-__noreturn void	_verrx(int, const char *, __va_list)
-			__attribute__((__format__ (printf, 2, 0)));
-void		_warn(const char *, ...)
-			__attribute__((__format__ (printf, 1, 2)));
-void		_vwarn(const char *, __va_list)
-			__attribute__((__format__ (printf, 1, 0)));
-void		_warnx(const char *, ...)
-			__attribute__((__format__ (printf, 1, 2)));
-void		_vwarnx(const char *, __va_list)
-			__attribute__((__format__ (printf, 1, 0)));
+__noreturn void err(int, const char *, ...) __errlike(2, 3);
+__noreturn void verr(int, const char *, __va_list) __errlike(2, 0);
+__noreturn void errx(int, const char *, ...) __errlike(2, 3);
+__noreturn void verrx(int, const char *, __va_list) __errlike(2, 0);
+void warn(const char *, ...) __errlike(1, 2);
+void vwarn(const char *, __va_list) __errlike(1, 0);
+void warnx(const char *, ...) __errlike(1, 2);
+void vwarnx(const char *, __va_list) __errlike(1, 0);
 
 __END_DECLS
 

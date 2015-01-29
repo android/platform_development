@@ -41,16 +41,24 @@
 
 #include <sys/types.h>
 #include <sys/cdefs.h>
+#include <xlocale.h>
 
 __BEGIN_DECLS
-int	 bcmp(const void *, const void *, size_t);
-void	 bcopy(const void *, void *, size_t);
-void	 bzero(void *, size_t);
-int	 ffs(int);
-char	*index(const char *, int);
-char	*rindex(const char *, int);
-int	 strcasecmp(const char *, const char *);
-int	 strncasecmp(const char *, const char *, size_t);
+#if defined(__BIONIC_FORTIFY)
+#define bcopy(b1, b2, len) (void)(__builtin___memmove_chk((b2), (b1), (len), __bos0(b2)))
+#define bzero(b, len) (void)(__builtin___memset_chk((b), '\0', (len), __bos0(b)))
+#else
+#define bcopy(b1, b2, len) (void)(__builtin_memmove((b2), (b1), (len)))
+#define bzero(b, len) (void)(__builtin_memset((b), '\0', (len)))
+#endif
+
+int ffs(int);
+
+int strcasecmp(const char*, const char*) __purefunc;
+int strcasecmp_l(const char*, const char*, locale_t) __purefunc;
+int strncasecmp(const char*, const char*, size_t) __purefunc;
+int strncasecmp_l(const char*, const char*, size_t, locale_t) __purefunc;
+
 __END_DECLS
 
 #endif /* !defined(_STRINGS_H_) */

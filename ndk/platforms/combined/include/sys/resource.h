@@ -25,30 +25,35 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_RESOURCE_H_
 #define _SYS_RESOURCE_H_
 
 #include <sys/cdefs.h>
-#include <sys/types.h>     /* MUST be included before linux/resource.h */
+#include <sys/types.h>
 
-/* TRICK AHEAD: <linux/resource.h> defines a getrusage function with
- *              a non-standard signature. this is surprising because the
- *              syscall seems to use the standard one instead.
- *              once again, creative macro usage saves the days
- */
-#define  getrusage   __kernel_getrusage
 #include <linux/resource.h>
-#undef   getrusage
-
-typedef unsigned long rlim_t;
 
 __BEGIN_DECLS
 
+typedef unsigned long rlim_t;
+
+extern int getrlimit(int, struct rlimit*);
+extern int setrlimit(int, const struct rlimit*);
+
+extern int getrlimit64(int, struct rlimit64*);
+extern int setrlimit64(int, const struct rlimit64*);
+
 extern int getpriority(int, int);
 extern int setpriority(int, int, int);
-extern int getrlimit(int resource, struct rlimit *rlp);
-extern int setrlimit(int resource, const struct rlimit *rlp);
-extern int getrusage(int  who, struct rusage*  r_usage);
+
+extern int getrusage(int, struct rusage*);
+
+#if __LP64__
+/* Implementing prlimit for 32-bit isn't worth the effort. */
+extern int prlimit(pid_t, int, const struct rlimit*, struct rlimit*);
+#endif
+extern int prlimit64(pid_t, int, const struct rlimit64*, struct rlimit64*);
 
 __END_DECLS
 

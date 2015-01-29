@@ -1,4 +1,4 @@
-/*	$NetBSD: if_types.h,v 1.24 2005/12/10 23:21:38 elad Exp $	*/
+/*	$NetBSD: if_types.h,v 1.26 2012/08/05 21:21:41 wiz Exp $	*/
 
 /*
  * Copyright (c) 1989, 1993, 1994
@@ -249,7 +249,7 @@
 #define IFT_DOCSCABLEUPSTREAMCHANNEL 0xcd /* CATV Upstream Channel */
 #define IFT_ECONET		   0xce /* Acorn Econet */
 #define IFT_PON155		   0xcf /* FSAN 155Mb Symetrical PON interface */
-#define IFT_PON622		   0xd0 /* FSAN 622Mb Symetrical PON interface */*/
+#define IFT_PON622		   0xd0 /* FSAN 622Mb Symetrical PON interface */
 #define IFT_BRIDGE		   0xd1 /* Transparent bridge interface */
 #define IFT_LINEGROUP		   0xd2 /* Interface common to multiple lines */
 #define IFT_VOICEEMFGD		   0xd3 /* voice E&M Feature Group D */
@@ -263,5 +263,6 @@
 #define IFT_FAITH	0xf2
 #define IFT_PFLOG	0xf5		/* Packet filter logging */
 #define IFT_PFSYNC	0xf6		/* Packet filter state syncing */
+#define IFT_CARP	0xf8		/* Common Address Redundancy Protocol */
 
 #endif /* !_NET_IF_TYPES_H_ */

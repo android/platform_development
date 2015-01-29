@@ -33,7 +33,15 @@
 
 __BEGIN_DECLS
 
-extern int sysinfo (struct sysinfo *info);
+int sysinfo(struct sysinfo* info);
+
+int get_nprocs_conf(void);
+
+int get_nprocs(void);
+
+long get_phys_pages(void);
+
+long get_avphys_pages(void);
 
 __END_DECLS
 

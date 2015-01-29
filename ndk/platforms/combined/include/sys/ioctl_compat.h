@@ -42,6 +42,7 @@
 /*#include <sys/ttychars.h>*/
 /*#include <sys/ttydev.h>*/
 
+#if !defined(__mips__)
 struct tchars {
 	char	t_intrc;	/* interrupt */
 	char	t_quitc;	/* quit */
@@ -73,6 +74,7 @@ struct sgttyb {
 	short	sg_flags;		/* mode flags */
 };
 #endif
+#endif
 
 #ifdef USE_OLD_TTY
 # undef  TIOCGETD
@@ -84,9 +86,11 @@ struct sgttyb {
 # define OTIOCSETD	_IOW('t', 1, int)	/* set line discipline */
 #endif
 #define	TIOCHPCL	_IO('t', 2)		/* hang up on last close */
+#if !defined(__mips__)
 #define	TIOCGETP	_IOR('t', 8,struct sgttyb)/* get parameters -- gtty */
 #define	TIOCSETP	_IOW('t', 9,struct sgttyb)/* set parameters -- stty */
 #define	TIOCSETN	_IOW('t',10,struct sgttyb)/* as above, but no flushtty*/
+#endif
 #define	TIOCSETC	_IOW('t',17,struct tchars)/* set special characters */
 #define	TIOCGETC	_IOR('t',18,struct tchars)/* get special characters */
 #if 0
@@ -158,8 +162,10 @@ struct sgttyb {
 #define		LPENDIN		(PENDIN>>16)
 #define		LDECCTQ		(DECCTQ>>16)
 #define		LNOFLSH		(NOFLSH>>16)
+#if !defined(__mips__)
 #define	TIOCSLTC	_IOW('t',117,struct ltchars)/* set local special chars*/
 #define	TIOCGLTC	_IOR('t',116,struct ltchars)/* get local special chars*/
+#endif
 #define OTIOCCONS	_IO('t', 98)	/* for hp300 -- sans int arg */
 #define	OTTYDISC	0
 #define	NETLDISC	1

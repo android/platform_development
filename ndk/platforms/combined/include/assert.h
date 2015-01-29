@@ -60,6 +60,6 @@
 #endif
 
 __BEGIN_DECLS
-__dead void __assert(const char *, int, const char *);
-__dead void __assert2(const char *, int, const char *, const char *);
+__dead void __assert(const char *, int, const char *) __noreturn;
+__dead void __assert2(const char *, int, const char *, const char *) __noreturn;
 __END_DECLS

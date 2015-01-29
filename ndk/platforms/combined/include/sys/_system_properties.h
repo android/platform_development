@@ -34,39 +34,23 @@
 #else
 #include <sys/system_properties.h>
 
-typedef struct prop_area prop_area;
 typedef struct prop_msg prop_msg;
 
 #define PROP_AREA_MAGIC   0x504f5250
-#define PROP_AREA_VERSION 0x45434f76
+#define PROP_AREA_VERSION 0xfc6ed0ab
+#define PROP_AREA_VERSION_COMPAT 0x45434f76
 
 #define PROP_SERVICE_NAME "property_service"
+#define PROP_FILENAME "/dev/__properties__"
 
-/* #define PROP_MAX_ENTRIES 247 */
-/* 247 -> 32620 bytes (<32768) */
-
-#define TOC_NAME_LEN(toc)       ((toc) >> 24)
-#define TOC_TO_INFO(area, toc)  ((prop_info*) (((char*) area) + ((toc) & 0xFFFFFF)))
-
-struct prop_area {
-    unsigned volatile count;
-    unsigned volatile serial;
-    unsigned magic;
-    unsigned version;
-    unsigned reserved[4];
-    unsigned toc[1];
-};
+#define PA_SIZE         (128 * 1024)
 
 #define SERIAL_VALUE_LEN(serial) ((serial) >> 24)
 #define SERIAL_DIRTY(serial) ((serial) & 1)
 
-struct prop_info {
-    char name[PROP_NAME_MAX];
-    unsigned volatile serial;
-    char value[PROP_VALUE_MAX];
-};
+__BEGIN_DECLS
 
-struct prop_msg 
+struct prop_msg
 {
     unsigned cmd;
     char name[PROP_NAME_MAX];
@@ -74,7 +58,7 @@ struct prop_msg
 };
 
 #define PROP_MSG_SETPROP 1
-    
+
 /*
 ** Rules:
 **
@@ -92,17 +76,80 @@ struct prop_msg
 **   1. pi->serial = pi->serial | 1
 **   2. memcpy(pi->value, local_value, value_len)
 **   3. pi->serial = (value_len << 24) | ((pi->serial + 1) & 0xffffff)
-**
-** Improvements:
-** - maintain the toc sorted by pi->name to allow lookup
-**   by binary search
-**
 */
 
 #define PROP_PATH_RAMDISK_DEFAULT  "/default.prop"
 #define PROP_PATH_SYSTEM_BUILD     "/system/build.prop"
 #define PROP_PATH_SYSTEM_DEFAULT   "/system/default.prop"
+#define PROP_PATH_VENDOR_BUILD     "/vendor/build.prop"
+#define PROP_PATH_BOOTIMAGE_BUILD  "/build.prop"
 #define PROP_PATH_LOCAL_OVERRIDE   "/data/local.prop"
+#define PROP_PATH_FACTORY          "/factory/factory.prop"
+
+/*
+** Map the property area from the specified filename.  This
+** method is for testing only.
+*/
+int __system_property_set_filename(const char *filename);
+
+/*
+** Initialize the area to be used to store properties.  Can
+** only be done by a single process that has write access to
+** the property area.
+*/
+int __system_property_area_init();
+
+/* Add a new system property.  Can only be done by a single
+** process that has write access to the property area, and
+** that process must handle sequencing to ensure the property
+** does not already exist and that only one property is added
+** or updated at a time.
+**
+** Returns 0 on success, -1 if the property area is full.
+*/
+int __system_property_add(const char *name, unsigned int namelen,
+			const char *value, unsigned int valuelen);
+
+/* Update the value of a system property returned by
+** __system_property_find.  Can only be done by a single process
+** that has write access to the property area, and that process
+** must handle sequencing to ensure that only one property is
+** updated at a time.
+**
+** Returns 0 on success, -1 if the parameters are incorrect.
+*/
+int __system_property_update(prop_info *pi, const char *value, unsigned int len);
+
+/* Read the serial number of a system property returned by
+** __system_property_find.
+**
+** Returns the serial number on success, -1 on error.
+*/
+unsigned int __system_property_serial(const prop_info *pi);
+
+/* Wait for any system property to be updated.  Caller must pass
+** in 0 the first time, and the previous return value on each
+** successive call. */
+unsigned int __system_property_wait_any(unsigned int serial);
+
+/*  Compatibility functions to support using an old init with a new libc,
+ ** mostly for the OTA updater binary.  These can be deleted once OTAs from
+ ** a pre-K release no longer needed to be supported. */
+const prop_info *__system_property_find_compat(const char *name);
+int __system_property_read_compat(const prop_info *pi, char *name, char *value);
+int __system_property_foreach_compat(
+        void (*propfn)(const prop_info *pi, void *cookie),
+        void *cookie);
+
+/* Initialize the system properties area in read only mode.
+ * Should be done by all processes that need to read system
+ * properties.
+ *
+ * Returns 0 on success, -1 otherwise.
+ */
+int __system_properties_init();
+
+__END_DECLS
 
 #endif
 #endif

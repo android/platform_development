@@ -37,6 +37,13 @@
 #ifndef _MIPS_REGDEF_H_
 #define _MIPS_REGDEF_H_
 
+#if (_MIPS_SIM == _ABI64) && !defined(__mips_n64)
+#define __mips_n64 1
+#endif
+#if (_MIPS_SIM == _ABIN32) &&  !defined(__mips_n32)
+#define __mips_n32 1
+#endif
+
 #define zero	$0	/* always zero */
 #define AT	$at	/* assembler temp */
 #define v0	$2	/* return value */
