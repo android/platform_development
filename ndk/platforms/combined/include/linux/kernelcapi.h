@@ -7,35 +7,42 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef __KERNELCAPI_H__
-#define __KERNELCAPI_H__
-
-#define CAPI_MAXAPPL 240  
-#define CAPI_MAXCONTR 32  
+#ifndef _UAPI__KERNELCAPI_H__
+#define _UAPI__KERNELCAPI_H__
+#define CAPI_MAXAPPL 240
+#define CAPI_MAXCONTR 32
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define CAPI_MAXDATAWINDOW 8
-
 typedef struct kcapi_flagdef {
  int contr;
  int flag;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 } kcapi_flagdef;
-
 typedef struct kcapi_carddef {
  char driver[32];
  unsigned int port;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned irq;
  unsigned int membase;
  int cardnr;
 } kcapi_carddef;
-
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define KCAPI_CMD_TRACE 10
-#define KCAPI_CMD_ADDCARD 11  
-
+#define KCAPI_CMD_ADDCARD 11
 #define KCAPI_TRACE_OFF 0
 #define KCAPI_TRACE_SHORT_NO_DATA 1
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define KCAPI_TRACE_FULL_NO_DATA 2
 #define KCAPI_TRACE_SHORT 3
 #define KCAPI_TRACE_FULL 4
-
 #endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

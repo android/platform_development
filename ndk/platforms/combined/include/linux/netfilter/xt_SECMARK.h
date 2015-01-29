@@ -7,24 +7,25 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
 #ifndef _XT_SECMARK_H_target
 #define _XT_SECMARK_H_target
-
-#define SECMARK_MODE_SEL 0x01  
-#define SECMARK_SELCTX_MAX 256
-
-struct xt_secmark_target_selinux_info {
- u_int32_t selsid;
- char selctx[SECMARK_SELCTX_MAX];
-};
-
+#include <linux/types.h>
+#define SECMARK_MODE_SEL 0x01
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define SECMARK_SECCTX_MAX 256
 struct xt_secmark_target_info {
- u_int8_t mode;
- union {
- struct xt_secmark_target_selinux_info sel;
- } u;
+ __u8 mode;
+ __u32 secid;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ char secctx[SECMARK_SECCTX_MAX];
 };
-
 #endif

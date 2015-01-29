@@ -25,8 +25,14 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
+#ifndef _NET_IF_H_
+#define _NET_IF_H_
+
+#include <sys/socket.h>
 #include <linux/if.h>
 #include <sys/cdefs.h>
+
 #ifndef IF_NAMESIZE
 #define IF_NAMESIZE IFNAMSIZ
 #endif
@@ -40,3 +46,5 @@ extern unsigned int if_nametoindex(const char *);
 extern char*        if_indextoname(unsigned ifindex, char *ifname);
 
 __END_DECLS
+
+#endif

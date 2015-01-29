@@ -7,21 +7,23 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _NF_CONNTRACK_FTP_H
-#define _NF_CONNTRACK_FTP_H
-
-enum ip_ct_ftp_type
-{
-
- IP_CT_FTP_PORT,
-
- IP_CT_FTP_PASV,
-
- IP_CT_FTP_EPRT,
-
- IP_CT_FTP_EPSV,
+#ifndef _UAPI_NF_CONNTRACK_FTP_H
+#define _UAPI_NF_CONNTRACK_FTP_H
+enum nf_ct_ftp_type {
+ NF_CT_FTP_PORT,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ NF_CT_FTP_PASV,
+ NF_CT_FTP_EPRT,
+ NF_CT_FTP_EPSV,
 };
-
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif

@@ -25,18 +25,25 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_INOTIFY_H_
 #define _SYS_INOTIFY_H_
 
 #include <sys/cdefs.h>
 #include <sys/types.h>
+#include <stdint.h>
 #include <linux/inotify.h>
+#include <asm/fcntl.h> /* For O_CLOEXEC and O_NONBLOCK. */
 
 __BEGIN_DECLS
 
+#define IN_CLOEXEC O_CLOEXEC
+#define IN_NONBLOCK O_NONBLOCK
+
 extern int inotify_init(void);
-extern int inotify_add_watch(int, const char *, __u32);
-extern int inotify_rm_watch(int, __u32);
+extern int inotify_init1(int);
+extern int inotify_add_watch(int, const char*, uint32_t);
+extern int inotify_rm_watch(int, uint32_t);
 
 __END_DECLS
 

@@ -7,36 +7,43 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
 #ifndef _XT_TCPUDP_H
 #define _XT_TCPUDP_H
-
-struct xt_tcp
-{
- u_int16_t spts[2];
- u_int16_t dpts[2];
- u_int8_t option;
- u_int8_t flg_mask;
- u_int8_t flg_cmp;
- u_int8_t invflags;
+#include <linux/types.h>
+struct xt_tcp {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ __u16 spts[2];
+ __u16 dpts[2];
+ __u8 option;
+ __u8 flg_mask;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ __u8 flg_cmp;
+ __u8 invflags;
 };
-
-#define XT_TCP_INV_SRCPT 0x01  
-#define XT_TCP_INV_DSTPT 0x02  
-#define XT_TCP_INV_FLAGS 0x04  
-#define XT_TCP_INV_OPTION 0x08  
-#define XT_TCP_INV_MASK 0x0F  
-
-struct xt_udp
-{
- u_int16_t spts[2];
- u_int16_t dpts[2];
- u_int8_t invflags;
+#define XT_TCP_INV_SRCPT 0x01
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define XT_TCP_INV_DSTPT 0x02
+#define XT_TCP_INV_FLAGS 0x04
+#define XT_TCP_INV_OPTION 0x08
+#define XT_TCP_INV_MASK 0x0F
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct xt_udp {
+ __u16 spts[2];
+ __u16 dpts[2];
+ __u8 invflags;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-
-#define XT_UDP_INV_SRCPT 0x01  
-#define XT_UDP_INV_DSTPT 0x02  
-#define XT_UDP_INV_MASK 0x03  
-
+#define XT_UDP_INV_SRCPT 0x01
+#define XT_UDP_INV_DSTPT 0x02
+#define XT_UDP_INV_MASK 0x03
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif

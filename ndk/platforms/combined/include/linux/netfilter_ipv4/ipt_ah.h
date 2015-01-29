@@ -7,18 +7,24 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
 #ifndef _IPT_AH_H
 #define _IPT_AH_H
-
-struct ipt_ah
-{
- u_int32_t spis[2];
- u_int8_t invflags;
+#include <linux/types.h>
+struct ipt_ah {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ __u32 spis[2];
+ __u8 invflags;
 };
-
-#define IPT_AH_INV_SPI 0x01  
-#define IPT_AH_INV_MASK 0x01  
-
+#define IPT_AH_INV_SPI 0x01
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define IPT_AH_INV_MASK 0x01
 #endif

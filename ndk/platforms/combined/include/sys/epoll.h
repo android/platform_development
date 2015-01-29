@@ -25,10 +25,14 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_EPOLL_H_
 #define _SYS_EPOLL_H_
 
 #include <sys/cdefs.h>
+#include <sys/types.h>
+#include <fcntl.h> /* For O_CLOEXEC. */
+#include <signal.h> /* For sigset_t. */
 
 __BEGIN_DECLS
 
@@ -42,31 +46,39 @@ __BEGIN_DECLS
 #define EPOLLWRNORM      0x00000100
 #define EPOLLWRBAND      0x00000200
 #define EPOLLMSG         0x00000400
+#define EPOLLRDHUP       0x00002000
+#define EPOLLWAKEUP      0x20000000
+#define EPOLLONESHOT     0x40000000
 #define EPOLLET          0x80000000
 
 #define EPOLL_CTL_ADD    1
 #define EPOLL_CTL_DEL    2
 #define EPOLL_CTL_MOD    3
 
-typedef union epoll_data 
-{
-    void *ptr;
-    int fd;
-    unsigned int u32;
-    unsigned long long u64;
+#define EPOLL_CLOEXEC O_CLOEXEC
+
+typedef union epoll_data {
+  void* ptr;
+  int fd;
+  uint32_t u32;
+  uint64_t u64;
 } epoll_data_t;
 
-struct epoll_event 
-{
-    unsigned int events;
-    epoll_data_t data;
-};
+struct epoll_event {
+  uint32_t events;
+  epoll_data_t data;
+}
+#ifdef __x86_64__
+__packed
+#endif
+;
 
-int epoll_create(int size);
-int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
-int epoll_wait(int epfd, struct epoll_event *events, int max, int timeout);
+int epoll_create(int);
+int epoll_create1(int);
+int epoll_ctl(int, int, int, struct epoll_event*);
+int epoll_wait(int, struct epoll_event*, int, int);
+int epoll_pwait(int, struct epoll_event*, int, int, const sigset_t*);
 
 __END_DECLS
 
 #endif  /* _SYS_EPOLL_H_ */
-

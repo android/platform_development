@@ -25,8 +25,11 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _NET_ETHERNET_H_
-#define _NET_IF_ETHERNET_H_
+#define _NET_ETHERNET_H_
+
 #include <linux/if_ether.h>
 #include <net/if_ether.h>
-#endif /* !_NET_ETHERNET_H_ */
+
+#endif

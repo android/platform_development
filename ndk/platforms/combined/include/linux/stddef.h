@@ -16,15 +16,4 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _LINUX_STDDEF_H
-#define _LINUX_STDDEF_H
 #include <linux/compiler.h>
-#undef NULL
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#ifdef __cplusplus
-#define NULL 0
-#else
-#define NULL ((void *)0)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#endif
-#endif

@@ -21,7 +21,7 @@
 #include <asm/bitsperlong.h>
 #if __BITS_PER_LONG == 32
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#if defined(__GNUC__) && (!defined(__STRICT_ANSI__) || defined(__KERNEL__))
+#if defined(__GNUC__) && !defined(__STRICT_ANSI__)
 #define __SWAB_64_THRU_32__
 #endif
 #endif

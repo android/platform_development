@@ -46,6 +46,10 @@ typedef struct prop_info prop_info;
 */
 int __system_property_get(const char *name, char *value);
 
+/* Set a system property by name.
+**/
+int __system_property_set(const char *key, const char *value);
+
 /* Return a pointer to the system property named name, if it
 ** exists, or NULL if there is no such property.  Use 
 ** __system_property_read() to obtain the string value from
@@ -72,13 +76,26 @@ int __system_property_read(const prop_info *pi, char *name, char *value);
 ** there is no nth property.  Use __system_property_read() to
 ** read the value of this property.
 **
-** This method is for inspecting and debugging the property 
+** Please do not call this method.  It only exists to provide
+** backwards compatibility to NDK apps.  Its implementation
+** is inefficient and order of results may change from call
+** to call.
+*/ 
+const prop_info *__system_property_find_nth(unsigned n);
+
+/* Pass a prop_info for each system property to the provided
+** callback.  Use __system_property_read() to read the value
+** of this property.
+**
+** This method is for inspecting and debugging the property
 ** system.  Please use __system_property_find() instead.
 **
 ** Order of results may change from call to call.  This is
 ** not a bug.
-*/ 
-const prop_info *__system_property_find_nth(unsigned n);
+*/
+int __system_property_foreach(
+        void (*propfn)(const prop_info *pi, void *cookie),
+        void *cookie);
 
 __END_DECLS
 

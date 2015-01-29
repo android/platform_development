@@ -1,4 +1,4 @@
-/*	$NetBSD: icmp6.h,v 1.40 2009/10/31 22:32:17 christos Exp $	*/
+/*	$NetBSD: icmp6.h,v 1.47 2013/07/01 12:43:15 christos Exp $	*/
 /*	$KAME: icmp6.h,v 1.84 2003/04/23 10:26:51 itojun Exp $	*/
 
 
@@ -65,6 +65,8 @@
 #ifndef _NETINET_ICMP6_H_
 #define _NETINET_ICMP6_H_
 
+#include <netinet/in.h> /* android-added: glibc source compatibility. */
+
 #define ICMPV6_PLD_MAXLEN	1232	/* IPV6_MMTU - sizeof(struct ip6_hdr)
 					   - sizeof(struct icmp6_hdr) */
 
@@ -98,6 +100,7 @@ struct icmp6_hdr {
 #define MLD_LISTENER_QUERY		130 	/* multicast listener query */
 #define MLD_LISTENER_REPORT		131	/* multicast listener report */
 #define MLD_LISTENER_DONE		132	/* multicast listener done */
+#define MLD_LISTENER_REDUCTION MLD_LISTENER_DONE /* RFC3542 definition */
 
 /* RFC2292 decls */
 #define ICMP6_MEMBERSHIP_QUERY		130	/* group membership query */
@@ -125,6 +128,7 @@ struct icmp6_hdr {
 #define ICMP6_FQDN_REPLY		140	/* FQDN reply */
 #define ICMP6_NI_QUERY			139	/* node information request */
 #define ICMP6_NI_REPLY			140	/* node information reply */
+#define MLDV2_LISTENER_REPORT		143	/* RFC3810 listener report */
 
 /* The definitions below are experimental. TBA */
 #define MLD_MTRACE_RESP			200	/* mtrace response(to sender) */
@@ -144,6 +148,9 @@ struct icmp6_hdr {
 #define ICMP6_DST_UNREACH_BEYONDSCOPE	2	/* beyond scope of source address */
 #define ICMP6_DST_UNREACH_ADDR		3	/* address unreachable */
 #define ICMP6_DST_UNREACH_NOPORT	4	/* port unreachable */
+#define ICMP6_DST_UNREACH_POLICY	5	/* source address failed ingress/egress policy */
+#define ICMP6_DST_UNREACH_REJROUTE	6	/* reject route to destination */
+#define ICMP6_DST_UNREACH_SOURCERT	7	/* error in source routing header */
 
 #define ICMP6_TIME_EXCEED_TRANSIT 	0	/* ttl==0 in transit */
 #define ICMP6_TIME_EXCEED_REASSEMBLY	1	/* ttl==0 in reass */
@@ -229,7 +236,7 @@ struct nd_router_advert {	/* router advertisement */
 #define ND_RA_FLAG_HOME_AGENT	0x20
 
 /*
- * Router preference values based on RFC4199.
+ * Router preference values based on RFC4191.
  */
 #define ND_RA_FLAG_RTPREF_MASK	0x18 /* 00011000 */
 
@@ -300,11 +307,10 @@ struct nd_opt_hdr {		/* Neighbor discovery option header */
 #define ND_OPT_HOMEAGENT_INFO		8
 #define ND_OPT_SOURCE_ADDRLIST		9
 #define ND_OPT_TARGET_ADDRLIST		10
-#define ND_OPT_RDNSS			25
-/* draft-ietf-ipngwg-router-preference, not officially assigned yet */
-#define ND_OPT_ROUTE_INFO		200
-/* draft-ietf-mobileip-hmipv6, not officially assigned yet */
-#define ND_OPT_MAP			201
+#define ND_OPT_MAP			23	/* RFC 5380 */
+#define ND_OPT_ROUTE_INFO		24	/* RFC 4191 */
+#define ND_OPT_RDNSS			25	/* RFC 6016 */
+#define ND_OPT_DNSSL			31	/* RFC 6016 */
 
 struct nd_opt_route_info {	/* route info */
 	u_int8_t	nd_opt_rti_type;
@@ -344,11 +350,19 @@ struct nd_opt_mtu {		/* MTU option */
 	u_int32_t	nd_opt_mtu_mtu;
 } __packed;
 
-struct nd_opt_rdnss {		/* RDNSS option RFC 5006 */
+struct nd_opt_rdnss {		/* RDNSS option RFC 6106 */
 	u_int8_t	nd_opt_rdnss_type;
 	u_int8_t	nd_opt_rdnss_len;
 	u_int16_t	nd_opt_rdnss_reserved;
 	u_int32_t	nd_opt_rdnss_lifetime;
+	/* followed by list of IP prefixes */
+} __packed;
+
+struct nd_opt_dnssl {		/* DNSSL option RFC 6106 */
+	u_int8_t	nd_opt_dnssl_type;
+	u_int8_t	nd_opt_dnssl_len;
+	u_int16_t	nd_opt_dnssl_reserved;
+	u_int32_t	nd_opt_dnssl_lifetime;
 	/* followed by list of IP prefixes */
 } __packed;
 
@@ -376,11 +390,15 @@ struct icmp6_nodeinfo {
 	/* could be followed by reply data */
 } __packed;
 
+/*
+ * BEGIN android-removed: glibc doesn't have these, and external/ping declares them itself.
 #define ni_type		icmp6_ni_hdr.icmp6_type
 #define ni_code		icmp6_ni_hdr.icmp6_code
 #define ni_cksum	icmp6_ni_hdr.icmp6_cksum
 #define ni_qtype	icmp6_ni_hdr.icmp6_data16[0]
 #define ni_flags	icmp6_ni_hdr.icmp6_data16[1]
+ * END android-removed
+ */
 
 #define NI_QTYPE_NOOP		0 /* NOOP  */
 #define NI_QTYPE_SUPTYPES	1 /* Supported Qtypes */
@@ -521,18 +539,28 @@ struct icmp6_filter {
 	u_int32_t icmp6_filt[8];
 };
 
+/*
+ * BEGIN android-changed
+ * Linux and *BSD kernels use opposite values to indicate pass/block in ICMPv6
+ * filters, and assign a different value to the ICMP6_FILTER sockopt.
+ */
+#define ICMP6_FILTER 1
+
 #define	ICMP6_FILTER_SETPASSALL(filterp) \
-	(void)memset(filterp, 0xff, sizeof(struct icmp6_filter))
-#define	ICMP6_FILTER_SETBLOCKALL(filterp) \
 	(void)memset(filterp, 0x00, sizeof(struct icmp6_filter))
+#define	ICMP6_FILTER_SETBLOCKALL(filterp) \
+	(void)memset(filterp, 0xff, sizeof(struct icmp6_filter))
 #define	ICMP6_FILTER_SETPASS(type, filterp) \
-	(((filterp)->icmp6_filt[(type) >> 5]) |= (1 << ((type) & 31)))
-#define	ICMP6_FILTER_SETBLOCK(type, filterp) \
 	(((filterp)->icmp6_filt[(type) >> 5]) &= ~(1 << ((type) & 31)))
+#define	ICMP6_FILTER_SETBLOCK(type, filterp) \
+	(((filterp)->icmp6_filt[(type) >> 5]) |= (1 << ((type) & 31)))
 #define	ICMP6_FILTER_WILLPASS(type, filterp) \
-	((((filterp)->icmp6_filt[(type) >> 5]) & (1 << ((type) & 31))) != 0)
-#define	ICMP6_FILTER_WILLBLOCK(type, filterp) \
 	((((filterp)->icmp6_filt[(type) >> 5]) & (1 << ((type) & 31))) == 0)
+#define	ICMP6_FILTER_WILLBLOCK(type, filterp) \
+	((((filterp)->icmp6_filt[(type) >> 5]) & (1 << ((type) & 31))) != 0)
+/*
+ * END android-changed
+ */
 
 /*
  * Variables related to this implementation
@@ -569,8 +597,9 @@ struct icmp6_filter {
 #define	ICMP6_STAT_BADRS	538	/* bad router solicitiation */
 #define	ICMP6_STAT_BADRA	539	/* bad router advertisement */
 #define	ICMP6_STAT_BADREDIRECT	540	/* bad redirect message */
+#define ICMP6_STAT_DROPPED_RAROUTE 541	/* discarded routes from router advertisement */
 
-#define	ICMP6_NSTATS		541
+#define	ICMP6_NSTATS		542
 
 #define	ICMP6_ERRSTAT_DST_UNREACH_NOROUTE	0
 #define	ICMP6_ERRSTAT_DST_UNREACH_ADMIN		1
@@ -639,8 +668,6 @@ struct icmp6_filter {
 	{ 0, 0 }, \
 	{ "nd6_maxqueuelen", CTLTYPE_INT }, \
 }
-
-#define RTF_PROBEMTU	RTF_PROTO1
 
 #ifdef _KERNEL
 struct	rtentry;
@@ -726,5 +753,42 @@ do { \
 extern int	icmp6_rediraccept;	/* accept/process redirects */
 extern int	icmp6_redirtimeout;	/* cache time for redirect routes */
 #endif /* _KERNEL */
+
+#ifdef ICMP6_STRINGS
+/* Info: http://www.iana.org/assignments/icmpv6-parameters */
+
+static const char * const icmp6_type_err[] = {
+	"reserved0", "unreach", "packet_too_big", "timxceed", "paramprob",
+	NULL
+};
+
+static const char * const icmp6_type_info[] = {
+	"echo", "echoreply",
+	"mcastlistenq", "mcastlistenrep", "mcastlistendone",
+	"rtsol", "rtadv", "neighsol", "neighadv", "redirect",
+	"routerrenum", "nodeinfoq", "nodeinfor", "invneighsol", "invneighrep",
+	"mcastlistenrep2", "haad_req", "haad_rep",
+	"mobile_psol", "mobile_padv", "cga_sol", "cga_adv",
+	"experimental150", "mcast_rtadv", "mcast_rtsol", "mcast_rtterm",
+	"fmipv6_msg", "rpl_control", NULL
+};
+
+static const char * const icmp6_code_none[] = { "none", NULL };
+
+static const char * const icmp6_code_unreach[] = {
+	"noroute", "admin", "beyondscope", "addr", "port",
+	"srcaddr_policy", "reject_route", "source_route_err", NULL
+};
+
+static const char * const icmp6_code_timxceed[] = {
+	"intrans", "reass", NULL
+};
+
+static const char * const icmp6_code_paramprob[] = {
+	"hdr_field", "nxthdr_type", "option", NULL
+};      
+
+/* not all informational icmps that have codes have a names array */
+#endif
 
 #endif /* !_NETINET_ICMP6_H_ */

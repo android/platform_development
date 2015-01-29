@@ -7,37 +7,49 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
 #ifndef _XT_STATISTIC_H
 #define _XT_STATISTIC_H
-
+#include <linux/types.h>
 enum xt_statistic_mode {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  XT_STATISTIC_MODE_RANDOM,
  XT_STATISTIC_MODE_NTH,
  __XT_STATISTIC_MODE_MAX
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define XT_STATISTIC_MODE_MAX (__XT_STATISTIC_MODE_MAX - 1)
-
 enum xt_statistic_flags {
  XT_STATISTIC_INVERT = 0x1,
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define XT_STATISTIC_MASK 0x1
-
+struct xt_statistic_priv;
 struct xt_statistic_info {
- u_int16_t mode;
- u_int16_t flags;
+ __u16 mode;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ __u16 flags;
  union {
  struct {
- u_int32_t probability;
+ __u32 probability;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  } random;
  struct {
- u_int32_t every;
- u_int32_t packet;
- u_int32_t count;
+ __u32 every;
+ __u32 packet;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ __u32 count;
  } nth;
  } u;
- struct xt_statistic_info *master __attribute__((aligned(8)));
+ struct xt_statistic_priv *master __attribute__((aligned(8)));
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-
 #endif

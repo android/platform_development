@@ -1,38 +1,18 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ****************************************************************************
- ****************************************************************************/
-#ifndef __LINUX_COMPILER_H
-#define __LINUX_COMPILER_H
+#ifndef _UAPI_LINUX_COMPILER_H
+#define _UAPI_LINUX_COMPILER_H
 
-#ifndef __ASSEMBLY__
+/*
+ * This file is not currently in the Linux kernel tree.
+ * Upstream uapi headers refer to <linux/compiler.h> but there is
+ * no such uapi file. We've sent this upstream, and are optimistically
+ * adding it to bionic in the meantime. This should be replaced by
+ * a scrubbed header from external/kernel-headers when possible.
+ *
+ * An alternative to this file is to check in a symbolic link to the
+ * non-uapi <linux/compiler.h>. That's fine for building bionic too.
+ */
 
 #define __user
-#define __kernel
-#define __safe
 #define __force
-#define __nocast
-#define __iomem
-#define __chk_user_ptr(x) (void)0
-#define __chk_io_ptr(x) (void)0
-#define __builtin_warning(x, y...) (1)
-#define __acquires(x)
-#define __releases(x)
-#define __acquire(x) (void)0
-#define __release(x) (void)0
-#define __cond_lock(x) (x)
 
-#endif
-
-#ifndef __attribute_const__
-#define __attribute_const__  
-#endif
-
-#endif
+#endif /* _UAPI_LINUX_COMPILER_H */
