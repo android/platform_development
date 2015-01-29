@@ -115,57 +115,13 @@
 
 /* Bionic-specific definitions */
 
-#define  _POSIX_VERSION             200112L   /* Posix C language bindings version */
+#define  _POSIX_VERSION             200809L   /* Posix C language bindings version */
 #define  _POSIX2_VERSION            -1        /* we don't support Posix command-line tools */
-#define  _POSIX2_C_VERSION          _POSIX_VERSION
-#define  _XOPEN_VERSION             500       /* by Posix definition */
-#define  _XOPEN_XCU_VERSION         -1        /* we don't support command-line utilities */
-
-/* tell what we implement legacy stuff when appropriate */
-#if _POSIX_VERSION > 0
-#define  _XOPEN_XPG2                1
-#define  _XOPEN_XPG3                1
-#define  _XOPEN_XPG4                1
-#define  _XOPEN_UNIX                1
-#endif
-
-#define  _XOPEN_ENH_I18N          -1  /* we don't support internationalization in the C library */
-#define  _XOPEN_CRYPT             -1  /* don't support X/Open Encryption */
-#define  _XOPEN_LEGACY            -1  /* don't claim we support these, we have some of them but not all */
-#define  _XOPEN_REALTIME          -1 /* we don't support all these functions */
-#define  _XOPEN_REALTIME_THREADS  -1  /* same here */
-
-#define  _POSIX_REALTIME_SIGNALS    -1  /* for now, this is not supported */
-#define  _POSIX_PRIORITY_SCHEDULING  1  /* priority scheduling is a Linux feature */
-#define  _POSIX_TIMERS               1  /* Posix timers are supported */
-#undef   _POSIX_ASYNCHRONOUS_IO         /* aio_ functions are not supported */
-#define  _POSIX_SYNCHRONIZED_IO      1  /* synchronized i/o supported */
-#define  _POSIX_FSYNC                1  /* fdatasync() supported */
-#define  _POSIX_MAPPED_FILES         1  /* mmap-ed files supported */
-
-/* XXX: TODO: complete and check list here */
+#define  _XOPEN_VERSION             700       /* by Posix definition */
 
 
-#define  _POSIX_THREADS             1    /* we support threads */
-#define  _POSIX_THREAD_STACKADDR    1    /* we support thread stack address */
-#define  _POSIX_THREAD_STACKSIZE    1    /* we support thread stack size */
-#define  _POSIX_THREAD_PRIO_INHERIT 200112L   /* linux feature */
-#define  _POSIX_THREAD_PRIO_PROTECT 200112L   /* linux feature */
-
-#undef   _POSIX_PROCESS_SHARED           /* we don't support process-shared synchronization */
-#undef   _POSIX_THREAD_SAFE_FUNCTIONS    /* most functions are, but not everything yet */
-#define  _POSIX_CHOWN_RESTRICTED    1    /* yes, chown requires appropriate privileges */
-#define  _POSIX_MONOTONIC_CLOCK     0    /* the monotonic clock may be available; ask sysconf */
-#define  _POSIX_NO_TRUNC            1    /* very long pathnames generate an error */
-#define  _POSIX_SAVED_IDS           1    /* saved user ids is a Linux feature */
-#define  _POSIX_JOB_CONTROL         1    /* job control is a Linux feature */
-
-#define _POSIX_THREAD_DESTRUCTOR_ITERATIONS 4 /* the minimum mandated by POSIX */
-#define PTHREAD_DESTRUCTOR_ITERATIONS _POSIX_THREAD_DESTRUCTOR_ITERATIONS
-#define _POSIX_THREAD_KEYS_MAX 128            /* the minimum mandated by POSIX */
-#define PTHREAD_KEYS_MAX _POSIX_THREAD_KEYS_MAX
-#define _POSIX_THREAD_THREADS_MAX 64          /* the minimum mandated by POSIX */
-#define PTHREAD_THREADS_MAX                   /* bionic has no specific limit */
-
+#define PTHREAD_DESTRUCTOR_ITERATIONS 4     // >= _POSIX_THREAD_DESTRUCTOR_ITERATIONS
+#define PTHREAD_KEYS_MAX              128   // >= _POSIX_THREAD_KEYS_MAX
+#define PTHREAD_THREADS_MAX           2048  // bionic has no specific limit
 
 #endif

@@ -49,15 +49,6 @@
 #define PIC_GOT(x)	x@GOT(%ebx)
 #define PIC_GOTOFF(x)	x@GOTOFF(%ebx)
 
-/* let kernels and others override entrypoint alignment */
-#if !defined(_ALIGN_TEXT) && !defined(_KERNEL)
-# ifdef _STANDALONE
-#  define _ALIGN_TEXT .align 1
-# elif defined __ELF__
-#  define _ALIGN_TEXT .align 16
-# else
-#  define _ALIGN_TEXT .align 4
-# endif
-#endif
+#define __bionic_asm_align 16
 
 #endif /* !_I386_ASM_H_ */

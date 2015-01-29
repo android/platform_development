@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _LIBGEN_H
 #define _LIBGEN_H
 
@@ -33,8 +34,18 @@
 
 __BEGIN_DECLS
 
-/* On Android these don't modify their input, and use thread-local storage for their results. */
+#if !defined(__bionic_using_gnu_basename)
+/*
+ * <string.h> gets you the GNU basename.
+ * <libgen.h> the POSIX one.
+ * Note that our "POSIX" one has the wrong argument cv-qualifiers, but doesn't
+ * modify its input and uses thread-local storage for the result if necessary.
+ */
 extern char* basename(const char*);
+#define __bionic_using_posix_basename
+#endif
+
+/* This has the wrong argument cv-qualifiers, but doesn't modify its input and uses thread-local storage for the result if necessary. */
 extern char* dirname(const char*);
 
 #if !defined(__LP64__)

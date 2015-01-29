@@ -102,6 +102,8 @@
 
 /* 112-127 are reserved for private experiments. */
 
+#define R_ARM_IRELATIVE   160
+
 #define R_ARM_RXPC25		249
 #define R_ARM_RSBREL32		250
 #define R_ARM_THM_RPC22		251

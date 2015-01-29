@@ -33,26 +33,20 @@
 #include <sys/types.h>
 #include <linux/fadvise.h>
 #include <linux/fcntl.h>
+#include <linux/stat.h>
 #include <linux/uio.h>
-#include <unistd.h>  /* this is not required, but makes client code much happier */
 
 __BEGIN_DECLS
 
 #ifdef __LP64__
-/* LP64 kernels don't have flock64 because their flock is 64-bit. */
-struct flock64 {
-  short l_type;
-  short l_whence;
-  off64_t l_start;
-  off64_t l_len;
-  pid_t l_pid;
-};
+/* LP64 kernels don't have F_*64 defines because their flock is 64-bit. */
 #define F_GETLK64  F_GETLK
 #define F_SETLK64  F_SETLK
 #define F_SETLKW64 F_SETLKW
 #endif
 
 #define O_ASYNC FASYNC
+#define O_RSYNC O_SYNC
 
 #define SPLICE_F_MOVE 1
 #define SPLICE_F_NONBLOCK 2
@@ -81,14 +75,14 @@ extern ssize_t tee(int, int, size_t, unsigned int);
 extern int unlinkat(int, const char*, int);
 extern ssize_t vmsplice(int, const struct iovec*, size_t, unsigned int);
 
-#if defined(__BIONIC_FORTIFY)
-
 extern int __open_2(const char*, int);
-extern int __open_real(const char*, int, ...) __asm__(__USER_LABEL_PREFIX__ "open");
+extern int __open_real(const char*, int, ...) __RENAME(open);
 extern int __openat_2(int, const char*, int);
-extern int __openat_real(int, const char*, int, ...) __asm__(__USER_LABEL_PREFIX__ "openat");
+extern int __openat_real(int, const char*, int, ...) __RENAME(openat);
 __errordecl(__creat_missing_mode, "called with O_CREAT, but missing mode");
 __errordecl(__creat_too_many_args, "too many arguments");
+
+#if defined(__BIONIC_FORTIFY)
 
 #if !defined(__clang__)
 

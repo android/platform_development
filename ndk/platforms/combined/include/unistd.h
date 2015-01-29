@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _UNISTD_H_
 #define _UNISTD_H_
 
@@ -33,7 +34,6 @@
 #include <sys/types.h>
 #include <sys/select.h>
 #include <sys/sysconf.h>
-#include <pathconf.h>
 
 __BEGIN_DECLS
 
@@ -46,6 +46,29 @@ __BEGIN_DECLS
 #define SEEK_SET 0
 #define SEEK_CUR 1
 #define SEEK_END 2
+
+#define _PC_FILESIZEBITS 0
+#define _PC_LINK_MAX 1
+#define _PC_MAX_CANON 2
+#define _PC_MAX_INPUT 3
+#define _PC_NAME_MAX 4
+#define _PC_PATH_MAX 5
+#define _PC_PIPE_BUF 6
+#define _PC_2_SYMLINKS 7
+#define _PC_ALLOC_SIZE_MIN 8
+#define _PC_REC_INCR_XFER_SIZE 9
+#define _PC_REC_MAX_XFER_SIZE 10
+#define _PC_REC_MIN_XFER_SIZE 11
+#define _PC_REC_XFER_ALIGN 12
+#define _PC_SYMLINK_MAX 13
+#define _PC_CHOWN_RESTRICTED 14
+#define _PC_NO_TRUNC 15
+#define _PC_VDISABLE 16
+#define _PC_ASYNC_IO 17
+#define _PC_PRIO_IO 18
+#define _PC_SYNC_IO 19
+
+#include <machine/posix_limits.h>
 
 extern char** environ;
 
@@ -95,6 +118,9 @@ extern void setusershell(void);
 extern void endusershell(void);
 
 
+extern long fpathconf(int, int);
+extern long pathconf(const char*, int);
+
 
 /* Macros for access() */
 #define R_OK  4  /* Read */
@@ -112,7 +138,7 @@ extern int chdir(const char *);
 extern int fchdir(int);
 extern int rmdir(const char *);
 extern int pipe(int *);
-#ifdef _GNU_SOURCE
+#if defined(__USE_GNU)
 extern int pipe2(int *, int);
 #endif
 extern int chroot(const char *);
@@ -143,9 +169,7 @@ extern ssize_t pwrite64(int, const void *, size_t, off64_t);
 
 extern int dup(int);
 extern int dup2(int, int);
-#ifdef _GNU_SOURCE
 extern int dup3(int, int, int);
-#endif
 extern int fcntl(int, int, ...);
 extern int ioctl(int, int, ...);
 extern int flock(int, int);
@@ -159,7 +183,8 @@ extern unsigned int alarm(unsigned int);
 extern unsigned int sleep(unsigned int);
 extern int usleep(useconds_t);
 
-extern int gethostname(char *, size_t);
+int gethostname(char*, size_t);
+int sethostname(const char*, size_t);
 
 extern void *__brk(void *);
 extern int brk(void *);
@@ -170,7 +195,7 @@ extern char *optarg;
 extern int optind, opterr, optopt;
 
 extern int isatty(int);
-extern char* ttyname(int) __warnattr("ttyname is not thread-safe; use ttyname_r instead");
+extern char* ttyname(int);
 extern int ttyname_r(int, char*, size_t);
 
 extern int  acct(const char*  filepath);
@@ -197,12 +222,12 @@ extern int   tcsetpgrp(int fd, pid_t _pid);
     } while (_rc == -1 && errno == EINTR); \
     _rc; })
 
-#if defined(__BIONIC_FORTIFY)
 extern ssize_t __read_chk(int, void*, size_t, size_t);
 __errordecl(__read_dest_size_error, "read called with size bigger than destination");
 __errordecl(__read_count_toobig_error, "read called with count > SSIZE_MAX");
-extern ssize_t __read_real(int, void*, size_t)
-    __asm__(__USER_LABEL_PREFIX__ "read");
+extern ssize_t __read_real(int, void*, size_t) __RENAME(read);
+
+#if defined(__BIONIC_FORTIFY)
 
 __BIONIC_FORTIFY_INLINE
 ssize_t read(int fd, void* buf, size_t count) {

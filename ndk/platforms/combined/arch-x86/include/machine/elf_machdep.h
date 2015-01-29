@@ -59,5 +59,6 @@
 #define	R_386_TLS_GOTDESC	39
 #define	R_386_TLS_DESC_CALL	40
 #define	R_386_TLS_DESC		41
+#define	R_386_IRELATIVE		42
 
 #define	R_TYPE(name)	__CONCAT(R_386_,name)

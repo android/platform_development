@@ -64,6 +64,7 @@ enum {
   RTLD_GLOBAL = 2,
 #endif
   RTLD_NOLOAD = 4,
+  RTLD_NODELETE = 0x01000,
 };
 
 #if defined (__LP64__)

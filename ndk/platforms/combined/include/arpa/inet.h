@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _ARPA_INET_H_
 #define _ARPA_INET_H_
 
@@ -33,8 +34,6 @@
 #include <netinet/in.h>
 
 __BEGIN_DECLS
-
-typedef uint32_t in_addr_t;
 
 in_addr_t inet_addr(const char*);
 int inet_aton(const char*, struct in_addr*);

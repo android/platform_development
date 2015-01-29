@@ -20,6 +20,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <sys/cdefs.h>
+#include <sys/types.h>  /* for off64_t */
 
 __BEGIN_DECLS
 
@@ -55,12 +56,19 @@ enum {
    */
   ANDROID_DLEXT_USE_LIBRARY_FD        = 0x10,
 
+  /* If opening a library using library_fd read it starting at library_fd_offset.
+   * This flag is only valid when ANDROID_DLEXT_USE_LIBRARY_FD is set.
+   */
+
+  ANDROID_DLEXT_USE_LIBRARY_FD_OFFSET    = 0x20,
+
   /* Mask of valid bits */
   ANDROID_DLEXT_VALID_FLAG_BITS       = ANDROID_DLEXT_RESERVED_ADDRESS |
                                         ANDROID_DLEXT_RESERVED_ADDRESS_HINT |
                                         ANDROID_DLEXT_WRITE_RELRO |
                                         ANDROID_DLEXT_USE_RELRO |
-                                        ANDROID_DLEXT_USE_LIBRARY_FD,
+                                        ANDROID_DLEXT_USE_LIBRARY_FD |
+                                        ANDROID_DLEXT_USE_LIBRARY_FD_OFFSET,
 };
 
 typedef struct {
@@ -69,6 +77,7 @@ typedef struct {
   size_t  reserved_size;
   int     relro_fd;
   int     library_fd;
+  off64_t library_fd_offset;
 } android_dlextinfo;
 
 extern void* android_dlopen_ext(const char* filename, int flag, const android_dlextinfo* extinfo);

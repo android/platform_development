@@ -46,6 +46,8 @@
 #define R_X86_64_GOTTPOFF	22
 #define R_X86_64_TPOFF32	23
 
+#define R_X86_64_IRELATIVE	37
+
 #define	R_TYPE(name)	__CONCAT(R_X86_64_,name)
 
 #else	/*	!__i386__	*/

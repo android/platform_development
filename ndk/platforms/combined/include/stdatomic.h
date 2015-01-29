@@ -32,6 +32,12 @@
 
 #include <sys/cdefs.h>
 
+#if defined(__GNUC__) && !defined(__GNUC_PREREQ)
+/* Duplicate definition here, since the mingw sys/cdefs.h omits the  */
+/* definition, and this needs to be usable there.                    */
+#define	__GNUC_PREREQ(x, y)    \
+	((__GNUC__ == (x) && __GNUC_MINOR__ >= (y)) || (__GNUC__ > (x)))
+#endif /* __GNUC__ && ... */
 
 #if defined(__cplusplus) && __cplusplus >= 201103L && defined(_USING_LIBCXX)
 # ifdef __clang__

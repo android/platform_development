@@ -25,16 +25,16 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-#ifndef _STDLIB_H_
-#define _STDLIB_H_
+
+#ifndef _STDLIB_H
+#define _STDLIB_H
 
 #include <sys/cdefs.h>
+#include <xlocale.h>
 
-#include <stddef.h>
-#include <string.h>
 #include <alloca.h>
-#include <strings.h>
-#include <memory.h>
+#include <malloc.h>
+#include <stddef.h>
 
 __BEGIN_DECLS
 
@@ -59,8 +59,15 @@ extern int clearenv(void);
 
 extern char* mkdtemp(char*);
 extern char* mktemp(char*) __warnattr("mktemp possibly used unsafely; consider using mkstemp");
-extern int mkstemp(char*);
+
+extern int mkostemp64(char*, int);
+extern int mkostemp(char*, int);
+extern int mkostemps64(char*, int, int);
+extern int mkostemps(char*, int, int);
 extern int mkstemp64(char*);
+extern int mkstemp(char*);
+extern int mkstemps64(char*, int);
+extern int mkstemps(char*, int);
 
 extern long strtol(const char *, char **, int);
 extern long long strtoll(const char *, char **, int);
@@ -69,13 +76,13 @@ extern unsigned long long strtoull(const char *, char **, int);
 
 extern int posix_memalign(void **memptr, size_t alignment, size_t size);
 
-extern double atof(const char*) __NDK_FPABI__;
+extern double atof(const char*);
 
-extern double strtod(const char*, char**) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
-extern float strtof(const char*, char**) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
-extern long double strtold(const char*, char**) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
+extern double strtod(const char*, char**) __LIBC_ABI_PUBLIC__;
+extern float strtof(const char*, char**) __LIBC_ABI_PUBLIC__;
+extern long double strtold(const char*, char**) __LIBC_ABI_PUBLIC__;
 
-extern long double strtold_l(const char *, char **, locale_t) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
+extern long double strtold_l(const char *, char **, locale_t) __LIBC_ABI_PUBLIC__;
 extern long long strtoll_l(const char *, char **, int, locale_t) __LIBC_ABI_PUBLIC__;
 extern unsigned long long strtoull_l(const char *, char **, int, locale_t) __LIBC_ABI_PUBLIC__;
 
@@ -96,17 +103,8 @@ extern void * bsearch(const void *key, const void *base0,
 
 extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
 
-extern long jrand48(unsigned short *);
-extern long mrand48(void);
-extern long nrand48(unsigned short *);
-extern long lrand48(void);
-extern unsigned short *seed48(unsigned short*);
-extern double erand48(unsigned short xsubi[3]) __NDK_FPABI__;
-extern double drand48(void) __NDK_FPABI__;
-extern void srand48(long);
-
-unsigned int arc4random(void);
-unsigned int arc4random_uniform(unsigned int);
+uint32_t arc4random(void);
+uint32_t arc4random_uniform(uint32_t);
 void arc4random_buf(void*, size_t);
 
 #define RAND_MAX 0x7fffffff
@@ -114,6 +112,16 @@ void arc4random_buf(void*, size_t);
 int rand(void);
 int rand_r(unsigned int*);
 void srand(unsigned int);
+
+double drand48(void);
+double erand48(unsigned short[3]);
+long jrand48(unsigned short[3]);
+void lcong48(unsigned short[7]);
+long lrand48(void);
+long mrand48(void);
+long nrand48(unsigned short[3]);
+unsigned short* seed48(unsigned short[3]);
+void srand48(long);
 
 char* initstate(unsigned int, char*, size_t);
 long random(void);
@@ -123,7 +131,7 @@ void srandom(unsigned int);
 int getpt(void);
 int grantpt(int);
 int posix_openpt(int);
-char* ptsname(int) __warnattr("ptsname is not thread-safe; use ptsname_r instead");
+char* ptsname(int);
 int ptsname_r(int, char*, size_t);
 int unlockpt(int);
 
@@ -166,4 +174,4 @@ extern size_t __ctype_get_mb_cur_max(void);
 
 __END_DECLS
 
-#endif /* _STDLIB_H_ */
+#endif /* _STDLIB_H */

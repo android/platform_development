@@ -99,6 +99,7 @@
 #define R_AARCH64_RELATIVE              1027    /* Adjust by program base.  */
 #define R_AARCH64_TLS_TPREL64           1030
 #define R_AARCH64_TLS_DTPREL32          1031
+#define R_AARCH64_IRELATIVE             1032
 
 #define R_TYPE(name)        __CONCAT(R_AARCH64_,name)
 

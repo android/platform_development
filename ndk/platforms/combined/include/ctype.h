@@ -54,8 +54,6 @@
 #define	_CTYPE_R	(_CTYPE_P|_CTYPE_U|_CTYPE_L|_CTYPE_D|_CTYPE_B)
 #define	_CTYPE_A	(_CTYPE_L|_CTYPE_U)
 
-#define _CTYPE_N    _CTYPE_D
-
 __BEGIN_DECLS
 
 extern const char	*_ctype_;

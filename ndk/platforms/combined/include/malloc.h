@@ -24,6 +24,7 @@
  */
 #include <sys/cdefs.h>
 #include <stddef.h>
+#include <stdio.h>
 
 __BEGIN_DECLS
 
@@ -52,6 +53,27 @@ struct mallinfo {
 #endif  /* STRUCT_MALLINFO_DECLARED */
 
 extern struct mallinfo mallinfo(void);
+
+/*
+ * XML structure for malloc_info(3) is in the following format:
+ *
+ * <malloc version="jemalloc-1">
+ *   <heap nr="INT">
+ *     <allocated-large>INT</allocated-large>
+ *     <allocated-huge>INT</allocated-huge>
+ *     <allocated-bins>INT</allocated-bins>
+ *     <bins-total>INT</bins-total>
+ *     <bin nr="INT">
+ *       <allocated>INT</allocated>
+ *       <nmalloc>INT</nmalloc>
+ *       <ndalloc>INT</ndalloc>
+ *     </bin>
+ *     <!-- more bins -->
+ *   </heap>
+ *   <!-- more heaps -->
+ * </malloc>
+ */
+extern int malloc_info(int, FILE *);
 
 __END_DECLS
 

@@ -40,13 +40,6 @@
 #define PIC_PLT(x)	x@PLT
 #define PIC_GOT(x)	x@GOTPCREL(%rip)
 
-/* let kernels and others override entrypoint alignment */
-#ifndef _ALIGN_TEXT
-# ifdef _STANDALONE
-#  define _ALIGN_TEXT .align 4
-# else
-#  define _ALIGN_TEXT .align 16
-# endif
-#endif
+#define __bionic_asm_align 16
 
 #endif /* !_AMD64_ASM_H_ */

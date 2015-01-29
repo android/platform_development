@@ -28,14 +28,6 @@
 #ifndef _ARM_MACHINE_CPU_FEATURES_H
 #define _ARM_MACHINE_CPU_FEATURES_H
 
-/* The purpose of this file is to define several macros corresponding
- * to CPU features that may or may not be available at build time on
- * on the target CPU.
- *
- * This is done to abstract us from the various ARM Architecture
- * quirks and alphabet soup.
- */
-
 /* __ARM_ARCH__ is a number corresponding to the ARM revision
  * we're going to support. Our toolchain doesn't define __ARM_ARCH__
  * so try to guess it.
@@ -51,33 +43,6 @@
 #  else
 #    error Unknown or unsupported ARM architecture
 #  endif
-#endif
-
-/* define __ARM_HAVE_HALFWORD_MULTIPLY when half-word multiply instructions
- * this means variants of: smul, smulw, smla, smlaw, smlal
- */
-#define  __ARM_HAVE_HALFWORD_MULTIPLY  1
-
-/* define __ARM_HAVE_LDREXD for ARMv7 architecture
- * (also present in ARMv6K, but not implemented in ARMv7-M, neither of which
- * we care about)
- */
-#if __ARM_ARCH__ >= 7
-#  define __ARM_HAVE_LDREXD
-#endif
-
-/* define _ARM_HAVE_VFP if we have VFPv3
- */
-#if __ARM_ARCH__ >= 7 && defined __VFP_FP__
-#  define __ARM_HAVE_VFP
-#endif
-
-/* define _ARM_HAVE_NEON for ARMv7 architecture if we support the
- * Neon SIMD instruction set extensions. This also implies
- * that VFPv3-D32 is supported.
- */
-#if __ARM_ARCH__ >= 7 && defined __ARM_NEON__
-#  define __ARM_HAVE_NEON
 #endif
 
 #endif /* _ARM_MACHINE_CPU_FEATURES_H */

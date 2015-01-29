@@ -29,12 +29,12 @@
 #ifndef _SIGNAL_H_
 #define _SIGNAL_H_
 
-#include <errno.h>
-#include <sys/cdefs.h>
-#include <limits.h>		/* For LONG_BIT */
-#include <string.h>		/* For memset() */
-#include <sys/types.h>
 #include <asm/sigcontext.h>
+#include <limits.h>
+#include <machine/pthread_types.h>
+#include <machine/timespec.h>
+#include <sys/cdefs.h>
+#include <sys/types.h>
 
 #if defined(__LP64__) || defined(__mips__)
 /* For 64-bit (and mips), the kernel's struct sigaction doesn't match the POSIX one,
@@ -128,6 +128,13 @@ extern int sigaltstack(const stack_t*, stack_t*);
 
 extern void psiginfo(const siginfo_t*, const char*);
 extern void psignal(int, const char*);
+
+extern int pthread_kill(pthread_t, int);
+extern int pthread_sigmask(int, const sigset_t*, sigset_t*);
+
+extern int sigqueue(pid_t, int, const union sigval);
+extern int sigtimedwait(const sigset_t*, siginfo_t*, const struct timespec*);
+extern int sigwaitinfo(const sigset_t*, siginfo_t*);
 
 __END_DECLS
 

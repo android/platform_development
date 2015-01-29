@@ -37,39 +37,6 @@
 
 #include <sys/cdefs.h>
 
-#if __POSIX_VISIBLE
-#define	_POSIX_ARG_MAX		4096
-#define	_POSIX_CHILD_MAX	25
-#define	_POSIX_LINK_MAX		8
-#define	_POSIX_MAX_CANON	255
-#define	_POSIX_MAX_INPUT	255
-#define	_POSIX_NAME_MAX		14
-#define	_POSIX_NGROUPS_MAX	0
-#define	_POSIX_OPEN_MAX		16
-#define	_POSIX_PATH_MAX		256
-#define _POSIX_PIPE_BUF		512
-#define	_POSIX_RE_DUP_MAX	255
-#define _POSIX_SSIZE_MAX	32767
-#define _POSIX_STREAM_MAX	8
-#define _POSIX_SYMLINK_MAX	255
-#define _POSIX_SYMLOOP_MAX	8
-#define _POSIX_TZNAME_MAX	3
-
-#define	_POSIX2_BC_BASE_MAX	99
-#define	_POSIX2_BC_DIM_MAX	2048
-#define	_POSIX2_BC_SCALE_MAX	99
-#define	_POSIX2_BC_STRING_MAX	1000
-#define	_POSIX2_COLL_WEIGHTS_MAX	2
-#define	_POSIX2_EXPR_NEST_MAX	32
-#define	_POSIX2_LINE_MAX	2048
-#define	_POSIX2_RE_DUP_MAX	_POSIX_RE_DUP_MAX
-
-#if __POSIX_VISIBLE >= 200112
-#define _POSIX_TTY_NAME_MAX	9	/* includes trailing NUL */
-#define _POSIX_LOGIN_NAME_MAX	9	/* includes trailing NUL */
-#endif /* __POSIX_VISIBLE >= 200112 */
-#endif /* __POSIX_VISIBLE */
-
 #if __XPG_VISIBLE
 #define PASS_MAX		128	/* _PASSWORD_LEN from <pwd.h> */
 
@@ -125,4 +92,10 @@
 /* glibc's PAGE_MASK is the bitwise negation of BSD's! TODO: remove? */
 #define PAGE_MASK (~(PAGE_SIZE - 1))
 
+#define SEM_VALUE_MAX 0x3fffffff
+
+/* POSIX says these belong in <unistd.h> but BSD has some in <limits.h>. */
+#include <machine/posix_limits.h>
+
+#define HOST_NAME_MAX _POSIX_HOST_NAME_MAX
 #endif /* !_LIMITS_H_ */

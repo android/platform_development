@@ -38,9 +38,7 @@
 #ifndef _ARM32_ASM_H_
 #define _ARM32_ASM_H_
 
-#ifndef _ALIGN_TEXT
-# define _ALIGN_TEXT .align 0
-#endif
+#define __bionic_asm_align 0
 
 #undef __bionic_asm_custom_entry
 #undef __bionic_asm_custom_end
@@ -49,11 +47,5 @@
 
 #undef __bionic_asm_function_type
 #define __bionic_asm_function_type #function
-
-#if defined(__ELF__) && defined(PIC)
-#define PIC_SYM(x,y) x ## ( ## y ## )
-#else
-#define PIC_SYM(x,y) x
-#endif
 
 #endif /* !_ARM_ASM_H_ */

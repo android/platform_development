@@ -58,6 +58,12 @@ struct dirent64 { __DIRENT64_BODY };
 
 #undef __DIRENT64_BODY
 
+/* glibc compatibility. */
+#undef _DIRENT_HAVE_D_NAMLEN /* Linux doesn't have a d_namlen field. */
+#define _DIRENT_HAVE_D_RECLEN
+#define _DIRENT_HAVE_D_OFF
+#define _DIRENT_HAVE_D_TYPE
+
 #define d_fileno d_ino
 
 typedef struct DIR DIR;
@@ -70,6 +76,8 @@ extern int readdir_r(DIR*, struct dirent*, struct dirent**);
 extern int readdir64_r(DIR*, struct dirent64*, struct dirent64**);
 extern int closedir(DIR*);
 extern void rewinddir(DIR*);
+extern void seekdir(DIR*, long);
+extern long telldir(DIR*);
 extern int dirfd(DIR*);
 extern int alphasort(const struct dirent**, const struct dirent**);
 extern int alphasort64(const struct dirent64**, const struct dirent64**);
