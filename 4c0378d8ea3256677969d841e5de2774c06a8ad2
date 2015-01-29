@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d72fc7b3_d6390452",
+        "filename": "ndk/platforms/combined/include/ctype.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-01-29T01:29:41Z",
+      "side": 0,
+      "message": "First batch of inlines that got fixed.",
+      "revId": "4c0378d8ea3256677969d841e5de2774c06a8ad2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57ae7766_75cc52be",
+        "filename": "ndk/platforms/combined/include/errno.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-01-29T01:29:41Z",
+      "side": 0,
+      "message": "Here\u0027s another.",
+      "revId": "4c0378d8ea3256677969d841e5de2774c06a8ad2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "174ddfae_5cc07d4e",
+        "filename": "ndk/platforms/combined/include/signal.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-01-29T01:29:41Z",
+      "side": 0,
+      "message": "Here\u0027s a bunch.",
+      "revId": "4c0378d8ea3256677969d841e5de2774c06a8ad2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "174ddfae_7c19f975",
+        "filename": "ndk/platforms/combined/include/stdlib.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-01-29T01:29:41Z",
+      "side": 0,
+      "message": "More.",
+      "revId": "4c0378d8ea3256677969d841e5de2774c06a8ad2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57ae7766_d57666c0",
+        "filename": "ndk/platforms/combined/include/sys/atomics.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-01-29T01:29:41Z",
+      "side": 0,
+      "message": "More.",
+      "revId": "4c0378d8ea3256677969d841e5de2774c06a8ad2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d72fc7b3_d1490e54",
+        "filename": "ndk/platforms/combined/include/sys/stat.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-01-29T01:29:41Z",
+      "side": 0,
+      "message": "...",
+      "revId": "4c0378d8ea3256677969d841e5de2774c06a8ad2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "174ddfae_dc4acd13",
+        "filename": "ndk/platforms/combined/include/termios.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-01-29T01:29:41Z",
+      "side": 0,
+      "message": "More.",
+      "revId": "4c0378d8ea3256677969d841e5de2774c06a8ad2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
