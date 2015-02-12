@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b64ed954_11104cc6",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-02-12T20:13:32Z",
+      "side": 1,
+      "message": "oh, yes, this scrip is now run in a new shell.\nAlternatively you can \"export -f \u003cfunctions needed by this script\u003e\" in envsetup.sh.",
+      "parentUuid": "b637b9c2_89489975",
+      "range": {
+        "startLine": 6,
+        "startChar": 10,
+        "endLine": 6,
+        "endChar": 40
+      },
+      "revId": "51b9a0bc50ac0e69f52525fc676413aebbb23676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b64ed954_318c704a",
         "filename": "scripts/gdbclient",
         "patchSetId": 2
