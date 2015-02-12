@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b64ed954_91a7dca8",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-02-12T19:44:18Z",
+      "side": 1,
+      "message": "Hmm, why function can\u0027t be used in this script?",
+      "range": {
+        "startLine": 6,
+        "startChar": 10,
+        "endLine": 6,
+        "endChar": 40
+      },
+      "revId": "51b9a0bc50ac0e69f52525fc676413aebbb23676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b64ed954_318c704a",
         "filename": "scripts/gdbclient",
         "patchSetId": 2
@@ -13,6 +36,24 @@
       "writtenOn": "2015-02-12T19:33:54Z",
       "side": 1,
       "message": "we can no longer assume that $ANDROID_BUILD_TOP is set. add check for it?",
+      "revId": "51b9a0bc50ac0e69f52525fc676413aebbb23676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "36758977_f5c2d809",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-02-12T19:44:18Z",
+      "side": 1,
+      "message": "Yeah, this is chicken-and-eng issue: ANDROID_BUILD_TOP is set by envsetup.sh.\nI think you should state that envsetup.sh (even lunch) must be run before running this script.",
+      "parentUuid": "b64ed954_318c704a",
       "revId": "51b9a0bc50ac0e69f52525fc676413aebbb23676",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
