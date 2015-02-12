@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b64ed954_318c704a",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-02-12T19:33:54Z",
+      "side": 1,
+      "message": "we can no longer assume that $ANDROID_BUILD_TOP is set. add check for it?",
+      "revId": "51b9a0bc50ac0e69f52525fc676413aebbb23676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
