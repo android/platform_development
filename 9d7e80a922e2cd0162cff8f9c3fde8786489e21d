@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56783d6f_562d54b8",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-02-12T19:17:45Z",
+      "side": 1,
+      "message": "this seems a bit weird. ANDROID_BUILD_TOP is only set if you\u0027ve sourced.",
+      "revId": "9d7e80a922e2cd0162cff8f9c3fde8786489e21d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
