@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "012da676_c23b4600",
+        "filename": "build/sdk-linux-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-03-13T20:16:11Z",
+      "side": 1,
+      "message": "Yes, we should be doing that in the long term. This solves the immediate bug (and test blockage) though.",
+      "parentUuid": "c178ee71_b1bb0723",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 105
+      },
+      "revId": "65429f6e8d18fb9c066a3cf1d765c18278b7be8d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "86052c00_cbefe1fc",
         "filename": "build/sdk-linux-x86.atree",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-03-13T18:44:24Z",
       "side": 1,
       "message": "We don\u0027t ship 64-bit executables in the SDK package.\n(In the build system, if you are building sdk/win_sdk, it switches to \"HOST_PREFER_32_BIT :\u003d true\")",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 110
+      },
+      "revId": "65429f6e8d18fb9c066a3cf1d765c18278b7be8d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "012da676_62253ada",
+        "filename": "build/sdk-linux-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-03-13T20:16:11Z",
+      "side": 1,
+      "message": "But the linux SDK includes a 64-bit llvm-rs-cc. Is that a bug?",
+      "parentUuid": "86052c00_cbefe1fc",
       "range": {
         "startLine": 30,
         "startChar": 0,
