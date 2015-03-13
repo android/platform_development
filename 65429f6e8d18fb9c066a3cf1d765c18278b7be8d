@@ -93,6 +93,30 @@
       "revId": "65429f6e8d18fb9c066a3cf1d765c18278b7be8d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c178ee71_27f41557",
+        "filename": "build/sdk-linux-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-03-13T20:31:10Z",
+      "side": 1,
+      "message": "I guess you didn\u0027t do a clean build?\nIf you do a clean sdk build, it will be 32-bit.\nThe default now is 64-bit.",
+      "parentUuid": "012da676_62253ada",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 110
+      },
+      "revId": "65429f6e8d18fb9c066a3cf1d765c18278b7be8d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
