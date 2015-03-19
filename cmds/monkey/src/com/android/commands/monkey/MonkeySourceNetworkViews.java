@@ -91,7 +91,7 @@ public class MonkeySourceNetworkViews {
         COMMAND_MAP.put("getaccessibilityids", new GetAccessibilityIds());
     }
 
-    private static final HandlerThread sHandlerThread = new HandlerThread(HANDLER_THREAD_NAME);
+    private static HandlerThread sHandlerThread = null;
 
     /**
      * Registers the event listener for AccessibilityEvents.
@@ -99,6 +99,7 @@ public class MonkeySourceNetworkViews {
      * accessibility service.
      */
     public static void setup() {
+        sHandlerThread = new HandlerThread(HANDLER_THREAD_NAME);
         sHandlerThread.setDaemon(true);
         sHandlerThread.start();
         sUiTestAutomationBridge = new UiAutomation(sHandlerThread.getLooper(),
@@ -108,6 +109,7 @@ public class MonkeySourceNetworkViews {
 
     public static void teardown() {
         sHandlerThread.quit();
+        sHandlerThread = null;
     }
 
     /**
