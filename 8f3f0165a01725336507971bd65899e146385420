@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23c4727c_5e9be04b",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-04-03T23:48:33Z",
+      "side": 1,
+      "message": "you might want to add a comment _here_ explaining why arm comes later than it should, otherwise next time i\u0027m looking at this list, i\u0027ll sort it like i always do :-/",
+      "revId": "8f3f0165a01725336507971bd65899e146385420",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
