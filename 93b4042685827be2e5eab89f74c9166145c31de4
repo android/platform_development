@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23c4727c_be9d5cb3",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-04-04T00:09:07Z",
+      "side": 1,
+      "message": "i still think you need a comment in the entry that\u0027s \"wrong\" rather than at the top, but hopefully we can just switch to parsing /proc/pid/exe instead.",
+      "revId": "93b4042685827be2e5eab89f74c9166145c31de4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
