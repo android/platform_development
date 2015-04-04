@@ -16,6 +16,24 @@
       "revId": "8f3f0165a01725336507971bd65899e146385420",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23c4727c_febab41f",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2015-04-04T00:06:44Z",
+      "side": 1,
+      "message": "PTAL.",
+      "parentUuid": "23c4727c_5e9be04b",
+      "revId": "8f3f0165a01725336507971bd65899e146385420",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
