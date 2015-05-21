@@ -22,6 +22,30 @@
       "revId": "bdd085ba2c3b6df0fb057d030593821419a50302",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d031dc0_fe129954",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2015-05-21T21:57:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d162dff_34f550cf",
+      "range": {
+        "startLine": 56,
+        "startChar": 71,
+        "endLine": 56,
+        "endChar": 72
+      },
+      "revId": "bdd085ba2c3b6df0fb057d030593821419a50302",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
