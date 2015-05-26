@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d9499c1_cf1e2d19",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-05-26T20:10:45Z",
+      "side": 1,
+      "message": "no test?",
+      "revId": "5521841a426e70f78cc901c470aadc0ff649882d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
