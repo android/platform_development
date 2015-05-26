@@ -16,6 +16,24 @@
       "revId": "5521841a426e70f78cc901c470aadc0ff649882d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d5f9dfa_5fb55c2c",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2015-05-26T20:23:31Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t notice that there are self-tests.",
+      "parentUuid": "6d9499c1_cf1e2d19",
+      "revId": "5521841a426e70f78cc901c470aadc0ff649882d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
