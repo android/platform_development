@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d96c6c17_8ee3da18",
+        "filename": "ndk/samples/hello-icu-standalone/jni/hello-icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-04T23:03:48Z",
+      "side": 1,
+      "message": "FYI: harmless but should not be necessary when ucol_open() itself fails",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 21
+      },
+      "revId": "ce8e6faeddde579235fb3481060972e9b315e564",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "790f0079_fb54ca9a",
+        "filename": "ndk/samples/hello-icu-standalone/jni/hello-icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-04T23:03:48Z",
+      "side": 1,
+      "message": "44 -\u003e 4.4",
+      "range": {
+        "startLine": 66,
+        "startChar": 57,
+        "endLine": 66,
+        "endChar": 59
+      },
+      "revId": "ce8e6faeddde579235fb3481060972e9b315e564",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d96c6c17_6eec7e05",
+        "filename": "ndk/samples/hello-icu-standalone/jni/hello-icu.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-04T23:03:48Z",
+      "side": 1,
+      "message": "at least",
+      "range": {
+        "startLine": 78,
+        "startChar": 27,
+        "endLine": 78,
+        "endChar": 39
+      },
+      "revId": "ce8e6faeddde579235fb3481060972e9b315e564",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
