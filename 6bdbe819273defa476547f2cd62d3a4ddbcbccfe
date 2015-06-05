@@ -1,0 +1,274 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9df0c22_e840bc06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "ICU4C",
+      "range": {
+        "startLine": 7,
+        "startChar": 23,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99e914d2_19ac5c23",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "Sounds right, but the code not far below seems to set such paths relative to ANDROID_BUILD_TOP, and seems to ignore these variables. Am I missing something?",
+      "range": {
+        "startLine": 11,
+        "startChar": 70,
+        "endLine": 15,
+        "endChar": 49
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9a690c2_23ee6284",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "standard",
+      "range": {
+        "startLine": 18,
+        "startChar": 70,
+        "endLine": 18,
+        "endChar": 78
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9a690c2_e357fa9c",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "given",
+      "range": {
+        "startLine": 99,
+        "startChar": 18,
+        "endLine": 99,
+        "endChar": 24
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99e914d2_192a9c08",
+        "filename": "ndk/sources/android/ndk_icu/gen-ndk-icu.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "FYI\nI have only glanced at this file.",
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99e914d2_66f3ff6b",
+        "filename": "ndk/sources/android/ndk_icu/include/unicode/alphaindex.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "I think we should omit header files that are only for C++ API. Turning off the show-cpp-api switch only affects C++ definitions in otherwise-C headers.\n\nThere might be exceptions. For example, the definitions in localpointer.h are templatized and should not rely on symbols exported from the library -- at least I assume that\u0027s the case. LocalPointer and LocalArray would be handy for NDK developers. In fact, many of the definitions we turn off via show-cpp-api\u003d0 are for things like LocalUCollatorPointer which would be even more handy for developers. What do you think?\n\nWe would probably have to verify that they don\u0027t get exported from the library, only code-generated for the NDK app.\n\nWe could also keep these ICU definitions hidden, and wait for C++11 support in the NDK C++ library, where std::unique_ptr should work even with custom \"close\" functions. http://en.cppreference.com/w/cpp/memory/unique_ptr",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 21,
+        "endChar": 35
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9df0c22_c80860e1",
+        "filename": "ndk/sources/android/ndk_icu/include/unicode/uconfig.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "Thanks!\n\nDid you verify that the entry points in the .o/.a/.so files do come out as expected, for example ucol_open_ndk?",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 32
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99e914d2_6614dfcf",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "s/44/4.4/g\nin comments, but it\u0027s \"44\" (without the dot) in the icudtXXl.dat file name",
+      "range": {
+        "startLine": 78,
+        "startChar": 42,
+        "endLine": 78,
+        "endChar": 44
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9df0c22_4860d02d",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "FYI\nok to keep 44 here",
+      "range": {
+        "startLine": 84,
+        "startChar": 35,
+        "endLine": 84,
+        "endChar": 37
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9a690c2_e3029a3b",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "a two-decimal-digit string",
+      "range": {
+        "startLine": 101,
+        "startChar": 26,
+        "endLine": 101,
+        "endChar": 60
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9df0c22_db910c5c",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 3908,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "Please change each of these\n    *status \u003d U_UNSUPPORTED_ERROR;\nto\n    if (U_SUCCESS(*status)) {\n      *status \u003d U_UNSUPPORTED_ERROR;\n    }\n\nIf a previous call failed, then we don\u0027t want to clobber its failure code.",
+      "range": {
+        "startLine": 3908,
+        "startChar": 0,
+        "endLine": 3908,
+        "endChar": 34
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9df0c22_1b6e14f5",
+        "filename": "ndk/sources/android/ndk_icu/ndk_icu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 4028,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2015-06-05T20:54:38Z",
+      "side": 1,
+      "message": "This will crash if the function happens to not exist in the system copy. We cannot report a UErrorCode failure code. I don\u0027t know what else makes sense. Not sure if returning FALSE in this case would be ok, the caller couldn\u0027t tell whether it\u0027s really FALSE or the function does not exist.\n\nMaybe just make sure to remember and document?",
+      "range": {
+        "startLine": 4027,
+        "startChar": 2,
+        "endLine": 4028,
+        "endChar": 19
+      },
+      "revId": "6bdbe819273defa476547f2cd62d3a4ddbcbccfe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
