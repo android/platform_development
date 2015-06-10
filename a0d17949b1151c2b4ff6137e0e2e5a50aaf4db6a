@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "796b8031_c95cc3ff",
+        "filename": "tools/btsnooz/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1073689
+      },
+      "writtenOn": "2015-06-10T02:45:20Z",
+      "side": 1,
+      "message": "nit: s/2014/2015/",
+      "revId": "a0d17949b1151c2b4ff6137e0e2e5a50aaf4db6a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
