@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e65c2c2_5acad53d",
+        "filename": "build/tools/windows_sdk.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-06-25T21:27:33Z",
+      "side": 1,
+      "message": "If you want to build clang.exe when you run \"make winsdk-tools\", this is the only place you need to change.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 8
+      },
+      "revId": "eb8b46d7a72a0cc04450adbd49fb2ee2a4142544",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
