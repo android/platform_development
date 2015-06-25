@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fe6116bc_b7022811",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-06-25T21:26:37Z",
+      "side": 1,
+      "message": "You don\u0027t need to add it here.",
+      "range": {
+        "startLine": 36,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 8
+      },
+      "revId": "b8b82f54ae7442facf6113ab5f8b0bb096651278",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1eea6a20_ca65543f",
         "filename": "build/sdk-windows-x86.atree",
         "patchSetId": 1
@@ -49,6 +72,24 @@
       "side": 1,
       "message": "Pretty sure it will be built as long as it\u0027s in product_sdk. BTW, the target you really want it to be a part of is winsdk-tools. win_sdk also does a full linux platform build because it needs the system images for the emulator.\n\nI\u0027ve added wangying. He can probably tell you the simplest way to do this.",
       "parentUuid": "feecb63d_39053fc6",
+      "revId": "b8b82f54ae7442facf6113ab5f8b0bb096651278",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e99fafb_5c1c9d71",
+        "filename": "build/sdk-windows-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-06-25T21:26:37Z",
+      "side": 1,
+      "message": "If you want to put it into the sdk-repo-windows-build-tools-\u003cbuild-number\u003e.zip, this is necessary.\nBut if you just want to build clang.exe when you run \"make winsdk-tools\", this isn\u0027t needed.",
+      "parentUuid": "1eea6a20_dd999c59",
       "revId": "b8b82f54ae7442facf6113ab5f8b0bb096651278",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
