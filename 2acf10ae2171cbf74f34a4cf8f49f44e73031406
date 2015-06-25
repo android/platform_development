@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e7f3a21_cc998f59",
+        "filename": "ndk/platforms/android-21/include/sys/user.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-06-25T01:31:47Z",
+      "side": 0,
+      "message": "the mips gdbserver still builds, and i couldn\u0027t work out from the git history where this came from and why. and it\u0027s not in bionic, obviously, since this patch is the result of copying this two files from ToT bionic.",
+      "revId": "2acf10ae2171cbf74f34a4cf8f49f44e73031406",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
