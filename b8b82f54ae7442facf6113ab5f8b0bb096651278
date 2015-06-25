@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1eea6a20_ca65543f",
+        "filename": "build/sdk-windows-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-06-25T19:54:57Z",
+      "side": 1,
+      "message": "We don\u0027t actually need it in the SDK. The NDK is packaged separately.",
+      "revId": "b8b82f54ae7442facf6113ab5f8b0bb096651278",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
