@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5e65c2c2_7a56b9a3",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2015-06-25T21:55:51Z",
+      "side": 1,
+      "message": "https://android-review.googlesource.com/156732 removes this unnecessary clang.",
+      "parentUuid": "fe6116bc_b7022811",
+      "range": {
+        "startLine": 36,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 8
+      },
+      "revId": "b8b82f54ae7442facf6113ab5f8b0bb096651278",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1eea6a20_ca65543f",
         "filename": "build/sdk-windows-x86.atree",
         "patchSetId": 1
