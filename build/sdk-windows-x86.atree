@@ -84,6 +84,9 @@ lib/libLLVM.dll                         strip build-tools/${PLATFORM_NAME}/../li
 rm build-tools/${PLATFORM_NAME}/../lib/libclang.so
 lib/libclang.dll                        strip build-tools/${PLATFORM_NAME}/../lib/libclang.dll
 
+rm build-tools/${PLATFORM_NAME}/clang
+bin/clang.exe                           strip build-tools/${PLATFORM_NAME}/clang.exe
+
 #bcc not yet compiled on windows
 
 rm build-tools/${PLATFORM_NAME}/../lib/libbcc.so
