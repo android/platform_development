@@ -13,10 +13,7 @@ fi
 source $ANDROID_BUILD_TOP/build/envsetup.sh
 
 function adb_get_product_device() {
-  local candidate=`adb shell getprop ro.product.device | tr -d '\r\n'`
-  if [ -z $candidate ]; then
-    candidate=`adb shell getprop ro.hardware | tr -d '\r\n'`
-  fi
+  candidate=`adb shell getprop ro.hardware | tr -d '\r\n'`
   echo $candidate
 }
 
