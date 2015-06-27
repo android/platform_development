@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "133a65f6_2033ca32",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-06-27T04:02:55Z",
+      "side": 1,
+      "message": "inline this at the single call site?",
+      "revId": "580a1c191c5163341b2a69fc7dcf633d02e6e96d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
