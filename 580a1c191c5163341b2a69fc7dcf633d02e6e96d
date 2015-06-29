@@ -16,6 +16,24 @@
       "revId": "580a1c191c5163341b2a69fc7dcf633d02e6e96d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93a1f560_9639dc63",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-06-29T18:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "133a65f6_2033ca32",
+      "revId": "580a1c191c5163341b2a69fc7dcf633d02e6e96d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
