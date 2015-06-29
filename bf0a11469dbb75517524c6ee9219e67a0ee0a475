@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f390710b_4b11688a",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-06-29T18:18:42Z",
+      "side": 1,
+      "message": "i meant the single call site of adb_get_product_device :-)\n\n(especially because the name is now wrong.)",
+      "revId": "bf0a11469dbb75517524c6ee9219e67a0ee0a475",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
