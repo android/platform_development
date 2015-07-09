@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1840c241_79b43b23",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-07-09T09:55:51Z",
+      "side": 1,
+      "message": "move this back to adb_get_device?",
+      "revId": "1ccbc8ba6ba025865ce291abf41157b7c428d356",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
