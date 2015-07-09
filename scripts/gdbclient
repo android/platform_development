@@ -39,6 +39,11 @@ function gdbclient() {
   fi
   local DEVICE=`adb shell getprop ro.hardware | tr -d '\r\n'`
 
+  if [[ "$DEVICE" =~ ^(goldfish|ranchu)$ ]]; then
+    # Emulator builds use product.device for OUT folder
+    DEVICE=`adb shell getprop ro.product.device | tr -d '\r\n'`
+  fi
+
   if [ -z "$DEVICE" ]; then
     echo "Error: Unable to get device name. Please check if device is connected and ANDROID_SERIAL is set."
     return -2
