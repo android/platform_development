@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6dd2dee8_db61bf7a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1016138
+      },
+      "writtenOn": "2015-07-22T22:11:12Z",
+      "side": 1,
+      "message": "aren\u0027t we just replacing the default browser to the mini version, instead of totally removing a browser?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "f5da1f2a76d9513121506c9bad0eab12b01acd20",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
