@@ -1,15 +1,5 @@
-LIBRARY AdbWinApi.dll
+; AdbWinApi.def : Declares the module parameters.
+
+LIBRARY      "AdbWinApi.DLL"
+
 EXPORTS
-AdbEnumInterfaces
-AdbNextInterface
-AdbCreateInterfaceByName
-AdbOpenDefaultBulkReadEndpoint
-AdbOpenDefaultBulkWriteEndpoint
-AdbCloseHandle
-AdbGetInterfaceName
-AdbWriteEndpointSync
-AdbReadEndpointSync
-AdbGetSerialNumber
-AdbGetUsbInterfaceDescriptor
-AdbGetUsbDeviceDescriptor
-AdbGetEndpointInformation
