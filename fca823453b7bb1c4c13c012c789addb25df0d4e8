@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa33dcf3_3b1463d2",
+        "filename": "build/sdk-linux-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1010055
+      },
+      "writtenOn": "2015-07-31T21:25:53Z",
+      "side": 1,
+      "message": "I assume the executables already search in lib64 (so this would be transparent to whatever invokes this)?",
+      "range": {
+        "startLine": 25,
+        "startChar": 93,
+        "endLine": 25,
+        "endChar": 98
+      },
+      "revId": "fca823453b7bb1c4c13c012c789addb25df0d4e8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
