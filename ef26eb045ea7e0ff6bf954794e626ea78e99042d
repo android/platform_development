@@ -94,6 +94,30 @@
       "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a41eb557_f7927ada",
+        "filename": "host/windows/usb/adb_winapi_test/BUILDME.TXT",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T02:53:09Z",
+      "side": 1,
+      "message": "I figured it out. You did get the right download, the hash matches. Windows 10 for some reason compacts the menu hierarchy, but when I look at my filesystem (that the menu is based on), I see the hierarchy that you describe. So it means that my instructions are wrong for OSes other than Win 10 (or else you could consider it a Win 10 bug/feature). That\u0027s what I get for being on the bleeding edge. :)\n\nSo to summarize, I approve of: 1) updating BUILDME.TXT as you see fit, 2) doing _NT_TARGET_VERSION in the future",
+      "parentUuid": "44141933_dc744144",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 68
+      },
+      "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
