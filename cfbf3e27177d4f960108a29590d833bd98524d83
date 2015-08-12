@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "842e118f_ab5a49c6",
+        "filename": "host/windows/prebuilt/usb/AdbWinApi.def",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T01:02:12Z",
+      "side": 1,
+      "message": "It is pretty interesting that you were able to delete this and everything still works. My thinking is that the code uses __declspec(export) and the APIs are extern \"C\" so the name comes out the same.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "cfbf3e27177d4f960108a29590d833bd98524d83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
