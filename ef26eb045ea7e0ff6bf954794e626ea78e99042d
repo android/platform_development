@@ -118,6 +118,30 @@
       "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64111d42_eebaa7b4",
+        "filename": "host/windows/usb/adb_winapi_test/BUILDME.TXT",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-08-12T20:30:40Z",
+      "side": 1,
+      "message": "how can i check what i built for? (i.e. how do i check whether _NT_TARGET_VERSION worked?)",
+      "parentUuid": "a41eb557_f7927ada",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 68
+      },
+      "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
