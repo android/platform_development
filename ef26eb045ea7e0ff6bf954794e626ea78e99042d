@@ -46,6 +46,30 @@
       "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04f5c13c_85a666c8",
+        "filename": "host/windows/usb/adb_winapi_test/BUILDME.TXT",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T02:13:08Z",
+      "side": 1,
+      "message": "Hmm, I don\u0027t have that on my setup. Here\u0027s what I see in my menu on Win10: https://drive.google.com/file/d/0B3A4jzWKJNSFVkpqWWFMVG14Z00/view?usp\u003dsharing\n\nThe directory the WDK was installed into was (the default): C:\\WinDDK\\7600.16385.1",
+      "parentUuid": "842e118f_ebbf3115",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 68
+      },
+      "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
