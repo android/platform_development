@@ -166,6 +166,30 @@
       "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64367de0_153cd6e9",
+        "filename": "host/windows/.gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-08-12T02:21:21Z",
+      "side": 1,
+      "message": "or maybe technet served up different ISOs because we were on different OSes?\n\n  $ md5sum GRMWDK_EN_7600_1.ISO \n  8fe981a1706d43ad34bda496e6558f94  GRMWDK_EN_7600_1.ISO",
+      "parentUuid": "64367de0_1563b60f",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
