@@ -46,6 +46,30 @@
       "revId": "cfbf3e27177d4f960108a29590d833bd98524d83",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "645f5d28_0a303b6e",
+        "filename": "host/windows/prebuilt/usb/AdbWinApi.def",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T01:17:05Z",
+      "side": 1,
+      "message": "Ah, ok. A .def file lists the exact names of how APIs should be listed in the export section of the resulting image. Most of the time people use it to kill C++ name mangling in the exports or if they don\u0027t want to use __declspec(export) in code.\n\nI don\u0027t know why a .def file would be needed in the prebuilts directory either.",
+      "parentUuid": "e4298d86_71a692cb",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "cfbf3e27177d4f960108a29590d833bd98524d83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
