@@ -142,6 +142,30 @@
       "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64367de0_1563b60f",
+        "filename": "host/windows/.gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T02:13:08Z",
+      "side": 1,
+      "message": "Hmm, my best guess is that you installed a different version of the WDK, but that doesn\u0027t make sense since you used the URL that I gave you. Maybe I\u0027m the fool and maybe I installed something other than the URL I gave you? I dunno.",
+      "parentUuid": "842e118f_cbbc7523",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
