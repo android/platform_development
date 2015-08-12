@@ -94,6 +94,30 @@
       "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44141933_bcdd0dda",
+        "filename": "host/windows/.gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T01:39:46Z",
+      "side": 1,
+      "message": "I think they just make the warnings more aggressive over time to encourage the right thing to happen. In the older WDK there is OACR \u0026 PREfast, but they don\u0027t contribute to .wrn files. Maybe in the newer WDK it does.",
+      "parentUuid": "a41eb557_57c5ae06",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
