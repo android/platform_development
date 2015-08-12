@@ -142,6 +142,30 @@
       "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4298d86_3d021b18",
+        "filename": "host/windows/usb/adb_winapi_test/BUILDME.TXT",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T21:42:29Z",
+      "side": 1,
+      "message": "After you build the DLL, run:\n\n  link -dump /headers \u003cdll-name\u003e\n\nLook at the \"subsystem version\" value and it should match what %NTMAKEENV%\\makefile.new says for Vista:\n\n  !elseif $(_NT_TARGET_VERSION) \u003d\u003d $(_NT_TARGET_VERSION_VISTA)    \n  ...\n  SUBSYSTEM_VERSION_LATEST    \u003d6.00\n\nThis subsystem version field in the PE header probably isn\u0027t even checked at runtime by the OS. We\u0027re just using it as an indicator to know that makefile.new went down the right makefile code-path.",
+      "parentUuid": "64111d42_eebaa7b4",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 68
+      },
+      "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
