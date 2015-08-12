@@ -118,6 +118,30 @@
       "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "842e118f_cbbc7523",
+        "filename": "host/windows/.gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-08-12T01:44:17Z",
+      "side": 1,
+      "message": "i downloaded the version you provided the link to, though, so presumably we were running the same version, just with a different Windows target?",
+      "parentUuid": "44141933_bcdd0dda",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
