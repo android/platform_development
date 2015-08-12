@@ -70,6 +70,30 @@
       "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44141933_dc744144",
+        "filename": "host/windows/usb/adb_winapi_test/BUILDME.TXT",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-08-12T02:21:21Z",
+      "side": 1,
+      "message": "i\u0027m at home now so i can\u0027t give you the exact text but, yeah, mine wasn\u0027t flat like that. it was several levels of hierarchical menus, including one that was basically just four or five different Windows versions to choose from.",
+      "parentUuid": "04f5c13c_85a666c8",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 68
+      },
+      "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
