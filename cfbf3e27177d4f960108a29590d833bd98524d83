@@ -70,6 +70,30 @@
       "revId": "cfbf3e27177d4f960108a29590d833bd98524d83",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04f5c13c_65b5a219",
+        "filename": "host/windows/prebuilt/usb/AdbWinApi.def",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-08-12T01:27:37Z",
+      "side": 1,
+      "message": "i\u0027ll try removing them both and if the sdk tools still build, ship without them.",
+      "parentUuid": "645f5d28_0a303b6e",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "cfbf3e27177d4f960108a29590d833bd98524d83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
