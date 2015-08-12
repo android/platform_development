@@ -70,6 +70,30 @@
       "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a41eb557_57c5ae06",
+        "filename": "host/windows/.gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-08-12T01:27:37Z",
+      "side": 1,
+      "message": "yes, PREfast was what the dialog said when i clicked on the OACR red triangle. maybe some of the functions they\u0027d prefer we use don\u0027t exist in Vista so you didn\u0027t get the warnings?",
+      "parentUuid": "04f5c13c_82953c99",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "a8e85c5c4fbe33356c35915a0eab7b2adbbcd9f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
