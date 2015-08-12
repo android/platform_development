@@ -94,6 +94,30 @@
       "revId": "cfbf3e27177d4f960108a29590d833bd98524d83",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4298d86_912b3e81",
+        "filename": "host/windows/prebuilt/usb/AdbWinApi.def",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T01:39:46Z",
+      "side": 1,
+      "message": "sounds good",
+      "parentUuid": "04f5c13c_65b5a219",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "cfbf3e27177d4f960108a29590d833bd98524d83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
