@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "645f5d28_8a9f8baf",
+        "filename": "host/windows/usb/adb_winapi_test/BUILDME.TXT",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-08-12T01:39:46Z",
+      "side": 1,
+      "message": "I\u0027m not quite sure I follow? I don\u0027t think the menu selection specifies the target version of Windows? Or maybe I\u0027m being too literal? The paragraphs 2-3 above specify the version.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 68
+      },
+      "revId": "ef26eb045ea7e0ff6bf954794e626ea78e99042d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
