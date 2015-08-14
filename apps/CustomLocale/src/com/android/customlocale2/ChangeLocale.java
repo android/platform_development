@@ -22,6 +22,7 @@ import java.util.Locale;
 import android.app.ActivityManagerNative;
 import android.app.IActivityManager;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.RemoteException;
 import android.util.Log;
 
@@ -57,7 +58,11 @@ public final class ChangeLocale {
                 loc = new Locale(locale);
             }
 
-            config.locale = loc;
+            if (Build.VERSION.SDK_INT >= 17) {
+              config.setLocale(loc);
+            } else {
+              config.locale = loc;
+            }
 
             // indicate this isn't some passing default - the user wants this
             // remembered
