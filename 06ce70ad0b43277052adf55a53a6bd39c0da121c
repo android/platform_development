@@ -16,6 +16,24 @@
       "revId": "06ce70ad0b43277052adf55a53a6bd39c0da121c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64591d73_49ac2df8",
+        "filename": "apps/CustomLocale/src/com/android/customlocale2/ChangeLocale.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1045708
+      },
+      "writtenOn": "2015-08-14T22:12:44Z",
+      "side": 1,
+      "message": "Yes, I tried to run it on emulators with API levels 16, 15, 10, and 8; it worked as expected without throwing exy exceptions. Did not try to build it using older SDK since the app it part of SDK itself.\n\nProbably the wrapper approach is needed to keep compatibility with android versions below 1.5 (CustomLocale does not support them anyways given minSdkVersion\u003d\"3\" in its manifest)?",
+      "parentUuid": "04b861a5_96a232f6",
+      "revId": "06ce70ad0b43277052adf55a53a6bd39c0da121c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
