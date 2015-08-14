@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04b861a5_96a232f6",
+        "filename": "apps/CustomLocale/src/com/android/customlocale2/ChangeLocale.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1001100
+      },
+      "writtenOn": "2015-08-14T21:00:40Z",
+      "side": 1,
+      "message": "Have you tried building and running this on a device with an API lower than 17?\n\nNote that this class will fail to load with a VerifyError if you run it on a device with API lower than 17 since the dex loader won\u0027t be able to \"link\" to that method that didn\u0027t exist back then. You need to either use reflection or a wrapper class as explained in http://android-developers.blogspot.com/2009/04/backward-compatibility-for-android.html\n\nI prefer to use a small static class wrapper instead of reflection.\nPseudo code is something like this:\n\npublic static boolean changeSystemLocale(...) {\n  ...\n  if (Build.VERSION.SDK_INT \u003e\u003d 17) {\n    new Wrapper().SetLocale(config, loc);\n  } else ...\n  ...\n}\n\nprivate static class Wrapper {\n  public void SetLocale(Configuration config, Locale loc) {\n    config.setLocale(loc);\n  }\n}\n\nWhat happens here is that the setLocale() reference will only be solved when the wrapper class actually gets loaded by Dalvik/dex, which will happen only if the if \u003e\u003d 17 happens.",
+      "revId": "06ce70ad0b43277052adf55a53a6bd39c0da121c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
