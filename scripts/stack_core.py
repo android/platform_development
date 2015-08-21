@@ -38,6 +38,7 @@ class TraceConverter:
   dalvik_native_thread_line = re.compile("(\".*\" sysTid=[0-9]+ nice=[0-9]+.*)")
   register_line = re.compile("$a")
   trace_line = re.compile("$a")
+  sanitizer_trace_line = re.compile("$a")
   value_line = re.compile("$a")
   code_line = re.compile("$a")
   trace_lines = []
@@ -79,7 +80,11 @@ class TraceConverter:
     # Or lines from AndroidFeedback crash report system logs like:
     #   03-25 00:51:05.520 I/DEBUG ( 65): #00 pc 001cf42e /data/data/com.my.project/lib/libmyproject.so
     # Please note the spacing differences.
-    self.trace_line = re.compile("(.*)\#([0-9]+)[ \t]+(..)[ \t]+([0-9a-f]" + self.width + ")[ \t]+([^\r\n \t]*)( \((.*)\))?")  # pylint: disable-msg=C6310
+    self.trace_line = re.compile(".*\#(?P<frame>[0-9]+)[ \t]+..[ \t]+(?P<offset>[0-9a-f]" + self.width + ")[ \t]+(?P<dso>[^\r\n \t]*)(?P<symbolpresent> \((?P<symbol>.*)\))?")  # pylint: disable-msg=C6310
+    # Sanitizer output. This is different from debuggerd output, and it is easier to handle this as its own regex.
+    # Example:
+    # 08-19 05:29:26.283   397   403 I         :     #0 0xb6a15237  (/system/lib/libclang_rt.asan-arm-android.so+0x4f237)
+    self.sanitizer_trace_line = re.compile(".*\#(?P<frame>[0-9]+)[ \t]+0x[0-9a-f]+[ \t]+\((?P<dso>[^+]+)\+0x(?P<offset>[0-9a-f]+)\)")  # pylint: disable-msg=C6310
     # Examples of matched value lines include:
     #   bea4170c  8018e4e9  /data/data/com.my.project/lib/libmyproject.so
     #   bea4170c  8018e4e9  /data/data/com.my.project/lib/libmyproject.so (symbol)
@@ -143,6 +148,15 @@ class TraceConverter:
       self.ProcessLine(line)
     self.PrintOutput(self.trace_lines, self.value_lines)
 
+  def MatchTraceLine(self, line):
+    if self.trace_line.match(line):
+      match = self.trace_line.match(line)
+      return (match.group('frame'), match.group('offset'), match.group('dso'), match.group('symbolpresent'), match.group('symbol'))
+    if self.sanitizer_trace_line.match(line):
+      match = self.sanitizer_trace_line.match(line)
+      return (match.group('frame'), match.group('offset'), match.group('dso'), "", "")
+    return None
+
   def ProcessLine(self, line):
     ret = False
     process_header = self.process_info_line.search(line)
@@ -184,11 +198,10 @@ class TraceConverter:
         symbol.ARCH = abi_header.group(2)
         self.UpdateAbiRegexes()
       return ret
-    if self.trace_line.match(line):
+    trace_line_result = self.MatchTraceLine(line)
+    if trace_line_result is not None:
       ret = True
-      match = self.trace_line.match(line)
-      (unused_0, frame, unused_1,
-       code_addr, area, symbol_present, symbol_name) = match.groups()
+      (frame, code_addr, area, symbol_present, symbol_name) = trace_line_result
 
       if frame <= self.last_frame and (self.trace_lines or self.value_lines):
         self.PrintOutput(self.trace_lines, self.value_lines)
