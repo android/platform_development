@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4700952_c77c025d",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2015-08-21T22:32:23Z",
+      "side": 1,
+      "message": "Instead of returning a tuple I could have returned the match, as the named groups would make it possible to unify the handling. I still felt it better to hide the internals from the client...",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 158,
+        "endChar": 15
+      },
+      "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
