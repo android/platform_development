@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "4485f957_8ba7e13f",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-21T22:48:16Z",
+      "side": 1,
+      "message": "Could you break the line after the opening paren to `re.compile(` so this line isn\u0027t quite so bad? I understand not wanting to split the regex itself",
+      "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c42ba915_2a26e343",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-21T22:48:16Z",
+      "side": 1,
+      "message": "Wrap to 80 cols",
+      "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4485f957_6baabd0a",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-21T22:48:16Z",
+      "side": 1,
+      "message": "Pick one quote style and stick with it (double quote seems to be the style here)\n\nAlso long line.",
+      "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84253145_3ca390fd",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-21T22:48:16Z",
+      "side": 1,
+      "message": "Outer parens are unnecessary",
+      "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c4700952_c77c025d",
         "filename": "scripts/stack_core.py",
         "patchSetId": 2
@@ -43,6 +111,47 @@
         "endLine": 158,
         "endChar": 15
       },
+      "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c42ba915_6a1cdbf5",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-21T22:48:16Z",
+      "side": 1,
+      "message": "Returning a dict solves both problems.",
+      "parentUuid": "e4750d3f_b811d6e2",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 158,
+        "endChar": 15
+      },
+      "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a47f9520_b3c9f723",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-21T22:48:16Z",
+      "side": 1,
+      "message": "No need for the outer parens (was needed previously because of the strange line break pattern)",
       "revId": "bfab0b70fd0599b8ca895758499ef2e21cc71797",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
