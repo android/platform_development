@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a42a3512_f12a1fb4",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-22T00:24:48Z",
+      "side": 1,
+      "message": "Either wrap with bool() or make the other one be \"\" instead of False (I prefer the former).",
+      "range": {
+        "startLine": 175,
+        "startChar": 32,
+        "endLine": 175,
+        "endChar": 60
+      },
+      "revId": "713fd21d7b4640db2fa09138d81ccb5b6f6b4328",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84253145_3f5b82ce",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-08-22T00:24:48Z",
+      "side": 1,
+      "message": "https://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone\u003dWhitespace#Whitespace\n\n\"Don\u0027t use spaces to vertically align tokens on consecutive lines, since it becomes a maintenance burden (applies to :, #, \u003d, etc.):\"",
+      "revId": "713fd21d7b4640db2fa09138d81ccb5b6f6b4328",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
