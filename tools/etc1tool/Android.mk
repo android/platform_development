@@ -21,17 +21,13 @@ LOCAL_STATIC_LIBRARIES := \
 	libpng \
 	libETC1
 
-ifeq ($(HOST_OS),linux)
-LOCAL_LDLIBS += -lrt
-endif
+LOCAL_LDLIBS_linux += -lrt
 
 # Statically link libz for MinGW (Win SDK under Linux),
 # and dynamically link for all others.
-ifneq ($(strip $(USE_MINGW)),)
-  LOCAL_STATIC_LIBRARIES += libz
-else
-  LOCAL_LDLIBS += -lz
-endif
+LOCAL_STATIC_LIBRARIES_windows += libz
+LOCAL_LDLIBS_darwin += -lz
+LOCAL_LDLIBS_linux += -lz
 
 LOCAL_MODULE := etc1tool
 
