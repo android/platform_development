@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "248c8586_62fded77",
+        "filename": "build/tools/windows_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-08-26T00:14:21Z",
+      "side": 1,
+      "message": "It\u0027s better to calculate a list of concrete file targets, such as:\nWIN_BINARIES :\u003d $(foreach t, $(WIN_TARGETS), ALL_MODULES.$(host_corss_$(t).INSTALLED))",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 54
+      },
+      "revId": "81fc374be46267ed08844eb082632b44a65ff394",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a42a3512_f539a08b",
+        "filename": "build/tools/windows_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-08-26T00:14:21Z",
+      "side": 1,
+      "message": "So that we don\u0027t have a file target depend on a phony target here. Otherwise the file target will always be rebuilt even if it\u0027s already up to date.\nWe also want to replace \"sdk\" with $(INTERNAL_SDK_TARGET) as dependency.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 32
+      },
+      "revId": "81fc374be46267ed08844eb082632b44a65ff394",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
