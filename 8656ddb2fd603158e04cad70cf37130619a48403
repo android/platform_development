@@ -16,6 +16,24 @@
       "revId": "8656ddb2fd603158e04cad70cf37130619a48403",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "849451c2_21624aba",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2015-08-26T22:07:35Z",
+      "side": 1,
+      "message": "I was thinking I would allow a method for the web stack tool to force the temp directory somewhere. But that\u0027s not necessary, so I\u0027ve removed all of this and let mkstemp figure it out.",
+      "parentUuid": "e4750d3f_d9cb76c6",
+      "revId": "8656ddb2fd603158e04cad70cf37130619a48403",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
