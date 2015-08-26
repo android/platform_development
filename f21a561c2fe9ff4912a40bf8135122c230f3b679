@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c42ba915_5755fe46",
+        "filename": "build/tools/windows_sdk.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-08-26T22:03:40Z",
+      "side": 1,
+      "message": "change this to $(WIN_TARGETS) too.",
+      "range": {
+        "startLine": 75,
+        "startChar": 16,
+        "endLine": 75,
+        "endChar": 28
+      },
+      "revId": "f21a561c2fe9ff4912a40bf8135122c230f3b679",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
