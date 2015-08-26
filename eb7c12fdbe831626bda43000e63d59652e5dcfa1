@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c4700952_fe017f7a",
+        "filename": "tools/etc1tool/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2015-08-26T21:27:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a47f9520_e7fc92e5",
+      "range": {
+        "startLine": 24,
+        "startChar": 19,
+        "endLine": 24,
+        "endChar": 21
+      },
+      "revId": "eb7c12fdbe831626bda43000e63d59652e5dcfa1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "048f817d_e49816fe",
         "filename": "tools/etc1tool/Android.mk",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-08-25T23:56:59Z",
       "side": 1,
       "message": "we can combine them to:\nLOCAL_LDLIBS_linux :\u003d -lrt -lz",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 25
+      },
+      "revId": "eb7c12fdbe831626bda43000e63d59652e5dcfa1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4485f957_82b1fa79",
+        "filename": "tools/etc1tool/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2015-08-26T21:27:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "048f817d_e49816fe",
       "range": {
         "startLine": 30,
         "startChar": 0,
