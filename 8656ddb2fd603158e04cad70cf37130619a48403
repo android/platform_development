@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e4750d3f_d9cb76c6",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-08-26T21:59:02Z",
+      "side": 1,
+      "message": "comment why you\u0027re not just letting python take care of this?",
+      "revId": "8656ddb2fd603158e04cad70cf37130619a48403",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
