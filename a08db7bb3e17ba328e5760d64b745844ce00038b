@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0484e2ca_d6b51650",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-03T23:08:29Z",
+      "side": 1,
+      "message": "os.path.join in case ANDROID_PRODUCT_OUT does not end with a /",
+      "revId": "a08db7bb3e17ba328e5760d64b745844ce00038b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e486eed4_b25420c9",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-03T23:08:29Z",
+      "side": 1,
+      "message": "missing a space after the comma",
+      "range": {
+        "startLine": 257,
+        "startChar": 45,
+        "endLine": 257,
+        "endChar": 48
+      },
+      "revId": "a08db7bb3e17ba328e5760d64b745844ce00038b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
