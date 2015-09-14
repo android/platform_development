@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "848ff2ac_923d2cf4",
+        "filename": "sdk/plat_tools_source.prop_template",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1010055
+      },
+      "writtenOn": "2015-09-14T18:38:50Z",
+      "side": 1,
+      "message": "I think the release version can stick to 23.0.x, while the preview version can be at 23.1.0 alphaX until we are ready to actually make a release.",
+      "range": {
+        "startLine": 2,
+        "startChar": 37,
+        "endLine": 2,
+        "endChar": 40
+      },
+      "revId": "ad7321b97554f3501dafc7eb4deb1f3062475b0f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
