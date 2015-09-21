@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 import argparse
+import atexit
 import logging
 import os
 import re
@@ -328,6 +329,45 @@ class AndroidDevice(object):
         else:
             exit_code, stdout = self._parse_shell_output(stdout)
         return exit_code, stdout, stderr
+
+    def shell_direct(self, cmd, kill_atexit=True, **kwargs):
+        """Calls `adb shell` and returns a handle to the adb process.
+
+        This function provides direct access to the subprocess used to run the
+        command, without special return code handling. Users that need the
+        return value must retrieve it themselves.
+
+        Args:
+          cmd: string shell command to execute
+          **kwargs: arguments forwarded to subprocess.Popen
+
+        Returns:
+          subprocess.Popen handle to the adb shell instance
+        """
+
+        command = self.adb_cmd + ["shell"] + cmd
+
+        # Make sure a ctrl-c in the parent script doesn"t kill gdbserver
+        if os.name == "nt":
+            if "creationflags" not in kwargs:
+                kwargs["creationflags"] = 0
+            kwargs["creationflags"] |= subprocess.CREATE_NEW_PROCESS_GROUP
+        else:
+            if "preexec_fn" in kwargs and preexec_fn != os.setpgrp:
+                fn = kwargs["preexec_fn"]
+                def _wrapper():
+                    fn()
+                    os.setpgrp()
+                kwargs["preexec_fn"] = _wrapper
+            else:
+                kwargs["preexec_fn"] = os.setpgrp
+
+        p = subprocess.Popen(command, **kwargs)
+
+        if kill_atexit:
+            atexit.register(p.kill)
+
+        return p
 
     def install(self, filename, replace=False):
         cmd = ['install']
