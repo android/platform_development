@@ -236,6 +236,9 @@ class AndroidDevice(object):
     def can_use_shell_protocol(self):
         return self.features.get(self._SHELL_FEATURE_NAME) >= 2
 
+    def can_use_shell_type_argument(self):
+        return self.features.get(self._SHELL_FEATURE_NAME) >= 3
+
     def shell(self, cmd):
         """Calls `adb shell`
 
