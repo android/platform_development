@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import argparse
 import logging
 import os
 import re
@@ -44,6 +45,50 @@ class ShellError(RuntimeError):
         self.stdout = stdout
         self.stderr = stderr
         self.exit_code = exit_code
+
+
+class ArgumentParser(argparse.ArgumentParser):
+    """ArgumentParser subclass that provides adb device selection."""
+
+    class DeviceAction(argparse.Action):
+        def __call__(self, parser, namespace, values, option_string=None):
+            if option_string is None:
+                raise RuntimeError("DeviceAction called without option_string")
+            elif option_string == "-a":
+                # Handled in parse_args
+                return
+            elif option_string == "-d":
+                namespace.device = get_usb_device()
+            elif option_string == "-e":
+                namespace.device = get_emulator_device()
+            elif option_string == "-s":
+                namespace.device = get_device(values[0])
+            else:
+                raise RuntimeError("Unexpected flag {}".format(option_string))
+
+    def __init__(self):
+        super(ArgumentParser, self).__init__()
+        group = self.add_argument_group(title="device selection")
+        group = group.add_mutually_exclusive_group()
+        group.add_argument(
+            "-a", nargs=0, action=self.DeviceAction,
+            help="directs commands to all interfaces")
+        group.add_argument(
+            "-d", nargs=0, action=self.DeviceAction,
+            help="directs commands to the only connected USB device")
+        group.add_argument(
+            "-e", nargs=0, action=self.DeviceAction,
+            help="directs commands to the only connected emulator")
+        group.add_argument(
+            "-s", nargs=1, metavar="SERIAL", action=self.DeviceAction,
+            help="directs commands to device/emulator with the given serial")
+
+    def parse_args(self, args=None, namespace=None):
+        result = super(ArgumentParser, self).parse_args(args, namespace)
+        # Default to -a behavior if no flags are given.
+        if "device" not in result:
+            result.device = get_device()
+        return result
 
 
 def get_devices():
@@ -78,6 +123,26 @@ def _get_device_by_serial(serial, product=None):
         if device == serial:
             return AndroidDevice(serial, product)
     raise DeviceNotFoundError(serial)
+
+
+def get_usb_device():
+    with open(os.devnull, "wb") as devnull:
+        subprocess.check_call(["adb", "start-server"], stdout=devnull,
+                              stderr=devnull)
+    serial = subprocess.check_output(["adb", "-d", "get-serialno"]).strip()
+    if serial == "unknown":
+        raise NoUniqueDeviceError()
+    return get_device(serial)
+
+
+def get_emulator_device():
+    with open(os.devnull, "wb") as devnull:
+        subprocess.check_call(["adb", "start-server"], stdout=devnull,
+                              stderr=devnull)
+    serial = subprocess.check_output(["adb", "-e", "get-serialno"]).strip()
+    if serial == "unknown":
+        raise NoUniqueDeviceError()
+    return get_device(serial)
 
 
 def get_device(serial=None, product=None):
