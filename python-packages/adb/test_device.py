@@ -188,11 +188,11 @@ class ShellTest(DeviceTest):
 
         Bug: http://b/19734861
         """
-        if self.device.SHELL_PROTOCOL_FEATURE not in self.device.features:
+        if not self.device.can_use_shell_protocol():
             raise unittest.SkipTest('shell protocol unsupported on this device')
+
         result = self.device.shell_nocheck(
                 shlex.split('echo foo; echo bar >&2; exit 17'))
-
         self.assertEqual(17, result[0])
         self.assertEqual('foo' + self.device.linesep, result[1])
         self.assertEqual('bar' + self.device.linesep, result[2])
@@ -206,7 +206,7 @@ class ShellTest(DeviceTest):
 
         Bug: http://b/23825725
         """
-        if self.device.SHELL_PROTOCOL_FEATURE not in self.device.features:
+        if not self.device.can_use_shell_protocol():
             raise unittest.SkipTest('shell protocol unsupported on this device')
 
         # Start a long-running process.

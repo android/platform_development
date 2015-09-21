@@ -156,8 +156,8 @@ class AndroidDevice(object):
     # adb on Windows returns \r\n even if adbd returns \n.
     _RETURN_CODE_SEARCH_LENGTH = len('{0}255\r\n'.format(_RETURN_CODE_DELIMITER))
 
-    # Shell protocol feature string.
-    SHELL_PROTOCOL_FEATURE = 'shell_2'
+    # Shell feature string.
+    _SHELL_FEATURE_NAME = 'shell'
 
     def __init__(self, serial, product=None):
         self.serial = serial
@@ -179,16 +179,24 @@ class AndroidDevice(object):
 
     @property
     def features(self):
+        """Returns a dictionary mapping feature name to version."""
         if self._features is None:
+            self._features = {}
             try:
-                self._features = self._simple_call(['features']).splitlines()
+                for line in self._simple_call(['features']).splitlines():
+                    try:
+                        name, version = line.split()
+                        self._features[name] = int(version)
+                    except ValueError:
+                        # If we can't find a version number, default to 1.
+                        self._features[line] = 1
             except subprocess.CalledProcessError:
-                self._features = []
+                pass
         return self._features
 
     def _make_shell_cmd(self, user_cmd):
         command = self.adb_cmd + ['shell'] + user_cmd
-        if self.SHELL_PROTOCOL_FEATURE not in self.features:
+        if not self.can_use_shell_protocol():
             command.append('; ' + self._RETURN_CODE_PROBE_STRING)
         return command
 
@@ -225,11 +233,14 @@ class AndroidDevice(object):
         return _subprocess_check_output(
             self.adb_cmd + cmd, stderr=subprocess.STDOUT)
 
+    def can_use_shell_protocol(self):
+        return self.features.get(self._SHELL_FEATURE_NAME) >= 2
+
     def shell(self, cmd):
         """Calls `adb shell`
 
         Args:
-            cmd: string shell command to execute.
+            cmd: shell command as a list of strings.
 
         Returns:
             A (stdout, stderr) tuple. Stderr may be combined into stdout
@@ -247,7 +258,7 @@ class AndroidDevice(object):
         """Calls `adb shell`
 
         Args:
-            cmd: string shell command to execute.
+            cmd: shell command as a list of strings.
 
         Returns:
             An (exit_code, stdout, stderr) tuple. Stderr may be combined
@@ -258,7 +269,7 @@ class AndroidDevice(object):
         p = subprocess.Popen(
             cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = p.communicate()
-        if self.SHELL_PROTOCOL_FEATURE in self.features:
+        if self.can_use_shell_protocol():
             exit_code = p.returncode
         else:
             exit_code, stdout = self._parse_shell_output(stdout)
