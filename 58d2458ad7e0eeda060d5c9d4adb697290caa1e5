@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9a3c3b1_5a87c2da",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-22T20:38:23Z",
+      "side": 1,
+      "message": "FIXME",
+      "revId": "58d2458ad7e0eeda060d5c9d4adb697290caa1e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
