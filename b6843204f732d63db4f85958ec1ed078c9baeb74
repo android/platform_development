@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee86cdd4_db29cb4e",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:40:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae5bf53d_9cf8f1e8",
+      "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e52b121_3a534956",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-24T23:53:39Z",
       "side": 1,
       "message": "Add a docstring (should be very similar to get_device\u0027s).\n\nShould probably also move these below get_device since they\u0027re really specialized versions of that.",
+      "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae5bf53d_094a8021",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:40:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e52b121_3a534956",
       "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ee86cdd4_bb2c0760",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:40:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce582944_972fae22",
+      "range": {
+        "startLine": 129,
+        "startChar": 26,
+        "endLine": 129,
+        "endChar": 27
+      },
+      "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee86cdd4_15f064c7",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
@@ -70,6 +130,24 @@
       "writtenOn": "2015-09-24T23:53:39Z",
       "side": 1,
       "message": "Leaks a subprocess error when it should be raising DeviceNotFoundError.",
+      "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e4d7d85_913a1fae",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:40:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee86cdd4_15f064c7",
       "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -99,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "ee616dea_355fdbd2",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:40:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee616dea_c3fa0a39",
+      "range": {
+        "startLine": 135,
+        "startChar": 11,
+        "endLine": 135,
+        "endChar": 21
+      },
+      "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e2e2591_ff73676c",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
@@ -110,6 +212,24 @@
       "writtenOn": "2015-09-24T23:53:39Z",
       "side": 1,
       "message": "The only difference between this function and the above is \u0027-d\u0027 vs \u0027-e\u0027. Should probably factor out the inner function (_get_device_by_type?).",
+      "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e470569_bb4df25f",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:40:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2e2591_ff73676c",
       "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
