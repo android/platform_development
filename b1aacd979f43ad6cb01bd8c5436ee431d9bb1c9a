@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce582944_926a1928",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T22:19:32Z",
+      "side": 1,
+      "message": "Module level docstrings should be before the imports",
+      "revId": "b1aacd979f43ad6cb01bd8c5436ee431d9bb1c9a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce582944_125e2984",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T22:19:32Z",
+      "side": 1,
+      "message": "Do you want a `dest\u003d\u0027serial\u0027` here so the arg will have a useful name?",
+      "revId": "b1aacd979f43ad6cb01bd8c5436ee431d9bb1c9a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
