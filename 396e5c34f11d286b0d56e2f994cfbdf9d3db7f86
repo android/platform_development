@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e4d7d85_873c1d5c",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T23:18:25Z",
+      "side": 1,
+      "message": "This is a really large function. Some distinct components:\n\n1) argument parsing (this should probably subclass gdbrunner.ArgumentParser)\n2) get_out_dir()\n3) The giant block for -r/-p/-u etc (which is probably one get_binary(args) that in turn calls get_remote_binary, get_binary_from_pid, etc)\n4) launch_gdb (which probably in turn calls get_gdb_script\n\nThere might be more obvious changes once that is done, but it\u0027s pretty hard to digest atm.",
+      "revId": "396e5c34f11d286b0d56e2f994cfbdf9d3db7f86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee616dea_4bacec0a",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T23:18:25Z",
+      "side": 1,
+      "message": "Not necessary. Python will do C style string literal joining for you.",
+      "range": {
+        "startLine": 69,
+        "startChar": 60,
+        "endLine": 69,
+        "endChar": 62
+      },
+      "revId": "396e5c34f11d286b0d56e2f994cfbdf9d3db7f86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2e2591_940c454a",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T23:18:25Z",
+      "side": 1,
+      "message": "Just add `type\u003dint` to the target_pid definition.",
+      "revId": "396e5c34f11d286b0d56e2f994cfbdf9d3db7f86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce582944_65ea41b2",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T23:18:25Z",
+      "side": 1,
+      "message": "break?",
+      "revId": "396e5c34f11d286b0d56e2f994cfbdf9d3db7f86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e4c398b_c413338f",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T23:18:25Z",
+      "side": 1,
+      "message": "You probably want to use `sys.exit(err_msg)` for these cases. Exceptions are for programmer errors and unusual circumstances, not for common and expected user mistakes.",
+      "revId": "396e5c34f11d286b0d56e2f994cfbdf9d3db7f86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce582944_e5919111",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T23:18:25Z",
+      "side": 1,
+      "message": "This step isn\u0027t needed for the -u case. Not a big deal, but could maybe rework this a bit so that the -u/-r etc handling is factored out into separate functions that all return a file handle instead of the raw contents?\n\nYou\u0027d also want to use a `with` clause here (can use contextlib.contextmanager to create a null one for the -u case).",
+      "revId": "396e5c34f11d286b0d56e2f994cfbdf9d3db7f86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
