@@ -36,6 +36,29 @@
     },
     {
       "key": {
+        "uuid": "ce582944_972fae22",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T00:15:35Z",
+      "side": 1,
+      "message": "Oh, and use \u0027 instead of \". Keep consistent with the file.",
+      "range": {
+        "startLine": 129,
+        "startChar": 26,
+        "endLine": 129,
+        "endChar": 27
+      },
+      "revId": "b6843204f732d63db4f85958ec1ed078c9baeb74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee86cdd4_15f064c7",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
