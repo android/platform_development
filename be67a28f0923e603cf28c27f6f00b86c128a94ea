@@ -71,6 +71,29 @@
     },
     {
       "key": {
+        "uuid": "6e4d7d85_1fecfb88",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T00:16:12Z",
+      "side": 1,
+      "message": "\u0027 (and end the comment with a period.",
+      "range": {
+        "startLine": 350,
+        "startChar": 55,
+        "endLine": 350,
+        "endChar": 56
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee86cdd4_352a48b0",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
