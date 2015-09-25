@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e4c398b_9edead3f",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T00:05:59Z",
+      "side": 1,
+      "message": "shell_popen?",
+      "range": {
+        "startLine": 333,
+        "startChar": 8,
+        "endLine": 333,
+        "endChar": 20
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e4c398b_f376fa15",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T00:05:59Z",
+      "side": 1,
+      "message": "Why? The reason this abstraction is here is because at some point in the near (fingers crossed) future adb won\u0027t have this problem and it shouldn\u0027t be the user\u0027s job to figure out what they have to do.",
+      "range": {
+        "startLine": 337,
+        "startChar": 17,
+        "endLine": 338,
+        "endChar": 48
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee86cdd4_d563dc23",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T00:05:59Z",
+      "side": 1,
+      "message": "Not according to how you\u0027ve used it.",
+      "range": {
+        "startLine": 341,
+        "startChar": 15,
+        "endLine": 341,
+        "endChar": 21
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee86cdd4_352a48b0",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T00:05:59Z",
+      "side": 1,
+      "message": "Generally in this case you should actually make `creationflags` a real kwarg of this function (i.e. add `creationflags\u003d0` to the function signature). **kwargs is really for things that you\u0027re not going to look at.",
+      "range": {
+        "startLine": 352,
+        "startChar": 12,
+        "endLine": 352,
+        "endChar": 44
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae5bf53d_fc76cd15",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-09-25T00:05:59Z",
+      "side": 1,
+      "message": "Where did this come from?",
+      "range": {
+        "startLine": 356,
+        "startChar": 42,
+        "endLine": 356,
+        "endChar": 52
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
