@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ee86cdd4_3b50f7ce",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:43:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e4c398b_9edead3f",
+      "range": {
+        "startLine": 333,
+        "startChar": 8,
+        "endLine": 333,
+        "endChar": 20
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e4c398b_f376fa15",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ee86cdd4_bb43a709",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:43:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee86cdd4_d563dc23",
+      "range": {
+        "startLine": 341,
+        "startChar": 15,
+        "endLine": 341,
+        "endChar": 21
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e4d7d85_1fecfb88",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
@@ -82,6 +130,30 @@
       "writtenOn": "2015-09-25T00:16:12Z",
       "side": 1,
       "message": "\u0027 (and end the comment with a period.",
+      "range": {
+        "startLine": 350,
+        "startChar": 55,
+        "endLine": 350,
+        "endChar": 56
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e52b121_60d90e5d",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:43:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e4d7d85_1fecfb88",
       "range": {
         "startLine": 350,
         "startChar": 55,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "2e2e2591_0574a654",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:43:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee86cdd4_352a48b0",
+      "range": {
+        "startLine": 352,
+        "startChar": 12,
+        "endLine": 352,
+        "endChar": 44
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae5bf53d_fc76cd15",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
@@ -128,6 +224,30 @@
       "writtenOn": "2015-09-25T00:05:59Z",
       "side": 1,
       "message": "Where did this come from?",
+      "range": {
+        "startLine": 356,
+        "startChar": 42,
+        "endLine": 356,
+        "endChar": 52
+      },
+      "revId": "be67a28f0923e603cf28c27f6f00b86c128a94ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2e2591_e5707a62",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T18:43:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae5bf53d_fc76cd15",
       "range": {
         "startLine": 356,
         "startChar": 42,
