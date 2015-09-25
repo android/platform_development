@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee616dea_f5a26312",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T21:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e4d7d85_3f39f7a0",
+      "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e52b121_3ac1091e",
         "filename": "python-packages/gdbrunner/__init__.py",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2015-09-25T00:47:12Z",
       "side": 1,
       "message": "Not really true. get_run_as_cmd.",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 10
+      },
+      "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e4c398b_ee405070",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T21:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e52b121_3ac1091e",
       "range": {
         "startLine": 24,
         "startChar": 4,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "0e5fa128_510823a2",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T21:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e5fa128_645b66f7",
+      "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e4c398b_7eb771bf",
         "filename": "python-packages/gdbrunner/__init__.py",
         "patchSetId": 1
@@ -70,6 +130,30 @@
       "writtenOn": "2015-09-25T00:47:12Z",
       "side": 1,
       "message": "Wrong indentation",
+      "range": {
+        "startLine": 83,
+        "startChar": 4,
+        "endLine": 83,
+        "endChar": 6
+      },
+      "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee616dea_d59f5fc4",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T21:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e4c398b_7eb771bf",
       "range": {
         "startLine": 83,
         "startChar": 4,
@@ -105,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "ce582944_af0edaf8",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T21:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e5fa128_6465a6a6",
+      "range": {
+        "startLine": 106,
+        "startChar": 38,
+        "endLine": 106,
+        "endChar": 50
+      },
+      "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e5fa128_24da0ea9",
         "filename": "python-packages/gdbrunner/__init__.py",
         "patchSetId": 1
@@ -122,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "ce582944_8f2f9659",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T21:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e5fa128_24da0ea9",
+      "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e52b121_1a676def",
         "filename": "python-packages/gdbrunner/__init__.py",
         "patchSetId": 1
@@ -133,6 +259,24 @@
       "writtenOn": "2015-09-25T00:47:12Z",
       "side": 1,
       "message": "adb shell wasn\u0027t binary safe (\\n will be replaced with \\r\\n) until very recently. This won\u0027t work on even an M device.",
+      "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e4c398b_e1bbc144",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-25T21:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e52b121_1a676def",
       "revId": "4bd9151e911822b7e0377b378d51342e86f0c6e4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
