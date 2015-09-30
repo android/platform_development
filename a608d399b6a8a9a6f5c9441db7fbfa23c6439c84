@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9555663b_9aa5e918",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-09-30T19:08:26Z",
+      "side": 1,
+      "message": "Actually there is no need in knowing absolute path.. you have a pid after gdbserver is started and absolute path can be calculated using /proc/pid/exe",
+      "parentUuid": "b5398a03_2359142b",
+      "revId": "a608d399b6a8a9a6f5c9441db7fbfa23c6439c84",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5398a03_e3fc4c73",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 6
