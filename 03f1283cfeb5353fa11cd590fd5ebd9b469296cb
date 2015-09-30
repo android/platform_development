@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "9555663b_600828a3",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T23:23:05Z",
+      "side": 1,
+      "message": "Two newlines between top level declarations",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d55b5e6b_ad18753b",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T23:23:05Z",
+      "side": 1,
+      "message": "IMO this would be better as two functions, one that constructs and returns the temp file, and one that translates it + args into the subprocess args. That would make the file deletion deterministic too, instead of it happening whenever it gets gced.",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5526a4f_bec9c1b7",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T23:23:05Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "354d9aaf_82c0de8d",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T23:23:05Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5398a03_a9118591",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T23:23:05Z",
+      "side": 1,
+      "message": "Can\u0027t this just be a function?",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "953c86f3_33de80fc",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T23:23:05Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1548969f_64216033",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 2
