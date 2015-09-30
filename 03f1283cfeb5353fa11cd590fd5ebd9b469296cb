@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1548969f_64216033",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T22:40:38Z",
+      "side": 1,
+      "message": "Could you fix this newly added one too?",
+      "range": {
+        "startLine": 370,
+        "startChar": 12,
+        "endLine": 370,
+        "endChar": 28
+      },
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
