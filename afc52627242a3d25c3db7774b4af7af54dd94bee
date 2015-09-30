@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ee616dea_75b79356",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T21:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce582944_77b2fa67",
+      "range": {
+        "startLine": 437,
+        "startChar": 17,
+        "endLine": 437,
+        "endChar": 23
+      },
+      "revId": "afc52627242a3d25c3db7774b4af7af54dd94bee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e470569_8cffa69f",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-09-25T00:18:38Z",
       "side": 1,
       "message": "Raw strings for regex (and wrong quote type again).",
+      "range": {
+        "startLine": 440,
+        "startChar": 29,
+        "endLine": 440,
+        "endChar": 53
+      },
+      "revId": "afc52627242a3d25c3db7774b4af7af54dd94bee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e4c398b_0e5dec5e",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T21:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e470569_8cffa69f",
       "range": {
         "startLine": 440,
         "startChar": 29,
