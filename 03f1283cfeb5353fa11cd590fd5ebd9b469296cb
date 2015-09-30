@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "75439281_c7603441",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-09-30T23:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9555663b_600828a3",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d55b5e6b_ad18753b",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-30T23:23:05Z",
       "side": 1,
       "message": "IMO this would be better as two functions, one that constructs and returns the temp file, and one that translates it + args into the subprocess args. That would make the file deletion deterministic too, instead of it happening whenever it gets gced.",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5526a4f_c1ebf8d8",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-09-30T23:48:57Z",
+      "side": 1,
+      "message": "I\u0027m not sure I follow the benefit, perhaps you can describe in pseudo-code? The reason __del__ does the file deletion is because we can\u0027t delete the file until after the file has been read by cmd.exe (in other words, when the subprocess runs).",
+      "parentUuid": "d55b5e6b_ad18753b",
       "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "15a33681_cca823f0",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-09-30T23:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5526a4f_bec9c1b7",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "354d9aaf_82c0de8d",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-30T23:23:05Z",
       "side": 1,
       "message": "and here",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15a33681_0caf1bfa",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-09-30T23:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "354d9aaf_82c0de8d",
       "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "b5526a4f_61d2ec3f",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-09-30T23:48:57Z",
+      "side": 1,
+      "message": "It needs to be a class so that when the object is destroyed, the temp file can be deleted. I\u0027m open to alternative ideas.",
+      "parentUuid": "b5398a03_a9118591",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "953c86f3_33de80fc",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2015-09-30T23:23:05Z",
       "side": 1,
       "message": "and here",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "354d9aaf_252634f7",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-09-30T23:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "953c86f3_33de80fc",
       "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
