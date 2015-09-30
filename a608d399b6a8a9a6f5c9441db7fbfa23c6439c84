@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b5398a03_2359142b",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T18:45:45Z",
+      "side": 1,
+      "message": "This doesn\u0027t gain much, IMO, and it\u0027s imprecise if you\u0027re launching stuff that\u0027s in your adb shell $PATH but not in /system/bin",
+      "parentUuid": "b5526a4f_fb6b4bf6",
+      "revId": "a608d399b6a8a9a6f5c9441db7fbfa23c6439c84",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5398a03_e3fc4c73",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2015-09-30T18:29:42Z",
       "side": 1,
       "message": "does it mean if I want to upload cmd \"/foo/bar/cmd\" on device it is going to end up in \"/system/foo/bar/cmd\"?",
+      "revId": "a608d399b6a8a9a6f5c9441db7fbfa23c6439c84",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d55b5e6b_bff53f8b",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-09-30T18:45:45Z",
+      "side": 1,
+      "message": "The paths are relative to the device root. If you upload /foo/bar/cmd, it\u0027ll upload $OUT/symbols/foo/bar/cmd to /foo/bar/cmd (hmm, this should actually be $OUT/foo/bar/cmd).\n\nI thought about making -u upload and run binaries relative to where you\u0027re running it, but it\u0027s unclear where they should be uploaded, and whether this is actually useful. This acts like a mini-adb sync, and probably handles most of what people want?",
+      "parentUuid": "953c86f3_c2b2e430",
       "revId": "a608d399b6a8a9a6f5c9441db7fbfa23c6439c84",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
