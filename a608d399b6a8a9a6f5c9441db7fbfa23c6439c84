@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b5526a4f_fb6b4bf6",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-09-30T18:29:42Z",
+      "side": 1,
+      "message": "I think we can use /system/bin/\u003ccmd\u003e in the case when path is not absolute",
+      "revId": "a608d399b6a8a9a6f5c9441db7fbfa23c6439c84",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5398a03_e3fc4c73",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-09-30T18:29:42Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "a608d399b6a8a9a6f5c9441db7fbfa23c6439c84",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "953c86f3_c2b2e430",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-09-30T18:29:42Z",
+      "side": 1,
+      "message": "does it mean if I want to upload cmd \"/foo/bar/cmd\" on device it is going to end up in \"/system/foo/bar/cmd\"?",
+      "revId": "a608d399b6a8a9a6f5c9441db7fbfa23c6439c84",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
