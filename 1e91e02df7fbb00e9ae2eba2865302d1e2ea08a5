@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "953c86f3_2e08d7f3",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-10-01T06:22:17Z",
+      "side": 1,
+      "message": "How can I accomplish this? Basically, I want to prevent delete\u003dTrue from being passed to tempfile.NamedTemporaryFile() and I want to wrap the object returned so that it can manually delete the file after it is closed.",
+      "range": {
+        "startLine": 172,
+        "startChar": 4,
+        "endLine": 172,
+        "endChar": 23
+      },
+      "revId": "1e91e02df7fbb00e9ae2eba2865302d1e2ea08a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
