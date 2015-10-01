@@ -22,6 +22,30 @@
       "revId": "1e91e02df7fbb00e9ae2eba2865302d1e2ea08a5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9555663b_d19104da",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-10-01T18:02:19Z",
+      "side": 1,
+      "message": "Ugh, I forgot that windows had that. Does using delete\u003dFalse + the following work?\n\n    @contextlib.contextmanager\n    def _file_deleter(temp_file):\n        yield\n        if temp_file:\n            temp_file.delete()\n    \n    def _subprocess_check_output(...):\n        helper \u003d ...\n        with _file_deleter(helper):\n            ...",
+      "parentUuid": "953c86f3_2e08d7f3",
+      "range": {
+        "startLine": 172,
+        "startChar": 4,
+        "endLine": 172,
+        "endChar": 23
+      },
+      "revId": "1e91e02df7fbb00e9ae2eba2865302d1e2ea08a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
