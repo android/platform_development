@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "f5586271_6eb4974e",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-10-01T00:06:46Z",
+      "side": 1,
+      "message": "I was thinking something along the lines of the following:\n\n    @contextlib.contextmanager\n    def _nullcontext():\n        yield\n    \n    def _get_windows_helper():\n        if os.name \u003d\u003d \u0027nt\u0027 and ...:\n            result \u003d tempfile.NamedTemporaryFile(...)\n            result.write(...)\n            return result\n        return None\n    \n    def _get_subprocess_args(args, windows_helper\u003dNone):\n        if windows_helper:\n            return [\u0027cmd.exe\u0027, \u0027/c\u0027, windows_helper.name] + ...\n        else:\n            return args\n    \n    def _subprocess_check_output(*args, **kwargs):\n        windows_helper \u003d _get_windows_helper(args)\n        with windows_helper or _nullcontext():\n            subprocess.check_output(_get_subprocess_args(args, file\u003dwindows_helper)",
+      "parentUuid": "b5526a4f_c1ebf8d8",
+      "revId": "03f1283cfeb5353fa11cd590fd5ebd9b469296cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5526a4f_bec9c1b7",
         "filename": "python-packages/adb/device.py",
         "patchSetId": 2
