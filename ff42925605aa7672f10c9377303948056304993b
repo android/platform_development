@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6ba1f45d_65701c10",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-06T16:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b92a812_1182bcfd",
+      "range": {
+        "startLine": 178,
+        "startChar": 8,
+        "endLine": 178,
+        "endChar": 9
+      },
+      "revId": "ff42925605aa7672f10c9377303948056304993b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b92a812_f184f00b",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-10-06T00:53:03Z",
       "side": 1,
       "message": "For paranoia, we should probably make this `time_left \u003c 0 or time_left \u003e timeout_seconds`, since we don\u0027t have a monotonic clock on our version of python.",
+      "range": {
+        "startLine": 184,
+        "startChar": 9,
+        "endLine": 184,
+        "endChar": 23
+      },
+      "revId": "ff42925605aa7672f10c9377303948056304993b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b6d3ced_6e91d74e",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-06T16:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b92a812_f184f00b",
       "range": {
         "startLine": 184,
         "startChar": 9,
