@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f30ba11_5f44e431",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-10-14T02:12:51Z",
+      "side": 1,
+      "message": "You should change this to something else, this is shadowing the built in file",
+      "range": {
+        "startLine": 156,
+        "startChar": 18,
+        "endLine": 156,
+        "endChar": 22
+      },
+      "revId": "004d603d72e03779347f6002c23c129937db28e0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fae6a64_add7de21",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-10-14T02:12:51Z",
+      "side": 1,
+      "message": "Here too",
+      "range": {
+        "startLine": 188,
+        "startChar": 31,
+        "endLine": 188,
+        "endChar": 35
+      },
+      "revId": "004d603d72e03779347f6002c23c129937db28e0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff32061b_836c55bd",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-10-14T02:12:51Z",
+      "side": 1,
+      "message": "Align with paren",
+      "range": {
+        "startLine": 385,
+        "startChar": 28,
+        "endLine": 385,
+        "endChar": 29
+      },
+      "revId": "004d603d72e03779347f6002c23c129937db28e0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
