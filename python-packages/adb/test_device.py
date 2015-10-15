@@ -17,6 +17,7 @@
 #
 from __future__ import print_function
 
+import contextlib
 import hashlib
 import os
 import posixpath
@@ -24,6 +25,7 @@ import random
 import shlex
 import shutil
 import signal
+import socket
 import subprocess
 import tempfile
 import unittest
@@ -559,6 +561,64 @@ class FileOperationsTest(DeviceTest):
         self.device.pull(u'/data/local/tmp/adb-test-{}'.format(name), tf.name)
         os.remove(tf.name)
         self.device.shell(['rm', '-f', '/data/local/tmp/adb-test-*'])
+
+
+class ForwardReverseTest(DeviceTest):
+    # Note: If you run this test when adb connect'd to a physical device over
+    # TCP, it will fail in adb reverse due to https://code.google.com/p/android/issues/detail?id=189821
+    def test_forward_reverse(self):
+        """Send data through adb forward and read it back via adb reverse"""
+        forward_port = 12345
+        reverse_port = forward_port + 1
+        forward_spec = "tcp:" + str(forward_port)
+        reverse_spec = "tcp:" + str(reverse_port)
+        forward_setup = False
+        reverse_setup = False
+
+        try:
+            # listen on localhost:forward_port, connect to remote:forward_port
+            self.device.forward(forward_spec, forward_spec)
+            forward_setup = True
+            # listen on remote:forward_port, connect to localhost:reverse_port
+            self.device.reverse(forward_spec, reverse_spec)
+            reverse_setup = True
+
+            with contextlib.closing(
+                    socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as \
+                            listener:
+                # Use SO_REUSEADDR so that subsequent runs of the test can grab
+                # the port even if it is in TIME_WAIT.
+                listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+                # Listen on localhost:reverse_port before connecting to
+                # localhost:forward_port because that will cause adb to connect
+                # back to localhost:reverse_port.
+                listener.bind(('127.0.0.1', reverse_port))
+                listener.listen(4)
+
+                with contextlib.closing(
+                        socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as \
+                                client:
+                    # Connect to the listener.
+                    client.connect(('127.0.0.1', forward_port))
+
+                    # Accept the client connection.
+                    accepted_connection, addr = listener.accept()
+                    with contextlib.closing(accepted_connection) as server:
+                        data = 'hello'
+
+                        # Send data into the port setup by adb forward.
+                        client.sendall(data)
+                        # Explicitly close() so that server gets EOF.
+                        client.close()
+
+                        # Verify that the data came back via adb reverse.
+                        self.assertEqual(data, server.makefile().read())
+        finally:
+            if reverse_setup:
+                self.device.reverse_remove(forward_spec)
+            if forward_setup:
+                self.device.forward_remove(forward_spec)
 
 
 def main():
