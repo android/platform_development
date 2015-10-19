@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d90802ae_5d3d57f4",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-19T20:19:39Z",
+      "side": 1,
+      "message": "I\u0027m not sure how strongly we follow the general Google Python styleguide but it discourages backslash-continuation (https://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Line_length). Would this work instead?\n\n  listener \u003d socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n  with contextlib.closing(listener):\n    ...",
+      "range": {
+        "startLine": 607,
+        "startChar": 0,
+        "endLine": 609,
+        "endChar": 37
+      },
+      "revId": "785949db3ce469d61d804d00ee3fd12905f6b269",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9ec2e3d_c80f2348",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-19T20:19:39Z",
+      "side": 1,
+      "message": "Same as above re: backlash continuation.",
+      "range": {
+        "startLine": 620,
+        "startChar": 0,
+        "endLine": 622,
+        "endChar": 39
+      },
+      "revId": "785949db3ce469d61d804d00ee3fd12905f6b269",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
