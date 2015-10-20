@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.android.apps.puppeteer.test"
+    android:sharedUserId="com.google.android.apps.puppeteer.uid">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.google.android.apps.puppeteer" />
+
+    <application
+        android:allowBackup="true">
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+</manifest>

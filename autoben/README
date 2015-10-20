@@ -1,0 +1,57 @@
+---------------
+
+Repository for perfcsicros-taiwan
+
+---------------
+
+
+Uploading changes to Gerrit for review
+-- hopefully this will change soon, but for now this is how you 
+can commit changes:
+
+For the first upload:
+
+    $ git commit -a
+    $ git push origin HEAD:refs/for/master
+
+A known failure with this sequence missing the Gerrit change ID is missing
+in the provided commit message. 
+
+You will get a failure message which will prompt to run a command to append 
+the change ID into the commit message.
+    $ <run the command>
+
+After this step, you should see commit message with change ID in git log.
+Then you can run:
+
+   $ git commit -a --amend
+   $ git push origin HEAD:refs/for/master
+
+
+The final commit message may look like this:
+
+   ---
+   Externalize the frobnik to satisfy juju dependencies
+   
+   This long-overdue change replaces the awkward integration scheme from the
+   open-source version with an assimilated, non-spurious lobotomizer.
+   
+   Change-Id: Icdbf338a1182334822f4743e904a36731ea7f85a
+   ---
+
+A successful push will give a gerrit commit weblink in the printed log. Follow the link, 
+and add required reviewers to the commit.
+
+---------------
+
+You can find reviews by surfing to: https://team-review.git.corp.google.com/#/dashboard/self
+
+---------------
+
+As per Chih-Chung, three things are required for the commit to get posted to mainline:
+1. "Code-Review" +2 
+       - which is usually clicked by the reviewer (any one is enough) to indicate LGTM.
+2. "Verified" 
+       - which is usually clicked by the author to indicate he has tested the change.
+3. "Commit-Queue" 
+       - which is usually clicked by the author to indicate the the change is ready to be submitted.

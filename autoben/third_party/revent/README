@@ -1,0 +1,12 @@
+It is a branch from ARM-software/workload-automation.
+revent: To record/replay input events on Android devices.
+
+https://github.com/ARM-software/workload-automation/tree/d1029942148f7e1274b8b31cfca133e31e67f7f9/
+wlauto/external/revent
+
+added feature:
+1. linear scaling and shift.
+2. translate events to type B with mtdev.
+   (http://www.linuxfromscratch.org/blfs/view/svn/general/mtdev.html)
+3. replay events on assigned input device.
+4. add a type B virutal device.

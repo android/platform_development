@@ -1,0 +1,12 @@
+getevent2
+  compile: arm-linux-gnueabi-gcc -static -lc getevent2.c -o getevent
+  deploy: adb push getevent2 /system/bin (required adb remount)
+
+uiautomator.jar
+  compile: copy files under cmds to aosp/frameworks/base/cmds/uiautomator/cmds
+        mmm frameworks/base/cmds/uiautomator/cmds showcommands
+  jar: mv aosp/out/target/common/obj/JAVA_LIBRARIES/uiautomator_intermediates/classes.dex
+       aosp/out/target/product/generic/system/framework/uiautomator.jar
+  deploy: adb push uiautomator.jar /system/framework
+  execute: adb shell
+           uiautomator tracker
