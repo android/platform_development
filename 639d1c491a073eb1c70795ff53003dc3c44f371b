@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59725292_f4a2d8e8",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-21T17:40:35Z",
+      "side": 1,
+      "message": "This may be trying to be too clever, LMK if you think the generator/yield construct is more complicated than it\u0027s worth here.\n\nI just like it because it isolates the return logic in one place, rather than something like this:\n\n  do_first_file_check\n  if success:\n    return ...\n\n  do_second_file_check\n  if success:\n    return ...\n\n  etc.",
+      "range": {
+        "startLine": 193,
+        "startChar": 8,
+        "endLine": 193,
+        "endChar": 22
+      },
+      "revId": "639d1c491a073eb1c70795ff53003dc3c44f371b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
