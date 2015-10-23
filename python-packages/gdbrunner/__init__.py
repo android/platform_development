@@ -163,8 +163,9 @@ def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
                                          "gdbclient-{}".format(os.getppid()))
     print "Redirecting gdbclient output to {}".format(gdbclient_output_path)
     gdbclient_output = file(gdbclient_output_path, 'w')
-    return device.shell_popen(gdbserver_cmd, stdout=gdbclient_output,
-                              stderr=gdbclient_output)
+    # Run in background so Ctrl-C in the parent script doesn't kill gdbserver.
+    return device.shell_popen(gdbserver_cmd, background=True,
+                              stdout=gdbclient_output, stderr=subprocess.STDOUT)
 
 
 def find_file(device, executable_path, sysroot, user=None):

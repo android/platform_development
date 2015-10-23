@@ -19,6 +19,7 @@ import logging
 import os
 import re
 import subprocess
+import sys
 import tempfile
 
 
@@ -353,8 +354,8 @@ class AndroidDevice(object):
             exit_code, stdout = self._parse_shell_output(stdout)
         return exit_code, stdout, stderr
 
-    def shell_popen(self, cmd, kill_atexit=True, preexec_fn=None,
-                    creationflags=0, **kwargs):
+    def shell_popen(self, cmd, kill_atexit=True, background=False, stdin=None,
+                    preexec_fn=None, creationflags=0, **kwargs):
         """Calls `adb shell` and returns a handle to the adb process.
 
         This function provides direct access to the subprocess used to run the
@@ -364,30 +365,39 @@ class AndroidDevice(object):
         Args:
             cmd: Array of command arguments to execute.
             kill_atexit: Whether to kill the process upon exiting.
+            background: Whether to run the process in the background. This
+                disconnects the terminal so signals like Ctrl+C aren't passed to
+                the process, but disables reading input from the terminal.
+            stdin: Argument forwarded to subprocess.Popen. May be overridden if
+                |background| is True and |stdin| is a terminal.
             preexec_fn: Argument forwarded to subprocess.Popen.
             creationflags: Argument forwarded to subprocess.Popen.
             **kwargs: Arguments forwarded to subprocess.Popen.
 
         Returns:
-            subprocess.Popen handle to the adb shell instance
+            subprocess.Popen handle to the adb shell instance.
         """
 
         command = self.adb_cmd + ['shell'] + cmd
 
-        # Make sure a ctrl-c in the parent script doesn't kill gdbserver.
-        if os.name == 'nt':
-            creationflags |= subprocess.CREATE_NEW_PROCESS_GROUP
-        else:
-            if preexec_fn is None:
-                preexec_fn = os.setpgrp
-            elif preexec_fn is not os.setpgrp:
-                fn = preexec_fn
-                def _wrapper():
-                    fn()
-                    os.setpgrp()
-                preexec_fn = _wrapper
+        if background:
+            # Do not allow a process to be put in the background while connected
+            # to a terminal or the process will likely be killed with SIGTTIN.
+            if stdin is None and os.isatty(sys.stdin.fileno()):
+                stdin = subprocess.PIPE
+            if os.name == 'nt':
+                creationflags |= subprocess.CREATE_NEW_PROCESS_GROUP
+            else:
+                if preexec_fn is None:
+                    preexec_fn = os.setpgrp
+                elif preexec_fn is not os.setpgrp:
+                    fn = preexec_fn
+                    def _wrapper():
+                        fn()
+                        os.setpgrp()
+                    preexec_fn = _wrapper
 
-        p = _subprocess_Popen(command, creationflags=creationflags,
+        p = _subprocess_Popen(command, stdin=stdin, creationflags=creationflags,
                               preexec_fn=preexec_fn, **kwargs)
 
         if kill_atexit:
