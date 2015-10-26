@@ -39,6 +39,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.DigestException;
 import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
+import java.security.spec.AlgorithmParameterSpec;
 
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
@@ -75,10 +76,17 @@ public class EncryptedDocument {
 
     private static final boolean DEBUG_METADATA = true;
 
-    /** Key length for AES-128 */
+    /** Size (in bytes) of Initialization Vector;
+     *  should be equivalent to the block size,
+     *  which in AES is 16 bytes
+     */
+    public static final int DATA_IV_LENGTH = 16;
+    /** Key length (in bytes) for AES-128 */
     public static final int DATA_KEY_LENGTH = 16;
-    /** Key length for SHA-256 */
+    /** Key length (in bytes) for HMAC */
     public static final int MAC_KEY_LENGTH = 32;
+    /** Tag length (in bytes) for HMAC */
+    public static final int MAC_TAG_LENGTH = 32;
 
     private final SecureRandom mRandom;
     private final Cipher mCipher;
@@ -100,15 +108,8 @@ public class EncryptedDocument {
     public EncryptedDocument(long docId, File file, SecretKey dataKey, SecretKey macKey)
             throws GeneralSecurityException {
         mRandom = new SecureRandom();
-        mCipher = Cipher.getInstance("AES/CTR/NoPadding");
+        mCipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
         mMac = Mac.getInstance("HmacSHA256");
-
-        if (dataKey.getEncoded().length != DATA_KEY_LENGTH) {
-            throw new IllegalArgumentException("Expected data key length " + DATA_KEY_LENGTH);
-        }
-        if (macKey.getEncoded().length != MAC_KEY_LENGTH) {
-            throw new IllegalArgumentException("Expected MAC key length " + MAC_KEY_LENGTH);
-        }
 
         mDocId = docId;
         mFile = file;
@@ -314,10 +315,11 @@ public class EncryptedDocument {
 
         final long dataStart = f.getFilePointer();
 
-        mRandom.nextBytes(section.iv);
+        mCipher.init(Cipher.ENCRYPT_MODE, mDataKey);
+        IvParameterSpec spec = (IvParameterSpec) mCipher.getParameters()
+                .getParameterSpec(IvParameterSpec.class);
+        section.iv = spec.getIV();
 
-        final IvParameterSpec ivSpec = new IvParameterSpec(section.iv);
-        mCipher.init(Cipher.ENCRYPT_MODE, mDataKey, ivSpec);
         mMac.init(mMacKey);
 
         int plainLength = 0;
@@ -357,8 +359,8 @@ public class EncryptedDocument {
      */
     private static class Section {
         long length;
-        final byte[] iv = new byte[DATA_KEY_LENGTH];
-        final byte[] mac = new byte[MAC_KEY_LENGTH];
+        byte[] iv = new byte[DATA_IV_LENGTH];
+        final byte[] mac = new byte[MAC_TAG_LENGTH];
 
         public void read(RandomAccessFile f) throws IOException {
             length = f.readLong();

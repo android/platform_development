@@ -21,7 +21,6 @@ import static com.example.android.vault.EncryptedDocument.MAC_KEY_LENGTH;
 import static com.example.android.vault.Utils.closeQuietly;
 import static com.example.android.vault.Utils.closeWithErrorQuietly;
 import static com.example.android.vault.Utils.readFully;
-import static com.example.android.vault.Utils.writeFully;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -36,6 +35,8 @@ import android.provider.DocumentsContract.Document;
 import android.provider.DocumentsContract.Root;
 import android.provider.DocumentsProvider;
 import android.security.KeyChain;
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.KeyProperties;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -51,6 +52,7 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
 
+import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -120,8 +122,6 @@ public class VaultProvider extends DocumentsProvider {
      */
     private boolean mHardwareBacked;
 
-    /** File where wrapped symmetric key is stored. */
-    private File mKeyFile;
     /** Directory where all encrypted documents are stored. */
     private File mDocumentsDir;
 
@@ -132,13 +132,12 @@ public class VaultProvider extends DocumentsProvider {
     public boolean onCreate() {
         mHardwareBacked = KeyChain.isBoundKeyAlgorithm("RSA");
 
-        mKeyFile = new File(getContext().getFilesDir(), "vault.key");
         mDocumentsDir = new File(getContext().getFilesDir(), "documents");
         mDocumentsDir.mkdirs();
 
         try {
             // Load secret key and ensure our root document is ready.
-            loadOrGenerateKeys(getContext(), mKeyFile);
+            loadOrGenerateKeys(getContext());
             initDocument(Long.parseLong(DEFAULT_DOCUMENT_ID), Document.MIME_TYPE_DIR, null);
 
         } catch (IOException e) {
@@ -162,42 +161,51 @@ public class VaultProvider extends DocumentsProvider {
     }
 
     /**
-     * Load our symmetric secret key and use it to derive two different data and
-     * MAC keys. The symmetric secret key is stored securely on disk by wrapping
-     * it with a public/private key pair, possibly backed by hardware.
+     * Load the AES and HMAC keys from the AndroidKeyStore.
+     * Generate them in the AndroidKeyStore if they do not exist yet.
      */
-    private void loadOrGenerateKeys(Context context, File keyFile)
+    private void loadOrGenerateKeys(Context context)
             throws GeneralSecurityException, IOException {
-        final SecretKeyWrapper wrapper = new SecretKeyWrapper(context, TAG);
+        KeyStore ks = KeyStore.getInstance("AndroidKeyStore");
+        ks.load(null);
 
-        // Generate secret key if none exists
-        if (!keyFile.exists()) {
-            final byte[] raw = new byte[DATA_KEY_LENGTH];
-            new SecureRandom().nextBytes(raw);
-
-            final SecretKey key = new SecretKeySpec(raw, "AES");
-            final byte[] wrapped = wrapper.wrap(key);
-
-            writeFully(keyFile, wrapped);
+        if (ks.containsAlias(TAG + "AES")) {
+            KeyStore.SecretKeyEntry entry = (KeyStore.SecretKeyEntry)
+                    ks.getEntry(TAG + "AES", null);
+            mDataKey = entry.getSecretKey();
+        } else {
+            KeyGenParameterSpec.Builder builder = new KeyGenParameterSpec
+                    .Builder(TAG + "AES",
+                    KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT);
+            KeyGenParameterSpec keySpec = builder
+                    .setKeySize(DATA_KEY_LENGTH * 8)
+                    .setBlockModes("CBC")
+                    .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
+                    .setRandomizedEncryptionRequired(true)
+                    .setUserAuthenticationRequired(false)
+                    .build();
+            KeyGenerator kg = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES,
+                    "AndroidKeyStore");
+            kg.init(keySpec);
+            mDataKey = kg.generateKey();
         }
 
-        // Even if we just generated the key, always read it back to ensure we
-        // can read it successfully.
-        final byte[] wrapped = readFully(keyFile);
-        final SecretKey key = wrapper.unwrap(wrapped);
-
-        final Mac mac = Mac.getInstance("HmacSHA256");
-        mac.init(key);
-
-        // Derive two different keys for encryption and authentication.
-        final byte[] rawDataKey = new byte[DATA_KEY_LENGTH];
-        final byte[] rawMacKey = new byte[MAC_KEY_LENGTH];
-
-        System.arraycopy(mac.doFinal(BLOB_DATA), 0, rawDataKey, 0, rawDataKey.length);
-        System.arraycopy(mac.doFinal(BLOB_MAC), 0, rawMacKey, 0, rawMacKey.length);
-
-        mDataKey = new SecretKeySpec(rawDataKey, "AES");
-        mMacKey = new SecretKeySpec(rawMacKey, "HmacSHA256");
+        if (ks.containsAlias(TAG + "HMAC")) {
+            KeyStore.SecretKeyEntry entry = (KeyStore.SecretKeyEntry)
+                    ks.getEntry(TAG + "HMAC", null);
+            mMacKey = entry.getSecretKey();
+        } else {
+            KeyGenParameterSpec.Builder builder = new KeyGenParameterSpec.Builder(TAG + "HMAC",
+                    KeyProperties.PURPOSE_SIGN | KeyProperties.PURPOSE_VERIFY);
+            KeyGenParameterSpec keySpec = builder
+                    .setKeySize(MAC_KEY_LENGTH * 8)
+                    .setUserAuthenticationRequired(false)
+                    .build();
+            KeyGenerator kg = KeyGenerator
+                    .getInstance(KeyProperties.KEY_ALGORITHM_HMAC_SHA256, "AndroidKeyStore");
+            kg.init(keySpec);
+            mMacKey = kg.generateKey();
+        }
     }
 
     @Override
