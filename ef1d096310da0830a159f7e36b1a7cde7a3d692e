@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96df3923_8df90ded",
+        "filename": "samples/Vault/src/com/example/android/vault/VaultProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1018773
+      },
+      "writtenOn": "2015-10-26T18:00:58Z",
+      "side": 1,
+      "message": "KeyChain.isBoundKeyAlgorithm is deprecated and should no longer be relied upon. There\u0027s no longer a guarantee that all keys of particular algorithm are HW-backed. The correct approach is to query each individual key. See Javadoc of KeyChain.isBoundKeyAlgorithm or https://developer.android.com/reference/android/security/keystore/KeyInfo.html.",
+      "revId": "ef1d096310da0830a159f7e36b1a7cde7a3d692e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "76d48537_10322ad5",
+        "filename": "samples/Vault/src/com/example/android/vault/VaultProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1018773
+      },
+      "writtenOn": "2015-10-26T18:00:58Z",
+      "side": 1,
+      "message": "There\u0027s no need for the intermediate local variable \"builder\". In fact, you probably don\u0027t even need the keySpec variable either. You could simply do:\n\nkg.init(new ..Spec.Builder(...)\n        .set...\n        .set..\n        .build());",
+      "revId": "ef1d096310da0830a159f7e36b1a7cde7a3d692e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "56e941ce_50279c84",
+        "filename": "samples/Vault/src/com/example/android/vault/VaultProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1018773
+      },
+      "writtenOn": "2015-10-26T18:00:58Z",
+      "side": 1,
+      "message": "Seeing KEY_LENGTH * 8 is somewhat confusing. How about renaming the *_KEY_LENGTH constants to _KEY_LENGTH_BYTES to make this clearer?",
+      "revId": "ef1d096310da0830a159f7e36b1a7cde7a3d692e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "16b509da_348cd00b",
+        "filename": "samples/Vault/src/com/example/android/vault/VaultProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1018773
+      },
+      "writtenOn": "2015-10-26T18:00:58Z",
+      "side": 1,
+      "message": "KeyProperties.BLOCK_MODE_CBC",
+      "revId": "ef1d096310da0830a159f7e36b1a7cde7a3d692e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "76d48537_f05d5e0e",
+        "filename": "samples/Vault/src/com/example/android/vault/VaultProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1018773
+      },
+      "writtenOn": "2015-10-26T18:00:58Z",
+      "side": 1,
+      "message": "No need. Randomized encryption is required by default, on purpose.",
+      "revId": "ef1d096310da0830a159f7e36b1a7cde7a3d692e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "16b509da_746f28bb",
+        "filename": "samples/Vault/src/com/example/android/vault/VaultProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1018773
+      },
+      "writtenOn": "2015-10-26T18:00:58Z",
+      "side": 1,
+      "message": "No need to specify the MAC key length, since it\u0027s randomly generated anyway. Android Keystore guarantees that the default length is the output size of the hash function.",
+      "revId": "ef1d096310da0830a159f7e36b1a7cde7a3d692e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
