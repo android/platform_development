@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "16b509da_b43e2081",
+        "filename": "samples/Vault/src/com/example/android/vault/EncryptedDocument.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1018773
+      },
+      "writtenOn": "2015-10-26T18:02:18Z",
+      "side": 1,
+      "message": "Simpler: section.iv \u003d mCipher.getIV();",
+      "revId": "ef1d096310da0830a159f7e36b1a7cde7a3d692e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96df3923_8df90ded",
         "filename": "samples/Vault/src/com/example/android/vault/VaultProvider.java",
         "patchSetId": 1
