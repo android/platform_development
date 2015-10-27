@@ -20,6 +20,7 @@ import os
 import re
 import subprocess
 import tempfile
+import time
 
 
 class FindDeviceError(RuntimeError):
@@ -46,6 +47,47 @@ class ShellError(RuntimeError):
         self.stdout = stdout
         self.stderr = stderr
         self.exit_code = exit_code
+
+
+def connect(host):
+    """Connect to a remote ADB server.
+
+    Args:
+        host: The remote host name.
+
+    Raises:
+        RuntimeError:
+            Failed to connect to the remote ADB server.
+    """
+    # Sometimes adb connect blocks forever. Set a timeout (3sec.) by ourselves.
+    proc = subprocess.Popen(
+            ['adb', 'connect', host],
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    start_time = time.time()
+    while time.time() - start_time < 3:
+        if proc.poll() is not None:
+            break
+        time.sleep(0.1)
+    if proc.poll() is not None:
+        output = proc.stdout.read()
+    else:
+        proc.terminate()
+        output = ''
+    proc.stdout.close()
+    proc.wait()
+    if 'connected to ' not in output:
+        raise RuntimeError('Failed to connect to remote ADB server %s' % host)
+
+
+def disconnect(host):
+    """Disconnect from a remote ADB server.
+
+    Args:
+        host: The remote host name.
+    """
+    with open(os.devnull, 'wb') as null:
+        subprocess.check_call(
+                ['adb', 'disconnect', host], stdout=null, stderr=null)
 
 
 def get_devices():
@@ -440,12 +482,6 @@ class AndroidDevice(object):
 
     def forward_remove_all(self):
         return self._simple_call(['forward', '--remove-all'])
-
-    def connect(self, host):
-        return self._simple_call(['connect', host])
-
-    def disconnect(self, host):
-        return self._simple_call(['disconnect', host])
 
     def reverse(self, remote, local):
         return self._simple_call(['reverse', remote, local])
