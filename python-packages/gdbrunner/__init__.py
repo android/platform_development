@@ -135,6 +135,14 @@ def get_processes(device):
     return processes
 
 
+def get_pids(device, process_name):
+    processes = get_processes(device)
+    if process_name not in processes:
+        return []
+    pids = processes[process_name]
+    return pids
+
+
 def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
                     target_pid, run_cmd, debug_socket, port, user=None):
     """Start gdbserver in the background and forward necessary ports.
