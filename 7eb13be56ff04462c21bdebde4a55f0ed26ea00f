@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f6d955b5_32d0d652",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-28T22:18:13Z",
+      "side": 1,
+      "message": "Even though we don\u0027t modify gdb_flags here I think it\u0027s best to stay away from mutable default values (https://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Default_Argument_Values).\n\nSuggest None instead then convert None to [] in the function.",
+      "range": {
+        "startLine": 285,
+        "startChar": 48,
+        "endLine": 285,
+        "endChar": 50
+      },
+      "revId": "7eb13be56ff04462c21bdebde4a55f0ed26ea00f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
