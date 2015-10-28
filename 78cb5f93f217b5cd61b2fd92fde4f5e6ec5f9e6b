@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f6d955b5_efc3f521",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-28T20:25:25Z",
+      "side": 1,
+      "message": "The purpose of having different behavior in this case isn\u0027t immediately apparent from the code, why exit() if a serial isn\u0027t found but not e.g. if an emulator isn\u0027t found?",
+      "range": {
+        "startLine": 76,
+        "startChar": 12,
+        "endLine": 76,
+        "endChar": 73
+      },
+      "revId": "78cb5f93f217b5cd61b2fd92fde4f5e6ec5f9e6b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
