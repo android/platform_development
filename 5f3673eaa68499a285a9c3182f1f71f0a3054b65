@@ -22,6 +22,30 @@
       "revId": "5f3673eaa68499a285a9c3182f1f71f0a3054b65",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "769c85d8_739d38d7",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-10-28T21:23:17Z",
+      "side": 1,
+      "message": "Good idea, done.",
+      "parentUuid": "f6d955b5_ef2655ee",
+      "range": {
+        "startLine": 68,
+        "startChar": 13,
+        "endLine": 68,
+        "endChar": 35
+      },
+      "revId": "5f3673eaa68499a285a9c3182f1f71f0a3054b65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
