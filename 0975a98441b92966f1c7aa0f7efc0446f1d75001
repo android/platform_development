@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "565141a7_0520b8e2",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-10-28T03:31:26Z",
+      "side": 1,
+      "message": "Or `return processes.get(process_name, [])`",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 143,
+        "endChar": 15
+      },
+      "revId": "0975a98441b92966f1c7aa0f7efc0446f1d75001",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
