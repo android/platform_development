@@ -163,6 +163,24 @@
       "revId": "a2d7fedcaee93c2e54cead73b6881343885cf0e8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "96cad9dc_c9ca75a5",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-10-28T20:41:46Z",
+      "side": 1,
+      "message": "It actually ends up throwing an argparse specific error that ends up handled at a higher level, but yeah, never mind what I said. Not sure what I was thinking.",
+      "parentUuid": "7621e584_e5821696",
+      "revId": "a2d7fedcaee93c2e54cead73b6881343885cf0e8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
