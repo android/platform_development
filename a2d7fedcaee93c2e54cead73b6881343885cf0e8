@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "565141a7_a5fb04a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-10-28T03:26:14Z",
+      "side": 1,
+      "message": "Should be a separate CL if it isn\u0027t too much work to split them (could always just make all the gdb parts of this a separate CL from the adb part if it\u0027s tough to split that part).",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 11,
+        "endChar": 7
+      },
+      "revId": "a2d7fedcaee93c2e54cead73b6881343885cf0e8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "76fd65bf_4b2239ba",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-10-28T03:26:14Z",
+      "side": 1,
+      "message": "Just make this the default parameter instead of None.\n\nI\u0027d also name it adb_path rather than adb_cmd since cmd implies that it can be something like `adb -s FOO`, which won\u0027t work. in this context.",
+      "revId": "a2d7fedcaee93c2e54cead73b6881343885cf0e8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f636b56e_678986ef",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-10-28T03:26:14Z",
+      "side": 1,
+      "message": "Same for the rest of these.",
+      "range": {
+        "startLine": 73,
+        "startChar": 37,
+        "endLine": 73,
+        "endChar": 44
+      },
+      "revId": "a2d7fedcaee93c2e54cead73b6881343885cf0e8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "964739ec_84da8a48",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-10-28T03:26:14Z",
+      "side": 1,
+      "message": "IMO the argparser should never cause an exit. This really should be a thrown exception that is handled by the user of the argparser.\n\nThis really is just for the sake of sharing code between gdbclient and ndk-gdb though, so if you disagree then it\u0027s good enough for me.",
+      "revId": "a2d7fedcaee93c2e54cead73b6881343885cf0e8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
