@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f6d955b5_ef2655ee",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-10-28T20:12:45Z",
+      "side": 1,
+      "message": "I think you want [result.device is not None] here; since device is now a |dest| parameter, argparse will set it to None if it\u0027s not specified.\n\nAlternately it may simplify logic a little to combine the -a/-s/default cases like this:\n\n  if result.device \u003d\u003d \"-d\":\n    result.device \u003d adb.get_usb_device(adb_path\u003dadb_path)\n  elif result.device \u003d\u003d \"-e\":\n    result.device \u003d adb.get_emulator_device(adb_path\u003dadb_path)\n  else:\n    result.device \u003d adb.get_device(result.serial, adb_path\u003dadb_path)",
+      "range": {
+        "startLine": 68,
+        "startChar": 13,
+        "endLine": 68,
+        "endChar": 35
+      },
+      "revId": "5f3673eaa68499a285a9c3182f1f71f0a3054b65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
