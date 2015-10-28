@@ -282,7 +282,7 @@ def get_binary_arch(binary_file):
         raise RuntimeError("unknown architecture: 0x{:x}".format(e_machine))
 
 
-def start_gdb(gdb_path, gdb_commands):
+def start_gdb(gdb_path, gdb_commands, gdb_flags=[]):
     """Start gdb in the background and block until it finishes.
 
     Args:
@@ -293,7 +293,7 @@ def start_gdb(gdb_path, gdb_commands):
     with tempfile.NamedTemporaryFile() as gdb_script:
         gdb_script.write(gdb_commands)
         gdb_script.flush()
-        gdb_args = [gdb_path, "-x", gdb_script.name]
+        gdb_args = [gdb_path, "-x", gdb_script.name] + gdb_flags
         gdb_process = subprocess.Popen(gdb_args)
         while gdb_process.returncode is None:
             try:
