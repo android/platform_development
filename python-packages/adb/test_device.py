@@ -488,7 +488,7 @@ def make_random_host_files(in_dir, num_files):
     return files
 
 
-def make_random_device_files(device, in_dir, num_files):
+def make_random_device_files(device, in_dir, num_files, prefix='device_tmpfile'):
     min_size = 1 * (1 << 10)
     max_size = 16 * (1 << 10)
 
@@ -496,7 +496,7 @@ def make_random_device_files(device, in_dir, num_files):
     for file_num in xrange(num_files):
         size = random.randrange(min_size, max_size, 1024)
 
-        base_name = 'device_tmpfile' + str(file_num)
+        base_name = prefix + str(file_num)
         full_path = posixpath.join(in_dir, base_name)
 
         device.shell(['dd', 'if=/dev/urandom', 'of={}'.format(full_path),
@@ -512,13 +512,15 @@ class FileOperationsTest(DeviceTest):
     DEVICE_TEMP_FILE = SCRATCH_DIR + '/adb_test_file'
     DEVICE_TEMP_DIR = SCRATCH_DIR + '/adb_test_dir'
 
-    def _test_push(self, local_file, checksum):
-        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_FILE])
-        self.device.push(local=local_file, remote=self.DEVICE_TEMP_FILE)
+    def _verify_remote(self, checksum, remote_path):
         dev_md5, _ = self.device.shell([get_md5_prog(self.device),
-                                       self.DEVICE_TEMP_FILE])[0].split()
+                                        remote_path])[0].split()
         self.assertEqual(checksum, dev_md5)
-        self.device.shell(['rm', '-f', self.DEVICE_TEMP_FILE])
+
+    def _verify_local(self, checksum, local_path):
+        with open(local_path, 'rb') as host_file:
+            host_md5 = compute_md5(host_file.read())
+            self.assertEqual(host_md5, checksum)
 
     def test_push(self):
         """Push a randomly generated file to specified device."""
@@ -527,10 +529,78 @@ class FileOperationsTest(DeviceTest):
         rand_str = os.urandom(1024 * kbytes)
         tmp.write(rand_str)
         tmp.close()
-        self._test_push(tmp.name, compute_md5(rand_str))
+
+        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_FILE])
+        self.device.push(local=tmp.name, remote=self.DEVICE_TEMP_FILE)
+
+        self._verify_remote(compute_md5(rand_str), self.DEVICE_TEMP_FILE)
+        self.device.shell(['rm', '-f', self.DEVICE_TEMP_FILE])
+
         os.remove(tmp.name)
 
-    # TODO: write push directory test.
+    def test_push_dir(self):
+        """Push a randomly generated directory of files to the device."""
+        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_DIR])
+        self.device.shell(['mkdir', self.DEVICE_TEMP_DIR])
+
+        host_dir = tempfile.mkdtemp()
+
+        # Make sure the temp directory isn't setuid, or else adb will complain.
+        os.chmod(host_dir, 0700)
+
+        # Create 32 random files.
+        temp_files = make_random_host_files(in_dir=host_dir, num_files=32)
+        self.device.push(host_dir, self.DEVICE_TEMP_DIR)
+
+        for temp_file in temp_files:
+            remote_path = posixpath.join(self.DEVICE_TEMP_DIR,
+                                         # BROKEN: http://b/25394682
+                                         # posixpath.dirname(
+                                         #     posixpath.dirname(
+                                         #      temp_file.full_path)),
+                                         temp_file.base_name)
+            self._verify_remote(temp_file.checksum, remote_path)
+        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_DIR])
+        shutil.rmtree(host_dir)
+
+    def test_multiple_push(self):
+        """Push multiple files to the device in one adb push command.
+
+        Bug: http://b/25324823
+        """
+
+        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_DIR])
+        self.device.shell(['mkdir', self.DEVICE_TEMP_DIR])
+
+        host_dir = tempfile.mkdtemp()
+
+        # Create some random files and a subdirectory containing more files.
+        temp_files = make_random_host_files(in_dir=host_dir, num_files=4)
+
+        subdir = os.path.join(host_dir, "subdir")
+        os.mkdir(subdir)
+        subdir_temp_files = make_random_host_files(in_dir=subdir, num_files=4)
+
+        paths = map(lambda temp_file: temp_file.full_path, temp_files)
+        paths.append(subdir)
+        self.device._simple_call(['push'] + paths + [self.DEVICE_TEMP_DIR])
+
+        for temp_file in temp_files:
+            remote_path = posixpath.join(self.DEVICE_TEMP_DIR,
+                                         temp_file.base_name)
+            self._verify_remote(temp_file.checksum, remote_path)
+
+        for subdir_temp_file in subdir_temp_files:
+            remote_path = posixpath.join(self.DEVICE_TEMP_DIR,
+                                         # BROKEN: http://b/25394682
+                                         # "subdir",
+                                         temp_file.base_name)
+            self._verify_remote(temp_file.checksum, remote_path)
+
+
+        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_DIR])
+        shutil.rmtree(host_dir)
+
 
     def _test_pull(self, remote_file, checksum):
         tmp_write = tempfile.NamedTemporaryFile(mode='wb', delete=False)
@@ -583,13 +653,44 @@ class FileOperationsTest(DeviceTest):
 
         for temp_file in temp_files:
             host_path = os.path.join(host_dir, temp_file.base_name)
-            with open(host_path, 'rb') as host_file:
-                host_md5 = compute_md5(host_file.read())
-                self.assertEqual(host_md5, temp_file.checksum)
 
         self.device.shell(['rm', '-rf', self.DEVICE_TEMP_DIR])
         if host_dir is not None:
             shutil.rmtree(host_dir)
+
+
+    def test_multiple_pull(self):
+        """Pull a randomly generated directory of files from the device."""
+        host_dir = tempfile.mkdtemp()
+
+        subdir = posixpath.join(self.DEVICE_TEMP_DIR, "subdir")
+        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_DIR])
+        self.device.shell(['mkdir', '-p', subdir])
+
+        # Create some random files and a subdirectory containing more files.
+        temp_files = make_random_device_files(
+            self.device, in_dir=self.DEVICE_TEMP_DIR, num_files=4)
+
+        subdir_temp_files = make_random_device_files(
+            self.device, in_dir=subdir, num_files=4, prefix='subdir_')
+
+        paths = map(lambda temp_file: temp_file.full_path, temp_files)
+        paths.append(subdir)
+        self.device._simple_call(['pull'] + paths + [host_dir])
+
+        for temp_file in temp_files:
+            local_path = os.path.join(host_dir, temp_file.base_name)
+            self._verify_local(temp_file.checksum, local_path)
+
+        for subdir_temp_file in subdir_temp_files:
+            local_path = os.path.join(host_dir,
+                                      # BROKEN: http://b/25394682
+                                      # "subdir",
+                                      subdir_temp_file.base_name)
+            self._verify_local(subdir_temp_file.checksum, local_path)
+
+        self.device.shell(['rm', '-rf', self.DEVICE_TEMP_DIR])
+        shutil.rmtree(host_dir)
 
     def test_sync(self):
         """Sync a randomly generated directory of files to specified device."""
