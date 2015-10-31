@@ -21,6 +21,7 @@ import hashlib
 import os
 import posixpath
 import random
+import re
 import shlex
 import shutil
 import signal
@@ -128,6 +129,40 @@ class GetDeviceTest(unittest.TestCase):
 class DeviceTest(unittest.TestCase):
     def setUp(self):
         self.device = adb.get_device()
+
+
+class ForwardReverseTest(DeviceTest):
+    def test_forward(self):
+        self.device.forward('tcp:5566', 'tcp:6655')
+        msg = self.device.forward_list()
+        self.assertTrue(re.search(r'tcp:5566.+tcp:6655', msg))
+        self.device.forward('tcp:7788', 'tcp:8877')
+        msg = self.device.forward_list()
+        self.assertTrue(re.search(r'tcp:5566.+tcp:6655', msg))
+        self.assertTrue(re.search(r'tcp:7788.+tcp:8877', msg))
+        self.device.forward_remove('tcp:5566')
+        msg = self.device.forward_list()
+        self.assertFalse(re.search(r'tcp:5566.+tcp:6655', msg))
+        self.assertTrue(re.search(r'tcp:7788.+tcp:8877', msg))
+        self.device.forward_remove_all()
+        msg = self.device.forward_list()
+        self.assertEqual('', msg.strip())
+
+    def test_reverse(self):
+        self.device.reverse('tcp:5566', 'tcp:6655')
+        msg = self.device.reverse_list()
+        self.assertTrue(re.search(r'tcp:5566.+tcp:6655', msg))
+        self.device.reverse('tcp:7788', 'tcp:8877')
+        msg = self.device.reverse_list()
+        self.assertTrue(re.search(r'tcp:5566.+tcp:6655', msg))
+        self.assertTrue(re.search(r'tcp:7788.+tcp:8877', msg))
+        self.device.reverse_remove('tcp:5566')
+        msg = self.device.reverse_list()
+        self.assertFalse(re.search(r'tcp:5566.+tcp:6655', msg))
+        self.assertTrue(re.search(r'tcp:7788.+tcp:8877', msg))
+        self.device.reverse_remove_all()
+        msg = self.device.reverse_list()
+        self.assertEqual('', msg.strip())
 
 
 class ShellTest(DeviceTest):
