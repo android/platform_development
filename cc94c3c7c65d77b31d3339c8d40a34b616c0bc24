@@ -16,6 +16,24 @@
       "revId": "cc94c3c7c65d77b31d3339c8d40a34b616c0bc24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "765c8636_dbd6731b",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2015-10-31T00:20:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "562a227b_62fa3ee2",
+      "revId": "cc94c3c7c65d77b31d3339c8d40a34b616c0bc24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
