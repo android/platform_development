@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d63612de_b24195e8",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-11-02T19:50:47Z",
+      "side": 1,
+      "message": "The default assertEqual() failure message might not be too helpful here, maybe add a message to make it obvious why this is failing, e.g.:\n\n  self.assertEqual(\u0027\u0027, msg.strip(), \u0027Forwarding list must be empty to run this test.\u0027)",
+      "range": {
+        "startLine": 137,
+        "startChar": 8,
+        "endLine": 137,
+        "endChar": 41
+      },
+      "revId": "5ee1cdd07785065c82054b7f7770d833174bc5ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "562a227b_03e13ced",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-11-02T19:50:47Z",
+      "side": 1,
+      "message": "Same.",
+      "range": {
+        "startLine": 155,
+        "startChar": 7,
+        "endLine": 155,
+        "endChar": 41
+      },
+      "revId": "5ee1cdd07785065c82054b7f7770d833174bc5ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
