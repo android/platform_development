@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "36204e91_6d1c50a7",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-11-03T02:08:50Z",
+      "side": 1,
+      "message": "try/finally for this?",
+      "revId": "f94d5fb299d5699e61c67d932a55aaf026cd6299",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "562a227b_78af8ebf",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-11-03T02:08:50Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "f94d5fb299d5699e61c67d932a55aaf026cd6299",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "36204e91_2d7d38c5",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2015-11-03T02:08:50Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "f94d5fb299d5699e61c67d932a55aaf026cd6299",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
