@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b686fe2b_d209dab1",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1056364
+      },
+      "writtenOn": "2015-11-05T05:21:40Z",
+      "side": 1,
+      "message": "A good way to save code!",
+      "range": {
+        "startLine": 167,
+        "startChar": 28,
+        "endLine": 168,
+        "endChar": 59
+      },
+      "revId": "a4268676281287c47db040293dfba825551d0a9b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f6923665_f4aa4ed7",
+        "filename": "python-packages/adb/test_device.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1056364
+      },
+      "writtenOn": "2015-11-05T05:21:40Z",
+      "side": 1,
+      "message": "will test_forward_reverse_echo be more meaningful?",
+      "range": {
+        "startLine": 215,
+        "startChar": 8,
+        "endLine": 215,
+        "endChar": 28
+      },
+      "revId": "a4268676281287c47db040293dfba825551d0a9b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
