@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76d4867d_ec63e359",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-11-18T19:26:29Z",
+      "side": 1,
+      "message": "I\u0027m a little worried about this failing mysteriously if it is ever run on a machine without Powershell, what do you think about just leaving the actual commandline?\n\nIt might be more useful for debugging as well, just so the user can know the exact command that was issued in case some subtle differences between powershell.exe and cmd.exe come up in a future test.",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 60
+      },
+      "revId": "349542e582c255340fad9e680df5ca0165284f03",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
