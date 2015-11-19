@@ -46,6 +46,30 @@
       "revId": "349542e582c255340fad9e680df5ca0165284f03",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb75bfb9_3246d936",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-11-19T00:58:30Z",
+      "side": 1,
+      "message": "Oh yeah duh forgot about base64 encoding. I think you\u0027re right then the original commandline is probably better.\n\nHmm actually after some more testing it looks like a totally different exception (OSError/WindowsError) is raised if subprocess.check_output() can\u0027t find the executable, so I think leaving it as-is should be fine. I was just worried about a misleading error message but the OSError should give a user enough info to track down the real problem in this (rare) case.",
+      "parentUuid": "5b2a4b7b_a3fed7d0",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 60
+      },
+      "revId": "349542e582c255340fad9e680df5ca0165284f03",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
