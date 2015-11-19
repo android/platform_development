@@ -22,6 +22,30 @@
       "revId": "349542e582c255340fad9e680df5ca0165284f03",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b2a4b7b_a3fed7d0",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-11-19T00:16:57Z",
+      "side": 1,
+      "message": "The problem is that in the (hopefully) more common case of adb failing, it will show a command line of \"powershell.exe -EncodedComand \u003cbase64 of UTF-16LE string\u003e\". So to debug the actual test failure, you have to base64 decode. Doable, but a real pain.\n\nBut your point is taken. Do you think it is better to have the real PowerShell command line, even though it requires base64 decoding to comprehend?\n\nOr is there some way to show both? The best alternative I could come up with is to set a new attribute on CalledProcessError with the real cmdline and then monkey-patch CalledProcessError.__str__ to include that info, but that seems pretty gross.",
+      "parentUuid": "76d4867d_ec63e359",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 60
+      },
+      "revId": "349542e582c255340fad9e680df5ca0165284f03",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
