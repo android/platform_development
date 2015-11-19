@@ -70,6 +70,30 @@
       "revId": "349542e582c255340fad9e680df5ca0165284f03",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b2a4b7b_c6f3315b",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2015-11-19T01:36:08Z",
+      "side": 1,
+      "message": "I tried changing the code to run zzzpowershell.exe and I get \"WindowsError: [Error 2] The system cannot find the file specified\". That is pretty cryptic, so I\u0027m still open to mitigation ideas if you think this is important.\n\nRight now this is all pretty corner-case because test_unicode_paths is probably the only code that passes a Unicode Python string to device.shell(), etc.",
+      "parentUuid": "fb75bfb9_3246d936",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 60
+      },
+      "revId": "349542e582c255340fad9e680df5ca0165284f03",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
