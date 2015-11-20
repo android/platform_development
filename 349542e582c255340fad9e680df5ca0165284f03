@@ -94,6 +94,30 @@
       "revId": "349542e582c255340fad9e680df5ca0165284f03",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb2a67bd_e9dff554",
+        "filename": "python-packages/adb/device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2015-11-20T22:05:43Z",
+      "side": 1,
+      "message": "Cryptic is OK for this rare case, I was mainly worried about a directly misleading error message e.g. \u0027adb shell failed\u0027 when the actual problem is that Powershell is missing. IMO leaving it as-is is just fine.",
+      "parentUuid": "5b2a4b7b_c6f3315b",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 60
+      },
+      "revId": "349542e582c255340fad9e680df5ca0165284f03",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
