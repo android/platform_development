@@ -17,7 +17,7 @@
 # Generates a public/private key pair suitable for use in signing
 # android .apks and OTA update packages.
 
-if [ "$#" -lt 2 -o "$#" -gt 3 ]; then
+if [[ "$#" -lt 2 || "$#" -gt 3 ]]; then
   cat <<EOF
 Usage: $0 <name> <subject> [<keytype>]
 
@@ -27,7 +27,7 @@ EOF
   exit 2
 fi
 
-if [[ -e $1.pk8 || -e $1.x509.pem ]]; then
+if [[ -e "$1.pk8" || -e "$1.x509.pem" ]]; then
   echo "$1.pk8 and/or $1.x509.pem already exist; please delete them first"
   echo "if you want to replace them."
   exit 1
@@ -37,42 +37,47 @@ fi
 # and .pk8-creating programs, to avoid having the private key ever
 # touch the disk.
 
-tmpdir=$(mktemp -d)
-trap 'rm -rf ${tmpdir}; echo; exit 1' EXIT INT QUIT
+tmpdir="$(mktemp -d)"
+trap 'rm -rf "${tmpdir}"; echo; exit 1' EXIT INT QUIT
 
 one=${tmpdir}/one
 two=${tmpdir}/two
-mknod ${one} p
-mknod ${two} p
-chmod 0600 ${one} ${two}
+mknod "${one}" p
+mknod "${two}" p
+chmod 0600 "${one}" "${two}"
 
 read -p "Enter password for '$1' (blank for none; password will be visible): " \
   password
 
-if [ "${3}" = "rsa" -o "$#" -eq 2 ]; then
-  ( openssl genrsa -f4 2048 | tee ${one} > ${two} ) &
+if [[ "${3}" = "rsa" || "$#" -eq 2 ]]; then
+  ( openssl genrsa -f4 2048 | tee "${one}" > "${two}" ) &
   hash="-sha1"
-elif [ "${3}" = "ec" ]; then
-  ( openssl ecparam -name prime256v1 -genkey -noout | tee ${one} > ${two} ) &
+elif [[ "${3}" = "ec" ]]; then
+  ( openssl ecparam -name prime256v1 -genkey -noout \
+    | tee "${one}" > "${two}" ) &
   hash="-sha256"
 else
   echo "Only accepts RSA or EC keytypes."
   exit 1
 fi
 
-openssl req -new -x509 ${hash} -key ${two} -out $1.x509.pem \
+openssl req -new -x509 "${hash}" -key "${two}" -out "$1.x509.pem" \
   -days 10000 -subj "$2" &
 
-if [ "${password}" == "" ]; then
+if [[ -z "${password}" ]]; then
   echo "creating ${1}.pk8 with no password"
-  openssl pkcs8 -in ${one} -topk8 -outform DER -out $1.pk8 -nocrypt
+  openssl pkcs8 -in "${one}" -topk8 -outform DER -out "$1.pk8" -nocrypt
 else
   echo "creating ${1}.pk8 with password [${password}]"
   export password
-  openssl pkcs8 -in ${one} -topk8 -outform DER -out $1.pk8 \
+  openssl pkcs8 -in "${one}" -topk8 -outform DER -out "$1.pk8" \
     -passout env:password
   unset password
 fi
 
 wait
 wait
+
+# Clean up tmpdir and unset trap so we may exit cleanly.
+rm -rf "${tmpdir}"
+trap - EXIT INT QUIT
