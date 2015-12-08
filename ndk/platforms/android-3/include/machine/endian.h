@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,9 +25,11 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-#ifndef _ENDIAN_H_
-#define _ENDIAN_H_
 
+#ifndef _MACHINE_ENDIAN_H_
+#define _MACHINE_ENDIAN_H_
+
+/* This file is for BSD source compatibility only. Use <endian.h> or <sys/endian.h> instead. */
 #include <sys/endian.h>
 
-#endif /* _ENDIAN_H_ */
+#endif /* _MACHINE_ENDIAN_H_ */
