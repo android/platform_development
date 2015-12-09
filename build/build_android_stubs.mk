@@ -51,5 +51,5 @@ $(full_target): $(stub_timestamp) $(framework_res_package)
 	$(hide) jar -cf $@ -C $(PRIVATE_CLASS_INTERMEDIATES_DIR) .
 	$(hide) jar -u0f $@ -C $(PRIVATE_CLASS_INTERMEDIATES_DIR) resources.arsc
 
-$(jack_lib) : $(full_target) $(JILL_JAR) $(JACK)
+$(jack_lib) : $(full_target) $(JILL_JAR) $(JACK) | setup-jack-server
 	$(transform-jar-to-jack)
