@@ -20,6 +20,7 @@
 intermediates := $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/$(sdk_stub_name)_intermediates
 full_target := $(intermediates)/classes.jar
 jack_lib := $(intermediates)/classes.jack
+dex_toc := $(intermediates)/classes.dex.toc
 src_dir := $(intermediates)/src
 classes_dir := $(intermediates)/classes
 framework_res_package := $(call intermediates-dir-for,APPS,framework-res,,COMMON)/package-export.apk
@@ -55,3 +56,7 @@ $(jack_lib) : $(full_target) $(JILL_JAR) $(JACK)
 	$(transform-jar-to-jack)
 
 $(call define-jar-to-toc-rule, $(full_target))
+
+# Update the timestamp of .toc file so dependents will be always rebuilt.
+$(dex_toc): $(jack_lib)
+	touch $@
