@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45db4a39_bd635f1f",
+        "filename": "build/build_android_stubs.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2015-12-11T22:08:06Z",
+      "side": 1,
+      "message": "This is the SDK stub jar that app is linked against when it has \"LOCAL_SDK_VERSION :\u003d current\". Ideally the .toc would benefit us the most in this case. But unfortunately we are generating from .dex instead of the .jack file. For the stubs we don\u0027t have (not needed) dex file.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 9
+      },
+      "revId": "ef2780f4349401b4daaef25e37687cb3f463d9f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
