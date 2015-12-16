@@ -22,6 +22,30 @@
       "revId": "cbef8133d86ddca1b7e35fd48fafbe3023ad598a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5201a30_f9a0d7b9",
+        "filename": "build/build_android_stubs.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1076769
+      },
+      "writtenOn": "2015-12-16T00:53:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05107294_827a8f9a",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 13
+      },
+      "revId": "cbef8133d86ddca1b7e35fd48fafbe3023ad598a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
