@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5dadaa8_8f019922",
+        "filename": "ndk/platforms/android-21/arch-arm/symbols/libc.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2015-12-17T06:06:42Z",
+      "side": 0,
+      "message": "not sure how this one ended up with libc_private version...",
+      "revId": "c51d71ec488d7a07c71d5ffb9a9a6ea90abef1d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
