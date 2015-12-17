@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca14a735_dcfb212b",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2015-12-17T20:33:35Z",
+      "side": 1,
+      "message": "Is the assumption that the user has installed a mutli-arch gdb? I\u0027m not sure that making this assumption is a good idea.\n\nIf you could test this and fallback if it doesn\u0027t, that might be a better idea.\n\nAlso, does this really work with mips/mips64?",
+      "range": {
+        "startLine": 183,
+        "startChar": 13,
+        "endLine": 183,
+        "endChar": 16
+      },
+      "revId": "6aeab455283ccda92e035887e1d603dce814bc76",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
