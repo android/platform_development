@@ -22,6 +22,30 @@
       "revId": "6aeab455283ccda92e035887e1d603dce814bc76",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "850622ce_8b887d07",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2015-12-17T20:36:01Z",
+      "side": 1,
+      "message": "Oops, didn\u0027t see the other CL. Although, if you had some way to verify that the right gdb is in the path, that might be good. Someone might modify their path and the wrong gdb would be first.",
+      "parentUuid": "ca14a735_dcfb212b",
+      "range": {
+        "startLine": 183,
+        "startChar": 13,
+        "endLine": 183,
+        "endChar": 16
+      },
+      "revId": "6aeab455283ccda92e035887e1d603dce814bc76",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
