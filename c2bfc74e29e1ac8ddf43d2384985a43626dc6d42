@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a2adb7b_51f6f6f8",
+        "filename": "ndk/platforms/android-18/arch-arm/symbols/libm.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-12-18T15:50:01Z",
+      "side": 0,
+      "message": "aren\u0027t the __fpclassify* family legit?",
+      "revId": "c2bfc74e29e1ac8ddf43d2384985a43626dc6d42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca62e7ed_8fcc398d",
+        "filename": "ndk/platforms/android-18/arch-arm/symbols/libm.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-12-18T15:50:01Z",
+      "side": 0,
+      "message": "__is(finite|inf|nan|normal)* too?",
+      "revId": "c2bfc74e29e1ac8ddf43d2384985a43626dc6d42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ea5fab25_6d76b172",
+        "filename": "ndk/platforms/android-18/arch-arm/symbols/libm.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-12-18T15:50:01Z",
+      "side": 0,
+      "message": "weird that 18 had __isnanl but isnan and isnanf. (or didn\u0027t have any *isnan* functions, as you seem to be saying.)",
+      "revId": "c2bfc74e29e1ac8ddf43d2384985a43626dc6d42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
