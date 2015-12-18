@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a438f4f_182529e7",
+        "filename": "ndk/platforms/android-18/arch-mips/symbols/libc.so.variables.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2015-12-18T15:52:25Z",
+      "side": 0,
+      "message": "these aren\u0027t needed by \u003cctype.h\u003e inlines?",
+      "revId": "9b9b8c51cc5a7e3e7f2287e8a84457409d10638b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
