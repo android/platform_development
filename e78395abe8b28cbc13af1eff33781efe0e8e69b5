@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ea1debf7_00942ab9",
+        "filename": "ndk/platforms/android-3/include/strings.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-01-05T22:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa3e9347_c3c08855",
+      "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6a481bfe_7ee2712f",
         "filename": "ndk/platforms/android-3/include/strings.h",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "aa1773d7_fe143994",
+        "filename": "ndk/platforms/android-3/include/strings.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-01-05T22:22:22Z",
+      "side": 1,
+      "message": "removing symbols that are not really present in current libc.so for android-3 - 16 is in my todo... there will be another change for this.",
+      "parentUuid": "6a481bfe_7ee2712f",
+      "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ca202730_39b96f02",
         "filename": "ndk/platforms/android-3/include/strings.h",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-05T19:55:52Z",
       "side": 1,
       "message": "yeah, if this isn\u0027t in bionic i guess we should leave it out of the NDK. danalbert?",
+      "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a481bfe_a1253899",
+        "filename": "ndk/platforms/android-3/include/strings.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-01-05T22:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca202730_39b96f02",
       "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
