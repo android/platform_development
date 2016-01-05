@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "6a481bfe_c12ac468",
+        "filename": "ndk/platforms/android-3/include/strings.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-01-05T22:25:50Z",
+      "side": 1,
+      "message": "I think the reason it wasn\u0027t in bionic was because I had naively done it as `#define index strchr`, which prevents you from ever using `index` as a variable name. This doesn\u0027t have that problem, so we could add it back to bionic if we wanted. *shrug*",
+      "parentUuid": "ca202730_39b96f02",
+      "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a4357e2_20ada404",
         "filename": "ndk/platforms/android-9/include/strings.h",
         "patchSetId": 2
