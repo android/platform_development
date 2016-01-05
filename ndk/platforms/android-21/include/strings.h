@@ -52,7 +52,7 @@ __BEGIN_DECLS
 #define bcopy(b1, b2, len) (void)(__builtin_memmove((b2), (b1), (len)))
 #define bzero(b, len) (void)(__builtin_memset((b), '\0', (len)))
 #endif
-
+#define index(str, ch) (strchr(str, ch))
 
 int	 ffs(int);
 int	 strcasecmp(const char *, const char *);
