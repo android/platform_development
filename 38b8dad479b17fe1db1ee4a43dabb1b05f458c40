@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eafecb6e_9c766a1d",
+        "filename": "ndk/platforms/android-12/arch-arm/symbols/libc.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-01-05T01:27:09Z",
+      "side": 0,
+      "message": "if you want to do this...",
+      "revId": "38b8dad479b17fe1db1ee4a43dabb1b05f458c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0af79f9a_0af18e89",
+        "filename": "ndk/platforms/android-12/arch-arm/symbols/libc.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-01-05T01:27:09Z",
+      "side": 0,
+      "message": "...and this, i think you\u0027ll need to update the header files with the #defines we now use instead to keep things building. (probably just \u003cstring.h\u003e.)",
+      "revId": "38b8dad479b17fe1db1ee4a43dabb1b05f458c40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
