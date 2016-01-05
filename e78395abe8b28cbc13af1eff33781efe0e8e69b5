@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "aa3e9347_c3c08855",
+        "filename": "ndk/platforms/android-3/include/strings.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-01-05T19:55:52Z",
+      "side": 1,
+      "message": "you probably can\u0027t do this, because the runtime support for fortify won\u0027t be in old versions of Android. (there\u0027s no single version where it went in, and much of it is surprisingly recent.)",
+      "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a481bfe_7ee2712f",
+        "filename": "ndk/platforms/android-3/include/strings.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-01-05T19:55:52Z",
+      "side": 1,
+      "message": "these two should be fine though.\n\nbtw, it looks like you\u0027ve added bzero here but not removed it from the maps?",
+      "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca202730_39b96f02",
+        "filename": "ndk/platforms/android-3/include/strings.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-01-05T19:55:52Z",
+      "side": 1,
+      "message": "yeah, if this isn\u0027t in bionic i guess we should leave it out of the NDK. danalbert?",
+      "revId": "e78395abe8b28cbc13af1eff33781efe0e8e69b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a4357e2_20ada404",
         "filename": "ndk/platforms/android-9/include/strings.h",
         "patchSetId": 2
