@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "eae08b3e_a57808cd",
+        "filename": "build/build_android_stubs.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1023201
+      },
+      "writtenOn": "2016-01-07T10:08:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa1773d7_c74de8c4",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 65
+      },
+      "revId": "75063f38b0f7d00556817427585f170281edffb2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea1debf7_690cf1c6",
         "filename": "build/build_android_stubs.mk",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "6a5f3bcc_e978f1cd",
+        "filename": "build/build_android_stubs.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1023201
+      },
+      "writtenOn": "2016-01-07T10:08:48Z",
+      "side": 1,
+      "message": "Yes I noticed but I can\u0027t do it the Jack library and I figure out, whatever existing reason the is for this in the jar it could not apply to the Jack library (since it\u0027s used only by Jack as a classpath entry), I even hesitated to omit the resources totally.",
+      "parentUuid": "ea1debf7_690cf1c6",
+      "range": {
+        "startLine": 53,
+        "startChar": 1,
+        "endLine": 53,
+        "endChar": 73
+      },
+      "revId": "75063f38b0f7d00556817427585f170281edffb2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa3e9347_89d86175",
         "filename": "build/build_android_stubs.mk",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2016-01-06T18:28:36Z",
       "side": 1,
       "message": "I am afraid the handle of resources here won\u0027t work with aapt.\nIn the classes.jar (which will be android.jar in the SDK package), we store the resources in res/ and uncompressed resources.arsc in the top dir. The jar will be eventually passed to \"aapt  -I\", so that aapt can app\u0027s references of symbols of the framework resources;\nBut with jack now we store all the resources in rsc/res, and resources.arsc is compressed and stored as rsc/resources.arsc. I don\u0027t know if aapt will accept that.\n\nThe platform build is fine because the .jack is never passed to aapt in the build system. See how we set framework_res_package_export in build/core/package_internal.mk.\nBut once we move from android.jar to jack file in the SDK package, this will be a problem.",
+      "range": {
+        "startLine": 68,
+        "startChar": 1,
+        "endLine": 72,
+        "endChar": 71
+      },
+      "revId": "75063f38b0f7d00556817427585f170281edffb2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a2c372e_b85c9532",
+        "filename": "build/build_android_stubs.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1023201
+      },
+      "writtenOn": "2016-01-07T10:08:48Z",
+      "side": 1,
+      "message": "I don\u0027t think there\u0027s a short term plan to remove the android.jar from the SDK, I think the plan for now is just to add the jack library aside.\n\nIf we were to try removing the android.jar from the SDK, aapt would just one of several we\u0027d have to introduce a new support for Jack file.",
+      "parentUuid": "aa3e9347_89d86175",
       "range": {
         "startLine": 68,
         "startChar": 1,
