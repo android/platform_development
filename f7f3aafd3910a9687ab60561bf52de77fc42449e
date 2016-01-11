@@ -33,6 +33,24 @@
       "revId": "f7f3aafd3910a9687ab60561bf52de77fc42449e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07495aa4_3bc6579c",
+        "filename": "ndk/platforms/android-12/arch-arm/symbols/libc.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-01-11T21:49:41Z",
+      "side": 1,
+      "message": "oops",
+      "parentUuid": "c75ca266_d903f392",
+      "revId": "f7f3aafd3910a9687ab60561bf52de77fc42449e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
