@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27673e34_347dd0fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-01-11T21:47:51Z",
+      "side": 1,
+      "message": "bsd_signal",
+      "revId": "f7f3aafd3910a9687ab60561bf52de77fc42449e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c75ca266_d903f392",
+        "filename": "ndk/platforms/android-12/arch-arm/symbols/libc.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-01-11T21:47:51Z",
+      "side": 1,
+      "message": "oops!",
+      "revId": "f7f3aafd3910a9687ab60561bf52de77fc42449e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
