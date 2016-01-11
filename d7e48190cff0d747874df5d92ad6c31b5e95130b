@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "274e5eac_fc3fc95c",
+        "filename": "ndk/platforms/android-16/arch-mips/symbols/libc.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-01-11T21:46:54Z",
+      "side": 0,
+      "message": "not sure why mips one got this strange sort order...",
+      "revId": "d7e48190cff0d747874df5d92ad6c31b5e95130b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
