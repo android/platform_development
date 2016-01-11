@@ -216,6 +216,7 @@ basename_r
 bind
 bindresvport
 brk
+bsd_symbol
 bsearch
 btowc
 calloc
