@@ -158,10 +158,24 @@ def SymbolInformationForSet(lib, unique_addrs):
                                                          object_offset)
     else:
       object_symbol_with_offset = None
-    result[addr] = [(source_symbol, source_location, object_symbol_with_offset)
+    result[addr] = [(source_symbol, StripProcCwd(source_location), object_symbol_with_offset)
         for (source_symbol, source_location) in source_info]
 
   return result
+
+
+def StripProcCwd(source_location):
+  """Remove /proc/self/cwd/ from source locations.
+
+   We use this trick when building so that we don't encode the directory
+   that we checked out the source into in every object file. But it's not
+   useful as output from the tools. Until such time as someone has a
+   better trick, remove the prefix here.
+  """
+  prefix = '/proc/self/cwd/'
+  if source_location.startswith(prefix):
+    source_location = source_location[len(prefix):]
+  return source_location
 
 
 def CallAddr2LineForSet(lib, unique_addrs):
