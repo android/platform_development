@@ -47,6 +47,10 @@ class TraceConverter:
   zipinfo_central_info_match = re.compile(
       "^\s*(\S+)$\s*offset of local header from start of archive:\s*(\d+)"
       ".*^\s*compressed size:\s+(\d+)", re.M | re.S)
+  unreachable_line = re.compile("((\d+ bytes in \d+ unreachable allocations)|"+\
+                                "(\d+ bytes unreachable at [0-9a-f]+)|"+\
+                                "(referencing \d+ unreachable bytes in \d+ allocation(s)?)|"+\
+                                "(and \d+ similar unreachable bytes in \d+ allocation(s)?))")
   trace_lines = []
   value_lines = []
   last_frame = -1
@@ -306,8 +310,11 @@ class TraceConverter:
     revision_header = self.revision_line.search(line)
     dalvik_jni_thread_header = self.dalvik_jni_thread_line.search(line)
     dalvik_native_thread_header = self.dalvik_native_thread_line.search(line)
+    unreachable_header = self.unreachable_line.search(line)
     if process_header or signal_header or abort_message_header or thread_header or \
-        register_header or dalvik_jni_thread_header or dalvik_native_thread_header or revision_header:
+        register_header or dalvik_jni_thread_header or dalvik_native_thread_header or \
+        revision_header or unreachable_header:
+      ret = True
       if self.trace_lines or self.value_lines:
         self.PrintOutput(self.trace_lines, self.value_lines)
         self.PrintDivider()
@@ -330,6 +337,8 @@ class TraceConverter:
         print dalvik_native_thread_header.group(1)
       if revision_header:
         print revision_header.group(1)
+      if unreachable_header:
+        print unreachable_header.group(1)
       return True
     trace_line_dict = self.MatchTraceLine(line)
     if trace_line_dict is not None:
