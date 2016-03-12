@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "573069cd_13eccfb0",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-03-12T17:02:42Z",
+      "side": 1,
+      "message": "this isn\u0027t really a line :-)\n\n(also, since you\u0027re not testing GetAbiFromToolchain directly, maybe move the os.environ.get inside here, and pass the environment variable name rather than its value?)",
+      "range": {
+        "startLine": 339,
+        "startChar": 24,
+        "endLine": 339,
+        "endChar": 28
+      },
+      "revId": "9d651666ca58b664a8cc4665ba2ffff8792f3a96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "573069cd_33f1d386",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-03-12T17:02:42Z",
+      "side": 1,
+      "message": "shouldn\u0027t there be two loops? if we have an ABI line, we shouldn\u0027t try any of the heuristic stuff. (the go/android-stack case, for example.)",
+      "range": {
+        "startLine": 364,
+        "startChar": 0,
+        "endLine": 364,
+        "endChar": 20
+      },
+      "revId": "9d651666ca58b664a8cc4665ba2ffff8792f3a96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
