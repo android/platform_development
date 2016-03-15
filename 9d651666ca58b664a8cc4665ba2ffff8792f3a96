@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "57d4e97c_7bb34715",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2016-03-15T23:26:21Z",
+      "side": 1,
+      "message": "Good point, done.",
+      "parentUuid": "573069cd_13eccfb0",
+      "range": {
+        "startLine": 339,
+        "startChar": 24,
+        "endLine": 339,
+        "endChar": 28
+      },
+      "revId": "9d651666ca58b664a8cc4665ba2ffff8792f3a96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "573069cd_33f1d386",
         "filename": "scripts/symbol.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-12T17:02:42Z",
       "side": 1,
       "message": "shouldn\u0027t there be two loops? if we have an ABI line, we shouldn\u0027t try any of the heuristic stuff. (the go/android-stack case, for example.)",
+      "range": {
+        "startLine": 364,
+        "startChar": 0,
+        "endLine": 364,
+        "endChar": 20
+      },
+      "revId": "9d651666ca58b664a8cc4665ba2ffff8792f3a96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57d4e97c_fbf0d7b5",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2016-03-15T23:26:21Z",
+      "side": 1,
+      "message": "I made the assumption that if I don\u0027t see an abi line before I hit a trace line, then I\u0027m not ever going to see one.\n\nThe go/android-stack case should always start with an abi line, and I can\u0027t think of a case where you would see an abi line after a trace line.",
+      "parentUuid": "573069cd_33f1d386",
       "range": {
         "startLine": 364,
         "startChar": 0,
