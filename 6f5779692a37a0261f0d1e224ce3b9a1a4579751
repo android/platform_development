@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dcf63e9d_abca0916",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2016-03-17T17:01:28Z",
+      "side": 1,
+      "message": "Where is this variable defined?\nIf it\u0027s a makefile variable, you need to export this variable from the makefile, in build/core/Makefile, with \"atree -v \" option.",
+      "range": {
+        "startLine": 135,
+        "startChar": 33,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "6f5779692a37a0261f0d1e224ce3b9a1a4579751",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
