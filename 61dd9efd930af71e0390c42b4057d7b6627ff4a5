@@ -22,6 +22,30 @@
       "revId": "61dd9efd930af71e0390c42b4057d7b6627ff4a5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dcf63e9d_ae194ebf",
+        "filename": "cmds/monkey/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2016-03-23T19:47:40Z",
+      "side": 1,
+      "message": "Yeah, I wasn\u0027t too worried, since the monkey lib was already in base.mk and always being installed, but with the no-java targets this could get weird. I\u0027ll rename this one (and the others I changed), and add the new names to base.mk next to the originals.",
+      "parentUuid": "dcf63e9d_58951063",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 97
+      },
+      "revId": "61dd9efd930af71e0390c42b4057d7b6627ff4a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
