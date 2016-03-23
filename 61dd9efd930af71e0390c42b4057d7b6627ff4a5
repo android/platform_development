@@ -46,6 +46,30 @@
       "revId": "61dd9efd930af71e0390c42b4057d7b6627ff4a5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dcf63e9d_0e9182c9",
+        "filename": "cmds/monkey/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2016-03-23T20:24:36Z",
+      "side": 1,
+      "message": "I checked and didn\u0027t find any references to the monkey module name used as a java library, so I actually changed the java module name instead. This way no changes are needed to build/target/product/base.mk",
+      "parentUuid": "dcf63e9d_ae194ebf",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 97
+      },
+      "revId": "61dd9efd930af71e0390c42b4057d7b6627ff4a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
