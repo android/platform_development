@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dcf63e9d_58951063",
+        "filename": "cmds/monkey/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003981
+      },
+      "writtenOn": "2016-03-23T18:23:11Z",
+      "side": 1,
+      "message": "In general this will change how monkey.jar will be installed.\nIf monkey isn\u0027t needed by the current build, but if you are doing a checkbild, monkey.jar will be installed by this additional dependency.\nFortunately this is a prebuilt and we explicitly skip checking any prebuilts.\n\nThe other option is to use a different module name for the shell, and use LOCAL_MODULE_STEM to rename the built/installed file name.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 97
+      },
+      "revId": "61dd9efd930af71e0390c42b4057d7b6627ff4a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
