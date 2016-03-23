@@ -9,6 +9,8 @@ include $(BUILD_JAVA_LIBRARY)
 
 ################################################################
 include $(CLEAR_VARS)
-ALL_PREBUILT += $(TARGET_OUT)/bin/monkey
-$(TARGET_OUT)/bin/monkey : $(LOCAL_PATH)/monkey | $(ACP)
-	$(transform-prebuilt-to-target)
+LOCAL_MODULE := monkey
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := monkey
+LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_JAVA_LIBRARIES)/monkey$(COMMON_JAVA_PACKAGE_SUFFIX)
+include $(BUILD_PREBUILT)
