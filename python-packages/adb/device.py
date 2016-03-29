@@ -228,10 +228,10 @@ def split_lines(s):
     return re.split(r'[\r\n]+', s.rstrip())
 
 
-def version(adb_path='adb'):
+def version(adb_path=['adb']):
     """Get the version of adb (in terms of ADB_SERVER_VERSION)."""
 
-    version_output = subprocess.check_output([adb_path, 'version'])
+    version_output = subprocess.check_output(adb_path + ['version'])
     pattern = r'^Android Debug Bridge version 1.0.(\d+)$'
     result = re.match(pattern, version_output.splitlines()[0])
     if not result:
