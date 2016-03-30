@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71249df3_ed924f13",
+        "filename": "ndk/platforms/android-18/arch-arm/symbols/libEGL.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-03-30T00:01:51Z",
+      "side": 1,
+      "message": "only arm-version of the library?",
+      "revId": "84bed6a0d37cd2ed4393f0f8f7777a95f1c97ba4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
