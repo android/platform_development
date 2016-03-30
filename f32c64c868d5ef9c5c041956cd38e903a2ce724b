@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "119a81ee_7c487958",
+        "filename": "ndk/platforms/android-23/arch-arm/symbols/libEGL.so.functions.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-03-30T16:52:50Z",
+      "side": 1,
+      "message": "looks like most of these functions were already defined in header file for previous version of android?",
+      "revId": "f32c64c868d5ef9c5c041956cd38e903a2ce724b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
