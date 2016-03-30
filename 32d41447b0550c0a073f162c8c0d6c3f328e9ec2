@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71249df3_6d7f7f86",
+        "filename": "ndk/platforms/android-15/arch-x86/symbols/libEGL.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-03-30T00:00:56Z",
+      "side": 0,
+      "message": "if the symbol is not present in current library (android N), we should remove it from every version of the platform (going back to 9).\n\nThink of it this way: if someone able to compiles against android-9 we should be able load it on android-current.",
+      "revId": "32d41447b0550c0a073f162c8c0d6c3f328e9ec2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
