@@ -16,6 +16,24 @@
       "revId": "346566c66be6f5f61c99e5a5b86657ac22991831",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "515f99cb_46c4920d",
+        "filename": "ndk/platforms/android-14/include/EGL/eglext.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1095973
+      },
+      "writtenOn": "2016-03-30T00:46:18Z",
+      "side": 1,
+      "message": "Apparently this one line was changed after the NDK headers were originally checked in: https://android-review.googlesource.com/#/c/74219/ and https://code.google.com/p/android/issues/detail?id\u003d64679\n\nI don\u0027t really understand why though.",
+      "parentUuid": "515f99cb_4679f2cb",
+      "revId": "346566c66be6f5f61c99e5a5b86657ac22991831",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
