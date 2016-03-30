@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "515f99cb_06df7a24",
+        "filename": "ndk/platforms/android-21/arch-mips64/symbols/libEGL.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-03-30T00:19:42Z",
+      "side": 1,
+      "message": "nevermind, I see why...",
+      "revId": "916ba2c430253db52b89533b1bcefaf50395b414",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
