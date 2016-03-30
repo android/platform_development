@@ -16,6 +16,24 @@
       "revId": "f32c64c868d5ef9c5c041956cd38e903a2ce724b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "119a81ee_7c1f9952",
+        "filename": "ndk/platforms/android-23/arch-arm/symbols/libEGL.so.functions.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1095973
+      },
+      "writtenOn": "2016-03-30T16:57:19Z",
+      "side": 1,
+      "message": "Yes, they were already in the header file in previous versions of android (since the header file is maintanied by Khronos). But support in the platform wasn\u0027t added until android-23.",
+      "parentUuid": "119a81ee_7c487958",
+      "revId": "f32c64c868d5ef9c5c041956cd38e903a2ce724b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
