@@ -34,6 +34,24 @@
       "revId": "346566c66be6f5f61c99e5a5b86657ac22991831",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "515f99cb_e66a5eba",
+        "filename": "ndk/platforms/android-14/include/EGL/eglext.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-03-30T00:53:42Z",
+      "side": 1,
+      "message": "we should probably go with platform headers... danalbert?",
+      "parentUuid": "515f99cb_46c4920d",
+      "revId": "346566c66be6f5f61c99e5a5b86657ac22991831",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
