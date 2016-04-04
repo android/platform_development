@@ -16,6 +16,24 @@
       "revId": "046cd08f6c1e734bff319a441e16b500147cb243",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e3f20ea_3f9c7125",
+        "filename": "ndk/platforms/android-24/include/GLES2/gl2ext.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1095973
+      },
+      "writtenOn": "2016-04-04T22:54:43Z",
+      "side": 1,
+      "message": "Yes.\n\nThese headers come from Khronos. https://www.khronos.org/registry/gles/\n\nThis isn\u0027t a problem in the platform (or for any program that uses GL) since anything that uses a GL extension will already have used GL and included the GL header. However, the NDK build system enforces this requirement.\n\nI will file a bug with Khronos to see if we can get this fixed upstream.",
+      "parentUuid": "2e3f20ea_bf19a1c3",
+      "revId": "046cd08f6c1e734bff319a441e16b500147cb243",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
