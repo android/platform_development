@@ -134,6 +134,7 @@ dalvik/dx/etc/mainDexClasses.rules            build-tools/${PLATFORM_NAME}/mainD
 # Jack & Jill
 prebuilts/sdk/tools/jacks/jack-${JACK_SDKTOOL_VERSION}.jar                build-tools/${PLATFORM_NAME}/jack.jar
 prebuilts/sdk/tools/jills/jill-${JACK_SDKTOOL_VERSION}.jar                build-tools/${PLATFORM_NAME}/jill.jar
+prebuilts/sdk/tools/jack-jacoco-reporter.jar                              build-tools/${PLATFORM_NAME}/jack-jacoco-reporter.jar
 
 
 ##############################################################################
