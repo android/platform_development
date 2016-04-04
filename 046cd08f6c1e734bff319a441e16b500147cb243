@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e3f20ea_bf19a1c3",
+        "filename": "ndk/platforms/android-24/include/GLES2/gl2ext.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-04-04T22:43:39Z",
+      "side": 1,
+      "message": "does the platform header have the same problem?",
+      "revId": "046cd08f6c1e734bff319a441e16b500147cb243",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
