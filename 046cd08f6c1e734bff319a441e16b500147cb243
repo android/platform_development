@@ -34,6 +34,24 @@
       "revId": "046cd08f6c1e734bff319a441e16b500147cb243",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e09ecb1_28db8037",
+        "filename": "ndk/platforms/android-24/include/GLES2/gl2ext.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1095973
+      },
+      "writtenOn": "2016-04-06T20:39:14Z",
+      "side": 1,
+      "message": "There were already existing bugs in the Khronos database referencing this problem (both for EGL and GLES). They were both closed as \"Will not Fix - Working as Intended\" with the explanation that these headers are designed to be used together and including the extension header without first including the GL header is not valid.",
+      "parentUuid": "2e3f20ea_3f9c7125",
+      "revId": "046cd08f6c1e734bff319a441e16b500147cb243",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
