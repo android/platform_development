@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bafe661_3a07a9ff",
+        "filename": "vagrant/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-04-11T23:27:15Z",
+      "side": 1,
+      "message": "maybe something along the lines of \"not currently (2016-04)\". presumably this will get better as it gets old and stable?",
+      "range": {
+        "startLine": 8,
+        "startChar": 3,
+        "endLine": 8,
+        "endChar": 12
+      },
+      "revId": "ea6784e0083b211d3fd8ca0bf3b5d282e4cc16a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
