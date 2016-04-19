@@ -32,7 +32,7 @@ LOCAL_SRC_FILES:= \
 
 # All of the shared libraries we link against.
 LOCAL_SHARED_LIBRARIES := \
-	libutils liblog
+	liblog
 
 # No static libraries.
 LOCAL_STATIC_LIBRARIES :=
@@ -43,5 +43,7 @@ LOCAL_C_INCLUDES += \
 
 # No special compiler flags.
 LOCAL_CFLAGS +=
+
+LOCAL_CXX_STL := none
 
 include $(BUILD_SHARED_LIBRARY)
