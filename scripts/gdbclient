@@ -7,24 +7,65 @@ if [ -z "$ANDROID_BUILD_TOP" ]; then
   exit 1
 fi
 
+# Support for multiple devices, expect -s <device serial number>
+adbargs=
+if [ X"$1" = X"-s" -a -n "$2" ]; then
+  adbargs="-s $2"
+  shift
+  shift
+fi
+
 # We can use environment variables (like ANDROID_BUILD_TOP) from the user's
 # shell, but not functions (like gettop), so we need to source envsetup in here
 # as well.
 source $ANDROID_BUILD_TOP/build/envsetup.sh
 echo
 
+# Override the envsetup.sh supplied pid() function
+function pid() {
+  local prepend=''
+  local append=''
+  if [ "$1" = "--exact" ]; then
+    prepend=' '
+    append='$'
+    shift
+  fi
+  local EXE="$1"
+  if [ "$EXE" ]; then
+    local PID=`adb $adbargs shell ps |
+               tr -d '\r' |
+               \grep "$prepend$EXE$append" |
+               sed -e 's/^[^ ]* *\([0-9]*\).*$/\1/'`
+    echo "$PID"
+  else
+    echo "usage: pid [--exact] <process name>"
+    return 255
+  fi
+}
+
 function adb_get_product_device() {
-  local candidate=`adb shell getprop ro.hardware | tr -d '\r\n'`
+  local candidate=`adb $adbargs shell getprop ro.hardware |
+                   tr -d '\r\n'`
   if [[ "$candidate" =~ ^(goldfish|ranchu)$ ]]; then
     # Emulator builds use product.device for OUT folder
-    candidate=`adb shell getprop ro.product.device | tr -d '\r\n'`
+    candidate=`adb $adbargs shell getprop ro.product.device |
+               tr -d '\r\n'`
+  fi
+  if [ "$candidate" = flounder -a \
+       ! -d "${SYS_OUT_ROOT:-${OUT_DIR:-$ROOT/out}}/target/product/flounder" -a \
+       -d "${SYS_OUT_ROOT:-${OUT_DIR:-$ROOT/out}}/target/product/flounder_lte" ]
+  then
+    candidate=flounder_lte
   fi
   echo $candidate
 }
 
 # returns 0 when process is not traced
 function adb_get_traced_by() {
-  echo `adb shell cat /proc/$1/status | grep -e "^TracerPid:" | sed "s/^TracerPid:\t//" | tr -d '\r\n'`
+  echo `adb $adbargs shell cat /proc/$1/status |
+        grep -e "^TracerPid:" |
+        sed "s/^TracerPid:\t//" |
+        tr -d '\r\n'`
 }
 
 function get_symbols_directory()
@@ -47,13 +88,6 @@ function gdbclient() {
     echo "Usage: gdbclient <pid|processname> [port number]"
     return -1
   fi
-  local DEVICE=$(adb_get_product_device)
-
-  if [ -z "$DEVICE" ]; then
-    echo "Error: Unable to get device name. Please check if device is connected and ANDROID_SERIAL is set."
-    return -2
-  fi
-
   if [ -n "$2" ]; then
     PORT=$2
   fi
@@ -66,6 +100,14 @@ function gdbclient() {
   fi
 
   local SYS_OUT_ROOT=$(get_build_var OUT_DIR)
+
+  local DEVICE=$(adb_get_product_device)
+
+  if [ -z "$DEVICE" ]; then
+    echo "Error: Unable to get device name. Please check if device is connected and ANDROID_SERIAL is set."
+    return -2
+  fi
+
   local OUT_ROOT="${SYS_OUT_ROOT:-${OUT_DIR:-$ROOT/out}}/target/product/$DEVICE"
   local SYMBOLS_DIR="$OUT_ROOT/symbols"
   local IS_TAPAS_USER="$(get_build_var TARGET_BUILD_APPS)"
@@ -98,13 +140,14 @@ function gdbclient() {
     fi
   fi
 
-  local ID=`adb shell id -u`
+  local ID=`adb $adbargs shell id -u`
   if [ "$ID" != "0" ]; then
-    echo "Error: gdbclient only works if you've run 'adb root'"
+    echo "Error: gdbclient only works if you've run 'adb $adbargs root'"
     return -4
   fi
 
-  local EXE=`adb shell readlink /proc/$PID/exe | tr -d '\r\n'`
+  local EXE=`adb $adbargs shell readlink /proc/$PID/exe |
+             tr -d '\r\n'`
   if [ -z "$EXE" ]; then
     echo "Error: couldn't find executable for pid $PID --- is the process still alive?"
     return -4
@@ -114,7 +157,7 @@ function gdbclient() {
 
   if [ ! -f $LOCAL_EXE_PATH ]; then
     if [ $IS_TAPAS_USER ]; then
-      adb pull $EXE $LOCAL_EXE_PATH
+      adb $adbargs pull $EXE $LOCAL_EXE_PATH
     else
       echo "Error: unable to find symbols for executable $EXE: file $LOCAL_EXE_PATH does not exist"
       return -5
@@ -129,7 +172,7 @@ function gdbclient() {
 
   # and now linker for tapas users...
   if [ -n "$IS_TAPAS_USER" -a ! -f "$SYMBOLS_DIR/system/bin/linker$USE64BIT" ]; then
-    adb pull /system/bin/linker$USE64BIT $SYMBOLS_DIR/system/bin/linker$USE64BIT
+    adb $adbargs pull /system/bin/linker$USE64BIT $SYMBOLS_DIR/system/bin/linker$USE64BIT
   fi
 
   local GDB
@@ -148,7 +191,8 @@ function gdbclient() {
       ;;
   esac
 
-  local CPU_ABI=`adb shell getprop ro.product.cpu.abilist | tr -d '\r\n'`
+  local CPU_ABI=`adb $adbargs shell getprop ro.product.cpu.abilist |
+                 tr -d '\r\n'`
 
   # TODO: check if tracing process is gdbserver and not some random strace...
   if [ "$(adb_get_traced_by $PID)" -eq 0 ]; then
@@ -156,16 +200,16 @@ function gdbclient() {
     echo "Starting gdbserver..."
     # TODO: check if adb is already listening $PORT
     # to avoid unnecessary calls
-    echo ". adb forward for port=$PORT..."
-    adb forward tcp:$PORT tcp:$PORT
+    echo ". adb $adbargs forward for port=$PORT..."
+    adb $adbargs forward tcp:$PORT tcp:$PORT
     echo ". starting gdbserver to attach to pid=$PID..."
-    adb shell gdbserver$USE64BIT :$PORT --attach $PID &
+    adb $adbargs shell gdbserver$USE64BIT :$PORT --attach $PID &
     echo ". give it couple of seconds to start..."
     sleep 2
     echo ". done"
   else
     echo "It looks like gdbserver is already attached to $PID (process is traced), trying to connect to it using local port=$PORT"
-    adb forward tcp:$PORT tcp:$PORT
+    adb $adbargs forward tcp:$PORT tcp:$PORT
   fi
 
   local OUT_SO_SYMBOLS=$SYMBOLS_DIR/system/lib$USE64BIT
