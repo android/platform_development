@@ -7,6 +7,15 @@ if [ -z "$ANDROID_BUILD_TOP" ]; then
   exit 1
 fi
 
+# Support for multiple devices, expect -s <device serial number>
+adbargs=
+if [ X"$1" = X"-s" -a -n "$2" ]; then
+  export ANDROID_SERIAL="$2"
+  adbargs="-s $2"
+  shift
+  shift
+fi
+
 # We can use environment variables (like ANDROID_BUILD_TOP) from the user's
 # shell, but not functions (like gettop), so we need to source envsetup in here
 # as well.
@@ -14,17 +23,28 @@ source $ANDROID_BUILD_TOP/build/envsetup.sh
 echo
 
 function adb_get_product_device() {
-  local candidate=`adb shell getprop ro.hardware | tr -d '\r\n'`
+  local candidate=`adb shell getprop ro.hardware |
+                   tr -d '\r\n'`
   if [[ "$candidate" =~ ^(goldfish|ranchu)$ ]]; then
     # Emulator builds use product.device for OUT folder
-    candidate=`adb shell getprop ro.product.device | tr -d '\r\n'`
+    candidate=`adb shell getprop ro.product.device |
+               tr -d '\r\n'`
+  fi
+  if [ "$candidate" = flounder -a \
+       ! -d "${SYS_OUT_ROOT:-${OUT_DIR:-$ROOT/out}}/target/product/flounder" -a \
+       -d "${SYS_OUT_ROOT:-${OUT_DIR:-$ROOT/out}}/target/product/flounder_lte" ]
+  then
+    candidate=flounder_lte
   fi
   echo $candidate
 }
 
 # returns 0 when process is not traced
 function adb_get_traced_by() {
-  echo `adb shell cat /proc/$1/status | grep -e "^TracerPid:" | sed "s/^TracerPid:\t//" | tr -d '\r\n'`
+  echo `adb shell cat /proc/$1/status |
+        grep -e "^TracerPid:" |
+        sed "s/^TracerPid:\t//" |
+        tr -d '\r\n'`
 }
 
 function get_symbols_directory()
@@ -47,13 +67,6 @@ function gdbclient() {
     echo "Usage: gdbclient <pid|processname> [port number]"
     return -1
   fi
-  local DEVICE=$(adb_get_product_device)
-
-  if [ -z "$DEVICE" ]; then
-    echo "Error: Unable to get device name. Please check if device is connected and ANDROID_SERIAL is set."
-    return -2
-  fi
-
   if [ -n "$2" ]; then
     PORT=$2
   fi
@@ -66,6 +79,14 @@ function gdbclient() {
   fi
 
   local SYS_OUT_ROOT=$(get_build_var OUT_DIR)
+
+  local DEVICE=$(adb_get_product_device)
+
+  if [ -z "$DEVICE" ]; then
+    echo "Error: Unable to get device name. Please check if device is connected and ANDROID_SERIAL is set."
+    return -2
+  fi
+
   local OUT_ROOT="${SYS_OUT_ROOT:-${OUT_DIR:-$ROOT/out}}/target/product/$DEVICE"
   local SYMBOLS_DIR="$OUT_ROOT/symbols"
   local IS_TAPAS_USER="$(get_build_var TARGET_BUILD_APPS)"
@@ -89,7 +110,7 @@ function gdbclient() {
   # check if user specified a name -> resolve to pid
   if [[ ! "$PID" =~ ^[0-9]+$ ]] ; then
     PROCESS_NAME=$PID
-    PID=$(pid --exact $PROCESS_NAME)
+    PID=$(adb shell pgrep $PROCESS_NAME)
     if [ -z "$PID" ]; then
       echo "Error: couldn't resolve pid by process name: $PROCESS_NAME"
       return -4
@@ -100,11 +121,12 @@ function gdbclient() {
 
   local ID=`adb shell id -u`
   if [ "$ID" != "0" ]; then
-    echo "Error: gdbclient only works if you've run 'adb root'"
+    echo "Error: gdbclient only works if you've run 'adb $adbargs root'"
     return -4
   fi
 
-  local EXE=`adb shell readlink /proc/$PID/exe | tr -d '\r\n'`
+  local EXE=`adb shell readlink /proc/$PID/exe |
+             tr -d '\r\n'`
   if [ -z "$EXE" ]; then
     echo "Error: couldn't find executable for pid $PID --- is the process still alive?"
     return -4
@@ -148,7 +170,8 @@ function gdbclient() {
       ;;
   esac
 
-  local CPU_ABI=`adb shell getprop ro.product.cpu.abilist | tr -d '\r\n'`
+  local CPU_ABI=`adb shell getprop ro.product.cpu.abilist |
+                 tr -d '\r\n'`
 
   # TODO: check if tracing process is gdbserver and not some random strace...
   if [ "$(adb_get_traced_by $PID)" -eq 0 ]; then
@@ -156,7 +179,7 @@ function gdbclient() {
     echo "Starting gdbserver..."
     # TODO: check if adb is already listening $PORT
     # to avoid unnecessary calls
-    echo ". adb forward for port=$PORT..."
+    echo ". adb $adbargs forward for port=$PORT..."
     adb forward tcp:$PORT tcp:$PORT
     echo ". starting gdbserver to attach to pid=$PID..."
     adb shell gdbserver$USE64BIT :$PORT --attach $PID &
