@@ -22,6 +22,29 @@
       "revId": "5443a97a1c8122c50e7dc0447d9fe88b1a06b4d5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e87a6032_ca0726fd",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1032276
+      },
+      "writtenOn": "2016-04-20T22:31:39Z",
+      "side": 1,
+      "message": "flounder :-(\n\n(test passed because we forgot had left a symbolic link from flounder_lte to flounder)",
+      "range": {
+        "startLine": 54,
+        "startChar": 23,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "5443a97a1c8122c50e7dc0447d9fe88b1a06b4d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
