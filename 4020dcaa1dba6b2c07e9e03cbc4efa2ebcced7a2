@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e87a6032_f281a279",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1032276
+      },
+      "writtenOn": "2016-04-22T16:30:22Z",
+      "side": 1,
+      "message": "we should really modify envsetup.sh supplied function to take the -s \u003cserialno\u003e parameter.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 1
+      },
+      "revId": "4020dcaa1dba6b2c07e9e03cbc4efa2ebcced7a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
