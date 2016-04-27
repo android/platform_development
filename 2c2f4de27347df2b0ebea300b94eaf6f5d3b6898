@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "483d2ded_cbc67859",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-04-27T15:48:13Z",
+      "side": 1,
+      "message": "use pgrep instead?",
+      "revId": "2c2f4de27347df2b0ebea300b94eaf6f5d3b6898",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "483d2ded_0bc1803e",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-04-27T15:48:13Z",
+      "side": 1,
+      "message": "this seems hard to maintain. why not set ANDROID_SERIAL?",
+      "range": {
+        "startLine": 143,
+        "startChar": 17,
+        "endLine": 143,
+        "endChar": 24
+      },
+      "revId": "2c2f4de27347df2b0ebea300b94eaf6f5d3b6898",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
