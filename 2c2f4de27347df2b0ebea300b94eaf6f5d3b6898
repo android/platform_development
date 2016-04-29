@@ -39,6 +39,30 @@
       "revId": "2c2f4de27347df2b0ebea300b94eaf6f5d3b6898",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08fed5bc_2be7fd51",
+        "filename": "scripts/gdbclient",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1032276
+      },
+      "writtenOn": "2016-04-29T19:34:45Z",
+      "side": 1,
+      "message": "Agreed, internally, in the script, yes!\n\nI had blinders on, I do not use ANDROID_SERIAL in my MO because of how hard it is to change as I work with multiple targets at the same time. I have a .bashrc setting a bunch of 2 and three letter variables to denote the potpourri of targets. eg:\n\nN9\u003d\"-s HT4AZSM00329\u0027\n\nso gdbclient $N9 \u0027just works\u0027.",
+      "parentUuid": "483d2ded_0bc1803e",
+      "range": {
+        "startLine": 143,
+        "startChar": 17,
+        "endLine": 143,
+        "endChar": 24
+      },
+      "revId": "2c2f4de27347df2b0ebea300b94eaf6f5d3b6898",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
