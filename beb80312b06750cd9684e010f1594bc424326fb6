@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f2725490_9d05476e",
+        "filename": "ndk/platforms/android-24/arch-arm/symbols/libmediandk.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-05-11T22:54:43Z",
+      "side": 1,
+      "message": "This library exists in android-21 - we need a baseline for it..\n\nplease copy existing symbols from 21 as separate commit before this one to provide clear diff on this list.",
+      "revId": "beb80312b06750cd9684e010f1594bc424326fb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
