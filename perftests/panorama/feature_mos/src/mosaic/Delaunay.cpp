@@ -24,7 +24,7 @@
 
 #define QQ 9   // Optimal value as determined by testing
 #define DM 38  // 2^(1+DM/2) element sort capability. DM=38 for >10^6 elements
-#define NYL -1
+#define NYL (-1)
 #define valid(l) ccw(orig(basel), dest(l), dest(basel))
 
 
