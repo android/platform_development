@@ -51,6 +51,24 @@
       "revId": "beb80312b06750cd9684e010f1594bc424326fb6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2725490_8375e820",
+        "filename": "ndk/platforms/android-24/arch-arm/symbols/libmediandk.so.variables.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1060513
+      },
+      "writtenOn": "2016-05-12T01:12:00Z",
+      "side": 1,
+      "message": "Possible. +marcone\n\nMarco, do we intend to export AMEDIAFORMAT_KEY_MAX_INPUT_SIZE?",
+      "parentUuid": "f2725490_5d31eff2",
+      "revId": "beb80312b06750cd9684e010f1594bc424326fb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
