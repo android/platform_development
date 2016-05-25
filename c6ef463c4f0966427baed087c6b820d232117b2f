@@ -16,6 +16,24 @@
       "revId": "c6ef463c4f0966427baed087c6b820d232117b2f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcdef358_5433fdfa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-05-25T21:39:48Z",
+      "side": 1,
+      "message": "ah, you meant _already_ present. (which is why they\u0027re not in the diff but are in the file.) probably worth an extra word here...",
+      "parentUuid": "bcdef358_54853dae",
+      "revId": "c6ef463c4f0966427baed087c6b820d232117b2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
