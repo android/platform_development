@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b94c4515_3bbe37ba",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/Monkey.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1014491
+      },
+      "writtenOn": "2016-06-02T15:39:31Z",
+      "side": 1,
+      "message": "If I pipe a Linux command into another file and an IO error occurs (e.g. `cat /dev/random \u003e /tmp/large_file` and we ran out of space), the source Linux command gets killed. I think the same principle should apply here?",
+      "revId": "9f1e535ebc05d2b8ab6d295fc66fb8e63cb5a1db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
