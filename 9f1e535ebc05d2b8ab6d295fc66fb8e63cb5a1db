@@ -16,6 +16,24 @@
       "revId": "9f1e535ebc05d2b8ab6d295fc66fb8e63cb5a1db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06edeec9_ad27bdff",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/Monkey.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1103638
+      },
+      "writtenOn": "2016-06-03T07:08:55Z",
+      "side": 1,
+      "message": "yes,you are right,but the current problem is :\njava.lang.Process p \u003d Runtime.getRuntime().exec(command);\np is bugreport process and it have many stdout data,if we can\u0027t read it by the readline from the sync pipe,so bugreport will be wait forever,becuase the logOutput.write occurs IO error,so the  while ((s \u003d inBuffer.readLine()) !\u003d null)  will be break.\n\nbugreport is communication with dumpstate by socket,and dumstate will redirect the socket to stdout and run dumpsys batterystats(or others dump),the dumpsys batterystats will pass the stdout fd to system server,then system server dump the data to the stdout(dumpstate\u0027s socket with bugreport).\nif the bugreport be write pipe blocked,so it can not to read the socket,system server\u0027s dump thread will be blocked and it take one lock object to block other thread,cause monkey can not continue to dumpsys other, and the system server\u0027s watchdog be monkey blocked,it need monkey to notify it,the deadlock is occurs.\n\nif we read out the bugreport\u0027s data from pipe,the bugreport can continue to read the socket,the system server will release the lock object,monkey can continue to dumpsys other and notify self\u0027s binder thread to active the watchdog,the deadlock is fixed.",
+      "parentUuid": "b94c4515_3bbe37ba",
+      "revId": "9f1e535ebc05d2b8ab6d295fc66fb8e63cb5a1db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
