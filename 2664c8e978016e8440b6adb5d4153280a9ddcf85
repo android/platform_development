@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "c611160b_531584d5",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1067467
+      },
+      "writtenOn": "2016-06-06T19:04:37Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s a good idea to store information in the FS. Unless you remove it at the beginning that would make the app \"not idempotent\", but then, if you remove it at the beginning, then a \"not-sufficiently smart\" developer might think that the right thing to do is remove it at the beginning...",
+      "parentUuid": "c611160b_131b0c10",
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "23982433_fee4c11d",
         "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
         "patchSetId": 1
@@ -100,6 +118,24 @@
       "writtenOn": "2016-06-06T18:53:34Z",
       "side": 1,
       "message": "same comment, since this is supposed to be persisted.",
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c611160b_b3d4d832",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1067467
+      },
+      "writtenOn": "2016-06-06T19:04:37Z",
+      "side": 1,
+      "message": "same reply :)",
+      "parentUuid": "23982433_fee4c11d",
       "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
