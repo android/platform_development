@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "265f52cd_37f3b7e2",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1002975
+      },
+      "writtenOn": "2016-06-06T17:33:01Z",
+      "side": 1,
+      "message": "People will copy this exactly, so you need to do this correctly as well. If it\u0027s an encryption, you should use SecureRandom#nextBytes(byte[]) as above.",
+      "range": {
+        "startLine": 139,
+        "startChar": 20,
+        "endLine": 140,
+        "endChar": 53
+      },
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "265f52cd_32be65ba",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/InsecureSHA1PRNGKeyDerivator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1002975
+      },
+      "writtenOn": "2016-06-06T17:33:01Z",
+      "side": 1,
+      "message": "Might want to note this is a bug since words are 4 bytes and it\u0027s kept for backward compatibility.",
+      "range": {
+        "startLine": 285,
+        "startChar": 8,
+        "endLine": 285,
+        "endChar": 92
+      },
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "265f52cd_b2a9f588",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/InsecureSHA1PRNGKeyDerivator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1002975
+      },
+      "writtenOn": "2016-06-06T17:33:01Z",
+      "side": 1,
+      "message": "Might want to note this is a bug since extraBytes \u003d\u003d 7 instead of 3 but it\u0027s kept for backward compatibility.",
+      "range": {
+        "startLine": 291,
+        "startChar": 8,
+        "endLine": 292,
+        "endChar": 61
+      },
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
