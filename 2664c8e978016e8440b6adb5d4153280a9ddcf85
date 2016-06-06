@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "a6aee2f7_f20c88e4",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1067467
+      },
+      "writtenOn": "2016-06-06T19:12:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c611160b_73188011",
+      "range": {
+        "startLine": 142,
+        "startChar": 17,
+        "endLine": 142,
+        "endChar": 28
+      },
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c611160b_131b0c10",
         "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
         "patchSetId": 1
