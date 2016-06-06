@@ -49,6 +49,63 @@
     },
     {
       "key": {
+        "uuid": "c611160b_73188011",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-06T18:53:34Z",
+      "side": 1,
+      "message": "catch a specific exception ?",
+      "range": {
+        "startLine": 142,
+        "startChar": 17,
+        "endLine": 142,
+        "endChar": 28
+      },
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c611160b_131b0c10",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-06T18:53:34Z",
+      "side": 1,
+      "message": "add a comment here. apps need to persist this information somewhere so that they do it only once, right ? It becomes clearer upon reading storeData... but it could still do with a comment.\n\nIn fact, given that it\u0027s such little work (one or two lines of code), why not just store these to the real FS ?",
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23982433_fee4c11d",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-06T18:53:34Z",
+      "side": 1,
+      "message": "same comment, since this is supposed to be persisted.",
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "265f52cd_32be65ba",
         "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/InsecureSHA1PRNGKeyDerivator.java",
         "patchSetId": 1
