@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63213ce2_970f6e2b",
+        "filename": "ndk/platforms/android-24/include/camera/NdkCameraMetadataTags.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 4070,
+      "author": {
+        "id": 1060513
+      },
+      "writtenOn": "2016-06-07T01:00:26Z",
+      "side": 0,
+      "message": "We need to hide this enum value in NDK.",
+      "range": {
+        "startLine": 4070,
+        "startChar": 4,
+        "endLine": 4070,
+        "endChar": 50
+      },
+      "revId": "3f23e555e994a0d59faa23b1b2015ce16dd03fbc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
