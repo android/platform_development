@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "03db203a_5db5fb87",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1067467
+      },
+      "writtenOn": "2016-06-07T14:29:45Z",
+      "side": 1,
+      "message": "Actually, the existing blog entry covers the anti-pattern (calling it such).\n\nI prefer to keep this and add a link to existing entry. (And edit it next week to point to the new entry). Is that ok? Otherwise, I think the whole point of the example is lost.\n\nhttp://android-developers.blogspot.co.uk/2013/02/using-cryptography-to-store-credentials.html",
+      "parentUuid": "03db203a_fdf32776",
+      "range": {
+        "startLine": 49,
+        "startChar": 2,
+        "endLine": 49,
+        "endChar": 74
+      },
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "03db203a_1d92930f",
         "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
         "patchSetId": 8
