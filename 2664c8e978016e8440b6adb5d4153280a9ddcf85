@@ -131,6 +131,24 @@
     },
     {
       "key": {
+        "uuid": "03db203a_1d2c53ef",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T10:09:48Z",
+      "side": 1,
+      "message": "I don\u0027t see the value in this code being idempotent when the equivalent code app developers will need to write won\u0027t be idempotent either.\n\nAnyway, fine if you don\u0027t want to write this to the FS. Add detailed comments. Note that I fully understand the problem here and know what this code is supposed to do but yet i found it really hard to understand what this was supposed to be doing.",
+      "parentUuid": "c611160b_531584d5",
+      "revId": "2664c8e978016e8440b6adb5d4153280a9ddcf85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "23982433_fee4c11d",
         "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
         "patchSetId": 1
