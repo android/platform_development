@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "03db203a_fd7ec796",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1067467
+      },
+      "writtenOn": "2016-06-07T14:59:32Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "03db203a_3d690fe7",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 73
+      },
+      "revId": "acd7f2e27f2435d637bc32bc2017b3f2824410b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "03db203a_fda5e756",
         "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-07T14:50:03Z",
       "side": 1,
       "message": "this is an infinite loop if fis.read() returns -1.",
+      "range": {
+        "startLine": 272,
+        "startChar": 16,
+        "endLine": 272,
+        "endChar": 58
+      },
+      "revId": "acd7f2e27f2435d637bc32bc2017b3f2824410b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_1d4d3390",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1067467
+      },
+      "writtenOn": "2016-06-07T14:59:32Z",
+      "side": 1,
+      "message": "Heheh, unlikely, but ok.",
+      "parentUuid": "03db203a_fda5e756",
       "range": {
         "startLine": 272,
         "startChar": 16,
