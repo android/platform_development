@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03db203a_bdf99f5a",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "\".\"",
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_ddf66b69",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "is deprecated as of SDK 24.",
+      "range": {
+        "startLine": 47,
+        "startChar": 14,
+        "endLine": 47,
+        "endChar": 39
+      },
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_fdf32776",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "remove this. you can update this example next week to point to your blog post",
+      "range": {
+        "startLine": 49,
+        "startChar": 2,
+        "endLine": 49,
+        "endChar": 74
+      },
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_1d92930f",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "\"key derivation function\"",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 35
+      },
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_3d974f00",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "\u003cb\u003einsecure\u003c/b\u003e",
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_5de33baf",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "remove this... openFileInput(fileName) should be sufficient and using an Application context is often an anti-pattern",
+      "range": {
+        "startLine": 260,
+        "startChar": 21,
+        "endLine": 260,
+        "endChar": 44
+      },
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_7de8f788",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "Same as the above.",
+      "range": {
+        "startLine": 269,
+        "startChar": 21,
+        "endLine": 269,
+        "endChar": 45
+      },
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03db203a_bd827fba",
+        "filename": "samples/BrokenKeyDerivation/src/com/example/android/brokenkeyderivation/BrokenKeyDerivationActivity.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2016-06-07T14:20:40Z",
+      "side": 1,
+      "message": "read might return fewer bytes than you asked for...",
+      "range": {
+        "startLine": 270,
+        "startChar": 12,
+        "endLine": 270,
+        "endChar": 28
+      },
+      "revId": "aa31c104fe773d98ddde4d500fd3b982793a2630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
