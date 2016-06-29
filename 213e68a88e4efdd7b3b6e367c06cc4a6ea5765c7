@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0c2e356_b702a200",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/Monkey.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1041673
+      },
+      "writtenOn": "2016-06-29T16:41:47Z",
+      "side": 1,
+      "message": "this check is unnecessary (see L425)",
+      "range": {
+        "startLine": 435,
+        "startChar": 41,
+        "endLine": 435,
+        "endChar": 58
+      },
+      "revId": "213e68a88e4efdd7b3b6e367c06cc4a6ea5765c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
