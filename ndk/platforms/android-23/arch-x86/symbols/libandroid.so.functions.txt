@@ -1,0 +1,3 @@
+ATrace_beginSection
+ATrace_endSection
+ATrace_isEnabled
