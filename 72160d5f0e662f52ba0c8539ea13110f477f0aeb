@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aeb4463_ca147747",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2016-07-07T23:21:53Z",
+      "side": 1,
+      "message": "Is there a way to add a new test for this change?\n\nYou would have to add an example into example_crashes.py and a test here.",
+      "range": {
+        "startLine": 429,
+        "startChar": 6,
+        "endLine": 429,
+        "endChar": 26
+      },
+      "revId": "72160d5f0e662f52ba0c8539ea13110f477f0aeb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
