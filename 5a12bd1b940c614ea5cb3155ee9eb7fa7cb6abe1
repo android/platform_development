@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aeb4463_151ba477",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2016-07-08T00:04:23Z",
+      "side": 1,
+      "message": "Junk space.",
+      "range": {
+        "startLine": 474,
+        "startChar": 0,
+        "endLine": 474,
+        "endChar": 4
+      },
+      "revId": "5a12bd1b940c614ea5cb3155ee9eb7fa7cb6abe1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
