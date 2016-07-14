@@ -1,6 +1,6 @@
 /*-
  * Copyright (c) 1989, 1993
- *	The Regents of the University of California.  All rights reserved.
+ *    The Regents of the University of California.  All rights reserved.
  * (c) UNIX System Laboratories, Inc.
  * All or some portions of this file are derived from material licensed
  * to the University of California by American Telephone and Telegraph
@@ -30,8 +30,6 @@
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
- *
- *	@(#)pwd.h	8.2 (Berkeley) 1/21/94
  */
 
 /*-
@@ -100,27 +98,32 @@
 
 struct passwd
 {
-    char* pw_name;
-    char* pw_passwd;
-    uid_t pw_uid;
-    gid_t pw_gid;
-    char* pw_dir;
-    char* pw_shell;
+  char* pw_name;
+  char* pw_passwd;
+  uid_t pw_uid;
+  gid_t pw_gid;
+#ifdef __LP64__
+  char* pw_gecos;
+#else
+  /* Note: On LP32, we define pw_gecos to pw_passwd since they're both NULL. */
+# define pw_gecos pw_passwd
+#endif
+  char* pw_dir;
+  char* pw_shell;
 };
 
 __BEGIN_DECLS
 
 struct passwd* getpwnam(const char*);
 struct passwd* getpwuid(uid_t);
+/* Android has thousands and thousands of ids to iterate through */
+struct passwd* getpwent(void)
+  __attribute__((warning("getpwent is inefficient on Android"))) __INTRODUCED_IN_FUTURE;
+void setpwent(void) __INTRODUCED_IN_FUTURE;
+void endpwent(void) __INTRODUCED_IN_FUTURE;
 
-void endpwent(void);
-
-#if 0 /* MISSING FROM BIONIC */
-int getpwnam_r(const char*, struct passwd*, char*, size_t, struct passwd**);
-int getpwuid_r(uid_t, struct passwd*, char*, size_t, struct passwd**);
-struct passwd* getpwent(void);
-int setpwent(void);
-#endif /* MISSING */
+int getpwnam_r(const char*, struct passwd*, char*, size_t, struct passwd**) __INTRODUCED_IN(12);
+int getpwuid_r(uid_t, struct passwd*, char*, size_t, struct passwd**) __INTRODUCED_IN(12);
 
 __END_DECLS
 

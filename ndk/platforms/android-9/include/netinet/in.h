@@ -25,15 +25,18 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _NETINET_IN_H_
 #define _NETINET_IN_H_
 
 #include <endian.h>
-#include <linux/socket.h>
+#include <netinet/in6.h>
+#include <sys/cdefs.h>
+#include <sys/socket.h>
+
 #include <linux/in.h>
 #include <linux/in6.h>
 #include <linux/ipv6.h>
-#include <netinet/in6.h>
 
 __BEGIN_DECLS
 
@@ -41,10 +44,13 @@ __BEGIN_DECLS
 
 #define INET_ADDRSTRLEN 16
 
-extern int bindresvport (int sd, struct sockaddr_in *sin);
+typedef uint16_t in_port_t;
+typedef uint32_t in_addr_t;
 
-static const struct in6_addr in6addr_any = IN6ADDR_ANY_INIT;
-static const struct in6_addr in6addr_loopback = IN6ADDR_LOOPBACK_INIT;
+int bindresvport(int, struct sockaddr_in*);
+
+extern const struct in6_addr in6addr_any __INTRODUCED_IN(24);
+extern const struct in6_addr in6addr_loopback __INTRODUCED_IN(24);
 
 __END_DECLS
 

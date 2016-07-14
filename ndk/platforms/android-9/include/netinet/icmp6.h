@@ -1,4 +1,4 @@
-/*	$NetBSD: icmp6.h,v 1.40 2009/10/31 22:32:17 christos Exp $	*/
+/*	$NetBSD: icmp6.h,v 1.47 2013/07/01 12:43:15 christos Exp $	*/
 /*	$KAME: icmp6.h,v 1.84 2003/04/23 10:26:51 itojun Exp $	*/
 
 
@@ -65,6 +65,8 @@
 #ifndef _NETINET_ICMP6_H_
 #define _NETINET_ICMP6_H_
 
+#include <netinet/in.h> /* android-added: glibc source compatibility. */
+
 #define ICMPV6_PLD_MAXLEN	1232	/* IPV6_MMTU - sizeof(struct ip6_hdr)
 					   - sizeof(struct icmp6_hdr) */
 
@@ -98,18 +100,12 @@ struct icmp6_hdr {
 #define MLD_LISTENER_QUERY		130 	/* multicast listener query */
 #define MLD_LISTENER_REPORT		131	/* multicast listener report */
 #define MLD_LISTENER_DONE		132	/* multicast listener done */
+#define MLD_LISTENER_REDUCTION MLD_LISTENER_DONE /* RFC3542 definition */
 
 /* RFC2292 decls */
 #define ICMP6_MEMBERSHIP_QUERY		130	/* group membership query */
 #define ICMP6_MEMBERSHIP_REPORT		131	/* group membership report */
 #define ICMP6_MEMBERSHIP_REDUCTION	132	/* group membership termination */
-
-#ifndef _KERNEL
-/* the followings are for backward compatibility to old KAME apps. */
-#define MLD6_LISTENER_QUERY	MLD_LISTENER_QUERY
-#define MLD6_LISTENER_REPORT	MLD_LISTENER_REPORT
-#define MLD6_LISTENER_DONE	MLD_LISTENER_DONE
-#endif
 
 #define ND_ROUTER_SOLICIT		133	/* router solicitation */
 #define ND_ROUTER_ADVERT		134	/* router advertisement */
@@ -125,16 +121,11 @@ struct icmp6_hdr {
 #define ICMP6_FQDN_REPLY		140	/* FQDN reply */
 #define ICMP6_NI_QUERY			139	/* node information request */
 #define ICMP6_NI_REPLY			140	/* node information reply */
+#define MLDV2_LISTENER_REPORT		143	/* RFC3810 listener report */
 
 /* The definitions below are experimental. TBA */
 #define MLD_MTRACE_RESP			200	/* mtrace response(to sender) */
 #define MLD_MTRACE			201	/* mtrace messages */
-
-#ifndef _KERNEL
-/* the followings are for backward compatibility to old KAME apps. */
-#define MLD6_MTRACE_RESP	MLD_MTRACE_RESP
-#define MLD6_MTRACE		MLD_MTRACE
-#endif
 
 #define ICMP6_MAXTYPE			201
 
@@ -144,6 +135,9 @@ struct icmp6_hdr {
 #define ICMP6_DST_UNREACH_BEYONDSCOPE	2	/* beyond scope of source address */
 #define ICMP6_DST_UNREACH_ADDR		3	/* address unreachable */
 #define ICMP6_DST_UNREACH_NOPORT	4	/* port unreachable */
+#define ICMP6_DST_UNREACH_POLICY	5	/* source address failed ingress/egress policy */
+#define ICMP6_DST_UNREACH_REJROUTE	6	/* reject route to destination */
+#define ICMP6_DST_UNREACH_SOURCERT	7	/* error in source routing header */
 
 #define ICMP6_TIME_EXCEED_TRANSIT 	0	/* ttl==0 in transit */
 #define ICMP6_TIME_EXCEED_REASSEMBLY	1	/* ttl==0 in reass */
@@ -177,17 +171,6 @@ struct mld_hdr {
 	struct icmp6_hdr	mld_icmp6_hdr;
 	struct in6_addr		mld_addr; /* multicast address */
 } __packed;
-
-/* definitions to provide backward compatibility to old KAME applications */
-#ifndef _KERNEL
-#define mld6_hdr	mld_hdr
-#define mld6_type	mld_type
-#define mld6_code	mld_code
-#define mld6_cksum	mld_cksum
-#define mld6_maxdelay	mld_maxdelay
-#define mld6_reserved	mld_reserved
-#define mld6_addr	mld_addr
-#endif
 
 /* shortcut macro definitions */
 #define mld_type	mld_icmp6_hdr.icmp6_type
@@ -229,7 +212,7 @@ struct nd_router_advert {	/* router advertisement */
 #define ND_RA_FLAG_HOME_AGENT	0x20
 
 /*
- * Router preference values based on RFC4199.
+ * Router preference values based on RFC4191.
  */
 #define ND_RA_FLAG_RTPREF_MASK	0x18 /* 00011000 */
 
@@ -300,11 +283,10 @@ struct nd_opt_hdr {		/* Neighbor discovery option header */
 #define ND_OPT_HOMEAGENT_INFO		8
 #define ND_OPT_SOURCE_ADDRLIST		9
 #define ND_OPT_TARGET_ADDRLIST		10
-#define ND_OPT_RDNSS			25
-/* draft-ietf-ipngwg-router-preference, not officially assigned yet */
-#define ND_OPT_ROUTE_INFO		200
-/* draft-ietf-mobileip-hmipv6, not officially assigned yet */
-#define ND_OPT_MAP			201
+#define ND_OPT_MAP			23	/* RFC 5380 */
+#define ND_OPT_ROUTE_INFO		24	/* RFC 4191 */
+#define ND_OPT_RDNSS			25	/* RFC 6016 */
+#define ND_OPT_DNSSL			31	/* RFC 6016 */
 
 struct nd_opt_route_info {	/* route info */
 	u_int8_t	nd_opt_rti_type;
@@ -344,11 +326,19 @@ struct nd_opt_mtu {		/* MTU option */
 	u_int32_t	nd_opt_mtu_mtu;
 } __packed;
 
-struct nd_opt_rdnss {		/* RDNSS option RFC 5006 */
+struct nd_opt_rdnss {		/* RDNSS option RFC 6106 */
 	u_int8_t	nd_opt_rdnss_type;
 	u_int8_t	nd_opt_rdnss_len;
 	u_int16_t	nd_opt_rdnss_reserved;
 	u_int32_t	nd_opt_rdnss_lifetime;
+	/* followed by list of IP prefixes */
+} __packed;
+
+struct nd_opt_dnssl {		/* DNSSL option RFC 6106 */
+	u_int8_t	nd_opt_dnssl_type;
+	u_int8_t	nd_opt_dnssl_len;
+	u_int16_t	nd_opt_dnssl_reserved;
+	u_int32_t	nd_opt_dnssl_lifetime;
 	/* followed by list of IP prefixes */
 } __packed;
 
@@ -376,11 +366,15 @@ struct icmp6_nodeinfo {
 	/* could be followed by reply data */
 } __packed;
 
+/*
+ * BEGIN android-removed: glibc doesn't have these, and external/ping declares them itself.
 #define ni_type		icmp6_ni_hdr.icmp6_type
 #define ni_code		icmp6_ni_hdr.icmp6_code
 #define ni_cksum	icmp6_ni_hdr.icmp6_cksum
 #define ni_qtype	icmp6_ni_hdr.icmp6_data16[0]
 #define ni_flags	icmp6_ni_hdr.icmp6_data16[1]
+ * END android-removed
+ */
 
 #define NI_QTYPE_NOOP		0 /* NOOP  */
 #define NI_QTYPE_SUPTYPES	1 /* Supported Qtypes */
@@ -521,210 +515,27 @@ struct icmp6_filter {
 	u_int32_t icmp6_filt[8];
 };
 
+/*
+ * BEGIN android-changed
+ * Linux and *BSD kernels use opposite values to indicate pass/block in ICMPv6
+ * filters, and assign a different value to the ICMP6_FILTER sockopt.
+ */
+#define ICMP6_FILTER 1
+
 #define	ICMP6_FILTER_SETPASSALL(filterp) \
-	(void)memset(filterp, 0xff, sizeof(struct icmp6_filter))
-#define	ICMP6_FILTER_SETBLOCKALL(filterp) \
 	(void)memset(filterp, 0x00, sizeof(struct icmp6_filter))
+#define	ICMP6_FILTER_SETBLOCKALL(filterp) \
+	(void)memset(filterp, 0xff, sizeof(struct icmp6_filter))
 #define	ICMP6_FILTER_SETPASS(type, filterp) \
-	(((filterp)->icmp6_filt[(type) >> 5]) |= (1 << ((type) & 31)))
-#define	ICMP6_FILTER_SETBLOCK(type, filterp) \
 	(((filterp)->icmp6_filt[(type) >> 5]) &= ~(1 << ((type) & 31)))
+#define	ICMP6_FILTER_SETBLOCK(type, filterp) \
+	(((filterp)->icmp6_filt[(type) >> 5]) |= (1 << ((type) & 31)))
 #define	ICMP6_FILTER_WILLPASS(type, filterp) \
-	((((filterp)->icmp6_filt[(type) >> 5]) & (1 << ((type) & 31))) != 0)
-#define	ICMP6_FILTER_WILLBLOCK(type, filterp) \
 	((((filterp)->icmp6_filt[(type) >> 5]) & (1 << ((type) & 31))) == 0)
-
+#define	ICMP6_FILTER_WILLBLOCK(type, filterp) \
+	((((filterp)->icmp6_filt[(type) >> 5]) & (1 << ((type) & 31))) != 0)
 /*
- * Variables related to this implementation
- * of the internet control message protocol version 6.
+ * END android-changed
  */
-
-/*
- * IPv6 ICMP statistics.
- * Each counter is an unsigned 64-bit value.
- */
-#define	ICMP6_STAT_ERROR	0	/* # of calls to icmp6_error */
-#define	ICMP6_STAT_CANTERROR	1	/* no error (old was icmp) */
-#define	ICMP6_STAT_TOOFREQ	2	/* no error (rate limitation) */
-#define	ICMP6_STAT_OUTHIST	3	/* # of output messages */
-		/* space for 256 counters */
-#define	ICMP6_STAT_BADCODE	259	/* icmp6_code out of range */
-#define	ICMP6_STAT_TOOSHORT	260	/* packet < sizeof(struct icmp6_hdr) */
-#define	ICMP6_STAT_CHECKSUM	261	/* bad checksum */
-#define	ICMP6_STAT_BADLEN	262	/* calculated bound mismatch */
-	/*
-	 * number of responses; this member is inherited from the netinet code,
-	 * but for netinet6 code, it is already available in outhist[].
-	 */
-#define	ICMP6_STAT_REFLECT	263
-#define	ICMP6_STAT_INHIST	264	/* # of input messages */
-		/* space for 256 counters */
-#define	ICMP6_STAT_ND_TOOMANYOPT 520	/* too many ND options */
-#define	ICMP6_STAT_OUTERRHIST	521
-		/* space for 13 counters */
-#define	ICMP6_STAT_PMTUCHG	534	/* path MTU changes */
-#define	ICMP6_STAT_ND_BADOPT	535	/* bad ND options */
-#define	ICMP6_STAT_BADNS	536	/* bad neighbor solicititation */
-#define	ICMP6_STAT_BADNA	537	/* bad neighbor advertisement */
-#define	ICMP6_STAT_BADRS	538	/* bad router solicitiation */
-#define	ICMP6_STAT_BADRA	539	/* bad router advertisement */
-#define	ICMP6_STAT_BADREDIRECT	540	/* bad redirect message */
-
-#define	ICMP6_NSTATS		541
-
-#define	ICMP6_ERRSTAT_DST_UNREACH_NOROUTE	0
-#define	ICMP6_ERRSTAT_DST_UNREACH_ADMIN		1
-#define	ICMP6_ERRSTAT_DST_UNREACH_BEYONDSCOPE	2
-#define	ICMP6_ERRSTAT_DST_UNREACH_ADDR		3
-#define	ICMP6_ERRSTAT_DST_UNREACH_NOPORT	4
-#define	ICMP6_ERRSTAT_PACKET_TOO_BIG		5
-#define	ICMP6_ERRSTAT_TIME_EXCEED_TRANSIT	6
-#define	ICMP6_ERRSTAT_TIME_EXCEED_REASSEMBLY	7
-#define	ICMP6_ERRSTAT_PARAMPROB_HEADER		8
-#define	ICMP6_ERRSTAT_PARAMPROB_NEXTHEADER	9
-#define	ICMP6_ERRSTAT_PARAMPROB_OPTION		10
-#define	ICMP6_ERRSTAT_REDIRECT			11
-#define	ICMP6_ERRSTAT_UNKNOWN			12
-
-/*
- * Names for ICMP sysctl objects
- */
-#define ICMPV6CTL_STATS		1
-#define ICMPV6CTL_REDIRACCEPT	2	/* accept/process redirects */
-#define ICMPV6CTL_REDIRTIMEOUT	3	/* redirect cache time */
-#if 0	/*obsoleted*/
-#define ICMPV6CTL_ERRRATELIMIT	5	/* ICMPv6 error rate limitation */
-#endif
-#define ICMPV6CTL_ND6_PRUNE	6
-#define ICMPV6CTL_ND6_DELAY	8
-#define ICMPV6CTL_ND6_UMAXTRIES	9
-#define ICMPV6CTL_ND6_MMAXTRIES		10
-#define ICMPV6CTL_ND6_USELOOPBACK	11
-/*#define ICMPV6CTL_ND6_PROXYALL	12	obsoleted, do not reuse here */
-#define ICMPV6CTL_NODEINFO	13
-#define ICMPV6CTL_ERRPPSLIMIT	14	/* ICMPv6 error pps limitation */
-#define ICMPV6CTL_ND6_MAXNUDHINT	15
-#define ICMPV6CTL_MTUDISC_HIWAT	16
-#define ICMPV6CTL_MTUDISC_LOWAT	17
-#define ICMPV6CTL_ND6_DEBUG	18
-#define ICMPV6CTL_ND6_DRLIST	19
-#define ICMPV6CTL_ND6_PRLIST	20
-#define	ICMPV6CTL_ND6_MAXQLEN	24
-#define ICMPV6CTL_MAXID		25
-
-#define ICMPV6CTL_NAMES { \
-	{ 0, 0 }, \
-	{ 0, 0 }, \
-	{ "rediraccept", CTLTYPE_INT }, \
-	{ "redirtimeout", CTLTYPE_INT }, \
-	{ 0, 0 }, \
-	{ 0, 0 }, \
-	{ "nd6_prune", CTLTYPE_INT }, \
-	{ 0, 0 }, \
-	{ "nd6_delay", CTLTYPE_INT }, \
-	{ "nd6_umaxtries", CTLTYPE_INT }, \
-	{ "nd6_mmaxtries", CTLTYPE_INT }, \
-	{ "nd6_useloopback", CTLTYPE_INT }, \
-	{ 0, 0 }, \
-	{ "nodeinfo", CTLTYPE_INT }, \
-	{ "errppslimit", CTLTYPE_INT }, \
-	{ "nd6_maxnudhint", CTLTYPE_INT }, \
-	{ "mtudisc_hiwat", CTLTYPE_INT }, \
-	{ "mtudisc_lowat", CTLTYPE_INT }, \
-	{ "nd6_debug", CTLTYPE_INT }, \
-	{ 0, 0 }, \
-	{ 0, 0 }, \
-	{ 0, 0 }, \
-	{ 0, 0 }, \
-	{ 0, 0 }, \
-	{ "nd6_maxqueuelen", CTLTYPE_INT }, \
-}
-
-#define RTF_PROBEMTU	RTF_PROTO1
-
-#ifdef _KERNEL
-struct	rtentry;
-struct	rttimer;
-struct	in6_multi;
-
-void	icmp6_init(void);
-void	icmp6_paramerror(struct mbuf *, int);
-void	icmp6_error(struct mbuf *, int, int, int);
-void	icmp6_error2(struct mbuf *, int, int, int, struct ifnet *);
-int	icmp6_input(struct mbuf **, int *, int);
-void	icmp6_fasttimo(void);
-void	icmp6_reflect(struct mbuf *, size_t);
-void	icmp6_prepare(struct mbuf *);
-void	icmp6_redirect_input(struct mbuf *, int);
-void	icmp6_redirect_output(struct mbuf *, struct rtentry *);
-int	icmp6_sysctl(int *, u_int, void *, size_t *, void *, size_t);
-
-void	icmp6_statinc(u_int);
-
-struct	ip6ctlparam;
-void	icmp6_mtudisc_update(struct ip6ctlparam *, int);
-void	icmp6_mtudisc_callback_register(void (*)(struct in6_addr *));
-
-/* XXX: is this the right place for these macros? */
-#define icmp6_ifstat_inc(ifp, tag) \
-do {								\
-	if (ifp)						\
-		((struct in6_ifextra *)((ifp)->if_afdata[AF_INET6]))->icmp6_ifstat->tag++; \
-} while (/*CONSTCOND*/ 0)
-
-#define icmp6_ifoutstat_inc(ifp, type, code) \
-do { \
-		icmp6_ifstat_inc(ifp, ifs6_out_msg); \
-		switch(type) { \
-		 case ICMP6_DST_UNREACH: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_dstunreach); \
-			 if (code == ICMP6_DST_UNREACH_ADMIN) \
-				 icmp6_ifstat_inc(ifp, ifs6_out_adminprohib); \
-			 break; \
-		 case ICMP6_PACKET_TOO_BIG: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_pkttoobig); \
-			 break; \
-		 case ICMP6_TIME_EXCEEDED: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_timeexceed); \
-			 break; \
-		 case ICMP6_PARAM_PROB: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_paramprob); \
-			 break; \
-		 case ICMP6_ECHO_REQUEST: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_echo); \
-			 break; \
-		 case ICMP6_ECHO_REPLY: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_echoreply); \
-			 break; \
-		 case MLD_LISTENER_QUERY: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_mldquery); \
-			 break; \
-		 case MLD_LISTENER_REPORT: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_mldreport); \
-			 break; \
-		 case MLD_LISTENER_DONE: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_mlddone); \
-			 break; \
-		 case ND_ROUTER_SOLICIT: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_routersolicit); \
-			 break; \
-		 case ND_ROUTER_ADVERT: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_routeradvert); \
-			 break; \
-		 case ND_NEIGHBOR_SOLICIT: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_neighborsolicit); \
-			 break; \
-		 case ND_NEIGHBOR_ADVERT: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_neighboradvert); \
-			 break; \
-		 case ND_REDIRECT: \
-			 icmp6_ifstat_inc(ifp, ifs6_out_redirect); \
-			 break; \
-		} \
-} while (/*CONSTCOND*/ 0)
-
-extern int	icmp6_rediraccept;	/* accept/process redirects */
-extern int	icmp6_redirtimeout;	/* cache time for redirect routes */
-#endif /* _KERNEL */
 
 #endif /* !_NETINET_ICMP6_H_ */

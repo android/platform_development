@@ -25,28 +25,43 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _MNTENT_H_
 #define _MNTENT_H_
 
 #include <stdio.h>
+#include <sys/cdefs.h>
+#include <paths.h>  /* for _PATH_MOUNTED */
+
+#define MOUNTED _PATH_MOUNTED
 
 #define MNTTYPE_IGNORE "ignore"
+#define MNTTYPE_NFS "nfs"
+#define MNTTYPE_SWAP "swap"
 
-struct mntent
-{
-    char* mnt_fsname;
-    char* mnt_dir;
-    char* mnt_type;
-    char* mnt_opts;
-    int mnt_freq;
-    int mnt_passno;
+#define MNTOPT_DEFAULTS "defaults"
+#define MNTOPT_NOAUTO "noauto"
+#define MNTOPT_NOSUID "nosuid"
+#define MNTOPT_RO "ro"
+#define MNTOPT_RW "rw"
+#define MNTOPT_SUID "suid"
+
+struct mntent {
+  char* mnt_fsname;
+  char* mnt_dir;
+  char* mnt_type;
+  char* mnt_opts;
+  int mnt_freq;
+  int mnt_passno;
 };
-
 
 __BEGIN_DECLS
 
-
+int endmntent(FILE*) __INTRODUCED_IN(21);
 struct mntent* getmntent(FILE*);
+struct mntent* getmntent_r(FILE*, struct mntent*, char*, int) __INTRODUCED_IN(21);
+FILE* setmntent(const char*, const char*) __INTRODUCED_IN(21);
+char* hasmntopt(const struct mntent*, const char*) __INTRODUCED_IN_FUTURE;
 
 __END_DECLS
 

@@ -44,10 +44,14 @@ __BEGIN_DECLS
 #define WIFEXITED(s)    (WTERMSIG(s) == 0)
 #define WIFSTOPPED(s)   (WTERMSIG(s) == 0x7f)
 #define WIFSIGNALED(s)  (WTERMSIG((s)+1) >= 2)
+#define WIFCONTINUED(s) ((s) == 0xffff)
+
+#define W_EXITCODE(ret, sig)    ((ret) << 8 | (sig))
+#define W_STOPCODE(sig)         ((sig) << 8 | 0x7f)
 
 extern pid_t  wait(int *);
 extern pid_t  waitpid(pid_t, int *, int);
-extern pid_t  wait4(pid_t, int *, int, struct rusage *);
+extern pid_t wait4(pid_t, int*, int, struct rusage*) __INTRODUCED_IN(18);
 
 /* Posix states that idtype_t should be an enumeration type, but
  * the kernel headers define P_ALL, P_PID and P_PGID as constant macros

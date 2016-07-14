@@ -25,29 +25,124 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _FCNTL_H
 #define _FCNTL_H
 
 #include <sys/cdefs.h>
 #include <sys/types.h>
+#include <linux/fadvise.h>
 #include <linux/fcntl.h>
-#include <unistd.h>  /* this is not required, but makes client code much happier */
+#include <linux/stat.h>
+#include <linux/uio.h>
+
+#include <bits/fcntl.h>
+
+#if defined(__USE_GNU) || defined(__USE_BSD)
+#include <bits/lockf.h>
+#endif
 
 __BEGIN_DECLS
 
-#ifndef O_ASYNC
-#define O_ASYNC  FASYNC
+#ifdef __LP64__
+/* LP64 kernels don't have F_*64 defines because their flock is 64-bit. */
+#define F_GETLK64  F_GETLK
+#define F_SETLK64  F_SETLK
+#define F_SETLKW64 F_SETLKW
 #endif
 
-#ifndef O_CLOEXEC
-#define O_CLOEXEC  02000000
+#define O_ASYNC FASYNC
+#define O_RSYNC O_SYNC
+
+#define SPLICE_F_MOVE 1
+#define SPLICE_F_NONBLOCK 2
+#define SPLICE_F_MORE 4
+#define SPLICE_F_GIFT 8
+
+#define SYNC_FILE_RANGE_WAIT_BEFORE 1
+#define SYNC_FILE_RANGE_WRITE 2
+#define SYNC_FILE_RANGE_WAIT_AFTER 4
+
+extern int creat(const char*, mode_t);
+extern int creat64(const char*, mode_t) __INTRODUCED_IN(21);
+extern int openat(int, const char*, int, ...);
+extern int openat64(int, const char*, int, ...) __INTRODUCED_IN(21);
+extern int open(const char*, int, ...);
+extern int open64(const char*, int, ...) __INTRODUCED_IN(21);
+extern ssize_t splice(int, off64_t*, int, off64_t*, size_t, unsigned int) __INTRODUCED_IN(21);
+extern ssize_t tee(int, int, size_t, unsigned int) __INTRODUCED_IN(21);
+extern ssize_t vmsplice(int, const struct iovec*, size_t, unsigned int) __INTRODUCED_IN(21);
+
+#if defined(__USE_FILE_OFFSET64)
+extern int fallocate(int, int, off_t, off_t) __RENAME(fallocate64) __INTRODUCED_IN(21);
+extern int posix_fadvise(int, off_t, off_t, int) __RENAME(posix_fadvise64) __INTRODUCED_IN(21);
+extern int posix_fallocate(int, off_t, off_t) __RENAME(posix_fallocate) __INTRODUCED_IN(21);
+#else
+extern int fallocate(int, int, off_t, off_t) __INTRODUCED_IN(21);
+extern int posix_fadvise(int, off_t, off_t, int) __INTRODUCED_IN(21);
+extern int posix_fallocate(int, off_t, off_t) __INTRODUCED_IN(21);
+#endif
+extern int fallocate64(int, int, off64_t, off64_t) __INTRODUCED_IN(21);
+extern int posix_fadvise64(int, off64_t, off64_t, int) __INTRODUCED_IN(21);
+extern int posix_fallocate64(int, off64_t, off64_t) __INTRODUCED_IN(21);
+
+#if defined(__USE_GNU)
+ssize_t readahead(int, off64_t, size_t) __INTRODUCED_IN(16);
+int sync_file_range(int, off64_t, off64_t, unsigned int) __INTRODUCED_IN_FUTURE;
 #endif
 
-extern int  open(const char*  path, int  mode, ...);
-extern int  openat(int fd, const char*  path, int  mode, ...);
-extern int  unlinkat(int dirfd, const char *pathname, int flags);
-extern int  fcntl(int   fd, int   command, ...);
-extern int  creat(const char*  path, mode_t  mode);
+extern int __open_2(const char*, int) __INTRODUCED_IN(17);
+extern int __open_real(const char*, int, ...) __RENAME(open);
+extern int __openat_2(int, const char*, int) __INTRODUCED_IN(17);
+extern int __openat_real(int, const char*, int, ...) __RENAME(openat);
+__errordecl(__creat_missing_mode, "called with O_CREAT, but missing mode");
+__errordecl(__creat_too_many_args, "too many arguments");
+
+#if defined(__BIONIC_FORTIFY)
+
+#if !defined(__clang__)
+
+__BIONIC_FORTIFY_INLINE
+int open(const char* pathname, int flags, ...) {
+    if (__builtin_constant_p(flags)) {
+        if ((flags & O_CREAT) && __builtin_va_arg_pack_len() == 0) {
+            __creat_missing_mode();  /* Compile time error. */
+        }
+    }
+
+    if (__builtin_va_arg_pack_len() > 1) {
+        __creat_too_many_args();  /* Compile time error. */
+    }
+
+    if ((__builtin_va_arg_pack_len() == 0) && !__builtin_constant_p(flags)) {
+        return __open_2(pathname, flags);
+    }
+
+    return __open_real(pathname, flags, __builtin_va_arg_pack());
+}
+
+__BIONIC_FORTIFY_INLINE
+int openat(int dirfd, const char* pathname, int flags, ...) {
+    if (__builtin_constant_p(flags)) {
+        if ((flags & O_CREAT) && __builtin_va_arg_pack_len() == 0) {
+            __creat_missing_mode();  /* Compile time error. */
+        }
+    }
+
+    if (__builtin_va_arg_pack_len() > 1) {
+        __creat_too_many_args();  /* Compile time error. */
+    }
+
+    if ((__builtin_va_arg_pack_len() == 0) && !__builtin_constant_p(flags)) {
+        return __openat_2(dirfd, pathname, flags);
+    }
+
+    return __openat_real(dirfd, pathname, flags, __builtin_va_arg_pack());
+}
+
+#endif /* !defined(__clang__) */
+
+#endif /* defined(__BIONIC_FORTIFY) */
 
 __END_DECLS
 

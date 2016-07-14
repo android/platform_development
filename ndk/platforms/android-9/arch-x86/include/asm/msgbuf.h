@@ -16,26 +16,4 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _ASM_X86_MSGBUF_H
-#define _ASM_X86_MSGBUF_H
-struct msqid64_ds {
- struct ipc64_perm msg_perm;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __kernel_time_t msg_stime;
- unsigned long __unused1;
- __kernel_time_t msg_rtime;
- unsigned long __unused2;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __kernel_time_t msg_ctime;
- unsigned long __unused3;
- unsigned long msg_cbytes;
- unsigned long msg_qnum;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long msg_qbytes;
- __kernel_pid_t msg_lspid;
- __kernel_pid_t msg_lrpid;
- unsigned long __unused4;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long __unused5;
-};
-#endif
+#include <asm-generic/msgbuf.h>

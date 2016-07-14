@@ -33,9 +33,6 @@
 #include <sys/resource.h>
 #include <linux/wait.h>
 #include <signal.h>
-#include <asm/unistd.h>
-#include <sys/syscall.h>
-
 
 __BEGIN_DECLS
 
@@ -47,14 +44,14 @@ __BEGIN_DECLS
 #define WIFEXITED(s)    (WTERMSIG(s) == 0)
 #define WIFSTOPPED(s)   (WTERMSIG(s) == 0x7f)
 #define WIFSIGNALED(s)  (WTERMSIG((s)+1) >= 2)
+#define WIFCONTINUED(s) ((s) == 0xffff)
+
+#define W_EXITCODE(ret, sig)    ((ret) << 8 | (sig))
+#define W_STOPCODE(sig)         ((sig) << 8 | 0x7f)
 
 extern pid_t  wait(int *);
 extern pid_t  waitpid(pid_t, int *, int);
-extern pid_t  wait3(int *, int, struct rusage *);
-static __inline__ pid_t wait4(pid_t pid, int *status, int options, struct rusage *rusage)
-{
-  return (pid_t)syscall(__NR_wait4, pid, status, options, rusage);
-}
+extern pid_t wait4(pid_t, int*, int, struct rusage*) __INTRODUCED_IN(18);
 
 /* Posix states that idtype_t should be an enumeration type, but
  * the kernel headers define P_ALL, P_PID and P_PGID as constant macros

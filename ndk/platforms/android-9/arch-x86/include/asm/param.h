@@ -16,15 +16,4 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _ASM_X86_PARAM_H
-#define _ASM_X86_PARAM_H
-#ifndef HZ
-#define HZ 100
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#endif
-#define EXEC_PAGESIZE 4096
-#ifndef NOGROUP
-#define NOGROUP (-1)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#endif
-#endif
+#include <asm-generic/param.h>

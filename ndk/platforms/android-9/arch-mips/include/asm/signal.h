@@ -16,109 +16,93 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _ASM_SIGNAL_H
-#define _ASM_SIGNAL_H
+#ifndef _UAPI_ASM_SIGNAL_H
+#define _UAPI_ASM_SIGNAL_H
 #include <linux/types.h>
-#define _NSIG 128
+#define _KERNEL__NSIG 128
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define NSIG 128
 #define _NSIG_BPW (sizeof(unsigned long) * 8)
-#define _NSIG_WORDS (_NSIG / _NSIG_BPW)
+#define _NSIG_WORDS (_KERNEL__NSIG / _NSIG_BPW)
 typedef struct {
+  unsigned long sig[_NSIG_WORDS];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long sig[_NSIG_WORDS];
 } sigset_t;
 typedef unsigned long old_sigset_t;
-#define SIGHUP 1  
+#define SIGHUP 1
+#define SIGINT 2
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGINT 2  
-#define SIGQUIT 3  
-#define SIGILL 4  
-#define SIGTRAP 5  
+#define SIGQUIT 3
+#define SIGILL 4
+#define SIGTRAP 5
+#define SIGIOT 6
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGIOT 6  
-#define SIGABRT SIGIOT  
+#define SIGABRT SIGIOT
 #define SIGEMT 7
-#define SIGFPE 8  
+#define SIGFPE 8
+#define SIGKILL 9
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGKILL 9  
-#define SIGBUS 10  
-#define SIGSEGV 11  
+#define SIGBUS 10
+#define SIGSEGV 11
 #define SIGSYS 12
+#define SIGPIPE 13
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGPIPE 13  
-#define SIGALRM 14  
-#define SIGTERM 15  
-#define SIGUSR1 16  
+#define SIGALRM 14
+#define SIGTERM 15
+#define SIGUSR1 16
+#define SIGUSR2 17
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGUSR2 17  
-#define SIGCHLD 18  
-#define SIGCLD SIGCHLD  
-#define SIGPWR 19  
+#define SIGCHLD 18
+#define SIGCLD SIGCHLD
+#define SIGPWR 19
+#define SIGWINCH 20
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGWINCH 20  
-#define SIGURG 21  
-#define SIGIO 22  
-#define SIGPOLL SIGIO  
+#define SIGURG 21
+#define SIGIO 22
+#define SIGPOLL SIGIO
+#define SIGSTOP 23
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGSTOP 23  
-#define SIGTSTP 24  
-#define SIGCONT 25  
-#define SIGTTIN 26  
+#define SIGTSTP 24
+#define SIGCONT 25
+#define SIGTTIN 26
+#define SIGTTOU 27
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGTTOU 27  
-#define SIGVTALRM 28  
-#define SIGPROF 29  
-#define SIGXCPU 30  
+#define SIGVTALRM 28
+#define SIGPROF 29
+#define SIGXCPU 30
+#define SIGXFSZ 31
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIGXFSZ 31  
-#define SIGRTMIN 32
-#define SIGRTMAX _NSIG
+#define __SIGRTMIN 32
+#define __SIGRTMAX _KERNEL__NSIG
 #define SA_ONSTACK 0x08000000
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SA_RESETHAND 0x80000000
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SA_RESTART 0x10000000
 #define SA_SIGINFO 0x00000008
 #define SA_NODEFER 0x40000000
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SA_NOCLDWAIT 0x00010000
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SA_NOCLDSTOP 0x00000001
 #define SA_NOMASK SA_NODEFER
 #define SA_ONESHOT SA_RESETHAND
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SA_RESTORER 0x04000000  
-#define SS_ONSTACK 1
-#define SS_DISABLE 2
 #define MINSIGSTKSZ 2048
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SIGSTKSZ 8192
-struct siginfo;
-#define SIG_BLOCK 1  
-#define SIG_UNBLOCK 2  
+#define SIG_BLOCK 1
+#define SIG_UNBLOCK 2
+#define SIG_SETMASK 3
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SIG_SETMASK 3  
-#include <asm-generic/signal.h>
+#include <asm-generic/signal-defs.h>
 struct sigaction {
- unsigned int sa_flags;
+  unsigned int sa_flags;
+  __sighandler_t sa_handler;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- union {
- __sighandler_t sa_handler;
- void (*sa_sigaction) (int, struct siginfo *, void *);
- } __sigaction_handler;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define sa_handler __sigaction_handler.sa_handler
-#define sa_sigaction __sigaction_handler.sa_sigaction
- sigset_t sa_mask;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct k_sigaction {
- struct sigaction sa;
+  sigset_t sa_mask;
 };
 typedef struct sigaltstack {
+  void __user * ss_sp;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- void *ss_sp;
- size_t ss_size;
- int ss_flags;
+  size_t ss_size;
+  int ss_flags;
 } stack_t;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

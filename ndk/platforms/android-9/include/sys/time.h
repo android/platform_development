@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_TIME_H_
 #define _SYS_TIME_H_
 
@@ -32,15 +33,27 @@
 #include <sys/types.h>
 #include <linux/time.h>
 
+/* POSIX says <sys/time.h> gets you most of <sys/select.h> and may get you all of it. */
+#include <sys/select.h>
+
 __BEGIN_DECLS
 
-extern int gettimeofday(struct timeval *, struct timezone *);
-extern int settimeofday(const struct timeval *, const struct timezone *);
+int gettimeofday(struct timeval*, struct timezone*);
+int settimeofday(const struct timeval*, const struct timezone*);
 
-extern int getitimer(int, struct itimerval *);
-extern int setitimer(int, const struct itimerval *, struct itimerval *);
+int getitimer(int, struct itimerval*);
+int setitimer(int, const struct itimerval*, struct itimerval*);
 
-extern int utimes(const char *, const struct timeval *);
+int utimes(const char*, const struct timeval*);
+
+#if defined(__USE_BSD)
+int futimes(int, const struct timeval[2]) __INTRODUCED_IN_FUTURE;
+int lutimes(const char*, const struct timeval[2]) __INTRODUCED_IN_FUTURE;
+#endif
+
+#if defined(__USE_GNU)
+int futimesat(int, const char*, const struct timeval[2]) __INTRODUCED_IN_FUTURE;
+#endif
 
 #define timerclear(a)   \
         ((a)->tv_sec = (a)->tv_usec = 0)
@@ -72,6 +85,15 @@ extern int utimes(const char *, const struct timeval *);
             (res)->tv_sec  -= 1;                      \
         }                                             \
     } while (0)
+
+#define TIMEVAL_TO_TIMESPEC(tv, ts) {     \
+    (ts)->tv_sec = (tv)->tv_sec;          \
+    (ts)->tv_nsec = (tv)->tv_usec * 1000; \
+}
+#define TIMESPEC_TO_TIMEVAL(tv, ts) {     \
+    (tv)->tv_sec = (ts)->tv_sec;          \
+    (tv)->tv_usec = (ts)->tv_nsec / 1000; \
+}
 
 __END_DECLS
 

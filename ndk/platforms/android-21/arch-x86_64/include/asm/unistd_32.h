@@ -454,5 +454,35 @@
 #define __NR_finit_module 350
 #define __NR_sched_setattr 351
 #define __NR_sched_getattr 352
+#define __NR_renameat2 353
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_seccomp 354
+#define __NR_getrandom 355
+#define __NR_memfd_create 356
+#define __NR_bpf 357
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_execveat 358
+#define __NR_socket 359
+#define __NR_socketpair 360
+#define __NR_bind 361
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_connect 362
+#define __NR_listen 363
+#define __NR_accept4 364
+#define __NR_getsockopt 365
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_setsockopt 366
+#define __NR_getsockname 367
+#define __NR_getpeername 368
+#define __NR_sendto 369
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_sendmsg 370
+#define __NR_recvfrom 371
+#define __NR_recvmsg 372
+#define __NR_shutdown 373
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_userfaultfd 374
+#define __NR_membarrier 375
+#define __NR_mlock2 376
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

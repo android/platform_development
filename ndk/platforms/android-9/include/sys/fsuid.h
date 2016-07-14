@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_FSUID_H_
 #define _SYS_FSUID_H_
 
@@ -33,10 +34,8 @@
 
 __BEGIN_DECLS
 
-#if 0 /* MISSING FROM BIONIC */
-extern int setfsuid(uid_t);
-extern int setfsgid(gid_t);
-#endif /* MISSING */
+extern int setfsuid(uid_t) __INTRODUCED_IN(21);
+extern int setfsgid(gid_t) __INTRODUCED_IN(21);
 
 __END_DECLS
 

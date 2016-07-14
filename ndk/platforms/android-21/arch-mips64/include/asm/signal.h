@@ -24,7 +24,7 @@
 #define _NSIG_BPW (sizeof(unsigned long) * 8)
 #define _NSIG_WORDS (_KERNEL__NSIG / _NSIG_BPW)
 typedef struct {
- unsigned long sig[_NSIG_WORDS];
+  unsigned long sig[_NSIG_WORDS];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 } sigset_t;
 typedef unsigned long old_sigset_t;
@@ -93,16 +93,16 @@ typedef unsigned long old_sigset_t;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #include <asm-generic/signal-defs.h>
 struct sigaction {
- unsigned int sa_flags;
- __sighandler_t sa_handler;
+  unsigned int sa_flags;
+  __sighandler_t sa_handler;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- sigset_t sa_mask;
+  sigset_t sa_mask;
 };
 typedef struct sigaltstack {
- void __user *ss_sp;
+  void __user * ss_sp;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- size_t ss_size;
- int ss_flags;
+  size_t ss_size;
+  int ss_flags;
 } stack_t;
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

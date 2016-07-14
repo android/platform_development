@@ -31,28 +31,13 @@
 
 /* Common definitions for limits.h. */
 
-/*
- * <machine/internal_types.h> is meant to describe a specific architecture,
- * but to be a safe include, that doesn't ever define anything that is
- * user-visible (only typedefs and #define names that stays in the __xxx
- * namespace).
- *
- *   __machine_has_unsigned_chars	(default is signed chars)
- *   __FLT_xxx/__DBL_xxx		non standard values for floating
- *   					points limits.
- */
-#include <machine/internal_types.h>
-
-/* Legacy */
-#include <machine/limits.h>
-
 #define	CHAR_BIT	8		/* number of bits in a char */
 
 #define	SCHAR_MAX	0x7f		/* max value for a signed char */
 #define SCHAR_MIN	(-0x7f-1)	/* min value for a signed char */
 
 #define	UCHAR_MAX	0xffU		/* max value for an unsigned char */
-#ifdef __machine_has_unsigned_chars
+#ifdef __CHAR_UNSIGNED__
 # define CHAR_MIN	0		/* min value for a char */
 # define CHAR_MAX	0xff		/* max value for a char */
 #else
@@ -81,16 +66,14 @@
 # define LONG_MIN	(-0x7fffffffL-1)/* min value for a long */
 #endif
 
-#if __BSD_VISIBLE || __ISO_C_VISIBLE >= 1999
 # define ULLONG_MAX	0xffffffffffffffffULL
 					/* max value for unsigned long long */
 # define LLONG_MAX	0x7fffffffffffffffLL
 					/* max value for a signed long long */
 # define LLONG_MIN	(-0x7fffffffffffffffLL-1)
 					/* min value for a signed long long */
-#endif
 
-#if __BSD_VISIBLE
+#if defined(__USE_BSD) || defined(__BIONIC__) /* Historically bionic exposed these. */
 # define UID_MAX	UINT_MAX	/* max value for a uid_t */
 # define GID_MAX	UINT_MAX	/* max value for a gid_t */
 #endif
@@ -130,51 +113,16 @@
 
 /* Bionic-specific definitions */
 
-#define  _POSIX_VERSION             200112L   /* Posix C language bindings version */
+#define  _POSIX_VERSION             200809L   /* Posix C language bindings version */
 #define  _POSIX2_VERSION            -1        /* we don't support Posix command-line tools */
-#define  _POSIX2_C_VERSION          _POSIX_VERSION
-#define  _XOPEN_VERSION             500       /* by Posix definition */
-#define  _XOPEN_XCU_VERSION         -1        /* we don't support command-line utilities */
-
-/* tell what we implement legacy stuff when appropriate */
-#if _POSIX_VERSION > 0
-#define  _XOPEN_XPG2                1
-#define  _XOPEN_XPG3                1
-#define  _XOPEN_XPG4                1
-#define  _XOPEN_UNIX                1
-#endif
-
-#define  _XOPEN_ENH_I18N          -1  /* we don't support internationalization in the C library */
-#define  _XOPEN_CRYPT             -1  /* don't support X/Open Encryption */
-#define  _XOPEN_LEGACY            -1  /* don't claim we support these, we have some of them but not all */
-#define  _XOPEN_REALTIME          -1 /* we don't support all these functions */
-#define  _XOPEN_REALTIME_THREADS  -1  /* same here */
-
-#define  _POSIX_REALTIME_SIGNALS    -1  /* for now, this is not supported */
-#define  _POSIX_PRIORITY_SCHEDULING  1  /* priority scheduling is a Linux feature */
-#define  _POSIX_TIMERS               1  /* Posix timers are supported */
-#undef   _POSIX_ASYNCHRONOUS_IO         /* aio_ functions are not supported */
-#define  _POSIX_SYNCHRONIZED_IO      1  /* synchronized i/o supported */
-#define  _POSIX_FSYNC                1  /* fdatasync() supported */
-#define  _POSIX_MAPPED_FILES         1  /* mmap-ed files supported */
-
-/* XXX: TODO: complete and check list here */
+#define  _XOPEN_VERSION             700       /* by Posix definition */
 
 
-#define  _POSIX_THREADS             1    /* we support threads */
-#define  _POSIX_THREAD_STACKADDR    1    /* we support thread stack address */
-#define  _POSIX_THREAD_STACKSIZE    1    /* we support thread stack size */
-#define  _POSIX_THREAD_PRIO_INHERIT 200112L   /* linux feature */
-#define  _POSIX_THREAD_PRIO_PROTECT 200112L   /* linux feature */
-
-#undef   _POSIX_PROCESS_SHARED           /* we don't support process-shared synchronization */
-#undef   _POSIX_THREAD_SAFE_FUNCTIONS    /* most functions are, but not everything yet */
-#define  _POSIX_CHOWN_RESTRICTED    1    /* yes, chown requires appropriate privileges */
-#define  _POSIX_MONOTONIC_CLOCK     0    /* the monotonic clock may be available; ask sysconf */
-#define  _POSIX_NO_TRUNC            1    /* very long pathnames generate an error */
-#define  _POSIX_SAVED_IDS           1    /* saved user ids is a Linux feature */
-#define  _POSIX_JOB_CONTROL         1    /* job control is a Linux feature */
-
-
+/* >= _POSIX_THREAD_DESTRUCTOR_ITERATIONS */
+#define PTHREAD_DESTRUCTOR_ITERATIONS 4
+/* >= _POSIX_THREAD_KEYS_MAX */
+#define PTHREAD_KEYS_MAX 128
+/* bionic has no specific limit */
+#undef PTHREAD_THREADS_MAX
 
 #endif

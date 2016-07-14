@@ -43,25 +43,40 @@ typedef struct {
                                in dli_sname */
 } Dl_info;
 
-extern void*        dlopen(const char*  filename, int flag);
-extern int          dlclose(void*  handle);
-extern const char*  dlerror(void);
-extern void*        dlsym(void*  handle, const char*  symbol);
-extern int          dladdr(const void* addr, Dl_info *info);
+extern void* dlopen(const char*  filename, int flag);
+extern int dlclose(void*  handle);
+extern const char* dlerror(void);
+extern void* dlsym(void* handle, const char* _Nonnull symbol);
+extern void* dlvsym(void* handle, const char* _Nonnull symbol, const char* _Nonnull version)
+  __INTRODUCED_IN(24);
+extern int dladdr(const void* addr, Dl_info *info);
 
 enum {
+#if defined(__LP64__)
+  RTLD_NOW  = 2,
+#else
   RTLD_NOW  = 0,
+#endif
   RTLD_LAZY = 1,
 
   RTLD_LOCAL  = 0,
+#if defined(__LP64__)
+  RTLD_GLOBAL = 0x00100,
+#else
   RTLD_GLOBAL = 2,
+#endif
+  RTLD_NOLOAD = 4,
+  RTLD_NODELETE = 0x01000,
 };
 
+#if defined (__LP64__)
+#define RTLD_DEFAULT  ((void*) 0)
+#define RTLD_NEXT     ((void*) -1L)
+#else
 #define RTLD_DEFAULT  ((void*) 0xffffffff)
 #define RTLD_NEXT     ((void*) 0xfffffffe)
+#endif
 
 __END_DECLS
 
 #endif /* __DLFCN_H */
-
-

@@ -26,38 +26,38 @@ typedef unsigned int tcflag_t;
 #define NCCS 23
 struct termios {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- tcflag_t c_iflag;
- tcflag_t c_oflag;
- tcflag_t c_cflag;
- tcflag_t c_lflag;
+  tcflag_t c_iflag;
+  tcflag_t c_oflag;
+  tcflag_t c_cflag;
+  tcflag_t c_lflag;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- cc_t c_line;
- cc_t c_cc[NCCS];
+  cc_t c_line;
+  cc_t c_cc[NCCS];
 };
 struct termios2 {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- tcflag_t c_iflag;
- tcflag_t c_oflag;
- tcflag_t c_cflag;
- tcflag_t c_lflag;
+  tcflag_t c_iflag;
+  tcflag_t c_oflag;
+  tcflag_t c_cflag;
+  tcflag_t c_lflag;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- cc_t c_line;
- cc_t c_cc[NCCS];
- speed_t c_ispeed;
- speed_t c_ospeed;
+  cc_t c_line;
+  cc_t c_cc[NCCS];
+  speed_t c_ispeed;
+  speed_t c_ospeed;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct ktermios {
- tcflag_t c_iflag;
- tcflag_t c_oflag;
+  tcflag_t c_iflag;
+  tcflag_t c_oflag;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- tcflag_t c_cflag;
- tcflag_t c_lflag;
- cc_t c_line;
- cc_t c_cc[NCCS];
+  tcflag_t c_cflag;
+  tcflag_t c_lflag;
+  cc_t c_line;
+  cc_t c_cc[NCCS];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- speed_t c_ispeed;
- speed_t c_ospeed;
+  speed_t c_ispeed;
+  speed_t c_ospeed;
 };
 #define VINTR 0
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

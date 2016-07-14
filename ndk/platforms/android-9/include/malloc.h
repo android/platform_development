@@ -17,44 +17,58 @@
 #ifndef LIBC_INCLUDE_MALLOC_H_
 #define LIBC_INCLUDE_MALLOC_H_
 
-/*
- * Declaration of malloc routines. Bionic uses dlmalloc (see
- * upstream-dlmalloc) but doesn't directly include it here to keep the
- * defined malloc.h interface small.
- */
 #include <sys/cdefs.h>
 #include <stddef.h>
+#include <stdio.h>
 
 __BEGIN_DECLS
 
-extern __mallocfunc void*  malloc(size_t);
-extern __mallocfunc void*  calloc(size_t, size_t);
-extern void*  realloc(void *, size_t);
-extern void   free(void *);
+extern void* malloc(size_t byte_count) __mallocfunc __wur __attribute__((alloc_size(1)));
+extern void* calloc(size_t item_count, size_t item_size) __mallocfunc __wur __attribute__((alloc_size(1,2)));
+extern void* realloc(void* p, size_t byte_count) __wur __attribute__((alloc_size(2)));
+extern void free(void* p);
 
-extern void*  memalign(size_t  alignment, size_t  bytesize);
-extern size_t malloc_usable_size(const void*);
-
-extern void*  valloc(size_t  bytesize);
-extern void*  pvalloc(size_t bytesize);
+extern void* memalign(size_t alignment, size_t byte_count) __mallocfunc __wur __attribute__((alloc_size(2)));
+extern size_t malloc_usable_size(const void* p) __INTRODUCED_IN(17);
 
 #ifndef STRUCT_MALLINFO_DECLARED
 #define STRUCT_MALLINFO_DECLARED 1
 struct mallinfo {
-  size_t arena;
-  size_t ordblks;
-  size_t smblks;
-  size_t hblks;
-  size_t hblkhd;
-  size_t usmblks;
-  size_t fsmblks;
-  size_t uordblks;
-  size_t fordblks;
-  size_t keepcost;
+  size_t arena;    /* Total number of non-mmapped bytes currently allocated from OS. */
+  size_t ordblks;  /* Number of free chunks. */
+  size_t smblks;   /* (Unused.) */
+  size_t hblks;    /* (Unused.) */
+  size_t hblkhd;   /* Total number of bytes in mmapped regions. */
+  size_t usmblks;  /* Maximum total allocated space; greater than total if trimming has occurred. */
+  size_t fsmblks;  /* (Unused.) */
+  size_t uordblks; /* Total allocated space (normal or mmapped.) */
+  size_t fordblks; /* Total free space. */
+  size_t keepcost; /* Upper bound on number of bytes releasable by malloc_trim. */
 };
 #endif  /* STRUCT_MALLINFO_DECLARED */
 
 extern struct mallinfo mallinfo(void);
+
+/*
+ * XML structure for malloc_info(3) is in the following format:
+ *
+ * <malloc version="jemalloc-1">
+ *   <heap nr="INT">
+ *     <allocated-large>INT</allocated-large>
+ *     <allocated-huge>INT</allocated-huge>
+ *     <allocated-bins>INT</allocated-bins>
+ *     <bins-total>INT</bins-total>
+ *     <bin nr="INT">
+ *       <allocated>INT</allocated>
+ *       <nmalloc>INT</nmalloc>
+ *       <ndalloc>INT</ndalloc>
+ *     </bin>
+ *     <!-- more bins -->
+ *   </heap>
+ *   <!-- more heaps -->
+ * </malloc>
+ */
+extern int malloc_info(int, FILE*) __INTRODUCED_IN(23);
 
 __END_DECLS
 

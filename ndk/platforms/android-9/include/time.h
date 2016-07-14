@@ -25,96 +25,83 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _TIME_H_
 #define _TIME_H_
 
 #include <sys/cdefs.h>
 #include <sys/time.h>
-
-#define __ARCH_SI_UID_T __kernel_uid32_t
-#include <asm/siginfo.h>
-#undef __ARCH_SI_UID_T
+#include <xlocale.h>
 
 __BEGIN_DECLS
 
-extern time_t   time(time_t *);
-extern int      nanosleep(const struct timespec *, struct timespec *);
+#define CLOCKS_PER_SEC 1000000
 
-extern char *strtotimeval(const char *str, struct timeval *tv);
+extern char* tzname[] __LIBC_ABI_PUBLIC__;
+extern int daylight __LIBC_ABI_PUBLIC__;
+extern long int timezone __LIBC_ABI_PUBLIC__;
+
+struct sigevent;
 
 struct tm {
-   int     tm_sec;         /* seconds */
-   int     tm_min;         /* minutes */
-   int     tm_hour;        /* hours */
-   int     tm_mday;        /* day of the month */
-   int     tm_mon;         /* month */
-   int     tm_year;        /* year */
-   int     tm_wday;        /* day of the week */
-   int     tm_yday;        /* day in the year */
-   int     tm_isdst;       /* daylight saving time */
-
-   long int tm_gmtoff;     /* Seconds east of UTC.  */
-   const char *tm_zone;    /* Timezone abbreviation.  */
-
+  int tm_sec;
+  int tm_min;
+  int tm_hour;
+  int tm_mday;
+  int tm_mon;
+  int tm_year;
+  int tm_wday;
+  int tm_yday;
+  int tm_isdst;
+  long int tm_gmtoff;
+  const char* tm_zone;
 };
 
-/* defining TM_ZONE indicates that we have a "timezone abbreviation" field in
- * struct tm, the value should be the field name
- */
-#define   TM_ZONE   tm_zone
+#define TM_ZONE tm_zone
 
-extern char* asctime(const struct tm* a);
-extern char* asctime_r(const struct tm* a, char* buf);
+extern time_t time(time_t*) __LIBC_ABI_PUBLIC__;
+extern int nanosleep(const struct timespec*, struct timespec*) __LIBC_ABI_PUBLIC__;
 
-/* Return the difference between TIME1 and TIME0.  */
-extern double difftime (time_t __time1, time_t __time0) __NDK_FPABI__;
-extern time_t mktime (struct tm *a);
+extern char* asctime(const struct tm*) __LIBC_ABI_PUBLIC__;
+extern char* asctime_r(const struct tm*, char*) __LIBC_ABI_PUBLIC__;
 
-extern struct tm*  localtime(const time_t *t);
-extern struct tm*  localtime_r(const time_t *timep, struct tm *result);
+extern double difftime(time_t, time_t) __LIBC_ABI_PUBLIC__;
+extern time_t mktime(struct tm*) __LIBC_ABI_PUBLIC__;
 
-extern struct tm*  gmtime(const time_t *timep);
-extern struct tm*  gmtime_r(const time_t *timep, struct tm *result);
+extern struct tm* localtime(const time_t*) __LIBC_ABI_PUBLIC__;
+extern struct tm* localtime_r(const time_t*, struct tm*) __LIBC_ABI_PUBLIC__;
 
-extern char*       strptime(const char *buf, const char *fmt, struct tm *tm);
-extern size_t      strftime(char *s, size_t max, const char *format, const struct tm *tm);
+extern struct tm* gmtime(const time_t*) __LIBC_ABI_PUBLIC__;
+extern struct tm* gmtime_r(const time_t*, struct tm*) __LIBC_ABI_PUBLIC__;
 
-extern char *ctime(const time_t *timep);
-extern char *ctime_r(const time_t *timep, char *buf);
+extern char* strptime(const char*, const char*, struct tm*) __LIBC_ABI_PUBLIC__;
+extern size_t strftime(char*, size_t, const char*, const struct tm*) __LIBC_ABI_PUBLIC__;
+extern size_t strftime_l(char*, size_t, const char*, const struct tm*, locale_t) __LIBC_ABI_PUBLIC__
+  __INTRODUCED_IN(21);
 
-extern void  tzset(void);
+extern char* ctime(const time_t*) __LIBC_ABI_PUBLIC__;
+extern char* ctime_r(const time_t*, char*) __LIBC_ABI_PUBLIC__;
 
-/* global includes */
-extern char*     tzname[];
-extern int       daylight;
-extern long int  timezone;
+extern void tzset(void) __LIBC_ABI_PUBLIC__;
 
-#define CLOCKS_PER_SEC     1000000
+extern clock_t clock(void) __LIBC_ABI_PUBLIC__;
 
-extern clock_t   clock(void);
+extern int clock_getcpuclockid(pid_t, clockid_t*) __LIBC_ABI_PUBLIC__ __INTRODUCED_IN(23);
 
-/* BIONIC: extra linux clock goodies */
-extern int clock_getres(clockid_t, struct timespec *);
-extern int clock_gettime(clockid_t, struct timespec *);
-extern int clock_settime(clockid_t, const struct timespec *);
-extern int clock_nanosleep(clockid_t, int, const struct timespec *, struct timespec *);
+extern int clock_getres(clockid_t, struct timespec*) __LIBC_ABI_PUBLIC__;
+extern int clock_gettime(clockid_t, struct timespec*) __LIBC_ABI_PUBLIC__;
+extern int clock_nanosleep(clockid_t, int, const struct timespec*, struct timespec*) __LIBC_ABI_PUBLIC__;
+extern int clock_settime(clockid_t, const struct timespec*) __LIBC_ABI_PUBLIC__;
 
-#define CLOCK_REALTIME             0
-#define CLOCK_MONOTONIC            1
-#define CLOCK_PROCESS_CPUTIME_ID   2
-#define CLOCK_THREAD_CPUTIME_ID    3
-#define CLOCK_MONOTONIC_RAW        4
-#define CLOCK_REALTIME_COARSE      5
-#define CLOCK_MONOTONIC_COARSE     6
-#define CLOCK_BOOTTIME             7
-#define CLOCK_REALTIME_ALARM       8
-#define CLOCK_BOOTTIME_ALARM       9
+extern int timer_create(int, struct sigevent*, timer_t*) __LIBC_ABI_PUBLIC__;
+extern int timer_delete(timer_t) __LIBC_ABI_PUBLIC__;
+extern int timer_settime(timer_t, int, const struct itimerspec*, struct itimerspec*) __LIBC_ABI_PUBLIC__;
+extern int timer_gettime(timer_t, struct itimerspec*) __LIBC_ABI_PUBLIC__;
+extern int timer_getoverrun(timer_t) __LIBC_ABI_PUBLIC__;
 
-extern int  timer_create(int, struct sigevent*, timer_t*);
-extern int  timer_delete(timer_t);
-extern int  timer_settime(timer_t timerid, int flags, const struct itimerspec *value, struct itimerspec *ovalue);
-extern int  timer_gettime(timer_t timerid, struct itimerspec *value);
-extern int  timer_getoverrun(timer_t  timerid);
+/* Non-standard extensions that are in the BSDs and glibc. */
+extern time_t timelocal(struct tm*) __LIBC_ABI_PUBLIC__ __INTRODUCED_IN(12);
+extern time_t timegm(struct tm*) __LIBC_ABI_PUBLIC__ __INTRODUCED_IN(12);
 
 __END_DECLS
 

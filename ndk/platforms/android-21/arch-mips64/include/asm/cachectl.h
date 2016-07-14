@@ -18,10 +18,10 @@
  ****************************************************************************/
 #ifndef _ASM_CACHECTL
 #define _ASM_CACHECTL
-#define ICACHE (1<<0)
-#define DCACHE (1<<1)
+#define ICACHE (1 << 0)
+#define DCACHE (1 << 1)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define BCACHE (ICACHE|DCACHE)
+#define BCACHE (ICACHE | DCACHE)
 #define CACHEABLE 0
 #define UNCACHEABLE 1
 #endif

@@ -7,24 +7,33 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _LINUX_UDP_H
-#define _LINUX_UDP_H
-
+#ifndef _UAPI_LINUX_UDP_H
+#define _UAPI_LINUX_UDP_H
 #include <linux/types.h>
-
-struct udphdr {
- __u16 source;
- __u16 dest;
- __u16 len;
- __u16 check;
+struct __kernel_udphdr {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __be16 source;
+  __be16 dest;
+  __be16 len;
+  __sum16 check;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-
-#define UDP_CORK 1  
-#define UDP_ENCAP 100  
-
-#define UDP_ENCAP_ESPINUDP_NON_IKE 1  
-#define UDP_ENCAP_ESPINUDP 2  
-
+#define UDP_CORK 1
+#define UDP_ENCAP 100
+#define UDP_NO_CHECK6_TX 101
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define UDP_NO_CHECK6_RX 102
+#define UDP_ENCAP_ESPINUDP_NON_IKE 1
+#define UDP_ENCAP_ESPINUDP 2
+#define UDP_ENCAP_L2TPINUDP 3
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif

@@ -26,168 +26,248 @@
 #define FP_XSTATE_MAGIC2_SIZE sizeof(FP_XSTATE_MAGIC2)
 struct _fpx_sw_bytes {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 magic1;
- __u32 extended_size;
- __u64 xstate_bv;
- __u32 xstate_size;
+  __u32 magic1;
+  __u32 extended_size;
+  __u64 xfeatures;
+  __u32 xstate_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 padding[7];
+  __u32 padding[7];
 };
-#ifdef __i386__
 struct _fpreg {
+  __u16 significand[4];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned short significand[4];
- unsigned short exponent;
+  __u16 exponent;
 };
 struct _fpxreg {
+  __u16 significand[4];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned short significand[4];
- unsigned short exponent;
- unsigned short padding[3];
+  __u16 exponent;
+  __u16 padding[3];
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct _xmmreg {
- unsigned long element[4];
-};
-struct _fpstate {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long cw;
- unsigned long sw;
- unsigned long tag;
- unsigned long ipoff;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long cssel;
- unsigned long dataoff;
- unsigned long datasel;
- struct _fpreg _st[8];
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned short status;
- unsigned short magic;
- unsigned long _fxsr_env[6];
- unsigned long mxcsr;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long reserved;
- struct _fpxreg _fxsr_st[8];
- struct _xmmreg _xmm[8];
- unsigned long padding1[44];
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- union {
- unsigned long padding2[12];
- struct _fpx_sw_bytes sw_reserved;
- };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 element[4];
 };
 #define X86_FXSR_MAGIC 0x0000
-struct sigcontext {
- unsigned short gs, __gsh;
+struct _fpstate_32 {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned short fs, __fsh;
- unsigned short es, __esh;
- unsigned short ds, __dsh;
- unsigned long edi;
+  __u32 cw;
+  __u32 sw;
+  __u32 tag;
+  __u32 ipoff;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long esi;
- unsigned long ebp;
- unsigned long esp;
- unsigned long ebx;
+  __u32 cssel;
+  __u32 dataoff;
+  __u32 datasel;
+  struct _fpreg _st[8];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long edx;
- unsigned long ecx;
- unsigned long eax;
- unsigned long trapno;
+  __u16 status;
+  __u16 magic;
+  __u32 _fxsr_env[6];
+  __u32 mxcsr;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long err;
- unsigned long eip;
- unsigned short cs, __csh;
- unsigned long eflags;
+  __u32 reserved;
+  struct _fpxreg _fxsr_st[8];
+  struct _xmmreg _xmm[8];
+  union {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long esp_at_signal;
- unsigned short ss, __ssh;
- struct _fpstate __user *fpstate;
- unsigned long oldmask;
+    __u32 padding1[44];
+    __u32 padding[44];
+  };
+  union {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long cr2;
+    __u32 padding2[12];
+    struct _fpx_sw_bytes sw_reserved;
+  };
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct _fpstate_64 {
+  __u16 cwd;
+  __u16 swd;
+  __u16 twd;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u16 fop;
+  __u64 rip;
+  __u64 rdp;
+  __u32 mxcsr;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 mxcsr_mask;
+  __u32 st_space[32];
+  __u32 xmm_space[64];
+  __u32 reserved2[12];
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  union {
+    __u32 reserved3[12];
+    struct _fpx_sw_bytes sw_reserved;
+  };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
+#ifdef __i386__
+#define _fpstate _fpstate_32
 #else
-struct _fpstate {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u16 cwd;
- __u16 swd;
- __u16 twd;
- __u16 fop;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 rip;
- __u64 rdp;
- __u32 mxcsr;
- __u32 mxcsr_mask;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 st_space[32];
- __u32 xmm_space[64];
- __u32 reserved2[12];
- union {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 reserved3[12];
- struct _fpx_sw_bytes sw_reserved;
- };
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct sigcontext {
- __u64 r8;
- __u64 r9;
- __u64 r10;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 r11;
- __u64 r12;
- __u64 r13;
- __u64 r14;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 r15;
- __u64 rdi;
- __u64 rsi;
- __u64 rbp;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 rbx;
- __u64 rdx;
- __u64 rax;
- __u64 rcx;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 rsp;
- __u64 rip;
- __u64 eflags;
- __u16 cs;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u16 gs;
- __u16 fs;
- __u16 __pad0;
- __u64 err;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 trapno;
- __u64 oldmask;
- __u64 cr2;
- struct _fpstate __user *fpstate;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#ifdef __ILP32__
- __u32 __fpstate_pad;
+#define _fpstate _fpstate_64
 #endif
- __u64 reserved1[8];
+struct _header {
+  __u64 xfeatures;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-};
-#endif
-struct _xsave_hdr {
- __u64 xstate_bv;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 reserved1[2];
- __u64 reserved2[5];
+  __u64 reserved1[2];
+  __u64 reserved2[5];
 };
 struct _ymmh_state {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 ymmh_space[64];
+  __u32 ymmh_space[64];
 };
 struct _xstate {
- struct _fpstate fpstate;
+  struct _fpstate fpstate;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- struct _xsave_hdr xstate_hdr;
- struct _ymmh_state ymmh;
+  struct _header xstate_hdr;
+  struct _ymmh_state ymmh;
 };
+struct sigcontext_32 {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u16 gs, __gsh;
+  __u16 fs, __fsh;
+  __u16 es, __esh;
+  __u16 ds, __dsh;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 di;
+  __u32 si;
+  __u32 bp;
+  __u32 sp;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 bx;
+  __u32 dx;
+  __u32 cx;
+  __u32 ax;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 trapno;
+  __u32 err;
+  __u32 ip;
+  __u16 cs, __csh;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 flags;
+  __u32 sp_at_signal;
+  __u16 ss, __ssh;
+  __u32 fpstate;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 oldmask;
+  __u32 cr2;
+};
+struct sigcontext_64 {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 r8;
+  __u64 r9;
+  __u64 r10;
+  __u64 r11;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 r12;
+  __u64 r13;
+  __u64 r14;
+  __u64 r15;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 di;
+  __u64 si;
+  __u64 bp;
+  __u64 bx;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 dx;
+  __u64 ax;
+  __u64 cx;
+  __u64 sp;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 ip;
+  __u64 flags;
+  __u16 cs;
+  __u16 gs;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u16 fs;
+  __u16 __pad0;
+  __u64 err;
+  __u64 trapno;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 oldmask;
+  __u64 cr2;
+  __u64 fpstate;
+  __u64 reserved1[8];
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
+#define _fpstate_ia32 _fpstate_32
+#define sigcontext_ia32 sigcontext_32
+#ifdef __i386__
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct sigcontext {
+  __u16 gs, __gsh;
+  __u16 fs, __fsh;
+  __u16 es, __esh;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u16 ds, __dsh;
+  __u32 edi;
+  __u32 esi;
+  __u32 ebp;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 esp;
+  __u32 ebx;
+  __u32 edx;
+  __u32 ecx;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 eax;
+  __u32 trapno;
+  __u32 err;
+  __u32 eip;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u16 cs, __csh;
+  __u32 eflags;
+  __u32 esp_at_signal;
+  __u16 ss, __ssh;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  struct _fpstate __user * fpstate;
+  __u32 oldmask;
+  __u32 cr2;
+};
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#else
+struct sigcontext {
+  __u64 r8;
+  __u64 r9;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 r10;
+  __u64 r11;
+  __u64 r12;
+  __u64 r13;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 r14;
+  __u64 r15;
+  __u64 rdi;
+  __u64 rsi;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 rbp;
+  __u64 rbx;
+  __u64 rdx;
+  __u64 rax;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 rcx;
+  __u64 rsp;
+  __u64 rip;
+  __u64 eflags;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u16 cs;
+  __u16 gs;
+  __u16 fs;
+  __u16 __pad0;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 err;
+  __u64 trapno;
+  __u64 oldmask;
+  __u64 cr2;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  struct _fpstate __user * fpstate;
+#ifdef __ILP32__
+  __u32 __fpstate_pad;
+#endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u64 reserved1[8];
+};
+#endif
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

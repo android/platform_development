@@ -25,16 +25,16 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-#ifndef _STDLIB_H_
-#define _STDLIB_H_
+
+#ifndef _STDLIB_H
+#define _STDLIB_H
 
 #include <sys/cdefs.h>
+#include <xlocale.h>
 
-#include <stddef.h>
-#include <string.h>
 #include <alloca.h>
-#include <strings.h>
-#include <memory.h>
+#include <malloc.h>
+#include <stddef.h>
 
 __BEGIN_DECLS
 
@@ -43,13 +43,11 @@ __BEGIN_DECLS
 
 extern __noreturn void abort(void);
 extern __noreturn void exit(int);
-extern __noreturn void _Exit(int);
+extern __noreturn void _Exit(int) __INTRODUCED_IN(21);
 extern int atexit(void (*)(void));
 
-#if __ISO_C_VISIBLE >= 2011 || __cplusplus >= 201103L
-int at_quick_exit(void (*)(void));
-void quick_exit(int) __noreturn;
-#endif
+int at_quick_exit(void (*)(void)) __INTRODUCED_IN(21);
+void quick_exit(int) __noreturn __INTRODUCED_IN(21);
 
 extern char* getenv(const char*);
 extern int putenv(char*);
@@ -58,37 +56,46 @@ extern int unsetenv(const char*);
 extern int clearenv(void);
 
 extern char* mkdtemp(char*);
-extern char* mktemp(char*) __warnattr("mktemp possibly used unsafely; consider using mkstemp");
+extern char* mktemp(char*) __attribute__((deprecated("mktemp is unsafe, use mkstemp or tmpfile instead")));
+
+extern int mkostemp64(char*, int) __INTRODUCED_IN(23);
+extern int mkostemp(char*, int) __INTRODUCED_IN(23);
+extern int mkostemps64(char*, int, int) __INTRODUCED_IN(23);
+extern int mkostemps(char*, int, int) __INTRODUCED_IN(23);
+extern int mkstemp64(char*) __INTRODUCED_IN(21);
 extern int mkstemp(char*);
-extern int mkstemp64(char*);
+extern int mkstemps64(char*, int) __INTRODUCED_IN(23);
+extern int mkstemps(char*, int);
 
 extern long strtol(const char *, char **, int);
 extern long long strtoll(const char *, char **, int);
 extern unsigned long strtoul(const char *, char **, int);
 extern unsigned long long strtoull(const char *, char **, int);
 
-extern int posix_memalign(void **memptr, size_t alignment, size_t size);
+extern int posix_memalign(void** memptr, size_t alignment, size_t size) __INTRODUCED_IN(16);
 
-extern double atof(const char*) __NDK_FPABI__;
+__BIONIC_LEGACY_INLINE double atof(const char*);
 
-extern double strtod(const char*, char**) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
-extern float strtof(const char*, char**) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
-extern long double strtold(const char*, char**) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
+extern double strtod(const char*, char**) __LIBC_ABI_PUBLIC__;
+__BIONIC_LEGACY_INLINE float strtof(const char*, char**) __LIBC_ABI_PUBLIC__;
+extern long double strtold(const char*, char**) __LIBC_ABI_PUBLIC__ __INTRODUCED_IN(21);
 
-extern long double strtold_l(const char *, char **, locale_t) __LIBC_ABI_PUBLIC__ __NDK_FPABI__;
-extern long long strtoll_l(const char *, char **, int, locale_t) __LIBC_ABI_PUBLIC__;
-extern unsigned long long strtoull_l(const char *, char **, int, locale_t) __LIBC_ABI_PUBLIC__;
+extern long double strtold_l(const char*, char**, locale_t) __LIBC_ABI_PUBLIC__ __INTRODUCED_IN(21);
+extern long long strtoll_l(const char*, char**, int, locale_t) __LIBC_ABI_PUBLIC__
+  __INTRODUCED_IN(21);
+extern unsigned long long strtoull_l(const char*, char**, int, locale_t) __LIBC_ABI_PUBLIC__
+  __INTRODUCED_IN(21);
 
 extern int atoi(const char*) __purefunc;
 extern long atol(const char*) __purefunc;
 extern long long atoll(const char*) __purefunc;
 
-extern int abs(int) __pure2;
-extern long labs(long) __pure2;
-extern long long llabs(long long) __pure2;
+__BIONIC_LEGACY_INLINE int abs(int) __pure2;
+__BIONIC_LEGACY_INLINE long labs(long) __pure2;
+__BIONIC_LEGACY_INLINE long long llabs(long long) __pure2;
 
 extern char * realpath(const char *path, char *resolved);
-extern int system(const char * string);
+extern int system(const char *string);
 
 extern void * bsearch(const void *key, const void *base0,
 	size_t nmemb, size_t size,
@@ -96,36 +103,39 @@ extern void * bsearch(const void *key, const void *base0,
 
 extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
 
-extern long jrand48(unsigned short *);
-extern long mrand48(void);
-extern long nrand48(unsigned short *);
-extern long lrand48(void);
-extern unsigned short *seed48(unsigned short*);
-extern double erand48(unsigned short xsubi[3]) __NDK_FPABI__;
-extern double drand48(void) __NDK_FPABI__;
-extern void srand48(long);
-
-unsigned int arc4random(void);
-unsigned int arc4random_uniform(unsigned int);
+uint32_t arc4random(void);
+uint32_t arc4random_uniform(uint32_t);
 void arc4random_buf(void*, size_t);
 
 #define RAND_MAX 0x7fffffff
 
-int rand(void);
-int rand_r(unsigned int*);
-void srand(unsigned int);
+__BIONIC_LEGACY_INLINE int rand(void);
+int rand_r(unsigned int*) __INTRODUCED_IN(21);
+__BIONIC_LEGACY_INLINE void srand(unsigned int);
 
-char* initstate(unsigned int, char*, size_t);
-long random(void);
-char* setstate(char*);
-void srandom(unsigned int);
+double drand48(void);
+double erand48(unsigned short[3]);
+long jrand48(unsigned short[3]);
+void lcong48(unsigned short[7]) __INTRODUCED_IN(23);
+long lrand48(void);
+long mrand48(void);
+long nrand48(unsigned short[3]);
+unsigned short* seed48(unsigned short[3]);
+void srand48(long);
+
+char* initstate(unsigned int, char*, size_t) __INTRODUCED_IN(21);
+__BIONIC_LEGACY_INLINE long random(void);
+char* setstate(char*) __INTRODUCED_IN(21);
+__BIONIC_LEGACY_INLINE void srandom(unsigned int);
 
 int getpt(void);
-int grantpt(int);
-int posix_openpt(int);
-char* ptsname(int) __warnattr("ptsname is not thread-safe; use ptsname_r instead");
+__BIONIC_LEGACY_INLINE int grantpt(int);
+int posix_openpt(int) __INTRODUCED_IN(21);
+char* ptsname(int);
 int ptsname_r(int, char*, size_t);
 int unlockpt(int);
+
+int getsubopt(char**, char* const*, char**) __INTRODUCED_IN_FUTURE;
 
 typedef struct {
     int  quot;
@@ -149,21 +159,41 @@ typedef struct {
 extern lldiv_t   lldiv(long long, long long) __pure2;
 
 /* BSD compatibility. */
-extern const char* getprogname(void);
-extern void setprogname(const char*);
+extern const char* getprogname(void) __INTRODUCED_IN(21);
+extern void setprogname(const char*) __INTRODUCED_IN(21);
 
-/* make STLPort happy */
-extern int      mblen(const char *, size_t);
-extern size_t   mbstowcs(wchar_t *, const char *, size_t);
-extern int      mbtowc(wchar_t *, const char *, size_t);
+int mblen(const char*, size_t) __INTRODUCED_IN_FUTURE;
+size_t mbstowcs(wchar_t*, const char*, size_t);
+int mbtowc(wchar_t*, const char*, size_t) __INTRODUCED_IN(21);
+int wctomb(char*, wchar_t) __INTRODUCED_IN(21);
+size_t wcstombs(char*, const wchar_t*, size_t);
 
-/* Likewise, make libstdc++-v3 happy.  */
-extern int	wctomb(char *, wchar_t);
-extern size_t	wcstombs(char *, const wchar_t *, size_t);
-
-extern size_t __ctype_get_mb_cur_max(void);
+extern size_t __ctype_get_mb_cur_max(void) __INTRODUCED_IN(21);
 #define MB_CUR_MAX __ctype_get_mb_cur_max()
+
+#if defined(__BIONIC_FORTIFY)
+
+extern char* __realpath_real(const char*, char*) __RENAME(realpath);
+__errordecl(__realpath_size_error, "realpath output parameter must be NULL or a >= PATH_MAX bytes buffer");
+
+#if !defined(__clang__)
+__BIONIC_FORTIFY_INLINE
+char* realpath(const char* path, char* resolved) {
+    size_t bos = __bos(resolved);
+
+    /* PATH_MAX is unavailable without polluting the namespace, but it's always 4096 on Linux */
+    if (bos != __BIONIC_FORTIFY_UNKNOWN_SIZE && bos < 4096) {
+        __realpath_size_error();
+    }
+
+    return __realpath_real(path, resolved);
+}
+#endif
+
+#endif /* defined(__BIONIC_FORTIFY) */
 
 __END_DECLS
 
-#endif /* _STDLIB_H_ */
+#include <android/legacy_stdlib_inlines.h>
+
+#endif /* _STDLIB_H */

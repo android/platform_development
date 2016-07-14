@@ -19,7 +19,7 @@
 #ifndef __ASM_SGIDEFS_H
 #define __ASM_SGIDEFS_H
 #ifndef __linux__
-#error Use a Linux compiler or give up.
+#error Use a Linux compiler or give up .
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif
 #define _MIPS_ISA_MIPS1 1

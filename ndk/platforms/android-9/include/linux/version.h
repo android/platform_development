@@ -7,7 +7,14 @@
  ***   structures, and macros generated from the original header, and thus,
  ***   contains no copyrightable information.
  ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
  ****************************************************************************
  ****************************************************************************/
-#define LINUX_VERSION_CODE 132626
+#define LINUX_VERSION_CODE 263179
 #define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))

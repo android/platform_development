@@ -38,107 +38,14 @@
 #ifndef _ARM32_ASM_H_
 #define _ARM32_ASM_H_
 
-#ifdef __ELF__
-# define _C_LABEL(x)	x
-#else
-# ifdef __STDC__
-#  define _C_LABEL(x)	_ ## x
-# else
-#  define _C_LABEL(x)	_/**/x
-# endif
-#endif
-#define	_ASM_LABEL(x)	x
+#define __bionic_asm_align 0
 
-#ifdef __STDC__
-# define __CONCAT(x,y)	x ## y
-# define __STRING(x)	#x
-#else
-# define __CONCAT(x,y)	x/**/y
-# define __STRING(x)	"x"
-#endif
+#undef __bionic_asm_custom_entry
+#undef __bionic_asm_custom_end
+#define __bionic_asm_custom_entry(f) .fnstart
+#define __bionic_asm_custom_end(f) .fnend
 
-#ifndef _ALIGN_TEXT
-# define _ALIGN_TEXT .align 0
-#endif
-
-/*
- * gas/arm uses @ as a single comment character and thus cannot be used here
- * Instead it recognised the # instead of an @ symbols in .type directives
- * We define a couple of macros so that assembly code will not be dependant
- * on one or the other.
- */
-#define _ASM_TYPE_FUNCTION	#function
-#define _ASM_TYPE_OBJECT	#object
-#define _ENTRY(x) \
-	.text; _ALIGN_TEXT; .globl x; .type x,_ASM_TYPE_FUNCTION; x: .fnstart
-
-#define _ASM_SIZE(x)	.size x, .-x;
-
-#define _END(x) \
-	.fnend; \
-	_ASM_SIZE(x)
-
-#ifdef GPROF
-# ifdef __ELF__
-#  define _PROF_PROLOGUE	\
-	mov ip, lr; bl __mcount
-# else
-#  define _PROF_PROLOGUE	\
-	mov ip,lr; bl mcount
-# endif
-#else
-# define _PROF_PROLOGUE
-#endif
-
-#define	ENTRY(y)	_ENTRY(_C_LABEL(y)); _PROF_PROLOGUE
-#define	ENTRY_NP(y)	_ENTRY(_C_LABEL(y))
-#define	END(y)		_END(_C_LABEL(y))
-#define	ASENTRY(y)	_ENTRY(_ASM_LABEL(y)); _PROF_PROLOGUE
-#define	ASENTRY_NP(y)	_ENTRY(_ASM_LABEL(y))
-#define	ASEND(y)	_END(_ASM_LABEL(y))
-
-#ifdef __ELF__
-#define ENTRY_PRIVATE(y)  ENTRY(y); .hidden _C_LABEL(y)
-#else
-#define ENTRY_PRIVATE(y)  ENTRY(y)
-#endif
-
-#define	ASMSTR		.asciz
-
-#if defined(__ELF__) && defined(PIC)
-#ifdef __STDC__
-#define	PIC_SYM(x,y)	x ## ( ## y ## )
-#else
-#define	PIC_SYM(x,y)	x/**/(/**/y/**/)
-#endif
-#else
-#define	PIC_SYM(x,y)	x
-#endif
-
-#ifdef __ELF__
-#define RCSID(x)	.section ".ident"; .asciz x
-#else
-#define RCSID(x)	.text; .asciz x
-#endif
-
-#ifdef __ELF__
-#define	WEAK_ALIAS(alias,sym)						\
-	.weak alias;							\
-	alias = sym
-#endif
-
-#ifdef __STDC__
-#define	WARN_REFERENCES(sym,msg)					\
-	.stabs msg ## ,30,0,0,0 ;					\
-	.stabs __STRING(_C_LABEL(sym)) ## ,1,0,0,0
-#elif defined(__ELF__)
-#define	WARN_REFERENCES(sym,msg)					\
-	.stabs msg,30,0,0,0 ;						\
-	.stabs __STRING(sym),1,0,0,0
-#else
-#define	WARN_REFERENCES(sym,msg)					\
-	.stabs msg,30,0,0,0 ;						\
-	.stabs __STRING(_/**/sym),1,0,0,0
-#endif /* __STDC__ */
+#undef __bionic_asm_function_type
+#define __bionic_asm_function_type #function
 
 #endif /* !_ARM_ASM_H_ */

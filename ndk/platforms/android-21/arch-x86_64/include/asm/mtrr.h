@@ -26,54 +26,54 @@
 #ifdef __i386__
 struct mtrr_sentry {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long base;
- unsigned int size;
- unsigned int type;
+  unsigned long base;
+  unsigned int size;
+  unsigned int type;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mtrr_gentry {
- unsigned int regnum;
- unsigned long base;
- unsigned int size;
+  unsigned int regnum;
+  unsigned long base;
+  unsigned int size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned int type;
+  unsigned int type;
 };
 #else
 struct mtrr_sentry {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 base;
- __u32 size;
- __u32 type;
+  __u64 base;
+  __u32 size;
+  __u32 type;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mtrr_gentry {
- __u64 base;
- __u32 size;
- __u32 regnum;
+  __u64 base;
+  __u32 size;
+  __u32 regnum;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 type;
- __u32 _pad;
+  __u32 type;
+  __u32 _pad;
 };
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mtrr_var_range {
- __u32 base_lo;
- __u32 base_hi;
- __u32 mask_lo;
+  __u32 base_lo;
+  __u32 base_hi;
+  __u32 mask_lo;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 mask_hi;
+  __u32 mask_hi;
 };
 typedef __u8 mtrr_type;
 #define MTRR_NUM_FIXED_RANGES 88
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MTRR_MAX_VAR_RANGES 256
 struct mtrr_state_type {
- struct mtrr_var_range var_ranges[MTRR_MAX_VAR_RANGES];
- mtrr_type fixed_ranges[MTRR_NUM_FIXED_RANGES];
+  struct mtrr_var_range var_ranges[MTRR_MAX_VAR_RANGES];
+  mtrr_type fixed_ranges[MTRR_NUM_FIXED_RANGES];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned char enabled;
- unsigned char have_fixed;
- mtrr_type def_type;
+  unsigned char enabled;
+  unsigned char have_fixed;
+  mtrr_type def_type;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MTRRphysBase_MSR(reg) (0x200 + 2 * (reg))
@@ -98,4 +98,6 @@ struct mtrr_state_type {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MTRR_TYPE_WRBACK 6
 #define MTRR_NUM_TYPES 7
+#define MTRR_TYPE_INVALID 0xff
 #endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

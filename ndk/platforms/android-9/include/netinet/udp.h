@@ -25,31 +25,29 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _NETINET_UDP_H
 #define _NETINET_UDP_H
 
-/*
- * We would include linux/udp.h, but it brings in too much other stuff
- */
+#include <sys/types.h>
 
-#ifdef __FAVOR_BSD
+#include <linux/udp.h>
 
 struct udphdr {
-    u_int16_t uh_sport;	/* source port */
-    u_int16_t uh_dport;	/* destination port */
-    u_int16_t uh_ulen;	/* udp length */
-    u_int16_t uh_sum;	/* udp checksum */
+    __extension__ union {
+        struct /* BSD names */ {
+            u_int16_t uh_sport;
+            u_int16_t uh_dport;
+            u_int16_t uh_ulen;
+            u_int16_t uh_sum;
+        };
+        struct /* Linux names */ {
+            u_int16_t source;
+            u_int16_t dest;
+            u_int16_t len;
+            u_int16_t check;
+        };
+    };
 };
-
-#else
-
-struct udphdr {
-    __u16  source;
-    __u16  dest;
-    __u16  len;
-    __u16  check;
-};
-
-#endif /* __FAVOR_BSD */
 
 #endif /* _NETINET_UDP_H */

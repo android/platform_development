@@ -25,21 +25,54 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_SELECT_H_
 #define _SYS_SELECT_H_
 
-#include <sys/cdefs.h>
-#include <sys/time.h>
-#include <sys/types.h>
+#include <linux/time.h>
 #include <signal.h>
+#include <sys/cdefs.h>
+#include <sys/types.h>
 
 __BEGIN_DECLS
 
-typedef __kernel_fd_set   fd_set;
+#define FD_SETSIZE 1024
+#define NFDBITS (8 * sizeof(unsigned long))
+#define __FDSET_LONGS (FD_SETSIZE/NFDBITS)
 
-extern int select(int, fd_set *, fd_set *, fd_set *, struct timeval *);
-extern int pselect(int n, fd_set *readfds, fd_set *writefds, fd_set *errfds,
-                   const struct timespec *timeout, const sigset_t *sigmask);
+typedef struct {
+  unsigned long fds_bits[__FDSET_LONGS];
+} fd_set;
+
+#define __FDELT(fd) ((fd) / NFDBITS)
+#define __FDMASK(fd) (1UL << ((fd) % NFDBITS))
+#define __FDS_BITS(set) (((fd_set*)(set))->fds_bits)
+
+/* Inline loop so we don't have to declare memset. */
+#define FD_ZERO(set) \
+  do { \
+    size_t __i; \
+    for (__i = 0; __i < __FDSET_LONGS; ++__i) { \
+      (set)->fds_bits[__i] = 0; \
+    } \
+  } while (0)
+
+extern void __FD_CLR_chk(int, fd_set*, size_t) __INTRODUCED_IN(21);
+extern void __FD_SET_chk(int, fd_set*, size_t) __INTRODUCED_IN(21);
+extern int __FD_ISSET_chk(int, fd_set*, size_t) __INTRODUCED_IN(21);
+
+#if defined(__BIONIC_FORTIFY)
+#define FD_CLR(fd, set) __FD_CLR_chk(fd, set, __bos(set))
+#define FD_SET(fd, set) __FD_SET_chk(fd, set, __bos(set))
+#define FD_ISSET(fd, set) __FD_ISSET_chk(fd, set, __bos(set))
+#else
+#define FD_CLR(fd, set) (__FDS_BITS(set)[__FDELT(fd)] &= ~__FDMASK(fd))
+#define FD_SET(fd, set) (__FDS_BITS(set)[__FDELT(fd)] |= __FDMASK(fd))
+#define FD_ISSET(fd, set) ((__FDS_BITS(set)[__FDELT(fd)] & __FDMASK(fd)) != 0)
+#endif /* defined(__BIONIC_FORTIFY) */
+
+extern int select(int, fd_set*, fd_set*, fd_set*, struct timeval*);
+extern int pselect(int, fd_set*, fd_set*, fd_set*, const struct timespec*, const sigset_t*);
 
 __END_DECLS
 

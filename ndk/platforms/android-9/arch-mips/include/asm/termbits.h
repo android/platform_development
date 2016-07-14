@@ -26,84 +26,84 @@ typedef unsigned int tcflag_t;
 #define NCCS 23
 struct termios {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- tcflag_t c_iflag;
- tcflag_t c_oflag;
- tcflag_t c_cflag;
- tcflag_t c_lflag;
+  tcflag_t c_iflag;
+  tcflag_t c_oflag;
+  tcflag_t c_cflag;
+  tcflag_t c_lflag;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- cc_t c_line;
- cc_t c_cc[NCCS];
+  cc_t c_line;
+  cc_t c_cc[NCCS];
 };
 struct termios2 {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- tcflag_t c_iflag;
- tcflag_t c_oflag;
- tcflag_t c_cflag;
- tcflag_t c_lflag;
+  tcflag_t c_iflag;
+  tcflag_t c_oflag;
+  tcflag_t c_cflag;
+  tcflag_t c_lflag;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- cc_t c_line;
- cc_t c_cc[NCCS];
- speed_t c_ispeed;
- speed_t c_ospeed;
+  cc_t c_line;
+  cc_t c_cc[NCCS];
+  speed_t c_ispeed;
+  speed_t c_ospeed;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct ktermios {
- tcflag_t c_iflag;
- tcflag_t c_oflag;
+  tcflag_t c_iflag;
+  tcflag_t c_oflag;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- tcflag_t c_cflag;
- tcflag_t c_lflag;
- cc_t c_line;
- cc_t c_cc[NCCS];
+  tcflag_t c_cflag;
+  tcflag_t c_lflag;
+  cc_t c_line;
+  cc_t c_cc[NCCS];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- speed_t c_ispeed;
- speed_t c_ospeed;
+  speed_t c_ispeed;
+  speed_t c_ospeed;
 };
-#define VINTR 0  
+#define VINTR 0
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VQUIT 1  
-#define VERASE 2  
-#define VKILL 3  
-#define VMIN 4  
+#define VQUIT 1
+#define VERASE 2
+#define VKILL 3
+#define VMIN 4
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VTIME 5  
-#define VEOL2 6  
-#define VSWTC 7  
+#define VTIME 5
+#define VEOL2 6
+#define VSWTC 7
 #define VSWTCH VSWTC
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VSTART 8  
-#define VSTOP 9  
-#define VSUSP 10  
-#define VREPRINT 12  
+#define VSTART 8
+#define VSTOP 9
+#define VSUSP 10
+#define VREPRINT 12
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VDISCARD 13  
-#define VWERASE 14  
-#define VLNEXT 15  
-#define VEOF 16  
+#define VDISCARD 13
+#define VWERASE 14
+#define VLNEXT 15
+#define VEOF 16
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEOL 17  
-#define IGNBRK 0000001  
-#define BRKINT 0000002  
-#define IGNPAR 0000004  
+#define VEOL 17
+#define IGNBRK 0000001
+#define BRKINT 0000002
+#define IGNPAR 0000004
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define PARMRK 0000010  
-#define INPCK 0000020  
-#define ISTRIP 0000040  
-#define INLCR 0000100  
+#define PARMRK 0000010
+#define INPCK 0000020
+#define ISTRIP 0000040
+#define INLCR 0000100
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IGNCR 0000200  
-#define ICRNL 0000400  
-#define IUCLC 0001000  
-#define IXON 0002000  
+#define IGNCR 0000200
+#define ICRNL 0000400
+#define IUCLC 0001000
+#define IXON 0002000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IXANY 0004000  
-#define IXOFF 0010000  
-#define IMAXBEL 0020000  
-#define IUTF8 0040000  
+#define IXANY 0004000
+#define IXOFF 0010000
+#define IMAXBEL 0020000
+#define IUTF8 0040000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define OPOST 0000001  
-#define OLCUC 0000002  
-#define ONLCR 0000004  
+#define OPOST 0000001
+#define OLCUC 0000002
+#define ONLCR 0000004
 #define OCRNL 0000010
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define ONOCR 0000020
@@ -141,7 +141,7 @@ struct ktermios {
 #define FF1 0100000
 #define CBAUD 0010017
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define B0 0000000  
+#define B0 0000000
 #define B50 0000001
 #define B75 0000002
 #define B110 0000003
@@ -163,20 +163,20 @@ struct ktermios {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define EXTA B19200
 #define EXTB B38400
-#define CSIZE 0000060  
-#define CS5 0000000  
+#define CSIZE 0000060
+#define CS5 0000000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define CS6 0000020  
-#define CS7 0000040  
-#define CS8 0000060  
-#define CSTOPB 0000100  
+#define CS6 0000020
+#define CS7 0000040
+#define CS8 0000060
+#define CSTOPB 0000100
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define CREAD 0000200  
-#define PARENB 0000400  
-#define PARODD 0001000  
-#define HUPCL 0002000  
+#define CREAD 0000200
+#define PARENB 0000400
+#define PARODD 0001000
+#define HUPCL 0002000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define CLOCAL 0004000  
+#define CLOCAL 0004000
 #define CBAUDEX 0010000
 #define BOTHER 0010000
 #define B57600 0010001
@@ -198,43 +198,44 @@ struct ktermios {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define B3500000 0010016
 #define B4000000 0010017
-#define CIBAUD 002003600000  
-#define CMSPAR 010000000000  
+#define CIBAUD 002003600000
+#define CMSPAR 010000000000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define CRTSCTS 020000000000  
-#define IBSHIFT 16  
-#define ISIG 0000001  
-#define ICANON 0000002  
+#define CRTSCTS 020000000000
+#define IBSHIFT 16
+#define ISIG 0000001
+#define ICANON 0000002
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define XCASE 0000004
-#define ECHO 0000010  
-#define ECHOE 0000020  
-#define ECHOK 0000040  
+#define ECHO 0000010
+#define ECHOE 0000020
+#define ECHOK 0000040
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ECHONL 0000100  
-#define NOFLSH 0000200  
-#define IEXTEN 0000400  
-#define ECHOCTL 0001000  
+#define ECHONL 0000100
+#define NOFLSH 0000200
+#define IEXTEN 0000400
+#define ECHOCTL 0001000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ECHOPRT 0002000  
-#define ECHOKE 0004000  
+#define ECHOPRT 0002000
+#define ECHOKE 0004000
 #define FLUSHO 0020000
-#define PENDIN 0040000  
+#define PENDIN 0040000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define TOSTOP 0100000  
+#define TOSTOP 0100000
 #define ITOSTOP TOSTOP
-#define TIOCSER_TEMT 0x01  
-#define TCOOFF 0  
+#define EXTPROC 0200000
+#define TIOCSER_TEMT 0x01
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define TCOON 1  
-#define TCIOFF 2  
-#define TCION 3  
-#define TCIFLUSH 0  
+#define TCOOFF 0
+#define TCOON 1
+#define TCIOFF 2
+#define TCION 3
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define TCOFLUSH 1  
-#define TCIOFLUSH 2  
-#define TCSANOW TCSETS  
-#define TCSADRAIN TCSETSW  
+#define TCIFLUSH 0
+#define TCOFLUSH 1
+#define TCIOFLUSH 2
+#define TCSANOW TCSETS
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define TCSAFLUSH TCSETSF  
+#define TCSADRAIN TCSETSW
+#define TCSAFLUSH TCSETSF
 #endif

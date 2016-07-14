@@ -23,51 +23,51 @@
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #include <asm/ioctls.h>
 struct sgttyb {
- char sg_ispeed;
- char sg_ospeed;
+  char sg_ispeed;
+  char sg_ospeed;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- char sg_erase;
- char sg_kill;
- int sg_flags;
+  char sg_erase;
+  char sg_kill;
+  int sg_flags;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct tchars {
- char t_intrc;
- char t_quitc;
- char t_startc;
+  char t_intrc;
+  char t_quitc;
+  char t_startc;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- char t_stopc;
- char t_eofc;
- char t_brkc;
+  char t_stopc;
+  char t_eofc;
+  char t_brkc;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct ltchars {
- char t_suspc;
- char t_dsuspc;
- char t_rprntc;
+  char t_suspc;
+  char t_dsuspc;
+  char t_rprntc;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- char t_flushc;
- char t_werasc;
- char t_lnextc;
+  char t_flushc;
+  char t_werasc;
+  char t_lnextc;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct winsize {
- unsigned short ws_row;
- unsigned short ws_col;
- unsigned short ws_xpixel;
+  unsigned short ws_row;
+  unsigned short ws_col;
+  unsigned short ws_xpixel;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned short ws_ypixel;
+  unsigned short ws_ypixel;
 };
 #define NCC 8
 struct termio {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned short c_iflag;
- unsigned short c_oflag;
- unsigned short c_cflag;
- unsigned short c_lflag;
+  unsigned short c_iflag;
+  unsigned short c_oflag;
+  unsigned short c_cflag;
+  unsigned short c_lflag;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- char c_line;
- unsigned char c_cc[NCCS];
+  char c_line;
+  unsigned char c_cc[NCCS];
 };
 #define TIOCM_LE 0x001
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

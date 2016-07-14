@@ -22,7 +22,7 @@
 #include <linux/types.h>
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define __SWAB_64_THRU_32__
-#if defined(__mips_isa_rev) && __mips_isa_rev >= 2
+#if !defined(__mips16) && (defined(__mips_isa_rev) && __mips_isa_rev >= 2 || defined(_MIPS_ARCH_LOONGSON3A))
 #define __arch_swab16 __arch_swab16
 #define __arch_swab32 __arch_swab32
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

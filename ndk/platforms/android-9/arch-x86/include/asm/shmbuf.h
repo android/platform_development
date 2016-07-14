@@ -16,39 +16,4 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _ASM_X86_SHMBUF_H
-#define _ASM_X86_SHMBUF_H
-struct shmid64_ds {
- struct ipc64_perm shm_perm;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- size_t shm_segsz;
- __kernel_time_t shm_atime;
- unsigned long __unused1;
- __kernel_time_t shm_dtime;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long __unused2;
- __kernel_time_t shm_ctime;
- unsigned long __unused3;
- __kernel_pid_t shm_cpid;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __kernel_pid_t shm_lpid;
- unsigned long shm_nattch;
- unsigned long __unused4;
- unsigned long __unused5;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-};
-struct shminfo64 {
- unsigned long shmmax;
- unsigned long shmmin;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long shmmni;
- unsigned long shmseg;
- unsigned long shmall;
- unsigned long __unused1;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long __unused2;
- unsigned long __unused3;
- unsigned long __unused4;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#endif
+#include <asm-generic/shmbuf.h>

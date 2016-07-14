@@ -64,6 +64,10 @@
 #ifndef _NETINET_IP6_H_
 #define _NETINET_IP6_H_
 
+#include <sys/types.h>
+
+#include <linux/in6.h>
+
 /*
  * Definition for internet protocol version 6.
  * RFC 2460
@@ -106,20 +110,6 @@ struct ip6_hdr {
 /* ECN bits proposed by Sally Floyd */
 #define IP6TOS_CE		0x01	/* congestion experienced */
 #define IP6TOS_ECT		0x02	/* ECN-capable transport */
-#endif
-
-#ifdef _KERNEL
-/*
- * for IPv6 pseudo header checksum
- * XXX nonstandard
- */
-struct ip6_hdr_pseudo {
-	struct in6_addr ip6ph_src;
-	struct in6_addr ip6ph_dst;
-	u_int32_t	ip6ph_len;
-	u_int8_t	ip6ph_zero[3];
-	u_int8_t	ip6ph_nxt;
-} __packed;
 #endif
 
 /*
@@ -266,54 +256,5 @@ struct ip6_frag {
 
 #define IPV6_MMTU	1280	/* minimal MTU and reassembly. 1024 + 256 */
 #define IPV6_MAXPACKET	65535	/* ip6 max packet size without Jumbo payload*/
-
-#ifdef _KERNEL
-/*
- * IP6_EXTHDR_GET ensures that intermediate protocol header (from "off" to
- * "len") is located in single mbuf, on contiguous memory region.
- * The pointer to the region will be returned to pointer variable "val",
- * with type "typ".
- * IP6_EXTHDR_GET0 does the same, except that it aligns the structure at the
- * very top of mbuf.  GET0 is likely to make memory copy than GET.
- *
- * XXX we're now testing this, needs m_pulldown()
- */
-#define IP6_EXTHDR_GET(val, typ, m, off, len) \
-do {									\
-	struct mbuf *_t;						\
-	int _tmp;							\
-	if ((m)->m_len >= (off) + (len))				\
-		(val) = (typ)(mtod((m), char *) + (off));		\
-	else {								\
-		_t = m_pulldown((m), (off), (len), &_tmp);		\
-		if (_t) {						\
-			if (_t->m_len < _tmp + (len))			\
-				panic("m_pulldown malfunction");	\
-			(val) = (typ)(mtod(_t, char *) + _tmp);	\
-		} else {						\
-			(val) = (typ)NULL;				\
-			(m) = NULL;					\
-		}							\
-	}								\
-} while (/*CONSTCOND*/ 0)
-
-#define IP6_EXTHDR_GET0(val, typ, m, off, len) \
-do {									\
-	struct mbuf *_t;						\
-	if ((off) == 0 && (m)->m_len >= len)				\
-		(val) = (typ)mtod((m), void *);			\
-	else {								\
-		_t = m_pulldown((m), (off), (len), NULL);		\
-		if (_t) {						\
-			if (_t->m_len < (len))				\
-				panic("m_pulldown malfunction");	\
-			(val) = (typ)mtod(_t, void *);			\
-		} else {						\
-			(val) = (typ)NULL;				\
-			(m) = NULL;					\
-		}							\
-	}								\
-} while (/*CONSTCOND*/ 0)
-#endif /*_KERNEL*/
 
 #endif /* !_NETINET_IP6_H_ */

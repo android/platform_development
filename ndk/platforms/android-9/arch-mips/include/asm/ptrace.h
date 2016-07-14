@@ -16,34 +16,34 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _ASM_PTRACE_H
-#define _ASM_PTRACE_H
+#ifndef _UAPI_ASM_PTRACE_H
+#define _UAPI_ASM_PTRACE_H
+#include <linux/types.h>
 #define FPR_BASE 32
-#define PC 64
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define PC 64
 #define CAUSE 65
 #define BADVADDR 66
 #define MMHI 67
-#define MMLO 68
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define MMLO 68
 #define FPC_CSR 69
 #define FPC_EIR 70
-#define DSP_BASE 71  
-#define DSP_CONTROL 77
+#define DSP_BASE 71
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define DSP_CONTROL 77
 #define ACX 78
 struct pt_regs {
- unsigned long pad0[6];
- unsigned long regs[32];
+  __u64 regs[32];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long cp0_status;
- unsigned long hi;
- unsigned long lo;
- unsigned long cp0_badvaddr;
+  __u64 lo;
+  __u64 hi;
+  __u64 cp0_epc;
+  __u64 cp0_badvaddr;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long cp0_cause;
- unsigned long cp0_epc;
-} __attribute__ ((aligned (8)));
+  __u64 cp0_status;
+  __u64 cp0_cause;
+} __attribute__((aligned(8)));
 #define PTRACE_GETREGS 12
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define PTRACE_SETREGS 13
@@ -59,5 +59,36 @@ struct pt_regs {
 #define PTRACE_POKETEXT_3264 0xc2
 #define PTRACE_POKEDATA_3264 0xc3
 #define PTRACE_GET_THREAD_AREA_3264 0xc4
-#endif
+enum pt_watch_style {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  pt_watch_style_mips32,
+  pt_watch_style_mips64
+};
+struct mips32_watch_regs {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  unsigned int watchlo[8];
+  unsigned short watchhi[8];
+  unsigned short watch_masks[8];
+  unsigned int num_valid;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+} __attribute__((aligned(8)));
+struct mips64_watch_regs {
+  unsigned long long watchlo[8];
+  unsigned short watchhi[8];
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  unsigned short watch_masks[8];
+  unsigned int num_valid;
+} __attribute__((aligned(8)));
+struct pt_watch_regs {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  enum pt_watch_style style;
+  union {
+    struct mips32_watch_regs mips32;
+    struct mips64_watch_regs mips64;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  };
+};
+#define PTRACE_GET_WATCH_REGS 0xd0
+#define PTRACE_SET_WATCH_REGS 0xd1
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#endif

@@ -25,32 +25,35 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _LIBGEN_H
 #define _LIBGEN_H
 
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
+
 __BEGIN_DECLS
 
-/* our version of dirname/basename don't modify the input path */
-extern char*  dirname (const char*  path);
-extern char*  basename(const char*  path);
-
-/* special thread-safe Bionic versions
+/*
+ * Including <string.h> will get you the GNU basename, unless <libgen.h> is
+ * included, either before or after including <string.h>.
  *
- * if 'buffer' is NULL, 'bufflen' is ignored and the length of the result is returned
- * otherwise, place result in 'buffer'
- *
- * at most bufflen-1 characters written, plus a terminating zero
- *
- * return length of result, or -1 in case of error, with errno set to:
- *
- *    ERANGE:        buffer is too short
- *    ENAMETOOLONG:  the result is too long for a valid path
+ * Note that this has the wrong argument cv-qualifiers, but doesn't modify its
+ * input and uses thread-local storage for the result if necessary.
  */
-extern int    dirname_r(const char*  path, char*  buffer, size_t  bufflen);
-extern int    basename_r(const char*  path, char*  buffer, size_t  bufflen);
+extern char* __posix_basename(const char*) __RENAME(basename);
+
+#define basename __posix_basename
+
+/* This has the wrong argument cv-qualifiers, but doesn't modify its input and uses thread-local storage for the result if necessary. */
+extern char* dirname(const char*);
+
+#if !defined(__LP64__)
+/* These non-standard functions are not needed on Android; basename and dirname use thread-local storage. */
+extern int dirname_r(const char*, char*, size_t);
+extern int basename_r(const char*, char*, size_t);
+#endif
 
 __END_DECLS
 

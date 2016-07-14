@@ -25,4 +25,20 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-#include <net/if_ether.h>
+
+#ifndef _NETINET_ETHER_H_
+#define _NETINET_ETHER_H_ 1
+
+#include <sys/cdefs.h>
+#include <netinet/if_ether.h>
+
+__BEGIN_DECLS
+
+char* ether_ntoa(const struct ether_addr*) __INTRODUCED_IN(11);
+char* ether_ntoa_r(const struct ether_addr*, char*) __INTRODUCED_IN(11);
+struct ether_addr* ether_aton(const char*) __INTRODUCED_IN(11);
+struct ether_addr* ether_aton_r(const char*, struct ether_addr*) __INTRODUCED_IN(11);
+
+__END_DECLS
+
+#endif

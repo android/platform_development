@@ -52,14 +52,18 @@
 # define	_assert(e)	((void)0)
 #else
 # define	_assert(e)	assert(e)
-# if __ISO_C_VISIBLE >= 1999
+# if __STDC_VERSION__ >= 199901L
 #  define	assert(e)	((e) ? (void)0 : __assert2(__FILE__, __LINE__, __func__, #e))
 # else
 #  define	assert(e)	((e) ? (void)0 : __assert(__FILE__, __LINE__, #e))
 # endif
 #endif
 
+#if !defined(__cplusplus) && __STDC_VERSION__ >= 201112L
+#define static_assert _Static_assert
+#endif
+
 __BEGIN_DECLS
-__dead void __assert(const char *, int, const char *);
-__dead void __assert2(const char *, int, const char *, const char *);
+void __assert(const char*, int, const char*) __noreturn;
+void __assert2(const char*, int, const char*, const char*) __noreturn;
 __END_DECLS

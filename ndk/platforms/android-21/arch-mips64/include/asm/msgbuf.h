@@ -19,31 +19,31 @@
 #ifndef _ASM_MSGBUF_H
 #define _ASM_MSGBUF_H
 struct msqid64_ds {
- struct ipc64_perm msg_perm;
+  struct ipc64_perm msg_perm;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __kernel_time_t msg_stime;
+  __kernel_time_t msg_stime;
 #ifndef __mips64
- unsigned long __unused1;
+  unsigned long __unused1;
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __kernel_time_t msg_rtime;
+  __kernel_time_t msg_rtime;
 #ifndef __mips64
- unsigned long __unused2;
+  unsigned long __unused2;
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __kernel_time_t msg_ctime;
+  __kernel_time_t msg_ctime;
 #ifndef __mips64
- unsigned long __unused3;
+  unsigned long __unused3;
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long msg_cbytes;
- unsigned long msg_qnum;
- unsigned long msg_qbytes;
- __kernel_pid_t msg_lspid;
+  unsigned long msg_cbytes;
+  unsigned long msg_qnum;
+  unsigned long msg_qbytes;
+  __kernel_pid_t msg_lspid;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __kernel_pid_t msg_lrpid;
- unsigned long __unused4;
- unsigned long __unused5;
+  __kernel_pid_t msg_lrpid;
+  unsigned long __unused4;
+  unsigned long __unused5;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif

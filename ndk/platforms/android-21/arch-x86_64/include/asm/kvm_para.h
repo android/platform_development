@@ -46,15 +46,15 @@
 #define MSR_KVM_PV_EOI_EN 0x4b564d04
 struct kvm_steal_time {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 steal;
- __u32 version;
- __u32 flags;
- __u32 pad[12];
+  __u64 steal;
+  __u32 version;
+  __u32 flags;
+  __u32 pad[12];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #define KVM_STEAL_ALIGNMENT_BITS 5
-#define KVM_STEAL_VALID_BITS ((-1ULL << (KVM_STEAL_ALIGNMENT_BITS + 1)))
-#define KVM_STEAL_RESERVED_MASK (((1 << KVM_STEAL_ALIGNMENT_BITS) - 1 ) << 1)
+#define KVM_STEAL_VALID_BITS ((- 1ULL << (KVM_STEAL_ALIGNMENT_BITS + 1)))
+#define KVM_STEAL_RESERVED_MASK (((1 << KVM_STEAL_ALIGNMENT_BITS) - 1) << 1)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define KVM_MAX_MMU_OP_BATCH 32
 #define KVM_ASYNC_PF_ENABLED (1 << 0)
@@ -64,32 +64,32 @@ struct kvm_steal_time {
 #define KVM_MMU_OP_FLUSH_TLB 2
 #define KVM_MMU_OP_RELEASE_PT 3
 struct kvm_mmu_op_header {
- __u32 op;
+  __u32 op;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 pad;
+  __u32 pad;
 };
 struct kvm_mmu_op_write_pte {
- struct kvm_mmu_op_header header;
+  struct kvm_mmu_op_header header;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 pte_phys;
- __u64 pte_val;
+  __u64 pte_phys;
+  __u64 pte_val;
 };
 struct kvm_mmu_op_flush_tlb {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- struct kvm_mmu_op_header header;
+  struct kvm_mmu_op_header header;
 };
 struct kvm_mmu_op_release_pt {
- struct kvm_mmu_op_header header;
+  struct kvm_mmu_op_header header;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 pt_phys;
+  __u64 pt_phys;
 };
 #define KVM_PV_REASON_PAGE_NOT_PRESENT 1
 #define KVM_PV_REASON_PAGE_READY 2
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct kvm_vcpu_pv_apf_data {
- __u32 reason;
- __u8 pad[60];
- __u32 enabled;
+  __u32 reason;
+  __u8 pad[60];
+  __u32 enabled;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #define KVM_PV_EOI_BIT 0

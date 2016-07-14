@@ -30,15 +30,35 @@
 
 #include <sys/cdefs.h>
 #include <sys/types.h>
-/* For all of the defines */
 #include <linux/ptrace.h>
 
 __BEGIN_DECLS
 
-#define PTRACE_POKEUSER     PTRACE_POKEUSR
-#define PTRACE_PEEKUSER     PTRACE_PEEKUSR
+/* glibc uses different PTRACE_ names from the kernel for these two... */
+#define PTRACE_POKEUSER PTRACE_POKEUSR
+#define PTRACE_PEEKUSER PTRACE_PEEKUSR
 
-extern long ptrace(int request, ...);
+/* glibc exports a different set of PT_ names too... */
+#define PT_TRACE_ME PTRACE_TRACEME
+#define PT_READ_I PTRACE_PEEKTEXT
+#define PT_READ_D PTRACE_PEEKDATA
+#define PT_READ_U PTRACE_PEEKUSR
+#define PT_WRITE_I PTRACE_POKETEXT
+#define PT_WRITE_D PTRACE_POKEDATA
+#define PT_WRITE_U PTRACE_POKEUSR
+#define PT_CONT PTRACE_CONT
+#define PT_KILL PTRACE_KILL
+#define PT_STEP PTRACE_SINGLESTEP
+#define PT_GETFPREGS PTRACE_GETFPREGS
+#define PT_ATTACH PTRACE_ATTACH
+#define PT_DETACH PTRACE_DETACH
+#define PT_SYSCALL PTRACE_SYSCALL
+#define PT_SETOPTIONS PTRACE_SETOPTIONS
+#define PT_GETEVENTMSG PTRACE_GETEVENTMSG
+#define PT_GETSIGINFO PTRACE_GETSIGINFO
+#define PT_SETSIGINFO PTRACE_SETSIGINFO
+
+long ptrace(int, ...);
 
 __END_DECLS
 

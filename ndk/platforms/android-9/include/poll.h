@@ -25,17 +25,67 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _POLL_H_
 #define _POLL_H_
 
 #include <sys/cdefs.h>
 #include <linux/poll.h>
+#include <signal.h> /* For sigset_t. */
+#include <time.h> /* For timespec. */
 
 __BEGIN_DECLS
 
-typedef unsigned int  nfds_t;
+typedef unsigned int nfds_t;
 
-extern int poll(struct pollfd *, nfds_t, int);
+int poll(struct pollfd*, nfds_t, int);
+int ppoll(struct pollfd*, nfds_t, const struct timespec*, const sigset_t*) __INTRODUCED_IN(21);
+
+int __poll_chk(struct pollfd*, nfds_t, int, size_t) __INTRODUCED_IN(23);
+int __poll_real(struct pollfd*, nfds_t, int) __RENAME(poll);
+__errordecl(__poll_too_small_error, "poll: pollfd array smaller than fd count");
+
+int __ppoll_chk(struct pollfd*, nfds_t, const struct timespec*, const sigset_t*, size_t)
+  __INTRODUCED_IN(23);
+int __ppoll_real(struct pollfd*, nfds_t, const struct timespec*, const sigset_t*) __RENAME(ppoll)
+  __INTRODUCED_IN(21);
+__errordecl(__ppoll_too_small_error, "ppoll: pollfd array smaller than fd count");
+
+#if defined(__BIONIC_FORTIFY)
+
+__BIONIC_FORTIFY_INLINE
+int poll(struct pollfd* fds, nfds_t fd_count, int timeout) {
+#if defined(__clang__)
+  return __poll_chk(fds, fd_count, timeout, __bos(fds));
+#else
+  if (__bos(fds) != __BIONIC_FORTIFY_UNKNOWN_SIZE) {
+    if (!__builtin_constant_p(fd_count)) {
+      return __poll_chk(fds, fd_count, timeout, __bos(fds));
+    } else if (__bos(fds) / sizeof(*fds) < fd_count) {
+      __poll_too_small_error();
+    }
+  }
+  return __poll_real(fds, fd_count, timeout);
+#endif
+}
+
+__BIONIC_FORTIFY_INLINE
+int ppoll(struct pollfd* fds, nfds_t fd_count, const struct timespec* timeout, const sigset_t* mask) {
+#if defined(__clang__)
+  return __ppoll_chk(fds, fd_count, timeout, mask, __bos(fds));
+#else
+  if (__bos(fds) != __BIONIC_FORTIFY_UNKNOWN_SIZE) {
+    if (!__builtin_constant_p(fd_count)) {
+      return __ppoll_chk(fds, fd_count, timeout, mask, __bos(fds));
+    } else if (__bos(fds) / sizeof(*fds) < fd_count) {
+      __ppoll_too_small_error();
+    }
+  }
+  return __ppoll_real(fds, fd_count, timeout, mask);
+#endif
+}
+
+#endif
 
 __END_DECLS
 

@@ -42,8 +42,9 @@
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
-/* types */
-typedef off_t regoff_t;
+/* POSIX says regoff_t is at least as large as the larger of ptrdiff_t and
+ * ssize_t. BSD uses off_t, but that interacts badly with _FILE_OFFSET_BITS. */
+typedef ssize_t regoff_t;
 
 typedef struct {
 	int re_magic;

@@ -32,7 +32,7 @@
 #define O_LARGEFILE 0x2000
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define __O_SYNC 0x4000
-#define O_SYNC (__O_SYNC|O_DSYNC)
+#define O_SYNC (__O_SYNC | O_DSYNC)
 #define O_DIRECT 0x8000
 #define F_GETLK 14
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
@@ -51,14 +51,14 @@
 #include <linux/types.h>
 struct flock {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- short l_type;
- short l_whence;
- __kernel_off_t l_start;
- __kernel_off_t l_len;
+  short l_type;
+  short l_whence;
+  __kernel_off_t l_start;
+  __kernel_off_t l_len;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- long l_sysid;
- __kernel_pid_t l_pid;
- long pad[4];
+  long l_sysid;
+  __kernel_pid_t l_pid;
+  long pad[4];
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define HAVE_ARCH_STRUCT_FLOCK

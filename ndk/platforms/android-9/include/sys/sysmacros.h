@@ -25,28 +25,20 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_SYSMACROS_H_
 #define _SYS_SYSMACROS_H_
 
-/* some rogue code includes this file directly :-( */
-#ifndef _SYS_TYPES_H_
-# include <sys/types.h>
-#endif
+#define makedev(__major, __minor) \
+  ( \
+    (((__major) & 0xfffff000ULL) << 32) | (((__major) & 0xfffULL) << 8) | \
+    (((__minor) & 0xffffff00ULL) << 12) | (((__minor) & 0xffULL)) \
+  )
 
-static __inline__ int major(dev_t _dev)
-{
-  return (_dev >> 8) & 0xfff;
-}
+#define major(__dev) \
+  ((unsigned) ((((unsigned long long) (__dev) >> 32) & 0xfffff000) | (((__dev) >> 8) & 0xfff)))
 
-static __inline__ int minor(dev_t _dev)
-{
-  return (_dev & 0xff) | ((_dev >> 12) & 0xfff00);
-}
-
-static __inline__ dev_t makedev(int __ma, int __mi)
-{
-  return ((__ma & 0xfff) << 8) | (__mi & 0xff) | ((__mi & 0xfff00) << 12);
-}
+#define minor(__dev) \
+  ((unsigned) ((((__dev) >> 12) & 0xffffff00) | ((__dev) & 0xff)))
 
 #endif /* _SYS_SYSMACROS_H_ */
-

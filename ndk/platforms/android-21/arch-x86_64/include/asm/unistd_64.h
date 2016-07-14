@@ -413,4 +413,17 @@
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define __NR_sched_setattr 314
 #define __NR_sched_getattr 315
+#define __NR_renameat2 316
+#define __NR_seccomp 317
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_getrandom 318
+#define __NR_memfd_create 319
+#define __NR_kexec_file_load 320
+#define __NR_bpf 321
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define __NR_execveat 322
+#define __NR_userfaultfd 323
+#define __NR_membarrier 324
+#define __NR_mlock2 325
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif

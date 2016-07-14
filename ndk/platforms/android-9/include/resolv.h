@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _RESOLV_H_
 #define _RESOLV_H_
 
@@ -37,19 +38,29 @@
 #include <netinet/in.h>
 
 __BEGIN_DECLS
+#pragma GCC visibility push(default)
 
-struct res_state;
+#define b64_ntop __b64_ntop
+int b64_ntop(u_char const*, size_t, char*, size_t);
+#define b64_pton __b64_pton
+int b64_pton(char const*, u_char*, size_t);
 
-extern struct __res_state *__res_state(void);
-#define _res (*__res_state())
+#define dn_comp __dn_comp
+int dn_comp(const char*, u_char*, int, u_char**, u_char**);
 
-/* Base-64 functions - because some code expects it there */
+int dn_expand(const u_char*, const u_char*, const u_char*, char*, int);
 
-#define b64_ntop        __b64_ntop
-#define b64_pton        __b64_pton
-extern int   b64_ntop(u_char const *, size_t, char *, size_t);
-extern int   b64_pton(char const *, u_char *, size_t);
+#define p_class __p_class
+const char* p_class(int);
+#define p_type __p_type
+const char* p_type(int);
 
+int res_init(void);
+int res_mkquery(int, const char*, int, int, const u_char*, int, const u_char*, u_char*, int);
+int res_query(const char*, int, int, u_char*, int);
+int res_search(const char*, int, int, u_char*, int);
+
+#pragma GCC visibility pop
 __END_DECLS
 
 #endif /* _RESOLV_H_ */

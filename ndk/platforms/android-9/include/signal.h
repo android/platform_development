@@ -25,19 +25,28 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SIGNAL_H_
 #define _SIGNAL_H_
 
-#include <sys/cdefs.h>
-#include <limits.h>		/* For LONG_BIT */
-#include <string.h>		/* For memset() */
-#include <sys/types.h>
-#include <asm/signal.h>
 #include <asm/sigcontext.h>
+#include <bits/pthread_types.h>
+#include <bits/timespec.h>
+#include <limits.h>
+#include <sys/cdefs.h>
+#include <sys/types.h>
 
-#define __ARCH_SI_UID_T __kernel_uid32_t
-#include <asm/siginfo.h>
-#undef __ARCH_SI_UID_T
+#if defined(__LP64__) || defined(__mips__)
+/* For 64-bit (and mips), the kernel's struct sigaction doesn't match the POSIX one,
+ * so we need to expose our own and translate behind the scenes. */
+#  define sigaction __kernel_sigaction
+#  include <linux/signal.h>
+#  undef sigaction
+#else
+/* For 32-bit, we're stuck with the definitions we already shipped,
+ * even though they contain a sigset_t that's too small. */
+#  include <linux/signal.h>
+#endif
 
 #include <sys/ucontext.h>
 #define __BIONIC_HAVE_UCONTEXT_T
@@ -46,90 +55,107 @@ __BEGIN_DECLS
 
 typedef int sig_atomic_t;
 
-/* _NSIG is used by the SIGRTMAX definition under <asm/signal.h>, however
- * its definition is part of a #if __KERNEL__ .. #endif block in the original
- * kernel headers and is thus not part of our cleaned-up versions.
- *
- * Looking at the current kernel sources, it is defined as 64 for all
- * architectures except for the 'mips' one which set it to 128.
- */
-#ifndef _NSIG
-#  define _NSIG  64
+/* The arm and x86 kernel header files don't define _NSIG. */
+#ifndef _KERNEL__NSIG
+#define _KERNEL__NSIG 64
 #endif
 
-extern const char * const sys_siglist[];
-extern const char * const sys_signame[];
+/* Userspace's NSIG is the kernel's _NSIG + 1. */
+#define _NSIG (_KERNEL__NSIG + 1)
+#define NSIG _NSIG
 
-static __inline__ int sigismember(sigset_t *set, int signum)
-{
-    unsigned long *local_set = (unsigned long *)set;
-    signum--;
-    return (int)((local_set[signum/LONG_BIT] >> (signum%LONG_BIT)) & 1);
-}
+/* The kernel headers define SIG_DFL (0) and SIG_IGN (1) but not SIG_HOLD, since
+ * SIG_HOLD is only used by the deprecated SysV signal API.
+ */
+#define SIG_HOLD ((sighandler_t)(uintptr_t)2)
 
+/* We take a few real-time signals for ourselves. May as well use the same names as glibc. */
+#define SIGRTMIN (__libc_current_sigrtmin())
+#define SIGRTMAX (__libc_current_sigrtmax())
+extern int __libc_current_sigrtmin(void) __INTRODUCED_IN(21);
+extern int __libc_current_sigrtmax(void) __INTRODUCED_IN(21);
 
-static __inline__ int sigaddset(sigset_t *set, int signum)
-{
-    unsigned long *local_set = (unsigned long *)set;
-    signum--;
-    local_set[signum/LONG_BIT] |= 1UL << (signum%LONG_BIT);
-    return 0;
-}
+extern const char* const sys_siglist[];
+extern const char* const sys_signame[]; /* BSD compatibility. */
 
+typedef __sighandler_t sig_t; /* BSD compatibility. */
+typedef __sighandler_t sighandler_t; /* glibc compatibility. */
 
-static __inline__ int sigdelset(sigset_t *set, int signum)
-{
-    unsigned long *local_set = (unsigned long *)set;
-    signum--;
-    local_set[signum/LONG_BIT] &= ~(1UL << (signum%LONG_BIT));
-    return 0;
-}
+#define si_timerid si_tid /* glibc compatibility. */
 
+#if defined(__LP64__)
 
-static __inline__ int sigemptyset(sigset_t *set)
-{
-    memset(set, 0, sizeof *set);
-    return 0;
-}
+struct sigaction {
+  unsigned int sa_flags;
+  union {
+    sighandler_t sa_handler;
+    void (*sa_sigaction)(int, struct siginfo*, void*);
+  };
+  sigset_t sa_mask;
+  void (*sa_restorer)(void);
+};
 
-static __inline__ int sigfillset(sigset_t *set)
-{
-    memset(set, ~0, sizeof *set);
-    return 0;
-}
+#elif defined(__mips__)
 
+struct sigaction {
+  unsigned int sa_flags;
+  union {
+    sighandler_t sa_handler;
+    void (*sa_sigaction) (int, struct siginfo*, void*);
+  };
+  sigset_t sa_mask;
+};
 
-/* compatibility types */
-typedef void  (*sig_t)(int);
-typedef sig_t sighandler_t;
+#endif
 
-/* differentiater between sysv and bsd behaviour 8*/
-extern __sighandler_t sysv_signal(int, __sighandler_t);
-extern __sighandler_t bsd_signal(int, __sighandler_t);
+extern int sigaction(int, const struct sigaction*, struct sigaction*);
 
-/* the default is bsd */
-static __inline__ __sighandler_t signal(int s, __sighandler_t f)
-{
-    return bsd_signal(s,f);
-}
+__BIONIC_LEGACY_INLINE sighandler_t signal(int, sighandler_t);
 
-/* the syscall itself */
-extern __sighandler_t __signal(int, __sighandler_t, int);
+extern int siginterrupt(int, int);
 
-extern int sigprocmask(int, const sigset_t *, sigset_t *);
-extern int sigaction(int, const struct sigaction *, struct sigaction *);
+__BIONIC_LEGACY_INLINE int sigaddset(sigset_t*, int);
+__BIONIC_LEGACY_INLINE int sigdelset(sigset_t*, int);
+__BIONIC_LEGACY_INLINE int sigemptyset(sigset_t*);
+__BIONIC_LEGACY_INLINE int sigfillset(sigset_t*);
+__BIONIC_LEGACY_INLINE int sigismember(const sigset_t*, int);
 
-extern int sigpending(sigset_t *);
-extern int sigsuspend(const sigset_t *);
-extern int sigwait(const sigset_t *set, int *sig);
-extern int siginterrupt(int  sig, int  flag);
+extern int sigpending(sigset_t* _Nonnull);
+extern int sigprocmask(int, const sigset_t*, sigset_t*);
+extern int sigsuspend(const sigset_t* _Nonnull);
+extern int sigwait(const sigset_t* _Nonnull, int* _Nonnull);
+
+extern int sighold(int)
+  __attribute__((deprecated("use sigprocmask() or pthread_sigmask() instead")))
+  __INTRODUCED_IN_FUTURE;
+extern int sigignore(int)
+  __attribute__((deprecated("use sigaction() instead"))) __INTRODUCED_IN_FUTURE;
+extern int sigpause(int)
+  __attribute__((deprecated("use sigsuspend() instead"))) __INTRODUCED_IN_FUTURE;
+extern int sigrelse(int)
+  __attribute__((deprecated("use sigprocmask() or pthread_sigmask() instead")))
+  __INTRODUCED_IN_FUTURE;
+extern sighandler_t sigset(int, sighandler_t)
+  __attribute__((deprecated("use sigaction() instead"))) __INTRODUCED_IN_FUTURE;
 
 extern int raise(int);
 extern int kill(pid_t, int);
-extern int killpg(int pgrp, int sig);
-extern int sigaltstack(const stack_t *ss, stack_t *oss);
+extern int killpg(int, int);
 
+extern int sigaltstack(const stack_t*, stack_t*);
+
+extern void psiginfo(const siginfo_t*, const char*) __INTRODUCED_IN(17);
+extern void psignal(int, const char*) __INTRODUCED_IN(17);
+
+extern int pthread_kill(pthread_t, int);
+extern int pthread_sigmask(int, const sigset_t*, sigset_t*);
+
+extern int sigqueue(pid_t, int, const union sigval) __INTRODUCED_IN(23);
+extern int sigtimedwait(const sigset_t*, siginfo_t*, const struct timespec*) __INTRODUCED_IN(23);
+extern int sigwaitinfo(const sigset_t*, siginfo_t*) __INTRODUCED_IN(23);
 
 __END_DECLS
+
+#include <android/legacy_signal_inlines.h>
 
 #endif /* _SIGNAL_H_ */

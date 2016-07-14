@@ -25,18 +25,13 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 #ifndef _SYS_SYSCALL_H_
 #define _SYS_SYSCALL_H_
 
-#include <errno.h>
-#include <sys/cdefs.h>
-#include <sys/types.h>
-#include <asm/unistd.h>
+#include <asm/unistd.h> /* Linux kernel __NR_* names. */
+#include <bits/glibc-syscalls.h> /* glibc-compatible SYS_* aliases. */
 
-__BEGIN_DECLS
-
-int syscall(int number, ...);
-
-__END_DECLS
+/* The syscall function itself is declared in <unistd.h>, not here. */
 
 #endif /* _SYS_SYSCALL_H_ */

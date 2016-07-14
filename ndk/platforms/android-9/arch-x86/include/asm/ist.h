@@ -16,15 +16,15 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _ASM_IST_H
-#define _ASM_IST_H
+#ifndef _UAPI_ASM_X86_IST_H
+#define _UAPI_ASM_X86_IST_H
 #include <linux/types.h>
 struct ist_info {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 signature;
- __u32 command;
- __u32 event;
- __u32 perf_level;
+  __u32 signature;
+  __u32 command;
+  __u32 event;
+  __u32 perf_level;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #endif

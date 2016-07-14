@@ -34,6 +34,8 @@
 #ifndef _NETINET_IN_SYSTM_H_
 #define _NETINET_IN_SYSTM_H_
 
+#include <sys/types.h>
+
 /*
  * Miscellaneous internetwork
  * definitions for kernel.
@@ -51,9 +53,5 @@ typedef u_int16_t n_short;		/* short as received from the net */
 typedef u_int32_t n_long;		/* long as received from the net */
 
 typedef u_int32_t n_time;		/* ms since 00:00 GMT, byte rev */
-
-#ifdef _KERNEL
-n_time	 iptime (void);
-#endif
 
 #endif /* !_NETINET_IN_SYSTM_H_ */
