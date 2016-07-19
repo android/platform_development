@@ -21,6 +21,7 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.IBinder;
+import android.util.Log;
 import android.text.InputType;
 import android.text.method.MetaKeyKeyListener;
 import android.view.KeyCharacterMap;
@@ -45,7 +46,8 @@ import java.util.List;
  */
 public class SoftKeyboard extends InputMethodService 
         implements KeyboardView.OnKeyboardActionListener {
-    static final boolean DEBUG = false;
+    static final String TAG = "SoftKeyboard";
+    static final boolean DEBUG = true;
     
     /**
      * This boolean indicates the optional example code for performing
@@ -145,6 +147,11 @@ public class SoftKeyboard extends InputMethodService
      * about the target of our edits.
      */
     @Override public void onStartInput(EditorInfo attribute, boolean restarting) {
+        if (DEBUG) {
+            Log.d(TAG, "IMS#onStartInput restarting=" + restarting
+                    + " attribute.initialSelStart=" + attribute.initialSelStart
+                    + " attribute.initialSelEnd=" + attribute.initialSelEnd);
+        }
         super.onStartInput(attribute, restarting);
         
         // Reset our state.  We want to do this even if restarting, because
@@ -274,6 +281,13 @@ public class SoftKeyboard extends InputMethodService
     @Override public void onUpdateSelection(int oldSelStart, int oldSelEnd,
             int newSelStart, int newSelEnd,
             int candidatesStart, int candidatesEnd) {
+        if (DEBUG) {
+            Log.d(TAG, "updateSelection oldSelStart=" + oldSelStart
+                    + " oldSelEnd=" + oldSelEnd + " newSelStart=" + newSelStart
+                    + " newSelEnd=" + newSelEnd + " candidatesStart=" + candidatesStart
+                    + " candidatesEnd=" + candidatesEnd);
+        }
+
         super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd,
                 candidatesStart, candidatesEnd);
         
