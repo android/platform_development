@@ -199,3 +199,30 @@ libmemunreachable = """
           #00  pc 000076ae  /system/lib/libcutils.so (set_process_name+45)
           #01  pc 000989d6  /system/lib/libandroid_runtime.so (android_os_Process_setArgV0(_JNIEnv*, _jobject*, _jstring*)+125)
 """
+
+# This is a long crash in ASAN format, which does not pad frame numbers. This should be used
+# in a test to ensure that the stack is not split into two.
+long_asan_crash = """
+Build fingerprint: 'Android/aosp_x86_64/generic_x86_64:4.4.3.43.43.43/AOSP/enh06302258:eng/test-keys'
+Revision: '0'
+ABI: 'x86'
+pid: 1566, tid: 1568, name: crasher  >>> crasher <<<
+signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+    eax 00000000  ebx 0000061e  ecx 00000620  edx 00000006
+    esi f7679dd8  edi 00000000
+    xcs 00000023  xds 0000002b  xes 0000002b  xfs 00000003  xss 0000002b
+    eip f7758ea6  ebp 00000620  esp f7679c60  flags 00000282
+
+backtrace:
+    #0 pc 00076ea6  /system/lib/libc.so (tgkill+22)
+    #1 pc 0001dc8b  /system/lib/libc.so (pthread_kill+155)
+    #2 pc 0001f294  /system/lib/libc.so (raise+36)
+    #3 pc 00017a04  /system/lib/libc.so (abort+84)
+    #4 pc 00001099  /system/xbin/crasher
+    #5 pc 0001cd58  /system/lib/libc.so (__pthread_start(void*)+56)
+    #6 pc 00018169  /system/lib/libc.so (__start_thread+25)
+    #7 pc 0000ed76  /system/lib/libc.so (__bionic_clone+70)
+    #8 pc 0000ed76  /system/lib/libc.so (__bionic_clone+70)
+    #9 pc 0000ed76  /system/lib/libc.so (__bionic_clone+70)
+    #10 pc 0000ed76  /system/lib/libc.so (__bionic_clone+70)
+"""

@@ -343,7 +343,7 @@ class TraceConverter:
     trace_line_dict = self.MatchTraceLine(line)
     if trace_line_dict is not None:
       ret = True
-      frame = trace_line_dict["frame"]
+      frame = int(trace_line_dict["frame"])
       code_addr = trace_line_dict["offset"]
       area = trace_line_dict["dso"]
       so_offset = trace_line_dict["so_offset"]
@@ -425,7 +425,6 @@ class TraceConverter:
 
     return ret
 
-
 class RegisterPatternTests(unittest.TestCase):
   def assert_register_matches(self, abi, example_crash, stupid_pattern):
     tc = TraceConverter()
@@ -474,6 +473,20 @@ class LibmemunreachablePatternTests(unittest.TestCase):
 
     self.assertEquals(header_lines, 3)
     self.assertEquals(len(tc.trace_lines), 2)
+    tc.PrintOutput(tc.trace_lines, tc.value_lines)
+
+class LongASANStackTests(unittest.TestCase):
+  def test_long_asan_crash(self):
+    tc = TraceConverter()
+    lines = example_crashes.long_asan_crash.split('\n')
+    symbol.SetAbi(lines)
+    tc.UpdateAbiRegexes()
+    # Test by making sure trace_line_count is monotonically non-decreasing.
+    trace_line_count = 0
+    for line in lines:
+      tc.ProcessLine(line)
+      self.assertTrue(trace_line_count <= len(tc.trace_lines))
+      trace_line_count = len(tc.trace_lines)
     tc.PrintOutput(tc.trace_lines, tc.value_lines)
 
 if __name__ == '__main__':
