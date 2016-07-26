@@ -343,7 +343,7 @@ class TraceConverter:
     trace_line_dict = self.MatchTraceLine(line)
     if trace_line_dict is not None:
       ret = True
-      frame = trace_line_dict["frame"]
+      frame = int(trace_line_dict["frame"])
       code_addr = trace_line_dict["offset"]
       area = trace_line_dict["dso"]
       so_offset = trace_line_dict["so_offset"]
