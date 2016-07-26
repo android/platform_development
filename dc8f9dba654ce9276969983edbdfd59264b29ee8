@@ -49,6 +49,53 @@
     },
     {
       "key": {
+        "uuid": "cf2775b0_f0827e2e",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-07-26T05:26:19Z",
+      "side": 1,
+      "message": "Yeah, I see the rest of the tests use \u0027",
+      "parentUuid": "cf2775b0_d05662d4",
+      "range": {
+        "startLine": 481,
+        "startChar": 50,
+        "endLine": 481,
+        "endChar": 51
+      },
+      "revId": "dc8f9dba654ce9276969983edbdfd59264b29ee8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf2775b0_b07cf64e",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-07-26T05:26:19Z",
+      "side": 1,
+      "message": "How about `.splitlines()` instead of `.split(\u0027\\n\u0027)` and just sidestep the inconsistency :)",
+      "range": {
+        "startLine": 481,
+        "startChar": 44,
+        "endLine": 481,
+        "endChar": 49
+      },
+      "revId": "dc8f9dba654ce9276969983edbdfd59264b29ee8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cf2775b0_305006da",
         "filename": "scripts/stack_core.py",
         "patchSetId": 2
