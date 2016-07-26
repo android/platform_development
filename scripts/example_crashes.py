@@ -196,6 +196,6 @@ libmemunreachable = """
    contents:
    a11e6748: 63 6f 6d 2e 61 6e 64 72 6f 69 64 2e 73 79 73 74 com.android.syst
    a11e6758: 65 6d 75 69 00 00 00 00                         emui....
-          #00  pc 000076ae  /system/lib/libcutils.so (set_process_name+45)
-          #01  pc 000989d6  /system/lib/libandroid_runtime.so (android_os_Process_setArgV0(_JNIEnv*, _jobject*, _jstring*)+125)
+          #00  pc 000076ae  /does/not/matter/libcutils.so (set_process_name+45)
+          #01  pc 000989d6  /does/not/matter/libandroid_runtime.so (android_os_Process_setArgV0(_JNIEnv*, _jobject*, _jstring*)+125)
 """
