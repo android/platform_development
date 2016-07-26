@@ -199,3 +199,23 @@ libmemunreachable = """
           #00  pc 000076ae  /system/lib/libcutils.so (set_process_name+45)
           #01  pc 000989d6  /system/lib/libandroid_runtime.so (android_os_Process_setArgV0(_JNIEnv*, _jobject*, _jstring*)+125)
 """
+
+# This is a long crash in ASAN format, which does not pad frame numbers. This should be used
+# in a test to ensure that the stack is not split into two.
+long_asan_crash = """
+Build fingerprint: 'Android/aosp_arm/generic_arm:4.4.3.43.43.43/AOSP/enh06302258:eng/test-keys'
+ABI: 'arm'
+
+backtrace:
+    #0 pc 000374e0  /system/lib/libc.so (tgkill+12)
+    #1 pc 00012eed  /system/lib/libc.so (pthread_kill+52)
+    #2 pc 00013997  /system/lib/libc.so (raise+10)
+    #3 pc 0001047d  /system/lib/libc.so (__libc_android_abort+36)
+    #4 pc 0000eb1c  /system/lib/libc.so (abort+4)
+    #5 pc 00000c6f  /system/xbin/crasher
+    #6 pc 000126b3  /system/lib/libc.so (__pthread_start(void*)+30)
+    #7 pc 000107fb  /system/lib/libc.so (__start_thread+6)
+    #8 pc 000107fb  /system/lib/libc.so (__start_thread+6)
+    #9 pc 000107fb  /system/lib/libc.so (__start_thread+6)
+    #10 pc 000107fb  /system/lib/libc.so (__start_thread+6)
+"""
