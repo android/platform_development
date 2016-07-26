@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "cf2775b0_b69aae04",
+        "filename": "scripts/example_crashes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-07-26T15:41:49Z",
+      "side": 1,
+      "message": "Replaced with ASAN-style backtrace.",
+      "parentUuid": "cf2775b0_d6c65a12",
+      "range": {
+        "startLine": 203,
+        "startChar": 39,
+        "endLine": 203,
+        "endChar": 71
+      },
+      "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cf2775b0_36723e18",
         "filename": "scripts/example_crashes.py",
         "patchSetId": 4
@@ -180,6 +204,30 @@
       "side": 1,
       "message": "no, i mean \"the unwinder should never have produced this bogus output --- can you (a) tell us which unwinder and (b) how to reproduce so we can fix it?\".",
       "parentUuid": "cf2775b0_d6ef7a80",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 59
+      },
+      "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf2775b0_f6a0363c",
+        "filename": "scripts/example_crashes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-07-26T15:41:49Z",
+      "side": 1,
+      "message": "*Nothing* produced this. This was me manually appending to a previous example to get to the breaking point - 11 frames.\n\nSee the related CL about the memunreachable test. I don\u0027t think it\u0027s a good idea to have a precise previous crash here and make strong assumptions about it. Instead, I just give some more or less bogus data.",
+      "parentUuid": "cf2775b0_967e92bc",
       "range": {
         "startLine": 217,
         "startChar": 0,
