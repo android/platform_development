@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf2775b0_b6106ea7",
+        "filename": "scripts/example_crashes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-07-26T15:22:27Z",
+      "side": 1,
+      "message": "where does the stack come from? i\u0027m surprised that it\u0027s _almost_ but not quite the same. seems worth fixing the script, but shouldn\u0027t we also fix whatever generated this (or remove the duplication if possible)?",
+      "range": {
+        "startLine": 203,
+        "startChar": 39,
+        "endLine": 203,
+        "endChar": 71
+      },
+      "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf2775b0_36723e18",
+        "filename": "scripts/example_crashes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2016-07-26T15:22:27Z",
+      "side": 1,
+      "message": "(and why did it get this wrong?)",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 59
+      },
+      "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
