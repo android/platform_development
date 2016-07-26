@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cf2775b0_364b5eb6",
+        "filename": "scripts/example_crashes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-07-26T15:26:39Z",
+      "side": 1,
+      "message": "See the first part of the sentence. ASAN produces such a trace.\n\n(And stack_core supports this for about a year or so, now. Note that the crash below is actually not an ASAN-style crash, doh, so the test name isn\u0027t great.)",
+      "parentUuid": "cf2775b0_b6106ea7",
+      "range": {
+        "startLine": 203,
+        "startChar": 39,
+        "endLine": 203,
+        "endChar": 71
+      },
+      "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cf2775b0_36723e18",
         "filename": "scripts/example_crashes.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-26T15:22:27Z",
       "side": 1,
       "message": "(and why did it get this wrong?)",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 59
+      },
+      "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf2775b0_b63e2e0d",
+        "filename": "scripts/example_crashes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-07-26T15:26:39Z",
+      "side": 1,
+      "message": "Frame \"numbers\" were stored as strings (directly the result of regex match groups). The separation \"----\" was done when the next recognized frame was \u003c\u003d the last frame. With strings, 10 \u003c\u003d 9...\n\n(This is touched in \"split into two\" above.)\n\nIf you wish me to extend the comment (note: it\u0027s the only one in this file :-) ) and put more comments onto the actual test, please let me know.",
+      "parentUuid": "cf2775b0_36723e18",
       "range": {
         "startLine": 217,
         "startChar": 0,
