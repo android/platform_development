@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf2775b0_10e06a22",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-07-26T05:20:00Z",
+      "side": 0,
+      "message": "https://google.github.io/styleguide/pyguide.html?showone\u003dBlank_Lines#Blank_Lines",
+      "revId": "92863bc8cb037002dc1e8d3d9baa4626dd09cc4a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
