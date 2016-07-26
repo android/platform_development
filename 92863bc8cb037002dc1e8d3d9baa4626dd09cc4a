@@ -16,6 +16,24 @@
       "revId": "92863bc8cb037002dc1e8d3d9baa4626dd09cc4a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf2775b0_9060daa8",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-07-26T05:23:02Z",
+      "side": 0,
+      "message": "Accidental thing. Done.",
+      "parentUuid": "cf2775b0_10e06a22",
+      "revId": "92863bc8cb037002dc1e8d3d9baa4626dd09cc4a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
