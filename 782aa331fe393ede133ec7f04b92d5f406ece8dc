@@ -141,6 +141,30 @@
       "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf2775b0_d6ef7a80",
+        "filename": "scripts/example_crashes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-07-26T15:33:26Z",
+      "side": 1,
+      "message": "I don\u0027t think the tool is in any way smart enough for that. The end of a trace is either:\n a) end of input\n b) start of a new dump\nbecause it\u0027s simply repeated matching of regexes, and then just feeding that info to addr2line etc.\n\nAnd yes, I\u0027m abusing that...",
+      "parentUuid": "cf2775b0_76dfa6d5",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 59
+      },
+      "revId": "782aa331fe393ede133ec7f04b92d5f406ece8dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
