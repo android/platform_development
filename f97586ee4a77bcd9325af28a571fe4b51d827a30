@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ded72d3a_0dca11b9",
+        "filename": "python-packages/fastboot/FastbootDevice.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1015340
+      },
+      "writtenOn": "2016-08-12T21:16:29Z",
+      "side": 1,
+      "message": "API bikeshedding time!\n\nIf name isn\u0027t found, return None?",
+      "range": {
+        "startLine": 82,
+        "startChar": 47,
+        "endLine": 82,
+        "endChar": 63
+      },
+      "revId": "f97586ee4a77bcd9325af28a571fe4b51d827a30",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
