@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1eb1c5f1_779bb072",
+        "filename": "python-packages/fastboot/FastbootDevice.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-08-12T22:36:49Z",
+      "side": 1,
+      "message": "nit: alignment (pylint can catch these for you)",
+      "revId": "d98b26881ce8061bb00bdc3103b98072d9b0485c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fec9517a_36d3f834",
+        "filename": "python-packages/fastboot/FastbootDevice.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-08-12T22:36:49Z",
+      "side": 1,
+      "message": "nit: unnecessary parens",
+      "range": {
+        "startLine": 151,
+        "startChar": 15,
+        "endLine": 151,
+        "endChar": 16
+      },
+      "revId": "d98b26881ce8061bb00bdc3103b98072d9b0485c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e40e5d2_5f8f6b23",
+        "filename": "python-packages/fastboot/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-08-12T22:36:49Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "d98b26881ce8061bb00bdc3103b98072d9b0485c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de8bad31_906afae5",
+        "filename": "python-packages/fastboot/setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-08-12T22:36:49Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "d98b26881ce8061bb00bdc3103b98072d9b0485c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
