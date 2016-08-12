@@ -127,6 +127,27 @@ def GetHostBin():
   return path
 
 
+def GetHostNativeTestPath():
+  """Compute the full pathname to the host nativetest64 directory.
+
+  Typically $ANDROID_HOST_OUT/nativetest64.
+
+  Assumes build environment has been properly configured by envsetup &
+  lunch/choosecombo.
+
+  Returns:
+    The absolute file path of the Android host nativetest64 directory.
+
+  Raises:
+    AbortError: if Android host nativetest64 directory could not be found.
+  """
+  path = os.path.join(GetHostOutDir(), "nativetest64")
+  if not os.path.exists(path):
+    logger.Log("Error: Host native test path could not be found %s" % path)
+    raise errors.AbortError
+  return path
+
+
 def GetProductOut():
   """Returns the full pathname to the target/product directory.
 

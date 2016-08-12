@@ -57,7 +57,7 @@ class NativeTestSuite(test_suite.AbstractTestSuite):
     logger.SilentLog("Tests source %s" % source_list)
 
     # Host tests are under out/host/<os>-<arch>/bin.
-    host_list = self._FilterOutMissing(android_build.GetHostBin(), source_list)
+    host_list = self._FilterOutMissing(android_build.GetHostNativeTestPath(), source_list)
     logger.SilentLog("Host tests %s" % host_list)
 
     # Target tests are under $ANDROID_PRODUCT_OUT/data/nativetest.
@@ -68,11 +68,12 @@ class NativeTestSuite(test_suite.AbstractTestSuite):
     # Run on the host
     logger.Log("\nRunning on host")
     for f in host_list:
-      if run_command.RunHostCommand(f) != 0:
+      full_path = os.path.join(android_build.GetHostNativeTestPath(), f)
+      if run_command.RunHostCommand(full_path) != 0:
         logger.Log("%s... failed" % f)
       else:
         if run_command.HasValgrind():
-          if run_command.RunHostCommand(f, valgrind=True) == 0:
+          if run_command.RunHostCommand(full_path, valgrind=True) == 0:
             logger.Log("%s... ok\t\t[valgrind: ok]" % f)
           else:
             logger.Log("%s... ok\t\t[valgrind: failed]" % f)

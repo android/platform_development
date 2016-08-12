@@ -98,7 +98,8 @@ class MakeTree(MakeNode):
     path = os.path.normpath(path)
     mk_path = os.path.join(android_build.GetTop(), path, "Android.mk")
     if not os.path.isfile(mk_path):
-      raise errors.AbortError("%s does not exist" % mk_path)
+      if not os.path.isfile(os.path.join(android_build.GetTop(), path, "Android.bp")):
+        raise errors.AbortError("%s does not exist" % mk_path)
     path_segs = path.split(os.sep)
     child = self._AddPath(path_segs)
     child._SetLeaf(True)
