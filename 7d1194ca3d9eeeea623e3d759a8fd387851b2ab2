@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb11ab9a_d893ddf4",
+        "filename": "python-packages/fastboot/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-08-16T23:16:25Z",
+      "side": 1,
+      "message": "Sorry, I missed this one before. This should be just \"device\" (or maybe \"fastboot_device\", but you\u0027re already in \"fastboot\"). This is one of few places where our three conflicting style guides agree :)",
+      "range": {
+        "startLine": 17,
+        "startChar": 6,
+        "endLine": 17,
+        "endChar": 20
+      },
+      "revId": "7d1194ca3d9eeeea623e3d759a8fd387851b2ab2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
