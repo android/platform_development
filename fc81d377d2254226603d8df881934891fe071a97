@@ -22,6 +22,30 @@
       "revId": "fc81d377d2254226603d8df881934891fe071a97",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "abf5de92_11454c6b",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2016-09-09T17:54:07Z",
+      "side": 1,
+      "message": "Refactored slightly which it makes it more obvious about what is going on.",
+      "parentUuid": "7604af4d_7af46dbb",
+      "range": {
+        "startLine": 395,
+        "startChar": 13,
+        "endLine": 395,
+        "endChar": 38
+      },
+      "revId": "fc81d377d2254226603d8df881934891fe071a97",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
