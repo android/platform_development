@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b6c9a82_f23e8ae7",
+        "filename": "ndk/pylintrc",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2016-09-14T21:45:09Z",
+      "side": 1,
+      "message": "I assume this was copy/pasted :-)",
+      "revId": "3c32f429bd2eda582913ac4070cd474b38b3860e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
