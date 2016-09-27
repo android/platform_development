@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45ba9338_720c169d",
+        "filename": "ndk/platforms/android-24/include/vulkan/vulkan.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 3983,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-09-27T21:11:15Z",
+      "side": 1,
+      "message": "Are these something new that we didn\u0027t have before? Or does android-24 have these functions and the header was just missing them? Or do we not get these because of the ifdef?",
+      "range": {
+        "startLine": 3983,
+        "startChar": 27,
+        "endLine": 3983,
+        "endChar": 52
+      },
+      "revId": "cfab4190bc0aca9d8eda52b8925dd039ad1e5b27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45ba9338_f2f76670",
+        "filename": "ndk/platforms/android-24/include/vulkan/vulkan.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 4055,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-09-27T21:11:15Z",
+      "side": 1,
+      "message": "Same here",
+      "range": {
+        "startLine": 4055,
+        "startChar": 31,
+        "endLine": 4055,
+        "endChar": 81
+      },
+      "revId": "cfab4190bc0aca9d8eda52b8925dd039ad1e5b27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
