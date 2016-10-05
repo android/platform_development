@@ -57,8 +57,6 @@ vkCreateComputePipelines
 vkCreateDescriptorPool
 vkCreateDescriptorSetLayout
 vkCreateDevice
-vkCreateDisplayModeKHR
-vkCreateDisplayPlaneSurfaceKHR
 vkCreateEvent
 vkCreateFence
 vkCreateFramebuffer
@@ -73,7 +71,6 @@ vkCreateRenderPass
 vkCreateSampler
 vkCreateSemaphore
 vkCreateShaderModule
-vkCreateSharedSwapchainsKHR
 vkCreateSwapchainKHR
 vkDestroyBuffer
 vkDestroyBufferView
@@ -112,17 +109,12 @@ vkGetBufferMemoryRequirements
 vkGetDeviceMemoryCommitment
 vkGetDeviceProcAddr
 vkGetDeviceQueue
-vkGetDisplayModePropertiesKHR
-vkGetDisplayPlaneCapabilitiesKHR
-vkGetDisplayPlaneSupportedDisplaysKHR
 vkGetEventStatus
 vkGetFenceStatus
 vkGetImageMemoryRequirements
 vkGetImageSparseMemoryRequirements
 vkGetImageSubresourceLayout
 vkGetInstanceProcAddr
-vkGetPhysicalDeviceDisplayPlanePropertiesKHR
-vkGetPhysicalDeviceDisplayPropertiesKHR
 vkGetPhysicalDeviceFeatures
 vkGetPhysicalDeviceFormatProperties
 vkGetPhysicalDeviceImageFormatProperties
