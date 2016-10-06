@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f99cc37_8701ac6c",
+        "filename": "ndk/platforms/android-24/arch-arm/symbols/libvulkan.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1010672
+      },
+      "writtenOn": "2016-10-06T01:10:11Z",
+      "side": 1,
+      "message": "vkCreateSharedSwapchainsKHR needs to go too, it\u0027s from VK_KHR_display_swapchain",
+      "revId": "765fcf978a4476a4537068020c2a36eb66625f93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
