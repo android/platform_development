@@ -16,6 +16,24 @@
       "revId": "765fcf978a4476a4537068020c2a36eb66625f93",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f99cc37_4d6f458b",
+        "filename": "ndk/platforms/android-24/arch-arm/symbols/libvulkan.so.functions.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1097108
+      },
+      "writtenOn": "2016-10-06T13:52:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f99cc37_8701ac6c",
+      "revId": "765fcf978a4476a4537068020c2a36eb66625f93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
