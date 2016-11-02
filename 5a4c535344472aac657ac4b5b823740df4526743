@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86b57a46_2bd21219",
+        "filename": "tools/checkstyle/checkstyle.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1060337
+      },
+      "writtenOn": "2016-11-02T23:10:17Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "5a4c535344472aac657ac4b5b823740df4526743",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
