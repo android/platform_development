@@ -17,14 +17,18 @@
 package com.example.android.softkeyboard;
 
 import android.app.Dialog;
+import android.content.res.Configuration;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.text.InputType;
 import android.text.method.MetaKeyKeyListener;
+import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.CompletionInfo;
@@ -79,11 +83,24 @@ public class SoftKeyboard extends InputMethodService
     
     private String mWordSeparators;
     
+    @Override
+    public void setTheme(int theme) {
+        Log.d("@@@@@ IME", "setTheme: theme=" + theme);
+        super.setTheme(theme);
+    }
+
+    @Override
+    public boolean enableHardwareAcceleration() {
+        Log.d("@@@@@ IME", "enableHardwareAcceleration");
+        return super.enableHardwareAcceleration();
+    }
+
     /**
      * Main initialization of the input method component.  Be sure to call
      * to super class.
      */
     @Override public void onCreate() {
+        Log.d("@@@@@ IME", "onCreate");
         super.onCreate();
         mInputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
         mWordSeparators = getResources().getString(R.string.word_separators);
@@ -94,6 +111,7 @@ public class SoftKeyboard extends InputMethodService
      * is called after creation and any configuration change.
      */
     @Override public void onInitializeInterface() {
+        Log.d("@@@@@ IME", "onInitializeInterface");
         if (mQwertyKeyboard != null) {
             // Configuration changes can happen after the keyboard gets recreated,
             // so we need to be able to re-build the keyboards if the available
@@ -106,7 +124,96 @@ public class SoftKeyboard extends InputMethodService
         mSymbolsKeyboard = new LatinKeyboard(this, R.xml.symbols);
         mSymbolsShiftedKeyboard = new LatinKeyboard(this, R.xml.symbols_shift);
     }
-    
+
+    @Override
+    public void onDestroy() {
+        Log.d("@@@@@ IME", "onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onConfigurationChanged(final Configuration config) {
+        Log.d("@@@@@ IME", "onConfigurationChanged: config=" + config);
+        super.onConfigurationChanged(config);
+    }
+
+    @Override
+    public AbstractInputMethodImpl onCreateInputMethodInterface() {
+        Log.d("@@@@@ IME", "onCreateInputMethodInterface");
+        return super.onCreateInputMethodInterface();
+    }
+
+    @Override
+    public AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() {
+        Log.d("@@@@@ IME", "onCreateInputMethodSessionInterface");
+        return super.onCreateInputMethodSessionInterface();
+    }
+
+    @Override
+    public void onConfigureWindow(final Window win, final boolean isFullscreenMode,
+                                  boolean isCandidatesOnly) {
+        Log.d("@@@@@ IME", "onConfigureWindow: win=" + win
+              + " isFullscreenMode=" + isFullscreenMode
+              + " isCandidatesOnly=" + isCandidatesOnly);
+        super.onConfigureWindow(win, isFullscreenMode, isCandidatesOnly);
+    }
+
+    @Override
+    public void switchInputMethod(final String id) {
+        Log.d("@@@@@ IME", "switchInputMethod: id=" + id);
+        super.switchInputMethod(id);
+    }
+
+    @Override
+    public boolean onShowInputRequested(final int flags, final boolean configChange) {
+        Log.d("@@@@@ IME", "onShowInputRequested: flags=" + flags
+              + " configChange=" + configChange);
+        return super.onShowInputRequested(flags, configChange);
+    }
+
+    @Override
+    public void showWindow(final boolean showInput) {
+        Log.d("@@@@@ IME", "showWindow: showInput=" + showInput);
+        super.showWindow(showInput);
+    }
+
+    @Override
+    public void hideWindow() {
+        Log.d("@@@@@ IME", "hideWindow");
+        super.hideWindow();
+    }
+
+    @Override
+    public void onWindowShown() {
+        Log.d("@@@@@ IME", "onWindowShown");
+    }
+
+    @Override
+    public void onWindowHidden() {
+        Log.d("@@@@@ IME", "onWindowHidden");
+    }
+
+    @Override
+    public void onBindInput() {
+        Log.d("@@@@@ IME", "onBindInput");
+    }
+
+    @Override
+    public void onUnbindInput() {
+        Log.d("@@@@@ IME", "onUnbindInput");
+    }
+
+    @Override
+    public void onViewClicked(final boolean focusChanged) {
+        Log.d("@@@@@ IME", "onViewClicked: focusChanged=" + focusChanged);
+    }
+
+    @Override
+    public void requestHideSelf(final int flags) {
+        Log.d("@@@@@ IME", "requestHideSelf: flags=" + flags);
+        super.requestHideSelf(flags);
+    }
+
     /**
      * Called by the framework when your view for creating input needs to
      * be generated.  This will be called the first time your input method
@@ -114,6 +221,7 @@ public class SoftKeyboard extends InputMethodService
      * a configuration change.
      */
     @Override public View onCreateInputView() {
+        Log.d("@@@@@ IME", "onCreateInputView");
         mInputView = (LatinKeyboardView) getLayoutInflater().inflate(
                 R.layout.input, null);
         mInputView.setOnKeyboardActionListener(this);
@@ -145,6 +253,7 @@ public class SoftKeyboard extends InputMethodService
      * about the target of our edits.
      */
     @Override public void onStartInput(EditorInfo attribute, boolean restarting) {
+        Log.d("@@@@@ IME", "onStartInput");
         super.onStartInput(attribute, restarting);
         
         // Reset our state.  We want to do this even if restarting, because
@@ -236,6 +345,7 @@ public class SoftKeyboard extends InputMethodService
      * this to reset our state.
      */
     @Override public void onFinishInput() {
+        Log.d("@@@@@ IME", "onFinishInput");
         super.onFinishInput();
         
         // Clear current composing text and candidates.
@@ -255,6 +365,7 @@ public class SoftKeyboard extends InputMethodService
     }
     
     @Override public void onStartInputView(EditorInfo attribute, boolean restarting) {
+        Log.d("@@@@@ IME", "onStartInputView");
         super.onStartInputView(attribute, restarting);
         // Apply the selected keyboard to the input view.
         setLatinKeyboard(mCurKeyboard);
@@ -264,7 +375,8 @@ public class SoftKeyboard extends InputMethodService
     }
 
     @Override
-    public void onCurrentInputMethodSubtypeChanged(InputMethodSubtype subtype) {
+    protected void onCurrentInputMethodSubtypeChanged(InputMethodSubtype subtype) {
+        Log.d("@@@@@ IME", "onCurrentInputMethodSubtypeChanged: subtype=" + subtype);
         mInputView.setSubtypeOnSpaceKey(subtype);
     }
 
@@ -356,6 +468,7 @@ public class SoftKeyboard extends InputMethodService
      * continue to the app.
      */
     @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.d("@@@@@ IME", "onKeyDown: event=" + event);
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK:
                 // The InputMethodService already takes care of the back
@@ -423,6 +536,7 @@ public class SoftKeyboard extends InputMethodService
      * continue to the app.
      */
     @Override public boolean onKeyUp(int keyCode, KeyEvent event) {
+        Log.d("@@@@@ IME", "onKeyUp: event=" + event);
         // If we want to do transformations on text being entered with a hard
         // keyboard, we need to process the up events to update the meta key
         // state we are tracking.
@@ -434,6 +548,36 @@ public class SoftKeyboard extends InputMethodService
         }
         
         return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyLongPress(final int keyCode, final KeyEvent event) {
+        Log.d("@@@@@ IME", "onKeyLongPress: event=" + event);
+        return super.onKeyLongPress(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyMultiple(final int keyCode, final int count, final KeyEvent event) {
+        Log.d("@@@@@ IME", "onKeyMultiple: count=" + count + " event=" + event);
+        return super.onKeyMultiple(keyCode, count, event);
+    }
+
+    @Override
+    public boolean onTrackballEvent(final MotionEvent event) {
+        Log.d("@@@@@ IME", "onTrackballEvent: event=" + event);
+        return super.onTrackballEvent(event);
+    }
+
+    @Override
+    public boolean onGenericMotionEvent(final MotionEvent event) {
+        Log.d("@@@@@ IME", "onGenericMotionEvent: event=" + event);
+        return super.onGenericMotionEvent(event);
+    }
+
+    @Override
+    public void onAppPrivateCommand(final String action, final Bundle data) {
+        Log.d("@@@@@ IME", "onAppPrivateCommand: action=" + action
+              + " data=" + data);
     }
 
     /**
