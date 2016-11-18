@@ -35,8 +35,10 @@ PRODUCT_PACKAGES += \
 	bcc_compat \
 	bios.bin \
 	commons-compress-1.0 \
+	dexdeps \
 	dexdump \
 	dmtracedump \
+	dx \
 	emmalib \
 	etc1tool \
 	hprof-conv \
