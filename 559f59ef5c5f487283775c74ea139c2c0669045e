@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9015b4c1_3832b54f",
+        "filename": "tools/checkstyle/default-module-checks.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1053528
+      },
+      "writtenOn": "2016-11-18T23:52:39Z",
+      "side": 1,
+      "message": "Remove this indentation?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 2
+      },
+      "revId": "559f59ef5c5f487283775c74ea139c2c0669045e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
