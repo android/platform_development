@@ -46,6 +46,30 @@
       "revId": "b94ea7673a8e242fbe02ccc9064ce5b741058361",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "70acc09b_13e27b14",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-11-18T06:56:50Z",
+      "side": 1,
+      "message": "No clue, I\u0027m trying to figure out where it needs to go.",
+      "parentUuid": "70acc09b_b3f54f63",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 8
+      },
+      "revId": "b94ea7673a8e242fbe02ccc9064ce5b741058361",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
