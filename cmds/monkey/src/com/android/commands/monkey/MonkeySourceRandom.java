@@ -267,6 +267,10 @@ public class MonkeySourceRandom implements MonkeyEventSource {
     private void generatePointerEvent(Random random, int gesture) {
         Display display = DisplayManagerGlobal.getInstance().getRealDisplay(Display.DEFAULT_DISPLAY);
 
+        if (display == null ) {
+            return;
+        }
+
         PointF p1 = randomPoint(random, display);
         PointF v1 = randomVector(random);
 
@@ -491,6 +495,9 @@ public class MonkeySourceRandom implements MonkeyEventSource {
     public MonkeyEvent getNextEvent() {
         if (mQ.isEmpty()) {
             generateEvents();
+        }
+        if (mQ.isEmpty()) {
+            return null;
         }
         mEventCount++;
         MonkeyEvent e = mQ.getFirst();
