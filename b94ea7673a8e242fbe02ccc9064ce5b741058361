@@ -70,6 +70,30 @@
       "revId": "b94ea7673a8e242fbe02ccc9064ce5b741058361",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "70acc09b_1388bb3f",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2016-11-18T07:07:19Z",
+      "side": 1,
+      "message": "You\u0027re right, a quick search only shows CTS and XTS as consumers, and both have it wired up as a dependency. This line can be removed from the CL.",
+      "parentUuid": "70acc09b_13e27b14",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 8
+      },
+      "revId": "b94ea7673a8e242fbe02ccc9064ce5b741058361",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
