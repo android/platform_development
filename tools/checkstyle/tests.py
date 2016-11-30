@@ -21,6 +21,7 @@
 from StringIO import StringIO
 import unittest
 import checkstyle
+import xml.dom.minidom
 
 
 TEST_RULE = u'com.puppycrawl.tools.checkstyle.checks.BANANAS'
@@ -32,6 +33,13 @@ TEST_FILE_NON_JAVA = TEST_ROOT + u'/blarg.cc'
 FILE_ADDED = u'A '
 FILE_MODIFIED = u'M '
 FILE_UNTRACKED = u'??'
+OUTPUT1 = ('<?xml version="1.0" encoding="UTF-8"?>'
+          '<file>'
+          '<error line="82" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>'
+          '<error line="83" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>'
+          '<error line="90" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>'
+          '<error line="99" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>'
+          '</file>')
 
 
 def mock_repository_root():
@@ -78,34 +86,74 @@ class TestCheckstyle(unittest.TestCase):
 
   def test_ShouldSkip(self):
     # Skip checks for explicit git commit.
-    self.assertFalse(checkstyle._ShouldSkip(True, None, 1, TEST_RULE))
-    self.assertTrue(checkstyle._ShouldSkip(True, [], 1, TEST_RULE))
-    self.assertFalse(checkstyle._ShouldSkip(True, [1], 1, TEST_RULE))
-    self.assertFalse(checkstyle._ShouldSkip(True, [1, 2, 3], 1, TEST_RULE))
-    self.assertTrue(checkstyle._ShouldSkip(True, [1, 2, 3], 4, TEST_RULE))
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, None, 1, TEST_RULE, False, False, None, None))
+    self.assertTrue(checkstyle._ShouldSkip(
+        True, [], 1, TEST_RULE, False, False, [], []))
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, [1], 1, TEST_RULE, False, False, [], [1]))
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, [1, 2, 3], 1, TEST_RULE, False, False, [], [1, 2, 3]))
+    self.assertTrue(checkstyle._ShouldSkip(
+        True, [1, 2, 3], 4, TEST_RULE, False, False, [], [1, 2, 3]))
     for rule in checkstyle.FORCED_RULES:
-      self.assertFalse(checkstyle._ShouldSkip(True, [1, 2, 3], 1, rule))
-      self.assertFalse(checkstyle._ShouldSkip(True, [1, 2, 3], 4, rule))
+      self.assertFalse(checkstyle._ShouldSkip(
+          True, [1, 2, 3], 1, rule, False, False, [], [1, 2, 3]))
+      self.assertFalse(checkstyle._ShouldSkip(
+          True, [1, 2, 3], 4, rule, False, False, [], [1, 2, 3]))
 
     # Skip checks for explicitly checked files.
-    self.assertFalse(checkstyle._ShouldSkip(False, None, 1, TEST_RULE))
-    self.assertFalse(checkstyle._ShouldSkip(False, [], 1, TEST_RULE))
-    self.assertFalse(checkstyle._ShouldSkip(False, [1], 1, TEST_RULE))
-    self.assertFalse(checkstyle._ShouldSkip(False, [1, 2, 3], 1, TEST_RULE))
-    self.assertFalse(checkstyle._ShouldSkip(False, [1, 2, 3], 4, TEST_RULE))
+    self.assertFalse(checkstyle._ShouldSkip(
+        False, None, 1, TEST_RULE, False, False, [], None))
+    self.assertFalse(checkstyle._ShouldSkip(
+        False, [], 1, TEST_RULE, False, False, [], []))
+    self.assertFalse(checkstyle._ShouldSkip(
+        False, [1], 1, TEST_RULE, False, False, [], [1]))
+    self.assertFalse(checkstyle._ShouldSkip(
+        False, [1, 2, 3], 1, TEST_RULE, False, False, [], [1, 2, 3]))
+    self.assertFalse(checkstyle._ShouldSkip(
+        False, [1, 2, 3], 4, TEST_RULE, False, False, [], [1, 2, 3]))
     for rule in checkstyle.FORCED_RULES:
-      self.assertFalse(checkstyle._ShouldSkip(False, [1, 2, 3], 1, rule))
-      self.assertFalse(checkstyle._ShouldSkip(False, [1, 2, 3], 4, rule))
+      self.assertFalse(checkstyle._ShouldSkip(
+          False, [1, 2, 3], 1, rule, False, False, [], [1, 2, 3]))
+      self.assertFalse(checkstyle._ShouldSkip(
+          False, [1, 2, 3], 4, rule, False, False, [], [1, 2, 3]))
 
     # Skip checks for test classes.
-    self.assertFalse(checkstyle._ShouldSkip(True, None, 1, TEST_RULE, True))
-    self.assertTrue(checkstyle._ShouldSkip(True, [], 1, TEST_RULE, True))
-    self.assertFalse(checkstyle._ShouldSkip(True, [1], 1, TEST_RULE, True))
-    self.assertFalse(checkstyle._ShouldSkip(True, [1, 2, 3], 1, TEST_RULE, True))
-    self.assertTrue(checkstyle._ShouldSkip(True, [1, 2, 3], 4, TEST_RULE, True))
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, None, 1, TEST_RULE, True, False, [], None))
+    self.assertTrue(checkstyle._ShouldSkip(
+        True, [], 1, TEST_RULE, True, False, [], []))
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, [1], 1, TEST_RULE, True, False, [], [1]))
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, [1, 2, 3], 1, TEST_RULE, True, False, [], [1, 2, 3]))
+    self.assertTrue(checkstyle._ShouldSkip(
+        True, [1, 2, 3], 4, TEST_RULE, True, False, [], [1, 2, 3]))
     for rule in checkstyle.SKIPPED_RULES_FOR_TEST_FILES:
-      self.assertTrue(checkstyle._ShouldSkip(True, [1, 2, 3], 1, rule, True))
-      self.assertTrue(checkstyle._ShouldSkip(True, [1, 2, 3], 4, rule, True))
+      self.assertTrue(checkstyle._ShouldSkip(
+          True, [1, 2, 3], 1, rule, True, False, [], [1, 2, 3]))
+      self.assertTrue(checkstyle._ShouldSkip(
+          True, [1, 2, 3], 4, rule, True, False, [], [1, 2, 3]))
+
+    # Test indentation violation forcing
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, [2], 3, checkstyle.INDENTATION_RULE, False, False, [2, 3], [2]))
+    self.assertFalse(checkstyle._ShouldSkip(
+        True, [2, 3], 3, checkstyle.INDENTATION_RULE, False, False, [2, 3], [2, 3]))
+    self.assertTrue(checkstyle._ShouldSkip(
+        True, [2], 4, checkstyle.INDENTATION_RULE, False, False, [2, 3], [2]))
+    self.assertTrue(checkstyle._ShouldSkip(
+        True, [2], 3, TEST_RULE, False, False, [2, 3], [2]))
+
+    # Test whitespace line change rule forcing
+    for rule in checkstyle.WHITESPACE_CHANGE_RULES:
+        self.assertFalse(checkstyle._ShouldSkip(
+            True, [2], 2, rule, False, False, [], []))
+        self.assertTrue(checkstyle._ShouldSkip(
+            True, [2], 3, rule, False, False, [], []))
+    self.assertTrue(checkstyle._ShouldSkip(
+            True, [2], 2, TEST_RULE, False, False, [], []))
 
   def test_GetModifiedFiles(self):
     checkstyle.git.modified_files = mock_modified_files_good
@@ -162,6 +210,26 @@ class TestCheckstyle(unittest.TestCase):
     self.assertEqual(files, output)
     output = checkstyle._FilterFiles(files, ['FunkyTown'])
     self.assertEqual({}, output)
+
+  def test_GetForcedIndentationErrors(self):
+    root = xml.dom.minidom.parseString(OUTPUT1)
+    errors = root.getElementsByTagName('error')
+    output = checkstyle._GetForcedIndentationErrors(errors, None)
+    self.assertEqual([], output)
+    output = checkstyle._GetForcedIndentationErrors(errors, [1])
+    self.assertEqual([], output)
+    output = checkstyle._GetForcedIndentationErrors(errors, [82])
+    self.assertEqual([82, 83], output)
+    output = checkstyle._GetForcedIndentationErrors(errors, [83])
+    self.assertEqual([82, 83], output)
+    output = checkstyle._GetForcedIndentationErrors(errors, [90])
+    self.assertEqual([90], output)
+    output = checkstyle._GetForcedIndentationErrors(errors, [99])
+    self.assertEqual([99], output)
+    output = checkstyle._GetForcedIndentationErrors(errors, [90, 99])
+    self.assertEqual([90, 99], output)
+    output = checkstyle._GetForcedIndentationErrors(errors, [82, 90, 99])
+    self.assertEqual([82, 83, 90, 99], output)
 
 if __name__ == '__main__':
   unittest.main()
