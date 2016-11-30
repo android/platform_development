@@ -32,6 +32,17 @@ import gitlint.git as git
 MAIN_DIRECTORY = os.path.normpath(os.path.dirname(__file__))
 CHECKSTYLE_JAR = os.path.join(MAIN_DIRECTORY, 'checkstyle.jar')
 CHECKSTYLE_STYLE = os.path.join(MAIN_DIRECTORY, 'android-style.xml')
+INDENTATION_RULE = 'com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck'
+WHITESPACE_CHANGE_RULES = ['com.puppycrawl.tools.checkstyle.checks.whitespace.SeparatorWrapCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.NoWhitespaceAfterCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.NoWhitespaceBeforeCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck',
+                           'com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck',
+                           INDENTATION_RULE]
 FORCED_RULES = ['com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck',
                 'com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck']
 SKIPPED_RULES_FOR_TEST_FILES = ['com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck',
@@ -170,21 +181,30 @@ def _ParseAndFilterOutput(stdout,
     if tmp_file_map:
       file_name = tmp_file_map[file_name]
     modified_lines = None
+    nonwhitespace_modified_lines = None
     if commit_modified_files:
       modified_lines = git.modified_lines(file_name,
                                           commit_modified_files[file_name],
                                           sha)
+      nonwhitespace_modified_lines = git.nonwhitespace_modified_lines(
+          file_name,
+          commit_modified_files[file_name],
+          sha)
+
     test_class = any(substring in file_name for substring
                      in SUBPATH_FOR_TEST_FILES)
     test_data_class = any(substring in file_name for substring
                           in SUBPATH_FOR_TEST_DATA_FILES)
     file_name = os.path.relpath(file_name)
     errors = file_element.getElementsByTagName('error')
+    forced_indentation_lines = _GetForcedIndentationErrors(errors,
+                                                           modified_lines)
     for error in errors:
       line = int(error.attributes['line'].value)
       rule = error.attributes['source'].value
       if _ShouldSkip(commit_modified_files, modified_lines, line, rule,
-                     test_class, test_data_class):
+                     test_class, test_data_class, forced_indentation_lines,
+                     nonwhitespace_modified_lines):
         continue
 
       column = ''
@@ -205,8 +225,50 @@ def _ParseAndFilterOutput(stdout,
   return result_errors, result_warnings
 
 
-def _ShouldSkip(commit_check, modified_lines, line, rule, test_class=False,
-                test_data_class=False):
+def _GetForcedIndentationErrors(errors, modified_lines):
+  """Returns the list of lines of indentation errors that should be forced.
+
+  For indentation rule it is required to complain about the whole block of
+  indentation otherwise a single line that is correct relatively, but
+  incorrect globally will look like a Checkstyle bug. For example, if
+  developer adds a new line to an incorrectly indented if statement.
+
+  Args:
+    errors: A list of xml minidom <error> elements.
+    modified_lines:  A list of lines that has been modified.
+
+  Returns:
+    A list of integer line numbers that should be forced in reporting.
+  """
+  forced_indentation_errors = []
+  error_start_line = None
+  error_end_line = None
+  error_block_modified = False
+  for error in errors:
+    rule = error.attributes['source'].value
+    if rule == INDENTATION_RULE:
+      line = int(error.attributes['line'].value)
+      if error_start_line and line == error_end_line + 1:
+        error_end_line = line
+        if modified_lines and line in modified_lines:
+          error_block_modified = True
+      else:
+        if error_start_line and error_block_modified:
+          forced_indentation_errors += range(error_start_line,
+                                             error_end_line + 1)
+        error_start_line = line
+        error_end_line = line
+        error_block_modified = modified_lines and line in modified_lines
+  if error_start_line and error_block_modified:
+    forced_indentation_errors += range(error_start_line,
+                                       error_end_line + 1)
+
+  return forced_indentation_errors
+
+
+def _ShouldSkip(commit_check, modified_lines, line, rule, test_class,
+                test_data_class, forced_indentation_lines,
+                nonwhitespace_modified_lines):
   """Returns whether an error on a given line should be skipped.
 
   Args:
@@ -216,19 +278,36 @@ def _ShouldSkip(commit_check, modified_lines, line, rule, test_class=False,
     rule: The type of rule that a given line is violating.
     test_class: Whether the file being checked is a test class.
     test_data_class: Whether the file being check is a class used as test data.
+    forced_indentation_lines: A list of lines with forced indentation errors.
+    nonwhitespace_modified_lines: A list of lines with non-whitespace changes.
 
   Returns:
     A boolean whether a given line should be skipped in the reporting.
   """
   # None modified_lines means checked file is new and nothing should be skipped.
   if test_data_class:
+    # Skip all checks for test data classes.
     return True
   if test_class and rule in SKIPPED_RULES_FOR_TEST_FILES:
+    # Skip checks listed in SKIPPED_RULES_FOR_TEST_FILES for test classes.
     return True
   if not commit_check:
+    # Do not skip any checks if Checkstyle is run on a file directly.
     return False
   if modified_lines is None:
     return False
+  if (forced_indentation_lines and rule == INDENTATION_RULE
+      and line in forced_indentation_lines):
+    # Do not skip indentation violations for lines in the
+    # forced_indentation_lines list.
+    return False
+  if line in modified_lines and line not in nonwhitespace_modified_lines:
+    # For lines that only contain whitespace changes enforce only rules
+    # in WHITESPACE_CHANGE_RULES or FORCED_RULES list.
+    return rule not in WHITESPACE_CHANGE_RULES and rule not in FORCED_RULES
+
+  # For all other cases skip lines if they are not modified unless the are in
+  # the list of forces spaces.
   return line not in modified_lines and rule not in FORCED_RULES
 
 
@@ -294,6 +373,9 @@ def main(args=None):
   then the check will be run on a specified commit SHA-1 and if that
   is None it will fallback to check the latest commit of the currently checked
   out branch.
+
+  Args:
+    args: Arguments passed in via command-line.
   """
   parser = argparse.ArgumentParser()
   parser.add_argument('--file', '-f', nargs='+')

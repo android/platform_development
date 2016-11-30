@@ -134,3 +134,35 @@ def modified_lines(filename, extra_data, commit=None):
         groups=('line',))
 
     return list(map(int, modified_line_numbers))
+
+def nonwhitespace_modified_lines(filename, extra_data, commit=None):
+    """Returns the lines that have non-whitespace modifications for this file.
+
+    Args:
+      filename: the file to check.
+      extra_data: is the extra_data returned by modified_files. Additionally, a
+        value of None means that the file was not modified.
+      commit: the complete sha1 (40 chars) of the commit.
+
+    Returns: a list of lines that were modified, or None in case all lines are
+      new.
+    """
+    if extra_data is None:
+        return []
+    if extra_data not in ('M ', ' M', 'MM'):
+        return None
+
+    if commit is None:
+        commit = '0' * 40
+    commit = commit.encode('utf-8')
+
+    # Split as bytes, as the output may have some non unicode characters.
+    blame_lines = subprocess.check_output(
+        ['git', 'blame', '-w',  commit, '--porcelain', '--', filename]).split(
+            os.linesep.encode('utf-8'))
+    modified_line_numbers = utils.filter_lines(
+        blame_lines,
+        commit + br' (?P<line>\d+) (\d+)',
+        groups=('line',))
+
+    return list(map(int, modified_line_numbers))
