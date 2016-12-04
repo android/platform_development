@@ -28,6 +28,18 @@ import tempfile
 import xml.dom.minidom
 import gitlint.git as git
 
+def findFoldersContaining(root, wanted):
+  result = []
+  for fileName in os.listdir(root):
+    filePath = os.path.join(root, fileName)
+    if os.path.isdir(filePath):
+      subResult = findFoldersContaining(filePath, wanted)
+      result.extend(subResult)
+    else:
+      if (fileName == wanted):
+        result.append(root)
+  return result
+
 
 MAIN_DIRECTORY = os.path.normpath(os.path.dirname(__file__))
 CHECKSTYLE_JAR = os.path.join(MAIN_DIRECTORY, 'checkstyle.jar')
@@ -37,7 +49,7 @@ FORCED_RULES = ['com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck
 SKIPPED_RULES_FOR_TEST_FILES = ['com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck',
                                 'com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck']
 SUBPATH_FOR_TEST_FILES = ['/tests/', '/test/']
-SUBPATH_FOR_TEST_DATA_FILES = ['src/tests/test-data/']
+SUBPATH_FOR_TEST_DATA_FILES = findFoldersContaining(os.path.dirname(os.getcwd()), "IGNORE_CHECKSTYLE")
 ERROR_UNCOMMITTED = 'You need to commit all modified files before running Checkstyle\n'
 ERROR_UNTRACKED = 'You have untracked java files that are not being checked:\n'
 
