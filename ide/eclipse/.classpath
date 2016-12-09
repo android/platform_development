@@ -43,6 +43,7 @@
 	<classpathentry kind="src" path="frameworks/base/drm/java"/>
 	<classpathentry kind="src" path="frameworks/base/graphics/java"/>
 	<classpathentry kind="src" path="frameworks/base/keystore/java"/>
+	<classpathentry kind="src" path="frameworks/base/legacy-test/src"/>
 	<classpathentry kind="src" path="frameworks/base/location/java"/>
 	<classpathentry kind="src" path="frameworks/base/location/lib/java"/>
 	<classpathentry kind="src" path="frameworks/base/media/java"/>
@@ -159,7 +160,7 @@
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/conscrypt_intermediates/classes-jarjar.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classes-jarjar.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/android-support-v4_intermediates/javalib.jar"/>
-	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/core-junit_intermediates/classes.jar"/>
+	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/junit_intermediates/classes.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/mockito-api_intermediates/javalib.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/android-support-v13_intermediates/javalib.jar"/>
 	<classpathentry kind="lib" path="out/target/common/obj/JAVA_LIBRARIES/android-common_intermediates/javalib.jar"/>
