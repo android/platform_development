@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba845725_59ffcf89",
+        "filename": "ndk/platforms/common/src/crtbrand.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-12-14T01:47:22Z",
+      "side": 1,
+      "message": "Might want to do something like %NDK_VERSION% just so we don\u0027t accidentally sed something we didn\u0027t intend to.",
+      "range": {
+        "startLine": 39,
+        "startChar": 25,
+        "endLine": 39,
+        "endChar": 36
+      },
+      "revId": "c099b33314130762f89fbe32a60d9f2778e6012a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba845725_b93a8b84",
+        "filename": "ndk/platforms/common/src/crtbrand.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2016-12-14T01:47:22Z",
+      "side": 1,
+      "message": "That won\u0027t be enough. android-ndk-r14-beta1-canary is 29 characters, for example. Should probably make this something like 64 just to be safe.\n\nI suppose the alternative would be to just encode the individual components of the release info rather than the name. (major, minor, build, beta, canary). (The build number is missing here, and that will be a pretty important piece of info for narrowing down problems.)",
+      "revId": "c099b33314130762f89fbe32a60d9f2778e6012a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
