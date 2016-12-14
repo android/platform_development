@@ -36,6 +36,8 @@ typedef int int32_t[sizeof(int) == 4];
 #define ABI_SECTION	".note.android.ident"
 #define ABI_NOTETYPE	1
 #define ABI_ANDROID_API	PLATFORM_SDK_VERSION
+#define ABI_NDK_VERSION "ndk_version"
+#define RESERVED_NDK_VERSION_SZ 20
 
 #define L 9999
 
@@ -63,10 +65,12 @@ static const struct {
     int32_t	type;
     char	name[sizeof ABI_VENDOR];
     int32_t	android_api;
+    char        ndk_version[RESERVED_NDK_VERSION_SZ];
 } abitag __attribute__ ((section (ABI_SECTION), aligned(4), used)) = {
     sizeof ABI_VENDOR,
     sizeof(int32_t),
     ABI_NOTETYPE,
     ABI_VENDOR,
     ABI_ANDROID_API,
+    ABI_NDK_VERSION,
 };
