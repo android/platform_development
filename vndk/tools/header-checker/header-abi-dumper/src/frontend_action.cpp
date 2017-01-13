@@ -40,7 +40,8 @@ HeaderCheckerFrontendAction::CreateASTConsumer(clang::CompilerInstance &ci,
 
   // Create AST consumers.
   std::vector<std::unique_ptr<clang::ASTConsumer>> consumers;
-  consumers.push_back(llvm::make_unique<HeaderASTConsumer>());
+  consumers.push_back(llvm::make_unique<HeaderASTConsumer>(
+      header_file, &ci, dump_name_));
   // Still have a MultiplexConsumer in case other consumers need to be
   // added later.
   return llvm::make_unique<clang::MultiplexConsumer>(std::move(consumers));

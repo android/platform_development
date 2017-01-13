@@ -1,0 +1,35 @@
+syntax = "proto2";
+
+package headerchecker.headerabidumper.src;
+
+message FunctionDecl {
+    required string FunctionName = 1 [default = "NONE"]; //Mangled name
+    required string MangledFunctionName = 2 [default = "NONE"]; // Fully Qualified
+                                                              // Name.
+
+    required string SourceFile = 3;
+    required string ParentName = 4 [default = "NONE"];
+    repeated string TemplateArguments = 5 ; //Mangled name
+    repeated FieldDecl Parameters = 6;
+    required string ReturnType = 7 [default = "VOID"];
+}
+
+message FieldDecl {
+    required string FieldName = 1 [default = "NONE"];
+    required string FieldType = 2 [default = "VOID"];
+}
+
+message RecordDecl {
+    repeated FieldDecl Fields = 2;
+    repeated string InnerClasses = 3;
+    repeated string BaseClasses = 4;
+    required string FullyQualifiedName = 5 [default = "NONE"];
+    required int64 Id = 6 [default = 0];
+    required string EntityType = 7 [default = "NONE"];
+    required string SourceFile = 9;
+}
+
+message TranslationUnit {
+    repeated RecordDecl Classes = 1; // Key : Mangled Class Name
+    repeated FunctionDecl Functions = 2; // Key : Mangled Method Name
+}
