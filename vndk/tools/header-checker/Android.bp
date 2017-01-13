@@ -18,14 +18,46 @@ cc_defaults {
     name: "header-checker-defaults",
 
     defaults: [
-        "clang-defaults",
+        "header-checker-clang-defaults",
     ],
 
     cflags: [
         "-Wall",
         "-Werror",
         "-std=c++11",
+        "-DGOOGLE_PROTOBUF_NO_RTTI",
     ],
+}
+
+cc_defaults {
+    name: "header-checker-clang-defaults",
+    defaults: [
+        "llvm-defaults",
+    ],
+    clang: true,
+
+    header_libs: ["clang-headers"],
+
+    cflags: [
+        "-Wcast-qual",
+        "-Wno-long-long",
+    ],
+
+    include_dirs: [
+        "external/clang/include",
+        "external/clang/lib/CodeGen",
+    ],
+
+    target: {
+        windows: {
+            enabled: true,
+            cflags: [
+                // This triggers an assertion on cross Windows builds.
+                "-Wno-error=uninitialized",
+            ],
+        },
+    },
+
 }
 
 cc_defaults {
@@ -34,6 +66,7 @@ cc_defaults {
     shared_libs: [
         "libclang",
         "libLLVM",
+        "libprotobuf-cpp-full",
     ],
 }
 
@@ -42,6 +75,7 @@ cc_defaults {
 
     static_libs: [
         "libclangTooling",
+        "libclangToolingCore",
         "libclangFrontendTool",
         "libclangFrontend",
         "libclangDriver",
@@ -74,6 +108,27 @@ cc_defaults {
         "libLLVMMCDisassembler",
         "libLLVMSupport",
     ],
+
+    shared_libs: [
+        "libprotobuf-cpp-full",
+    ],
+}
+
+cc_library_shared {
+    name: "libheader-checker-proto",
+		host_supported: true,
+
+		srcs: ["proto/ABI.proto"],
+
+		proto: {
+		    export_proto_headers: true,
+				type: "full",
+		},
+
+		cflags: [
+        "-Wcast-qual",
+        "-Wno-long-long",
+    ],
 }
 
 cc_binary_host {
@@ -84,10 +139,19 @@ cc_binary_host {
         "header-checker-lib-debug-defaults",
     ],
 
-    srcs: ["header-abi-dumper/src/*.cpp"],
+    srcs: [
+        "header-abi-dumper/src/*.cpp",
+        ],
+				
+    shared_libs: [
+        "libheader-checker-proto",
+    ],
 
     target: {
         windows: {
+        // TODO: Fix this for windows.
+        // libprotobuf-cpp-full disabled on windows.
+            enabled: false,
             host_ldlibs: [
                 "-limagehlp",
                 "-lole32",
