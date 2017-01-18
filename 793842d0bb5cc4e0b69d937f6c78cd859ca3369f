@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a32a755e_28a6cb95",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-18T14:02:42Z",
+      "side": 1,
+      "message": "Add an empty line between 37 and 38.",
+      "revId": "793842d0bb5cc4e0b69d937f6c78cd859ca3369f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a32a755e_48b3ffd6",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-18T14:02:42Z",
+      "side": 1,
+      "message": "Upper case \"U\"",
+      "range": {
+        "startLine": 39,
+        "startChar": 22,
+        "endLine": 39,
+        "endChar": 23
+      },
+      "revId": "793842d0bb5cc4e0b69d937f6c78cd859ca3369f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a32a755e_68b0c3c9",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-18T14:02:42Z",
+      "side": 1,
+      "message": "Wrap with curve parentheses:\n\n    if (source_file !\u003d current_file_name_) {\n      return true;\n    }",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 16
+      },
+      "revId": "793842d0bb5cc4e0b69d937f6c78cd859ca3369f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a32a755e_08a90767",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-18T14:02:42Z",
+      "side": 1,
+      "message": "Remove underscore and the end of local variables. Only member variables are ended with underscore.",
+      "range": {
+        "startLine": 38,
+        "startChar": 55,
+        "endLine": 38,
+        "endChar": 56
+      },
+      "revId": "793842d0bb5cc4e0b69d937f6c78cd859ca3369f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a32a755e_a8e0fbad",
+        "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-18T14:02:42Z",
+      "side": 1,
+      "message": "is_virtual",
+      "range": {
+        "startLine": 29,
+        "startChar": 16,
+        "endLine": 29,
+        "endChar": 25
+      },
+      "revId": "793842d0bb5cc4e0b69d937f6c78cd859ca3369f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a32a755e_88db3701",
+        "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-18T14:02:42Z",
+      "side": 1,
+      "message": "is_c_struct",
+      "range": {
+        "startLine": 40,
+        "startChar": 16,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "793842d0bb5cc4e0b69d937f6c78cd859ca3369f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
