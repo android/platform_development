@@ -1,4 +1,3 @@
-
 // Copyright (C) 2016 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +13,7 @@
 // limitations under the License.
 
 #include "ast_processing.h"
+#include "abi_wrappers.h"
 
 #include <clang/Lex/Token.h>
 #include <clang/Tooling/Core/QualTypeNames.h>
@@ -39,27 +39,47 @@ HeaderASTVisitor::HeaderASTVisitor(
 // TODO: optimize source file initial check by preferably moving this into
 // TraverseTranslationUnitDecl.
 bool HeaderASTVisitor::VisitCXXRecordDecl(const clang::CXXRecordDecl *decl) {
-  std::string source_file = GetDeclSourceFile(decl);
-  if (source_file != current_file_name_)
-    return true;
-  abi_dump::RecordDecl *record_decl = tu_ptr_->add_classes();
-  if (!SetupClassFields(record_decl, decl, source_file) ||
-      !SetupClassBases(record_decl, decl)) {
+  RecordDeclWrapper record_decl_wrapper(mangle_contextp_,
+                                        ast_contextp_,
+                                        cip_,
+                                        current_file_name_,
+                                        decl);
+  if (!record_decl_wrapper.GetWrappedABI()) {
     return false;
   }
+  abi_dump::RecordDecl *record_declp = tu_ptr_->add_classes();
+  *record_declp = record_decl_wrapper.GetRecordDecl();
+  return true;
+}
+
+bool HeaderASTVisitor::VisitClassTemplateDecl(
+    const clang::ClassTemplateDecl *decl) {
+  llvm::errs() << "Template Decl name: " << decl->getName() << "\n";
+  return true;
+}
+
+//FIXME: Take this out.
+// Enable recursive traversal of template instantiations.
+bool HeaderASTVisitor::shouldVisitTemplateInstantiations() {
+  return true;
+}
+
+bool HeaderASTVisitor::VisitClassTemplateSpecializationDecl(
+    const clang::ClassTemplateSpecializationDecl *decl) {
+  llvm::errs() << "TemplateSpecializationDecl name: " << decl->getName() << "\n";
   return true;
 }
 
 bool HeaderASTVisitor::VisitFunctionDecl(const clang::FunctionDecl *decl) {
-  std::string source_file = GetDeclSourceFile(decl);
-  if (source_file != current_file_name_) {
-    return true;
-  }
-  abi_dump::FunctionDecl *function_decl = tu_ptr_->add_functions();
-
-  if (!SetupFunction(function_decl, decl, source_file)) {
+  FunctionDeclWrapper function_decl_wrapper(mangle_contextp_,
+                                            ast_contextp_,
+                                            cip_,
+                                            current_file_name_,
+                                            decl);
+  if (!function_decl_wrapper.GetWrappedABI())
     return false;
-  }
+  abi_dump::FunctionDecl *function_declp = tu_ptr_->add_functions();
+  *function_declp = function_decl_wrapper.GetFunctionDecl();
   return true;
 }
 
@@ -92,120 +112,6 @@ void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
 
 void HeaderASTConsumer::HandleVTable(clang::CXXRecordDecl *crd) {
   llvm::errs() << "HandleVTable: " << crd->getName() << "\n";
-}
-
-std::string HeaderASTVisitor::GetDeclSourceFile(const clang::NamedDecl *decl) {
-  clang::SourceManager &SM = cip_->getSourceManager();
-  clang::SourceLocation location = decl->getLocation();
-  llvm::StringRef file_name= SM.getFilename(location);
-  return file_name.str();
-}
-
-std::string HeaderASTVisitor::AccessToString(const clang::AccessSpecifier sp) {
-  std::string str = "none";
-  switch (sp) {
-    case clang::AS_public:
-      str = "public";
-      break;
-    case clang::AS_private:
-      str = "private";
-      break;
-    case clang::AS_protected:
-      str = "protected";
-      break;
-    default:
-      break;
-  }
-  return str;
-}
-
-std::string HeaderASTVisitor::GetMangledNameDecl(const clang::NamedDecl *decl) {
-  std::string mangled_or_demangled_name = decl->getName();
-  if (mangle_contextp_->shouldMangleDeclName(decl)) {
-    llvm::raw_string_ostream ostream(mangled_or_demangled_name);
-    mangle_contextp_->mangleName(decl, ostream);
-    ostream.flush();
-  }
-  return mangled_or_demangled_name;
-}
-
-bool HeaderASTVisitor::SetupFunction(abi_dump::FunctionDecl *functionp,
-                                     const clang::FunctionDecl *decl,
-                                     const std::string &source_file) {
-  // Go through all the parameters in the method and add them to the fields.
-  // Also get the fully qualfied name and mangled name and store them.
-  functionp->set_function_name(decl->getQualifiedNameAsString());
-  functionp->set_mangled_function_name(GetMangledNameDecl(decl));
-  functionp->set_source_file(source_file);
-  clang::QualType return_type =
-      decl->getReturnType().getDesugaredType(*ast_contextp_);
-  functionp->set_return_type(
-      clang::TypeName::getFullyQualifiedName(return_type, *ast_contextp_));
-  clang::FunctionDecl::param_const_iterator param_it = decl->param_begin();
-  while (param_it != decl->param_end()) {
-    abi_dump::FieldDecl *function_fieldp = functionp->add_parameters();
-    if (!function_fieldp) {
-      llvm::errs() << "Couldn't add parameter to method. Aborting\n";
-      return false;
-    }
-    function_fieldp->set_field_name((*param_it)->getName());
-    clang::QualType field_type =
-      (*param_it)->getType().getDesugaredType(*ast_contextp_);
-
-    function_fieldp->set_field_type(
-        clang::TypeName::getFullyQualifiedName(field_type, *ast_contextp_));
-    param_it++;
-  }
-  functionp->set_access(AccessToString(decl->getAccess()));
-  return true;
-}
-
-bool HeaderASTVisitor::SetupClassFields(abi_dump::RecordDecl *classp,
-                                        const clang::CXXRecordDecl *decl,
-                                        const std::string &source_file) {
-  classp->set_fully_qualified_name(decl->getQualifiedNameAsString());
-  classp->set_source_file(source_file);
-  classp->set_entity_type("class");
-  clang::RecordDecl::field_iterator field = decl->field_begin();
-  while (field != decl->field_end()) {
-    abi_dump::FieldDecl *class_fieldp = classp->add_fields();
-    if (!class_fieldp) {
-      llvm::errs() << " Couldn't add class field: " << field->getName()
-                   << " to reference dump\n";
-      return false;
-    }
-    class_fieldp->set_field_name(field->getName());
-    clang::QualType field_type =
-        field->getType().getDesugaredType(*ast_contextp_);
-    class_fieldp->set_field_type(
-        clang::TypeName::getFullyQualifiedName(field_type, *ast_contextp_));
-    class_fieldp->set_access(AccessToString(field->getAccess()));
-    field++;
-  }
-  return true;
-}
-
-bool HeaderASTVisitor::SetupClassBases(abi_dump::RecordDecl *classp,
-                                        const clang::CXXRecordDecl *decl) {
-  clang::CXXRecordDecl::base_class_const_iterator base_class =
-      decl->bases_begin();
-  while (base_class != decl->bases_end()) {
-    abi_dump::CXXBaseSpecifier *base_specifierp = classp->add_base_specifiers();
-    if (!base_specifierp) {
-      llvm::errs() << " Couldn't add base specifier to reference dump\n";
-      return false;
-    }
-    //TODO: Make this pair into a function, used accross.
-    clang::QualType base_type =
-        base_class->getType().getDesugaredType(*ast_contextp_);
-    base_specifierp->set_fully_qualified_name(
-        clang::TypeName::getFullyQualifiedName(base_type, *ast_contextp_));
-    base_specifierp->set_is_virtual(base_class->isVirtual());
-    base_specifierp->set_access(
-        AccessToString(base_class->getAccessSpecifier()));
-    base_class++;
-  }
-  return true;
 }
 
 void HeaderASTPPCallbacks::MacroDefined(const clang::Token &macro_name_tok,

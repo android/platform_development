@@ -15,6 +15,8 @@ message FunctionDecl {
   repeated FieldDecl parameters = 6;
   required string return_type = 7 [default = "VOID"];
   required string access = 8 [default = "public"];
+  required uint32 template_kind = 9 [default = 0];
+  repeated FieldDecl template_parameters = 10;
 }
 
 message FieldDecl {
@@ -38,6 +40,8 @@ message RecordDecl {
   required string entity_type = 7 [default = "NONE"];
   required string source_file = 9 [default = "NONE"];
   required bool is_c_struct = 10 [default = false];
+  required string template_kind = 11 [default = "NONE"];
+  repeated bool template_arguments = 12; //denotes template arguments.
 }
 
 message TranslationUnit {

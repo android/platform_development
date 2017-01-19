@@ -39,25 +39,14 @@ class HeaderASTVisitor
 
   bool VisitCXXRecordDecl(const clang::CXXRecordDecl *decl);
 
+  bool VisitClassTemplateDecl(const clang::ClassTemplateDecl *decl);
+
+  bool VisitClassTemplateSpecializationDecl(
+      const clang::ClassTemplateSpecializationDecl *decl);
+
   bool VisitFunctionDecl(const clang::FunctionDecl *decl);
 
- private:
-  bool SetupFunction(abi_dump::FunctionDecl *methodp,
-                     const clang::FunctionDecl *decl,
-                     const std::string &source_file);
-
-  bool SetupClassFields(abi_dump::RecordDecl *classp,
-                        const clang::CXXRecordDecl *decl,
-                        const std::string &source_file);
-
- bool SetupClassBases(abi_dump::RecordDecl *classp,
-                      const clang::CXXRecordDecl *decl);
-
-  std::string GetDeclSourceFile(const clang::NamedDecl *decl);
-
-  std::string AccessToString(const clang::AccessSpecifier sp);
-
-  std::string GetMangledNameDecl(const clang::NamedDecl *decl);
+  bool shouldVisitTemplateInstantiations();
 
  private:
   abi_dump::TranslationUnit *tu_ptr_;
