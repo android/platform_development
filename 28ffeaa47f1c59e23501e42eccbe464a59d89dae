@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "082efe90_bbc38189",
+        "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-21T03:00:43Z",
+      "side": 1,
+      "message": "Both Function and RecordDecl templates need to follow the same.",
+      "range": {
+        "startLine": 18,
+        "startChar": 11,
+        "endLine": 18,
+        "endChar": 35
+      },
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
