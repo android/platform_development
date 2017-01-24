@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "48f0f69f_d6ebba29",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-24T03:56:41Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 22
+      },
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c804e64f_fa4cdd81",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 3
