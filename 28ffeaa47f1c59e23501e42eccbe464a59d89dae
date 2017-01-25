@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "b2cf9f8e_782c1ddb",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T04:25:02Z",
+      "side": 1,
+      "message": "Done",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 22
+      },
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c804e64f_fa4cdd81",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 3
@@ -36,6 +59,29 @@
       "writtenOn": "2017-01-24T03:55:32Z",
       "side": 1,
       "message": "Re-format with:\n\n    : ABIWrapper(mangle_contextp, ast_contextp, compiler_instance_p),\n      record_decl_(decl) { }",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 59
+      },
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ae6f4c9_d34f2d99",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T04:25:02Z",
+      "side": 1,
+      "message": "Done",
       "range": {
         "startLine": 188,
         "startChar": 0,
@@ -71,6 +117,29 @@
     },
     {
       "key": {
+        "uuid": "1c93afca_7eb4434c",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T04:25:02Z",
+      "side": 1,
+      "message": "Done",
+      "range": {
+        "startLine": 298,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 57
+      },
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c804e64f_9a4f9175",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
         "patchSetId": 3
@@ -82,6 +151,29 @@
       "writtenOn": "2017-01-24T03:55:32Z",
       "side": 1,
       "message": "Remove this space character.",
+      "range": {
+        "startLine": 44,
+        "startChar": 31,
+        "endLine": 44,
+        "endChar": 32
+      },
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e34f41e_7aed3b3b",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T04:25:02Z",
+      "side": 1,
+      "message": "Done",
       "range": {
         "startLine": 44,
         "startChar": 31,
@@ -117,6 +209,29 @@
     },
     {
       "key": {
+        "uuid": "f51e1150_ab19deb0",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T04:25:02Z",
+      "side": 1,
+      "message": "Done",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 1
+      },
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08f6fe9d_144ffaa2",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
         "patchSetId": 3
@@ -128,6 +243,23 @@
       "writtenOn": "2017-01-24T03:55:32Z",
       "side": 1,
       "message": "Replace with:\n\n    bool shouldVisitTemplateInstatiations() const {\n      return true;\n    }",
+      "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84f76944_335f4128",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T04:25:02Z",
+      "side": 1,
+      "message": "Done",
       "revId": "28ffeaa47f1c59e23501e42eccbe464a59d89dae",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
