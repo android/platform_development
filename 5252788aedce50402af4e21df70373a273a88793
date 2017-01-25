@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c2df39a_0b940f11",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-25T04:58:50Z",
+      "side": 1,
+      "message": "Indent by 2.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 1
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fbdab80d_2697f37c",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-25T04:58:50Z",
+      "side": 1,
+      "message": "Replace with:\n\n    : ABIWrapper(mangle_contextp, ast_contextp, compiler_instance_p),\n      function_decl_(decl) { }",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 61
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d387457a_6b74041a",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-25T04:58:50Z",
+      "side": 1,
+      "message": "Remove these 2 spaces.",
+      "range": {
+        "startLine": 166,
+        "startChar": 4,
+        "endLine": 166,
+        "endChar": 6
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4366d025_0c890308",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-25T04:58:50Z",
+      "side": 1,
+      "message": "Remove these 2 spaces.",
+      "range": {
+        "startLine": 167,
+        "startChar": 6,
+        "endLine": 167,
+        "endChar": 8
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63a96906_d9b4e978",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-01-25T04:58:50Z",
+      "side": 1,
+      "message": "You don\u0027t need semicolon here.",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 4
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
