@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "cb5276e6_671ce827",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T06:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 1
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fbdab80d_2697f37c",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 4
@@ -36,6 +59,29 @@
       "writtenOn": "2017-01-25T04:58:50Z",
       "side": 1,
       "message": "Replace with:\n\n    : ABIWrapper(mangle_contextp, ast_contextp, compiler_instance_p),\n      function_decl_(decl) { }",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 61
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "326f1e24_ed441e2e",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T06:45:22Z",
+      "side": 1,
+      "message": "Done",
       "range": {
         "startLine": 104,
         "startChar": 0,
@@ -71,6 +117,29 @@
     },
     {
       "key": {
+        "uuid": "48f30ac1_584b33b6",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T06:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "range": {
+        "startLine": 166,
+        "startChar": 4,
+        "endLine": 166,
+        "endChar": 6
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4366d025_0c890308",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 4
@@ -94,6 +163,29 @@
     },
     {
       "key": {
+        "uuid": "acea0dba_b175405a",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T06:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "range": {
+        "startLine": 167,
+        "startChar": 6,
+        "endLine": 167,
+        "endChar": 8
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "63a96906_d9b4e978",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
         "patchSetId": 4
@@ -105,6 +197,29 @@
       "writtenOn": "2017-01-25T04:58:50Z",
       "side": 1,
       "message": "You don\u0027t need semicolon here.",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 4
+      },
+      "revId": "5252788aedce50402af4e21df70373a273a88793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b45dbe2_c8bd04b8",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-01-25T06:45:22Z",
+      "side": 1,
+      "message": "Done",
       "range": {
         "startLine": 49,
         "startChar": 3,
