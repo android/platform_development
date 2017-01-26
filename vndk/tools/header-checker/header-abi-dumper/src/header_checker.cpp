@@ -40,6 +40,10 @@ static llvm::cl::opt<std::string> out_dump(
     llvm::cl::desc("Specify the reference dump file name"),
     llvm::cl::cat(header_checker_category));
 
+static llvm::cl::list<std::string> export_includes(
+    "e", llvm::cl::desc("<export-includes>"),
+    llvm::cl::cat(header_checker_category), llvm::cl::ZeroOrMore);
+
 // Hide irrelevant command line options defined in LLVM libraries.
 static void HideIrrelevantCommandLineOptions() {
   llvm::StringMap<llvm::cl::Option *> &map = llvm::cl::getRegisteredOptions();
@@ -70,6 +74,12 @@ int main(int argc, const char **argv) {
     llvm::errs() << "ERROR: Header file \"" << header_file << "\" not found\n";
     ::exit(1);
   }
+  //TODO: Checks for existance of exported dirs
+  if (!export_includes.size()) {
+    llvm::errs() << "export_includes not specified\n";
+    return 0;
+  }
+
 
   // Check the availability of clang compilation options.
   if (!compilations) {
@@ -83,7 +93,7 @@ int main(int argc, const char **argv) {
   clang::tooling::ClangTool tool(*compilations, header_files);
 
   std::unique_ptr<clang::tooling::FrontendActionFactory> factory(
-      new HeaderCheckerFrontendActionFactory(out_dump));
-
+      new HeaderCheckerFrontendActionFactory(out_dump, export_includes));
+  //TODO : return value of run changes with ast traversal failure.
   return tool.run(factory.get());
 }
