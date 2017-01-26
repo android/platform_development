@@ -20,13 +20,21 @@
 #include <clang/Frontend/CompilerInstance.h>
 #include <clang/Lex/Preprocessor.h>
 #include <llvm/ADT/STLExtras.h>
+#include <llvm/Support/FileSystem.h>
 
 #include <memory>
 #include <string>
 
+#include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+using std::set;
+
 HeaderCheckerFrontendAction::HeaderCheckerFrontendAction(
-    const std::string &dump_name)
-  : dump_name_(dump_name) {}
+    const std::string &dump_name, const vector<std::string> &exports)
+  : dump_name_(dump_name), export_include_dirs_(exports) { }
 
 std::unique_ptr<clang::ASTConsumer>
 HeaderCheckerFrontendAction::CreateASTConsumer(clang::CompilerInstance &ci,
@@ -34,7 +42,54 @@ HeaderCheckerFrontendAction::CreateASTConsumer(clang::CompilerInstance &ci,
   // Add preprocessor callbacks.
   clang::Preprocessor &pp = ci.getPreprocessor();
   pp.addPPCallbacks(llvm::make_unique<HeaderASTPPCallbacks>());
-
+  std::set<std::string> exported_headers;
+  for (auto &it : export_include_dirs_) {
+    if (!GetExportedHeaderSet(it, exported_headers)) {
+         return nullptr;
+    }
+  }
   // Create AST consumers.
-  return llvm::make_unique<HeaderASTConsumer>(header_file, &ci, dump_name_);
+  return llvm::make_unique<HeaderASTConsumer>(header_file,
+                                              &ci, dump_name_,
+                                              exported_headers);
+}
+
+bool HeaderCheckerFrontendAction::GetExportedHeaderSet(std::string dir_name,
+                                                       set<std::string> &eh) {
+  dir_name += "/";
+  DIR *directory = opendir((dir_name + "/").c_str());
+  if (!directory) {
+    llvm::errs() << "Opening directory : " << dir_name << " failed\n";
+    return false;
+  }
+
+  while (struct dirent *directory_entry = readdir(directory)) {
+    std::string dirent_name(directory_entry->d_name);
+    if (dirent_name == "." || dirent_name == "..") {
+      continue;
+    }
+    struct stat buf;
+    std::string file_path = dir_name + dirent_name;
+    llvm::SmallString<128> abs_path(file_path);
+    if (llvm::sys::fs::make_absolute(abs_path)) {
+      return false;
+    }
+    file_path = abs_path.str();
+    if (stat(file_path.c_str(), &buf)) {
+      // USE goto instead ?
+      closedir(directory);
+      return false;
+    }
+    if (S_ISREG(buf.st_mode)) {
+      eh.insert(file_path);
+    }
+    if (S_ISDIR(buf.st_mode)) {
+      if (!GetExportedHeaderSet(file_path, eh)) {
+        llvm::errs() << "Couldn't process dir : " << file_path << "\n";
+        return false;
+      }
+    }
+  }
+  closedir(directory);
+  return true;
 }
