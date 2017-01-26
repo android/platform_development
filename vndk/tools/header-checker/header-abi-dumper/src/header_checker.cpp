@@ -32,13 +32,17 @@ static llvm::cl::OptionCategory header_checker_category(
     "header-checker options");
 
 static llvm::cl::opt<std::string> header_file(
-    llvm::cl::Positional, llvm::cl::desc("<header>"), llvm::cl::Required,
+    "i", llvm::cl::desc("<header>"), llvm::cl::Required,
     llvm::cl::cat(header_checker_category));
 
 static llvm::cl::opt<std::string> out_dump(
     "o", llvm::cl::value_desc("out_dump"), llvm::cl::Required,
     llvm::cl::desc("Specify the reference dump file name"),
     llvm::cl::cat(header_checker_category));
+
+static llvm::cl::list<std::string> export_includes(
+    llvm::cl::desc("<export-includes>"), llvm::cl::Positional,
+    llvm::cl::cat(header_checker_category), llvm::cl::OneOrMore);
 
 // Hide irrelevant command line options defined in LLVM libraries.
 static void HideIrrelevantCommandLineOptions() {
@@ -71,6 +75,14 @@ int main(int argc, const char **argv) {
     ::exit(1);
   }
 
+  //Existential checks for exported dirs.
+  for (auto &dir : export_includes) {
+    if (!llvm::sys::fs::exists(dir)) {
+      llvm::errs() << "ERROR: exported dir \"" << dir << "\" not found\n";
+      ::exit(1);
+    }
+  }
+
   // Check the availability of clang compilation options.
   if (!compilations) {
     llvm::errs() << "ERROR: Clang compilation options not specified.\n";
@@ -81,9 +93,8 @@ int main(int argc, const char **argv) {
   std::vector<std::string> header_files{ header_file };
 
   clang::tooling::ClangTool tool(*compilations, header_files);
-
   std::unique_ptr<clang::tooling::FrontendActionFactory> factory(
-      new HeaderCheckerFrontendActionFactory(out_dump));
+      new HeaderCheckerFrontendActionFactory(out_dump, export_includes));
 
   return tool.run(factory.get());
 }
