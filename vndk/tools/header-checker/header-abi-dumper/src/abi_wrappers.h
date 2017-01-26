@@ -40,14 +40,15 @@ class ABIWrapper {
 
   std::string GetMangledNameDecl(const clang::NamedDecl *decl) const;
 
-  bool SetupTemplateParamNames(abi_dump::TemplateInfo *tinfo,
+  bool SetupTemplateParamNames(abi_dump::TTemplateInfo *tinfo,
                                clang::TemplateParameterList *pl) const;
 
-  bool SetupTemplateArguments(abi_dump::TemplateInfo *tinfo,
+  bool SetupTemplateArguments(abi_dump::TTemplateInfo *tinfo,
                               const clang::TemplateArgumentList *tl) const;
 
   std::string QualTypeToString(const clang::QualType &sweet_qt) const;
 
+  std::string GetTagDeclQualifiedName(const clang::TagDecl *decl) const;
  private:
   clang::MangleContext *mangle_contextp_;
   const clang::ASTContext *ast_contextp_;
@@ -61,21 +62,21 @@ class RecordDeclWrapper : public ABIWrapper {
                     const clang::CompilerInstance *compiler_instance_p,
                     const clang::RecordDecl *decl);
 
-  std::unique_ptr<abi_dump::RecordDecl> GetRecordDecl() const;
+  std::unique_ptr<abi_dump::TRecordDecl> GetRecordDecl() const;
 
  private:
   const clang::RecordDecl *record_decl_;
 
  private:
-  void SetupRecordInfo(abi_dump::RecordDecl *record_declp,
+  void SetupRecordInfo(abi_dump::TRecordDecl *record_declp,
                        const std::string &source_file) const;
 
-  bool SetupRecordFields(abi_dump::RecordDecl *recordp,
+  bool SetupRecordFields(abi_dump::TRecordDecl *recordp,
                         const std::string &source_file) const;
 
-  bool SetupCXXBases(abi_dump::RecordDecl *cxxp) const;
+  bool SetupCXXBases(abi_dump::TRecordDecl *cxxp) const;
 
-  bool SetupTemplateInfo(abi_dump::RecordDecl *record_declp) const;
+  bool SetupTemplateInfo(abi_dump::TRecordDecl *record_declp) const;
 };
 
 class FunctionDeclWrapper : public ABIWrapper {
@@ -85,16 +86,16 @@ class FunctionDeclWrapper : public ABIWrapper {
                       const clang::CompilerInstance *compiler_instance_p,
                       const clang::FunctionDecl *decl);
 
-  std::unique_ptr<abi_dump::FunctionDecl> GetFunctionDecl() const;
+  std::unique_ptr<abi_dump::TFunctionDecl> GetFunctionDecl() const;
 
  private:
   const clang::FunctionDecl *function_decl_;
 
  private:
-  bool SetupFunction(abi_dump::FunctionDecl *methodp,
+  bool SetupFunction(abi_dump::TFunctionDecl *methodp,
                      const std::string &source_file) const;
 
-  bool SetupTemplateInfo(abi_dump::FunctionDecl *functionp) const;
+  bool SetupTemplateInfo(abi_dump::TFunctionDecl *functionp) const;
 };
 
 class EnumDeclWrapper : public ABIWrapper {
@@ -104,13 +105,13 @@ class EnumDeclWrapper : public ABIWrapper {
                   const clang::CompilerInstance *compiler_instance_p,
                   const clang::EnumDecl *decl);
 
-  std::unique_ptr<abi_dump::EnumDecl> GetEnumDecl() const;
+  std::unique_ptr<abi_dump::TEnumDecl> GetEnumDecl() const;
 
  private:
   const clang::EnumDecl *enum_decl_;
 
  private:
-  bool SetupEnum(abi_dump::EnumDecl *enump,
+  bool SetupEnum(abi_dump::TEnumDecl *enump,
                  const std::string &source_file) const;
 };
 
