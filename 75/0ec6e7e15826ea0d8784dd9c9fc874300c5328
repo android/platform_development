@@ -1,0 +1,9 @@
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Code-Review+2: Yohann Roussel <yroussel@google.com>
+Autosubmit+1: Gustav Sennton <gsennton@google.com>
+Verified+1: Gustav Sennton <gsennton@google.com>
+Submitted-by: Gustav Sennton <gsennton@google.com>
+Submitted-at: Thu, 26 Jan 2017 08:26:18 +0000
+Reviewed-on: https://android-review.googlesource.com/328119
+Project: platform/development
+Branch: refs/heads/master
