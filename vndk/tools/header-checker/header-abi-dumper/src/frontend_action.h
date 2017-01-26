@@ -20,6 +20,9 @@
 
 #include <memory>
 #include <string>
+#include <vector>
+
+using std::vector;
 
 namespace clang {
   class ASTConsumer;
@@ -29,13 +32,18 @@ namespace clang {
 class HeaderCheckerFrontendAction : public clang::ASTFrontendAction {
  private:
   std::string dump_name_;
+  const vector<std::string> &export_include_dirs_;
 
  public:
-  HeaderCheckerFrontendAction(const std::string &dump_name);
+  HeaderCheckerFrontendAction(const std::string &dump_name,
+                              const vector<std::string> &exports);
 
  protected:
   std::unique_ptr<clang::ASTConsumer> CreateASTConsumer(
       clang::CompilerInstance &ci, llvm::StringRef header_file) override;
+
+ private:
+  bool GetExportedHeaderSet(std::string dir_name, std::set<std::string> &eh);
 };
 
 #endif  // FRONTEND_ACTION_H_
