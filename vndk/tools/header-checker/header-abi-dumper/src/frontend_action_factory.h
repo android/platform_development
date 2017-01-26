@@ -17,13 +17,17 @@
 
 #include <clang/Tooling/Tooling.h>
 
+#include <vector>
+
 class HeaderCheckerFrontendActionFactory
     : public clang::tooling::FrontendActionFactory {
  private:
   std::string dump_name_;
+  const std::vector<std::string> &export_include_dirs_;
 
  public:
-  HeaderCheckerFrontendActionFactory(const std::string &ref_dump_name);
+  HeaderCheckerFrontendActionFactory(const std::string &ref_dump_name,
+                                     const std::vector<std::string> &exports);
 
   clang::FrontendAction *create() override;
 };
