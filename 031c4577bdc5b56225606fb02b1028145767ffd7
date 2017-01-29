@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ab35e7c_a8abb4f2",
+        "filename": "ndk/platforms/common/src/crtbrand.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2017-01-29T01:23:28Z",
+      "side": 1,
+      "message": "readelf --notes was choking on what we were generating before because the `descsz` field has to tell you how many bytes to skip to get to the next note in the file.",
+      "revId": "031c4577bdc5b56225606fb02b1028145767ffd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
