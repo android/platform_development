@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "51c0ca5f_c0aef1f7",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-02T22:11:56Z",
+      "side": 1,
+      "message": "Good practice to close these after use even though their destructors close them.",
+      "range": {
+        "startLine": 148,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 58
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4f48d23_e40fc8e2",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
         "patchSetId": 3
