@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4f48d23_e40fc8e2",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-02T21:09:33Z",
+      "side": 1,
+      "message": "::exit(1) or better to use goto to combine ::exit(1) ?",
+      "range": {
+        "startLine": 157,
+        "startChar": 1,
+        "endLine": 157,
+        "endChar": 3
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03c731f2_63f38cb3",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-02T21:09:33Z",
+      "side": 1,
+      "message": "This can probably be replaced by a const reference since the HeaderASTVisitor object is in the scope of HeaderASTConsumer.",
+      "range": {
+        "startLine": 62,
+        "startChar": 2,
+        "endLine": 62,
+        "endChar": 41
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ce7b472_06a00e19",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/header_checker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-02T21:09:33Z",
+      "side": 1,
+      "message": "--",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 0
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a3e2dde_2d70fae7",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-02T21:09:33Z",
+      "side": 1,
+      "message": "add space",
+      "range": {
+        "startLine": 70,
+        "startChar": 45,
+        "endLine": 70,
+        "endChar": 46
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d089238_d93c2641",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-02T21:09:33Z",
+      "side": 1,
+      "message": "probably not needed, just have an object and return bool.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 26
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b52e981_4bb54d3e",
+        "filename": "vndk/tools/header-checker/tests/example2.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-02T21:09:33Z",
+      "side": 1,
+      "message": "Add.",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
