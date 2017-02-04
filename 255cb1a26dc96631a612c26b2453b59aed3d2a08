@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51dda52d_ac572795",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-04T00:56:14Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 73,
+        "startChar": 19,
+        "endLine": 73,
+        "endChar": 25
+      },
+      "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
