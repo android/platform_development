@@ -183,6 +183,23 @@
       "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2282086c_69fdc2b3",
+        "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-06T08:13:57Z",
+      "side": 1,
+      "message": "Why are you adding \"T\" and \"m\" prefixes to names?",
+      "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
