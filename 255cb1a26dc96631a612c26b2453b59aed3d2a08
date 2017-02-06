@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "168c677f_6d49dde7",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-06T08:18:15Z",
+      "side": 1,
+      "message": "I personally don\u0027t like the idea of macros.  This can be rewritten as:\n\n    template\u003ctypename T\u003e                                                                             \n    static inline bool LinkDecl(google::protobuf::RepeatedPtrField\u003cT\u003e *dest,                         \n                                std::set\u003cstd::string\u003e *link_set,                                     \n                                const google::protobuf::RepeatedPtrField\u003cT\u003e \u0026src) {                  \n      for (auto \u0026\u0026element : src) {                                                                   \n        if (!link_set-\u003einsert(element.mlinker_set_key()).second) {                                   \n          // Not a newly-found item skip this one.                                                   \n          continue;                                                                                  \n        }                                                                                            \n                                                                                                     \n        T *new_field \u003d dest-\u003eAdd();                                                                  \n        if (!new_field) {                                                                            \n          return false;                                                                              \n        }                                                                                            \n                                                                                                     \n        *new_field \u003d element;                                                                        \n      }                                                                                              \n      return true;                                                                                   \n    }",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 1
+      },
+      "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "51dda52d_ac572795",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
         "patchSetId": 5
@@ -179,6 +202,75 @@
         "startChar": 9,
         "endLine": 124,
         "endChar": 18
+      },
+      "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79f32cc4_1e0ae5db",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-06T08:18:15Z",
+      "side": 1,
+      "message": "(Continue to comment on line 36) Replace these two lines with:\n\n    return LinkDecl(linked_tu-\u003emutable_mrecords(), \u0026mrecord_decl_set_,\n                    dump_tu-\u003emrecords());",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 130,
+        "endChar": 14
+      },
+      "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a21bc7a_ef83166c",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-06T08:18:15Z",
+      "side": 1,
+      "message": "(Continue to the comment on line 36) Replace these two lines with:\n\n    return LinkDecl(linked_tu-\u003emutable_mfunctions(), \u0026mfunction_decl_set_,\n                    dump_tu-\u003emfunctions());",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 14
+      },
+      "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ede900b_44ed040d",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-06T08:18:15Z",
+      "side": 1,
+      "message": "(Continue to the comment on line 36) Replace these two lines with:\n\n    return LinkDecl(linked_tu-\u003emutable_mfunctions(), \u0026mfunction_decl_set_,\n                    dump_tu-\u003emfunctions());",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 14
       },
       "revId": "255cb1a26dc96631a612c26b2453b59aed3d2a08",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
