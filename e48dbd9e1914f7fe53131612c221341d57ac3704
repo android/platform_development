@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "77bc9767_ff842206",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-06T08:38:22Z",
+      "side": 1,
+      "message": "Remarks. The idiomatic way to close the stream early is to wrap the stream with another block, e.g.:\n\n    {\n      std::fstream stream(...);\n      read_data_from_stream(\u0026stream);\n\n      // stream is closed and destructed here (but we don\u0027t have to write anything.)\n    }",
+      "parentUuid": "c74dc3c8_77212757",
+      "range": {
+        "startLine": 148,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 58
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4f48d23_e40fc8e2",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
         "patchSetId": 3
