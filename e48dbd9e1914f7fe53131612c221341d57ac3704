@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c74dc3c8_77212757",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-06T07:51:01Z",
+      "side": 1,
+      "message": "Nope.  I don\u0027t think it is a good practice.  Esp. you are introducing goto statements simply for the `.close()` function calls.",
+      "parentUuid": "51c0ca5f_c0aef1f7",
+      "range": {
+        "startLine": 148,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 58
+      },
+      "revId": "e48dbd9e1914f7fe53131612c221341d57ac3704",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4f48d23_e40fc8e2",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
         "patchSetId": 3
