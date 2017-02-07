@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4424f0c_8eb463ce",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "out_dump_name_",
+      "range": {
+        "startLine": 137,
+        "startChar": 6,
+        "endLine": 137,
+        "endChar": 30
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "215d89ab_c6e0cb10",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 15
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8cf86928_d41e2b51",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "std::vector",
+      "range": {
+        "startLine": 36,
+        "startChar": 40,
+        "endLine": 36,
+        "endChar": 46
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0db145b4_5c8008e0",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "std::set",
+      "range": {
+        "startLine": 58,
+        "startChar": 55,
+        "endLine": 58,
+        "endChar": 58
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa42fc4f_b7d8cf53",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 18
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a450f9a_7e458d68",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "std::vector",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 14
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2bdf972_d435850d",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "std::vector",
+      "range": {
+        "startLine": 39,
+        "startChar": 36,
+        "endLine": 39,
+        "endChar": 42
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2d79213_39666e00",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "I feel that this function don\u0027t have to be a member of the class.  Simply treat this a global static inline function will be fine.\n\nIf you prefer to put this in the class, then declare this member function as static member.",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 54
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fa3a339_1060020d",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T10:59:04Z",
+      "side": 1,
+      "message": "Move this upward before LinkRecords, LinkFunctions, and LinkEnums.",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 146,
+        "endChar": 1
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
