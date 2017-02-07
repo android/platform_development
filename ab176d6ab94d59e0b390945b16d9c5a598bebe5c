@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1d9bea_81ba61e2",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T12:29:23Z",
+      "side": 1,
+      "message": "Replace with more C++-ish APIs:\n\n    #include \u003cllvm/Support/FileSystem.h\u003e\n    #include \u003cllvm/Support/Path.h\u003e\n    \n    bool HeaderCheckerFrontendAction::GetExportedHeaderSet(\n        const std::string \u0026dir_name, std::set\u003cstd::string\u003e \u0026eh) {\n      std::error_code ec;\n    \n      llvm::sys::fs::recursive_directory_iterator walker(dir_name, ec);\n      llvm::sys::fs::recursive_directory_iterator end;\n    \n      llvm::sys::fs::file_status file_status;\n      for (; walker !\u003d end; walker.increment(ec)) {\n        if (ec) {\n          llvm::errs() \u003c\u003c \"Failed to walk directory: \" \u003c\u003c dir_name \u003c\u003c \"\\n\";\n          return false;\n        }\n    \n        const std::string \u0026file_path \u003d walker-\u003epath();\n    \n        if (walker-\u003estatus(file_status)) {\n          llvm::errs() \u003c\u003c \"Failed to stat file: \" \u003c\u003c file_path \u003c\u003c \"\\n\";\n          return false;\n        }\n    \n        if (!llvm::sys::fs::is_regular_file(file_status)) {\n          // Ignore non-regular files (e.g. soft links).\n          continue;\n        }\n    \n        llvm::StringRef file_name(llvm::sys::path::filename(file_path));\n        if (!file_name.empty() \u0026\u0026 file_name.front() \u003d\u003d \u0027.\u0027) {\n          // Ignore hidden files.\n          continue;\n        }\n    \n        if (file_name.endswith(\".swp\") || file_name.endswith(\".swo\") ||\n            file_name.endswith(\"#\")) {\n          // Ignore editor temporary files.\n          continue;\n        }\n    \n        llvm::SmallString\u003c128\u003e abs_path(file_path);\n        if (llvm::sys::fs::make_absolute(abs_path)) {\n          llvm::errs() \u003c\u003c \"Failed to get absolute path: \" \u003c\u003c file_path \u003c\u003c \"\\n\";\n          return false;\n        }\n    \n        eh.insert(abs_path.str());\n      }\n    \n      return true;\n    }",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 1
+      },
+      "revId": "ab176d6ab94d59e0b390945b16d9c5a598bebe5c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c1b3e2d_0d0ba359",
+        "filename": "vndk/tools/header-checker/tests/example1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-07T12:29:23Z",
+      "side": 1,
+      "message": "I think this file (example1.cpp) have to be moved to input/ directory as well.",
+      "revId": "ab176d6ab94d59e0b390945b16d9c5a598bebe5c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
