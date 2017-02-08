@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e8a0cbca_9e6d88c1",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "this has been done in patch 8 I think",
+      "parentUuid": "a4424f0c_8eb463ce",
+      "range": {
+        "startLine": 137,
+        "startChar": 6,
+        "endLine": 137,
+        "endChar": 30
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "215d89ab_c6e0cb10",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-07T10:59:04Z",
       "side": 1,
       "message": "Remove",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 15
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "706294d3_27178077",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "215d89ab_c6e0cb10",
       "range": {
         "startLine": 32,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a9f9d12_12ae268c",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8cf86928_d41e2b51",
+      "range": {
+        "startLine": 36,
+        "startChar": 40,
+        "endLine": 36,
+        "endChar": 46
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0db145b4_5c8008e0",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
         "patchSetId": 7
@@ -82,6 +154,30 @@
       "writtenOn": "2017-02-07T10:59:04Z",
       "side": 1,
       "message": "std::set",
+      "range": {
+        "startLine": 58,
+        "startChar": 55,
+        "endLine": 58,
+        "endChar": 58
+      },
+      "revId": "7f62eac07d0790469f84e853603523b6ad17b46e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae37ae5c_76e1a1f2",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0db145b4_5c8008e0",
       "range": {
         "startLine": 58,
         "startChar": 55,
