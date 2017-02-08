@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba07a093_c5e4daa3",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "--",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 1
+      },
+      "revId": "bbdbcc714027160eaba87ffd9ea4f502817891a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7233bfa0_60f4ec68",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_linker.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 66,
+        "startChar": 7,
+        "endLine": 66,
+        "endChar": 13
+      },
+      "revId": "bbdbcc714027160eaba87ffd9ea4f502817891a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
