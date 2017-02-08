@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "6c20d698_4dfbe3f0",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-08T03:57:17Z",
+      "side": 1,
+      "message": "Add {",
+      "revId": "ee7af0a646013d58c10500f9067a47939441c967",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "608ee1b2_34415661",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-08T03:57:17Z",
+      "side": 1,
+      "message": "Add }",
+      "revId": "ee7af0a646013d58c10500f9067a47939441c967",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f0a0805_264092d3",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-08T03:57:17Z",
+      "side": 1,
+      "message": "{",
+      "revId": "ee7af0a646013d58c10500f9067a47939441c967",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66c58050_af73fca9",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-08T03:57:17Z",
+      "side": 1,
+      "message": "}",
+      "revId": "ee7af0a646013d58c10500f9067a47939441c967",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ec8dcd0_5beb2585",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 10
