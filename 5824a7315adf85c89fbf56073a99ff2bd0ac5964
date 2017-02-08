@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e33b28f_4289d62a",
+        "filename": "vndk/tools/definition-tool/vndk_abi_tool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T17:09:27Z",
+      "side": 1,
+      "message": "This command needs more arguments, since external/abi-dumper has been modified to enable use with the build system, in particular we need to take in readelf, vtable dumper and objump from the commandline as well.",
+      "range": {
+        "startLine": 101,
+        "startChar": 18,
+        "endLine": 101,
+        "endChar": 71
+      },
+      "revId": "5824a7315adf85c89fbf56073a99ff2bd0ac5964",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
