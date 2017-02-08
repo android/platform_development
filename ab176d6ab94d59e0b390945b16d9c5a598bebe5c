@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "55f6087e_bbf9fba0",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "Done. Collapsed all the temporary file and hidden file checks into one \"if\". This also needs a walker.no_push for the files we don\u0027t want to process since we don\u0027t want to recursively look at their entries. for eg : .git.",
+      "parentUuid": "ba1d9bea_81ba61e2",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 1
+      },
+      "revId": "ab176d6ab94d59e0b390945b16d9c5a598bebe5c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3c1b3e2d_0d0ba359",
         "filename": "vndk/tools/header-checker/tests/example1.cpp",
         "patchSetId": 8
@@ -36,6 +60,24 @@
       "writtenOn": "2017-02-07T12:29:23Z",
       "side": 1,
       "message": "I think this file (example1.cpp) have to be moved to input/ directory as well.",
+      "revId": "ab176d6ab94d59e0b390945b16d9c5a598bebe5c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08bb3032_cc8087de",
+        "filename": "vndk/tools/header-checker/tests/example1.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-08T01:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c1b3e2d_0d0ba359",
       "revId": "ab176d6ab94d59e0b390945b16d9c5a598bebe5c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
