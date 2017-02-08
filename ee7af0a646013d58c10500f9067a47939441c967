@@ -323,6 +323,30 @@
     },
     {
       "key": {
+        "uuid": "42117929_36d5aa40",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-08T06:32:51Z",
+      "side": 1,
+      "message": "Just figure out Google C++ style guideline suggest const input comes before non-const output, so no need to change the order:\n\n    const std::string \u0026dir_name, std::set\u003cstd::string\u003e *exported_headers",
+      "parentUuid": "2e1476e3_1200518b",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "ee7af0a646013d58c10500f9067a47939441c967",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cf8a94ba_2d31e83b",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
         "patchSetId": 10
@@ -426,6 +450,30 @@
       "writtenOn": "2017-02-08T03:50:23Z",
       "side": 1,
       "message": "std::set\u003cstd::string\u003e *exported_headers, const std::string \u0026dir_name",
+      "range": {
+        "startLine": 45,
+        "startChar": 28,
+        "endLine": 45,
+        "endChar": 75
+      },
+      "revId": "ee7af0a646013d58c10500f9067a47939441c967",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "838262e2_7ce11f0b",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-08T06:32:51Z",
+      "side": 1,
+      "message": "Just figure out Google C++ style guideline suggest const input comes before non-const output, so no need to change the order:\n\n    const std::string \u0026dir_name, std::set\u003cstd::string\u003e *exported_headers",
+      "parentUuid": "7cc3e335_ec23a390",
       "range": {
         "startLine": 45,
         "startChar": 28,
