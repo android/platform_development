@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd935297_0cc2f0dc",
+        "filename": "vndk/tools/abi-tool/vndk_abi_tool.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-09T18:41:41Z",
+      "side": 1,
+      "message": "Would it be a good idea to specify this as a constant ?",
+      "range": {
+        "startLine": 175,
+        "startChar": 19,
+        "endLine": 175,
+        "endChar": 29
+      },
+      "revId": "beaa9605a68df703f8b0654ba5e7b0bc95844bc9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4dfaef1e_31f2bafb",
+        "filename": "vndk/tools/abi-tool/vndk_abi_tool.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-02-09T18:41:41Z",
+      "side": 1,
+      "message": "bindump ? To distinguish between header-abi-dumps and binary dumps.",
+      "range": {
+        "startLine": 247,
+        "startChar": 58,
+        "endLine": 247,
+        "endChar": 63
+      },
+      "revId": "beaa9605a68df703f8b0654ba5e7b0bc95844bc9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
