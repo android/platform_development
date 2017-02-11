@@ -1,0 +1,45 @@
+// Copyright (C) 2016 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#include "abi_diff.h"
+
+#include <llvm/Support/CommandLine.h>
+
+static llvm::cl::OptionCategory header_checker_category(
+    "header-abi-compare options");
+
+static llvm::cl::opt<std::string> compatibility_report(
+    "c", llvm::cl::desc("<compatibility report>"), llvm::cl::Required,
+    llvm::cl::cat(header_checker_category));
+
+static llvm::cl::opt<std::string> new_dump(
+    "n", llvm::cl::desc("<new dump>"), llvm::cl::Required,
+    llvm::cl::cat(header_checker_category));
+
+static llvm::cl::opt<std::string> old_dump(
+    "o", llvm::cl::desc("<old dump>"), llvm::cl::Required,
+    llvm::cl::cat(header_checker_category));
+
+int main(int argc, const char **argv) {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+  llvm::cl::ParseCommandLineOptions(argc, argv, "header-checker");
+  HeaderAbiDiff Judge(old_dump, new_dump, compatibility_report);
+  switch (Judge.GenerateCompatibilityReport()) {
+    case HeaderAbiDiff::COMPATIBLE:
+    case HeaderAbiDiff::EXTENSION:
+      return 0;
+    default:
+      return 1;
+  }
+}
