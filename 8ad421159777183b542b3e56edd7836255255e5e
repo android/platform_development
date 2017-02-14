@@ -22,6 +22,30 @@
       "revId": "8ad421159777183b542b3e56edd7836255255e5e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "72121b68_6da91265",
+        "filename": "sdk/plat_tools_source.prop_template",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2017-02-14T21:00:13Z",
+      "side": 1,
+      "message": "i don\u0027t think that\u0027s necessary for this set of changes.",
+      "parentUuid": "f6fcf202_bee01452",
+      "range": {
+        "startLine": 2,
+        "startChar": 38,
+        "endLine": 2,
+        "endChar": 40
+      },
+      "revId": "8ad421159777183b542b3e56edd7836255255e5e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
