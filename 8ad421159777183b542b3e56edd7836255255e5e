@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f6fcf202_bee01452",
+        "filename": "sdk/plat_tools_source.prop_template",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1010055
+      },
+      "writtenOn": "2017-02-14T20:55:58Z",
+      "side": 1,
+      "message": "enh/jmgao: do we want this to be a preview release? (0.4.0 in that case?)\n\njbakermalone: Do we even support preview releases for platform tools component?",
+      "range": {
+        "startLine": 2,
+        "startChar": 38,
+        "endLine": 2,
+        "endChar": 40
+      },
+      "revId": "8ad421159777183b542b3e56edd7836255255e5e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
