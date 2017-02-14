@@ -46,6 +46,30 @@
       "revId": "8ad421159777183b542b3e56edd7836255255e5e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83ff0980_c74e2f7d",
+        "filename": "sdk/plat_tools_source.prop_template",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2017-02-14T21:01:30Z",
+      "side": 1,
+      "message": "This one still defaults to the old usb implementation, so I don\u0027t think we need to have a preview release for this. We definitely want to do that for the one that switches the default to libusb, though.",
+      "parentUuid": "72121b68_6da91265",
+      "range": {
+        "startLine": 2,
+        "startChar": 38,
+        "endLine": 2,
+        "endChar": 40
+      },
+      "revId": "8ad421159777183b542b3e56edd7836255255e5e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
