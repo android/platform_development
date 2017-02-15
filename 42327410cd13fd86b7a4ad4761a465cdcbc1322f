@@ -45,6 +45,121 @@
       "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ed3759a_ef7ebf14",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-15T09:20:29Z",
+      "side": 1,
+      "message": "diff?",
+      "range": {
+        "startLine": 20,
+        "startChar": 16,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18f6f5c3_b10d233c",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-15T09:20:29Z",
+      "side": 1,
+      "message": "I prefer using -o for output compatibility report.",
+      "range": {
+        "startLine": 23,
+        "startChar": 5,
+        "endLine": 23,
+        "endChar": 6
+      },
+      "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7644ba2_4f7d4c19",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-15T09:20:29Z",
+      "side": 1,
+      "message": "I feel this can be two cl::Positional, e.g.\n\n    static llvm::cl::opt\u003cstd::string\u003e old_dump(\n        llvm::cl::Positional, llvm::cl::Required, llvm::cl::desc(\"\u003cold dump\u003e\"),\n        llvm::cl::cat(header_checker_category));\n\n    static llvm::cl::opt\u003cstd::string\u003e new_dump(\n        llvm::cl::Positional, llvm::cl::Required, llvm::cl::desc(\"\u003cnew dump\u003e\"),\n        llvm::cl::cat(header_checker_category));\n\nSo that we can run the command with:\n\n    header-abi-diff -o compare_result.txt old.dump new.dump",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 44
+      },
+      "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b47bf146_278a5b50",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-15T09:20:29Z",
+      "side": 1,
+      "message": "judge",
+      "range": {
+        "startLine": 37,
+        "startChar": 16,
+        "endLine": 37,
+        "endChar": 21
+      },
+      "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eba9c0a_5ffabcaa",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-15T09:20:29Z",
+      "side": 1,
+      "message": "judge",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
