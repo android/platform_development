@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "560a85d6_23bea21b",
+        "filename": "vndk/tools/header-checker/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-16T02:23:42Z",
+      "side": 1,
+      "message": "You missed this one.",
+      "range": {
+        "startLine": 32,
+        "startChar": 58,
+        "endLine": 32,
+        "endChar": 59
+      },
+      "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6460885a_a26f3d90",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 1
@@ -225,6 +248,30 @@
       "side": 1,
       "message": "I think it\u0027s clearer to have named arguments rather than positional, especially for this part of the tool, since the ordering of new and old dumps matter and someone could easily interchange them inadvertently. I\u0027ll change the names to -o, -new, and -old respectively.",
       "parentUuid": "f7644ba2_4f7d4c19",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 44
+      },
+      "revId": "42327410cd13fd86b7a4ad4761a465cdcbc1322f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad6bd70_b6554868",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-02-16T02:23:42Z",
+      "side": 1,
+      "message": "OK.  Np.",
+      "parentUuid": "8e62440a_a11ad3f3",
       "range": {
         "startLine": 26,
         "startChar": 0,
