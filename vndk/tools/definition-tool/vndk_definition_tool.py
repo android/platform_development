@@ -477,6 +477,8 @@ class GraphNode(object):
         self.deps = set()
         self.users = set()
         self.is_ndk = _is_ndk_lib(path)
+        self.unresolved_symbols = set()
+        self.linked_symbols = dict()
 
     def add_dep(self, dst):
         self.deps.add(dst)
@@ -561,24 +563,51 @@ class Graph(object):
                 if match:
                     self.add_dep(match.group(1), match.group(2))
 
+    def _find_exported_symbol(self, symbol, libs):
+        """Find the shared library with the exported symbol."""
+        for lib in libs:
+            if symbol in lib.elf.exported_symbols:
+                return lib
+        return None
+
+    def _resolve_imported_symbols(self, lib, imported_libs):
+        """Resolve the imported symbols in a library."""
+        for symbol in lib.elf.imported_symbols:
+            imported_lib = self._find_exported_symbol(symbol, imported_libs)
+            if imported_lib:
+                lib.linked_symbols[symbol] = imported_lib
+            else:
+                lib.unresolved_symbols.add(symbol)
+
+    def _resolve_dt_needed(self, lib, lib_set, system_lib, vendor_lib):
+        imported_libs = []
+        for dt_needed in lib.elf.dt_needed:
+            candidates = [
+                dt_needed,
+                os.path.join(system_lib, dt_needed),
+                os.path.join(vendor_lib, dt_needed),
+            ]
+            for candidate in candidates:
+                dep = lib_set.get(candidate)
+                if dep:
+                    break
+            if not dep:
+                print('warning: {}: Missing needed library: {}  Tried: {}'
+                      .format(lib.path, dt_needed, candidates),
+                      file=sys.stderr)
+                continue
+            lib.add_dep(dep)
+            imported_libs.append(dep)
+        return imported_libs
+
+    def _resolve_deps(self, lib, lib_set, system_lib, vendor_lib):
+        imported_libs = self._resolve_dt_needed(lib, lib_set, system_lib,
+                                                vendor_lib)
+        self._resolve_imported_symbols(lib, imported_libs)
+
     def _resolve_deps_lib_set(self, lib_set, system_lib, vendor_lib):
         for lib in lib_set.values():
-            for dt_needed in lib.elf.dt_needed:
-                candidates = [
-                    dt_needed,
-                    os.path.join(system_lib, dt_needed),
-                    os.path.join(vendor_lib, dt_needed),
-                ]
-                for candidate in candidates:
-                    dep = lib_set.get(candidate)
-                    if dep:
-                        break
-                if not dep:
-                    print('warning: {}: Missing needed library: {}  Tried: {}'
-                          .format(lib.path, dt_needed, candidates),
-                          file=sys.stderr)
-                    continue
-                lib.add_dep(dep)
+            self._resolve_deps(lib, lib_set, system_lib, vendor_lib)
 
     def resolve_deps(self):
         self._resolve_deps_lib_set(self.lib32, '/system/lib', '/vendor/lib')
