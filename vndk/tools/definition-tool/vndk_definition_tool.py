@@ -477,6 +477,8 @@ class GraphNode(object):
         self.deps = set()
         self.users = set()
         self.is_ndk = _is_ndk_lib(path)
+        self.unresolved_symbols = list(elf.imported_symbols)
+        self.linked_symbols = dict()
 
     def add_dep(self, dst):
         self.deps.add(dst)
@@ -561,6 +563,15 @@ class Graph(object):
                 if match:
                     self.add_dep(match.group(1), match.group(2))
 
+    def _resolve_imported_symbols(self, lib, import_lib):
+        unresolved_symbols = []
+        for symbol in lib.unresolved_symbols:
+            if symbol in import_lib.elf.exported_symbols:
+                lib.linked_symbols[symbol] = import_lib
+            else:
+                unresolved_symbols.append(symbol)
+        lib.unresolved_symbols = unresolved_symbols
+
     def _resolve_deps_lib_set(self, lib_set, system_lib, vendor_lib):
         for lib in lib_set.values():
             for dt_needed in lib.elf.dt_needed:
@@ -579,6 +590,7 @@ class Graph(object):
                           file=sys.stderr)
                     continue
                 lib.add_dep(dep)
+                self._resolve_imported_symbols(lib, dep)
 
     def resolve_deps(self):
         self._resolve_deps_lib_set(self.lib32, '/system/lib', '/vendor/lib')
