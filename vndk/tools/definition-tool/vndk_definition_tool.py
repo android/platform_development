@@ -471,6 +471,12 @@ PT_VENDOR = 1
 NUM_PARTITIONS = 2
 
 
+VNDKHeuristics = collections.namedtuple(
+        'VNDKHeuristics',
+        'extra_system_libs extra_vendor_libs extra_vndk_core vndk_core '
+        'vndk_indirect vndk_fwk_ext vndk_vnd_ext')
+
+
 class ELFResolver(object):
     def __init__(self, lib_set, default_search_path):
         self.lib_set = lib_set
@@ -502,6 +508,7 @@ class ELFLinkData(object):
         self.elf = elf
         self.deps = set()
         self.users = set()
+        self.extended_symbol_users = set()
         self.is_ndk = _is_ndk_lib(path)
         self.unresolved_symbols = set()
         self.linked_symbols = dict()
@@ -637,78 +644,151 @@ class ELFLinker(object):
                 self.lib64,
                 ELFResolver(self.lib64, ['/system/lib64', '/vendor/lib64']))
 
+    def _compute_lib_extended_symbols_users(self, generic_refs, lib):
+        """Compute the libraries using the extended symbols exported from this
+        library."""
+        try:
+            ref_lib = generic_refs.refs[lib.path]
+        except KeyError:
+            lib.extended_symbol_users = lib.users
+
+        for user in lib.users:
+            for symbol, imp_lib in user.linked_symbols:
+                if imp_lib is not lib:
+                    continue
+                if symbol not in ref_lib:
+                    lib.extended_symbol_users.add(user)
+
+    def compute_extended_symbols_users(self, generic_refs):
+        for lib_set in (self.lib_pt[PT_SYSTEM], self.lib_pt[PT_VENDOR]):
+            for lib in lib_set:
+                self._compute_lib_extended_symbols_users(generic_refs, lib)
+
     def compute_vndk_libs(self, generic_refs, banned_libs):
-        vndk_core = set()
-        vndk_ext = set()
+        # Collect all system / vendor partition libraries.
+        system_libs = set(self.lib_pt[PT_SYSTEM].values())
+        vendor_libs = set(self.lib_pt[PT_VENDOR].values())
 
-        def collect_lib_with_partition_user(result, lib_set, partition):
-            for lib in lib_set.values():
-                for user in lib.users:
-                    if user.partition == partition:
-                        result.add(lib)
-                        break
+        # Collect VNDK candidates.
+        vndk_candidates = set()
 
-        # Check library usages from vendor to system.
-        collect_lib_with_partition_user(
-                vndk_core, self.lib_pt[PT_SYSTEM], PT_VENDOR)
-
-        # Check library usages from system to vendor.
-        collect_lib_with_partition_user(
-                vndk_ext, self.lib_pt[PT_VENDOR], PT_SYSTEM)
-
-        # Remove NDK libraries and banned libraries.
         def is_not_vndk(lib):
             return lib.is_ndk or banned_libs.get(os.path.basename(lib.path))
 
-        def remove_ndk_libs(libs):
-            return set(lib for lib in libs if not is_not_vndk(lib))
-
-        vndk_core = remove_ndk_libs(vndk_core)
-        vndk_ext = remove_ndk_libs(vndk_ext)
-
-        # Compute transitive closure.
-        def is_not_vndk_indirect(lib):
-            return is_not_vndk(lib) or lib in vndk_ext
-
-        def is_not_vndk_ext(lib):
-            return is_not_vndk(lib) or lib in vndk_core
-
-        vndk_indirect = self.compute_closure(vndk_core, is_not_vndk_indirect)
-        vndk_indirect -= vndk_core
-        vndk_ext = self.compute_closure(vndk_ext, is_not_vndk_ext)
-
-        # Move extended libraries from vndk_core to vndk_ext.
-        if generic_refs:
-            stack = list(vndk_core)
-            stacked = vndk_core
-            vndk_core = set()
-
-            while stack:
-                lib = stack.pop()
-                if generic_refs.is_equivalent_lib(lib):
-                    vndk_core.add(lib)
+        def collect_libs_with_partition_user(result, lib_set, partition):
+            for lib in lib_set:
+                if is_not_vndk(lib):
                     continue
+                for user in lib.users:
+                    if user.partition == partition:
+                        result.add(lib)
 
-                print('warning: {}: This is a VNDK extension and must be '
-                      'moved to vendor partition.'.format(lib.path),
-                      file=sys.stderr)
+        collect_libs_with_partition_user(
+                vndk_candidates, system_libs, PT_VENDOR)
 
-                # Move the library from vndk_core to vndk_ext.
-                vndk_ext.add(lib)
+        collect_libs_with_partition_user(
+                vndk_candidates, vendor_libs, PT_SYSTEM)
+
+        # Remove non-AOSP libraries.
+        vndk_customized_candidates = set()
+        vndk_extended_candidates = set()
+
+        extra_vndk_core = set()
+        extra_system_libs = set()
+        extra_vendor_libs = set()
+
+        if not generic_refs:
+            vndk_core = vndk_candidates
+        else:
+            vndk_core = set()
+            for lib in vndk_candidates:
+                category = generic_refs.classify_lib(lib)
+                if category == GenericRefs.NEW_LIB:
+                    system_libs.add(lib)
+                    vendor_libs.add(lib)
+                    extra_system_libs.add(lib)
+                    extra_vendor_libs.add(lib)
+                elif category == GenericRefs.EXPORT_EQUAL:
+                    vndk_customized_candidates.add(lib)
+                elif category == GenericRefs.EXPORT_SUPER_SET:
+                    vndk_extended_candidates.add(lib)
+                else:
+                    print('error: {}: vndk library must not be modified.'
+                          .format(lib.path), file=sys.stderr)
+
+        # Classify VNDK customized candidates.
+        vndk_fwk_ext = set()
+        vndk_vnd_ext = set()
+        for lib in vndk_customized_candidates:
+            if not lib.extended_symbol_users:
+                # Carefully-customized VNDK-core libraries.
+                system_libs.add(lib)
+                vndk_core.add(lib)
+            else:
+                # Extensively-customized VNDK libraries.
+
+                # Assume that extensively-customized vndk are only for the
+                # framework.
+                # TODO: Allow the user the specify whether the extensively
+                # customized libraries are for system or vendor partition.
+                system_libs.add(lib)
+                extra_vndk_core.add(lib)
+                vndk_fwk_ext.add(lib)
+
+        # Compute VNDK extension candidates.
+        def topologically_sorted(libs):
+            result = []
+            visited = set()
+            def traverse(lib):
                 for dep in lib.deps:
-                    # Skip NDK or banned libraries.
-                    if is_not_vndk(dep):
-                        continue
-                    # Skip vndk_ext and possibly vndk_core.
-                    if dep in vndk_ext or dep in stacked:
-                        continue
-                    # Promote the dependency from vndk_indirect to vndk_core.
-                    assert dep in vndk_indirect
-                    vndk_indirect.remove(dep)
-                    stack.append(dep)
-                    stacked.add(dep)
+                    if dep in libs and dep not in visited:
+                        visited.add(dep)
+                        traverse(dep)
+                result.append(lib)
+            for lib in libs:
+                if lib not in visited:
+                    traverse(lib)
+            result.reverse()
+            return result
 
-        return (vndk_core, vndk_indirect, vndk_ext)
+        for lib in topologically_sorted(vndk_extended_candidates):
+            has_system_users = False
+            has_vendor_users = False
+            for user in lib.extended_symbol_users:
+                if user in system_libs:
+                    has_system_users = True
+                if user in vendor_libs:
+                    has_vendor_users = True
+            if has_system_users:
+                system_libs.add(lib)
+                vndk_fwk_ext.add(lib)
+            if has_vendor_users:
+                vendor_libs.add(lib)
+                vndk_vnd_ext.add(lib)
+
+        vndk_indirect = self.compute_closure(vndk_core, is_not_vndk) - vndk_core
+
+        # FIXME: These should not be empty sets.
+        vndk_stable_libs = set()
+        sp_hals = set()
+
+        def is_not_vndk_fwk_ext(lib):
+            return (is_not_vndk(lib) or (lib in vndk_core) or
+                    (lib in vndk_indirect) or (lib in vndk_stable_libs) or
+                    (lib in sp_hals))
+
+
+        def is_not_vndk_vnd_ext(lib):
+            return (is_not_vndk(lib) or (lib in vndk_core) or
+                    (lib in vndk_indirect) or (lib in vndk_stable_libs) or
+                    (lib in sp_hals))
+
+        vndk_fwk_ext = self.compute_closure(vndk_fwk_ext, is_not_vndk_fwk_ext)
+        vndk_vnd_ext = self.compute_closure(vndk_vnd_ext, is_not_vndk_vnd_ext)
+
+        return VNDKHeuristics(extra_system_libs, extra_vendor_libs,
+                              extra_vndk_core, vndk_core, vndk_indirect,
+                              vndk_fwk_ext, vndk_vnd_ext)
 
     @staticmethod
     def compute_closure(root_set, is_excluded):
@@ -979,21 +1059,30 @@ class VNDKCommand(ELFGraphCommand):
         if args.warn_incorrect_partition:
             self._warn_incorrect_partition(graph)
 
-        vndk_core, vndk_indirect, vndk_ext = \
-                graph.compute_vndk_libs(generic_refs, banned_libs)
-
-        if args.warn_high_level_ndk_deps:
-            self._warn_high_level_ndk_deps((vndk_core, vndk_indirect, vndk_ext))
-
         if args.warn_banned_vendor_lib_deps:
             self._warn_banned_vendor_lib_deps(graph, banned_libs)
 
-        for lib in sorted_lib_path_list(vndk_core):
+        vndk = graph.compute_vndk_libs(generic_refs, banned_libs)
+
+        if args.warn_high_level_ndk_deps:
+            self._warn_high_level_ndk_deps(
+                    (vndk.extra_vndk_core, vndk.vndk_core, vndk.vndk_indirect,
+                     vndk.vndk_fwk_ext, vndk.vndk_vnd_ext))
+
+        for lib in sorted_lib_path_list(vndk.extra_system_libs):
+            print('extra-system-lib:', lib)
+        for lib in sorted_lib_path_list(vndk.extra_vendor_libs):
+            print('extra-vendor-lib:', lib)
+        for lib in sorted_lib_path_list(vndk.extra_vndk_core):
+            print('extra-vndk-core:', lib)
+        for lib in sorted_lib_path_list(vndk.vndk_core):
             print('vndk-core:', lib)
-        for lib in sorted_lib_path_list(vndk_indirect):
+        for lib in sorted_lib_path_list(vndk.vndk_indirect):
             print('vndk-indirect:', lib)
-        for lib in sorted_lib_path_list(vndk_ext):
-            print('vndk-ext:', lib)
+        for lib in sorted_lib_path_list(vndk.vndk_fwk_ext):
+            print('vndk-fwk-ext:', lib)
+        for lib in sorted_lib_path_list(vndk.vndk_vnd_ext):
+            print('vndk-vnd-ext:', lib)
 
         return 0
 
