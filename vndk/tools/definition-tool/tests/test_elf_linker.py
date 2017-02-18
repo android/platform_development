@@ -232,7 +232,7 @@ class ELFLinkerTest(unittest.TestCase):
         node = graph.map_path_to_lib('/vendor/lib64/libEGL.so')
         self.assertEqual([], self._get_paths_from_nodes(node.users))
 
-    def test_compute_vndk_libs(self):
+    def test_compute_vndk(self):
         gb = self._create_normal_graph()
         graph = gb.graph
 
@@ -240,14 +240,17 @@ class ELFLinkerTest(unittest.TestCase):
             def is_banned(self, name):
                 return False
 
-        vndk_core, vndk_indirect, vndk_ext = \
-                graph.compute_vndk_libs(None, MockBannedLibs())
+        vndk = graph.compute_vndk(sp_hals=set(), vndk_stable=set(),
+                                  vndk_customized_for_system=set(),
+                                  vndk_customized_for_vendor=set(),
+                                  generic_refs=None,
+                                  banned_libs=MockBannedLibs())
 
         self.assertEqual(['/system/lib/libcutils.so',
                           '/system/lib64/libcutils.so'],
-                         self._get_paths_from_nodes(vndk_core))
-        self.assertEqual([], self._get_paths_from_nodes(vndk_indirect))
-        self.assertEqual([], self._get_paths_from_nodes(vndk_ext))
+                         self._get_paths_from_nodes(vndk.vndk_core))
+        self.assertEqual([], self._get_paths_from_nodes(vndk.vndk_fwk_ext))
+        self.assertEqual([], self._get_paths_from_nodes(vndk.vndk_vnd_ext))
 
     def test_compute_sp_hal(self):
         gb = GraphBuilder()
