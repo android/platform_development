@@ -238,14 +238,13 @@ class ELFLinkerTest(unittest.TestCase):
             def get(self, name):
                 return None
 
-        vndk_core, vndk_indirect, vndk_ext = \
-                graph.compute_vndk_libs(None, MockBannedLibs())
+        vndk = graph.compute_vndk_libs(None, MockBannedLibs())
 
         self.assertEqual(['/system/lib/libcutils.so',
                           '/system/lib64/libcutils.so'],
-                         self._get_paths_from_nodes(vndk_core))
-        self.assertEqual([], self._get_paths_from_nodes(vndk_indirect))
-        self.assertEqual([], self._get_paths_from_nodes(vndk_ext))
+                         self._get_paths_from_nodes(vndk.vndk_core))
+        self.assertEqual([], self._get_paths_from_nodes(vndk.vndk_fwk_ext))
+        self.assertEqual([], self._get_paths_from_nodes(vndk.vndk_vnd_ext))
 
 
 if __name__ == '__main__':
