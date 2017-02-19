@@ -42,8 +42,16 @@ trap 'rm -rf ${tmpdir}; echo; exit 1' EXIT INT QUIT
 
 one=${tmpdir}/one
 two=${tmpdir}/two
-mknod ${one} p
-mknod ${two} p
+case $(uname -s) in
+    Darwin)
+      mkfifo ${one}
+      mkfifo ${two}
+      ;;
+    *)
+    mknod ${one} p
+    mknod ${two} p
+      ;;
+esac
 chmod 0600 ${one} ${two}
 
 read -p "Enter password for '$1' (blank for none; password will be visible): " \
