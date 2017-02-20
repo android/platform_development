@@ -235,7 +235,7 @@ class ELFLinkerTest(unittest.TestCase):
         gb.resolve()
 
         # Compute SP-HAL.
-        sp_hals = set(lib.path for lib in gb.graph.compute_sp_hal(False))
+        sp_hals = set(lib.path for lib in gb.graph.compute_sp_hal(set(), False))
 
         for lib in ('lib', 'lib64'):
             # Check HIDL SP-HAL implementation.
