@@ -660,6 +660,28 @@ class ELFLinker(object):
         return self.compute_matched_libs(path_patterns, closure,
                                          is_excluded_libs)
 
+    def compute_vndk_stable(self, closure):
+        """Find all vndk stable libraries."""
+
+        path_patterns = (
+            # HIDL libraries used by android.hardware.graphics.mapper@2.0-impl.
+            '^.*/libhidlbase\\.so$',
+            '^.*/libhidltransport\\.so$',
+            '^.*/libhidlmemory\\.so$',
+            '^.*/libfmp\\.so$',
+            '^.*/libhwbinder\\.so$',
+
+            # UI libraries used by libEGL.
+            #'^.*/libui\\.so$',  # FIXME: Remove this after libui_vndk.so is out.
+            #'^.*/libui_vndk\\.so$',
+        )
+
+        def is_excluded_libs(lib):
+            return lib.is_ndk
+
+        return self.compute_matched_libs(path_patterns, closure,
+                                         is_excluded_libs)
+
 
     def compute_vndk_libs(self, generic_refs, banned_libs):
         vndk_core = set()
@@ -1106,6 +1128,28 @@ class SpHalCommand(ELFGraphCommand):
         return 0
 
 
+class VNDKStableCommand(ELFGraphCommand):
+    def __init__(self):
+        super(VNDKStableCommand, self).__init__(
+                'vndk-stable', help='Find transitive closure of VNDK stable')
+
+    def add_argparser_options(self, parser):
+        super(VNDKStableCommand, self).add_argparser_options(parser)
+
+        parser.add_argument('--closure', action='store_true',
+                            help='show the closure')
+
+    def main(self, args):
+        graph = ELFLinker.create(args.system, args.system_dir_as_vendor,
+                                 args.vendor, args.vendor_dir_as_system,
+                                 args.load_extra_deps)
+
+        vndk_stable = graph.compute_vndk_stable(args.closure)
+        for lib in sorted_lib_path_list(vndk_stable):
+            print(lib)
+        return 0
+
+
 def main():
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest='subcmd')
@@ -1122,6 +1166,7 @@ def main():
     register_subcmd(DepsCommand())
     register_subcmd(DepsClosureCommand())
     register_subcmd(SpHalCommand())
+    register_subcmd(VNDKStableCommand())
 
     args = parser.parse_args()
     if not args.subcmd:
