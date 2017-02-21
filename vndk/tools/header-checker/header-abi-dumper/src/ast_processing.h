@@ -35,7 +35,7 @@ class HeaderASTVisitor
  public:
   HeaderASTVisitor(abi_dump::TranslationUnit *tu_ptr,
                    clang::MangleContext *mangle_contextp,
-                   const clang::ASTContext *ast_contextp,
+                   clang::ASTContext *ast_contextp,
                    const clang::CompilerInstance *compiler_instance_p,
                    const std::string &current_file_name,
                    const std::set<std::string> &exported_headers,
@@ -57,7 +57,7 @@ class HeaderASTVisitor
  private:
   abi_dump::TranslationUnit *tu_ptr_;
   clang::MangleContext *mangle_contextp_;
-  const clang::ASTContext *ast_contextp_;
+  clang::ASTContext *ast_contextp_;
   const clang::CompilerInstance *cip_;
   const std::string current_file_name_;
   const std::set<std::string> &exported_headers_;

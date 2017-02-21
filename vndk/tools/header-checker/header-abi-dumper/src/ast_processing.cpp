@@ -33,7 +33,7 @@ using abi_wrapper::EnumDeclWrapper;
 HeaderASTVisitor::HeaderASTVisitor(
     abi_dump::TranslationUnit *tu_ptr,
     clang::MangleContext *mangle_contextp,
-    const clang::ASTContext *ast_contextp,
+    clang::ASTContext *ast_contextp,
     const clang::CompilerInstance *compiler_instance_p,
     const std::string &current_file_name,
     const std::set<std::string> &exported_headers,
@@ -106,8 +106,10 @@ bool HeaderASTVisitor::VisitFunctionDecl(const clang::FunctionDecl *decl) {
 
 // We don't need to recurse into Declarations which are not exported.
 bool HeaderASTVisitor::TraverseDecl(clang::Decl *decl) {
-  if (!decl)
+  // Skip private declarations (does not include fields).
+  if (!decl || decl->getAccess() == clang::AccessSpecifier::AS_private) {
     return true;
+  }
   std::string source_file = ABIWrapper::GetDeclSourceFile(decl, cip_);
   if ((decl != tu_decl_) &&
       (exported_headers_.find(source_file) == exported_headers_.end())) {

@@ -24,8 +24,9 @@
 #include <llvm/Support/raw_ostream.h>
 
 using abi_diff::RecordDeclDiff;
-using abi_diff::FieldDeclDiff;
+using abi_diff::RecordFieldDeclDiff;
 using abi_diff::CXXBaseSpecifierDiff;
+using abi_diff::CXXVTableDiff;
 using abi_diff::EnumDeclDiff;
 using abi_diff::EnumFieldDeclDiff;
 using abi_dump::RecordDecl;
@@ -49,7 +50,8 @@ bool DiffWrapperBase<T, TDiff>::GetElementDiffs(
   while (i < old_elements.size() && j < new_elements.size()) {
     const Element &old_element = old_elements.Get(i);
     const Element &new_element = new_elements.Get(i);
-    if (old_element.linker_set_key() != new_element.linker_set_key()) {
+    if (old_element.basic_abi().linker_set_key() !=
+        new_element.basic_abi().linker_set_key()) {
       ElementDiff *diff = dst->Add();
       Element *old_elementp = nullptr;
       Element *new_elementp = nullptr;
@@ -109,18 +111,22 @@ void DiffWrapperBase<T, TDiff>::GetExtraElementDiffs(
 template <>
 std::unique_ptr<RecordDeclDiff> DiffWrapper<RecordDecl, RecordDeclDiff>::Get() {
   std::unique_ptr<RecordDeclDiff> record_diff(new RecordDeclDiff());
-  assert(oldp_->fully_qualified_name() == newp_->fully_qualified_name());
-  record_diff->set_name(oldp_->fully_qualified_name());
-  google::protobuf::RepeatedPtrField<FieldDeclDiff> *fdiffs =
+  assert(oldp_->basic_abi().name() == newp_->basic_abi().name());
+  record_diff->set_name(oldp_->basic_abi().name());
+  google::protobuf::RepeatedPtrField<RecordFieldDeclDiff> *fdiffs =
       record_diff->mutable_field_diffs();
   google::protobuf::RepeatedPtrField<CXXBaseSpecifierDiff> *bdiffs =
       record_diff->mutable_base_diffs();
+  google::protobuf::RepeatedPtrField<CXXVTableDiff> *vtdiffs =
+      record_diff->mutable_vtable_diffs();
   assert(fdiffs != nullptr && bdiffs != nullptr);
   // Template Information isn't diffed since the linker_set_key includes the
   // mangled name which includes template information.
   if (GetElementDiffs(fdiffs, oldp_->fields(), newp_->fields()) ||
       GetElementDiffs(bdiffs, oldp_->base_specifiers(),
-                      newp_->base_specifiers())) {
+                      newp_->base_specifiers()) ||
+      GetElementDiffs(vtdiffs, oldp_->vtable_layout().vtable_components(),
+                      newp_->vtable_layout().vtable_components())) {
     return record_diff;
   }
   return nullptr;
@@ -129,12 +135,11 @@ std::unique_ptr<RecordDeclDiff> DiffWrapper<RecordDecl, RecordDeclDiff>::Get() {
 template <>
 std::unique_ptr<EnumDeclDiff> DiffWrapper<EnumDecl, EnumDeclDiff>::Get() {
   std::unique_ptr<EnumDeclDiff> enum_diff(new EnumDeclDiff());
-  assert(oldp_->enum_name() == newp_->enum_name());
+  assert(oldp_->basic_abi().name() == newp_->basic_abi().name());
   google::protobuf::RepeatedPtrField<EnumFieldDeclDiff> *fdiffs =
       enum_diff->mutable_field_diffs();
   assert(fdiffs != nullptr);
-  if (GetElementDiffs(fdiffs, oldp_->enum_fields(), newp_->enum_fields()) ||
-      (oldp_->enum_type() != newp_->enum_type())) {
+  if (GetElementDiffs(fdiffs, oldp_->enum_fields(), newp_->enum_fields())) {
     return enum_diff;
   }
   return nullptr;

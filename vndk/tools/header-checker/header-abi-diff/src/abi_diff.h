@@ -108,7 +108,7 @@ inline void HeaderAbiDiff::AddToMap(
     std::map<std::string, const T *> *dst,
     const google::protobuf::RepeatedPtrField<T> &src) {
   for (auto &&element : src) {
-    dst->insert(std::make_pair(element.linker_set_key(), &element));
+    dst->insert(std::make_pair(element.basic_abi().linker_set_key(), &element));
   }
 }
 
