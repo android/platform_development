@@ -4,9 +4,9 @@ import "development/vndk/tools/header-checker/proto/abi_dump.proto";
 
 package abi_diff;
 
-message FieldDeclDiff {
-  optional abi_dump.FieldDecl old = 1;
-  optional abi_dump.FieldDecl new = 2;
+message RecordFieldDeclDiff {
+  optional abi_dump.RecordFieldDecl old = 1;
+  optional abi_dump.RecordFieldDecl new = 2;
   required uint32 index = 3;
 }
 
@@ -22,16 +22,23 @@ message CXXBaseSpecifierDiff {
   required uint32 index = 3;
 }
 
+message CXXVTableDiff {
+  optional abi_dump.VTableComponent old = 1;
+  optional abi_dump.VTableComponent new = 2;
+  required uint32 index = 3;
+}
+
 message AccessDiff {
   required string old = 1;
   required string new = 2;
 }
 
 message RecordDeclDiff {
-  repeated FieldDeclDiff field_diffs = 1;
+  repeated RecordFieldDeclDiff field_diffs = 1;
   repeated CXXBaseSpecifierDiff base_diffs = 2;
-  required AccessDiff access_diff = 3;
-  required string name = 4;
+  repeated CXXVTableDiff vtable_diffs = 3;
+  required AccessDiff access_diff = 4;
+  required string name = 5;
 }
 
 message EnumDeclDiff {

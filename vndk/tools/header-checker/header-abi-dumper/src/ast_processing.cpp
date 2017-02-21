@@ -33,7 +33,7 @@ using abi_wrapper::EnumDeclWrapper;
 HeaderASTVisitor::HeaderASTVisitor(
     abi_dump::TranslationUnit *tu_ptr,
     clang::MangleContext *mangle_contextp,
-    const clang::ASTContext *ast_contextp,
+    clang::ASTContext *ast_contextp,
     const clang::CompilerInstance *compiler_instance_p,
     const std::string &current_file_name,
     const std::set<std::string> &exported_headers,
