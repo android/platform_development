@@ -54,27 +54,26 @@ class HeaderAbiLinker {
   bool LinkAndDump();
 
  private:
-  bool LinkRecords(const abi_dump::TranslationUnit &dump_tu,
-                   abi_dump::TranslationUnit *linked_tu);
+  static bool LinkRecords(const abi_dump::TranslationUnit &dump_tu,
+                          abi_dump::TranslationUnit *linked_tu);
 
-  bool LinkFunctions(const abi_dump::TranslationUnit &dump_tu,
-                     abi_dump::TranslationUnit *linked_tu);
+  static bool LinkFunctions(const abi_dump::TranslationUnit &dump_tu,
+                            abi_dump::TranslationUnit *linked_tu);
 
-  bool LinkEnums(const abi_dump::TranslationUnit &dump_tu,
-                 abi_dump::TranslationUnit *linked_tu);
+  static bool LinkEnums(const abi_dump::TranslationUnit &dump_tu,
+                        abi_dump::TranslationUnit *linked_tu);
+
+  static bool LinkGlobalVars(const abi_dump::TranslationUnit &dump_tu,
+                             abi_dump::TranslationUnit *linked_tu);
 
   template <typename T>
   static inline bool LinkDecl(
     google::protobuf::RepeatedPtrField<T> *dst,
-    std::set<std::string> *link_set,
     const google::protobuf::RepeatedPtrField<T> &src);
 
  private:
   const std::vector<std::string> &dump_files_;
   const std::string &out_dump_name_;
-  std::set<std::string> record_decl_set_;
-  std::set<std::string> function_decl_set_;
-  std::set<std::string> enum_decl_set_;
 };
 
 bool HeaderAbiLinker::LinkAndDump() {
@@ -88,7 +87,8 @@ bool HeaderAbiLinker::LinkAndDump() {
     if (!google::protobuf::TextFormat::Parse(&text_is, &dump_tu) ||
         !LinkRecords(dump_tu, &linked_tu) ||
         !LinkFunctions(dump_tu, &linked_tu) ||
-        !LinkEnums(dump_tu, &linked_tu)) {
+        !LinkEnums(dump_tu, &linked_tu) ||
+        !LinkGlobalVars(dump_tu, &linked_tu)) {
       llvm::errs() << "Failed to link elements\n";
       return false;
     }
@@ -104,13 +104,12 @@ bool HeaderAbiLinker::LinkAndDump() {
 template <typename T>
 inline bool HeaderAbiLinker::LinkDecl(
     google::protobuf::RepeatedPtrField<T> *dst,
-    std::set<std::string> *link_set,
     const google::protobuf::RepeatedPtrField<T> &src) {
   assert(dst != nullptr);
-  assert(link_set != nullptr);
+  std::set<std::string> link_set;
   for (auto &&element : src) {
     // The element already exists in the linked dump. Skip.
-    if (!link_set->insert(element.linker_set_key()).second) {
+    if (!link_set.insert(element.basic_abi().linker_set_key()).second) {
       continue;
     }
     T *added_element = dst->Add();
@@ -126,22 +125,25 @@ inline bool HeaderAbiLinker::LinkDecl(
 bool HeaderAbiLinker::LinkRecords(const abi_dump::TranslationUnit &dump_tu,
                                   abi_dump::TranslationUnit *linked_tu) {
   assert(linked_tu != nullptr);
-  return LinkDecl(linked_tu->mutable_records(), &record_decl_set_,
-                  dump_tu.records());
+  return LinkDecl(linked_tu->mutable_records(), dump_tu.records());
 }
 
 bool HeaderAbiLinker::LinkFunctions(const abi_dump::TranslationUnit &dump_tu,
                                     abi_dump::TranslationUnit *linked_tu) {
   assert(linked_tu != nullptr);
-  return LinkDecl(linked_tu->mutable_functions(), &function_decl_set_,
-                  dump_tu.functions());
+  return LinkDecl(linked_tu->mutable_functions(), dump_tu.functions());
 }
 
 bool HeaderAbiLinker::LinkEnums(const abi_dump::TranslationUnit &dump_tu,
                                 abi_dump::TranslationUnit *linked_tu) {
   assert(linked_tu != nullptr);
-  return LinkDecl(linked_tu->mutable_enums(), &enum_decl_set_,
-                  dump_tu.enums());
+  return LinkDecl(linked_tu->mutable_enums(), dump_tu.enums());
+}
+
+bool HeaderAbiLinker::LinkGlobalVars(const abi_dump::TranslationUnit &dump_tu,
+                                     abi_dump::TranslationUnit *linked_tu) {
+  assert(linked_tu != nullptr);
+  return LinkDecl(linked_tu->mutable_global_vars(), dump_tu.global_vars());
 }
 
 int main(int argc, const char **argv) {
