@@ -49,6 +49,15 @@ class ABIWrapper {
   std::string QualTypeToString(const clang::QualType &sweet_qt) const;
 
   std::string GetTagDeclQualifiedName(const clang::TagDecl *decl) const;
+
+  bool SetupBasicTypeAbi(abi_dump::BasicTypeAbi *type_abi,
+                         const clang::QualType type) const;
+
+  bool SetupBasicNamedAndTypedDecl(
+      abi_dump::BasicNamedAndTypedDecl *basic_named_and_typed_decl,
+      const clang::QualType type, const std::string &name,
+      const clang::AccessSpecifier &access, std::string key) const;
+
  private:
   clang::MangleContext *mangle_contextp_;
   const clang::ASTContext *ast_contextp_;
@@ -68,7 +77,7 @@ class RecordDeclWrapper : public ABIWrapper {
   const clang::RecordDecl *record_decl_;
 
  private:
-  void SetupRecordInfo(abi_dump::RecordDecl *record_declp,
+  bool SetupRecordInfo(abi_dump::RecordDecl *record_declp,
                        const std::string &source_file) const;
 
   bool SetupRecordFields(abi_dump::RecordDecl *record_declp,
@@ -96,6 +105,8 @@ class FunctionDeclWrapper : public ABIWrapper {
                      const std::string &source_file) const;
 
   bool SetupTemplateInfo(abi_dump::FunctionDecl *functionp) const;
+
+  bool SetupFunctionParameters(abi_dump::FunctionDecl *functionp) const;
 };
 
 class EnumDeclWrapper : public ABIWrapper {
@@ -113,6 +124,7 @@ class EnumDeclWrapper : public ABIWrapper {
  private:
   bool SetupEnum(abi_dump::EnumDecl *enump,
                  const std::string &source_file) const;
+  bool SetupEnumFields(abi_dump::EnumDecl *enump) const;
 };
 
 } //end namespace abi_wrapper

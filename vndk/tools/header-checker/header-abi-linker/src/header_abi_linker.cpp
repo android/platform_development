@@ -110,7 +110,7 @@ inline bool HeaderAbiLinker::LinkDecl(
   assert(link_set != nullptr);
   for (auto &&element : src) {
     // The element already exists in the linked dump. Skip.
-    if (!link_set->insert(element.linker_set_key()).second) {
+    if (!link_set->insert(element.basic_abi().linker_set_key()).second) {
       continue;
     }
     T *added_element = dst->Add();
