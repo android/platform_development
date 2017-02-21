@@ -34,11 +34,11 @@ struct ByeAgain<float> {
 ByeAgain<double> double_bye;
 
 template <typename T1, typename T2>
-bool Begin(T1 arg1, T2 arg2);
+bool Begin(T1 arg1, T2 arg2, int c);
 template <>
-bool Begin<int, float>(int a, float b);
+bool Begin<int, float>(int a, float b, int c);
 bool End ( float arg = 2.0) {
-  bool ret = Begin(arg, 2);
+  bool ret = Begin(arg, 2, 2);
   return ret;
 }
 

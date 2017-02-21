@@ -148,7 +148,8 @@ bool HeaderAbiDiff::PopulateRemovedElements(
   std::vector<const T *> removed_elements;
   for (auto &&map_element : old_elements_map) {
       const T *element = map_element.second;
-      auto new_element = new_elements_map.find(element->linker_set_key());
+      auto new_element =
+          new_elements_map.find(element->basic_abi().linker_set_key());
       if (new_element == new_elements_map.end()) {
         removed_elements.emplace_back(element);
       }
