@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76773eb8_4cf1b166",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-02-23T19:28:54Z",
+      "side": 1,
+      "message": "Should I add a real test for this? Adding a test for every function we expect to have available seems absurd. Testing that we can use boost might be a good idea, but that\u0027s well outside the scope of our test runner.",
+      "revId": "3b59037af30018c7a43c44dcd60c511380733a9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
