@@ -16,6 +16,24 @@
       "revId": "3b59037af30018c7a43c44dcd60c511380733a9c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfed1ed0_608816e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2017-02-23T20:43:14Z",
+      "side": 1,
+      "message": "\u003e Adding a test for every function we expect to have available seems absurd.\n\nit would if it hadn\u0027t caught so many mistakes in the past. ideally we\u0027d have a _real_ test for every function, but even just a \"does this function exist\" test is better than nothing.\n\nright now we have no tests for this header, though, so you\u0027re not making things any worse.\n\n(\"what about tests?\" was another of the things i got hung up on that stopped me from doing this yesterday.)",
+      "parentUuid": "76773eb8_4cf1b166",
+      "revId": "3b59037af30018c7a43c44dcd60c511380733a9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
