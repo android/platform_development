@@ -34,6 +34,24 @@
       "revId": "3b59037af30018c7a43c44dcd60c511380733a9c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "040001ba_fdb3693a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-02-23T21:06:01Z",
+      "side": 1,
+      "message": "Well, at some point we\u0027ll have the bionic unit tests be a part of this and that will solve that problem.",
+      "parentUuid": "dfed1ed0_608816e8",
+      "revId": "3b59037af30018c7a43c44dcd60c511380733a9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
