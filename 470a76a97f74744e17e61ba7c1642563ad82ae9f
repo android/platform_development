@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1b4e536e_5b7d36a2",
+        "filename": "vndk/tools/header-checker/tests/input/example2.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-03T01:57:03Z",
+      "side": 1,
+      "message": "Remove this space",
+      "range": {
+        "startLine": 41,
+        "startChar": 11,
+        "endLine": 41,
+        "endChar": 12
+      },
+      "revId": "470a76a97f74744e17e61ba7c1642563ad82ae9f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80d2be6e_0a0ec90c",
+        "filename": "vndk/tools/header-checker/tests/input/example2.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-03T01:57:03Z",
+      "side": 1,
+      "message": "Remove this space.",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 9
+      },
+      "revId": "470a76a97f74744e17e61ba7c1642563ad82ae9f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2dd8606_7f65f8d0",
+        "filename": "vndk/tools/header-checker/tests/input/example2.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-03T01:57:03Z",
+      "side": 1,
+      "message": "Remove this space.",
+      "range": {
+        "startLine": 43,
+        "startChar": 10,
+        "endLine": 43,
+        "endChar": 11
+      },
+      "revId": "470a76a97f74744e17e61ba7c1642563ad82ae9f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8bd8bb25_dec4f0b5",
+        "filename": "vndk/tools/header-checker/tests/input/example2.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-03T01:57:03Z",
+      "side": 1,
+      "message": "It seems we no longer need this comment.  Do we?",
+      "revId": "470a76a97f74744e17e61ba7c1642563ad82ae9f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
