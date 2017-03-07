@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1f2de2_66dbd82b",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 1143204
+      },
+      "writtenOn": "2017-03-07T01:13:13Z",
+      "side": 1,
+      "message": "I have two doubts here:\n(1) If one lib belongs to \"vndk_customized_candidates\", it will not have extended_symbols, so it\u0027s lib.extended_symbol_users would always be NONE。So i think the condition here does not work.\n(2)According to the latest document, is not this supposed to judge the imported symbols of lib? \"A module is inward-customized if its source code has been changed but it is neither using non-AOSP APIs nor defining new APIs.\"\nCould you please explain them? thanks.",
+      "range": {
+        "startLine": 1042,
+        "startChar": 31,
+        "endLine": 1042,
+        "endChar": 52
+      },
+      "revId": "e4d306c5197f0f2cf88f4b28e6d5075e72b925c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f051d544_21cd07af",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 1143204
+      },
+      "writtenOn": "2017-03-07T01:13:13Z",
+      "side": 1,
+      "message": "Could you please explain the concept of \"extra_vndk_core\"?  I have not find it in any documents. Thanks.",
+      "range": {
+        "startLine": 1060,
+        "startChar": 28,
+        "endLine": 1060,
+        "endChar": 43
+      },
+      "revId": "e4d306c5197f0f2cf88f4b28e6d5075e72b925c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad094446_868ca7f5",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1416,
+      "author": {
+        "id": 1143204
+      },
+      "writtenOn": "2017-03-07T01:13:13Z",
+      "side": 1,
+      "message": "Is it supposed to be “vndk_customized_for_vendor.update”？\nAnd I wonder what\u0027s vndk_customized_for_system and vndk_customized_for_vendor? Is this two input parameters?\nThanks.",
+      "range": {
+        "startLine": 1416,
+        "startChar": 12,
+        "endLine": 1416,
+        "endChar": 38
+      },
+      "revId": "e4d306c5197f0f2cf88f4b28e6d5075e72b925c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
