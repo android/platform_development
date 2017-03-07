@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "89a1af19_fe4a0da4",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-07T02:01:56Z",
+      "side": 1,
+      "message": "The code is incorrect.  Keep fixing.",
+      "parentUuid": "2e1f2de2_66dbd82b",
+      "range": {
+        "startLine": 1042,
+        "startChar": 31,
+        "endLine": 1042,
+        "endChar": 52
+      },
+      "revId": "e4d306c5197f0f2cf88f4b28e6d5075e72b925c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f051d544_21cd07af",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 9
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3a2e3287_0c94cdda",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-07T02:01:56Z",
+      "side": 1,
+      "message": "It is essentially vndk-core.  But it is placed in a different set in the code because I want to notify the user that they have to add an intact vndk lib for this set.",
+      "parentUuid": "f051d544_21cd07af",
+      "range": {
+        "startLine": 1060,
+        "startChar": 28,
+        "endLine": 1060,
+        "endChar": 43
+      },
+      "revId": "e4d306c5197f0f2cf88f4b28e6d5075e72b925c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ad094446_868ca7f5",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 9
@@ -59,6 +107,30 @@
       "writtenOn": "2017-03-07T01:13:13Z",
       "side": 1,
       "message": "Is it supposed to be “vndk_customized_for_vendor.update”？\nAnd I wonder what\u0027s vndk_customized_for_system and vndk_customized_for_vendor? Is this two input parameters?\nThanks.",
+      "range": {
+        "startLine": 1416,
+        "startChar": 12,
+        "endLine": 1416,
+        "endChar": 38
+      },
+      "revId": "e4d306c5197f0f2cf88f4b28e6d5075e72b925c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95742a35_6b0c20e1",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1416,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-07T02:01:56Z",
+      "side": 1,
+      "message": "(1) Yes.  This is a bug.\n\n(2) For the outward customization, we need some extra information to decided which partition it should go to.  By default, we assume outward customized lib should go to system partition, and these are the options to change the default behavior.",
+      "parentUuid": "ad094446_868ca7f5",
       "range": {
         "startLine": 1416,
         "startChar": 12,
