@@ -22,6 +22,30 @@
       "revId": "a920f750822dd11be254663d28e020c2798b480c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35e01a0e_dab5e740",
+        "filename": "build/sdk-windows-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2017-03-10T00:12:48Z",
+      "side": 1,
+      "message": "For some reason, we have a 64-bit linux shared library there? Filed b/36103321",
+      "parentUuid": "75032d59_920f3630",
+      "range": {
+        "startLine": 39,
+        "startChar": 97,
+        "endLine": 39,
+        "endChar": 112
+      },
+      "revId": "a920f750822dd11be254663d28e020c2798b480c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
