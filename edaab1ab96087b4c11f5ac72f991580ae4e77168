@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8660c63_10b2e403",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-14T18:27:09Z",
+      "side": 0,
+      "message": "I believe this assert does not always hold, there can be other types of Tokens apart from identifiers as well : https://cs.corp.google.com/aosp-master/external/clang/include/clang/Lex/Token.h?q\u003dp:aosp-master+file:External/clang+Token.h\u0026dr\u003dCSs\u0026l\u003d50",
+      "range": {
+        "startLine": 153,
+        "startChar": 9,
+        "endLine": 153,
+        "endChar": 39
+      },
+      "revId": "edaab1ab96087b4c11f5ac72f991580ae4e77168",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
