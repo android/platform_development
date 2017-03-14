@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f48db37_17b33694",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "return",
+      "range": {
+        "startLine": 98,
+        "startChar": 2,
+        "endLine": 98,
+        "endChar": 4
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77195a4c_7aff0221",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "Replace with ;",
+      "range": {
+        "startLine": 101,
+        "startChar": 59,
+        "endLine": 104,
+        "endChar": 15
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7e3afaa_8fc37069",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "Is this correct?  Shouldn\u0027t this come without the underscore?",
+      "range": {
+        "startLine": 259,
+        "startChar": 34,
+        "endLine": 259,
+        "endChar": 35
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "330d9485_d91e5995",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "Remove the trailing whitespace.",
+      "range": {
+        "startLine": 127,
+        "startChar": 27,
+        "endLine": 127,
+        "endChar": 28
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79070578_eb65c514",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "Add space between \u0027f\u0027 and \u0027(\u0027",
+      "range": {
+        "startLine": 148,
+        "startChar": 5,
+        "endLine": 148,
+        "endChar": 7
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5017dd89_1d44c516",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "Remove this space.",
+      "range": {
+        "startLine": 151,
+        "startChar": 11,
+        "endLine": 151,
+        "endChar": 12
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b1feb00_ead7ad4c",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "replace with \"return !\"",
+      "range": {
+        "startLine": 213,
+        "startChar": 2,
+        "endLine": 213,
+        "endChar": 5
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "85096474_3cd68efc",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "Replace with \";\"",
+      "range": {
+        "startLine": 218,
+        "startChar": 42,
+        "endLine": 221,
+        "endChar": 14
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7c2b6b5_e6b5dd85",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T02:29:05Z",
+      "side": 1,
+      "message": "Remove these two spaces.",
+      "range": {
+        "startLine": 412,
+        "startChar": 6,
+        "endLine": 412,
+        "endChar": 8
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
