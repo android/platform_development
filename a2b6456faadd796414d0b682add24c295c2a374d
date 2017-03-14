@@ -96,6 +96,29 @@
     },
     {
       "key": {
+        "uuid": "e9d035d3_35f17ccd",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T04:54:24Z",
+      "side": 1,
+      "message": "So, on the contrary, should this be renamed to mutable_new_()?",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 39
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7e3afaa_8fc37069",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
         "patchSetId": 6
@@ -131,6 +154,30 @@
       "side": 1,
       "message": "Yes this is correct. If you name a message field \"new\" in a proto file, all the apis associated come with an underscore (guess to avoid keyword collisions).",
       "parentUuid": "b7e3afaa_8fc37069",
+      "range": {
+        "startLine": 259,
+        "startChar": 34,
+        "endLine": 259,
+        "endChar": 35
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "46c1aeba_3473fc48",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-03-14T04:54:24Z",
+      "side": 1,
+      "message": "But you are calling `mutable_new()` above?",
+      "parentUuid": "7148b440_58b557df",
       "range": {
         "startLine": 259,
         "startChar": 34,
