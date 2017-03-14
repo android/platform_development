@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "0bbeeb10_3278e4d3",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-14T18:24:47Z",
+      "side": 1,
+      "message": "Yes, this is incorrect. asserts were getting ifdef\u0027d out. Android.bp has been updated. A few other asserts have also been updated.",
+      "parentUuid": "e9d035d3_35f17ccd",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 39
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7e3afaa_8fc37069",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
         "patchSetId": 6
@@ -178,6 +202,30 @@
       "side": 1,
       "message": "But you are calling `mutable_new()` above?",
       "parentUuid": "7148b440_58b557df",
+      "range": {
+        "startLine": 259,
+        "startChar": 34,
+        "endLine": 259,
+        "endChar": 35
+      },
+      "revId": "a2b6456faadd796414d0b682add24c295c2a374d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23e3473c_b022b274",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-14T18:24:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46c1aeba_3473fc48",
       "range": {
         "startLine": 259,
         "startChar": 34,
