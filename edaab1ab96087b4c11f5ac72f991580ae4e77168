@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "72790ef6_5955e3e3",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-15T02:19:52Z",
+      "side": 0,
+      "message": "This cannot be used for every NamedDecl. Only one\u0027s which are simple identifiers . https://cs.corp.google.com/aosp-master/external/clang/include/clang/AST/Decl.h?q\u003dgetName+file:External/clang+NamedDecl+p:aosp-master\u0026l\u003d237",
+      "range": {
+        "startLine": 62,
+        "startChar": 42,
+        "endLine": 62,
+        "endChar": 58
+      },
+      "revId": "edaab1ab96087b4c11f5ac72f991580ae4e77168",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d8660c63_10b2e403",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
         "patchSetId": 8
