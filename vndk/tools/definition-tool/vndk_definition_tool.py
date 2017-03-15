@@ -5,6 +5,7 @@ from __future__ import print_function
 import argparse
 import collections
 import itertools
+import json
 import os
 import re
 import stat
@@ -1542,6 +1543,10 @@ class VNDKCommand(ELFGraphCommand):
                 '--outward-customization-for-vendor', action='append',
                 help='outward customized vndk for vendor partition')
 
+        parser.add_argument(
+                '--output-html', default=None,
+                help='create html visualization output')
+
     def _warn_incorrect_partition_lib_set(self, lib_set, partition, error_msg):
         for lib in lib_set.values():
             if not lib.num_users:
@@ -1677,7 +1682,337 @@ class VNDKCommand(ELFGraphCommand):
         for lib in sorted_lib_path_list(vndk.extra_vendor_libs):
             print('extra-vendor-lib:', lib)
 
+        if args.output_html:
+            self.generate_html_output(args.output_html, graph, vndk)
+
         return 0
+
+    def generate_html_output(self, filename, graph, vndk):
+        def generate_html(json32, json64):
+            return '''<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>VNDK Graph</title>
+        <style type="text/css">
+        <!--
+        body {
+            margin: 0px;
+        }
+
+        #graph {
+            width: 80%;
+            height: 100%;
+
+            position: absolute;
+            top: 0%;
+            left: 0%;
+        }
+
+        #right {
+            background-color: #f5f5f5;
+
+            width: 20%;
+            height: 100%;
+
+            position: absolute;
+            top: 0%;
+            left: 80%;
+
+            overflow: auto;
+        }
+
+        #panel {
+            margin: 0px auto;
+            padding: 15px;
+        }
+
+        #panel h2 {
+            margin: 5px 0px;
+            padding: 5px;
+            font-size: 100%;
+            background-color: #aaaaaa;
+            text-align: center;
+        }
+
+        #panel h3 {
+            margin: 5px 0px;
+            padding: 5px;
+            font-size: 100%;
+            background-color: #ffffbb;
+            text-align: center;
+        }
+
+        #panel p,
+        #panel ul,
+        #panel li {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+
+        -->
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script>
+    </head>
+
+    <body>
+        <div id="graph"></div>
+        <div id="right">
+            <div id="panel">
+                <h2>ELF Class</h2>
+                <p>
+                    <form>
+                        <input type="button" id="elfClassBtn" value="64-bit" />
+                    </form>
+                </p>
+
+                <div id="display"></div>
+            </div>
+        </div>
+
+<script type="text/javascript">
+<!--
+(function () {
+    const tagFwkLib = 0;
+    const tagVndLib = 1;
+
+    const nodePrefix = 'node_';
+    const edgePrefix = 'edge_';
+
+    const displayDomId = 'display';
+    const graphDomId = 'graph';
+    const nodeColors = ['#ffbb00', '#0099cc'];
+
+    function createNode(lib) {
+        return {
+            id: nodePrefix + lib.id,
+            label: lib.name,
+            color: nodeColors[lib.tag],
+        };
+    }
+
+    function createEdge(edgeId, fromLib, dep) {
+        return {
+            id: edgePrefix + edgeId,
+            from: nodePrefix + fromLib.id,
+            to: nodePrefix + dep.id,
+            label: dep.symbols.length.toString(),
+        };
+    }
+
+    function clearDisplay() {
+        var dom, replacement;
+        dom = document.getElementById(displayDomId);
+        replacement = dom.cloneNode(false);
+        dom.parentNode.replaceChild(replacement, dom);
+    }
+
+
+    function append(dom, key, value) {
+        var p, label;
+
+        p = document.createElement('p');
+
+        label = document.createElement('strong');
+        label.appendChild(document.createTextNode(key + ': '));
+        p.appendChild(label);
+        p.appendChild(document.createTextNode(value));
+
+        dom.appendChild(p);
+    }
+
+    function showDep(libs, fromLib, dep) {
+        var toLib, dom, p, label, h2, txt, symbol;
+
+        toLib = libs[dep.id];
+
+        dom = document.getElementById(displayDomId);
+
+        h2 = document.createElement('h2');
+        h2.appendChild(document.createTextNode('Dependency'));
+        dom.appendChild(h2);
+
+        append(dom, 'From',fromLib.fullName);
+        append(dom, 'To',toLib.fullName);
+
+        for (symbol of dep.symbols) {
+            append(dom, 'Symbol', symbol);
+        }
+    }
+
+    function showLib(libs, lib) {
+        var dom, h2, h3, txt, dep, symbol, symbols;
+
+        dom = document.getElementById(displayDomId);
+
+        h2 = document.createElement('h2');
+        h2.appendChild(document.createTextNode(lib.fullName));
+        dom.appendChild(h2);
+
+        for (dep of lib.deps) {
+            symbols = dep.symbols;
+            dep = libs[dep.id];
+
+            h3 = document.createElement('h3');
+            h3.appendChild(document.createTextNode(dep.fullName));
+            dom.append(h3);
+
+            for (symbol of symbols) {
+                append(dom, 'Symbol', symbol);
+            }
+        }
+    }
+
+    function getLib(libs, nodeId) {
+        return libs[parseInt(nodeId.substr(nodePrefix.length))];
+    }
+
+    function getDep(deps, edgeId) {
+        return deps[parseInt(edgeId.substr(edgePrefix.length))];
+    }
+
+    function createGraph(libs) {
+        var lib, dep;
+
+        // Collect all dependencies.
+        var deps = [];
+        for (lib of libs) {
+            for (dep of lib.deps) {
+                deps.push([lib, dep]);
+            }
+        }
+
+        // Convert library dependency data into vis.js graph data.
+
+        var nodes = [];
+        var edges = [];
+
+        for (lib of libs) {
+            nodes.push(createNode(lib));
+            for (dep of lib.deps) {
+                edges.push(createEdge(edges.length, lib, dep));
+            }
+        }
+
+        // Draw the graph with vis.js.
+        var container = document.getElementById(graphDomId);
+        var data = {
+            nodes: nodes,
+            edges: edges,
+        };
+        var options = {
+            nodes: {
+                shape: 'box',
+            },
+            edges: {
+                font: { align: 'top' },
+                arrows: 'to',
+                color: { inherit: 'from' },
+                smooth: { type: 'continuous' },
+            },
+            physics: {
+                stabilization: false,
+                barnesHut: {
+                    gravitationalConstant: -80000,
+                    springConstant: 0.001,
+                    springLength: 300
+                },
+            },
+        };
+        var network = new vis.Network(container, data, options);
+
+        network.on('click', function (evt) {
+            var id, dep;
+
+            // Clear the display area.
+            clearDisplay();
+
+            if (evt.nodes.length == 0) {
+                // Print dependency edge information.
+                for (id of evt.edges) {
+                    dep = getDep(deps, id);
+                    showDep(libs, dep[0], dep[1]);
+                }
+            } else {
+                // Print library node information.
+                for (id  of evt.nodes) {
+                    showLib(libs, getLib(libs, id));
+                }
+            }
+        });
+    }
+
+    function registerButtonEventHandler(btnDomId, lib32, lib64) {
+        var dom = document.getElementById(btnDomId);
+        dom.addEventListener('click', function (evt) {
+            if (evt.target.value == '32-bit') {
+                createGraph(lib64);
+                evt.target.value = '64-bit';
+            } else {
+                createGraph(lib32);
+                evt.target.value = '32-bit';
+            }
+        }, false);
+    }
+
+    var lib32 = ''' + json32 + ''';
+
+    var lib64 = ''' + json64 + ''';
+
+    createGraph(lib64);
+    registerButtonEventHandler('elfClassBtn', lib32, lib64);
+})();
+-->
+</script>
+    </body>
+</html>
+'''
+        def collect_imported_symbols(lib):
+            deps = collections.defaultdict(set)
+            for symbol, imported_lib in lib.linked_symbols.items():
+                deps[imported_lib].add(symbol)
+            return deps
+
+        def serialize_libs(libs):
+            # Sort libraries according to their paths.
+            libs = sorted((lib for lib in libs if lib.path.endswith('.so')),
+                          key=lambda lib: lib.path)
+
+            # Build the index lookup table.
+            lib_idx = {}
+            for i, lib in enumerate(libs):
+                lib_idx[lib] = i
+
+            # Create serialized data.
+            res = []
+            for lib in libs:
+                deps = []
+                for dep, symbols in collect_imported_symbols(lib).items():
+                    deps.append({
+                        'id': lib_idx[dep],
+                        'symbols': sorted(symbols),
+                    })
+
+                res.append({
+                    'id': lib_idx[lib],
+                    'name': os.path.basename(lib.path),
+                    'fullName': lib.path,
+                    'tag': lib.partition,
+                    'deps': deps,
+                })
+
+            return res
+
+        with open(filename, 'w') as f:
+            json32 = json.dumps(serialize_libs(graph.lib32.values()),
+                                sort_keys=True, indent=4,
+                                separators=(',', ': '))
+            json64 = json.dumps(serialize_libs(graph.lib64.values()),
+                                sort_keys=True, indent=4,
+                                separators=(',', ': '))
+            f.write(generate_html(json32, json64))
 
 
 class VNDKCapCommand(ELFGraphCommand):
