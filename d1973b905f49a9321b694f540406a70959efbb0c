@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0c5d5b9_fee4813d",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-15T16:56:59Z",
+      "side": 1,
+      "message": "Incorrect, need to maintain global state across sdumps.",
+      "range": {
+        "startLine": 109,
+        "startChar": 2,
+        "endLine": 109,
+        "endChar": 33
+      },
+      "revId": "d1973b905f49a9321b694f540406a70959efbb0c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
