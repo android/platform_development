@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8baf1ad2_6b51f127",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-16T23:04:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcf2eea0_8e568f45",
+      "range": {
+        "startLine": 228,
+        "startChar": 36,
+        "endLine": 228,
+        "endChar": 49
+      },
+      "revId": "71f7a9bad15d534a7bfc16f0c9f0ea59d5607b0a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "16368701_b08836f0",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-16T00:22:06Z",
       "side": 1,
       "message": "I would prefer not to make assignments in the if condition.  Rewrite as:\n\n    if (!template_parameterp) {\n      return false;\n    }\n    abi_dump::TemplateElement::BasicTemplateElementAbi *basic_abi \u003d\n        template_parameterp-\u003emutable_basic_abi();\n    if (!basic_abi) {\n        return false;\n    }",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 5
+      },
+      "revId": "71f7a9bad15d534a7bfc16f0c9f0ea59d5607b0a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26e0ea58_b5e74d83",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-16T23:04:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16368701_b08836f0",
       "range": {
         "startLine": 122,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7be94ad7_b1cf2ba1",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-16T23:04:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a10d93cb_cc8f3f10",
+      "range": {
+        "startLine": 158,
+        "startChar": 10,
+        "endLine": 158,
+        "endChar": 62
+      },
+      "revId": "71f7a9bad15d534a7bfc16f0c9f0ea59d5607b0a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e4abe33_156f8afc",
         "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
         "patchSetId": 11
@@ -82,6 +154,30 @@
       "writtenOn": "2017-03-16T00:22:06Z",
       "side": 1,
       "message": "Maybe we can remove this space character",
+      "range": {
+        "startLine": 81,
+        "startChar": 57,
+        "endLine": 81,
+        "endChar": 58
+      },
+      "revId": "71f7a9bad15d534a7bfc16f0c9f0ea59d5607b0a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c786da78_192f639a",
+        "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-16T23:04:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e4abe33_156f8afc",
       "range": {
         "startLine": 81,
         "startChar": 57,
