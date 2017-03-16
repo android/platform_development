@@ -207,3 +207,36 @@ cc_binary_host {
         },
     },
 }
+
+cc_binary_host {
+    name: "dlopen-map-gen",
+
+    defaults: [
+        "header-checker-defaults",
+        "header-checker-lib-defaults",
+    ],
+
+    srcs: [
+        "dlopen-map-gen/src/*.cpp",
+    ],
+
+    static_libs: [
+        "libheader-checker-proto",
+				"libclangASTMatchers",
+    ],
+
+    target: {
+        linux: {
+            host_ldlibs: [
+                "-ldl",
+                "-lpthread",
+            ],
+        },
+        darwin: {
+            host_ldlibs: [
+                "-ldl",
+                "-lpthread",
+            ],
+        },
+    },
+}
