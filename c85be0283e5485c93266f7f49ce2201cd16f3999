@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9afb9db_5ce74ac0",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1107893
+      },
+      "writtenOn": "2017-03-21T02:25:48Z",
+      "side": 1,
+      "message": "Consider using SparseArray instead.",
+      "range": {
+        "startLine": 45,
+        "startChar": 43,
+        "endLine": 45,
+        "endChar": 56
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b09768f9_5de4b45e",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1107893
+      },
+      "writtenOn": "2017-03-21T02:25:48Z",
+      "side": 1,
+      "message": "Are there going to be more type of actions in the future ?\n\nIf yes consider using String switch:\n\nswitch (intent.getAction()) {\ncase ACTION_DISCONNECT: ...\ncase ACTION_CONNECT: ...\ndefault: log.w(\"unknown action \" + intent.getAction());\n}",
+      "range": {
+        "startLine": 65,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 9
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65b52968_b6f58899",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1107893
+      },
+      "writtenOn": "2017-03-21T02:25:48Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this use equals() instead of pointer equality ? Even if this works it is not super robust.",
+      "range": {
+        "startLine": 83,
+        "startChar": 16,
+        "endLine": 83,
+        "endChar": 53
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "555b3aab_aa4a1658",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1107893
+      },
+      "writtenOn": "2017-03-21T02:25:48Z",
+      "side": 1,
+      "message": "what needs to be synchronized in this method besides read/wrote of mNextConnectionId variable and the thread map ?\n\nIf nothing, could you scope the synchronized block to mNextConnectionId increment and the map update ?",
+      "range": {
+        "startLine": 116,
+        "startChar": 12,
+        "endLine": 116,
+        "endChar": 24
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "90be36e3_7af944b0",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1107893
+      },
+      "writtenOn": "2017-03-21T02:25:48Z",
+      "side": 1,
+      "message": "Could you scope the try catch to parseInt() only ?\n\nfinal int port;\ntry {\n  Integer.parseInt(prefs.getString(ToyVpnClient.Prefs.SERVER_PORT, \"\");\ncatch (NumberFormatException e) {\n  ...\n  return;\n}",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 43
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
