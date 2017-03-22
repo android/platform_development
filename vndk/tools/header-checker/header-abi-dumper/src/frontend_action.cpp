@@ -85,7 +85,11 @@ bool HeaderCheckerFrontendAction::CollectExportedHeaderSet(
       llvm::errs() << "Failed to get absolute path for : " << file_name << "\n";
       return false;
     }
-    exported_headers->insert(abs_path.str());
+    // Look at Abi only contained in header files. Many projects export
+    // directories with source files as well.
+    if (abs_path.endswith(".h")) {
+      exported_headers->insert(abs_path.str());
+    }
   }
   return true;
 }
