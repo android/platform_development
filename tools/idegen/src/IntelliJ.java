@@ -32,6 +32,16 @@ public class IntelliJ {
     public static void generateFrom(Configuration c) throws IOException {
         File templatesDirectory = new File(c.toolDirectory, "templates");
         String ipr = Files.toString(new File(templatesDirectory, IDEA_IPR));
+
+        StringBuilder gitRootsXml = new StringBuilder();
+        for (File gitRoot : c.gitRoots) {
+            gitRootsXml.append("<mapping directory=\"$PROJECT_DIR$/")
+                .append(gitRoot.getPath())
+                .append("\" vcs=\"Git\" />\n");
+	}
+
+        ipr = ipr.replace("VCS_DIRECTORY_MAPPINGS", gitRootsXml.toString());
+
         Files.toFile(ipr, new File(IDEA_IPR));
 
         String iml = Files.toString(new File(templatesDirectory, IDEA_IML));

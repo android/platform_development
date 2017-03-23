@@ -293,6 +293,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Perforce" />
+    VCS_DIRECTORY_MAPPINGS
   </component>
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
     <option name="USER_DEFINED_CONFIGS">
