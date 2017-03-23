@@ -18,6 +18,14 @@ import java.io.File;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.nio.file.Files;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.FileVisitor;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -69,7 +77,74 @@ public class Configuration {
         SortedSet<File> excludedDirs = new TreeSet<File>();
         SortedSet<File> sourceRoots = new TreeSet<File>();
 
-        traverse(new File("."), sourceRoots, jarFiles, excludedDirs, excludes);
+        FileSystem fs = FileSystems.getDefault();
+        Path root = fs.getPath("");
+
+        /**
+         * Recursively finds .java source roots, .jar files, and excluded
+         * directories.
+         */
+        Files.walkFileTree(root, new SimpleFileVisitor<Path>() {
+            @Override
+            public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
+                        throws IOException{
+                if (dir.equals(root)) {
+                    return FileVisitResult.CONTINUE;
+                }
+                if (Files.isSymbolicLink(dir)) {
+                    Log.debug("Skipped symbolic link: " + dir);
+                    return FileVisitResult.SKIP_SUBTREE;
+                }
+
+                try {
+                    if (Files.isHidden(dir)) {
+                        Log.debug("Skipped hidden directory: " + dir);
+                        return FileVisitResult.SKIP_SUBTREE;
+                    }
+                } catch (SecurityException ex) {
+                    throw new IOException("cannot access", ex);
+                }
+
+                if (excludes.exclude(dir.toString())) {
+                    Log.debug("Excluding: " + dir);
+                    excludedDirs.add(dir.toFile());
+                    // Don't recurse into excluded dirs.
+                    return FileVisitResult.SKIP_SUBTREE;
+                }
+
+                return FileVisitResult.CONTINUE;
+            }
+
+            /*
+             * Note it would be faster to stop traversing a source root as soon as
+             * we encounter the first .java file, but it appears we have nested
+             * source roots in our generated source directory (specifically,
+             * R.java files and aidl .java files don't share the same source
+             * root).
+             */
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+                        throws IOException{
+
+                final String filename = file.toString();
+                if (filename.endsWith(".java")) {
+                    File sourceRoot = rootOf(file.toFile());
+                    if (sourceRoot != null) {
+                        sourceRoots.add(sourceRoot);
+                    }
+                    // Only parse one .java file per directory.
+                    return FileVisitResult.SKIP_SIBLINGS;
+                } else if (filename.endsWith(".jar")) {
+                    // Keep track of .jar files.
+                    if (excludes.exclude(filename)) {
+                        Log.debug("Skipped: " + file);
+                    } else {
+                        jarFiles.add(file.toFile());
+                    }
+                }
+                return FileVisitResult.CONTINUE;
+            }
+        });
 
         stopwatch.reset("Traversed tree");
 
@@ -105,69 +180,6 @@ public class Configuration {
         }
 
         return new Excludes(patterns);
-    }
-
-    /**
-     * Recursively finds .java source roots, .jar files, and excluded
-     * directories.
-     */
-    private static void traverse(File directory, Set<File> sourceRoots,
-            Collection<File> jarFiles, Collection<File> excludedDirs,
-            Excludes excludes) throws IOException {
-        /*
-         * Note it would be faster to stop traversing a source root as soon as
-         * we encounter the first .java file, but it appears we have nested
-         * source roots in our generated source directory (specifically,
-         * R.java files and aidl .java files don't share the same source
-         * root).
-         */
-
-        boolean firstJavaFile = true;
-        File[] files = directory.listFiles();
-        if (files == null) {
-            return;
-        }
-        for (File file : files) {
-            // Trim preceding "./" from path.
-            String path = file.getPath().substring(2);
-
-            // Skip nonexistent files/diretories, e.g. broken symlinks.
-            if (!file.exists()) {
-                Log.debug("Skipped nonexistent: " + path);
-                continue;
-            }
-
-            if (file.isDirectory()) {
-                // Traverse nested directories.
-                if (excludes.exclude(path)) {
-                    // Don't recurse into excluded dirs.
-                    Log.debug("Excluding: " + path);
-                    excludedDirs.add(file);
-                } else {
-                    traverse(file, sourceRoots, jarFiles, excludedDirs,
-                            excludes);
-                }
-            } else if (path.endsWith(".java")) {
-                // Keep track of source roots for .java files.
-                // Do not check excludes in this branch.
-                if (firstJavaFile) {
-                    // Only parse one .java file per directory.
-                    firstJavaFile = false;
-
-                    File sourceRoot = rootOf(file);
-                    if (sourceRoot != null) {
-                        sourceRoots.add(sourceRoot);
-                    }
-                }
-            } else if (path.endsWith(".jar")) {
-                // Keep track of .jar files.
-                if (excludes.exclude(path)) {
-                    Log.debug("Skipped: " + file);
-                } else {
-                    jarFiles.add(file);
-                }
-            }
-        }
     }
 
     /**
