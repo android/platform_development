@@ -138,6 +138,10 @@ public class Configuration {
             }
 
             if (file.isDirectory()) {
+                if (file.getName().startsWith(".")) {
+                    Log.debug("Skipped hidden directory: " + path);
+                    continue;
+                }
                 // Traverse nested directories.
                 if (excludes.exclude(path)) {
                     // Don't recurse into excluded dirs.
