@@ -44,6 +44,9 @@ public class Configuration {
     /** Java source tree roots. */
     public final SortedSet<File> sourceRoots;
 
+    /** Git repo roots. */
+    public final SortedSet<File> gitRoots;
+
     /** Found .jar files (that weren't excluded). */
     public final List<File> jarFiles;
 
@@ -76,6 +79,7 @@ public class Configuration {
         List<File> jarFiles = new ArrayList<File>(500);
         SortedSet<File> excludedDirs = new TreeSet<File>();
         SortedSet<File> sourceRoots = new TreeSet<File>();
+        SortedSet<File> gitRoots = new TreeSet<File>();
 
         FileSystem fs = FileSystems.getDefault();
         Path root = fs.getPath("");
@@ -98,6 +102,9 @@ public class Configuration {
 
                 try {
                     if (Files.isHidden(dir)) {
+                        if (dir.endsWith(".git")) {
+                            gitRoots.add(dir.getParent().toFile());
+                        }
                         Log.debug("Skipped hidden directory: " + dir);
                         return FileVisitResult.SKIP_SUBTREE;
                     }
@@ -155,6 +162,7 @@ public class Configuration {
         this.sourceRoots = Collections.unmodifiableSortedSet(sourceRoots);
         this.jarFiles = Collections.unmodifiableList(jarFiles);
         this.excludedDirs = Collections.unmodifiableSortedSet(excludedDirs);
+        this.gitRoots = Collections.unmodifiableSortedSet(gitRoots);
     }
 
     /**
