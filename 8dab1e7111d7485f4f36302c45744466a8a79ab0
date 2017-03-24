@@ -22,6 +22,30 @@
       "revId": "8dab1e7111d7485f4f36302c45744466a8a79ab0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7714555_d4f929fb",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-03-24T21:53:19Z",
+      "side": 1,
+      "message": "Yes I overlooked this, you\u0027re correct. This should probably be changed to be the inverse. If the path ends with a source file extension(.cc, .cpp, .c) do not add the path to the set of exported paths.",
+      "parentUuid": "955825f7_df8d567d",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 34
+      },
+      "revId": "8dab1e7111d7485f4f36302c45744466a8a79ab0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
