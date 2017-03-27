@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1d2c02da_86140d9c",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-27T00:19:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9afb9db_5ce74ac0",
+      "range": {
+        "startLine": 45,
+        "startChar": 43,
+        "endLine": 45,
+        "endChar": 56
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b09768f9_5de4b45e",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "6023919d_ee676ad7",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-27T00:19:34Z",
+      "side": 1,
+      "message": "No, it should just be start and stop actions. Since the action can be null and that complicates the code around a switch statement (language misfeature), I\u0027d rather leave it as the one if-statement.",
+      "parentUuid": "b09768f9_5de4b45e",
+      "range": {
+        "startLine": 65,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 9
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "65b52968_b6f58899",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2017-03-21T02:25:48Z",
       "side": 1,
       "message": "Shouldn\u0027t this use equals() instead of pointer equality ? Even if this works it is not super robust.",
+      "range": {
+        "startLine": 83,
+        "startChar": 16,
+        "endLine": 83,
+        "endChar": 53
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64a73722_87ca7b0c",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-27T00:19:34Z",
+      "side": 1,
+      "message": "Message.what and R.string.disconnected are both raw integers, so this should be fine.\n\nIn a real, complicated service you\u0027d probably want to use something more domain specific than string IDs, but it works for a small app like this.",
+      "parentUuid": "65b52968_b6f58899",
       "range": {
         "startLine": 83,
         "startChar": 16,
