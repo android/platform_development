@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "ba9a3b79_6221ceaf",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1107893
+      },
+      "writtenOn": "2017-03-27T05:02:49Z",
+      "side": 1,
+      "message": "ok SG.",
+      "parentUuid": "6023919d_ee676ad7",
+      "range": {
+        "startLine": 65,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 9
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "65b52968_b6f58899",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
         "patchSetId": 1
@@ -131,6 +155,30 @@
       "side": 1,
       "message": "Message.what and R.string.disconnected are both raw integers, so this should be fine.\n\nIn a real, complicated service you\u0027d probably want to use something more domain specific than string IDs, but it works for a small app like this.",
       "parentUuid": "65b52968_b6f58899",
+      "range": {
+        "startLine": 83,
+        "startChar": 16,
+        "endLine": 83,
+        "endChar": 53
+      },
+      "revId": "c85be0283e5485c93266f7f49ce2201cd16f3999",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "692aa65b_7fbeb1f9",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1107893
+      },
+      "writtenOn": "2017-03-27T05:02:49Z",
+      "side": 1,
+      "message": "Oh right, I got confused by string. SG.",
+      "parentUuid": "64a73722_87ca7b0c",
       "range": {
         "startLine": 83,
         "startChar": 16,
