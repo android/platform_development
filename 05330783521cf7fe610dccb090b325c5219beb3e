@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "481b7712_fafed187",
+        "filename": "samples/ToyVpn/res/drawable/ic_vpn.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "pls add a copyright header - it\u0027s especially important for a sample app :)",
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83007ff6_7870ebae",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "make this an interface, and you can drop all these \"public static final\"s. that\u0027s also the idiomatic way of doing things.",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f11d7b8_85bb5102",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "indent is off",
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04bd4d71_278529ef",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "for... ?",
+      "range": {
+        "startLine": 142,
+        "startChar": 48,
+        "endLine": 142,
+        "endChar": 78
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07bbc5ff_0104ee0e",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "what\u0027s this check for ? also maybe document that for the sake of simplicity, you\u0027re using a fixed length buffer for the packet ?",
+      "range": {
+        "startLine": 269,
+        "startChar": 30,
+        "endLine": 269,
+        "endChar": 48
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d37793ca_c405c147",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "this is considered bad practice : must always specify an encoding when constructing a string out of byte[]",
+      "range": {
+        "startLine": 270,
+        "startChar": 33,
+        "endLine": 270,
+        "endChar": 73
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c0c887da_fcd12834",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "what exception are you expecting ? catching \"Exception\" or \"Throwable\" is usually considered bad practice.",
+      "range": {
+        "startLine": 139,
+        "startChar": 21,
+        "endLine": 139,
+        "endChar": 32
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b44a7e9e_b76ca48c",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-27T16:24:12Z",
+      "side": 1,
+      "message": "likewise",
+      "range": {
+        "startLine": 151,
+        "startChar": 12,
+        "endLine": 151,
+        "endChar": 35
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
