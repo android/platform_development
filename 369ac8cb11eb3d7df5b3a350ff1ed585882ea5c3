@@ -46,6 +46,30 @@
       "revId": "369ac8cb11eb3d7df5b3a350ff1ed585882ea5c3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06bfa3e8_75caf6fc",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-28T13:17:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t be needed because it doesn\u0027t really throw interrupt() [only the docs claim that it does, the method signature doesn\u0027t contain a throws clause].\n\nFeel free to submit as is if you want to.",
+      "parentUuid": "33771970_63540d31",
+      "range": {
+        "startLine": 140,
+        "startChar": 12,
+        "endLine": 140,
+        "endChar": 43
+      },
+      "revId": "369ac8cb11eb3d7df5b3a350ff1ed585882ea5c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
