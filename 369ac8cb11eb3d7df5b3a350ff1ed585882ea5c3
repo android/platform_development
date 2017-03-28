@@ -70,6 +70,30 @@
       "revId": "369ac8cb11eb3d7df5b3a350ff1ed585882ea5c3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "edbc65b0_1ca8c7ef",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T13:54:05Z",
+      "side": 1,
+      "message": "Deleted the catch (SecurityException) on both of these.",
+      "parentUuid": "06bfa3e8_75caf6fc",
+      "range": {
+        "startLine": 140,
+        "startChar": 12,
+        "endLine": 140,
+        "endChar": 43
+      },
+      "revId": "369ac8cb11eb3d7df5b3a350ff1ed585882ea5c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
