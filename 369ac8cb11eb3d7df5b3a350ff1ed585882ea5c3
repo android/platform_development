@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20c1f951_6baa782a",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1014443
+      },
+      "writtenOn": "2017-03-28T11:54:08Z",
+      "side": 1,
+      "message": "this will never be thrown on Android (i should go modify the docs to stop claiming this happens)",
+      "range": {
+        "startLine": 140,
+        "startChar": 12,
+        "endLine": 140,
+        "endChar": 43
+      },
+      "revId": "369ac8cb11eb3d7df5b3a350ff1ed585882ea5c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
