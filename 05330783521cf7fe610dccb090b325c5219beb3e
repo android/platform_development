@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "de0e4f8f_017e5fc9",
+        "filename": "samples/ToyVpn/res/drawable/ic_vpn.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "481b7712_fafed187",
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "83007ff6_7870ebae",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
         "patchSetId": 4
@@ -30,6 +48,30 @@
       "writtenOn": "2017-03-27T16:24:12Z",
       "side": 1,
       "message": "make this an interface, and you can drop all these \"public static final\"s. that\u0027s also the idiomatic way of doing things.",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3bb24a7c_e8e54eb4",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "Done, TIL.",
+      "parentUuid": "83007ff6_7870ebae",
       "range": {
         "startLine": 27,
         "startChar": 4,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "2a0006e8_42dfb916",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f11d7b8_85bb5102",
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "04bd4d71_278529ef",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
         "patchSetId": 4
@@ -70,6 +130,30 @@
       "writtenOn": "2017-03-27T16:24:12Z",
       "side": 1,
       "message": "for... ?",
+      "range": {
+        "startLine": 142,
+        "startChar": 48,
+        "endLine": 142,
+        "endChar": 78
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83802ff5_51b94db4",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "The original just says \"Cannot protect the tunnel\" which makes enough sense on its own. Suspect this is an accidental paste. Removed.",
+      "parentUuid": "04bd4d71_278529ef",
       "range": {
         "startLine": 142,
         "startChar": 48,
@@ -105,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "ff332043_ba44d3d1",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "The simple protocol this app\u0027s using to handshake with its server starts the packet with 0 to signal it\u0027s not just some junk packet that happens to be addressed to this port.\n\nIt is the world\u0027s laziest checksum. But it\u0027s in the original code so I prefer to leave it alone unless rewriting the whole protocol.\n\nDocumented the 1024 size limit.",
+      "parentUuid": "07bbc5ff_0104ee0e",
+      "range": {
+        "startLine": 269,
+        "startChar": 30,
+        "endLine": 269,
+        "endChar": 48
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d37793ca_c405c147",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
         "patchSetId": 4
@@ -116,6 +224,30 @@
       "writtenOn": "2017-03-27T16:24:12Z",
       "side": 1,
       "message": "this is considered bad practice : must always specify an encoding when constructing a string out of byte[]",
+      "range": {
+        "startLine": 270,
+        "startChar": 33,
+        "endLine": 270,
+        "endChar": 73
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b647e4d_3a6a2f8d",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "Done -- gave it StandardCharsets.US_ASCII.",
+      "parentUuid": "d37793ca_c405c147",
       "range": {
         "startLine": 270,
         "startChar": 33,
@@ -151,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "c0912792_8b54deed",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "Made it SecurityException which is what interrupt() throws.",
+      "parentUuid": "c0c887da_fcd12834",
+      "range": {
+        "startLine": 139,
+        "startChar": 21,
+        "endLine": 139,
+        "endChar": 32
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b44a7e9e_b76ca48c",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
         "patchSetId": 4
@@ -162,6 +318,30 @@
       "writtenOn": "2017-03-27T16:24:12Z",
       "side": 1,
       "message": "likewise",
+      "range": {
+        "startLine": 151,
+        "startChar": 12,
+        "endLine": 151,
+        "endChar": 35
+      },
+      "revId": "05330783521cf7fe610dccb090b325c5219beb3e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61570e65_80c39bf4",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2017-03-28T00:33:32Z",
+      "side": 1,
+      "message": "SecurityException | IOException (added another catch)",
+      "parentUuid": "b44a7e9e_b76ca48c",
       "range": {
         "startLine": 151,
         "startChar": 12,
