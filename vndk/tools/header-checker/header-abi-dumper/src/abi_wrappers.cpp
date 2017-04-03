@@ -105,6 +105,7 @@ std::string ABIWrapper::GetMangledNameDecl(const clang::NamedDecl *decl) const {
       identifier ? identifier->getName() : "";
   if (mangle_contextp_->shouldMangleDeclName(decl)) {
     assert(&(mangle_contextp_->getASTContext()) == ast_contextp_);
+    mangled_or_demangled_name = "";
     llvm::raw_string_ostream ostream(mangled_or_demangled_name);
     mangle_contextp_->mangleName(decl, ostream);
     ostream.flush();
