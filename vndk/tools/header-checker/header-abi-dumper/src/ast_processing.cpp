@@ -132,7 +132,7 @@ bool HeaderASTVisitor::TraverseDecl(clang::Decl *decl) {
     return true;
   }
   std::string source_file = ABIWrapper::GetDeclSourceFile(decl, cip_);
-  if ((decl != tu_decl_) &&
+  if ((decl != tu_decl_) && !exported_headers_.empty() &&
       (exported_headers_.find(source_file) == exported_headers_.end())) {
     return true;
   }
@@ -165,10 +165,6 @@ void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
     llvm::errs() << "Serialization to ostream failed\n";
     ::exit(1);
   }
-}
-
-void HeaderASTConsumer::HandleVTable(clang::CXXRecordDecl *crd) {
-  llvm::errs() << "HandleVTable: " << crd->getName() << "\n";
 }
 
 void HeaderASTPPCallbacks::MacroDefined(const clang::Token &macro_name_tok,
