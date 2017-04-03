@@ -167,10 +167,6 @@ void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
   }
 }
 
-void HeaderASTConsumer::HandleVTable(clang::CXXRecordDecl *crd) {
-  llvm::errs() << "HandleVTable: " << crd->getName() << "\n";
-}
-
 void HeaderASTPPCallbacks::MacroDefined(const clang::Token &macro_name_tok,
                                         const clang::MacroDirective *) {
   assert(macro_name_tok.getLength() != 0);
