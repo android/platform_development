@@ -22,6 +22,23 @@
       "revId": "2c8776805a3ef7ff254515f4c51a233ffd509f3d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e37e2c3_c31101fd",
+        "filename": "ndk/platforms/android-14/include/SLES/OpenSLES_Android.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1004395
+      },
+      "writtenOn": "2017-04-04T21:11:37Z",
+      "side": 1,
+      "message": "should not be within extern \"C\" as that is redundant",
+      "revId": "2c8776805a3ef7ff254515f4c51a233ffd509f3d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
