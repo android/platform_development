@@ -5,8 +5,10 @@ from __future__ import print_function
 import argparse
 import collections
 import itertools
+import json
 import os
 import re
+import shutil
 import stat
 import struct
 import sys
@@ -1871,6 +1873,206 @@ class VNDKCommand(ELFGraphCommand):
         return 0
 
 
+class DepsInsightCommand(ELFGraphCommand):
+    def __init__(self):
+        super(DepsInsightCommand, self).__init__(
+                'deps-insight', help='Generate HTML to show dependencies')
+
+    def add_argparser_options(self, parser):
+        super(DepsInsightCommand, self).add_argparser_options(parser)
+
+        parser.add_argument(
+                '--load-generic-refs',
+                help='compare with generic reference symbols')
+
+        parser.add_argument(
+                '--outward-customization-default-partition', default='system',
+                help='default partition for outward customized vndk libs')
+
+        parser.add_argument(
+                '--outward-customization-for-system', action='append',
+                help='outward customized vndk for system partition')
+
+        parser.add_argument(
+                '--outward-customization-for-vendor', action='append',
+                help='outward customized vndk for vendor partition')
+
+        parser.add_argument(
+                '--output', '-o', help='output directory')
+
+    def _check_arg_dir_exists(self, arg_name, dirs):
+        for path in dirs:
+            if not os.path.exists(path):
+                print('error: Failed to find the directory "{}" specified in {}'
+                        .format(path, arg_name), file=sys.stderr)
+                sys.exit(1)
+            if not os.path.isdir(path):
+                print('error: Path "{}" specified in {} is not a directory'
+                        .format(path, arg_name), file=sys.stderr)
+                sys.exit(1)
+
+    def main(self, args):
+        # Check the command line options.
+        self._check_arg_dir_exists('--system', args.system)
+        self._check_arg_dir_exists('--vendor', args.vendor)
+
+        # Load the generic reference.
+        generic_refs = None
+        if args.load_generic_refs:
+            generic_refs = GenericRefs.create_from_dir(args.load_generic_refs)
+
+        # Link ELF objects.
+        graph = ELFLinker.create(args.system, args.system_dir_as_vendor,
+                                 args.vendor, args.vendor_dir_as_system,
+                                 args.load_extra_deps,
+                                 generic_refs=generic_refs)
+
+        # Create banned libraries.
+        banned_libs = BannedLibDict.create_default()
+
+        # Compute sp-hal and vndk-stable.
+        sp_hal, sp_hal_dep, sp_hal_vndk_stable, sp_ndk, sp_ndk_vndk_stable = \
+                graph.compute_sp_lib(generic_refs)
+
+        vndk_stable = sp_hal_vndk_stable | sp_ndk_vndk_stable
+        sp_hal_closure = sp_hal | sp_hal_dep
+
+        # Normalize partition tags.  We expect many violations from the
+        # pre-Treble world.  Guess a resolution for the incorrect partition
+        # tag.
+        graph.normalize_partition_tags(sp_hal, generic_refs)
+
+        # User may specify the partition for outward-customized vndk libs.  The
+        # following code converts the path into ELFLinkData.
+        vndk_customized_for_system = set()
+        vndk_customized_for_vendor = set()
+
+        system_libs = graph.lib_pt[PT_SYSTEM].values()
+        if args.outward_customization_default_partition in {'system', 'both'}:
+            vndk_customized_for_system.update(system_libs)
+
+        if args.outward_customization_default_partition in {'vendor', 'both'}:
+            vndk_customized_for_vendor.update(system_libs)
+
+        if args.outward_customization_for_system:
+            vndk_customized_for_system.update(
+                    graph.get_libs(
+                        args.outward_customization_for_system, lambda x: None))
+
+        if args.outward_customization_for_vendor:
+            vndk_customized_for_vendor.update(
+                    graph.get_libs(
+                        args.outward_customization_for_vendor, lambda x: None))
+
+        # Compute vndk heuristics.
+        vndk = graph.compute_vndk(
+                sp_hal_closure, vndk_stable, vndk_customized_for_system,
+                vndk_customized_for_vendor, generic_refs, banned_libs)
+
+        # Serialize data.
+        strs = []
+        strs_dict = dict()
+
+        libs = list(graph.lib32.values()) + list(graph.lib64.values())
+        libs.sort(key=lambda lib: lib.path)
+        libs_dict = {lib: i for i, lib in enumerate(libs)}
+
+        def add_str_to_strtab(s):
+            if s not in strs_dict:
+                strs_dict[s] = len(strs)
+                strs.append(s)
+
+        add_str_to_strtab('extra-vendor-lib')
+        add_str_to_strtab('hl-ndk')
+        add_str_to_strtab('ll-ndk')
+        add_str_to_strtab('sp-hal')
+        add_str_to_strtab('sp-hal-dep')
+        add_str_to_strtab('sp-hal-vndk-stable')
+        add_str_to_strtab('sp-ndk')
+        add_str_to_strtab('sp-ndk-vndk-stable')
+        add_str_to_strtab('vndk-core')
+        add_str_to_strtab('vndk-fwk-ext')
+        add_str_to_strtab('vndk-indirect')
+        add_str_to_strtab('vndk-vnd-ext')
+
+        for lib in libs:
+            add_str_to_strtab(lib.path)
+
+        def collect_deps(lib):
+            deps = []
+
+            visited = set(lib.deps)
+            visited.add(lib)
+
+            stack = list((dep, 0) for dep in lib.deps)
+            while stack:
+                lib, depth = stack.pop()
+                while len(deps) <= depth:
+                    deps.append([])
+                deps[depth].append(libs_dict[lib])
+
+                for dep in lib.deps:
+                    if dep not in visited:
+                        visited.add(dep)
+                        stack.append((dep, depth + 1))
+            return deps
+
+        def collect_tags(lib):
+            tags = []
+            if lib.is_ll_ndk:
+                tags.append(strs_dict['ll-ndk'])
+            if lib.is_sp_ndk:
+                tags.append(strs_dict['sp-ndk'])
+            if lib.is_hl_ndk:
+                tags.append(strs_dict['hl-ndk'])
+
+            if lib in sp_hal:
+                tags.append(strs_dict['sp-hal'])
+            if lib in sp_hal_dep:
+                tags.append(strs_dict['sp-hal-dep'])
+            if lib in sp_hal_vndk_stable:
+                tags.append(strs_dict['sp-hal-vndk-stable'])
+
+            if lib in sp_ndk_vndk_stable:
+                tags.append(strs_dict['sp-ndk-vndk-stable'])
+
+            if lib in vndk.vndk_core:
+                tags.append(strs_dict['vndk-core'])
+            if lib in vndk.vndk_indirect:
+                tags.append(strs_dict['vndk-indirect'])
+            if lib in vndk.vndk_fwk_ext:
+                tags.append(strs_dict['vndk-fwk-ext'])
+            if lib in vndk.vndk_vnd_ext:
+                tags.append(strs_dict['vndk-vnd-ext'])
+            if lib in vndk.extra_vendor_libs:
+                tags.append(strs_dict['extra-vendor-lib'])
+            return tags
+
+        mods = []
+        for lib in libs:
+            mods.append([strs_dict[lib.path],
+                         32 if lib.elf.is_32bit else 64,
+                         collect_tags(lib),
+                         collect_deps(lib),
+                         [libs_dict[user] for user in lib.users]])
+
+        # Generate output files.
+        makedirs(args.output, exist_ok=True)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        for name in ('index.html', 'insight.css', 'insight.js'):
+            shutil.copyfile(os.path.join(script_dir, 'assets', name),
+                            os.path.join(args.output, name))
+
+        with open(os.path.join(args.output, 'insight-data.js'), 'w') as f:
+            f.write('''(function () {
+    var strs = ''' + json.dumps(strs, indent=2, separators=(',', ': ')) + ''';
+    var mods = ''' + json.dumps(mods, indent=2, separators=(',', ': ')) + ''';
+    insight.init(document, strs, mods);
+})();''')
+
+        return 0
+
+
 class VNDKCapCommand(ELFGraphCommand):
     def __init__(self):
         super(VNDKCapCommand, self).__init__(
@@ -2073,6 +2275,7 @@ def main():
     register_subcmd(VNDKCapCommand())
     register_subcmd(DepsCommand())
     register_subcmd(DepsClosureCommand())
+    register_subcmd(DepsInsightCommand())
     register_subcmd(SpLibCommand())
     register_subcmd(VNDKStableCommand())
 
