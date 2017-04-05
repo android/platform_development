@@ -1,0 +1,31 @@
+.menu {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu li {
+	display: inline;
+	padding: 0px 5px 0px 0px;
+}
+
+#module_tbody td,
+#module_tbody th {
+	border: 1px solid #aaaaaa;
+	padding: 3px 20px;
+	vertical-align: top;
+}
+
+#module_tbody h1,
+#module_tbody h2,
+#module_tbody p {
+	font-size: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#module_tbody ol,
+#module_tbody ul {
+	margin: .3em 0px;
+	padding: 0px 0px 0px 2em;
+}
