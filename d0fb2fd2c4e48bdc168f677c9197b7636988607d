@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48d1a8d8_ed055be7",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-04-05T02:49:47Z",
+      "side": 1,
+      "message": "This clear() looks mysterious if the readers do not know the context.  I would suggest to replace the function with:\n\n    if (!mangle_contextp_-\u003eshouldMangleDeclName(decl)) {\n      clang::IdentifierInfo *identifier \u003d decl-\u003egetIdentifier();\n      return identifier ? identifier-\u003egetName() : \"\";\n    }\n\n    std::string mangled_or_demangled_name;\n    assert(\u0026(mangle_contextp_-\u003egetASTContext()) \u003d\u003d ast_contextp_);\n    llvm::raw_string_ostream ostream(mangled_or_demangled_name);\n    mangle_contextp_-\u003emangleName(decl, ostream);\n    ostream.flush();\n    return mangled_or_demangled_name;",
+      "revId": "d0fb2fd2c4e48bdc168f677c9197b7636988607d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
