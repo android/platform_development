@@ -16,67 +16,87 @@ Run the VNDK definition tool with:
         --vendor ${ANDROID_PRODUCT_OUT}/vendor \
         --load-generic-refs generic_arm64
 
-This command will print 7 different lists:
+This command will print shared libraries that belong to the following sets:
 
-* **vndk-stable**
+1. **sp-ndk**
 
-  - This list contains the pre-defined vndk-stable libraries.
+  - This contains the pre-defined SP-NDK libraries.
+
+  - The libraries will be installed to `/system/lib[64]`
+
+2. **sp-ndk-vndk-stable**
+
+  - This contains the SP-NDK dependencies.
 
   - The libraries with long-term API/ABI stability/compatibility commitment.
 
-  - The libraries will be installed to /system/lib[64]/vndk-stable
+  - The libraries will be installed to `/system/lib[64]/vndk-stable`
 
-* **sp-hal**
+3. **sp-hal**
 
-  - This list contains the pre-defined SP-HAL libraries and their dependencies.
+  - This contains the pre-defined SP-HAL libraries.
 
-  - The libraries will be installed to /vendor/lib[64]/sameprocess
+  - The libraries will be installed to `/vendor/lib[64]/sameprocess`
 
-* **vndk-core**
+4. **sp-hal-dep**
 
-  - This list contains the shared libraries used by both the framework and
+  - This contains the SP-HAL non-AOSP dependencies.
+
+  - The libraries will be installed to `/vendor/lib[64]/sameprocess`
+
+5. **sp-hal-vndk-stable**
+
+  - This contains the SP-HAL AOSP dependencies.
+
+  - The libraries with long-term API/ABI stability/compatibility commitment.
+
+  - The libraries will be installed to `/system/lib[64]/vndk-stable`
+
+6. **vndk-core**
+
+  - This contains the shared libraries used by both the framework and
     vendor code.
 
   - The libraries must be either intact or inward-customized.
 
-  - The libraries will be installed to /system/lib[64]/vndk-$FWK
+  - The libraries will be installed to `/system/lib[64]/vndk-$FWK`
 
-* **vndk-indirect**
+7. **vndk-indirect**
 
-  - This list contains the shared libraries which are indirectly used by
+  - This contains the shared libraries which are indirectly used by
     aforementioned vndk-core but not directly used by vendor code.
 
   - The libraries must be either intact or inward-customized.
 
-  - The libraries will be installed to /system/lib[64]/vndk-$FWK
+  - The libraries will be installed to `/system/lib[64]/vndk-$FWK`
 
-* **vndk-fwd-ext**
+8. **vndk-fwd-ext**
 
-  - This list contains the vndk-core/vndk-indirect overlays for *the framework*.
-
-  - The libraries must be either outward-customized or extended.  In other
-    words, the libraries in this list might use or define non-AOSP APIs.
-
-  - The libraries will be installed to /system/lib[64]/vndk-$FWK-ext
-
-* **vndk-vnd-ext**
-
-  - This list contains the vndk-core overlays for *vendor code*.
+  - This contains the vndk-core/vndk-indirect overlays for *the framework*.
 
   - The libraries must be either outward-customized or extended.  In other
     words, the libraries in this list might use or define non-AOSP APIs.
 
-  - The libraries will be installed to /vendor/lib[64]/vndk-$VND-ext
+  - The libraries will be installed to `/system/lib[64]/vndk-$FWK-ext`
 
-- **extra-vendor**
+9. **vndk-vnd-ext**
 
-  - This list contains the extra libraries that have to be copied from
-    /system/lib[64] to /vendor/lib[64].
+  - This contains the vndk-core overlays for *vendor code*.
+
+  - The libraries must be either outward-customized or extended.  In other
+    words, the libraries in this list might use or define non-AOSP APIs.
+
+  - The libraries will be installed to `/vendor/lib[64]/vndk-$VND-ext`
+
+10. **extra-vendor**
+
+  - This contains the extra libraries that have to be copied from
+    `/system/lib[64]` to `/vendor/lib[64]`.
 
   - The libraries in this list are usually the non-AOSP dependencies of
     vndk-vnd-ext or other vendor code.
 
-  - The libraries will be installed to /vendor/lib[64]
+  - The libraries will be installed to `/vendor/lib[64]`
 
 
 # Sub Directory Tagging
@@ -229,21 +249,7 @@ SP-HAL, and VNDK-stable, run `sp-lib` subcommand:
         --system ${ANDROID_PRODUCT_OUT}/system \
         --vendor ${ANDROID_PRODUCT_OUT}/vendor
 
-The output consists of following categories:
-
-* **sp-hal** -- Pre-defined same-process HALs.
-
-* **sp-hal-dep** -- Shared libraries that are used by SP-HALs.  These libraries
-  have to be installed into /vendor/lib[64]/sameprocess as well.
-
-* **sp-hal-vndk-stable** -- VNDK stable libraries that are used by SP-HAL.
-
-* **sp-ndk** -- Pre-defined same-process NDK libraries.
-
-* **sp-ndk-vndk-stable** -- Shared libraries that are used by SP-NDKs.
-
-**vndk-stable** is the union set of **sp-hal-vndk-stable** and
-**sp-ndk-vndk-stable**.
+The output format is identical to the one described in [Usage](#usage) section.
 
 
 ## Python 2 Support
