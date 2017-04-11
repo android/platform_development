@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "06a0cf03_e5e90c9a",
+        "filename": "vndk/tools/header-checker/Android.bp",
+        "patchSetId": 5
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-04-11T14:55:48Z",
+      "side": 1,
+      "message": "Remove tabs with 4 spaces.",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 2
+      },
+      "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "949223d3_f7e12556",
+        "filename": "vndk/tools/header-checker/Android.bp",
+        "patchSetId": 5
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-04-11T14:55:48Z",
+      "side": 1,
+      "message": "Replace tabs with 8 spaces.",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 219,
+        "endChar": 2
+      },
+      "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7bf439c4_e0807d0b",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 5
@@ -36,6 +82,30 @@
       "writtenOn": "2017-04-11T05:18:56Z",
       "side": 1,
       "message": "Allow no exported headers : some LLNDK libs do not export headers yet.",
+      "range": {
+        "startLine": 135,
+        "startChar": 29,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb2330be_2b0af468",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-04-11T14:55:48Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we generalize this check?  Either togglable by a command line option or something like that.",
+      "parentUuid": "717d7f19_d4245013",
       "range": {
         "startLine": 135,
         "startChar": 29,
