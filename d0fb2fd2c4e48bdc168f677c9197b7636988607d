@@ -16,6 +16,24 @@
       "revId": "d0fb2fd2c4e48bdc168f677c9197b7636988607d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0fdcacd_84427f3d",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-04-11T02:04:22Z",
+      "side": 1,
+      "message": "Done. There\u0027s no demangled name in the second case.",
+      "parentUuid": "48d1a8d8_ed055be7",
+      "revId": "d0fb2fd2c4e48bdc168f677c9197b7636988607d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
