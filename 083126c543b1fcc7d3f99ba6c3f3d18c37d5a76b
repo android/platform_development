@@ -22,6 +22,29 @@
       "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "717d7f19_d4245013",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-04-11T05:18:56Z",
+      "side": 1,
+      "message": "Allow no exported headers : some LLNDK libs do not export headers yet.",
+      "range": {
+        "startLine": 135,
+        "startChar": 29,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
