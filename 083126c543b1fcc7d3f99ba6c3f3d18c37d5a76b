@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7bf439c4_e0807d0b",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-04-11T05:16:47Z",
+      "side": 1,
+      "message": "Needs to be merged with https://android-review.googlesource.com/#/c/363323/",
+      "range": {
+        "startLine": 108,
+        "startChar": 6,
+        "endLine": 108,
+        "endChar": 31
+      },
+      "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
