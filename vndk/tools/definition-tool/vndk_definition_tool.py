@@ -499,6 +499,7 @@ class NDKLibDict(object):
         'libGLESv2.so',
         'libGLESv3.so',
         'libvulkan.so',
+        'libnativewindow.so',
     )
 
     HL_NDK_LIB_NAMES = (
@@ -991,7 +992,6 @@ class ELFLinker(object):
             '^.*/libhidltransport\\.so$',
             '^.*/libhwbinder\\.so$',
             '^.*/liblzma\\.so$',
-            '^.*/libnativewindow\\.so$',
             '^.*/libsync\\.so$',
 
             # SP-NDK VNDK-stable (should to be removed)
