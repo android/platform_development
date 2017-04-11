@@ -115,6 +115,30 @@
       "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d2bd6aa_0ec6e2e9",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-04-11T17:05:43Z",
+      "side": 1,
+      "message": "If you look at header_checker.cpp, exported_header_dirs has a property which is llvm::cl::ZeroOrMore. This itself makes this act like a command-line toggle, no ? So if the set is empty, the caller of header-abi-dumper hasn\u0027t specified exports / there were no eligible header files (only sources) in the exports specified. In both cases we dump the whole AST, which is then filtered out by the linker using a version script if that is available / exports by the linked library. This is something similar to the -public-headers option offered by libabigail.",
+      "parentUuid": "eb2330be_2b0af468",
+      "range": {
+        "startLine": 135,
+        "startChar": 29,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "083126c543b1fcc7d3f99ba6c3f3d18c37d5a76b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
