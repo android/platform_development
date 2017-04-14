@@ -105,6 +105,7 @@ cc_library_static {
 
     proto: {
         export_proto_headers: true,
+        type: "full",
     },
 
     cflags: [
