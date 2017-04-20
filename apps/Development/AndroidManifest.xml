@@ -189,6 +189,11 @@
                 <category android:name="android.intent.category.TEST" />
             </intent-filter>
         </activity>
-
+        <activity android:name="Embms" android:label="Embms" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.TEST" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
