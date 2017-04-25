@@ -1,0 +1,9 @@
+Verified+1: Dan Albert <danalbert@google.com>
+Code-Review+2: Dan Albert <danalbert@google.com>
+Autosubmit+1: Dan Albert <danalbert@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Tue, 25 Apr 2017 20:59:07 +0000
+Reviewed-on: https://android-review.googlesource.com/380672
+Project: platform/development
+Branch: refs/heads/ndk-r15-release
