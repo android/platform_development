@@ -27,22 +27,21 @@ struct CPPHello : private HelloAgain, public ByeAgain<float_type> {
 };
 
 template<typename T>
-struct StackNode {
-public:
-  T value_;
-  StackNode<T>* next_;
+class StackNode {
+   public:
+    T value_;
+    StackNode<T> *next_;
 
-public:
-  StackNode(T t, StackNode* next = nullptr)
-    : value_(static_cast<T&&>(t)),
-      next_(next) { }
+   public:
+    StackNode(T t, StackNode* next = nullptr)
+      : value_(static_cast<T&&>(t)),
+        next_(next) { }
 };
 
 template<typename T>
 class Stack {
 private:
   StackNode<T>* head_;
-
 public:
   Stack() : head_(nullptr) { }
 
@@ -59,6 +58,46 @@ public:
   }
 };
 
+Stack<int> int_stack;
+Stack<float> float_stack;
+typedef Stack<float *> float_star_stack;
+float_star_stack float_stack_opaque;
 const volatile int Global_Foo(int global_bar);
+
+// Replicated from libsysutils.
+template<typename T>
+class List
+{
+protected:
+    /*
+     * One element in the list.
+     */
+    class _Node {
+    public:
+        explicit _Node(const T& val) : mVal(val) {}
+        ~_Node() {}
+        inline T& getRef() { return mVal; }
+        inline const T& getRef() const { return mVal; }
+        inline _Node* getPrev() const { return mpPrev; }
+        inline _Node* getNext() const { return mpNext; }
+        inline void setVal(const T& val) { mVal = val; }
+        inline void setPrev(_Node* ptr) { mpPrev = ptr; }
+        inline void setNext(_Node* ptr) { mpNext = ptr; } 
+    private:
+        friend class List;
+        friend class _ListIterator;
+        T           mVal;
+        _Node*      mpPrev;
+        _Node*      mpNext;
+    };
+    _Node *middle;
+};
+
+typedef List<float> float_list;
+float_list float_list_test;
+
+
+typedef List<int> int_list;
+int_list int_list_test;
 
 #endif  // EXAMPLE1_H_

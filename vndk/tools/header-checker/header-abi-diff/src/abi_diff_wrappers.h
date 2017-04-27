@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#ifndef ABI_DIFF_WRAPPER_H
+#define ABI_DIFF_WRAPPER_H
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-parameter"
 #pragma clang diagnostic ignored "-Wnested-anon-types"
@@ -21,13 +24,21 @@
 
 namespace abi_diff_wrappers {
 
+template <typename T>
+static bool IgnoreSymbol(const T *element,
+                         const std::set<std::string> &ignore_symbols) {
+    return ignore_symbols.find(element->basic_abi().linker_set_key()) !=
+        ignore_symbols.end();
+}
+
 template <typename T, typename TDiff>
 class DiffWrapperBase {
  public:
   virtual std::unique_ptr<TDiff> Get() = 0 ;
  protected:
-  DiffWrapperBase(const T *oldp, const T *newp)
-      : oldp_(oldp), newp_(newp) { }
+  DiffWrapperBase(const T *oldp, const T *newp,
+                  const std::set<std::string> &ignore_diff_symbols)
+      : oldp_(oldp), newp_(newp), ignore_diff_symbols_(ignore_diff_symbols) { }
   template <typename Element, typename ElementDiff>
   bool GetElementDiffs(
       google::protobuf::RepeatedPtrField<ElementDiff> *dst,
@@ -44,17 +55,26 @@ class DiffWrapperBase {
  protected:
   const T *oldp_;
   const T *newp_;
+  const std::set<std::string> &ignore_diff_symbols_;
 };
 
 template <typename T, typename TDiff>
 class DiffWrapper : public DiffWrapperBase<T, TDiff> {
  public:
-  DiffWrapper(const T *oldp, const T *newp)
-      : DiffWrapperBase<T, TDiff>(oldp, newp) { }
+  DiffWrapper(const T *oldp, const T *newp,
+              const std::set<std::string> &ignored_symbols)
+      : DiffWrapperBase<T, TDiff>(oldp, newp, ignored_symbols) { }
+  virtual std::unique_ptr<TDiff> Get() override {
+    if (!IgnoreSymbol<T>(this->oldp_, this->ignore_diff_symbols_)) {
+      return GetInternal();
+    }
+    return nullptr;
+  }
 
-  std::unique_ptr<TDiff> Get() override;
+ private:
+  std::unique_ptr<TDiff> GetInternal();
 };
 
 } // abi_diff_wrappers
 
-
+#endif
