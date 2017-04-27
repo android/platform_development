@@ -14,6 +14,8 @@
 
 #include "abi_wrappers.h"
 
+#include <header_abi_util.h>
+
 #include <clang/Tooling/Core/QualTypeNames.h>
 
 #include <string>
@@ -32,8 +34,19 @@ std::string ABIWrapper::GetDeclSourceFile(const clang::Decl *decl,
                                           const clang::CompilerInstance *cip) {
   clang::SourceManager &sm = cip->getSourceManager();
   clang::SourceLocation location = decl->getLocation();
-  llvm::StringRef file_name = sm.getFilename(location);
-  llvm::SmallString<128> abs_path(file_name.str());
+  // We need to use the expansion location to identify whether we should recurse
+  // into the AST Node or not. For eg: macros specifying LinkageSpecDecl can
+  // have their spelling location defined somewhere outside a source / header
+  // file belonging to a library. This should not allow the AST node to be
+  // skipped. It's expansion location will still be the source-file / header
+  // belonging to the library.
+  clang::SourceLocation expansion_location = sm.getExpansionLoc(location);
+  llvm::StringRef file_name = sm.getFilename(expansion_location);
+  // Transform patterns like /./<file_path> to <file_path>
+  std::string file_name_adjusted =
+      abi_util::FindAndReplace(file_name.str(), "\\./", "");
+  llvm::SmallString<128> abs_path(file_name_adjusted);
+
   if (llvm::sys::fs::make_absolute(abs_path)) {
     return "";
   }
@@ -177,6 +190,11 @@ bool ABIWrapper::SetupTemplateArguments(
 std::string ABIWrapper::QualTypeToString(
     const clang::QualType &sweet_qt) const {
   const clang::QualType salty_qt = sweet_qt.getCanonicalType();
+  // clang::TypeName::getFullyQualifiedName removes the part of the type related
+  // to it being a template parameter. Don't use it for dependent types.
+  if (salty_qt.getTypePtr()->isDependentType()) {
+    return salty_qt.getAsString();
+  }
   return clang::TypeName::getFullyQualifiedName(salty_qt, *ast_contextp_);
 }
 

@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include <regex>
 #include <set>
 #include <string>
 #include <vector>
@@ -60,5 +61,14 @@ class VersionScriptParser {
   std::set<std::string> globvars_;
   int api_;
 };
+
+inline std::string FindAndReplace(const std::string &candidate_str,
+                                  const std::string &find_str,
+                                  const std::string &replace_str) {
+  // Find all matches of find_str in candidate_str and return a new string with
+  // all the matches replaced with replace_str
+  std::regex match_expr(find_str);
+  return std::regex_replace(candidate_str, match_expr, replace_str);
+}
 
 } // namespace abi_util
