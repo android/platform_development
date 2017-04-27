@@ -31,9 +31,6 @@ HeaderCheckerFrontendAction::HeaderCheckerFrontendAction(
 std::unique_ptr<clang::ASTConsumer>
 HeaderCheckerFrontendAction::CreateASTConsumer(clang::CompilerInstance &ci,
                                                llvm::StringRef header_file) {
-  // Add preprocessor callbacks.
-  clang::Preprocessor &pp = ci.getPreprocessor();
-  pp.addPPCallbacks(llvm::make_unique<HeaderASTPPCallbacks>());
   std::set<std::string> exported_headers;
   for (auto &&dir_name : export_header_dirs_) {
     if (!abi_util::CollectExportedHeaderSet(dir_name, &exported_headers)) {
