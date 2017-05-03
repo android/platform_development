@@ -1,0 +1,297 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0532f2af_f22e2575",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "Why are you switching the order here?  I personally prefer the original one.",
+      "range": {
+        "startLine": 80,
+        "startChar": 2,
+        "endLine": 80,
+        "endChar": 14
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7002969c_40c08ea8",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "Why are you switching the order here?  I personally prefer the original one.",
+      "range": {
+        "startLine": 86,
+        "startChar": 2,
+        "endLine": 86,
+        "endChar": 13
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a5c7bbb_5bc0f9c6",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "ABI_DIFF_WRAPPERS_H\n\n(Notice the \"S\")",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "316a4d7c_034a21e9",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "ABI_DIFF_WRAPPERS_H\n\n(Notice the \"S\")",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b437c9b_cee8733c",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "Indent by 2 whitespaces instead.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 4
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6bf9354d_e24fcdfc",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "You don\u0027t need this.  \"override\" keyword at the end implies \"virtual\".",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 63,
+        "endChar": 10
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3a43b81_bd63293b",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "#endif   // ABI_DIFF_WRAPPERS_H",
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8813e051_c7d99bf8",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "I would prefer LoadIgnoredSymbols.",
+      "range": {
+        "startLine": 44,
+        "startChar": 29,
+        "endLine": 44,
+        "endChar": 46
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "203050d5_5d5dbdf0",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "You don\u0027t need these.  The idiomatic way to check the status is to trigger the bool conversion for std::ifstream instances.",
+      "range": {
+        "startLine": 47,
+        "startChar": 22,
+        "endLine": 47,
+        "endChar": 32
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "641ef900_9eb951cb",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "LoadIgnoredSymbols",
+      "range": {
+        "startLine": 64,
+        "startChar": 21,
+        "endLine": 64,
+        "endChar": 38
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4722348f_2396c302",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "Its",
+      "range": {
+        "startLine": 41,
+        "startChar": 14,
+        "endLine": 41,
+        "endChar": 18
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7d566d4_96862845",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "Is this correct?  What will happen if we have the path like:\n\n    \"a/b/c/../d/./f\"\n\nIt might be better to replace make_absolute() with realpath() instead.",
+      "range": {
+        "startLine": 47,
+        "startChar": 6,
+        "endLine": 47,
+        "endChar": 59
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ca688b0_a54c8a9a",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/version_script_parser.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-03T09:50:38Z",
+      "side": 1,
+      "message": "return (matched_api \u003c\u003d 0 || api \u003e\u003d matched_api);",
+      "range": {
+        "startLine": 93,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 14
+      },
+      "revId": "6541f00f50c49f7d9045a36aff25841d395a8181",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
