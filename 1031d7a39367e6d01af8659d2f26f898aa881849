@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78737efe_678ab7ea",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-05T00:53:57Z",
+      "side": 1,
+      "message": "Move to LinkAndDump : probably better to forego collecting the headers themselves if a version script is being used.",
+      "range": {
+        "startLine": 199,
+        "startChar": 9,
+        "endLine": 199,
+        "endChar": 31
+      },
+      "revId": "1031d7a39367e6d01af8659d2f26f898aa881849",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
