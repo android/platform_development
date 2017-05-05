@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "27903057_37057b29",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-05T02:55:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b2fbff1_7a4c65c5",
+      "range": {
+        "startLine": 232,
+        "startChar": 38,
+        "endLine": 233,
+        "endChar": 23
+      },
+      "revId": "1031d7a39367e6d01af8659d2f26f898aa881849",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "448f71fc_7ffe8a07",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-05T01:54:18Z",
       "side": 1,
       "message": "You don\u0027t need this",
+      "range": {
+        "startLine": 47,
+        "startChar": 22,
+        "endLine": 47,
+        "endChar": 32
+      },
+      "revId": "1031d7a39367e6d01af8659d2f26f898aa881849",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83520f92_a90f8220",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-05T02:55:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "448f71fc_7ffe8a07",
       "range": {
         "startLine": 47,
         "startChar": 22,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "91a5d69f_b7a91d4e",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-05T02:55:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5f4727a_56a829a2",
+      "range": {
+        "startLine": 62,
+        "startChar": 24,
+        "endLine": 62,
+        "endChar": 38
+      },
+      "revId": "1031d7a39367e6d01af8659d2f26f898aa881849",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "327d778b_845da1c7",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 3
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "483badcb_eb2b7b3e",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-05T02:55:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "327d778b_845da1c7",
+      "revId": "1031d7a39367e6d01af8659d2f26f898aa881849",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "823f2ec3_dbbb7094",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 3
@@ -99,6 +189,30 @@
       "writtenOn": "2017-05-05T01:54:18Z",
       "side": 1,
       "message": "I believe you can get this from \u003climits.h\u003e",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 6
+      },
+      "revId": "1031d7a39367e6d01af8659d2f26f898aa881849",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79316813_d80639dd",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-05T02:55:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "823f2ec3_dbbb7094",
       "range": {
         "startLine": 25,
         "startChar": 0,
@@ -145,6 +259,30 @@
       "writtenOn": "2017-05-05T01:54:18Z",
       "side": 1,
       "message": "Are you sure that this is \"\u003e\"?  This is not equivalent to the code in PS#2.",
+      "range": {
+        "startLine": 93,
+        "startChar": 33,
+        "endLine": 93,
+        "endChar": 34
+      },
+      "revId": "1031d7a39367e6d01af8659d2f26f898aa881849",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "642ed7c9_ebdd23a2",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/version_script_parser.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-05T02:55:42Z",
+      "side": 1,
+      "message": "Apologies, careless mistake.",
+      "parentUuid": "675320cc_8596d840",
       "range": {
         "startLine": 93,
         "startChar": 33,
