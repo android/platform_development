@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6cf93d4_186680ab",
+        "filename": "vndk/tools/header-checker/merge-abi-diff/src/merge_abi_diff.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-11T01:41:21Z",
+      "side": 1,
+      "message": "This is a small block of repeated code between header_abi_diff.cpp and merge_abi_diff.cpp. I don\u0027t want to move this into a utility function in header-abi-util since that would require the util library to link with protobuf, and space could be a constraint if this goes in as a prebuilt.",
+      "range": {
+        "startLine": 147,
+        "startChar": 2,
+        "endLine": 155,
+        "endChar": 41
+      },
+      "revId": "571711b8eeb52d7a0d78506dff8578af2f1cf397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
