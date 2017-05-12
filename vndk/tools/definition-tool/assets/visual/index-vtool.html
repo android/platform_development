@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.node {
+  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #bbb;
+  fill-opacity: 0.2;
+}
+
+.node--sys-pri {
+  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #ffaaaa;
+  fill-opacity: 0.2;
+}
+
+.node--sys-pub {
+  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #aaffaa;
+  fill-opacity: 0.2;
+}
+
+.node:hover,
+.node--sys-pri:hover,
+.node--sys-pub:hover {
+  fill: #000;
+  fill-opacity: 1;
+}
+
+.link {
+  stroke: steelblue;
+  stroke-opacity: 0.01;
+  fill: none;
+  pointer-events: none;
+}
+
+.link--violate {
+  stroke: crimson;
+  stroke-opacity: 0.1;
+  stroke-width: 1.0px;
+  fill: none;
+  pointer-events: none;
+}
+
+.node:hover,
+.node--sys-pri:hover,
+.node--sys-pub:hover,
+.node--source,
+.node--target {
+  font-weight: 700;
+}
+
+.node--source {
+  fill: #2ca02c;
+  fill-opacity: 1;
+}
+
+.node--target {
+  fill: #d62728;
+  fill-opacity: 1;
+}
+
+.node--selected {
+  fill: #ff7000;
+  fill-opacity: 1;
+  font-weight: 700;
+}
+
+.link--source,
+.link--target {
+  stroke-opacity: 1;
+  stroke-width: 2.5px;
+}
+
+.link--source {
+  stroke: orange;
+}
+
+.link--target {
+  stroke: #2ca02c;
+}
+
+button.violate {
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.violate.active, button.violate:hover {
+    background-color: #aaa;
+}
+
+.violate-list {
+    background-color: #ddd;
+    padding: 3px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+}
+</style>
+
+<body>
+<div id="violate_list" style="width:20%; height:100vh; float:left; overflow:scroll"></div>
+<div id="dep_graph" style="width:80%; height:100vh; float:right; overflow:scroll">
+    <div style="position:absolute;padding:20px">
+        <button id="reset_btn">Reset</button>
+    </div>
+</div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="dep-data.js"></script>
+<script src="dep-graph.js"></script>
+</body>
