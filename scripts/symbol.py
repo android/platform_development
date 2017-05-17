@@ -94,11 +94,16 @@ def FindToolchain():
 
 
 def SymbolInformation(lib, addr):
+  return SymbolInformationWithCache(lib, addr, None)
+
+
+def SymbolInformationWithCache(lib, addr, symbol_cache):
   """Look up symbol information about an address.
 
   Args:
     lib: library (or executable) pathname containing symbols
     addr: string hexidecimal address
+    symbol_cache: a dictionary caching symbols for libraries
 
   Returns:
     A list of the form [(source_symbol, source_location,
@@ -112,16 +117,21 @@ def SymbolInformation(lib, addr):
     Usually you want to display the source_location and
     object_symbol_with_offset from the last element in the list.
   """
-  info = SymbolInformationForSet(lib, set([addr]))
+  info = SymbolInformationForSetWithCache(lib, set([addr]), symbol_cache)
   return (info and info.get(addr)) or [(None, None, None)]
 
 
 def SymbolInformationForSet(lib, unique_addrs):
+  return SymbolInformationForSetWithCache(lib, unique_addrs, None)
+
+
+def SymbolInformationForSetWithCache(lib, unique_addrs, symbol_cache):
   """Look up symbol information for a set of addresses from the given library.
 
   Args:
     lib: library (or executable) pathname containing symbols
     unique_addrs: set of hexidecimal addresses
+    symbol_cache: a dictionary caching symbols for libraries
 
   Returns:
     A dictionary of the form {addr: [(source_symbol, source_location,
@@ -139,11 +149,25 @@ def SymbolInformationForSet(lib, unique_addrs):
   if not lib:
     return None
 
-  addr_to_line = CallAddr2LineForSet(lib, unique_addrs)
+  addr2line_cache = None
+  objdump_cache = None
+  if symbol_cache is not None:
+    if 'addr2line' in symbol_cache:
+      addr2line_cache = symbol_cache['addr2line']
+    else:
+      addr2line_cache = {}
+      symbol_cache['addr2line'] = addr2line_cache
+    if 'objdump' in symbol_cache:
+      objdump_cache = symbol_cache['objdump']
+    else:
+      objdump_cache = {}
+      symbol_cache['objdump'] = objdump_cache
+
+  addr_to_line = CallAddr2LineForSetWithCache(lib, unique_addrs, addr2line_cache)
   if not addr_to_line:
     return None
 
-  addr_to_objdump = CallObjdumpForSet(lib, unique_addrs)
+  addr_to_objdump = CallObjdumpForSetWithCache(lib, unique_addrs, objdump_cache)
   if not addr_to_objdump:
     return None
 
@@ -165,6 +189,10 @@ def SymbolInformationForSet(lib, unique_addrs):
 
 
 def CallAddr2LineForSet(lib, unique_addrs):
+  return CallAddr2LineForSetWithCache(lib, unique_addrs, None)
+
+
+def CallAddr2LineForSetWithCache(lib, unique_addrs, lib_addr_cache):
   """Look up line and symbol information for a set of addresses.
 
   Args:
@@ -183,6 +211,30 @@ def CallAddr2LineForSet(lib, unique_addrs):
   if not lib:
     return None
 
+  result = {}
+  addrs = sorted(unique_addrs)
+
+  addr_cache = None
+  if lib_addr_cache is not None:
+    if lib in lib_addr_cache:
+      addr_cache = lib_addr_cache[lib]
+
+      # Go through and handle all known addresses.
+      for x in range(len(addrs)):
+        next_addr = addrs.pop(0)
+        if next_addr in addr_cache:
+          result[next_addr] = addr_cache[next_addr]
+        else:
+          # Re-add, needs to be symbolized.
+          addrs.append(next_addr)
+
+      if not addrs:
+        # Everything was cached, we're done.
+        return result
+    else:
+      addr_cache = {}
+      lib_addr_cache[lib] = addr_cache
+
   symbols = SYMBOLS_DIR + lib
   if not os.path.exists(symbols):
     symbols = lib
@@ -197,8 +249,6 @@ def CallAddr2LineForSet(lib, unique_addrs):
       "--demangle", "--exe=" + symbols]
   child = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 
-  result = {}
-  addrs = sorted(unique_addrs)
   for addr in addrs:
     child.stdin.write("0x%s\n" % addr)
     child.stdin.flush()
@@ -221,6 +271,9 @@ def CallAddr2LineForSet(lib, unique_addrs):
         child.stdin.write("\n")
         first = False
     result[addr] = records
+    # Potentially cache the record.
+    if addr_cache is not None:
+      addr_cache[addr] = records
   child.stdin.close()
   child.stdout.close()
   return result
@@ -242,11 +295,18 @@ def StripPC(addr):
 
 
 def CallObjdumpForSet(lib, unique_addrs):
+  return CallObjdumpForSetWithCache(lib, unique_addrs, None)
+
+
+def CallObjdumpForSetWithCache(lib, unique_addrs, lib_addr_cache):
   """Use objdump to find out the names of the containing functions.
 
   Args:
     lib: library (or executable) pathname containing symbols
     unique_addrs: set of string hexidecimal addresses to find the functions for.
+    lib_addr_cache: A cache for symbol information. Currently stores symbols
+                    by address in a dict. A range tree would optimize size and
+                    hit rate.
 
   Returns:
     A dictionary of the form {addr: (string symbol, offset)}.
@@ -254,13 +314,36 @@ def CallObjdumpForSet(lib, unique_addrs):
   if not lib:
     return None
 
+  result = {}
+  addrs = sorted(unique_addrs)
+
+  addr_cache = None
+  if lib_addr_cache is not None:
+    if lib in lib_addr_cache:
+      addr_cache = lib_addr_cache[lib]
+
+      # Go through and handle all known addresses.
+      for x in range(len(addrs)):
+        next_addr = addrs.pop(0)
+        if next_addr in addr_cache:
+          result[next_addr] = addr_cache[next_addr]
+        else:
+          # Re-add, needs to be symbolized.
+          addrs.append(next_addr)
+
+      if not addrs:
+        # Everything was cached, we're done.
+        return result
+    else:
+      addr_cache = {}
+      lib_addr_cache[lib] = addr_cache
+
   symbols = SYMBOLS_DIR + lib
   if not os.path.exists(symbols):
     symbols = lib
     if not os.path.exists(symbols):
       return None
 
-  addrs = sorted(unique_addrs)
   start_addr_dec = str(StripPC(int(addrs[0], 16)))
   stop_addr_dec = str(StripPC(int(addrs[-1], 16)) + 8)
   cmd = [ToolPath("objdump"),
@@ -287,7 +370,6 @@ def CallObjdumpForSet(lib, unique_addrs):
   addr_index = 0  # The address that we are currently looking for.
 
   stream = subprocess.Popen(cmd, stdout=subprocess.PIPE).stdout
-  result = {}
   for line in stream:
     # Is it a function line like:
     #   000177b0 <android::IBinder::~IBinder()>:
@@ -315,6 +397,9 @@ def CallObjdumpForSet(lib, unique_addrs):
       i_target = StripPC(int(target_addr, 16))
       if i_addr == i_target:
         result[target_addr] = (current_symbol, i_target - current_symbol_addr)
+        # Potentially cache the record.
+        if addr_cache is not None:
+          addr_cache[target_addr] = result[target_addr]
         addr_index += 1
         if addr_index >= len(addrs):
           break
@@ -324,6 +409,13 @@ def CallObjdumpForSet(lib, unique_addrs):
 
 
 def CallCppFilt(mangled_symbol):
+  return CallCppFiltWithCache(mangled_symbol, None)
+
+
+def CallCppFiltWithCache(mangled_symbol, symbol_cache):
+  if symbol_cache is not None and mangled_symbol in symbol_cache:
+    return symbol_cache[mangled_symbol]
+
   cmd = [ToolPath("c++filt")]
   process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
   process.stdin.write(mangled_symbol)
@@ -331,6 +423,10 @@ def CallCppFilt(mangled_symbol):
   process.stdin.close()
   demangled_symbol = process.stdout.readline().strip()
   process.stdout.close()
+
+  if symbol_cache is not None:
+    symbol_cache[mangled_symbol] = demangled_symbol
+
   return demangled_symbol
 
 

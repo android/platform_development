@@ -67,6 +67,9 @@ class TraceConverter:
     "x86_64": "rax|rbx|rcx|rdx|rsi|rdi|r8|r9|r10|r11|r12|r13|r14|r15|cs|ss|rip|rbp|rsp|eflags",
   }
 
+  symbol_info_cache = {}
+  demangling_cache = {}
+
   def UpdateAbiRegexes(self):
     if symbol.ARCH == "arm64" or symbol.ARCH == "mips64" or symbol.ARCH == "x86_64":
       self.width = "{16}"
@@ -372,12 +375,12 @@ class TraceConverter:
 
         # If a calls b which further calls c and c is inlined to b, we want to
         # display "a -> b -> c" in the stack trace instead of just "a -> c"
-        info = symbol.SymbolInformation(lib, code_addr)
+        info = symbol.SymbolInformationWithCache(lib, code_addr, self.symbol_info_cache)
         nest_count = len(info) - 1
         for (source_symbol, source_location, object_symbol_with_offset) in info:
           if not source_symbol:
             if symbol_present:
-              source_symbol = symbol.CallCppFilt(symbol_name)
+              source_symbol = symbol.CallCppFiltWithCache(symbol_name, self.demangling_cache)
             else:
               source_symbol = "<unknown>"
           if not source_location:
