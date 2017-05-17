@@ -70,6 +70,30 @@
       "revId": "d280c5b64c2d6fb8e3547ba08512d970a7d23e4a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63bca4d6_750144ae",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-17T17:58:55Z",
+      "side": 1,
+      "message": "But it wouldn\u0027t benefit from this cache. There is usually not a huge redundancy in symbols as in my use case (100k ASAN traces in ART).\n\nFor that, caching the open addr2line connections, and completely caching the objdump stuff would be more helpful.\n\nMaybe I should go with the \"have configuration in symbol?\" Or just do both caches?",
+      "parentUuid": "bd0c5b7b_8eebd808",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 23
+      },
+      "revId": "d280c5b64c2d6fb8e3547ba08512d970a7d23e4a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
