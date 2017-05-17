@@ -22,6 +22,30 @@
       "revId": "d280c5b64c2d6fb8e3547ba08512d970a7d23e4a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48a1962b_12baa6ca",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-17T17:45:26Z",
+      "side": 1,
+      "message": "Well, I wanted to keep the original API alive w/o caching side effects (it will use more RAM, obviously...). Happy to hide this.\n\nThough there should be a major rewrite of symbol to use instances instead of global state, anyways. Then it would be easy to configure on construction.",
+      "parentUuid": "0a953d72_0991714e",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 23
+      },
+      "revId": "d280c5b64c2d6fb8e3547ba08512d970a7d23e4a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
