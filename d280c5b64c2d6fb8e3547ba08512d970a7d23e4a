@@ -46,6 +46,30 @@
       "revId": "d280c5b64c2d6fb8e3547ba08512d970a7d23e4a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd0c5b7b_8eebd808",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2017-05-17T17:55:27Z",
+      "side": 1,
+      "message": "the only other user we know of is go/as, right? which could really use a speedup.",
+      "parentUuid": "48a1962b_12baa6ca",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 23
+      },
+      "revId": "d280c5b64c2d6fb8e3547ba08512d970a7d23e4a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
