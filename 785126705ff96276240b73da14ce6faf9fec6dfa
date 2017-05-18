@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "451af1b5_a5d121af",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "To be a pretty constant somewhere easy to change...",
+      "parentUuid": "ffb3cd35_7cf503f1",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f7f9627f_65bf2cc3",
         "filename": "scripts/symbol.py",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2017-05-18T07:06:52Z",
       "side": 1,
       "message": "PipeCache(object)\n\nAnd actually, maybe a name other than \"pipe\"? ProcessCache?",
+      "range": {
+        "startLine": 66,
+        "startChar": 6,
+        "endLine": 66,
+        "endChar": 15
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "267bdcb8_3e2bd83a",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7f9627f_65bf2cc3",
       "range": {
         "startLine": 66,
         "startChar": 6,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "fc854c5f_949f0132",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15d63aba_5446d7db",
+      "range": {
+        "startLine": 70,
+        "startChar": 6,
+        "endLine": 70,
+        "endChar": 17
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "83a0f717_7a188534",
         "filename": "scripts/symbol.py",
         "patchSetId": 3
@@ -76,6 +142,24 @@
       "writtenOn": "2017-05-18T07:06:52Z",
       "side": 1,
       "message": "I think this comment is supposed to go with L87.",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45eb53e9_535e574f",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Nope. After a cache miss, you have to open a new one.",
+      "parentUuid": "83a0f717_7a188534",
       "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
@@ -128,6 +212,54 @@
     },
     {
       "key": {
+        "uuid": "77a6baf0_eae283eb",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "?\n\nold_cmd is used.",
+      "parentUuid": "79c617ad_a994e54d",
+      "range": {
+        "startLine": 83,
+        "startChar": 7,
+        "endLine": 83,
+        "endChar": 14
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1e7db9d_e817b5d0",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8c7946c_bdc24437",
+      "range": {
+        "startLine": 83,
+        "startChar": 43,
+        "endLine": 83,
+        "endChar": 61
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b176424e_448aeb1f",
         "filename": "scripts/symbol.py",
         "patchSetId": 3
@@ -139,6 +271,30 @@
       "writtenOn": "2017-05-18T07:06:52Z",
       "side": 1,
       "message": "SpawnProcess",
+      "range": {
+        "startLine": 92,
+        "startChar": 6,
+        "endLine": 92,
+        "endChar": 14
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5fcd59e_7e4d529a",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b176424e_448aeb1f",
       "range": {
         "startLine": 92,
         "startChar": 6,
@@ -174,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "e85c5d19_0d19268f",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d12ae8f_9f40923d",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 15
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "19769b14_9eeb9567",
         "filename": "scripts/symbol.py",
         "patchSetId": 3
@@ -185,6 +365,30 @@
       "writtenOn": "2017-05-18T07:06:52Z",
       "side": 1,
       "message": "KillAllProcesses",
+      "range": {
+        "startLine": 101,
+        "startChar": 6,
+        "endLine": 101,
+        "endChar": 19
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5d049cb_01e593ce",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19769b14_9eeb9567",
       "range": {
         "startLine": 101,
         "startChar": 6,
@@ -236,6 +440,54 @@
         "startChar": 8,
         "endLine": 102,
         "endChar": 9
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f86510bf_e3354823",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33da468e_3e2f4b03",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 9
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "853460c0_94c97a07",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T16:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ff55d7b_4cea9993",
+      "range": {
+        "startLine": 102,
+        "startChar": 9,
+        "endLine": 102,
+        "endChar": 16
       },
       "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
