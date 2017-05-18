@@ -257,6 +257,24 @@
       "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60fc7de7_6e7b5835",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T15:47:23Z",
+      "side": 1,
+      "message": "Is there *any* way out that wouldn\u0027t involve this? Reading the docs states that atexit is not called for TERM termination, and that a signal handler is required.",
+      "parentUuid": "f330f481_029b16ff",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
