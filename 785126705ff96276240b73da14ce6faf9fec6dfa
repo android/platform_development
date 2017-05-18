@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8bac73fa_606e974e",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T17:23:49Z",
+      "side": 1,
+      "message": "Could be a member of PipeCache though.",
+      "parentUuid": "451af1b5_a5d121af",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f7f9627f_65bf2cc3",
         "filename": "scripts/symbol.py",
         "patchSetId": 3
@@ -166,6 +184,24 @@
     },
     {
       "key": {
+        "uuid": "c27110d2_f5fb693e",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T17:23:49Z",
+      "side": 1,
+      "message": "Ack, but the next block actually drops the lru item. Understood that this is meant to apply to the rest of the function though, not the immediately following block.",
+      "parentUuid": "45eb53e9_535e574f",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "79c617ad_a994e54d",
         "filename": "scripts/symbol.py",
         "patchSetId": 3
@@ -253,6 +289,30 @@
         "startChar": 43,
         "endLine": 83,
         "endChar": 61
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af315a25_60e730e9",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T17:23:49Z",
+      "side": 1,
+      "message": "My bad. Missed that.",
+      "parentUuid": "77a6baf0_eae283eb",
+      "range": {
+        "startLine": 83,
+        "startChar": 7,
+        "endLine": 83,
+        "endChar": 14
       },
       "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
@@ -524,6 +584,24 @@
       "side": 1,
       "message": "Is there *any* way out that wouldn\u0027t involve this? Reading the docs states that atexit is not called for TERM termination, and that a signal handler is required.",
       "parentUuid": "f330f481_029b16ff",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1bf7eb42_1e9b93a0",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T17:23:49Z",
+      "side": 1,
+      "message": "Anything in a try/finally block is still caught. Similarly a with clause would work. Hrm. I guess you could just try/finally around main()? It\u0027s a little odd API wise, but it might be the best option short of turning ProcessCache into a contextlib object. It would have to stop being global like it is now, and that looked like it might be a ton of cleanup for a mess you didn\u0027t make.",
+      "parentUuid": "60fc7de7_6e7b5835",
       "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
