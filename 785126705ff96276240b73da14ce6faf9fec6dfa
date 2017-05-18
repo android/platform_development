@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb3cd35_7cf503f1",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "Why is this global?",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7f9627f_65bf2cc3",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "PipeCache(object)\n\nAnd actually, maybe a name other than \"pipe\"? ProcessCache?",
+      "range": {
+        "startLine": 66,
+        "startChar": 6,
+        "endLine": 66,
+        "endChar": 15
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15d63aba_5446d7db",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "GetProcess",
+      "range": {
+        "startLine": 70,
+        "startChar": 6,
+        "endLine": 70,
+        "endChar": 17
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83a0f717_7a188534",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "I think this comment is supposed to go with L87.",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79c617ad_a994e54d",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "_\n\n(pylint)\n\nAlso, drop the superfluous parens.",
+      "range": {
+        "startLine": 83,
+        "startChar": 7,
+        "endLine": 83,
+        "endChar": 14
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8c7946c_bdc24437",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "this is the default",
+      "range": {
+        "startLine": 83,
+        "startChar": 43,
+        "endLine": 83,
+        "endChar": 61
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b176424e_448aeb1f",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "SpawnProcess",
+      "range": {
+        "startLine": 92,
+        "startChar": 6,
+        "endLine": 92,
+        "endChar": 14
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d12ae8f_9f40923d",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "TerminateProcess",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 15
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19769b14_9eeb9567",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "KillAllProcesses",
+      "range": {
+        "startLine": 101,
+        "startChar": 6,
+        "endLine": 101,
+        "endChar": 19
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ff55d7b_4cea9993",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "_",
+      "range": {
+        "startLine": 102,
+        "startChar": 9,
+        "endLine": 102,
+        "endChar": 16
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33da468e_3e2f4b03",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "superfluous",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 9
+      },
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f330f481_029b16ff",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-18T07:06:52Z",
+      "side": 1,
+      "message": "Yuck. importing a module shouldn\u0027t alter signal behavior, but I don\u0027t see a way out of this that doesn\u0027t involve a pretty big rewrite.",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
