@@ -1,0 +1,325 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c856137e_2f3ab66a",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "BTW, I would usually wrap the file with:\n\n    (function () {\n        \u0027use strict\u0027;\n\n        // ... code ...\n\n    })();\n\nIn this way, we get better encapsulation and private functions won\u0027t pollute global scope.\n\nIn addition \u0027use strict\u0027 will help us to find bugs in Javascript.",
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7980d20d_eb32b3f8",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "BTW, in most cases, you can replace var with let.  It is a better language construct.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 3
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54d37aa2_c70e8057",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "showList",
+      "range": {
+        "startLine": 24,
+        "startChar": 9,
+        "endLine": 24,
+        "endChar": 18
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a146a213_52c94c63",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "showResult",
+      "range": {
+        "startLine": 89,
+        "startChar": 10,
+        "endLine": 89,
+        "endChar": 20
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4357421_7f48efa9",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Weird indent",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 6
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3b7c56f1_26958f08",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "What will happen if `l.target !\u003d\u003d d`?",
+      "range": {
+        "startLine": 139,
+        "startChar": 45,
+        "endLine": 139,
+        "endChar": 95
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7dd4e9c6_15774aa3",
+        "filename": "vndk/tools/definition-tool/assets/visual/index-vtool.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Add:\n\n    \u003chtml\u003e\n\n        \u003chead\u003e\n            \u003cmeta charset\u003d\"utf-8\" /\u003e\n            \u003ctitle\u003eVTool\u003c/title\u003e",
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6403d587_1f593867",
+        "filename": "vndk/tools/definition-tool/assets/visual/index-vtool.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Move this to another CSS file (e.g. dep-graph.css) and load the css file with:\n\n    \u003clink rel\u003d\"stylesheet\" href\u003d\"dep-graph.css\" media\u003d\"all\" /\u003e",
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48a7cd17_11c41c75",
+        "filename": "vndk/tools/definition-tool/assets/visual/index-vtool.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Please use the consistent indent style.  I usually use a table in CSS files.  You may use 2 spaces or 4 spaces, but make sure it is consistent in a file.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 2
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd5e9131_6ed5770b",
+        "filename": "vndk/tools/definition-tool/assets/visual/index-vtool.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Move these to CSS block:\n\n    #violate_list {\n        width: 20%;\n        height: 100vh;\n        ...\n    }",
+      "range": {
+        "startLine": 110,
+        "startChar": 30,
+        "endLine": 110,
+        "endChar": 82
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2365ede6_aa3ab9f7",
+        "filename": "vndk/tools/definition-tool/assets/visual/index-vtool.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "similar",
+      "range": {
+        "startLine": 111,
+        "startChar": 27,
+        "endLine": 111,
+        "endChar": 80
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c5932b5_20a060a4",
+        "filename": "vndk/tools/definition-tool/assets/visual/index-vtool.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "similar",
+      "range": {
+        "startLine": 112,
+        "startChar": 16,
+        "endLine": 112,
+        "endChar": 46
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f1a387fc_c477c795",
+        "filename": "vndk/tools/definition-tool/assets/visual/index-vtool.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Add \u003c/html\u003e",
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a50da4b1_460e3d52",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2342,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 2342,
+        "startChar": 6,
+        "endLine": 2342,
+        "endChar": 11
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f900db6b_deefb5df",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2461,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-18T09:51:00Z",
+      "side": 1,
+      "message": "Break the line at this point",
+      "range": {
+        "startLine": 2461,
+        "startChar": 74,
+        "endLine": 2461,
+        "endChar": 75
+      },
+      "revId": "cd6442c22d5f0393b354ea9608d1365484baebd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
