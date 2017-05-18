@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ca6a5b8c_5a4ac2ad",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T17:39:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bac73fa_606e974e",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f7f9627f_65bf2cc3",
         "filename": "scripts/symbol.py",
         "patchSetId": 3
@@ -602,6 +620,24 @@
       "side": 1,
       "message": "Anything in a try/finally block is still caught. Similarly a with clause would work. Hrm. I guess you could just try/finally around main()? It\u0027s a little odd API wise, but it might be the best option short of turning ProcessCache into a contextlib object. It would have to stop being global like it is now, and that looked like it might be a ton of cleanup for a mess you didn\u0027t make.",
       "parentUuid": "60fc7de7_6e7b5835",
+      "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6773c411_ede83bcf",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2017-05-18T17:39:34Z",
+      "side": 1,
+      "message": "It still isn\u0027t pretty because it isn\u0027t self-contained.\n\nBut yeah, I\u0027m not gonna do the big refactor. Especially since stack isn\u0027t the only user... :-)",
+      "parentUuid": "1bf7eb42_1e9b93a0",
       "revId": "785126705ff96276240b73da14ce6faf9fec6dfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
