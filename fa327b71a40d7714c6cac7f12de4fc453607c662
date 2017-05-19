@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7dc5018_505cea3d",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2017-05-19T23:57:16Z",
+      "side": 1,
+      "message": "Extra space.",
+      "range": {
+        "startLine": 37,
+        "startChar": 63,
+        "endLine": 37,
+        "endChar": 64
+      },
+      "revId": "fa327b71a40d7714c6cac7f12de4fc453607c662",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db8026ce_9aea6883",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2017-05-19T23:57:16Z",
+      "side": 1,
+      "message": "This is kind of an odd name, would it be better to be something like parts?",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 12
+      },
+      "revId": "fa327b71a40d7714c6cac7f12de4fc453607c662",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea2b1f0f_053cf145",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2017-05-19T23:57:16Z",
+      "side": 1,
+      "message": "Should you add \"-w\" so that it doesn\u0027t split this across multiple lines? Most likely it doesn\u0027t because of the way it\u0027s running, but better to be explicit.",
+      "range": {
+        "startLine": 176,
+        "startChar": 42,
+        "endLine": 176,
+        "endChar": 51
+      },
+      "revId": "fa327b71a40d7714c6cac7f12de4fc453607c662",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6049b8c2_ebb967c5",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2017-05-19T23:57:16Z",
+      "side": 1,
+      "message": "This is a nit, but it\u0027s not really the lma here, it\u0027s the file offset which is usually the same as the lma, but is different for shared libraries with a non-zero load bias.",
+      "range": {
+        "startLine": 180,
+        "startChar": 16,
+        "endLine": 180,
+        "endChar": 19
+      },
+      "revId": "fa327b71a40d7714c6cac7f12de4fc453607c662",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
