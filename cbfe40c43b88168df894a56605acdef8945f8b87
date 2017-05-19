@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f827fc14_6ac06346",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T00:59:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75ba07e4_1af94136",
+      "range": {
+        "startLine": 40,
+        "startChar": 40,
+        "endLine": 40,
+        "endChar": 52
+      },
+      "revId": "cbfe40c43b88168df894a56605acdef8945f8b87",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e4a4c6e_814d201e",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-18T08:15:44Z",
       "side": 1,
       "message": "Indent with 2 more spaces.",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 8
+      },
+      "revId": "cbfe40c43b88168df894a56605acdef8945f8b87",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4e2cfe_01417d27",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T00:59:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e4a4c6e_814d201e",
       "range": {
         "startLine": 40,
         "startChar": 6,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "60fccf78_63e77761",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T00:59:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21922eb1_4d069f19",
+      "range": {
+        "startLine": 52,
+        "startChar": 27,
+        "endLine": 52,
+        "endChar": 53
+      },
+      "revId": "cbfe40c43b88168df894a56605acdef8945f8b87",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "379c9487_7ae4ebc3",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
         "patchSetId": 5
@@ -82,6 +154,30 @@
       "writtenOn": "2017-05-18T08:15:44Z",
       "side": 1,
       "message": "I would prefer:\n\n    CompatibilityStatus status \u003d judge.GenerateCompatibilityReport();\n    if (advice_only) {\n      return CompatibilityStatus::COMPATIBLE;\n    }\n    if (allow_extensions \u0026\u0026 status \u003d\u003d CompatibilityStatus::EXTENSION) {\n      return CompatibilityStatus::COMPATIBLE;\n    }\n    return status;",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 41
+      },
+      "revId": "cbfe40c43b88168df894a56605acdef8945f8b87",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5f544b5_2ad7c4af",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T00:59:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "379c9487_7ae4ebc3",
       "range": {
         "startLine": 81,
         "startChar": 0,
@@ -128,6 +224,30 @@
       "writtenOn": "2017-05-18T08:15:44Z",
       "side": 1,
       "message": "Yeah.  You can simply remove the matcher object.",
+      "range": {
+        "startLine": 182,
+        "startChar": 32,
+        "endLine": 182,
+        "endChar": 41
+      },
+      "revId": "cbfe40c43b88168df894a56605acdef8945f8b87",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd1048cc_8c25f249",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T00:59:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea50c5c4_8789d214",
       "range": {
         "startLine": 182,
         "startChar": 32,
