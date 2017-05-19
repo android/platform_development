@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "de4b812f_42d799e2",
+        "filename": "vndk/tools/header-checker/proto/abi_diff.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T16:44:18Z",
+      "side": 1,
+      "message": "also this should be optional.",
+      "range": {
+        "startLine": 62,
+        "startChar": 2,
+        "endLine": 62,
+        "endChar": 47
+      },
+      "revId": "2edb618a5ecaeca0763897883f7431e9d9a8446b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b99952cb_20cba0db",
         "filename": "vndk/tools/header-checker/proto/abi_diff.proto",
         "patchSetId": 6
@@ -25,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7293977e_0b048398",
+        "filename": "vndk/tools/header-checker/proto/abi_diff.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T16:44:18Z",
+      "side": 1,
+      "message": "\u003e nits: Space between // and L",
+      "parentUuid": "b99952cb_20cba0db",
+      "range": {
+        "startLine": 77,
+        "startChar": 3,
+        "endLine": 77,
+        "endChar": 5
+      },
+      "revId": "2edb618a5ecaeca0763897883f7431e9d9a8446b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87672125_8e70313e",
         "filename": "vndk/tools/header-checker/proto/abi_diff.proto",
         "patchSetId": 6
@@ -36,6 +83,30 @@
       "writtenOn": "2017-05-19T08:13:24Z",
       "side": 1,
       "message": "nits: Space between // and C",
+      "range": {
+        "startLine": 95,
+        "startChar": 2,
+        "endLine": 95,
+        "endChar": 5
+      },
+      "revId": "2edb618a5ecaeca0763897883f7431e9d9a8446b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ddb52d38_ae5eecb4",
+        "filename": "vndk/tools/header-checker/proto/abi_diff.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-19T16:44:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87672125_8e70313e",
       "range": {
         "startLine": 95,
         "startChar": 2,
