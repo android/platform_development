@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b99952cb_20cba0db",
+        "filename": "vndk/tools/header-checker/proto/abi_diff.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-19T08:13:24Z",
+      "side": 1,
+      "message": "nits: Space between // and L",
+      "range": {
+        "startLine": 77,
+        "startChar": 3,
+        "endLine": 77,
+        "endChar": 5
+      },
+      "revId": "2edb618a5ecaeca0763897883f7431e9d9a8446b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87672125_8e70313e",
+        "filename": "vndk/tools/header-checker/proto/abi_diff.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-19T08:13:24Z",
+      "side": 1,
+      "message": "nits: Space between // and C",
+      "range": {
+        "startLine": 95,
+        "startChar": 2,
+        "endLine": 95,
+        "endChar": 5
+      },
+      "revId": "2edb618a5ecaeca0763897883f7431e9d9a8446b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
