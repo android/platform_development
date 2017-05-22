@@ -1,0 +1,320 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0cf80c97_0783c2f3",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "Should this be `:active`?  (I am not sure though, just FYI)",
+      "range": {
+        "startLine": 92,
+        "startChar": 14,
+        "endLine": 92,
+        "endChar": 21
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4fac0614_78e6cb77",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "Remove.  It is *use* strict instead.",
+      "range": {
+        "startLine": 2,
+        "startChar": 8,
+        "endLine": 2,
+        "endChar": 9
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc822d30_c8c4049b",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "Remove line 118 and add an empty line between 119-120.",
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c74dba4c_42889905",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2370,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "# D",
+      "range": {
+        "startLine": 2370,
+        "startChar": 30,
+        "endLine": 2370,
+        "endChar": 32
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2d92bc8_e7c42933",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2376,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "I think you don\u0027t need these.",
+      "range": {
+        "startLine": 2375,
+        "startChar": 0,
+        "endLine": 2376,
+        "endChar": 22
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "268c1af9_12d4b93c",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2385,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "I prefer this to be formatted as:\n\n        TAG_DEP_TABLE \u003d {\n            \u0027vendor\u0027: (\u0027ll_ndk\u0027, \u0027sp_ndk\u0027, \u0027vndk_sp\u0027, \u0027vndk\u0027, \u0027vndk_indirect\u0027),\n        }",
+      "range": {
+        "startLine": 2384,
+        "startChar": 0,
+        "endLine": 2385,
+        "endChar": 59
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ca25d5d_b51cf53a",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "Refine as:\n\n                pub \u003d \u0027public\u0027 if tag in eligible_for_vendor else \u0027private\u0027\n                tag_hierarchy.append(\u0027system.{}.{}\u0027.format(pub, tag))",
+      "range": {
+        "startLine": 2393,
+        "startChar": 16,
+        "endLine": 2395,
+        "endChar": 26
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "34ba2357_d3b1487e",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2411,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "Add another space character to align `and` keyword.",
+      "range": {
+        "startLine": 2411,
+        "startChar": 26,
+        "endLine": 2411,
+        "endChar": 27
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ba6b700_10a75b57",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2430,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "You don\u0027t need backslashes in parentheses.",
+      "range": {
+        "startLine": 2430,
+        "startChar": 46,
+        "endLine": 2430,
+        "endChar": 48
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66d51b0c_e61eed32",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2451,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "According to PEP8, \u003d operator for keyword argument shouldn\u0027t be surrounded by spaces.  eg.\n\n    data.sort(key\u003dlambda lib_item ...)",
+      "range": {
+        "startLine": 2451,
+        "startChar": 21,
+        "endLine": 2451,
+        "endChar": 24
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e17c88a8_b8d3164a",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "Here too.",
+      "range": {
+        "startLine": 2454,
+        "startChar": 25,
+        "endLine": 2454,
+        "endChar": 28
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29a9d1f6_5ec49509",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2458,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "I think we can simply use `index.html`",
+      "range": {
+        "startLine": 2458,
+        "startChar": 22,
+        "endLine": 2458,
+        "endChar": 38
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c6cad9f5_b9ec55d6",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2462,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "\u0027\u0027\u0027 is multi-line quotes.  In your case, a single quote is sufficient.",
+      "range": {
+        "startLine": 2462,
+        "startChar": 20,
+        "endLine": 2462,
+        "endChar": 45
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b0466a19_9569b79a",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2462,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:50:45Z",
+      "side": 1,
+      "message": "You don\u0027t need backslashes in the parentheses.",
+      "range": {
+        "startLine": 2462,
+        "startChar": 74,
+        "endLine": 2462,
+        "endChar": 76
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
