@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e97c9f1_c77d66fa",
+        "filename": "vndk/tools/abi-tool/vndk_abi_tool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2017-05-22T08:06:16Z",
+      "side": 1,
+      "message": "Could you add show_commands here?",
+      "range": {
+        "startLine": 261,
+        "startChar": 16,
+        "endLine": 261,
+        "endChar": 63
+      },
+      "revId": "0d644e675ed687ddb7fa5c862cb987fc70424686",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f0af68f_d61eed41",
+        "filename": "vndk/tools/abi-tool/vndk_abi_tool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2017-05-22T08:06:16Z",
+      "side": 1,
+      "message": "also update the message if strip_debug_info.pl is shown.",
+      "range": {
+        "startLine": 310,
+        "startChar": 29,
+        "endLine": 310,
+        "endChar": 58
+      },
+      "revId": "0d644e675ed687ddb7fa5c862cb987fc70424686",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
