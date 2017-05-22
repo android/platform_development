@@ -180,6 +180,52 @@
     },
     {
       "key": {
+        "uuid": "5b8e23c3_b58df0c5",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Use literal for simplicity:\n\n    lib_item \u003d {\n        \u0027name\u0027: lib.path,\n        \u0027size\u0027: 100,\n        \u0027tag\u0027: tag,\n        \u0027depends\u0027: [],\n        \u0027violates\u0027: [],\n    }",
+      "range": {
+        "startLine": 2423,
+        "startChar": 12,
+        "endLine": 2423,
+        "endChar": 29
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f04eff71_2fa9b48e",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2425,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Can this be deferred to Javascript-side?  It seems unrelated to Python part.",
+      "range": {
+        "startLine": 2425,
+        "startChar": 0,
+        "endLine": 2425,
+        "endChar": 34
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ba6b700_10a75b57",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -196,6 +242,75 @@
         "startChar": 46,
         "endLine": 2430,
         "endChar": 48
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de3e813e_b6cd4ff9",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2432,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Single quote \u0027depends\u0027",
+      "range": {
+        "startLine": 2432,
+        "startChar": 29,
+        "endLine": 2432,
+        "endChar": 38
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "081d301c_502175e6",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2434,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Single quote \u0027violates\u0027",
+      "range": {
+        "startLine": 2434,
+        "startChar": 29,
+        "endLine": 2434,
+        "endChar": 39
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04231878_a60b039b",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2436,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Single quote \u0027violate_count\u0027",
+      "range": {
+        "startLine": 2436,
+        "startChar": 21,
+        "endLine": 2436,
+        "endChar": 36
       },
       "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
@@ -226,6 +341,52 @@
     },
     {
       "key": {
+        "uuid": "01f44a66_9888c50b",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2451,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Single quote \u0027tag\u0027",
+      "range": {
+        "startLine": 2451,
+        "startChar": 51,
+        "endLine": 2451,
+        "endChar": 56
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a848ec2_144ae719",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2452,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Single quote \u0027violate_count\u0027",
+      "range": {
+        "startLine": 2452,
+        "startChar": 41,
+        "endLine": 2452,
+        "endChar": 56
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e17c88a8_b8d3164a",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -242,6 +403,29 @@
         "startChar": 25,
         "endLine": 2454,
         "endChar": 28
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d755f6db_67954986",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-22T07:55:51Z",
+      "side": 1,
+      "message": "Here too",
+      "range": {
+        "startLine": 2454,
+        "startChar": 57,
+        "endLine": 2454,
+        "endChar": 60
       },
       "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
