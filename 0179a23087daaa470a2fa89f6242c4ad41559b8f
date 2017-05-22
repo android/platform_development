@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "59688574_9355d329",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "\u0027active\u0027 is defined to be used for toggling the style by the function. It is not a pre-defined event.",
+      "parentUuid": "0cf80c97_0783c2f3",
+      "range": {
+        "startLine": 92,
+        "startChar": 14,
+        "endLine": 92,
+        "endChar": 21
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4fac0614_78e6cb77",
         "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-22T07:50:45Z",
       "side": 1,
       "message": "Remove.  It is *use* strict instead.",
+      "range": {
+        "startLine": 2,
+        "startChar": 8,
+        "endLine": 2,
+        "endChar": 9
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81c1dbdc_ae89956f",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4fac0614_78e6cb77",
       "range": {
         "startLine": 2,
         "startChar": 8,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "36e3f32a_f8aeb855",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc822d30_c8c4049b",
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c74dba4c_42889905",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2017-05-22T07:50:45Z",
       "side": 1,
       "message": "# D",
+      "range": {
+        "startLine": 2370,
+        "startChar": 30,
+        "endLine": 2370,
+        "endChar": 32
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f58b7744_78dced73",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2370,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c74dba4c_42889905",
       "range": {
         "startLine": 2370,
         "startChar": 30,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "3edff61d_4511f34b",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2376,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2d92bc8_e7c42933",
+      "range": {
+        "startLine": 2375,
+        "startChar": 0,
+        "endLine": 2376,
+        "endChar": 22
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "268c1af9_12d4b93c",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -122,6 +236,30 @@
       "writtenOn": "2017-05-22T07:50:45Z",
       "side": 1,
       "message": "I prefer this to be formatted as:\n\n        TAG_DEP_TABLE \u003d {\n            \u0027vendor\u0027: (\u0027ll_ndk\u0027, \u0027sp_ndk\u0027, \u0027vndk_sp\u0027, \u0027vndk\u0027, \u0027vndk_indirect\u0027),\n        }",
+      "range": {
+        "startLine": 2384,
+        "startChar": 0,
+        "endLine": 2385,
+        "endChar": 59
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77ac151f_8254bea9",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2385,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "268c1af9_12d4b93c",
       "range": {
         "startLine": 2384,
         "startChar": 0,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "351aa29d_2f96d14c",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ca25d5d_b51cf53a",
+      "range": {
+        "startLine": 2393,
+        "startChar": 16,
+        "endLine": 2395,
+        "endChar": 26
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "34ba2357_d3b1487e",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -168,6 +330,30 @@
       "writtenOn": "2017-05-22T07:50:45Z",
       "side": 1,
       "message": "Add another space character to align `and` keyword.",
+      "range": {
+        "startLine": 2411,
+        "startChar": 26,
+        "endLine": 2411,
+        "endChar": 27
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80a7a1a3_253dc367",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2411,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34ba2357_d3b1487e",
       "range": {
         "startLine": 2411,
         "startChar": 26,
@@ -203,6 +389,30 @@
     },
     {
       "key": {
+        "uuid": "f30db89e_bc699e63",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b8e23c3_b58df0c5",
+      "range": {
+        "startLine": 2423,
+        "startChar": 12,
+        "endLine": 2423,
+        "endChar": 29
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f04eff71_2fa9b48e",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -214,6 +424,30 @@
       "writtenOn": "2017-05-22T07:55:51Z",
       "side": 1,
       "message": "Can this be deferred to Javascript-side?  It seems unrelated to Python part.",
+      "range": {
+        "startLine": 2425,
+        "startChar": 0,
+        "endLine": 2425,
+        "endChar": 34
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef07a88e_116fe586",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2425,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f04eff71_2fa9b48e",
       "range": {
         "startLine": 2425,
         "startChar": 0,
@@ -249,6 +483,30 @@
     },
     {
       "key": {
+        "uuid": "da4d6ce9_45f9de63",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2430,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ba6b700_10a75b57",
+      "range": {
+        "startLine": 2430,
+        "startChar": 46,
+        "endLine": 2430,
+        "endChar": 48
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "de3e813e_b6cd4ff9",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -260,6 +518,30 @@
       "writtenOn": "2017-05-22T07:55:51Z",
       "side": 1,
       "message": "Single quote \u0027depends\u0027",
+      "range": {
+        "startLine": 2432,
+        "startChar": 29,
+        "endLine": 2432,
+        "endChar": 38
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e6ed079a_ffe06245",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2432,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de3e813e_b6cd4ff9",
       "range": {
         "startLine": 2432,
         "startChar": 29,
@@ -295,6 +577,30 @@
     },
     {
       "key": {
+        "uuid": "78dd08a9_0151f942",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2434,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "081d301c_502175e6",
+      "range": {
+        "startLine": 2434,
+        "startChar": 29,
+        "endLine": 2434,
+        "endChar": 39
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "04231878_a60b039b",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -306,6 +612,30 @@
       "writtenOn": "2017-05-22T07:55:51Z",
       "side": 1,
       "message": "Single quote \u0027violate_count\u0027",
+      "range": {
+        "startLine": 2436,
+        "startChar": 21,
+        "endLine": 2436,
+        "endChar": 36
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4caf0509_ed21a54e",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2436,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04231878_a60b039b",
       "range": {
         "startLine": 2436,
         "startChar": 21,
@@ -364,6 +694,54 @@
     },
     {
       "key": {
+        "uuid": "13d28fe2_8d738f79",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2451,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66d51b0c_e61eed32",
+      "range": {
+        "startLine": 2451,
+        "startChar": 21,
+        "endLine": 2451,
+        "endChar": 24
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5de3b6d2_bb3e38c0",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2451,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01f44a66_9888c50b",
+      "range": {
+        "startLine": 2451,
+        "startChar": 51,
+        "endLine": 2451,
+        "endChar": 56
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a848ec2_144ae719",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -375,6 +753,30 @@
       "writtenOn": "2017-05-22T07:55:51Z",
       "side": 1,
       "message": "Single quote \u0027violate_count\u0027",
+      "range": {
+        "startLine": 2452,
+        "startChar": 41,
+        "endLine": 2452,
+        "endChar": 56
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "19b21d48_9111503f",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2452,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a848ec2_144ae719",
       "range": {
         "startLine": 2452,
         "startChar": 41,
@@ -433,6 +835,54 @@
     },
     {
       "key": {
+        "uuid": "ede52008_f5e7e9f7",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e17c88a8_b8d3164a",
+      "range": {
+        "startLine": 2454,
+        "startChar": 25,
+        "endLine": 2454,
+        "endChar": 28
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69747697_40073941",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d755f6db_67954986",
+      "range": {
+        "startLine": 2454,
+        "startChar": 57,
+        "endLine": 2454,
+        "endChar": 60
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29a9d1f6_5ec49509",
         "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
         "patchSetId": 6
@@ -444,6 +894,30 @@
       "writtenOn": "2017-05-22T07:50:45Z",
       "side": 1,
       "message": "I think we can simply use `index.html`",
+      "range": {
+        "startLine": 2458,
+        "startChar": 22,
+        "endLine": 2458,
+        "endChar": 38
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8519bc13_a012f4c6",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2458,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29a9d1f6_5ec49509",
       "range": {
         "startLine": 2458,
         "startChar": 22,
@@ -490,6 +964,54 @@
       "writtenOn": "2017-05-22T07:50:45Z",
       "side": 1,
       "message": "You don\u0027t need backslashes in the parentheses.",
+      "range": {
+        "startLine": 2462,
+        "startChar": 74,
+        "endLine": 2462,
+        "endChar": 76
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71dc91cc_f7b28b0d",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2462,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6cad9f5_b9ec55d6",
+      "range": {
+        "startLine": 2462,
+        "startChar": 20,
+        "endLine": 2462,
+        "endChar": 45
+      },
+      "revId": "0179a23087daaa470a2fa89f6242c4ad41559b8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0fe03fe_b69c6544",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2462,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-05-22T09:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0466a19_9569b79a",
       "range": {
         "startLine": 2462,
         "startChar": 74,
