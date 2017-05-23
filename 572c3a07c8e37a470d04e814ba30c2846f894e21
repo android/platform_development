@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f966eefd_4d1b7777",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-23T23:28:41Z",
+      "side": 1,
+      "message": "again, concerns about header-abi-util increasing prebuilt size. So allowing for repeated code here.",
+      "range": {
+        "startLine": 87,
+        "startChar": 2,
+        "endLine": 107,
+        "endChar": 3
+      },
+      "revId": "572c3a07c8e37a470d04e814ba30c2846f894e21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
