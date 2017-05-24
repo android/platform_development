@@ -22,6 +22,30 @@
       "revId": "bb2595a65e62cc4f929b0b0d71c3ac0c83a854a9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41b42fb1_7bf821fc",
+        "filename": "vndk/tools/abi-tool/vndk_abi_tool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-05-24T02:03:10Z",
+      "side": 1,
+      "message": "Since we are not going to keep stripped dump and unstripped dump in the same directory, I think it is fine to share the same directory.",
+      "parentUuid": "c3936ffc_bfbf1513",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 29
+      },
+      "revId": "bb2595a65e62cc4f929b0b0d71c3ac0c83a854a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
