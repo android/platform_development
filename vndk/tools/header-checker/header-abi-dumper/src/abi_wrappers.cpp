@@ -551,10 +551,12 @@ bool EnumDeclWrapper::SetupEnum(abi_dump::EnumDecl *enump,
                                 const std::string &source_file) const {
   std::string enum_name = GetTagDeclQualifiedName(enum_decl_);
   std::string enum_mangled_name = GetMangledNameDecl(enum_decl_);
+  std::string linker_set_key =
+      (enum_mangled_name == "") ? enum_name : enum_mangled_name;
   clang::QualType enum_type = enum_decl_->getIntegerType();
   if (!SetupBasicNamedAndTypedDecl(enump->mutable_basic_abi(), enum_type,
                                    enum_name, enum_decl_->getAccess(),
-                                   enum_mangled_name) ||
+                                   linker_set_key) ||
       !SetupEnumFields(enump)) {
     return false;
   }
