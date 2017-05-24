@@ -813,6 +813,7 @@ class ELFLinker(object):
         '/system/lib',
         '/system/lib/vndk',
         '/system/lib/vndk-ext',
+        '/system/lib/vndk-sp',
         '/vendor/lib',
     )
 
@@ -820,6 +821,7 @@ class ELFLinker(object):
         '/system/lib64',
         '/system/lib64/vndk',
         '/system/lib64/vndk-ext',
+        '/system/lib64/vndk-sp',
         '/vendor/lib64',
     )
 
@@ -985,7 +987,6 @@ class ELFLinker(object):
 
     def compute_predefined_vndk_sp(self):
         """Find all vndk-sp libraries."""
-
         path_patterns = (
             # Visible to SP-HALs
             '^.*/android\\.hardware\\.graphics\\.allocator@2\\.0\\.so$',
@@ -1483,6 +1484,48 @@ class ELFLinker(object):
                 extra_vendor_lib, vndk_core, vndk_indirect,
                 vndk_fwk_ext, vndk_vnd_ext)
 
+    def compute_vndk_in_o(self, sp_lib, generic_refs):
+        # Compute vndk-sp sets.
+        vndk_sp = self.compute_predefined_vndk_sp()
+        vndk_sp_indirect = self.compute_predefined_vndk_sp_indirect()
+        computed_vndk_sp = sp_lib.vndk_sp_hal | sp_lib.sp_ndk_indirect | \
+                           sp_lib.vndk_sp_both
+        extra_vndk_sp_indirect = computed_vndk_sp - vndk_sp - vndk_sp_indirect
+
+        # Print errors when SP-HAL depends on non-vndk-sp lib.
+        sp_hal_closure = sp_lib.sp_hal | sp_lib.sp_hal_dep
+        for lib in sp_hal_closure:
+            for dep in lib.deps:
+                if dep.partition == PT_SYSTEM and dep not in vndk_sp and \
+                        not dep.is_ll_ndk and not dep.is_sp_ndk:
+                    print('error: SP-HAL {} depends on non vndk-sp library {}.'
+                            .format(lib.path, dep.path), file=sys.stderr)
+
+        # Normalize partition tags.  We expect many violations from the
+        # pre-Treble world.  Guess a resolution for the incorrect partition
+        # tag.
+        self.normalize_partition_tags(sp_lib.sp_hal, generic_refs)
+
+        # Compute the extended usages from vendor partition.
+        # FIXME: DAUX libraries won't be found by the following algorithm.
+        vndk_vnd_ext = set()
+
+        def collect_vndk_vnd_ext(libs):
+            result = set()
+            for lib in libs:
+                for dep in lib.imported_ext_symbols:
+                    if dep.partition == PT_SYSTEM and dep not in vndk_vnd_ext:
+                        result.add(dep)
+            return result
+
+        candidates = collect_vndk_vnd_ext(self.lib_pt[PT_VENDOR].values())
+
+        while candidates:
+            vndk_vnd_ext |= candidates
+            candidates = collect_vndk_vnd_ext(candidates)
+
+        return (extra_vndk_sp_indirect, vndk_vnd_ext)
+
     def compute_vndk_cap(self, banned_libs):
         # ELF files on vendor partitions are banned unconditionally.  ELF files
         # on the system partition are banned if their file extensions are not
@@ -1871,12 +1914,15 @@ class VNDKCommand(VNDKCommandBase):
             self._warn_incorrect_partition(graph)
 
         # Compute vndk heuristics.
-        vndk_lib = graph.compute_vndk(vndk_customized_for_system,
-                                      vndk_customized_for_vendor, generic_refs,
-                                      banned_libs)
+        sp_lib = graph.compute_sp_lib(generic_refs)
+        extra_vndk_sp_indirect, vndk_vnd_ext = \
+                graph.compute_vndk_in_o(sp_lib, generic_refs)
 
         # Print results.
-        print_vndk_lib(vndk_lib)
+        for lib in sorted_lib_path_list(extra_vndk_sp_indirect):
+            print('extra-vndk-sp-indirect:', lib)
+        for lib in sorted_lib_path_list(vndk_vnd_ext):
+            print('vndk-vnd-ext:', lib)
         return 0
 
 
