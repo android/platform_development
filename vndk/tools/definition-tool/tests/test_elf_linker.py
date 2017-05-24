@@ -239,39 +239,30 @@ class ELFLinkerTest(unittest.TestCase):
 
     def test_compute_predefined_vndk_sp(self):
         lib_names = (
-            # SP-HAL VNDK-SP
-            'libhidlmemory',
-
-            # HIDL interfaces.
             'android.hardware.graphics.allocator@2.0',
             'android.hardware.graphics.common@1.0',
             'android.hardware.graphics.mapper@2.0',
-
-            # SP-NDK VNDK-SP (HIDL related)
-            'libhidl-gen-utils',
+            'android.hardware.renderscript@1.0',
+            'libRSCpuRef',
+            'libRSDriver',
+            'libRS_internal',
+            'libbacktrace',
+            'libbase',
+            'libbcinfo',
+            'libblas',
+            'libc++',
+            'libcompiler_rt',
+            'libcutils',
+            'libft2',
+            'libhardware',
             'libhidlbase',
             'libhidltransport',
             'libhwbinder',
-
-            # SP-NDK VNDK-SP (HIDL related)
-            'libcutils',
             'liblzma',
-
-            # SP-NDK VNDK-SP (should be removed)
-            'libbacktrace',
-            'libbase',
-            'libc++',
+            'libpng',
             'libunwind',
-            'libziparchive',
-
-            # Bad VNDK-SP (must be removed)
-            'libhardware',
-            'libnativeloader',
-            'libvintf',
-
-            # SP-NDK dependencies (SP-NDK only)
-            'libui',
             'libutils',
+            'libz',
         )
 
         # Add VNDK-SP libraries.
