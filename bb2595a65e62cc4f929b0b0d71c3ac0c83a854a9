@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3936ffc_bfbf1513",
+        "filename": "vndk/tools/abi-tool/vndk_abi_tool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-05-24T01:33:52Z",
+      "side": 1,
+      "message": "should we have an option which allows us to chose between modified and unmodified ? and also name the extension something else which shows that it doesn\u0027t have debug_info ?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 29
+      },
+      "revId": "bb2595a65e62cc4f929b0b0d71c3ac0c83a854a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
