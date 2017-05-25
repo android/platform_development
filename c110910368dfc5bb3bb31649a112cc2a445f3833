@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a57d1ea8_c809d7e8",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-25T00:17:24Z",
+      "side": 1,
+      "message": "None\n\nFor some insane reason, the default argument is mutable (modifying this will affect future calls to the function).",
+      "range": {
+        "startLine": 138,
+        "startChar": 72,
+        "endLine": 138,
+        "endChar": 74
+      },
+      "revId": "c110910368dfc5bb3bb31649a112cc2a445f3833",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ed9cab4_beb32878",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-05-25T00:17:24Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 183,
+        "startChar": 59,
+        "endLine": 183,
+        "endChar": 61
+      },
+      "revId": "c110910368dfc5bb3bb31649a112cc2a445f3833",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
