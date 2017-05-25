@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e16f3263_abb951e8",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1079148
+      },
+      "writtenOn": "2017-05-25T01:33:01Z",
+      "side": 1,
+      "message": "I was relying on the fact that it doesn\u0027t get mutated, but switched it back to None",
+      "parentUuid": "a57d1ea8_c809d7e8",
+      "range": {
+        "startLine": 138,
+        "startChar": 72,
+        "endLine": 138,
+        "endChar": 74
+      },
+      "revId": "c110910368dfc5bb3bb31649a112cc2a445f3833",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6ed9cab4_beb32878",
         "filename": "python-packages/gdbrunner/__init__.py",
         "patchSetId": 1
