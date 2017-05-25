@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3b8b7da_f806c757",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1057373
+      },
+      "writtenOn": "2017-05-25T08:18:17Z",
+      "side": 1,
+      "message": "Can you add an automated test?",
+      "range": {
+        "startLine": 14,
+        "startChar": 1,
+        "endLine": 14,
+        "endChar": 43
+      },
+      "revId": "f427655e47f83757c8ca1c5a470a36407594be89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
