@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00d27744_96eef25d",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-06-02T21:30:08Z",
+      "side": 1,
+      "message": "Does jmgao keep this pylint clean? Not sure what line length this file is supposed to conform to.",
+      "revId": "1a2f12d23e68468afea4aecadbe4dcd105ec5353",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
