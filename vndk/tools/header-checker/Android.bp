@@ -45,6 +45,7 @@ cc_defaults {
         "libclangFrontendTool",
         "libclangFrontend",
         "libclangDriver",
+        "libclangIndex",
         "libclangSerialization",
         "libclangCodeGen",
         "libclangRewriteFrontend",
