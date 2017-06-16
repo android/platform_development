@@ -1,112 +1,168 @@
 functions {
-  function_name: "test_void"
+  basic_abi {
+    type_abi {
+      name: "void"
+    }
+    name: "test_void"
+    access: public_access
+    linker_set_key: "test_void"
+  }
   mangled_function_name: "test_void"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "void"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_char"
+  basic_abi {
+    type_abi {
+      name: "char"
+    }
+    name: "test_char"
+    access: public_access
+    linker_set_key: "test_char"
+  }
   mangled_function_name: "test_char"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "char"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_short"
+  basic_abi {
+    type_abi {
+      name: "short"
+    }
+    name: "test_short"
+    access: public_access
+    linker_set_key: "test_short"
+  }
   mangled_function_name: "test_short"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "short"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_int"
+  basic_abi {
+    type_abi {
+      name: "int"
+    }
+    name: "test_int"
+    access: public_access
+    linker_set_key: "test_int"
+  }
   mangled_function_name: "test_int"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "int"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_long"
+  basic_abi {
+    type_abi {
+      name: "long"
+    }
+    name: "test_long"
+    access: public_access
+    linker_set_key: "test_long"
+  }
   mangled_function_name: "test_long"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "long"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_long_long"
+  basic_abi {
+    type_abi {
+      name: "long long"
+    }
+    name: "test_long_long"
+    access: public_access
+    linker_set_key: "test_long_long"
+  }
   mangled_function_name: "test_long_long"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "long long"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_unsigned_char"
+  basic_abi {
+    type_abi {
+      name: "unsigned char"
+    }
+    name: "test_unsigned_char"
+    access: public_access
+    linker_set_key: "test_unsigned_char"
+  }
   mangled_function_name: "test_unsigned_char"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "unsigned char"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_unsigned_short"
+  basic_abi {
+    type_abi {
+      name: "unsigned short"
+    }
+    name: "test_unsigned_short"
+    access: public_access
+    linker_set_key: "test_unsigned_short"
+  }
   mangled_function_name: "test_unsigned_short"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "unsigned short"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_unsigned_int"
+  basic_abi {
+    type_abi {
+      name: "unsigned int"
+    }
+    name: "test_unsigned_int"
+    access: public_access
+    linker_set_key: "test_unsigned_int"
+  }
   mangled_function_name: "test_unsigned_int"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "unsigned int"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_unsigned_long"
+  basic_abi {
+    type_abi {
+      name: "unsigned long"
+    }
+    name: "test_unsigned_long"
+    access: public_access
+    linker_set_key: "test_unsigned_long"
+  }
   mangled_function_name: "test_unsigned_long"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "unsigned long"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_unsigned_long_long"
+  basic_abi {
+    type_abi {
+      name: "unsigned long long"
+    }
+    name: "test_unsigned_long_long"
+    access: public_access
+    linker_set_key: "test_unsigned_long_long"
+  }
   mangled_function_name: "test_unsigned_long_long"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "unsigned long long"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_float"
+  basic_abi {
+    type_abi {
+      name: "float"
+    }
+    name: "test_float"
+    access: public_access
+    linker_set_key: "test_float"
+  }
   mangled_function_name: "test_float"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "float"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_double"
+  basic_abi {
+    type_abi {
+      name: "double"
+    }
+    name: "test_double"
+    access: public_access
+    linker_set_key: "test_double"
+  }
   mangled_function_name: "test_double"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "double"
-  access: "public"
-  template_kind: 0
 }
 functions {
-  function_name: "test_long_double"
+  basic_abi {
+    type_abi {
+      name: "long double"
+    }
+    name: "test_long_double"
+    access: public_access
+    linker_set_key: "test_long_double"
+  }
   mangled_function_name: "test_long_double"
   source_file: "./input/func_decl_no_args.h"
-  return_type: "long double"
-  access: "public"
-  template_kind: 0
 }
