@@ -78,23 +78,24 @@ public class ChatConnection {
         mListeningPort = port;
     }
 
+    private synchronized void sendMessage(String type, String msg) {
+        Bundle messageBundle = new Bundle();
+        messageBundle.putString(NsdChatActivity.REMOTE_MSG_TYPE, type);
+        messageBundle.putString(NsdChatActivity.REMOTE_MSG_STRING, msg);
+
+        Message message = new Message();
+        message.setData(messageBundle);
+        mUpdateHandler.sendMessage(message);
+    }
 
     public synchronized void updateMessages(String msg, boolean local) {
         Log.e(TAG, "Updating message: " + msg);
 
         if (local) {
-            msg = "me: " + msg;
+            sendMessage(NsdChatActivity.REMOTE_MSG_TYPE_CHAT, "me: " + msg);
         } else {
-            msg = "them: " + msg;
+            sendMessage(NsdChatActivity.REMOTE_MSG_TYPE_CHAT, "them: " + msg);
         }
-
-        Bundle messageBundle = new Bundle();
-        messageBundle.putString("msg", msg);
-
-        Message message = new Message();
-        message.setData(messageBundle);
-        mUpdateHandler.sendMessage(message);
-
     }
 
     private synchronized void setSocket(Socket socket) {

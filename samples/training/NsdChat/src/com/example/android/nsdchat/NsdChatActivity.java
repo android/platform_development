@@ -21,6 +21,7 @@ import android.net.nsd.NsdServiceInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -37,6 +38,11 @@ public class NsdChatActivity extends Activity {
 
     public static final String TAG = "NsdChat";
 
+    public static final String REMOTE_MSG_STRING = "msg";
+    public static final String REMOTE_MSG_TYPE = "type";
+    public static final String REMOTE_MSG_TYPE_CHAT = "chat";
+    public static final String REMOTE_MSG_TYPE_STATUS = "status";
+
     ChatConnection mConnection;
 
     /** Called when the activity is first created. */
@@ -48,13 +54,18 @@ public class NsdChatActivity extends Activity {
         mStatusView = (TextView) findViewById(R.id.status);
 
         mUpdateHandler = new Handler() {
-                @Override
+            @Override
             public void handleMessage(Message msg) {
-                String chatLine = msg.getData().getString("msg");
-                addChatLine(chatLine);
+                String msgType = msg.getData().getString(REMOTE_MSG_TYPE);
+                String chatLine = msg.getData().getString(REMOTE_MSG_STRING);
+
+                if (REMOTE_MSG_TYPE_CHAT.equals(msgType)) {
+                    mStatusView.append("\n" + chatLine);
+                } else if (REMOTE_MSG_TYPE_STATUS.equals(msgType)) {
+                    mStatusView.append(Html.fromHtml("<br><i>" + Html.escapeHtml(chatLine) + "</i>"));
+                }
             }
         };
-
     }
 
     public void clickAdvertise(View v) {
@@ -90,10 +101,6 @@ public class NsdChatActivity extends Activity {
             }
             messageView.setText("");
         }
-    }
-
-    public void addChatLine(String line) {
-        mStatusView.append("\n" + line);
     }
 
     @Override
