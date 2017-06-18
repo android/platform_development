@@ -31,6 +31,7 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -155,7 +156,11 @@ public class ChatConnection {
                     // used.  Just grab an available one  and advertise it via Nsd.
                     mServerSocket = new ServerSocket(0);
                     setLocalPort(mServerSocket.getLocalPort());
+                } catch (IOException e) {
+                    Log.e(TAG, "Error creating ServerSocket", e);
+                }
 
+                try {
                     while (!Thread.currentThread().isInterrupted()) {
                         Log.d(TAG, "ServerSocket Created, awaiting connection");
                         setSocket(mServerSocket.accept());
@@ -168,9 +173,10 @@ public class ChatConnection {
                             connectToServer(address, port);
                         }
                     }
+                } catch (SocketException e) {
+                    // This happens if mServerSocket.accept() gets interrupted by tearDown()
                 } catch (IOException e) {
-                    Log.e(TAG, "Error creating ServerSocket: ", e);
-                    e.printStackTrace();
+                    Log.e(TAG, "ServerSocket error", e);
                 }
             }
         }
@@ -256,7 +262,8 @@ public class ChatConnection {
                         }
                     }
                     input.close();
-
+                } catch (SocketException e) {
+                    // This happens if input.readLine() gets interrupted by tearDown()
                 } catch (IOException e) {
                     Log.e(CLIENT_TAG, "Server loop error: ", e);
                 }
