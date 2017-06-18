@@ -45,6 +45,9 @@ public class ChatConnection {
     private Socket mSocket;
     private int mPort = -1;
 
+    private int QUEUE_CAPACITY = 10;
+    protected BlockingQueue<String> mMessageQueue = new ArrayBlockingQueue<String>(QUEUE_CAPACITY);
+
     public ChatConnection(Handler handler) {
         mUpdateHandler = handler;
         mChatServer = new ChatServer(handler);
@@ -63,7 +66,7 @@ public class ChatConnection {
 
     public void sendMessage(String msg) {
         if (mChatClient != null) {
-            mChatClient.sendMessage(msg);
+            mMessageQueue.add(msg);
         }
     }
 
@@ -184,13 +187,6 @@ public class ChatConnection {
         }
 
         class SendingThread implements Runnable {
-
-            BlockingQueue<String> mMessageQueue;
-            private int QUEUE_CAPACITY = 10;
-
-            public SendingThread() {
-                mMessageQueue = new ArrayBlockingQueue<String>(QUEUE_CAPACITY);
-            }
 
             @Override
             public void run() {
