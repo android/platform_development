@@ -43,7 +43,7 @@ public class ChatConnection {
     private static final String TAG = "ChatConnection";
 
     private Socket mSocket;
-    private int mPort = -1;
+    private int mListeningPort = -1;
 
     private int QUEUE_CAPACITY = 10;
     protected BlockingQueue<String> mMessageQueue = new ArrayBlockingQueue<String>(QUEUE_CAPACITY);
@@ -71,11 +71,11 @@ public class ChatConnection {
     }
 
     public int getLocalPort() {
-        return mPort;
+        return mListeningPort;
     }
 
     public void setLocalPort(int port) {
-        mPort = port;
+        mListeningPort = port;
     }
 
 
@@ -169,7 +169,7 @@ public class ChatConnection {
     private class ChatClient {
 
         private InetAddress mAddress;
-        private int PORT;
+        private int mPort;
 
         private final String CLIENT_TAG = "ChatClient";
 
@@ -180,7 +180,7 @@ public class ChatConnection {
 
             Log.d(CLIENT_TAG, "Creating chatClient");
             this.mAddress = address;
-            this.PORT = port;
+            this.mPort = port;
 
             mSendThread = new Thread(new SendingThread());
             mSendThread.start();
@@ -192,7 +192,7 @@ public class ChatConnection {
             public void run() {
                 try {
                     if (getSocket() == null) {
-                        setSocket(new Socket(mAddress, PORT));
+                        setSocket(new Socket(mAddress, mPort));
                         Log.d(CLIENT_TAG, "Client-side socket initialized.");
 
                     } else {
