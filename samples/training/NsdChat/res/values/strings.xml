@@ -23,4 +23,14 @@
     <string name="register">Register</string>
     <string name="send">Send</string>
 
+    <string name="accepted_connection">Accepted connection from %1$s:%2$d</string>
+    <string name="connecting">Connecting to %1$s:%2$d</string>
+    <string name="connected">Connected</string>
+    <string name="connection_failed">Connection failed</string>
+    <string name="disconnected">Disconnected</string>
+
+    <string name="discovered_peer">Discovered peer %1$s"</string>
+    <string name="resolved_peer">Resolved peer %1$s"</string>
+    <string name="registered_service">Registered service %1$s</string>
+
 </resources>

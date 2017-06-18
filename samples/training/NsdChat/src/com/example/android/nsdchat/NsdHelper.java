@@ -19,12 +19,16 @@ package com.example.android.nsdchat;
 import android.content.Context;
 import android.net.nsd.NsdServiceInfo;
 import android.net.nsd.NsdManager;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.Settings;
 import android.util.Log;
 
 public class NsdHelper {
 
     Context mContext;
+    Handler mUpdateHandler;
 
     NsdManager mNsdManager;
     NsdManager.ResolveListener mResolveListener;
@@ -39,9 +43,21 @@ public class NsdHelper {
 
     NsdServiceInfo mService;
 
-    public NsdHelper(Context context) {
+    public NsdHelper(Context context, Handler updateHandler) {
         mContext = context;
+        mUpdateHandler = updateHandler;
         mNsdManager = (NsdManager) context.getSystemService(Context.NSD_SERVICE);
+    }
+
+    private void statusUpdate(String msg) {
+        Bundle messageBundle = new Bundle();
+        messageBundle.putString(NsdChatActivity.REMOTE_MSG_TYPE, NsdChatActivity.REMOTE_MSG_TYPE_STATUS);
+        messageBundle.putString(NsdChatActivity.REMOTE_MSG_STRING, msg);
+
+        Message message = new Message();
+        message.setData(messageBundle);
+        mUpdateHandler.sendMessage(message);
+
     }
 
     public void initializeNsd() {
@@ -66,6 +82,8 @@ public class NsdHelper {
                 } else if (service.getServiceName().equals(mServiceName)) {
                     Log.d(TAG, "Discovered my own service (ignoring)");
                 } else if (service.getServiceName().contains(mServicePrefix)) {
+                    statusUpdate(mContext.getString(R.string.discovered_peer,
+                            service.getServiceName()));
                     Log.d(TAG, "Discovered a chat peer: " + service);
                     mNsdManager.resolveService(service, mResolveListener);
                 }
@@ -110,6 +128,8 @@ public class NsdHelper {
                 if (name.equals(mServiceName)) {
                     Log.d(TAG, "Resolved my own service (ignoring)");
                 } else if (name.contains(mServicePrefix)) {
+                    statusUpdate(mContext.getString(R.string.resolved_peer,
+                            serviceInfo.getServiceName()));
                     Log.d(TAG, "Resolved a chat peer: " + serviceInfo);
                     mService = serviceInfo;
                 } else {
@@ -125,6 +145,7 @@ public class NsdHelper {
             @Override
             public void onServiceRegistered(NsdServiceInfo NsdServiceInfo) {
                 mServiceName = NsdServiceInfo.getServiceName();
+                statusUpdate(mContext.getString(R.string.registered_service, mServiceName));
                 Log.d(TAG, "Service registered: " + mServiceName);
             }
 

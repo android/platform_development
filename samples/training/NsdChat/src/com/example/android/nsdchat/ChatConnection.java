@@ -16,6 +16,7 @@
 
 package com.example.android.nsdchat;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -36,6 +37,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class ChatConnection {
 
+    private Context mContext;
     private Handler mUpdateHandler;
     private ChatServer mChatServer;
     private ChatClient mChatClient;
@@ -48,7 +50,8 @@ public class ChatConnection {
     private int QUEUE_CAPACITY = 10;
     protected BlockingQueue<String> mMessageQueue = new ArrayBlockingQueue<String>(QUEUE_CAPACITY);
 
-    public ChatConnection(Handler handler) {
+    public ChatConnection(Context context, Handler handler) {
+        mContext = context;
         mUpdateHandler = handler;
         mChatServer = new ChatServer(handler);
     }
@@ -96,6 +99,10 @@ public class ChatConnection {
         } else {
             sendMessage(NsdChatActivity.REMOTE_MSG_TYPE_CHAT, "them: " + msg);
         }
+    }
+
+    private void statusUpdate(String msg) {
+        sendMessage(NsdChatActivity.REMOTE_MSG_TYPE_STATUS, msg);
     }
 
     private synchronized void setSocket(Socket socket) {
@@ -156,6 +163,8 @@ public class ChatConnection {
                         if (mChatClient == null) {
                             int port = mSocket.getPort();
                             InetAddress address = mSocket.getInetAddress();
+                            statusUpdate(mContext.getString(R.string.accepted_connection,
+                                    address.getHostAddress(), port));
                             connectToServer(address, port);
                         }
                     }
@@ -193,7 +202,10 @@ public class ChatConnection {
             public void run() {
                 try {
                     if (getSocket() == null) {
+                        statusUpdate(mContext.getString(R.string.connecting,
+                                mAddress.getHostAddress(), mPort));
                         setSocket(new Socket(mAddress, mPort));
+                        statusUpdate(mContext.getString(R.string.connected));
                         Log.d(CLIENT_TAG, "Client-side socket initialized.");
 
                     } else {
@@ -206,6 +218,7 @@ public class ChatConnection {
                 } catch (UnknownHostException e) {
                     Log.d(CLIENT_TAG, "Initializing socket failed, UHE", e);
                 } catch (IOException e) {
+                    statusUpdate(mContext.getString(R.string.connection_failed));
                     Log.d(CLIENT_TAG, "Initializing socket failed, IOE.", e);
                 }
 
@@ -237,6 +250,7 @@ public class ChatConnection {
                             Log.d(CLIENT_TAG, "Read from the stream: " + messageStr);
                             updateMessages(messageStr, false);
                         } else {
+                            statusUpdate(mContext.getString(R.string.disconnected));
                             Log.d(CLIENT_TAG, "The nulls! The nulls!");
                             break;
                         }

@@ -106,9 +106,9 @@ public class NsdChatActivity extends Activity {
     @Override
     protected void onStart() {
         Log.d(TAG, "Starting.");
-        mConnection = new ChatConnection(mUpdateHandler);
+        mConnection = new ChatConnection(this, mUpdateHandler);
 
-        mNsdHelper = new NsdHelper(this);
+        mNsdHelper = new NsdHelper(this, mUpdateHandler);
         mNsdHelper.initializeNsd();
         super.onStart();
     }
