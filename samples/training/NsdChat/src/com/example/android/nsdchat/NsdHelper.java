@@ -19,6 +19,7 @@ package com.example.android.nsdchat;
 import android.content.Context;
 import android.net.nsd.NsdServiceInfo;
 import android.net.nsd.NsdManager;
+import android.provider.Settings;
 import android.util.Log;
 
 public class NsdHelper {
@@ -33,7 +34,8 @@ public class NsdHelper {
     public static final String SERVICE_TYPE = "_http._tcp.";
 
     public static final String TAG = "NsdHelper";
-    public String mServiceName = "NsdChat";
+    public static final String mServicePrefix = "NsdChat-";
+    public String mServiceName;
 
     NsdServiceInfo mService;
 
@@ -59,12 +61,12 @@ public class NsdHelper {
 
             @Override
             public void onServiceFound(NsdServiceInfo service) {
-                Log.d(TAG, "Service discovery success: " + service);
                 if (!service.getServiceType().equals(SERVICE_TYPE)) {
-                    Log.d(TAG, "Unknown Service Type: " + service.getServiceType());
+                    Log.d(TAG, "Discovered unknown service (ignoring): " + service);
                 } else if (service.getServiceName().equals(mServiceName)) {
-                    Log.d(TAG, "Same machine: " + mServiceName);
-                } else if (service.getServiceName().contains(mServiceName)){
+                    Log.d(TAG, "Discovered my own service (ignoring)");
+                } else if (service.getServiceName().contains(mServicePrefix)) {
+                    Log.d(TAG, "Discovered a chat peer: " + service);
                     mNsdManager.resolveService(service, mResolveListener);
                 }
             }
@@ -104,13 +106,15 @@ public class NsdHelper {
 
             @Override
             public void onServiceResolved(NsdServiceInfo serviceInfo) {
-                Log.e(TAG, "Resolve Succeeded: " + serviceInfo);
-
-                if (serviceInfo.getServiceName().equals(mServiceName)) {
-                    Log.d(TAG, "Same IP.");
-                    return;
+                String name = serviceInfo.getServiceName();
+                if (name.equals(mServiceName)) {
+                    Log.d(TAG, "Resolved my own service (ignoring)");
+                } else if (name.contains(mServicePrefix)) {
+                    Log.d(TAG, "Resolved a chat peer: " + serviceInfo);
+                    mService = serviceInfo;
+                } else {
+                    Log.d(TAG, "Resolved unknown service (ignoring): " + serviceInfo);
                 }
-                mService = serviceInfo;
             }
         };
     }
@@ -144,6 +148,11 @@ public class NsdHelper {
 
     public void registerService(int port) {
         tearDown();  // Cancel any previous registration request
+        String client_id =
+                Settings.Secure.getString(mContext.getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        mServiceName = mServicePrefix + client_id;
+
         initializeRegistrationListener();
         NsdServiceInfo serviceInfo  = new NsdServiceInfo();
         serviceInfo.setPort(port);
