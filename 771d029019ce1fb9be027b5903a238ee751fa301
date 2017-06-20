@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "970741a4_286c3e3b",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-20T02:30:38Z",
+      "side": 1,
+      "message": "we can\u0027t use getAllManglings on templated (and not specialized) virtual functions, since getAllManglings gets thunk names as well for them. In order to produce thunks it needs to build a vtable. Vtables cannot be built for dependent records. As a result, it\u0027s probably better not to dump anything which is dependent at all. Following this for records/enums/globvars as well. This would probably mean that we would need to add -Iexternal/libcxx/include in our soong invocation so that we include all template instantiations from libc++, as they will not be dumped in libc++\u0027s dumps now. Thoughts ?",
+      "range": {
+        "startLine": 152,
+        "startChar": 42,
+        "endLine": 152,
+        "endChar": 62
+      },
+      "revId": "771d029019ce1fb9be027b5903a238ee751fa301",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
