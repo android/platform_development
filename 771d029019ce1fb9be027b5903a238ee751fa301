@@ -22,6 +22,29 @@
       "revId": "771d029019ce1fb9be027b5903a238ee751fa301",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1037ca7_a9edc1df",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-21T09:19:00Z",
+      "side": 1,
+      "message": ".empty()",
+      "range": {
+        "startLine": 153,
+        "startChar": 15,
+        "endLine": 153,
+        "endChar": 27
+      },
+      "revId": "771d029019ce1fb9be027b5903a238ee751fa301",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
