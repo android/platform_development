@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1dab6c62_ceb7f30d",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-21T09:19:31Z",
+      "side": 1,
+      "message": ".empty()",
+      "range": {
+        "startLine": 555,
+        "startChar": 24,
+        "endLine": 555,
+        "endChar": 30
+      },
+      "revId": "42a4ea96f5c7c92bf5743829446b46d58665d1c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
