@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9b1db4f_d0944c0c",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "Add spaces to follow coding style guide.",
+      "range": {
+        "startLine": 64,
+        "startChar": 20,
+        "endLine": 64,
+        "endChar": 76
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7700be0c_0bb15c7a",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "Can it be moved inside \"if (selectedSubNode) {..}\"?\nIn that, you don\u0027t need to use for-loop, I think.",
+      "range": {
+        "startLine": 64,
+        "startChar": 20,
+        "endLine": 66,
+        "endChar": 21
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07df5021_57d36a59",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "\"resetclicked()\" already has this. You don\u0027t need to repeat here.",
+      "range": {
+        "startLine": 68,
+        "startChar": 20,
+        "endLine": 71,
+        "endChar": 21
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ffb6897_8cb331ea",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "Add spaces here, too.",
+      "range": {
+        "startLine": 75,
+        "startChar": 20,
+        "endLine": 75,
+        "endChar": 77
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "285fb6ca_0cc71ed3",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "Also move it into \"if (selectedSubNode)\"",
+      "range": {
+        "startLine": 75,
+        "startChar": 20,
+        "endLine": 77,
+        "endChar": 21
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ae81a19_84084ee5",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "Add spaces here, too.",
+      "range": {
+        "startLine": 81,
+        "startChar": 24,
+        "endLine": 81,
+        "endChar": 100
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7813f712_27699727",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "space",
+      "range": {
+        "startLine": 128,
+        "startChar": 75,
+        "endLine": 128,
+        "endChar": 77
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e19ec37_c418c870",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "Add spaces here, too.",
+      "range": {
+        "startLine": 202,
+        "startChar": 12,
+        "endLine": 202,
+        "endChar": 88
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0cfa075a_91ba44ee",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-23T01:44:27Z",
+      "side": 1,
+      "message": "Move it into \"if (selectedSubNode)\".",
+      "range": {
+        "startLine": 202,
+        "startChar": 12,
+        "endLine": 204,
+        "endChar": 13
+      },
+      "revId": "49592cd6150024a454629a4a262b5f8d2ce0add2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
