@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a609367_1c9f23d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-26T03:35:46Z",
+      "side": 1,
+      "message": "h",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e671f51_fb28d773",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-26T03:35:46Z",
+      "side": 1,
+      "message": "global",
+      "range": {
+        "startLine": 12,
+        "startChar": 17,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "116730b6_f6afc009",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-26T03:35:46Z",
+      "side": 1,
+      "message": "General question: Is it guaranteed that header-abi-checker will run after the generation of .so file?",
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17e82927_f99cc496",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-26T03:35:46Z",
+      "side": 1,
+      "message": "~ELFSoFileParser() override {}",
+      "range": {
+        "startLine": 120,
+        "startChar": 2,
+        "endLine": 120,
+        "endChar": 31
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e44c29c_64e6f42a",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-26T03:35:46Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 8
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0bfa3c38_72dffab1",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-26T03:35:46Z",
+      "side": 1,
+      "message": "Do we need this?  I thought this is a no-op if you are not using the returned value.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 22
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
