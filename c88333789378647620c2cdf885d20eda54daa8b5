@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "83248e73_a25872bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-26T19:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a609367_1c9f23d5",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e671f51_fb28d773",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-26T03:35:46Z",
       "side": 1,
       "message": "global",
+      "range": {
+        "startLine": 12,
+        "startChar": 17,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "551aefe6_b8c20d3b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-26T19:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e671f51_fb28d773",
       "range": {
         "startLine": 12,
         "startChar": 17,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "b2e36334_5406fa90",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-26T19:11:31Z",
+      "side": 1,
+      "message": "Yes, there is already a dependency between header-abi-dumper and the .o file generated from the source. I\u0027m creating a dependency between the .so file and the lsdump (linked file) so that header-abi-linker runs after it is generated.",
+      "parentUuid": "116730b6_f6afc009",
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "17e82927_f99cc496",
         "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
         "patchSetId": 5
@@ -76,6 +142,30 @@
       "writtenOn": "2017-06-26T03:35:46Z",
       "side": 1,
       "message": "~ELFSoFileParser() override {}",
+      "range": {
+        "startLine": 120,
+        "startChar": 2,
+        "endLine": 120,
+        "endChar": 31
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7b71ef19_25b8995f",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-26T19:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17e82927_f99cc496",
       "range": {
         "startLine": 120,
         "startChar": 2,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "06bdc93b_46e3d656",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-26T19:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e44c29c_64e6f42a",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 8
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0bfa3c38_72dffab1",
         "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
         "patchSetId": 5
@@ -122,6 +236,30 @@
       "writtenOn": "2017-06-26T03:35:46Z",
       "side": 1,
       "message": "Do we need this?  I thought this is a no-op if you are not using the returned value.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 22
+      },
+      "revId": "c88333789378647620c2cdf885d20eda54daa8b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a9d5687_9f2ef4d5",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-26T19:11:31Z",
+      "side": 1,
+      "message": "yes, my bad.",
+      "parentUuid": "0bfa3c38_72dffab1",
       "range": {
         "startLine": 97,
         "startChar": 0,
