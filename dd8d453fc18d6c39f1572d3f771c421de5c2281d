@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c93f8497_666c8f4e",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2606,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-06-26T02:19:39Z",
+      "side": 1,
+      "message": "Add a space after comma",
+      "range": {
+        "startLine": 2606,
+        "startChar": 57,
+        "endLine": 2606,
+        "endChar": 58
+      },
+      "revId": "dd8d453fc18d6c39f1572d3f771c421de5c2281d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
