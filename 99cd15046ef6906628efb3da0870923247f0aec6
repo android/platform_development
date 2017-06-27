@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b9c5aaa_55314ab0",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-27T09:41:11Z",
+      "side": 1,
+      "message": "space after `if`.",
+      "range": {
+        "startLine": 121,
+        "startChar": 16,
+        "endLine": 121,
+        "endChar": 18
+      },
+      "revId": "99cd15046ef6906628efb3da0870923247f0aec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f4d75c49_2327af33",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-27T09:41:11Z",
+      "side": 1,
+      "message": "space after `if`.",
+      "range": {
+        "startLine": 126,
+        "startChar": 16,
+        "endLine": 126,
+        "endChar": 18
+      },
+      "revId": "99cd15046ef6906628efb3da0870923247f0aec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e303bd60_6d16d2b8",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-27T09:41:11Z",
+      "side": 1,
+      "message": "`let` is recommended.",
+      "range": {
+        "startLine": 129,
+        "startChar": 16,
+        "endLine": 129,
+        "endChar": 19
+      },
+      "revId": "99cd15046ef6906628efb3da0870923247f0aec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c57a908b_63a5a226",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-27T09:41:11Z",
+      "side": 1,
+      "message": "`let` is recommended.",
+      "range": {
+        "startLine": 130,
+        "startChar": 16,
+        "endLine": 130,
+        "endChar": 19
+      },
+      "revId": "99cd15046ef6906628efb3da0870923247f0aec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f04d4f6b_51cc8282",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-27T09:41:11Z",
+      "side": 1,
+      "message": "space after `if`.",
+      "range": {
+        "startLine": 131,
+        "startChar": 16,
+        "endLine": 131,
+        "endChar": 18
+      },
+      "revId": "99cd15046ef6906628efb3da0870923247f0aec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c658fa7_b8a2e391",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-27T09:41:11Z",
+      "side": 1,
+      "message": "space after `if`.",
+      "range": {
+        "startLine": 156,
+        "startChar": 24,
+        "endLine": 156,
+        "endChar": 26
+      },
+      "revId": "99cd15046ef6906628efb3da0870923247f0aec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ccac5597_aaefb992",
+        "filename": "vndk/tools/definition-tool/assets/visual/dep-graph.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-06-27T09:41:11Z",
+      "side": 1,
+      "message": "Split this line, so that it does not exceed 80 chars in a line.",
+      "range": {
+        "startLine": 159,
+        "startChar": 53,
+        "endLine": 159,
+        "endChar": 107
+      },
+      "revId": "99cd15046ef6906628efb3da0870923247f0aec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
