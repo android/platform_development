@@ -22,6 +22,30 @@
       "revId": "dd8d453fc18d6c39f1572d3f771c421de5c2281d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee7883be_e07a34a9",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2606,
+      "author": {
+        "id": 1187124
+      },
+      "writtenOn": "2017-06-27T01:09:21Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "c93f8497_666c8f4e",
+      "range": {
+        "startLine": 2606,
+        "startChar": 57,
+        "endLine": 2606,
+        "endChar": 58
+      },
+      "revId": "dd8d453fc18d6c39f1572d3f771c421de5c2281d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
