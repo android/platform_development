@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c11cfc0_ab2b4915",
+        "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-06-28T02:13:45Z",
+      "side": 1,
+      "message": "This is unused, but ensures backwards compatibility.",
+      "range": {
+        "startLine": 84,
+        "startChar": 2,
+        "endLine": 84,
+        "endChar": 42
+      },
+      "revId": "c8c98cf2306d7d3af4191a95d4fbc8214447f62c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
