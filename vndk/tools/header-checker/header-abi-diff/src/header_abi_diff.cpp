@@ -49,6 +49,12 @@ static llvm::cl::opt<bool> advice_only(
     "advice-only", llvm::cl::desc("Advisory mode only"), llvm::cl::Optional,
     llvm::cl::cat(header_checker_category));
 
+static llvm::cl::opt<bool> check_all_apis(
+    "check-all-apis",
+    llvm::cl::desc("All apis, whether referenced or not, by exported symbols in\
+the dynsym table of a shared library are checked"),
+    llvm::cl::Optional, llvm::cl::cat(header_checker_category));
+
 static llvm::cl::opt<bool> suppress_local_warnings(
     "suppress_local_warnings", llvm::cl::desc("suppress local warnings"),
     llvm::cl::Optional, llvm::cl::cat(header_checker_category));
@@ -80,38 +86,46 @@ int main(int argc, const char **argv) {
     ignored_symbols = LoadIgnoredSymbols(ignore_symbol_list);
   }
   HeaderAbiDiff judge(lib_name, arch, old_dump, new_dump, compatibility_report,
-                      ignored_symbols);
+                      ignored_symbols, check_all_apis);
 
-  CompatibilityStatus status  = judge.GenerateCompatibilityReport();
+  CompatibilityStatusIR status = judge.GenerateCompatibilityReport();
 
   std::string status_str = "";
-  switch (status) {
-    case CompatibilityStatus::INCOMPATIBLE:
-      status_str = "broken";
-      break;
-    case CompatibilityStatus::EXTENSION:
-      status_str = "extended";
-      break;
-    default:
-      break;
-  }
+  std::string unreferenced_change_str = "";
+  std::string error_or_warning_str = "\033[36;1mwarning: \033[0m";
 
+  if (status == CompatibilityStatusIR::INCOMPATIBLE) {
+    error_or_warning_str = "\033[31;1merror: \033[0m";
+    status_str = " INCOMPATIBLE CHANGES";
+  } else if (status & CompatibilityStatusIR::EXTENSION) {
+    status_str = "EXTENDING CHANGES";
+  }
+  if (status & CompatibilityStatusIR::UNREFERENCED_CHANGES) {
+    unreferenced_change_str = ", Changes in exported headers, which are";
+    unreferenced_change_str +=  " not directly referenced by exported symbols.";
+    unreferenced_change_str +=  " This MIGHT be an ABI breaking change due to";
+    unreferenced_change_str += " internal typecasts.";
+
+  }
   if (!suppress_local_warnings && status) {
     llvm::errs() << "******************************************************\n"
-                 << "VNDK Abi "
+                 << error_or_warning_str
+                 << "VNDK library: "
+                 << lib_name
+                 << "'s ABI has "
                  << status_str
-                 << ":"
+                 << unreferenced_change_str
                  << " Please check compatiblity report at : "
                  << compatibility_report << "\n"
-                 << "*****************************************************\n";
+                 << "******************************************************\n";
   }
 
   if (advice_only) {
-    return CompatibilityStatus::COMPATIBLE;
+    return CompatibilityStatusIR::COMPATIBLE;
   }
 
-  if (allow_extensions && status == CompatibilityStatus::EXTENSION) {
-    return CompatibilityStatus::COMPATIBLE;
+  if (allow_extensions && status == CompatibilityStatusIR::EXTENSION) {
+    return CompatibilityStatusIR::COMPATIBLE;
   }
   return status;
 }
