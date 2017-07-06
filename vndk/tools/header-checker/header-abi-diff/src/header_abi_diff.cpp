@@ -49,6 +49,12 @@ static llvm::cl::opt<bool> advice_only(
     "advice-only", llvm::cl::desc("Advisory mode only"), llvm::cl::Optional,
     llvm::cl::cat(header_checker_category));
 
+static llvm::cl::opt<bool> check_all_apis(
+    "check-all-apis", llvm::cl::desc("All apis, whether referenced or not,\
+                                  by exported symbols in the dynsym table of a\
+                                  shared library are checked"),
+    llvm::cl::Optional, llvm::cl::cat(header_checker_category));
+
 static llvm::cl::opt<bool> suppress_local_warnings(
     "suppress_local_warnings", llvm::cl::desc("suppress local warnings"),
     llvm::cl::Optional, llvm::cl::cat(header_checker_category));
@@ -80,16 +86,16 @@ int main(int argc, const char **argv) {
     ignored_symbols = LoadIgnoredSymbols(ignore_symbol_list);
   }
   HeaderAbiDiff judge(lib_name, arch, old_dump, new_dump, compatibility_report,
-                      ignored_symbols);
+                      ignored_symbols, check_all_apis);
 
-  CompatibilityStatus status  = judge.GenerateCompatibilityReport();
+  CompatibilityStatusIR status = judge.GenerateCompatibilityReport();
 
   std::string status_str = "";
   switch (status) {
-    case CompatibilityStatus::INCOMPATIBLE:
+    case CompatibilityStatusIR::INCOMPATIBLE:
       status_str = "broken";
       break;
-    case CompatibilityStatus::EXTENSION:
+    case CompatibilityStatusIR::EXTENSION:
       status_str = "extended";
       break;
     default:
@@ -107,11 +113,11 @@ int main(int argc, const char **argv) {
   }
 
   if (advice_only) {
-    return CompatibilityStatus::COMPATIBLE;
+    return CompatibilityStatusIR::COMPATIBLE;
   }
 
-  if (allow_extensions && status == CompatibilityStatus::EXTENSION) {
-    return CompatibilityStatus::COMPATIBLE;
+  if (allow_extensions && status == CompatibilityStatusIR::EXTENSION) {
+    return CompatibilityStatusIR::COMPATIBLE;
   }
   return status;
 }
