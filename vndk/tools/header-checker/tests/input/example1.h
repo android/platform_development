@@ -7,6 +7,9 @@
 extern "C" {
 #endif
 
+struct ForwardDeclaration;
+int uses_forward_decl(struct ForwardDeclaration *);
+
 struct Hello {
   int foo;
   int bar;
@@ -24,7 +27,16 @@ struct CPPHello : private HelloAgain, public ByeAgain<float_type> {
   cfloat_type cpp_bar;
   virtual int again() { return 0; }
   CPPHello() : cpp_foo(20), cpp_bar(1.234) { }
+  enum {BLA = 1};
+  int test_enum() {return CPPHello::BLA;}
 };
+
+
+void fooVariadic (int &, int *, ...);
+
+int boo (const CPPHello, int *, float *) {
+  return CPPHello::BLA;
+}
 
 template<typename T>
 struct StackNode {
@@ -63,7 +75,7 @@ public:
 template<typename T>
 class List
 {
-protected:
+public:
     /*
      * One element in the list.
      */
@@ -74,6 +86,7 @@ protected:
         inline T& getRef() { return mVal; }
         inline const T& getRef() const { return mVal; }
     private:
+        void PrivateNode();
         friend class List;
         friend class _ListIterator;
         T           mVal;
@@ -83,11 +96,20 @@ protected:
     _Node *middle;
 };
 
+
 typedef List<float> float_list;
 float_list float_list_test;
 
-
 typedef List<int> int_list;
 int_list int_list_test;
+List<float>::_Node node(2);
+int ListMangle(int_list *, StackNode<int> *);
+
+template<typename IChild, typename IParent, typename BpChild, typename BpParent>
+List<IChild> castInterface(List<IParent> parent, const char *childIndicator, bool emitError) {return List<IChild>();}
+
+void format() {
+castInterface<float, float, float , float>(List<float>(), "foo", true);
+}
 
 #endif  // EXAMPLE1_H_
