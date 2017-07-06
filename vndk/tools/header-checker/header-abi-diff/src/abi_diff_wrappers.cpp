@@ -25,41 +25,20 @@
 
 #include <llvm/Support/raw_ostream.h>
 
-using abi_diff::RecordDeclDiff;
-using abi_diff::RecordFieldDeclDiff;
-using abi_diff::CXXBaseSpecifierDiff;
-using abi_diff::CXXVTableDiff;
-using abi_diff::EnumDeclDiff;
-using abi_diff::ReturnTypeDiff;
-using abi_diff::ParamDeclDiff;
-using abi_diff::FunctionDeclDiff;
-using abi_diff::EnumDeclDiff;
-using abi_diff::EnumFieldDeclDiff;
-using abi_diff::GlobalVarDeclDiff;
-using abi_dump::RecordDecl;
-using abi_dump::RecordFieldDecl;
-using abi_dump::EnumDecl;
-using abi_dump::EnumFieldDecl;
-using abi_dump::FunctionDecl;
-using abi_dump::ParamDecl;
-using abi_dump::VTableComponent;
-using abi_dump::CXXBaseSpecifier;
-using abi_dump::GlobalVarDecl;
-using abi_dump::BasicNamedAndTypedDecl;
-
 namespace abi_diff_wrappers {
 
-static bool IsAccessDownGraded(abi_dump::AccessSpecifier old_access,
-                               abi_dump::AccessSpecifier new_access) {
+
+static bool IsAccessDownGraded(abi_util::AccessSpecifierIR old_access,
+                               abi_util::AccessSpecifierIR new_access) {
   bool access_downgraded = false;
   switch (old_access) {
-    case abi_dump::AccessSpecifier::protected_access:
-      if (new_access == abi_dump::AccessSpecifier::private_access) {
+    case abi_util::AccessSpecifierIR::protected_access:
+      if (new_access == abi_util::AccessSpecifierIR::private_access) {
         access_downgraded = true;
       }
       break;
-    case abi_dump::AccessSpecifier::public_access:
-      if (new_access != abi_dump::AccessSpecifier::public_access) {
+    case abi_util::AccessSpecifierIR::public_access:
+      if (new_access != abi_util::AccessSpecifierIR::public_access) {
         access_downgraded = true;
       }
       break;
@@ -69,255 +48,384 @@ static bool IsAccessDownGraded(abi_dump::AccessSpecifier old_access,
   return access_downgraded;
 }
 
-static std::string CpptoCAdjustment(const std::string &type) {
-  std::string adjusted_type_name =
-      abi_util::FindAndReplace(type, "\\bstruct ", "");
-
-  return adjusted_type_name;
+static std::string Unwind(const std::queue<std::string> *type_queue) {
+  if (!type_queue) {
+    return "";
+  }
+  std::string stack_str;
+  std::queue<std::string> type_queue_copy = *type_queue;
+  while (!type_queue_copy.empty()) {
+    stack_str += type_queue_copy.front() + "-> ";
+    type_queue_copy.pop();
+  }
+  return stack_str;
 }
 
-static bool CompareTypeNames(const abi_dump::BasicTypeAbi &old_abi,
-                             const abi_dump::BasicTypeAbi &new_abi) {
-  // Strip of leading 'struct' keyword from type names
-  std::string old_type = old_abi.name();
-  std::string new_type = new_abi.name();
-  old_type = CpptoCAdjustment(old_type);
-  new_type = CpptoCAdjustment(new_type);
-  // TODO: Add checks for C++ built-in types vs C corresponding types.
-  return old_type != new_type;
+DiffStatus DiffWrapperBase::CompareEnumFields(
+    const std::vector<abi_util::EnumFieldIR> &old_fields,
+    const std::vector<abi_util::EnumFieldIR> &new_fields) {
+  std::map<std::string, const abi_util::EnumFieldIR *> old_fields_map;
+  std::map<std::string, const abi_util::EnumFieldIR *> new_fields_map;
+  abi_util::AddToMap(&old_fields_map, old_fields,
+                     [](const abi_util::EnumFieldIR *f)
+                     {return f->GetName();});
+  abi_util::AddToMap(&new_fields_map, new_fields,
+                     [](const abi_util::EnumFieldIR *f)
+                     {return f->GetName();});
+  std::vector<const abi_util::EnumFieldIR *> removed_fields =
+      abi_util::FindRemovedElements(old_fields_map, new_fields_map);
+  if (removed_fields.size() > 0) {
+    return DiffStatus::direct_diff;
+  }
+  std::vector<std::pair<
+      const abi_util::EnumFieldIR *, const abi_util::EnumFieldIR *>> cf =
+      abi_util::FindCommonElements(old_fields_map, new_fields_map);
+  for (auto &&common_fields : cf) {
+    if (common_fields.first->GetValue() != common_fields.second->GetValue()) {
+      return DiffStatus::direct_diff;
+    }
+  }
+  return DiffStatus::no_diff;
 }
 
-static bool DiffBasicTypeAbi(const abi_dump::BasicTypeAbi &old_abi,
-                             const abi_dump::BasicTypeAbi &new_abi) {
-  // We need to add a layer of indirection to account for issues when C and C++
-  // are mixed. For example some types like wchar_t are in-built types for C++
-  // but not for C. Another example would be clang reporting C structures
-  // without the leading "struct" keyword when headers defining them are
-  // included in C++ files.
-  bool name_comparison = CompareTypeNames(old_abi, new_abi);
-  bool size_comparison = (old_abi.size() != new_abi.size());
-  bool alignment_comparison = (old_abi.alignment() != new_abi.alignment());
-  return name_comparison || size_comparison || alignment_comparison;
+DiffStatus DiffWrapperBase::CompareEnumTypes(
+    const abi_util::EnumTypeIR *old_type, const abi_util::EnumTypeIR *new_type,
+     std::queue<std::string> *type_queue) {
+  if (old_type->GetName() != new_type->GetName()) {
+    return DiffStatus::direct_diff;
+  }
+  if (old_type->GetUnderlyingType() != new_type->GetUnderlyingType() ||
+      !CompareEnumFields(old_type->GetFields(), new_type->GetFields())) {
+    // TODO: Add ir_diff_dumper-> call here
+  }
+  return DiffStatus::no_diff;
 }
 
-template <typename T>
-static bool Diff(const T &old_element, const T &new_element) {
-  // Can be specialized for future changes in the format.
-  return DiffBasicTypeAbi(old_element.basic_abi().type_abi(),
-                          new_element.basic_abi().type_abi()) ||
-      (old_element.basic_abi().name() != new_element.basic_abi().name()) ||
-      IsAccessDownGraded(old_element.basic_abi().access(),
-                         new_element.basic_abi().access());
+bool DiffWrapperBase::CompareVTableComponents(
+    const abi_util::VTableComponentIR &old_component,
+    const abi_util::VTableComponentIR &new_component) {
+  return old_component.GetName() == new_component.GetName() &&
+      old_component.GetValue() == new_component.GetValue() &&
+      old_component.GetKind() == new_component.GetKind();
 }
 
-template <>
-bool Diff<EnumFieldDecl>(const EnumFieldDecl &old_element,
-                         const EnumFieldDecl &new_element) {
-  // Can be specialized for future changes in the format.
-  return DiffBasicTypeAbi(old_element.basic_abi().type_abi(),
-                          new_element.basic_abi().type_abi()) ||
-      (old_element.enum_field_value() != new_element.enum_field_value()) ||
-      (old_element.basic_abi().name() != new_element.basic_abi().name());
+bool DiffWrapperBase::CompareVTables(
+    const abi_util::RecordTypeIR *old_record,
+    const abi_util::RecordTypeIR *new_record) {
+
+  const std::vector<abi_util::VTableComponentIR> &old_components =
+      old_record->GetVTableLayout().GetVTableComponents();
+  const std::vector<abi_util::VTableComponentIR> &new_components =
+      new_record->GetVTableLayout().GetVTableComponents();
+  if (old_components.size() > new_components.size()) {
+    // Something in the vtable got deleted.
+    return false;
+  }
+  uint32_t i = 0;
+  while (i < old_components.size()) {
+    auto &old_element = old_components.at(i);
+    auto &new_element = new_components.at(i);
+    if (!CompareVTableComponents(old_element, new_element)) {
+      return false;
+    }
+  }
+  return true;
 }
 
-template <>
-bool Diff<ParamDecl>(const ParamDecl &old_element,
-                     const ParamDecl &new_element) {
-  // Can be specialized for future changes in the format.
-  return DiffBasicTypeAbi(old_element.basic_abi().type_abi(),
-                          new_element.basic_abi().type_abi());
+bool DiffWrapperBase::CompareSizeAndAlignment(
+    const abi_util::TypeIR *old_type,
+    const abi_util::TypeIR *new_type) {
+  return old_type->GetSize() == new_type->GetSize() &&
+      old_type->GetAlignment() == new_type->GetAlignment();
 }
 
-template <>
-bool Diff<CXXBaseSpecifier>(const CXXBaseSpecifier &old_element,
-                            const CXXBaseSpecifier &new_element) {
-  // Can be specialized for future changes in the format.
-  return (DiffBasicTypeAbi(old_element.basic_abi().type_abi(),
-                           new_element.basic_abi().type_abi()) ||
-      old_element.basic_abi().access() != new_element.basic_abi().access() ||
-      old_element.is_virtual() != new_element.is_virtual());
+DiffStatus DiffWrapperBase::CompareCommonRecordFields(
+    const abi_util::RecordFieldIR *old_field,
+    const abi_util::RecordFieldIR *new_field,
+    std::queue<std::string> *type_queue) {
+  if ((old_field->GetOffset() != new_field->GetOffset()) ||
+      // TODO: Should this be an inquality check instead ? Some compilers can
+      // make signatures dependant on absolute values of access specifiers.
+      IsAccessDownGraded(old_field->GetAccess(), new_field->GetAccess())) {
+    return DiffStatus::direct_diff;
+  }
+  return CompareAndDumpTypeDiff(old_field->GetReferencedType(),
+                                new_field->GetReferencedType(),
+                                type_queue);
 }
 
-template <>
-bool Diff<VTableComponent>(const VTableComponent &old_element,
-                           const VTableComponent &new_element) {
-  bool kind_comparison = old_element.kind() != new_element.kind();
-  bool mangled_name_comparison = old_element.mangled_component_name() !=
-      new_element.mangled_component_name();
-  bool value_comparison =
-      old_element.component_value() != new_element.component_value();
-  return kind_comparison || mangled_name_comparison || value_comparison;
+DiffStatus DiffWrapperBase::CompareRecordFields(
+    const std::vector<abi_util::RecordFieldIR> &old_fields,
+    const std::vector<abi_util::RecordFieldIR> &new_fields,
+    std::queue<std::string> *type_queue) {
+  std::map<std::string, const abi_util::RecordFieldIR *> old_fields_map;
+  std::map<std::string, const abi_util::RecordFieldIR *> new_fields_map;
+  abi_util::AddToMap(&old_fields_map, old_fields,
+                     [](const abi_util::RecordFieldIR *f)
+                     {return f->GetName();});
+  abi_util::AddToMap(&new_fields_map, new_fields,
+                     [](const abi_util::RecordFieldIR *f)
+                     {return f->GetName();});
+  std::vector<const abi_util::RecordFieldIR *> removed_fields =
+      abi_util::FindRemovedElements(old_fields_map, new_fields_map);
+  if (removed_fields.size() > 0) {
+    return DiffStatus::direct_diff;
+  }
+  std::vector<std::pair<
+      const abi_util::RecordFieldIR *, const abi_util::RecordFieldIR *>> cf =
+      abi_util::FindCommonElements(old_fields_map, new_fields_map);
+  for (auto &&common_fields : cf) {
+    if (CompareCommonRecordFields(common_fields.first, common_fields.second,
+                                  type_queue) == DiffStatus::direct_diff) {
+      return DiffStatus::direct_diff;
+    }
+  }
+  return DiffStatus::no_diff;
 }
 
-// This function fills in a *Diff Message's repeated field. For eg:
-// RecordDeclDiff's CXXBaseSpecifierDiff fields and well as FieldDeclDiff
-// fields.
-template <typename T, typename TDiff>
-template <typename Element, typename ElementDiff>
-bool DiffWrapperBase<T, TDiff>::GetElementDiffs(
-    google::protobuf::RepeatedPtrField<ElementDiff> *dst,
-    const google::protobuf::RepeatedPtrField<Element> &old_elements,
-    const google::protobuf::RepeatedPtrField<Element> &new_elements) {
-  bool differs = false;
-  assert(dst != nullptr);
-  int i = 0;
-  int j = 0;
-  while (i < old_elements.size() && j < new_elements.size()) {
-    const Element &old_element = old_elements.Get(i);
-    const Element &new_element = new_elements.Get(i);
+DiffStatus DiffWrapperBase::CompareRecordTypes(
+    const abi_util::RecordTypeIR *old_type,
+    const abi_util::RecordTypeIR *new_type,
+    std::queue<std::string> *type_queue) {
+  // Compare names.
+  if (old_type->GetName() != new_type->GetName()) {
+    // Do not dump anything since the record types themselves are fundamentally
+    // different.
+    return DiffStatus::direct_diff;
+  }
 
-    if (Diff(old_element, new_element)) {
-      ElementDiff *diff = dst->Add();
-      Element *old_elementp = nullptr;
-      Element *new_elementp = nullptr;
-      if (!diff || !(old_elementp = diff->mutable_old()) ||
-          !(new_elementp = diff->mutable_new_())) {
-        llvm::errs() << "Failed to add diff element\n";
-        ::exit(1);
-      }
-      *old_elementp = old_element;
-      *new_elementp = new_element;
-      diff->set_index(i);
-      differs = true;
+  if (!CompareSizeAndAlignment(old_type, new_type) ||
+      !CompareVTables(old_type, new_type) ||
+      (CompareRecordFields(old_type->GetFields(), new_type->GetFields(),
+                          type_queue) == DiffStatus::direct_diff)) {
+    ir_diff_dumper_->AddLinkableMessagesIR(old_type, new_type,
+                                           Unwind(type_queue));
+  }
+  // TODO: Compare TemplateInfo and Bases
+  return DiffStatus::no_diff;
+}
+
+DiffStatus DiffWrapperBase::CompareLvalueReferenceTypes(
+    const abi_util::LvalueReferenceTypeIR *old_type,
+    const abi_util::LvalueReferenceTypeIR *new_type,
+    std::queue<std::string> *type_queue) {
+  return CompareAndDumpTypeDiff(old_type->GetReferencedType(),
+                                new_type->GetReferencedType(),
+                                type_queue);
+}
+
+DiffStatus DiffWrapperBase::CompareRvalueReferenceTypes(
+    const abi_util::RvalueReferenceTypeIR *old_type,
+    const abi_util::RvalueReferenceTypeIR *new_type,
+     std::queue<std::string> *type_queue) {
+  return CompareAndDumpTypeDiff(old_type->GetReferencedType(),
+                                new_type->GetReferencedType(),
+                                type_queue);
+}
+
+DiffStatus DiffWrapperBase::CompareQualifiedTypes(
+    const abi_util::QualifiedTypeIR *old_type,
+    const abi_util::QualifiedTypeIR *new_type,
+     std::queue<std::string> *type_queue) {
+  // If all the qualifiers are not the same, return direct_diff, else
+  // recursively compare the unqualified types.
+  if (old_type->IsConst() != new_type->IsConst() ||
+      old_type->IsVolatile() != new_type->IsVolatile() ||
+      old_type->IsRestricted() != new_type->IsRestricted()) {
+    return DiffStatus::direct_diff;
+  }
+  return CompareAndDumpTypeDiff(old_type->GetReferencedType(),
+                                new_type->GetReferencedType(),
+                                type_queue);
+}
+
+DiffStatus DiffWrapperBase::ComparePointerTypes(
+    const abi_util::PointerTypeIR *old_type,
+    const abi_util::PointerTypeIR *new_type,
+    std::queue<std::string> *type_queue) {
+  // The following need to be the same for two pointer types to be considered
+  // equivalent:
+  // 1) Number of pointer indirections are the same.
+  // 2) The ultimate pointee is the same.
+  return CompareAndDumpTypeDiff(old_type->GetReferencedType(),
+                                new_type->GetReferencedType(),
+                                type_queue);
+}
+
+DiffStatus DiffWrapperBase::CompareBuiltinTypes(
+    const abi_util::BuiltinTypeIR *old_type,
+    const abi_util::BuiltinTypeIR *new_type) {
+  // If the size, alignment and is_unsigned are the same, return no_diff
+  // else return direct_diff.
+  uint64_t old_signedness = old_type->IsUnsigned();
+  uint64_t new_signedness = new_type->IsUnsigned();
+
+  if (!CompareSizeAndAlignment(old_type, new_type) ||
+      old_signedness != new_signedness) {
+    return DiffStatus::direct_diff;
+  }
+  return DiffStatus::no_diff;
+}
+
+DiffStatus DiffWrapperBase::CompareFunctionParameters(
+    const std::vector<abi_util::ParamIR> &old_parameters,
+    const std::vector<abi_util::ParamIR> &new_parameters,
+    std::queue<std::string> *type_queue) {
+  if (old_parameters.size() != new_parameters.size()) {
+    return DiffStatus::direct_diff;
+  }
+  uint64_t i = 0;
+  while (i < old_parameters.size()) {
+    const abi_util::ParamIR &old_parameter = old_parameters.at(i);
+    const abi_util::ParamIR &new_parameter = new_parameters.at(i);
+    if (CompareAndDumpTypeDiff(old_parameter.GetReferencedType(),
+                               new_parameter.GetReferencedType(),
+                               type_queue) == DiffStatus::direct_diff ||
+        (old_parameter.GetIsDefault() != new_parameter.GetIsDefault())) {
+      llvm::errs() << "function direct diff returned\n";
+      return DiffStatus::direct_diff;
     }
     i++;
-    j++;
   }
-  if (old_elements.size() != new_elements.size()) {
-    GetExtraElementDiffs(dst, i, j, old_elements, new_elements);
-    differs = true;
-  }
-  return differs;
+  return DiffStatus::no_diff;
 }
 
-template <typename T, typename TDiff>
-template <typename Element, typename ElementDiff>
-void DiffWrapperBase<T, TDiff>::GetExtraElementDiffs(
-    google::protobuf::RepeatedPtrField<ElementDiff> *dst, int i, int j,
-    const google::protobuf::RepeatedPtrField<Element> &old_elements,
-    const google::protobuf::RepeatedPtrField<Element> &new_elements) {
- assert(dst != nullptr);
- while (i < old_elements.size()) {
-    const Element &old_element = old_elements.Get(i);
-    ElementDiff *diff = dst->Add();
-    Element *old_elementp = nullptr;
-    if (!diff || !(old_elementp = diff->mutable_old())) {
-      llvm::errs() << "Failed to add diff element\n";
-      ::exit(1);
-    }
-    *old_elementp = old_element;
-    diff->set_index(i);
-    i++;
- }
- while (j < new_elements.size()) {
-    const Element &new_element = new_elements.Get(j);
-    ElementDiff *diff = dst->Add();
-    Element *new_elementp = nullptr;
-    if (!diff || !(new_elementp = diff->mutable_new_())) {
-      llvm::errs() << "Failed to add diff element\n";
-      ::exit(1);
-    }
-    *new_elementp = new_element;
-    diff->set_index(j);
-    j++;
- }
+DiffStatus DiffWrapperBase::CompareAndDumpTypeDiff(
+    const abi_util::TypeIR *old_type, const abi_util::TypeIR *new_type,
+    abi_util::LinkableMessageKind kind,
+    std::queue<std::string> *type_queue) {
+  if (kind == abi_util::LinkableMessageKind::BuiltinTypeKind) {
+    return CompareBuiltinTypes(
+        static_cast<const abi_util::BuiltinTypeIR *>(old_type),
+        static_cast<const abi_util::BuiltinTypeIR *>(new_type));
+  }
+
+  if (kind == abi_util::LinkableMessageKind::QualifiedTypeKind) {
+    return CompareQualifiedTypes(
+        static_cast<const abi_util::QualifiedTypeIR *>(old_type),
+        static_cast<const abi_util::QualifiedTypeIR *>(new_type),
+        type_queue);
+  }
+
+  if (kind == abi_util::LinkableMessageKind::EnumTypeKind) {
+      return CompareEnumTypes(
+          static_cast<const abi_util::EnumTypeIR *>(old_type),
+          static_cast<const abi_util::EnumTypeIR *>(new_type),
+          type_queue);
+
+  }
+
+  if (kind == abi_util::LinkableMessageKind::LvalueReferenceTypeKind) {
+    return CompareLvalueReferenceTypes(
+        static_cast<const abi_util::LvalueReferenceTypeIR *>(old_type),
+        static_cast<const abi_util::LvalueReferenceTypeIR *>(new_type),
+        type_queue);
+
+  }
+
+  if (kind == abi_util::LinkableMessageKind::RvalueReferenceTypeKind) {
+    return CompareRvalueReferenceTypes(
+        static_cast<const abi_util::RvalueReferenceTypeIR *>(old_type),
+        static_cast<const abi_util::RvalueReferenceTypeIR *>(new_type),
+        type_queue);
+
+  }
+
+  if (kind == abi_util::LinkableMessageKind::PointerTypeKind) {
+    return ComparePointerTypes(
+        static_cast<const abi_util::PointerTypeIR *>(old_type),
+        static_cast<const abi_util::PointerTypeIR *>(new_type),
+        type_queue);
+
+  }
+
+  if (kind == abi_util::LinkableMessageKind::RecordTypeKind) {
+    return CompareRecordTypes(
+        static_cast<const abi_util::RecordTypeIR *>(old_type),
+        static_cast<const abi_util::RecordTypeIR *>(new_type),
+        type_queue);
+
+  }
+  return DiffStatus::no_diff;
 }
 
-static bool DiffBasicNamedAndTypedDecl(BasicNamedAndTypedDecl *type_diff_old,
-                                       BasicNamedAndTypedDecl *type_diff_new,
-                                       const BasicNamedAndTypedDecl &old,
-                                       const BasicNamedAndTypedDecl &new_) {
-  assert(type_diff_old != nullptr);
-  assert(type_diff_new != nullptr);
-  if (DiffBasicTypeAbi(old.type_abi(), new_.type_abi()) ||
-      IsAccessDownGraded(old.access(), new_.access())) {
-    *(type_diff_old) = old;
-    *(type_diff_new) = new_;
+DiffStatus DiffWrapperBase::CompareAndDumpTypeDiff(
+    const std::string &old_type_str, const std::string &new_type_str,
+    std::queue<std::string> *type_queue) {
+  //TODO: Check for exceptional cases on new_type_str and old_type_str :
+  // uintptr_t
+
+  // If either of the types are not found in their respective maps, the type
+  // was not exposed in a public header and we do a simple string comparison.
+  // Any diff found using a simple string comparison will be a direct diff.
+
+  // Check the map for types which have already been compared
+  bool same_type_str = (old_type_str == new_type_str);
+  if (same_type_str) {
+    // These types have already been diffed, return without further comparison.
+    if (!type_cache_->insert(old_type_str).second) {
+      return DiffStatus::no_diff;
+    }
+    type_queue->push(old_type_str);
+  }
+  std::map<std::string, const abi_util::TypeIR *>::const_iterator old_it =
+      old_types_.find(old_type_str);
+  std::map<std::string, const abi_util::TypeIR *>::const_iterator new_it =
+      new_types_.find(new_type_str);
+  if (old_it == old_types_.end() || new_it == new_types_.end()) {
+    // Do a simple string comparison.
+    return (old_type_str == new_type_str) ?
+        DiffStatus::no_diff : DiffStatus::direct_diff;
+  }
+  abi_util::LinkableMessageKind old_kind =
+      old_it->second->GetKind();
+  abi_util::LinkableMessageKind new_kind =
+      new_it->second->GetKind();
+
+  if (old_kind != new_kind) {
+    return DiffStatus::direct_diff;
+  }
+  return CompareAndDumpTypeDiff(old_it->second , new_it->second , old_kind,
+                                type_queue);
+}
+
+
+// TODO: Add these for RecordType and EnumType as well.
+
+template <>
+bool DiffWrapper<abi_util::GlobalVarIR>::DumpDiff() {
+  std::queue<std::string> type_queue;
+  DiffStatus type_diff = CompareAndDumpTypeDiff(oldp_->GetReferencedType(),
+                                                newp_->GetReferencedType(),
+                                                &type_queue);
+  DiffStatus access_diff = (oldp_->GetAccess() == newp_->GetAccess()) ?
+      DiffStatus::no_diff : DiffStatus::direct_diff;
+  if ((type_diff | access_diff) & DiffStatus::direct_diff) {
+    ir_diff_dumper_->AddLinkableMessagesIR(oldp_, newp_, Unwind(&type_queue));
     return true;
   }
-  return false;
+  return true;
 }
 
 template <>
-std::unique_ptr<RecordDeclDiff>
-DiffWrapper<RecordDecl, RecordDeclDiff>::Get() {
-  std::unique_ptr<RecordDeclDiff> record_diff(new RecordDeclDiff());
-  assert(oldp_->basic_abi().linker_set_key() ==
-         newp_->basic_abi().linker_set_key());
-  record_diff->set_name(oldp_->basic_abi().name());
-  google::protobuf::RepeatedPtrField<RecordFieldDeclDiff> *fdiffs =
-      record_diff->mutable_field_diffs();
-  google::protobuf::RepeatedPtrField<CXXBaseSpecifierDiff> *bdiffs =
-      record_diff->mutable_base_diffs();
-  google::protobuf::RepeatedPtrField<CXXVTableDiff> *vtdiffs =
-      record_diff->mutable_vtable_diffs();
-  assert(fdiffs != nullptr && bdiffs != nullptr);
-  // Template Information isn't diffed since the linker_set_key includes the
-  // mangled name which includes template information.
-  if (GetElementDiffs(fdiffs, oldp_->fields(), newp_->fields()) ||
-      GetElementDiffs(bdiffs, oldp_->base_specifiers(),
-                      newp_->base_specifiers()) ||
-      GetElementDiffs(vtdiffs, oldp_->vtable_layout().vtable_components(),
-                      newp_->vtable_layout().vtable_components()) ||
-      DiffBasicNamedAndTypedDecl(
-          record_diff->mutable_type_diff()->mutable_old(),
-          record_diff->mutable_type_diff()->mutable_new_(),
-          oldp_->basic_abi(), newp_->basic_abi())) {
-    return record_diff;
+bool DiffWrapper<abi_util::FunctionIR>::DumpDiff() {
+  // If CompareAndDumpTypeDiff returns an unsafe / safe status, add the
+  // corresponding diff to unsafe/ safe global var changes.
+  std::queue<std::string> type_queue;
+  type_queue.push(oldp_->GetLinkerSetKey());
+  DiffStatus param_diffs = CompareFunctionParameters(oldp_->GetParameters(),
+                                                     newp_->GetParameters(),
+                                                     &type_queue);
+  DiffStatus return_type_diff =
+      CompareAndDumpTypeDiff(oldp_->GetReferencedType(),
+                             newp_->GetReferencedType(),
+                             &type_queue);
+  if ((param_diffs == DiffStatus::direct_diff ||
+       return_type_diff == DiffStatus::direct_diff) ||
+      (oldp_->GetAccess() != newp_->GetAccess())) {
+    ir_diff_dumper_->AddLinkableMessagesIR(oldp_, newp_, Unwind(&type_queue));
+    return true;
   }
-  return nullptr;
+  return true;
 }
-
-template <>
-std::unique_ptr<EnumDeclDiff>
-DiffWrapper<EnumDecl, EnumDeclDiff>::Get() {
-  std::unique_ptr<EnumDeclDiff> enum_diff(new EnumDeclDiff());
-  assert(oldp_->basic_abi().linker_set_key() ==
-         newp_->basic_abi().linker_set_key());
-  google::protobuf::RepeatedPtrField<EnumFieldDeclDiff> *fdiffs =
-      enum_diff->mutable_field_diffs();
-  assert(fdiffs != nullptr);
-  enum_diff->set_name(oldp_->basic_abi().name());
-  if (GetElementDiffs(fdiffs, oldp_->enum_fields(), newp_->enum_fields()) ||
-      DiffBasicNamedAndTypedDecl(
-          enum_diff->mutable_type_diff()->mutable_old(),
-          enum_diff->mutable_type_diff()->mutable_new_(),
-          oldp_->basic_abi(), newp_->basic_abi())) {
-    return enum_diff;
-  }
-  return nullptr;
-}
-
-template <>
-std::unique_ptr<FunctionDeclDiff>
-DiffWrapper<FunctionDecl, FunctionDeclDiff>::Get() {
-  std::unique_ptr<FunctionDeclDiff> func_diff(new FunctionDeclDiff());
-  google::protobuf::RepeatedPtrField<ParamDeclDiff> *pdiffs =
-      func_diff->mutable_param_diffs();
-  assert(func_diff->mutable_return_type_diffs() != nullptr);
-  func_diff->set_name(oldp_->basic_abi().linker_set_key());
-  if (DiffBasicNamedAndTypedDecl(
-          func_diff->mutable_return_type_diffs()->mutable_old(),
-          func_diff->mutable_return_type_diffs()->mutable_new_(),
-          oldp_->basic_abi(), newp_->basic_abi()) ||
-      GetElementDiffs(pdiffs, oldp_->parameters(), newp_->parameters())) {
-    return func_diff;
-  }
-  return nullptr;
-}
-
-template <>
-std::unique_ptr<GlobalVarDeclDiff>
-DiffWrapper<GlobalVarDecl, GlobalVarDeclDiff>::Get() {
-  std::unique_ptr<GlobalVarDeclDiff> global_var_diff(new GlobalVarDeclDiff());
-  assert(global_var_diff->mutable_type_diff() != nullptr);
-  if (DiffBasicNamedAndTypedDecl(
-          global_var_diff->mutable_type_diff()->mutable_old(),
-          global_var_diff->mutable_type_diff()->mutable_new_(),
-          oldp_->basic_abi(), newp_->basic_abi())) {
-    return global_var_diff;
-  }
-  return nullptr;
-}
-
 } // abi_diff_wrappers

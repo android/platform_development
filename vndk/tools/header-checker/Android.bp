@@ -76,7 +76,7 @@ cc_defaults {
         "libLLVMSupport",
     ],
 
-    shared_libs: [
+		shared_libs: [
         "libprotobuf-cpp-full",
     ],
 }
@@ -134,8 +134,8 @@ cc_binary_host {
     ],
 
     static_libs: [
-        "libheader-checker-proto",
         "libheader-abi-util",
+        "libheader-checker-proto",
     ],
 
     target: {
@@ -269,7 +269,13 @@ cc_library_static {
         "libLLVMMCParser",
         "libLLVMCore",
         "libLLVMSupport",
+        "libheader-checker-proto",
     ],
+
+    shared_libs: [
+        "libprotobuf-cpp-full",
+    ],
+
 
     cflags: [
         "-Wcast-qual",

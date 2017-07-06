@@ -82,14 +82,14 @@ int main(int argc, const char **argv) {
   HeaderAbiDiff judge(lib_name, arch, old_dump, new_dump, compatibility_report,
                       ignored_symbols);
 
-  CompatibilityStatus status  = judge.GenerateCompatibilityReport();
+  CompatibilityStatusIR status = judge.GenerateCompatibilityReport();
 
   std::string status_str = "";
   switch (status) {
-    case CompatibilityStatus::INCOMPATIBLE:
+    case CompatibilityStatusIR::INCOMPATIBLE:
       status_str = "broken";
       break;
-    case CompatibilityStatus::EXTENSION:
+    case CompatibilityStatusIR::EXTENSION:
       status_str = "extended";
       break;
     default:
@@ -107,11 +107,11 @@ int main(int argc, const char **argv) {
   }
 
   if (advice_only) {
-    return CompatibilityStatus::COMPATIBLE;
+    return CompatibilityStatusIR::COMPATIBLE;
   }
 
-  if (allow_extensions && status == CompatibilityStatus::EXTENSION) {
-    return CompatibilityStatus::COMPATIBLE;
+  if (allow_extensions && status == CompatibilityStatusIR::EXTENSION) {
+    return CompatibilityStatusIR::COMPATIBLE;
   }
   return status;
 }

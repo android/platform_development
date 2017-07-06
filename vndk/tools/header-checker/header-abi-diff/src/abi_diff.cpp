@@ -14,6 +14,8 @@
 
 #include "abi_diff.h"
 
+#include<header_abi_util.h>
+
 #include <llvm/Support/raw_ostream.h>
 
 #include <google/protobuf/text_format.h>
@@ -27,156 +29,149 @@
 
 #include <stdlib.h>
 
-CompatibilityStatus HeaderAbiDiff::GenerateCompatibilityReport() {
-  abi_dump::TranslationUnit old_tu;
-  abi_dump::TranslationUnit new_tu;
-  std::ifstream old_input(old_dump_);
-  std::ifstream new_input(new_dump_);
-  google::protobuf::io::IstreamInputStream text_iso(&old_input);
-  google::protobuf::io::IstreamInputStream text_isn(&new_input);
-
-  if (!google::protobuf::TextFormat::Parse(&text_iso, &old_tu) ||
-      !google::protobuf::TextFormat::Parse(&text_isn, &new_tu)) {
-    llvm::errs() << "Failed to generate compatibility report\n";
+CompatibilityStatusIR HeaderAbiDiff::GenerateCompatibilityReport() {
+using abi_util::TextFormatToIRReader;
+  std::unique_ptr<abi_util::TextFormatToIRReader> old_reader =
+      TextFormatToIRReader::CreateTextFormatToIRReader("protobuf", old_dump_);
+  std::unique_ptr<abi_util::TextFormatToIRReader> new_reader =
+      TextFormatToIRReader::CreateTextFormatToIRReader("protobuf", new_dump_);
+  if (!old_reader || !new_reader || !old_reader->ReadDump() ||
+      !new_reader->ReadDump()) {
+    llvm::errs() << "Could not create Text Format readers\n";
     ::exit(1);
   }
-  return CompareTUs(old_tu, new_tu);
+  std::unique_ptr<abi_util::IRDiffDumper> ir_diff_dumper =
+      abi_util::IRDiffDumper::CreateIRDiffDumper("protobuf", cr_);
+  CompatibilityStatusIR status =
+      CompareTUs(old_reader.get(), new_reader.get(), ir_diff_dumper.get());
+  if (!ir_diff_dumper->Dump()) {
+    llvm::errs() << "Could not dump diff report\n";
+    ::exit(1);
+  }
+  return status;
 }
 
-CompatibilityStatus HeaderAbiDiff::CompareTUs(
-    const abi_dump::TranslationUnit &old_tu,
-    const abi_dump::TranslationUnit &new_tu) {
-  std::unique_ptr<abi_diff::TranslationUnitDiff> diff_tu(
-      new abi_diff::TranslationUnitDiff);
-  CompatibilityStatus record_status = Collect<abi_dump::RecordDecl>(
-      diff_tu->mutable_records_added(), diff_tu->mutable_records_removed(),
-      diff_tu->mutable_records_diff(), old_tu.records(), new_tu.records(),
-      ignored_symbols_);
+template <typename F>
+static void AddTypesToMap(std::map<std::string, const abi_util::TypeIR *> *dst,
+                          const abi_util::TextFormatToIRReader *tu, F func) {
+  AddToMap(dst, tu->GetRecordTypes(), func);
+  AddToMap(dst, tu->GetEnumTypes(), func);
+  AddToMap(dst, tu->GetPointerTypes(), func);
+  AddToMap(dst, tu->GetBuiltinTypes(), func);
+  AddToMap(dst, tu->GetArrayTypes(), func);
+  AddToMap(dst, tu->GetLvalueReferenceTypes(), func);
+  AddToMap(dst, tu->GetRvalueReferenceTypes(), func);
+  AddToMap(dst, tu->GetQualifiedTypes(), func);
+}
 
-  CompatibilityStatus function_status = Collect<abi_dump::FunctionDecl>(
-      diff_tu->mutable_functions_added(), diff_tu->mutable_functions_removed(),
-      diff_tu->mutable_functions_diff(), old_tu.functions(),
-      new_tu.functions(), ignored_symbols_);
+CompatibilityStatusIR HeaderAbiDiff::CompareTUs(
+    const abi_util::TextFormatToIRReader *old_tu,
+    const abi_util::TextFormatToIRReader *new_tu,
+    abi_util::IRDiffDumper *ir_diff_dumper) {
+  // Collect all old and new types in maps, so that we can refer to them by
+  // type name / linker_set_key later.
+  std::map<std::string, const abi_util::TypeIR *> old_types;
+  std::map<std::string, const abi_util::TypeIR *> new_types;
+  AddTypesToMap(&old_types, old_tu,
+                [](const abi_util::TypeIR *e) {return e->GetLinkerSetKey();});
+  AddTypesToMap(&new_types, new_tu,
+                [](const abi_util::TypeIR *e) {return e->GetLinkerSetKey();});
 
-  CompatibilityStatus enum_status = Collect<abi_dump::EnumDecl>(
-      diff_tu->mutable_enums_added(), diff_tu->mutable_enums_removed(),
-      diff_tu->mutable_enums_diff(), old_tu.enums(), new_tu.enums(),
-      ignored_symbols_);
-
-  CompatibilityStatus global_var_status = Collect<abi_dump::GlobalVarDecl>(
-      diff_tu->mutable_global_vars_added(),
-      diff_tu->mutable_global_vars_removed(),
-      diff_tu->mutable_global_vars_diff(), old_tu.global_vars(),
-      new_tu.global_vars(), ignored_symbols_);
-
-  CompatibilityStatus combined_status =
-      record_status | function_status | enum_status | global_var_status;
-
-  if (combined_status & CompatibilityStatus::INCOMPATIBLE) {
-    combined_status = CompatibilityStatus::INCOMPATIBLE;
-  } else if (combined_status & CompatibilityStatus::EXTENSION) {
-    combined_status = CompatibilityStatus::EXTENSION;
-  } else {
-    combined_status = CompatibilityStatus::COMPATIBLE;
-  }
-  diff_tu->set_compatibility_status(combined_status);
-  diff_tu->set_lib_name(lib_name_);
-  diff_tu->set_arch(arch_);
-  std::ofstream text_output(cr_);
-  google::protobuf::io::OstreamOutputStream text_os(&text_output);
-
-  if(!google::protobuf::TextFormat::Print(*diff_tu, &text_os)) {
-    llvm::errs() << "Unable to dump report\n";
+  // Collect fills in added, removed ,unsafe and safe function diffs.
+  if (!CollectDynsymExportables(old_tu->GetFunctions(), new_tu->GetFunctions(),
+                               old_types, new_types, ir_diff_dumper) ||
+      CollectDynsymExportables(old_tu->GetGlobalVariables(),
+                               new_tu->GetGlobalVariables(), old_types,
+                               new_types,ir_diff_dumper)) {
+    llvm::errs() << "Unable to collect dynsym exportables\n";
     ::exit(1);
   }
+
+  //TODO:Fix this by taking in information from ir_diff_dumper.
+  CompatibilityStatusIR combined_status = CompatibilityStatusIR::COMPATIBLE;
+
+  if (combined_status & CompatibilityStatusIR::INCOMPATIBLE) {
+    combined_status = CompatibilityStatusIR::INCOMPATIBLE;
+  } else if (combined_status & CompatibilityStatusIR::EXTENSION) {
+    combined_status = CompatibilityStatusIR::EXTENSION;
+  } else {
+    combined_status = CompatibilityStatusIR::COMPATIBLE;
+  }
+  ir_diff_dumper->AddLibNameIR(lib_name_);
+  ir_diff_dumper->AddArchIR(arch_);
+  ir_diff_dumper->AddCompatibilityStatusIR(combined_status);
   return combined_status;
 }
 
-template <typename T, typename TDiff>
-abi_diff::CompatibilityStatus HeaderAbiDiff::Collect(
-    google::protobuf::RepeatedPtrField<T> *elements_added,
-    google::protobuf::RepeatedPtrField<T> *elements_removed,
-    google::protobuf::RepeatedPtrField<TDiff> *elements_diff,
-    const google::protobuf::RepeatedPtrField<T> &old_srcs,
-    const google::protobuf::RepeatedPtrField<T> &new_srcs,
-    const std::set<std::string> &ignored_symbols) {
-  assert(elements_added != nullptr);
-  assert(elements_removed != nullptr);
-  assert(elements_diff != nullptr);
+template <typename T>
+bool HeaderAbiDiff::CollectDynsymExportables(
+    const std::vector<T> &old_exportables,
+    const std::vector<T> &new_exportables,
+    const std::map<std::string, const abi_util::TypeIR *> &old_types_map,
+    const std::map<std::string, const abi_util::TypeIR *> &new_types_map,
+    abi_util::IRDiffDumper *ir_diff_dumper) {
+  std::map<std::string, const T *> old_exportables_map;
+  std::map<std::string, const T *> new_exportables_map;
+  abi_util::AddToMap(&old_exportables_map, old_exportables,
+                     [](const T *e)
+                     { return e->GetLinkerSetKey();});
+  abi_util::AddToMap(&new_exportables_map, new_exportables,
+                     [](const T *e)
+                     { return e->GetLinkerSetKey();});
 
-  std::map<std::string, const T*> old_elements_map;
-  std::map<std::string, const T*> new_elements_map;
-  AddToMap(&old_elements_map, old_srcs);
-  AddToMap(&new_elements_map, new_srcs);
+  if (!Collect(old_exportables_map,
+               new_exportables_map, ir_diff_dumper) ||
+      !PopulateCommonElements(old_exportables_map, new_exportables_map,
+                              old_types_map, new_types_map, ir_diff_dumper)) {
+    return false;
+  }
+  return true;
+}
 
-  if (!PopulateRemovedElements(elements_removed, old_elements_map,
-                               new_elements_map, ignored_symbols) ||
-      !PopulateRemovedElements(elements_added, new_elements_map,
-                               old_elements_map, ignored_symbols) ||
-      !PopulateCommonElements(elements_diff, old_elements_map,
-                              new_elements_map, ignored_symbols)) {
+// Collect added and removed Elements
+template <typename T>
+bool HeaderAbiDiff::Collect(
+    const std::map<std::string, const T*> &old_elements_map,
+    const std::map<std::string, const T*> &new_elements_map,
+    abi_util::IRDiffDumper *ir_diff_dumper) {
+  if (!PopulateRemovedElements(old_elements_map, new_elements_map,
+                               ir_diff_dumper) ||
+      !PopulateRemovedElements(new_elements_map, old_elements_map,
+                               ir_diff_dumper)) {
     llvm::errs() << "Populating functions in report failed\n";
-    ::exit(1);
+    return false;
   }
-  if (elements_diff->size() || elements_removed->size()) {
-    return CompatibilityStatus::INCOMPATIBLE;
-  }
-  if (elements_added->size()) {
-    return CompatibilityStatus::EXTENSION;
-  }
-  return CompatibilityStatus::COMPATIBLE;
+  return true;
 }
 
 template <typename T>
 bool HeaderAbiDiff::PopulateRemovedElements(
-    google::protobuf::RepeatedPtrField<T> *dst,
     const std::map<std::string, const T*> &old_elements_map,
     const std::map<std::string, const T*> &new_elements_map,
-    const std::set<std::string> &ignored_symbols) {
+    abi_util::IRDiffDumper *ir_diff_dumper) {
 
-  std::vector<const T *> removed_elements;
-  for (auto &&map_element : old_elements_map) {
-      const T *element = map_element.second;
-      auto new_element =
-          new_elements_map.find(element->basic_abi().linker_set_key());
-      if (new_element == new_elements_map.end()) {
-        removed_elements.emplace_back(element);
-      }
-  }
-  if (!DumpLoneElements(dst, removed_elements, ignored_symbols)) {
+  llvm::errs() << "old  elements size :" << old_elements_map.size() <<"\n";
+  llvm::errs() << "new  elements size :" << new_elements_map.size() <<"\n";
+  std::vector<const T *> removed_elements =
+      abi_util::FindRemovedElements(old_elements_map, new_elements_map);
+  if (!DumpLoneElements(removed_elements, ir_diff_dumper)) {
     llvm::errs() << "Dumping added / removed element to report failed\n";
     return false;
   }
   return true;
 }
 
-template <typename T, typename TDiff>
+template <typename T>
 bool HeaderAbiDiff::PopulateCommonElements(
-    google::protobuf::RepeatedPtrField<TDiff> *dst,
     const std::map<std::string, const T *> &old_elements_map,
     const std::map<std::string, const T *> &new_elements_map,
-    const std::set<std::string> &ignored_symbols) {
-  std::vector<std::pair<const T *, const T *>> common_elements;
-  typename std::map<std::string, const T *>::const_iterator old_element =
-      old_elements_map.begin();
-  typename std::map<std::string, const T *>::const_iterator new_element =
-      new_elements_map.begin();
-  while (old_element != old_elements_map.end() &&
-         new_element != new_elements_map.end()) {
-    if (old_element->first == new_element->first) {
-      common_elements.emplace_back(std::make_pair(
-          old_element->second, new_element->second));
-      old_element++;
-      new_element++;
-      continue;
-    }
-    if (old_element->first < new_element->first) {
-      old_element++;
-    } else {
-      new_element++;
-    }
-  }
-  if (!DumpDiffElements(dst, common_elements, ignored_symbols)) {
+    const std::map<std::string, const abi_util::TypeIR *> &old_types,
+    const std::map<std::string, const abi_util::TypeIR *> &new_types,
+    abi_util::IRDiffDumper *ir_diff_dumper) {
+  std::vector<std::pair<const T *, const T *>> common_elements =
+      abi_util::FindCommonElements(old_elements_map, new_elements_map);
+  if (!DumpDiffElements(common_elements, old_types, new_types,
+                        ir_diff_dumper)) {
     llvm::errs() << "Dumping difference in common element to report failed\n";
     return false;
   }
@@ -185,48 +180,47 @@ bool HeaderAbiDiff::PopulateCommonElements(
 
 template <typename T>
 bool HeaderAbiDiff::DumpLoneElements(
-    google::protobuf::RepeatedPtrField<T> *dst,
     std::vector<const T *> &elements,
-    const std::set<std::string> &ignored_symbols) {
+    abi_util::IRDiffDumper *ir_diff_dumper) {
+  //llvm::errs() << "Dumping lone  elements size :" << elements.size() <<"\n";
   for (auto &&element : elements) {
-    if (abi_diff_wrappers::IgnoreSymbol<T>(element, ignored_symbols)) {
+    if (abi_diff_wrappers::IgnoreSymbol<T>(
+        element, ignored_symbols_,
+        [](const T *e) {return e->GetLinkerSetKey();})) {
       continue;
     }
-    T *added_element = dst->Add();
-    if (!added_element) {
-      llvm::errs() << "Adding element diff failed\n";
+    if (!ir_diff_dumper->AddLinkableMessageIR(element)) {
+      llvm::errs() << "Couldn't dump added /removed element\n";
       return false;
     }
-    *added_element = *element;
   }
   return true;
 }
 
-template <typename T, typename TDiff>
+static std::set<std::string> type_cache;
+
+template <typename T>
 bool HeaderAbiDiff::DumpDiffElements(
-    google::protobuf::RepeatedPtrField<TDiff>  *dst,
     std::vector<std::pair<const T *,const T *>> &pairs,
-    const std::set<std::string> &ignored_symbols) {
+    const std::map<std::string, const abi_util::TypeIR *> &old_types,
+    const std::map<std::string, const abi_util::TypeIR *> &new_types,
+    abi_util::IRDiffDumper *ir_diff_dumper) {
   for (auto &&pair : pairs) {
     const T *old_element = pair.first;
     const T *new_element = pair.second;
-    // Not having inheritance from protobuf messages makes this
-    // restrictive code.
-    if (abi_diff_wrappers::IgnoreSymbol<T>(old_element, ignored_symbols)) {
+
+    if (abi_diff_wrappers::IgnoreSymbol<T>(
+        old_element, ignored_symbols_,
+        [](const T *e) {return e->GetLinkerSetKey();})) {
       continue;
     }
-    abi_diff_wrappers::DiffWrapper<T, TDiff> diff_wrapper(old_element,
-                                                          new_element);
-    std::unique_ptr<TDiff> decl_diff_ptr = diff_wrapper.Get();
-    if (!decl_diff_ptr) {
-      continue;
-    }
-    TDiff *added_element_diff = dst->Add();
-    if (!added_element_diff) {
-      llvm::errs() << "Adding element diff failed\n";
+    abi_diff_wrappers::DiffWrapper<T> diff_wrapper(old_element, new_element,
+                                                   ir_diff_dumper, old_types,
+                                                   new_types, &type_cache);
+    //TODO: Enable this
+    if (!diff_wrapper.DumpDiff()) {
       return false;
     }
-    *added_element_diff = *decl_diff_ptr;
   }
   return true;
 }
