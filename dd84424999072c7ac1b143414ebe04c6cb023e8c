@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad04b46a_024c2529",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-07T08:38:33Z",
+      "side": 1,
+      "message": "In general:\n1. Use 4 space characters for indent\n2. Remove trailing whitespaces",
+      "revId": "dd84424999072c7ac1b143414ebe04c6cb023e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f2998dc_5063e649",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-07T08:38:33Z",
+      "side": 1,
+      "message": "There is a \"csv\" python module:\nhttps://docs.python.org/3.7/library/csv.html",
+      "revId": "dd84424999072c7ac1b143414ebe04c6cb023e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5560ff66_1c4b7d82",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-07T08:38:33Z",
+      "side": 1,
+      "message": "I would encourage the usages of `os.path.join(\u0027details\u0027, \u0027{}.csv\u0027.format(pid))`",
+      "range": {
+        "startLine": 45,
+        "startChar": 12,
+        "endLine": 45,
+        "endChar": 28
+      },
+      "revId": "dd84424999072c7ac1b143414ebe04c6cb023e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
