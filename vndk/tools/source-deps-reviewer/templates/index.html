@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="static/prism/css/prism.css" rel="stylesheet"/>
+
+  <style>
+    h3,h4{
+        display:inline-block;
+    }
+    pre {
+      white-space: pre-wrap;       /* Since CSS 2.1 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+      background-color: #ffffff;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <h2>Code review tool</h2>
+    <div id="item_list" class="col-sm-3 sidenav hidden-xs"></div>
+
+    <div class="col-sm-5">
+      <h3>You are browsing:</h3>
+      <form id="go_form">
+        <pre><h3 id="browsing_file_path"></h3></pre><br>
+        <input type="text" name="browsing_path" style="width:1100px" placeholder="Enter file path here"/>
+        <input type="submit" name="go" value="GO"/>
+        <pre id="browsing_file" class="line-numbers"><code id="code" class="language-c"></code></pre>
+      </form>
+    </div>
+    <br>
+
+    <div class="col-sm-4">
+      <div class="well">
+        <h3>Add patterns to grep(will be unable to delete added patterns):</h3>
+        <form id="add_pattern">
+          <input type="text" name="pattern"/>
+          <input type="checkbox" name="is_regex" id="is_regex"/>
+          <label for="is_regex">is regex</label>
+          <input type="submit" name="go" value="submit"/>
+        </form>
+
+        <ul id="pattern_list"></ul>
+        <h3>file path:</h3><pre><h3 id="file_path"></h3></pre><br>
+        <h3>pattern line number:&nbsp;</h3><span id="line_no" style="font-size:22px"></span><br>
+
+        <h1>Library Dependencies</h1>
+        <form id="add_deps">
+          <input type="text" id="enter_deps"/>
+          <input type="submit" value="Add"/>
+        </form>
+        <p> <ul id="deps_list"> </ul> </p>
+
+        <h1>Code Dependencies</h1>
+          <form id="add_code" name="aform">
+            <input type="button" value="Get selection" onmousedown="getSelText()"/>
+            <input type="submit" id="add_code" value="Add"/><br>
+            <input type="text" id="code_file_path" style="margin: 0px; width: 600px;"/>
+            <textarea id="selected_text" name="selectedtext" rows="5" style="margin: 0px; width: 600px; height: 106px;"></textarea>
+            <p><ul id="code_list"></ul></p>
+          </form>
+        <form id="save_all">
+          <input type="submit" value="Save All"/>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="static/js/main.js"></script>
+<!-- for code prettyify -->
+<script src="static/prism/js/prism.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+</body>
+</html>
+
