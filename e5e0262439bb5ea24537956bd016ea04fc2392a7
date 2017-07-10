@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "e6473a77_7a4f08f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:52:25Z",
+      "side": 1,
+      "message": "Leave test line in the comment message body (not title).  Come up with a more descriptive title.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 46
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "687d76a9_49b0702a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:52:25Z",
+      "side": 1,
+      "message": "memory",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9934799_25f2ab66",
         "filename": "vndk/tools/mem-analysis/process.py",
         "patchSetId": 2
