@@ -1,0 +1,1 @@
+{"example.c:53": [["test_lib.so"], ["example.c:#define HAL_LIBRARY_PATH1", "example.c:#define HAL_LIBRARY_PATH2"]], "haha/test.c:55": [[], []]}

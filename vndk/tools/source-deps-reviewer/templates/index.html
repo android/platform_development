@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link href="static/prism/css/prism.css" rel="stylesheet"/>
+
+
+  <style>
+    h3,h4{
+        display:inline-block;
+    }
+    pre {
+        white-space: pre-wrap;       /* Since CSS 2.1 */
+        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space: -pre-wrap;      /* Opera 4-6 */
+        white-space: -o-pre-wrap;    /* Opera 7 */
+        word-wrap: break-word;       /* Internet Explorer 5.5+ */
+        background-color: #ffffff;
+        margin: 0;
+
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div id='item_list' class="col-sm-3 sidenav hidden-xs">
+      <h2>Code review tool</h2>
+      <!--
+        <a href="#" class="list-group-item list-group-item-success">First item</a>
+        <a href="#" class="list-group-item list-group-item-info">Second item</a>
+        <a href="#" class="list-group-item list-group-item-warning">Third item</a>
+        <a href="#" class="list-group-item list-group-item-danger">Fourth item</a>
+      -->
+    </div>
+
+
+    <div id='code' class="col-sm-5">
+        <h3 >You are browsing:&nbsp</h3>
+        <form id='go_form'>
+            <pre><h3 id="browsing_file_path"></h3></pre><br>
+            <input type="text" name="browsing_path" style="width:750px" placeholder="test/tmp.c">
+            <input type="submit" name="go" value="GO">
+            <pre class="line-numbers"><code class="language-c" id='browsing_file' ></code></pre>
+
+        </form>
+    </div>
+    <br>
+    
+    <div class="col-sm-4">
+        <h3 >file path: </h3><pre><h3 id='file_path'></h3></pre><br>
+        <h3>pattern line number:&nbsp </h3><h3 id="line_no"></h3><br>
+
+      <div class="well">
+    <h1>Library Dependencies</h1>
+        <input type="text" id="enter_deps" placeholder="Enter Here">
+        <input type="submit" id="add" value="Add">
+        <p> <ul id="deps_list"> </ul> </p>
+    <h1>Code Dependencies</h1>
+        <input type="button" value="Get selection" onmousedown="getSelText()"> 
+        <input type="submit" id="add_code" value="Add">
+        <form name=aform >
+            <input type="text" id="code_file_path" style="margin: 0px; width: 600px;"></input>
+            <textarea id='selected_text' name="selectedtext" rows="5" style="margin: 0px; width: 600px; height: 106px;"></textarea>
+        </form>
+        <p> <ul id="code_list"> </ul> </p>
+
+      </div>
+        <input type="submit" id="save_all" value="Save All">
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="static/js/main.js"></script>
+<!-- for code prettyify -->
+<script src="static/prism/js/prism.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+</body>
+</html>
+
