@@ -151,6 +151,29 @@
     },
     {
       "key": {
+        "uuid": "bcb9592f_ecb38659",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:54:01Z",
+      "side": 1,
+      "message": "This line is too mysterious.  Use:\n\n    proc.sort(reverse\u003dTrue)",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 52
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "42ff3254_1aea175d",
         "filename": "vndk/tools/mem-analysis/process.py",
         "patchSetId": 2
