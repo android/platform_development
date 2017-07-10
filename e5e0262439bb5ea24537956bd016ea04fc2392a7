@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9934799_25f2ab66",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "Add a shebang before this line:\n\n    #!/usr/bin/env python3",
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce000cac_3c637c4c",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "splitlines()",
+      "range": {
+        "startLine": 10,
+        "startChar": 23,
+        "endLine": 10,
+        "endChar": 34
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2dd8e178_c46eb61c",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "I personally prefer to extract data with regular expressions, e.g.:\n\n    pattern \u003d re.compile(\u0027\\\\s*([\\\\d,]+)K: (.*) \\\\(pid \\d+\\\\)$\u0027)\n    for line in meminfo.splitlines():\n        match \u003d pattern.match(line)\n        if not match:\n            continue\n        pss \u003d int(match.group(1).replace(\u0027,\u0027, \u0027\u0027))\n        name \u003d match.group(2)\n        pid \u003d int(match.group(3))\n        proc.append((pss, name, pid))",
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c6b9c55_051238c2",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "not tmp",
+      "range": {
+        "startLine": 12,
+        "startChar": 11,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "89fda7a6_8a3815c6",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "I think you don\u0027t need this line",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 26
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "42ff3254_1aea175d",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "Fit this into 80-col",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 8
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a98a481d_6769742d",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "80-col",
+      "range": {
+        "startLine": 47,
+        "startChar": 80,
+        "endLine": 47,
+        "endChar": 83
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45dfeb2d_4e764035",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "calculate",
+      "range": {
+        "startLine": 67,
+        "startChar": 18,
+        "endLine": 67,
+        "endChar": 27
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c6143b30_7bbb9ecb",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "memory",
+      "range": {
+        "startLine": 67,
+        "startChar": 34,
+        "endLine": 67,
+        "endChar": 40
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2276099e_d23021c6",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "Remove this empty line",
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4dc47a99_6219a810",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "No spaces here",
+      "range": {
+        "startLine": 89,
+        "startChar": 13,
+        "endLine": 89,
+        "endChar": 14
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "75e76f25_afd0c928",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-10T09:51:36Z",
+      "side": 1,
+      "message": "Remove trailing whitespace",
+      "range": {
+        "startLine": 96,
+        "startChar": 34,
+        "endLine": 96,
+        "endChar": 35
+      },
+      "revId": "e5e0262439bb5ea24537956bd016ea04fc2392a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
