@@ -526,14 +526,13 @@ class ELF(object):
 
 
 #------------------------------------------------------------------------------
-# NDK and Banned Libraries
+# NDK
 #------------------------------------------------------------------------------
 
 class NDKLibDict(object):
     NOT_NDK = 0
     LL_NDK = 1
     SP_NDK = 2
-    HL_NDK = 3
 
     LL_NDK_LIB_NAMES = (
         'libc.so',
@@ -556,15 +555,6 @@ class NDKLibDict(object):
         'libvulkan.so',
     )
 
-    HL_NDK_LIB_NAMES = (
-        'libOpenMAXAL.so',
-        'libOpenSLES.so',
-        'libandroid.so',
-        'libcamera2ndk.so',
-        'libjnigraphics.so',
-        'libmediandk.so',
-    )
-
     @staticmethod
     def _create_pattern(names):
         return '|'.join('(?:^\\/system\\/lib(?:64)?\\/' + re.escape(i) + '$)'
@@ -583,19 +573,14 @@ class NDKLibDict(object):
     def __init__(self):
         self.ll_ndk_patterns = self._compile_path_matcher(self.LL_NDK_LIB_NAMES)
         self.sp_ndk_patterns = self._compile_path_matcher(self.SP_NDK_LIB_NAMES)
-        self.hl_ndk_patterns = self._compile_path_matcher(self.HL_NDK_LIB_NAMES)
         self.ndk_patterns = self._compile_multi_path_matcher(
-                (self.LL_NDK_LIB_NAMES, self.SP_NDK_LIB_NAMES,
-                 self.HL_NDK_LIB_NAMES))
+                (self.LL_NDK_LIB_NAMES, self.SP_NDK_LIB_NAMES))
 
     def is_ll_ndk(self, path):
         return self.ll_ndk_patterns.match(path)
 
     def is_sp_ndk(self, path):
         return self.sp_ndk_patterns.match(path)
-
-    def is_hl_ndk(self, path):
-        return self.hl_ndk_patterns.match(path)
 
     def is_ndk(self, path):
         return self.ndk_patterns.match(path)
@@ -607,33 +592,6 @@ class NDKLibDict(object):
         return match.lastindex
 
 NDK_LIBS = NDKLibDict()
-
-
-BannedLib = collections.namedtuple(
-        'BannedLib', ('name', 'reason', 'action',))
-
-BA_WARN = 0
-BA_EXCLUDE = 1
-
-class BannedLibDict(object):
-    def __init__(self):
-        self.banned_libs = dict()
-
-    def add(self, name, reason, action):
-        self.banned_libs[name] = BannedLib(name, reason, action)
-
-    def get(self, name):
-        return self.banned_libs.get(name)
-
-    def is_banned(self, path):
-        return self.get(os.path.basename(path))
-
-    @staticmethod
-    def create_default():
-        d = BannedLibDict()
-        d.add('libbinder.so', 'un-versioned IPC', BA_WARN)
-        d.add('libselinux.so', 'policydb might be incompatible', BA_WARN)
-        return d
 
 
 #------------------------------------------------------------------------------
@@ -680,25 +638,6 @@ SPLibResult = collections.namedtuple(
         'SPLibResult',
         'sp_hal sp_hal_dep vndk_sp_hal sp_ndk sp_ndk_indirect '
         'vndk_sp_both')
-
-def print_sp_lib(sp_lib, file=sys.stdout):
-    # SP-NDK
-    for lib in sorted_lib_path_list(sp_lib.sp_ndk):
-        print('sp-ndk:', lib, file=file)
-    for lib in sorted_lib_path_list(sp_lib.sp_ndk_indirect):
-        print('sp-ndk-indirect:', lib, file=file)
-
-    # SP-HAL
-    for lib in sorted_lib_path_list(sp_lib.sp_hal):
-        print('sp-hal:', lib, file=file)
-    for lib in sorted_lib_path_list(sp_lib.sp_hal_dep):
-        print('sp-hal-dep:', lib, file=file)
-    for lib in sorted_lib_path_list(sp_lib.vndk_sp_hal):
-        print('vndk-sp-hal:', lib, file=file)
-
-    # SP-both
-    for lib in sorted_lib_path_list(sp_lib.vndk_sp_both):
-        print('vndk-sp-both:', lib, file=file)
 
 
 class ELFResolver(object):
@@ -751,10 +690,6 @@ class ELFLinkData(object):
     @property
     def is_sp_ndk(self):
         return self._ndk_classification == NDKLibDict.SP_NDK
-
-    @property
-    def is_hl_ndk(self):
-        return self._ndk_classification == NDKLibDict.HL_NDK
 
     def add_dep(self, dst, ty):
         self._deps[ty].add(dst)
@@ -1553,43 +1488,6 @@ class ELFLinker(object):
                 vndk_sp_indirect_ext=vndk_sp_indirect_ext,
                 extra_vendor_libs=extra_vendor_libs)
 
-    def compute_vndk_cap(self, banned_libs):
-        # ELF files on vendor partitions are banned unconditionally.  ELF files
-        # on the system partition are banned if their file extensions are not
-        # '.so' or their file names are listed in banned_libs.  LL-NDK and
-        # SP-NDK libraries are treated as a special case which will not be
-        # considered as banned libraries at the moment.
-        def is_banned(lib):
-            if lib.is_ndk:
-                return lib.is_hl_ndk
-            return (banned_libs.is_banned(lib.path) or
-                    not lib.is_system_lib() or
-                    not lib.path.endswith('.so'))
-
-        # Find all libraries that are banned.
-        banned_set = set()
-        for lib_set in self.lib_pt:
-            for lib in lib_set.values():
-                if is_banned(lib):
-                    banned_set.add(lib)
-
-        # Find the transitive closure of the banned libraries.
-        stack = list(banned_set)
-        while stack:
-            lib = stack.pop()
-            for user in lib.users:
-                if not user.is_ndk and user not in banned_set:
-                    banned_set.add(user)
-                    stack.append(user)
-
-        # Find the non-NDK non-banned libraries.
-        vndk_cap = set()
-        for lib in self.lib_pt[PT_SYSTEM].values():
-            if not lib.is_ndk and lib not in banned_set:
-                vndk_cap.add(lib)
-
-        return vndk_cap
-
     @staticmethod
     def _compute_closure(root_set, is_excluded, get_successors):
         closure = set(root_set)
@@ -2119,7 +2017,7 @@ class DepsInsightCommand(VNDKCommandBase):
         makedirs(args.output, exist_ok=True)
         script_dir = os.path.dirname(os.path.abspath(__file__))
         for name in ('index.html', 'insight.css', 'insight.js'):
-            shutil.copyfile(os.path.join(script_dir, 'assets', name),
+            shutil.copyfile(os.path.join(script_dir, 'assets', 'insight', name),
                             os.path.join(args.output, name))
 
         with open(os.path.join(args.output, 'insight-data.js'), 'w') as f:
@@ -2130,25 +2028,6 @@ class DepsInsightCommand(VNDKCommandBase):
 })();''')
 
         return 0
-
-
-class VNDKCapCommand(ELFGraphCommand):
-    def __init__(self):
-        super(VNDKCapCommand, self).__init__(
-                'vndk-cap', help='Compute VNDK set upper bound')
-
-    def add_argparser_options(self, parser):
-        super(VNDKCapCommand, self).add_argparser_options(parser)
-
-    def main(self, args):
-        generic_refs, graph = self.create_from_args(args)
-
-        banned_libs = BannedLibDict.create_default()
-
-        vndk_cap = graph.compute_vndk_cap(banned_libs)
-
-        for lib in sorted_lib_path_list(vndk_cap):
-            print(lib)
 
 
 class DepsCommand(ELFGraphCommand):
@@ -2626,46 +2505,12 @@ class DepGraphCommand(ELFGraphCommand):
         makedirs(args.output, exist_ok=True)
         script_dir = os.path.dirname(os.path.abspath(__file__))
         for name in ('index.html', 'dep-graph.js', 'dep-graph.css'):
-            shutil.copyfile(os.path.join(script_dir, 'assets/visual', name),
+            shutil.copyfile(os.path.join(script_dir, 'assets', 'visual', name),
                             os.path.join(args.output, name))
         with open(os.path.join(args.output, 'dep-data.js'), 'w') as f:
             f.write('var violatedLibs = ' + json.dumps(violate_libs) +
                     '\nvar depData = ' + json.dumps(data) + ';')
 
-        return 0
-
-
-class VNDKSPCommand(ELFGraphCommand):
-    def __init__(self):
-        super(VNDKSPCommand, self).__init__(
-                'vndk-sp', help='List pre-defined VNDK-SP')
-
-    def add_argparser_options(self, parser):
-        super(VNDKSPCommand, self).add_argparser_options(parser)
-
-    def main(self, args):
-        generic_refs, graph = self.create_from_args(args)
-
-        vndk_sp = graph.compute_predefined_vndk_sp()
-        for lib in sorted_lib_path_list(vndk_sp):
-            print('vndk-sp:', lib)
-        vndk_sp_indirect = graph.compute_predefined_vndk_sp_indirect()
-        for lib in sorted_lib_path_list(vndk_sp_indirect):
-            print('vndk-sp-indirect:', lib)
-        return 0
-
-
-class SpLibCommand(ELFGraphCommand):
-    def __init__(self):
-        super(SpLibCommand, self).__init__(
-                'sp-lib', help='Define sp-ndk, sp-hal, and vndk-sp')
-
-    def add_argparser_options(self, parser):
-        super(SpLibCommand, self).add_argparser_options(parser)
-
-    def main(self, args):
-        generic_refs, graph = self.create_from_args(args)
-        print_sp_lib(graph.compute_sp_lib(generic_refs))
         return 0
 
 
@@ -2682,14 +2527,11 @@ def main():
     register_subcmd(ELFDumpCommand())
     register_subcmd(CreateGenericRefCommand())
     register_subcmd(VNDKCommand())
-    register_subcmd(VNDKCapCommand())
     register_subcmd(DepsCommand())
     register_subcmd(DepsClosureCommand())
     register_subcmd(DepsInsightCommand())
     register_subcmd(CheckDepCommand())
     register_subcmd(DepGraphCommand())
-    register_subcmd(SpLibCommand())
-    register_subcmd(VNDKSPCommand())
 
     args = parser.parse_args()
     if not args.subcmd:
