@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "4ea560d8_c138c025",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021471
+      },
+      "writtenOn": "2017-07-11T17:40:32Z",
+      "side": 1,
+      "message": "How do the other projects get included?\n\nLooking at the clion.md readme it looks like what\u0027s missing is a superproject here that contains all the ART dependencies.",
+      "parentUuid": "cc7fa63a_bb49f476",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
