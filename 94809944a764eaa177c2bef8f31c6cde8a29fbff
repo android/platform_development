@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "135ba8f1_2a9a82a5",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T08:44:56Z",
+      "side": 1,
+      "message": "[\u0027adb\u0027, \u0027shell\u0027, \u0027dumpsys\u0027, \u0027meminfo\u0027]",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 35
+      },
+      "revId": "94809944a764eaa177c2bef8f31c6cde8a29fbff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "058ee9c5_80836dc5",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T08:44:56Z",
+      "side": 1,
+      "message": "You don\u0027t need shell.",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 20
+      },
+      "revId": "94809944a764eaa177c2bef8f31c6cde8a29fbff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0976575e_ca989adf",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T08:44:56Z",
+      "side": 1,
+      "message": "return",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 10
+      },
+      "revId": "94809944a764eaa177c2bef8f31c6cde8a29fbff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "420610fa_f89227d5",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T08:44:56Z",
+      "side": 1,
+      "message": "Can we generalize the code to extract all information from /proc/${pid}/smaps?  For example:\n\n    MemMapEntry \u003d namedtuple(\u0027MemMapEntry\u0027, \u0027begin end perms offset dev inode pathname size rss pss shared_clean shared_dirty ... vmflags\u0027)\n\n    range_patt \u003d re.compile(\u0027([0-9a-f]+)-([0-9a-f]+)\\\\s+(\\\\S+)\\\\s+(\\\\d+)\\\\s+(\\\\d+:\\\\d+)\\\\s+\\\\d+\\\\s+(.*)$\u0027)\n    ent_patt \u003d re.compile(\u0027(\\\\w+):\\\\s+(\\\\d+) kB\u0027)\n    vmflags_patt \u003d re.compile(\u0027VmFlags: (.*)$\u0027)\n\n    curr_ent \u003d None\n    data \u003d []\n    for line in smaps:\n        match \u003d range_patt.match(line)\n        if match:\n            if curr_ent:\n                data.append(curr_ent)\n            curr_ent \u003d MemMapEnt(int(match.group(1), 16),\n                                 int(match.group(2), 16),\n                                 match.group(3),\n                                 int(match.group(4)),\n                                 match.group(5),\n                                 int(match.group(6)),\n                                 match.group(7),\n                                 0, 0, 0, 0, ..., 0)\n            continue\n\n        match \u003d ent_patt.match(line)\n        if match:\n            setattr(curr_ent, match.group(1).lower(), int(match.group(2)))\n            continue\n\n        match \u003d vmflags_patt.match(line)\n        if match:\n            curr_ent.vmflags \u003d match.group(1)",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 47
+      },
+      "revId": "94809944a764eaa177c2bef8f31c6cde8a29fbff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
