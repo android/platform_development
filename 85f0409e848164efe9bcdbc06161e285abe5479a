@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "cfbfeb7b_619adabb",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021471
+      },
+      "writtenOn": "2017-07-11T16:56:43Z",
+      "side": 1,
+      "message": "Is this really enough? How does it automagically see the includes from other directories like libnativehelper, bionic, etc?",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
