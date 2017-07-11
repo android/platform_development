@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7224bbda_b7855254",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1022077
+      },
+      "writtenOn": "2017-07-11T16:41:58Z",
+      "side": 1,
+      "message": "is the double new line intended here?",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfcea225_d3768f73",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1022077
+      },
+      "writtenOn": "2017-07-11T16:41:58Z",
+      "side": 1,
+      "message": "what does \"arm64\" mean here? What are its effects?",
+      "range": {
+        "startLine": 6,
+        "startChar": 33,
+        "endLine": 6,
+        "endChar": 38
+      },
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
