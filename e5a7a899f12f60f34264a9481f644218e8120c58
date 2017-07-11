@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6cb884c6_07c791a8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T07:56:17Z",
+      "side": 1,
+      "message": "Use more descriptive title.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "e5a7a899f12f60f34264a9481f644218e8120c58",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "53f57614_f401c854",
         "filename": "vndk/tools/mem-analysis/process.py",
         "patchSetId": 7
