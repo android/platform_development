@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "937448c2_462359e5",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T08:00:27Z",
+      "side": 1,
+      "message": "Sort the import statement",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "e5a7a899f12f60f34264a9481f644218e8120c58",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "53f57614_f401c854",
         "filename": "vndk/tools/mem-analysis/process.py",
         "patchSetId": 7
@@ -41,6 +64,29 @@
         "startChar": 0,
         "endLine": 51,
         "endChar": 70
+      },
+      "revId": "e5a7a899f12f60f34264a9481f644218e8120c58",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "451af16f_b0fba406",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T08:00:27Z",
+      "side": 1,
+      "message": "This part can be extracted into another function as well.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 38
       },
       "revId": "e5a7a899f12f60f34264a9481f644218e8120c58",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
