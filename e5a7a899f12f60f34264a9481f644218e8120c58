@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53f57614_f401c854",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T07:40:05Z",
+      "side": 1,
+      "message": "Urr.. I mean remove this if statement and send the data to other function.\n\nFor example:\n\n    proc \u003d get_process_list()\n    write_process_list_to_csv(path, header, proc)",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 70
+      },
+      "revId": "e5a7a899f12f60f34264a9481f644218e8120c58",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
