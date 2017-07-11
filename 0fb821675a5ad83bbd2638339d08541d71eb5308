@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0a06a7e_47414691",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "Use verb when you are naming a function, e.g. `get_process_list()`.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 15
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5750954_b567b04e",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "Since we are matching lines with regular expressions, we don\u0027t have to run this on the device.",
+      "range": {
+        "startLine": 14,
+        "startChar": 34,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c604db28_92e6ba52",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "Move this line out of the loop.  Compiling a regular expression takes some time, and we don\u0027t want to pay for it in every iterations.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 70
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc4e65c8_eb708078",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "If you would like to remove the duplicated entries, you can use `set()` at the first place (line 17):\n\n    proc \u003d set()\n\nReplace `.append()` with `.add()`:\n\n    proc.add((pss, name, pid))\n\nAnd finally, replace line 27-28 with:\n\n    proc \u003d sorted(proc, reverse\u003dTrue)",
+      "range": {
+        "startLine": 27,
+        "startChar": 11,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47d4d66a_d034aed8",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "Usually, I will consider to split this part into another function so that it will be easier to reuse the code.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 34
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "90ec7ad8_084f6957",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "Replace with:\n\n    os.makedirs(\u0027details\u0027, exist_ok\u003dTrue)\n\nBTW, as a general guideline, avoid \"if expr \u003d\u003d False\" or \"if expr \u003d\u003d True\".  It is more consise to write \"if not expr\" or \"if expr\".",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 27
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f4663ea_0c2fca2e",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "Extract this as a global constant",
+      "range": {
+        "startLine": 58,
+        "startChar": 28,
+        "endLine": 61,
+        "endChar": 13
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a534ff01_7b944093",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "Add spaces around \u0027+\u0027 operator",
+      "range": {
+        "startLine": 72,
+        "startChar": 32,
+        "endLine": 72,
+        "endChar": 33
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d293843_b84456e7",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "calculate",
+      "range": {
+        "startLine": 78,
+        "startChar": 18,
+        "endLine": 78,
+        "endChar": 27
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "536f729e_7ebcaea4",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "It seems that this can be written in one line.",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 18
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1004db97_b66e8530",
+        "filename": "vndk/tools/mem-analysis/process.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-11T06:33:52Z",
+      "side": 1,
+      "message": "In python 3, print is a function, thus please remove this space character.",
+      "range": {
+        "startLine": 91,
+        "startChar": 13,
+        "endLine": 91,
+        "endChar": 14
+      },
+      "revId": "0fb821675a5ad83bbd2638339d08541d71eb5308",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
