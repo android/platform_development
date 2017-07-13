@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ca106ced_93349424",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1083168
+      },
+      "writtenOn": "2017-07-13T16:47:03Z",
+      "side": 1,
+      "message": "I believe this is the super project file.",
+      "parentUuid": "4ea560d8_c138c025",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
