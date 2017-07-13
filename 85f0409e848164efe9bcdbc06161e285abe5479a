@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "fd4868d6_a7f13496",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1084268
+      },
+      "writtenOn": "2017-07-13T17:12:13Z",
+      "side": 1,
+      "message": "I am not sure which project, but it is included by one of the dependencies as I see from CLion.",
+      "parentUuid": "e0f0b698_089fc8c9",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
