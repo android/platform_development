@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "e0f0b698_089fc8c9",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021471
+      },
+      "writtenOn": "2017-07-13T17:09:22Z",
+      "side": 1,
+      "message": "ART for example includes system/core/base/include/android-base/logging.h\n\nNowhere in this file do I see how it would possibly discover logging.h from the above location?",
+      "parentUuid": "ca106ced_93349424",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
