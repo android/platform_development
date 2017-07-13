@@ -109,6 +109,24 @@
     },
     {
       "key": {
+        "uuid": "d22be81b_d9119842",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021471
+      },
+      "writtenOn": "2017-07-13T17:29:21Z",
+      "side": 1,
+      "message": "If you manually generated your own CMakeLists in various places then it might be picking it up from that?\n\nIt isn\u0027t helpful to include this file in source control if it will only partially work because the dependencies are missing?",
+      "parentUuid": "fd4868d6_a7f13496",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
