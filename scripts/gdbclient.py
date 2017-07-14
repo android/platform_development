@@ -154,7 +154,7 @@ def handle_switches(args, sysroot):
     return (binary_file, pid, run_cmd)
 
 
-def generate_gdb_script(sysroot, binary_file, is64bit, port, connect_timeout=5):
+def generate_gdb_script(sysroot, binary_file, is64bit, port):
     # Generate a gdb script.
     # TODO: Detect the zygote and run 'art-on' automatically.
     root = os.environ["ANDROID_BUILD_TOP"]
@@ -184,29 +184,7 @@ def generate_gdb_script(sysroot, binary_file, is64bit, port, connect_timeout=5):
 
     # Try to connect for a few seconds, sometimes the device gdbserver takes
     # a little bit to come up, especially on emulators.
-    gdb_commands += """
-python
-
-def target_remote_with_retry(target, timeout_seconds):
-  import time
-  end_time = time.time() + timeout_seconds
-  while True:
-    try:
-      gdb.execute("target remote " + target)
-      return True
-    except gdb.error as e:
-      time_left = end_time - time.time()
-      if time_left < 0 or time_left > timeout_seconds:
-        print("Error: unable to connect to device.")
-        print(e)
-        return False
-      time.sleep(min(0.25, time_left))
-
-target_remote_with_retry(':{}', {})
-
-end
-""".format(port, connect_timeout)
-
+    gdb_commands += "target remote :{}\n".format(port)
     return gdb_commands
 
 
@@ -257,6 +235,10 @@ def main():
             print "Connecting to tracing pid {} using local port {}".format(tracer_pid, args.port)
             gdbrunner.forward_gdbserver_port(device, local=args.port,
                                              remote="tcp:{}".format(args.port))
+
+        # Check to make sure we can actually connect to the gdbserver.
+        if not gdbrunner.check_gdbserver_port(args.port, timeout=5):
+            sys.exit("Failed to connect to gdbserver (try adb root?)")
 
         # Generate a gdb script.
         gdb_commands = generate_gdb_script(sysroot=sysroot,

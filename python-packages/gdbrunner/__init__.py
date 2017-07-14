@@ -20,9 +20,11 @@ import adb
 import argparse
 import atexit
 import os
+import socket
 import subprocess
 import sys
 import tempfile
+import time
 
 class ArgumentParser(argparse.ArgumentParser):
     """ArgumentParser subclass that provides adb device selection."""
@@ -159,8 +161,7 @@ def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
         device.push(gdbserver_local_path, gdbserver_remote_path)
 
     # Run gdbserver.
-    gdbserver_cmd = [gdbserver_remote_path, "--once",
-                     "+{}".format(debug_socket)]
+    gdbserver_cmd = [gdbserver_remote_path, "+{}".format(debug_socket)]
 
     if target_pid is not None:
         gdbserver_cmd += ["--attach", str(target_pid)]
@@ -184,6 +185,23 @@ def forward_gdbserver_port(device, local, remote):
     """Forwards local TCP port `port` to `remote` via `adb forward`."""
     device.forward("tcp:{}".format(local), remote)
     atexit.register(lambda: device.forward_remove("tcp:{}".format(local)))
+
+
+def check_gdbserver_port(port, timeout):
+    """Verify that a forwarded gdbserver port is reachable."""
+    end = time.time() + timeout
+    while time.time() < end:
+        if time.time() + timeout < end:
+            # The clock changed, we're screwed.
+            return False
+
+        try:
+            s = socket.create_connection(("localhost", port))
+            s.sendall("$?#{:02X}".format(ord('?')).encode("utf-8"))
+            response = s.recv(4096)
+            return len(response) > 0
+        except:
+            time.sleep(0.1)
 
 
 def find_file(device, executable_path, sysroot, run_as_cmd=None):
