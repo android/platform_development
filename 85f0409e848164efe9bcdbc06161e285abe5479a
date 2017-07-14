@@ -127,6 +127,24 @@
     },
     {
       "key": {
+        "uuid": "cf1c6ed8_b1b1aa11",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1083168
+      },
+      "writtenOn": "2017-07-14T19:51:51Z",
+      "side": 1,
+      "message": "You don\u0027t see logging.h because it is a dependency of a subproject. This file is a super-project as described in here:\n\nhttps://android.googlesource.com/platform/build/soong/+/master/docs/clion.md#\n\nsuper projects have to be manually generated, there is no other way around it (generating them automatically would result in most of the Android tree which is too big for CLion).",
+      "parentUuid": "d22be81b_d9119842",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
