@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ef493c6_113016d1",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1136369
+      },
+      "writtenOn": "2017-07-14T01:05:40Z",
+      "side": 1,
+      "message": "We do no longer wait here, remove ?",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 186,
+        "endChar": 55
+      },
+      "revId": "13610224eecc8093f8e67fd15e9301f609ff47ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
