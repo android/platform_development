@@ -145,6 +145,24 @@
     },
     {
       "key": {
+        "uuid": "3c1cd260_aa322104",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021471
+      },
+      "writtenOn": "2017-07-14T20:13:25Z",
+      "side": 1,
+      "message": "So basically this CL as-is is unusable without doing extra manual steps?",
+      "parentUuid": "cf1c6ed8_b1b1aa11",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
