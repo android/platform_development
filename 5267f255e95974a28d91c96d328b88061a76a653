@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47f4adb2_f007b76e",
+        "filename": "vndk/tools/source-deps-reviewer/README.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-20T06:26:18Z",
+      "side": 1,
+      "message": "Create a file named `requirements.txt` with:\n\n    flask\n    flask-testing\n\nAnd replace this line with:\n\n    pip install -r requirements.txt",
+      "revId": "5267f255e95974a28d91c96d328b88061a76a653",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
