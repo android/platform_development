@@ -16,6 +16,115 @@
       "revId": "5267f255e95974a28d91c96d328b88061a76a653",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea773f4_32222b38",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-21T08:19:56Z",
+      "side": 1,
+      "message": "Use \" instead of \u0027 in html files.\n\nRemove redundant whitespaces before closing the tags, e.g.\n\n    \u003ccode class\u003d\"language-c\" \u003e\n\nshould be replaced by:\n\n    \u003ccode class\u003d\"language-c\"\u003e",
+      "revId": "5267f255e95974a28d91c96d328b88061a76a653",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "269f020f_3cc38de1",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-21T08:19:56Z",
+      "side": 1,
+      "message": "Close the `\u003cmeta` tag with `/\u003e`, e.g.\n\n    \u003cmeta charset\u003d\"utf-8\"/\u003e",
+      "range": {
+        "startLine": 5,
+        "startChar": 23,
+        "endLine": 5,
+        "endChar": 24
+      },
+      "revId": "5267f255e95974a28d91c96d328b88061a76a653",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "078e656f_483e83a6",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-21T08:19:56Z",
+      "side": 1,
+      "message": "The correct non-breaking space should be \"\u0026nbsp;\".  You are missing a semi-colon here.  But my suggestion is to remove this \"\u0026nbsp\" at all.",
+      "range": {
+        "startLine": 42,
+        "startChar": 28,
+        "endLine": 42,
+        "endChar": 33
+      },
+      "revId": "5267f255e95974a28d91c96d328b88061a76a653",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee3a089b_92b20fb2",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-21T08:19:56Z",
+      "side": 1,
+      "message": "Replace with:\n\n     \u003cspan id\u003d\"line_no\"\u003e\u003c/span\u003e\n\np.s. a whitespace between `:` and `\u003c`",
+      "range": {
+        "startLine": 55,
+        "startChar": 32,
+        "endLine": 55,
+        "endChar": 60
+      },
+      "revId": "5267f255e95974a28d91c96d328b88061a76a653",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c6d50349_ba918dbf",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-21T08:19:56Z",
+      "side": 1,
+      "message": "Wrap \u003cinput\u003e tags with \u003cform\u003e and close \u003cinput\u003e tag with \u0027/\u003e\u0027",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 52
+      },
+      "revId": "5267f255e95974a28d91c96d328b88061a76a653",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
