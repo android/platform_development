@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5362deab_20972e79",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "This is incorrect.  `on_load()` will be invoke immediately.  According to your intention, I guess you meant to write:\n\n    window.onload \u003d on_load;\n\nBut, this can be improved by:\n\n    $(document).ready(function () {\n      // code from function on_load() below\n    });",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 24
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4af69810_c74e8bc3",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "Decrease indent by 2 whitespace characters",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 7
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d95ba486_40b71005",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "Print more meaningful error code.  Notify the user or do some error handling here (e.g. retry).",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 24
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f088f50b_0e57aa1a",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "End with \u0027/\u003e\u0027 instead",
+      "range": {
+        "startLine": 50,
+        "startChar": 43,
+        "endLine": 50,
+        "endChar": 52
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0a61260_c24b3423",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "This is not valid HTML.  Try:\n\n    \u003cinput type\u003d\"checkbox\" name\u003d\"is_regex\" id\u003d\"is_regex\"/\u003e\n    \u003clabel for\u003d\"is_regex\"\u003eis regex\u003c/label\u003e",
+      "range": {
+        "startLine": 51,
+        "startChar": 10,
+        "endLine": 51,
+        "endChar": 67
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08ef7fe3_5cb704b6",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "End with \u0027/\u003e\u0027",
+      "range": {
+        "startLine": 52,
+        "startChar": 55,
+        "endLine": 52,
+        "endChar": 56
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c40b48c4_0286809a",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "Reduce one indent",
+      "range": {
+        "startLine": 60,
+        "startChar": 13,
+        "endLine": 65,
+        "endChar": 38
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99ae4fbb_4b0c619c",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "quote this",
+      "range": {
+        "startLine": 67,
+        "startChar": 35,
+        "endLine": 67,
+        "endChar": 40
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c01b56d_27eb76de",
+        "filename": "vndk/tools/source-deps-reviewer/test/example.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "Write an example that is much simple and only contains essential test data",
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "21bf7383_4d02f656",
+        "filename": "vndk/tools/source-deps-reviewer/test/haha/test.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T08:58:21Z",
+      "side": 1,
+      "message": "Write an example that is as small as possible and contain only essential data",
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
