@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "a6760345_b584f502",
+        "filename": "vndk/tools/source-deps-reviewer/README.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T10:04:59Z",
+      "side": 1,
+      "message": "Rename this file to README.md and use Markdown syntax.\n\n    # Source Deps Reviewer\n\n    ## Synopsis\n\n    ... some description of this tool ...\n\n    ## Installation\n\n    ### Dependencies\n\n    This tool depends on [codesearch](https://github.com/google/codesearch) to generate regular expression index, please install them with:\n\n    ```\n    go get github.com/google/codesearch/cmd/cindex\n    go get github.com/google/codesearch/cmd/csearch\n    ```\n\n    This tool also depends on several Python packages, please install them with:\n\n    ```\n    pip install -r requirements.txt\n    ```\n\n    ## Usage\n\n    ....\n\n\n    ## Testing\n\n    ```\n    python functional_test.py\n    ```",
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e192018_0c116b37",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T10:04:59Z",
+      "side": 1,
+      "message": "Usually, I will move this to \"tests\" directory and move most .c files in \"test\" directory to \"tests/testdata\"",
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6f60057d_98159c55",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 10
