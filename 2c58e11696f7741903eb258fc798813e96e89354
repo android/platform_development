@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "6f60057d_98159c55",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T09:59:58Z",
+      "side": 1,
+      "message": "You don\u0027t need semi-colon here",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 57,
+        "endChar": 2
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35840c09_f16ae07c",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T09:59:58Z",
+      "side": 1,
+      "message": "You don\u0027t need semi-colon here",
+      "range": {
+        "startLine": 77,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 2
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5362deab_20972e79",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 10
@@ -41,6 +87,29 @@
         "startChar": 0,
         "endLine": 148,
         "endChar": 7
+      },
+      "revId": "2c58e11696f7741903eb258fc798813e96e89354",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed5a17c4_89abb29c",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-07-24T09:59:58Z",
+      "side": 1,
+      "message": "You don\u0027t need semicolon here.",
+      "range": {
+        "startLine": 179,
+        "startChar": 1,
+        "endLine": 179,
+        "endChar": 2
       },
       "revId": "2c58e11696f7741903eb258fc798813e96e89354",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
