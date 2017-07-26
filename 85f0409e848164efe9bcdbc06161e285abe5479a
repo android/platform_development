@@ -163,6 +163,24 @@
     },
     {
       "key": {
+        "uuid": "cf550e77_a279a196",
+        "filename": "ide/clion/art/CMakeLists.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1083168
+      },
+      "writtenOn": "2017-07-26T04:48:25Z",
+      "side": 1,
+      "message": "This CL supplement CLion auto-generated files as a convenient way to group project. I don\u0027t see anybody using this file without using Soong CLion project generator.\n\nIt is a super project as advised here: https://android.googlesource.com/platform/build/soong/+/master/docs/clion.md#",
+      "parentUuid": "3c1cd260_aa322104",
+      "revId": "85f0409e848164efe9bcdbc06161e285abe5479a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7224bbda_b7855254",
         "filename": "ide/clion/art/CMakeLists.txt",
         "patchSetId": 1
