@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd6ab7cf_c4321156",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1061057
+      },
+      "writtenOn": "2017-07-27T09:09:45Z",
+      "side": 1,
+      "message": "Please keep the line length \u003c 100 characters.\nIt\u0027s easier to review without having to scroll the screen.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 213
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "916c979c_1659a6fd",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1061057
+      },
+      "writtenOn": "2017-07-27T09:09:45Z",
+      "side": 1,
+      "message": "remove the trailing spaces",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61149b79_805d96ce",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1061057
+      },
+      "writtenOn": "2017-07-27T09:09:45Z",
+      "side": 1,
+      "message": "What does \"Esc\" mean here?",
+      "range": {
+        "startLine": 36,
+        "startChar": 3,
+        "endLine": 36,
+        "endChar": 6
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a605ef47_b7ef84cb",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1061057
+      },
+      "writtenOn": "2017-07-27T09:09:45Z",
+      "side": 1,
+      "message": "to highlight what? please provide more description here.",
+      "range": {
+        "startLine": 37,
+        "startChar": 28,
+        "endLine": 37,
+        "endChar": 35
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
