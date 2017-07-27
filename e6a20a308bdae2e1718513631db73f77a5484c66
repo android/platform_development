@@ -91,6 +91,207 @@
       "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39b4e912_0cc4c237",
+        "filename": "vndk/tools/source-deps-reviewer/example.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "No trailing whitespace.",
+      "range": {
+        "startLine": 1,
+        "startChar": 54,
+        "endLine": 1,
+        "endChar": 55
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29ee0a33_19a40e1a",
+        "filename": "vndk/tools/source-deps-reviewer/example.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "Add a shebang at the first line of this file:\n\n    #!/bin/bash",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 7
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cdc9d2d4_3f894d85",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "Why do you need this?  Aren\u0027t built-in functions imported by default?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 26
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2a30dc0_333f7a48",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "Need some discussion",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 50
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87ae5567_0c2926bd",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "Enclose this file with:\n\n    (function () {\n      \u0027use strict\u0027;\n\n      // your original code here\n    })();\n\nFor more information, search \"IIFE Javascript\".  Also, check the \u0027use strict\u0027 and its meaning in Javascript.",
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a427613e_0fd86850",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "Try to pass `counter` as an argument.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a8eaddc_80ded034",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "Probably put the \u003clink\u003e tags together and the \u003cscript\u003e tags together.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 60
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8fb14bf_4aee1466",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "These can be extracted into a stylesheet .css file as well.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f7bba07_e7b4a004",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 11
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1018664
+      },
+      "writtenOn": "2017-07-27T13:14:38Z",
+      "side": 1,
+      "message": "Remove the surrounding \u003cp\u003e.  It is not conforming to put \u003cul\u003e in \u003cp\u003e.\n\nFYI. https://stackoverflow.com/questions/5681481/should-ol-ul-be-inside-p-or-outside",
+      "range": {
+        "startLine": 64,
+        "startChar": 8,
+        "endLine": 64,
+        "endChar": 42
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
