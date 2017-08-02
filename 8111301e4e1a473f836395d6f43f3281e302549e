@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bdea2287_6e3b57d3",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-02T18:05:13Z",
+      "side": 1,
+      "message": "these should probably be mapped by field offset and not by name. Mapping them by name could cause aliasing of two anonymous types in the same record.",
+      "range": {
+        "startLine": 197,
+        "startChar": 32,
+        "endLine": 197,
+        "endChar": 41
+      },
+      "revId": "8111301e4e1a473f836395d6f43f3281e302549e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
