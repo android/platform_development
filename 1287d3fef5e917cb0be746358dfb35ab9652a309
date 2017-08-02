@@ -1,0 +1,774 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fa73305_0518973a",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Distinguish our module from the standard modules.\n\n    from data_utils import *\n    from preprocess import prepare\n    from server import *\n\n    from flask import Flask, jsonify, render_template, request\n    from flask_testing import LiveServerTestCase, TestCase\n    from urllib.request import urlopen\n    import flask_testing\n    import os\n    import unittest",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 34
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f16b51d6_c3645757",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "This look strange.  I",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4b72eec_001423ca",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Break line and indent to \u0027(\u0027",
+      "range": {
+        "startLine": 26,
+        "startChar": 47,
+        "endLine": 26,
+        "endChar": 48
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04fa6faf_97e5959b",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Simplify the code by:\n\n    deps \u003d json.loads(response.json[\u0027deps\u0027])\n    codes \u003d json.loads(response.json[\u0027codes\u0027])\n\np.s. This also fixes the 80-column",
+      "range": {
+        "startLine": 34,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 91
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99d96d9d_3f5d1144",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove 4 spaces.",
+      "range": {
+        "startLine": 43,
+        "startChar": 12,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ff518b1_a802a14c",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove this indent",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 16
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ea7ddbc7_59472cde",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Please elaborate the subjects to be cautious about.",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 112,
+        "endChar": 25
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "05df5be8_14299015",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Break the line",
+      "range": {
+        "startLine": 132,
+        "startChar": 70,
+        "endLine": 132,
+        "endChar": 71
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "442bef1d_4d4dcd4b",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 137,
+        "startChar": 68,
+        "endLine": 137,
+        "endChar": 69
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c8dcf87_a57f65ca",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 137,
+        "startChar": 12,
+        "endLine": 137,
+        "endChar": 13
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4520a5ea_1bc418cb",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Break the line",
+      "range": {
+        "startLine": 144,
+        "startChar": 70,
+        "endLine": 144,
+        "endChar": 71
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f98fcf01_e25ecbf3",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 150,
+        "startChar": 16,
+        "endLine": 150,
+        "endChar": 17
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01831f52_6fd626d3",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 150,
+        "startChar": 72,
+        "endLine": 150,
+        "endChar": 73
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "74a000c7_b0cac775",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Distinguish our module from standard module or installed packages:\n\n    from data_utils import *\n    from preprocess import add_pattern, prepare\n\n    from flask import Flask, jsonify, render_template, request\n    import argparse\n    import bisect\n    import hashlib\n    import json\n    import os\n    import subprocess\n    import sys",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "348f0b42_07a4c6a8",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Use `default\u003dTrue` instead",
+      "range": {
+        "startLine": 97,
+        "startChar": 27,
+        "endLine": 97,
+        "endChar": 40
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ff51fa2_83703a25",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "I prefer to follow the `input()` convention, and use `input_yes_no()`",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 16
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83af5053_946da40c",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Use single quotes in this function",
+      "range": {
+        "startLine": 98,
+        "startChar": 13,
+        "endLine": 98,
+        "endChar": 14
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b222369_7a227011",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Add:\n\n    \u0027\u0027: default\n\nFor default value",
+      "range": {
+        "startLine": 98,
+        "startChar": 60,
+        "endLine": 98,
+        "endChar": 61
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "867865ca_3ade6c0b",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Should consider different defaults:\n\n    prompt \u003d \u0027 [Y/n] \u0027 if default else \u0027 [y/N] \u0027",
+      "range": {
+        "startLine": 99,
+        "startChar": 4,
+        "endLine": 99,
+        "endChar": 22
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5614787_e8c56eee",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Probably need flush() as well:\n\n    sys.stdout.flush()",
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7845c82e_4f5df21f",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Usually, I would prefer to declare the Python 2/3 shim in the global scope:\n\n    if sys.version_info \u003c (3,):\n        input \u003d raw_input\n\nAnd only use `input()` (the Python 3 API) in the source code:\n\n    choice \u003d input().lower().strip()",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 36
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ba00ba3_9cc128d7",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "I would simply repeat the question:\n\n    try:\n        return valid[choice]\n    except KeyError:\n        continue",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 50
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee47954e_f285f88c",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Use the same convention:\n\n    --is-regex",
+      "range": {
+        "startLine": 119,
+        "startChar": 25,
+        "endLine": 119,
+        "endChar": 34
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0e18467_7e067380",
+        "filename": "vndk/tools/source-deps-reviewer/static/css/main.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Add an empty line here",
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f794e6a_edf14379",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Add spaces around +",
+      "range": {
+        "startLine": 30,
+        "startChar": 79,
+        "endLine": 30,
+        "endChar": 80
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e9e2d31_90db0dbf",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Add extra indention.",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 7
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de541fc3_cc344524",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Add a space around +",
+      "range": {
+        "startLine": 36,
+        "startChar": 44,
+        "endLine": 36,
+        "endChar": 45
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c9a3482_12a50680",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Space around +",
+      "range": {
+        "startLine": 37,
+        "startChar": 60,
+        "endLine": 37,
+        "endChar": 61
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4d07059_287bfce5",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Add extra indention",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 14
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb143dbc_74e724d2",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 106,
+        "startChar": 58,
+        "endLine": 106,
+        "endChar": 59
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65c6b3f0_4f375317",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 106,
+        "startChar": 31,
+        "endLine": 106,
+        "endChar": 32
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "916ca5dc_ee2f214b",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove debug lines",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 26
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "420e9371_51cd62ec",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove debug lines",
+      "range": {
+        "startLine": 217,
+        "startChar": 4,
+        "endLine": 217,
+        "endChar": 41
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26218be9_579e60af",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:40:59Z",
+      "side": 1,
+      "message": "Remove debug lines",
+      "range": {
+        "startLine": 230,
+        "startChar": 4,
+        "endLine": 230,
+        "endChar": 24
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
