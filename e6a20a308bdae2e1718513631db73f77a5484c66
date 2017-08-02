@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "ad87b25d_1603e9b9",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T05:30:51Z",
+      "side": 1,
+      "message": "I\u0027ll remove this.\nI decide to move it to the section Installation and Dependencies.",
+      "parentUuid": "61149b79_805d96ce",
+      "range": {
+        "startLine": 36,
+        "startChar": 3,
+        "endLine": 36,
+        "endChar": 6
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a605ef47_b7ef84cb",
         "filename": "vndk/tools/source-deps-reviewer/README.md",
         "patchSetId": 11
@@ -163,6 +187,30 @@
     },
     {
       "key": {
+        "uuid": "8b6771a0_5e95dea9",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T05:30:51Z",
+      "side": 1,
+      "message": "I did this for the compatability of python2.\npython2 can\u0027t work without this line.",
+      "parentUuid": "cdc9d2d4_3f894d85",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 26
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2a30dc0_333f7a48",
         "filename": "vndk/tools/source-deps-reviewer/server.py",
         "patchSetId": 11
@@ -174,6 +222,30 @@
       "writtenOn": "2017-07-27T13:14:38Z",
       "side": 1,
       "message": "Need some discussion",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 50
+      },
+      "revId": "e6a20a308bdae2e1718513631db73f77a5484c66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fb7da2d_cb2761bb",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T05:30:51Z",
+      "side": 1,
+      "message": "I could just rewrite it on my own.\nWill that be better?\nOr I could just ask the user to install the package prompt ?",
+      "parentUuid": "e2a30dc0_333f7a48",
       "range": {
         "startLine": 102,
         "startChar": 0,
