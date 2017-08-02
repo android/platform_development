@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "effcb5e3_28afaac8",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83b5afc8_eb721a0e",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 3
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7006deb_f0036a98",
         "filename": "vndk/tools/source-deps-reviewer/README.md",
         "patchSetId": 17
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add an empty line",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 4
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "527fc82c_5f13abed",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7006deb_f0036a98",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "2f66c5ac_a5578c63",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f96beb5d_e0a00408",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b565eed6_b32577a8",
         "filename": "vndk/tools/source-deps-reviewer/README.md",
         "patchSetId": 17
@@ -82,6 +154,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "No indents",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 2
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "260bb1c0_dc8c7207",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b565eed6_b32577a8",
       "range": {
         "startLine": 13,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "4e3fe19a_668aa172",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "034fcb50_255b3b00",
+      "range": {
+        "startLine": 30,
+        "startChar": 11,
+        "endLine": 30,
+        "endChar": 20
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bdc25ab8_707f4f84",
         "filename": "vndk/tools/source-deps-reviewer/README.md",
         "patchSetId": 17
@@ -128,6 +248,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Use backtick:\n\n    `config.py`",
+      "range": {
+        "startLine": 33,
+        "startChar": 40,
+        "endLine": 33,
+        "endChar": 62
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61622479_509c597d",
+        "filename": "vndk/tools/source-deps-reviewer/README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdc25ab8_707f4f84",
       "range": {
         "startLine": 33,
         "startChar": 40,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "deb1270f_2018e2f0",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f98b51a_43b67972",
+      "range": {
+        "startLine": 26,
+        "startChar": 80,
+        "endLine": 26,
+        "endChar": 81
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9d0f16a0_e723bb55",
         "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
         "patchSetId": 17
@@ -174,6 +342,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "80-column",
+      "range": {
+        "startLine": 33,
+        "startChar": 80,
+        "endLine": 33,
+        "endChar": 82
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2d655ad_5144a61a",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d0f16a0_e723bb55",
       "range": {
         "startLine": 33,
         "startChar": 80,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "970c988a_4bc3eb75",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c70e54_ad186db0",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ebb5fa9d_f1534599",
         "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
         "patchSetId": 17
@@ -220,6 +436,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Dead code?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a18550cb_1c34c279",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebb5fa9d_f1534599",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "13781e5d_f08808c6",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df4c2467_25f4b0fa",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "846d20e6_2d278ca3",
         "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
         "patchSetId": 17
@@ -266,6 +530,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Dead code?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 42
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "408e9e40_eeb04b3f",
+        "filename": "vndk/tools/source-deps-reviewer/preprocess.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "846d20e6_2d278ca3",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -301,6 +589,30 @@
     },
     {
       "key": {
+        "uuid": "e268a3d4_9ee6a43e",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa989d00_6cc27fec",
+      "range": {
+        "startLine": 29,
+        "startChar": 26,
+        "endLine": 29,
+        "endChar": 29
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d2e28ff_6eac2c91",
         "filename": "vndk/tools/source-deps-reviewer/server.py",
         "patchSetId": 17
@@ -312,6 +624,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Remove",
+      "range": {
+        "startLine": 30,
+        "startChar": 20,
+        "endLine": 30,
+        "endChar": 21
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e445c963_edc1698a",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d2e28ff_6eac2c91",
       "range": {
         "startLine": 30,
         "startChar": 20,
@@ -347,6 +683,30 @@
     },
     {
       "key": {
+        "uuid": "adb362ad_8b2be57e",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c24ea17f_f3159faa",
+      "range": {
+        "startLine": 37,
+        "startChar": 11,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df2176e3_520754ab",
         "filename": "vndk/tools/source-deps-reviewer/server.py",
         "patchSetId": 17
@@ -358,6 +718,30 @@
       "writtenOn": "2017-08-02T06:31:30Z",
       "side": 1,
       "message": "In Python, it is idiomatic to treat zero-length list as falsy value.  In other words, this code can be rewritten as:\n\n    if item[0] or item[1]:",
+      "range": {
+        "startLine": 39,
+        "startChar": 11,
+        "endLine": 39,
+        "endChar": 53
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "53ef83a0_6d4a4e8c",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df2176e3_520754ab",
       "range": {
         "startLine": 39,
         "startChar": 11,
@@ -416,6 +800,54 @@
     },
     {
       "key": {
+        "uuid": "e3c34502_8c2b2d00",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "364f8bbd_91fb56f5",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed0b12d8_288ff0bb",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34983377_adfcb9f1",
+      "range": {
+        "startLine": 40,
+        "startChar": 39,
+        "endLine": 40,
+        "endChar": 40
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e18fde1c_6ae894c0",
         "filename": "vndk/tools/source-deps-reviewer/server.py",
         "patchSetId": 17
@@ -427,6 +859,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Space between , and c",
+      "range": {
+        "startLine": 59,
+        "startChar": 40,
+        "endLine": 59,
+        "endChar": 42
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fab9663_0b92a8f6",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e18fde1c_6ae894c0",
       "range": {
         "startLine": 59,
         "startChar": 40,
@@ -462,6 +918,30 @@
     },
     {
       "key": {
+        "uuid": "89125c68_5f68cbc2",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a76fe6e_d7f0bf69",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 16
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f7abd0f_1085ed70",
         "filename": "vndk/tools/source-deps-reviewer/server.py",
         "patchSetId": 17
@@ -473,6 +953,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add \u0027\u0027 as the default case:\n\n    valid \u003d {\u0027yes\u0027: True, \u0027y\u0027: True, \u0027no\u0027: False, \u0027n\u0027: False, \u0027\u0027: default}",
+      "range": {
+        "startLine": 103,
+        "startChar": 60,
+        "endLine": 103,
+        "endChar": 61
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f79b8e4d_c25f217b",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f7abd0f_1085ed70",
       "range": {
         "startLine": 103,
         "startChar": 60,
@@ -508,6 +1012,30 @@
     },
     {
       "key": {
+        "uuid": "1e603c97_371d4cdc",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86813d75_c9526d13",
+      "range": {
+        "startLine": 110,
+        "startChar": 8,
+        "endLine": 115,
+        "endChar": 20
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "91561522_967925a9",
         "filename": "vndk/tools/source-deps-reviewer/server.py",
         "patchSetId": 17
@@ -519,6 +1047,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "One more -",
+      "range": {
+        "startLine": 121,
+        "startChar": 25,
+        "endLine": 121,
+        "endChar": 26
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6235267d_0de4444d",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91561522_967925a9",
       "range": {
         "startLine": 121,
         "startChar": 25,
@@ -554,6 +1106,30 @@
     },
     {
       "key": {
+        "uuid": "ed8cf251_04aee024",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f08028d8_f80bcfe1",
+      "range": {
+        "startLine": 127,
+        "startChar": 18,
+        "endLine": 127,
+        "endChar": 30
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12203af5_0dd2fa39",
         "filename": "vndk/tools/source-deps-reviewer/static/css/main.css",
         "patchSetId": 17
@@ -565,6 +1141,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between 4 and {",
+      "range": {
+        "startLine": 1,
+        "startChar": 4,
+        "endLine": 1,
+        "endChar": 6
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3b264ac_4670472b",
+        "filename": "vndk/tools/source-deps-reviewer/static/css/main.css",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12203af5_0dd2fa39",
       "range": {
         "startLine": 1,
         "startChar": 4,
@@ -600,6 +1200,30 @@
     },
     {
       "key": {
+        "uuid": "035e4a8a_8c77a70c",
+        "filename": "vndk/tools/source-deps-reviewer/static/css/main.css",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "357f2f52_30826aa8",
+      "range": {
+        "startLine": 2,
+        "startChar": 8,
+        "endLine": 2,
+        "endChar": 10
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5decc39_0d388398",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -611,6 +1235,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between ) and {",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cdad31a9_c9b5357f",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5decc39_0d388398",
       "range": {
         "startLine": 7,
         "startChar": 22,
@@ -646,6 +1294,30 @@
     },
     {
       "key": {
+        "uuid": "ec78363f_bc9bccd1",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14c7c325_2a91e179",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 11
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fe8cf296_ed9451fa",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -657,6 +1329,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "No line breaks",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3076024_67dea9ae",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe8cf296_ed9451fa",
       "range": {
         "startLine": 14,
         "startChar": 4,
@@ -692,6 +1388,30 @@
     },
     {
       "key": {
+        "uuid": "ad1d6d8d_f1b10742",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47313b53_e1c0f9b7",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 10
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dbf5e32b_a796d9da",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -703,6 +1423,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Use jQuery:\n\n    $(\"#selectedtext\").val(txt)",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 44
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ea6cbc3_41c1849a",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbf5e32b_a796d9da",
       "range": {
         "startLine": 21,
         "startChar": 4,
@@ -738,6 +1482,30 @@
     },
     {
       "key": {
+        "uuid": "7d756318_3b0a6e6d",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3a97de_2c56a00f",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cbb0dc44_1a89e6e3",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -749,6 +1517,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between ) and {",
+      "range": {
+        "startLine": 28,
+        "startChar": 29,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31b9a3b1_a1b1992f",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbb0dc44_1a89e6e3",
       "range": {
         "startLine": 28,
         "startChar": 29,
@@ -784,6 +1576,30 @@
     },
     {
       "key": {
+        "uuid": "0abc8d10_fe49d7b7",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a82b9e9f_86d47bc3",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 29
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e2e9d17_f147d4e6",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -795,6 +1611,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between ) and {",
+      "range": {
+        "startLine": 35,
+        "startChar": 29,
+        "endLine": 35,
+        "endChar": 31
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e72c3d3f_e49760e1",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e2e9d17_f147d4e6",
       "range": {
         "startLine": 35,
         "startChar": 29,
@@ -830,6 +1670,30 @@
     },
     {
       "key": {
+        "uuid": "a46fe658_5a625060",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7feb1c_17ea5b62",
+      "range": {
+        "startLine": 40,
+        "startChar": 30,
+        "endLine": 40,
+        "endChar": 32
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "68a9b92e_a18c7d24",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -841,6 +1705,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "No space between function name and \u0027(\u0027 and add space between ) and {\n\n    enterTask() {",
+      "range": {
+        "startLine": 54,
+        "startChar": 11,
+        "endLine": 54,
+        "endChar": 24
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b743b693_55b764da",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68a9b92e_a18c7d24",
       "range": {
         "startLine": 54,
         "startChar": 11,
@@ -876,6 +1764,30 @@
     },
     {
       "key": {
+        "uuid": "402e57b4_0a150c65",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96a288ac_486036b5",
+      "range": {
+        "startLine": 64,
+        "startChar": 23,
+        "endLine": 64,
+        "endChar": 25
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8c997a3c_dbcae416",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -887,6 +1799,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between ) and {",
+      "range": {
+        "startLine": 78,
+        "startChar": 21,
+        "endLine": 78,
+        "endChar": 23
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "afdfdbf0_b7b861ac",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c997a3c_dbcae416",
       "range": {
         "startLine": 78,
         "startChar": 21,
@@ -922,6 +1858,30 @@
     },
     {
       "key": {
+        "uuid": "2f6a4be5_c17f9a39",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bdd0360_c6748388",
+      "range": {
+        "startLine": 88,
+        "startChar": 24,
+        "endLine": 88,
+        "endChar": 26
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "40e8e05f_98e36edc",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -933,6 +1893,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between ) and {",
+      "range": {
+        "startLine": 104,
+        "startChar": 18,
+        "endLine": 104,
+        "endChar": 20
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3890b6eb_c21a6f2f",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40e8e05f_98e36edc",
       "range": {
         "startLine": 104,
         "startChar": 18,
@@ -968,6 +1952,30 @@
     },
     {
       "key": {
+        "uuid": "6aa77341_90da5c00",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d0df6e7_226e270f",
+      "range": {
+        "startLine": 106,
+        "startChar": 7,
+        "endLine": 106,
+        "endChar": 23
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "060d70d5_64180e71",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -979,6 +1987,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between ) and {",
+      "range": {
+        "startLine": 123,
+        "startChar": 19,
+        "endLine": 123,
+        "endChar": 21
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "593b89eb_f460f6e3",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "060d70d5_64180e71",
       "range": {
         "startLine": 123,
         "startChar": 19,
@@ -1037,6 +2069,54 @@
     },
     {
       "key": {
+        "uuid": "8c7ca0d9_85ca0b33",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73288382_9a6eac31",
+      "range": {
+        "startLine": 129,
+        "startChar": 39,
+        "endLine": 129,
+        "endChar": 40
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f8ba135_3656e4fb",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc78899f_b2f5bb2f",
+      "range": {
+        "startLine": 129,
+        "startChar": 18,
+        "endLine": 129,
+        "endChar": 19
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "77742a05_0610cf20",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1076,6 +2156,54 @@
         "startChar": 19,
         "endLine": 135,
         "endChar": 20
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "687384dc_d8ae97f7",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5932a2fa_dc637641",
+      "range": {
+        "startLine": 135,
+        "startChar": 19,
+        "endLine": 135,
+        "endChar": 20
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7093699a_05b89b2d",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77742a05_0610cf20",
+      "range": {
+        "startLine": 135,
+        "startChar": 41,
+        "endLine": 135,
+        "endChar": 42
       },
       "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
@@ -1129,6 +2257,54 @@
     },
     {
       "key": {
+        "uuid": "2f1bd028_655284b0",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8739580b_9ad91d42",
+      "range": {
+        "startLine": 139,
+        "startChar": 36,
+        "endLine": 139,
+        "endChar": 37
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97c69ad7_bb9d4c08",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77226d43_4c8c4fce",
+      "range": {
+        "startLine": 139,
+        "startChar": 8,
+        "endLine": 139,
+        "endChar": 9
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6640c5d0_4bf456ad",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1140,6 +2316,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between function and (\n\n    function (data)",
+      "range": {
+        "startLine": 146,
+        "startChar": 7,
+        "endLine": 146,
+        "endChar": 21
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c92cb81_d43ad727",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6640c5d0_4bf456ad",
       "range": {
         "startLine": 146,
         "startChar": 7,
@@ -1175,6 +2375,30 @@
     },
     {
       "key": {
+        "uuid": "0267b917_2f588c91",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13e8c9c9_741337b9",
+      "range": {
+        "startLine": 152,
+        "startChar": 31,
+        "endLine": 152,
+        "endChar": 33
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "24c0a442_a038e213",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1186,6 +2410,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between function and (",
+      "range": {
+        "startLine": 156,
+        "startChar": 7,
+        "endLine": 156,
+        "endChar": 21
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d892ab22_d65b1ffd",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24c0a442_a038e213",
       "range": {
         "startLine": 156,
         "startChar": 7,
@@ -1221,6 +2469,30 @@
     },
     {
       "key": {
+        "uuid": "a85bdf2c_20fce54f",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "797e8e75_38025f5f",
+      "range": {
+        "startLine": 163,
+        "startChar": 35,
+        "endLine": 163,
+        "endChar": 37
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f72ff525_ad8b1d83",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1232,6 +2504,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between ) and {",
+      "range": {
+        "startLine": 167,
+        "startChar": 36,
+        "endLine": 167,
+        "endChar": 38
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab896320_5fabe327",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f72ff525_ad8b1d83",
       "range": {
         "startLine": 167,
         "startChar": 36,
@@ -1267,6 +2563,30 @@
     },
     {
       "key": {
+        "uuid": "86b8f633_01ed9ae7",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4272a701_7286e4f4",
+      "range": {
+        "startLine": 171,
+        "startChar": 30,
+        "endLine": 171,
+        "endChar": 32
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3e112f15_24da6794",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1290,6 +2610,30 @@
     },
     {
       "key": {
+        "uuid": "403b6a1f_a5094c68",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e112f15_24da6794",
+      "range": {
+        "startLine": 175,
+        "startChar": 24,
+        "endLine": 175,
+        "endChar": 26
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b66ae229_c78a879b",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1301,6 +2645,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add a space between f and (",
+      "range": {
+        "startLine": 179,
+        "startChar": 5,
+        "endLine": 179,
+        "endChar": 7
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0408e491_d3a99368",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b66ae229_c78a879b",
       "range": {
         "startLine": 179,
         "startChar": 5,
@@ -1359,6 +2727,54 @@
     },
     {
       "key": {
+        "uuid": "f0cee29e_1278a13b",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c26e9c3a_2f9799a5",
+      "range": {
+        "startLine": 185,
+        "startChar": 19,
+        "endLine": 185,
+        "endChar": 24
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aef26c7d_db224d48",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82c8e620_87822608",
+      "range": {
+        "startLine": 185,
+        "startChar": 24,
+        "endLine": 185,
+        "endChar": 26
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef1346f0_5aef8dee",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1370,6 +2786,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Add space between function and (",
+      "range": {
+        "startLine": 196,
+        "startChar": 7,
+        "endLine": 196,
+        "endChar": 21
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "306d6677_4b44ab7a",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef1346f0_5aef8dee",
       "range": {
         "startLine": 196,
         "startChar": 7,
@@ -1405,6 +2845,30 @@
     },
     {
       "key": {
+        "uuid": "2a138833_b01547d8",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "329e6ac8_adfce2f5",
+      "range": {
+        "startLine": 233,
+        "startChar": 7,
+        "endLine": 233,
+        "endChar": 21
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2df2f605_eb8455c9",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 17
@@ -1422,6 +2886,24 @@
     },
     {
       "key": {
+        "uuid": "85ea3d48_11f6b93e",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2df2f605_eb8455c9",
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b096749_aa71298a",
         "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
         "patchSetId": 17
@@ -1433,6 +2915,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Move rel\u003d\"stylesheet\" before href attribute.",
+      "range": {
+        "startLine": 8,
+        "startChar": 41,
+        "endLine": 8,
+        "endChar": 60
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97c88386_609bf561",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 17
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b096749_aa71298a",
       "range": {
         "startLine": 8,
         "startChar": 41,
@@ -1491,6 +2997,54 @@
     },
     {
       "key": {
+        "uuid": "6f8da7de_000d9748",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 17
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8545477f_c4abe021",
+      "range": {
+        "startLine": 54,
+        "startChar": 29,
+        "endLine": 54,
+        "endChar": 42
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f428f89_96299633",
+        "filename": "vndk/tools/source-deps-reviewer/templates/index.html",
+        "patchSetId": 17
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fddfeb6e_75b01a3c",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 10
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a1ed8483_5179a79c",
         "filename": "vndk/tools/source-deps-reviewer/test/dlopen/test.c",
         "patchSetId": 17
@@ -1502,6 +3056,30 @@
       "writtenOn": "2017-08-02T06:22:22Z",
       "side": 1,
       "message": "Remove",
+      "range": {
+        "startLine": 10,
+        "startChar": 19,
+        "endLine": 10,
+        "endChar": 20
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e8978689_c27e56cc",
+        "filename": "vndk/tools/source-deps-reviewer/test/dlopen/test.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-02T10:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1ed8483_5179a79c",
       "range": {
         "startLine": 10,
         "startChar": 19,
