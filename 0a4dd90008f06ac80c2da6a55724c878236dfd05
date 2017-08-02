@@ -347,6 +347,75 @@
     },
     {
       "key": {
+        "uuid": "df2176e3_520754ab",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T06:31:30Z",
+      "side": 1,
+      "message": "In Python, it is idiomatic to treat zero-length list as falsy value.  In other words, this code can be rewritten as:\n\n    if item[0] or item[1]:",
+      "range": {
+        "startLine": 39,
+        "startChar": 11,
+        "endLine": 39,
+        "endChar": 53
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "34983377_adfcb9f1",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T06:31:30Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 40,
+        "startChar": 39,
+        "endLine": 40,
+        "endChar": 40
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "364f8bbd_91fb56f5",
+        "filename": "vndk/tools/source-deps-reviewer/server.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T06:31:30Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "0a4dd90008f06ac80c2da6a55724c878236dfd05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e18fde1c_6ae894c0",
         "filename": "vndk/tools/source-deps-reviewer/server.py",
         "patchSetId": 17
