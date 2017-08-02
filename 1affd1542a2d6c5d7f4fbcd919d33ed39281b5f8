@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b76a0067_375a8a05",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T10:58:37Z",
+      "side": 1,
+      "message": "Incorrect element ID.  This should be:\n\n    $(\u0027#selected_text\u0027)",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 22
+      },
+      "revId": "1affd1542a2d6c5d7f4fbcd919d33ed39281b5f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
