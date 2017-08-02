@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "b262b4a0_2725771a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:44:03Z",
+      "side": 1,
+      "message": "You don\u0027t need change logs in between the patch sets.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 84
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "646f4567_74ae7f2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-02T03:44:03Z",
+      "side": 1,
+      "message": "Test: ./functional_tests.py",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "1287d3fef5e917cb0be746358dfb35ab9652a309",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7fa73305_0518973a",
         "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
         "patchSetId": 13
