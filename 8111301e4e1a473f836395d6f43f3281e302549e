@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "b928a20a_87ba55c7",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-03T23:14:30Z",
+      "side": 1,
+      "message": "This should also compare between type interpretations. For eg: float and int could have the same sizes, but its still an ABI breakage.",
+      "range": {
+        "startLine": 353,
+        "startChar": 0,
+        "endLine": 353,
+        "endChar": 47
+      },
+      "revId": "8111301e4e1a473f836395d6f43f3281e302549e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98131e85_b804ac6f",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 3
