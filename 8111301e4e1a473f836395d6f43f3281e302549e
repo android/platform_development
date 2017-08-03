@@ -22,6 +22,52 @@
       "revId": "8111301e4e1a473f836395d6f43f3281e302549e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98131e85_b804ac6f",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-03T22:23:26Z",
+      "side": 1,
+      "message": "\"this\" pointer needs to be added to this, since otherwise, records could stay \"unreferenced\" if no function explicitly takes a type directly / indirectly referring to the record.",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 50
+      },
+      "revId": "8111301e4e1a473f836395d6f43f3281e302549e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "586ce766_20db9ab9",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_protobuf.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-03T22:23:26Z",
+      "side": 1,
+      "message": "new_vtable",
+      "range": {
+        "startLine": 619,
+        "startChar": 34,
+        "endLine": 619,
+        "endChar": 45
+      },
+      "revId": "8111301e4e1a473f836395d6f43f3281e302549e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
