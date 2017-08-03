@@ -14,6 +14,11 @@
 // limitations under the License.
 //
 
+
+subdirs = [
+    "tests",
+]
+
 cc_defaults {
     name: "header-checker-defaults",
 
