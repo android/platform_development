@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "21339ed1_3c2aee20",
+        "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-03T02:31:43Z",
+      "side": 1,
+      "message": "You can assume window.getSelection() is always available.  It is implemented by most browsers:\n\n    let txt \u003d window.getSelection();",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 5
+      },
+      "revId": "1affd1542a2d6c5d7f4fbcd919d33ed39281b5f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b76a0067_375a8a05",
         "filename": "vndk/tools/source-deps-reviewer/static/js/main.js",
         "patchSetId": 19
