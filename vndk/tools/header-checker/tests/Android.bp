@@ -1,0 +1,144 @@
+//
+// Copyright (C) 2016 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+cc_library {
+    name: "libc_and_cpp",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    export_include_dirs: ["integration/c_and_cpp/include"],
+    srcs: [
+        "integration/c_and_cpp/*.cpp",
+        "integration/c_and_cpp/*.c"
+    ],
+}
+
+cc_library {
+    name: "libc_and_cpp_whole_static",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    whole_static_libs: ["libc_and_cpp"],
+    export_include_dirs: ["integration/c_and_cpp/include"],
+}
+
+cc_library {
+    name: "libc_and_cpp_without_Cfunction",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    srcs: [
+		   "integration/c_and_cpp/*.cpp",
+		],
+    export_include_dirs: ["integration/c_and_cpp/include"],
+}
+
+cc_library {
+    name: "libc_and_cpp_with_unused_struct",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    srcs: [
+		   "integration/c_and_cpp/*.cpp",
+		   "integration/c_and_cpp/*.c",
+		],
+    export_include_dirs: ["integration/c_and_cpp/include"],
+		cflags : [
+		   "-DINCLUDE_UNUSED_STRUCTS=1",
+		],
+}
+
+cc_library {
+    name: "libgolden_cpp",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    srcs: [
+		   "integration/cpp/gold/*.cpp",
+		],
+		cflags : [
+       "-DGOLDEN_VTABLE_DIFF=0",
+       "-DGOLDEN_MEMBER_DIFF=0",
+       "-DGOLDEN_ENUM_EXTENSION=0",
+       "-DGOLDEN_ENUM_DIFF=0",
+    ],
+    export_include_dirs: ["integration/cpp/gold/include"],
+}
+
+cc_library {
+    name: "libgolden_cpp_vtable_diff",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    srcs: [
+		   "integration/cpp/gold/*.cpp",
+		],
+		cflags : [
+       "-DGOLDEN_VTABLE_DIFF=1",
+    ],
+    export_include_dirs: ["integration/cpp/gold/include"],
+}
+
+cc_library {
+    name: "libgolden_cpp_member_diff",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    srcs: [
+		   "integration/cpp/gold/*.cpp",
+		],
+		cflags : [
+       "-DGOLDEN_MEMBER_DIFF=1",
+    ],
+    export_include_dirs: ["integration/cpp/gold/include"],
+}
+
+cc_library {
+    name: "libgolden_cpp_enum_extended",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    srcs: [
+		   "integration/cpp/gold/*.cpp",
+		],
+		cflags : [
+       "-DGOLDEN_ENUM_EXTENSION=1",
+    ],
+    export_include_dirs: ["integration/cpp/gold/include"],
+}
+
+cc_library {
+    name: "libgolden_cpp_enum_diff",
+		vendor_available: true,
+		vndk: {
+				enabled: true,
+		},
+    srcs: [
+		   "integration/cpp/gold/*.cpp",
+		],
+		cflags : [
+       "-DGOLDEN_ENUM_DIFF=1",
+    ],
+    export_include_dirs: ["integration/cpp/gold/include"],
+}
