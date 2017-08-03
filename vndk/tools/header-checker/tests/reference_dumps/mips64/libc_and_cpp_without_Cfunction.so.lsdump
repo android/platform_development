@@ -1,0 +1,745 @@
+record_types {
+  type_info {
+    name: "Foo"
+    size: 16
+    alignment: 8
+    referenced_type: "Foo"
+    source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_and_cpp.h"
+    linker_set_key: "Foo"
+  }
+  fields {
+    referenced_type: "int *"
+    field_offset: 0
+    field_name: "a_"
+    access: private_access
+  }
+  fields {
+    referenced_type: "int *"
+    field_offset: 64
+    field_name: "b_"
+    access: private_access
+  }
+  access: public_access
+}
+pointer_types {
+  type_info {
+    name: "int *"
+    size: 8
+    alignment: 8
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "Foo *"
+    size: 8
+    alignment: 8
+    referenced_type: "Foo"
+    source_file: ""
+    linker_set_key: "Foo *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const char *"
+    size: 8
+    alignment: 8
+    referenced_type: "const char"
+    source_file: ""
+    linker_set_key: "const char *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unsigned int *"
+    size: 8
+    alignment: 8
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unsigned long long *"
+    size: 8
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void *"
+    size: 8
+    alignment: 8
+    referenced_type: "void"
+    source_file: ""
+    linker_set_key: "void *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(int)"
+    size: 8
+    alignment: 8
+    referenced_type: "void (int)"
+    source_file: ""
+    linker_set_key: "void (*)(int)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(sigval)"
+    size: 8
+    alignment: 8
+    referenced_type: "void (sigval)"
+    source_file: ""
+    linker_set_key: "void (*)(sigval)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "ucontext *"
+    size: 8
+    alignment: 8
+    referenced_type: "ucontext"
+    source_file: ""
+    linker_set_key: "ucontext *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(int, siginfo *, void *)"
+    size: 8
+    alignment: 8
+    referenced_type: "void (int, siginfo *, void *)"
+    source_file: ""
+    linker_set_key: "void (*)(int, siginfo *, void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(void)"
+    size: 8
+    alignment: 8
+    referenced_type: "void (void)"
+    source_file: ""
+    linker_set_key: "void (*)(void)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const sigaction *"
+    size: 8
+    alignment: 8
+    referenced_type: "const sigaction"
+    source_file: ""
+    linker_set_key: "const sigaction *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "sigaction *"
+    size: 8
+    alignment: 8
+    referenced_type: "sigaction"
+    source_file: ""
+    linker_set_key: "sigaction *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "sigset_t *"
+    size: 8
+    alignment: 8
+    referenced_type: "sigset_t"
+    source_file: ""
+    linker_set_key: "sigset_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const sigset_t *"
+    size: 8
+    alignment: 8
+    referenced_type: "const sigset_t"
+    source_file: ""
+    linker_set_key: "const sigset_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const sigaltstack *"
+    size: 8
+    alignment: 8
+    referenced_type: "const sigaltstack"
+    source_file: ""
+    linker_set_key: "const sigaltstack *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "sigaltstack *"
+    size: 8
+    alignment: 8
+    referenced_type: "sigaltstack"
+    source_file: ""
+    linker_set_key: "sigaltstack *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const siginfo *"
+    size: 8
+    alignment: 8
+    referenced_type: "const siginfo"
+    source_file: ""
+    linker_set_key: "const siginfo *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const void *"
+    size: 8
+    alignment: 8
+    referenced_type: "const void"
+    source_file: ""
+    linker_set_key: "const void *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "char *"
+    size: 8
+    alignment: 8
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "char **"
+    size: 8
+    alignment: 8
+    referenced_type: "char *"
+    source_file: ""
+    linker_set_key: "char **"
+  }
+}
+pointer_types {
+  type_info {
+    name: "__locale_t *"
+    size: 8
+    alignment: 8
+    referenced_type: "__locale_t"
+    source_file: ""
+    linker_set_key: "__locale_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "fd_set *"
+    size: 8
+    alignment: 8
+    referenced_type: "fd_set"
+    source_file: ""
+    linker_set_key: "fd_set *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "timeval *"
+    size: 8
+    alignment: 8
+    referenced_type: "timeval"
+    source_file: ""
+    linker_set_key: "timeval *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const timespec *"
+    size: 8
+    alignment: 8
+    referenced_type: "const timespec"
+    source_file: ""
+    linker_set_key: "const timespec *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "char *const *"
+    size: 8
+    alignment: 8
+    referenced_type: "char *const"
+    source_file: ""
+    linker_set_key: "char *const *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const unsigned int *"
+    size: 8
+    alignment: 8
+    referenced_type: "const unsigned int"
+    source_file: ""
+    linker_set_key: "const unsigned int *"
+  }
+}
+builtin_types {
+  type_info {
+    name: "int"
+    size: 4
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "void"
+    size: 0
+    alignment: 0
+    referenced_type: "void"
+    source_file: ""
+    linker_set_key: "void"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "long long"
+    size: 8
+    alignment: 8
+    referenced_type: "long long"
+    source_file: ""
+    linker_set_key: "long long"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "long double"
+    size: 16
+    alignment: 16
+    referenced_type: "long double"
+    source_file: ""
+    linker_set_key: "long double"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "unsigned int"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "unsigned long long"
+    size: 8
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "float"
+    size: 4
+    alignment: 4
+    referenced_type: "float"
+    source_file: ""
+    linker_set_key: "float"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "double"
+    size: 8
+    alignment: 8
+    referenced_type: "double"
+    source_file: ""
+    linker_set_key: "double"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "char"
+    size: 1
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "unsigned long"
+    size: 8
+    alignment: 8
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "long"
+    size: 8
+    alignment: 8
+    referenced_type: "long"
+    source_file: ""
+    linker_set_key: "long"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "short"
+    size: 2
+    alignment: 2
+    referenced_type: "short"
+    source_file: ""
+    linker_set_key: "short"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+qualified_types {
+  type_info {
+    name: "const char"
+    size: 1
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "const char"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const char *const[129]"
+    size: 1032
+    alignment: 8
+    referenced_type: "const char *[129]"
+    source_file: ""
+    linker_set_key: "const char *const[129]"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const sigaction"
+    size: 40
+    alignment: 8
+    referenced_type: "sigaction"
+    source_file: ""
+    linker_set_key: "const sigaction"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const sigset_t"
+    size: 16
+    alignment: 8
+    referenced_type: "sigset_t"
+    source_file: ""
+    linker_set_key: "const sigset_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const sigaltstack"
+    size: 24
+    alignment: 8
+    referenced_type: "sigaltstack"
+    source_file: ""
+    linker_set_key: "const sigaltstack"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const siginfo"
+    size: 128
+    alignment: 8
+    referenced_type: "siginfo"
+    source_file: ""
+    linker_set_key: "const siginfo"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const void"
+    size: 0
+    alignment: 0
+    referenced_type: "void"
+    source_file: ""
+    linker_set_key: "const void"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const timespec"
+    size: 16
+    alignment: 8
+    referenced_type: "timespec"
+    source_file: ""
+    linker_set_key: "const timespec"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "char *const"
+    size: 8
+    alignment: 8
+    referenced_type: "char *"
+    source_file: ""
+    linker_set_key: "char *const"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const unsigned int"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "const unsigned int"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+array_types {
+  type_info {
+    name: "unsigned long [16]"
+    size: 128
+    alignment: 8
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long [16]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [2]"
+    size: 8
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [2]"
+  }
+}
+array_types {
+  type_info {
+    name: "char [16]"
+    size: 16
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [16]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [12]"
+    size: 48
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [12]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [10]"
+    size: 40
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [10]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [14]"
+    size: 56
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [14]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long long [32]"
+    size: 256
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long [2]"
+    size: 16
+    alignment: 8
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long [2]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [1]"
+    size: 4
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [1]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [28]"
+    size: 112
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [28]"
+  }
+}
+array_types {
+  type_info {
+    name: "char [0]"
+    size: 0
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [0]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long [86]"
+    size: 688
+    alignment: 8
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long [86]"
+  }
+}
+array_types {
+  type_info {
+    name: "char [32]"
+    size: 32
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "double [32]"
+    size: 256
+    alignment: 8
+    referenced_type: "double"
+    source_file: ""
+    linker_set_key: "double [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "fpregset::(anonymous) [32]"
+    size: 256
+    alignment: 4
+    referenced_type: "fpregset::(anonymous)::(anonymous)"
+    source_file: ""
+    linker_set_key: "fpregset::(anonymous) [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "const char *[129]"
+    size: 1032
+    alignment: 8
+    referenced_type: "const char *"
+    source_file: ""
+    linker_set_key: "const char *[129]"
+  }
+}
+functions {
+  referenced_type: "Foo"
+  function_name: "foo"
+  source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_and_cpp.h"
+  parameters {
+    referenced_type: "int *"
+    default_arg: false
+  }
+  parameters {
+    referenced_type: "int *"
+    default_arg: false
+  }
+  linker_set_key: "_Z3fooPiS_"
+  access: public_access
+}
+elf_functions {
+  name: "_Z3fooPiS_"
+}

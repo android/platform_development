@@ -1,0 +1,4352 @@
+record_types {
+  type_info {
+    name: "UnusedStruct"
+    size: 4
+    alignment: 4
+    referenced_type: "UnusedStruct"
+    source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_and_cpp.h"
+    linker_set_key: "UnusedStruct"
+  }
+  fields {
+    referenced_type: "int"
+    field_offset: 0
+    field_name: "mUnusedMember"
+    access: public_access
+  }
+  access: public_access
+}
+record_types {
+  type_info {
+    name: "Foo"
+    size: 8
+    alignment: 4
+    referenced_type: "Foo"
+    source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_and_cpp.h"
+    linker_set_key: "Foo"
+  }
+  fields {
+    referenced_type: "int *"
+    field_offset: 0
+    field_name: "a_"
+    access: private_access
+  }
+  fields {
+    referenced_type: "int *"
+    field_offset: 32
+    field_name: "b_"
+    access: private_access
+  }
+  access: public_access
+}
+record_types {
+  type_info {
+    name: "Cinner"
+    size: 4
+    alignment: 4
+    referenced_type: "Cinner"
+    source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_include.h"
+    linker_set_key: "Cinner"
+  }
+  fields {
+    referenced_type: "int"
+    field_offset: 0
+    field_name: "c"
+    access: public_access
+  }
+  access: public_access
+}
+record_types {
+  type_info {
+    name: "Cstruct"
+    size: 8
+    alignment: 4
+    referenced_type: "Cstruct"
+    source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_include.h"
+    linker_set_key: "Cstruct"
+  }
+  fields {
+    referenced_type: "int"
+    field_offset: 0
+    field_name: "a"
+    access: public_access
+  }
+  fields {
+    referenced_type: "Cinner *"
+    field_offset: 32
+    field_name: "b"
+    access: public_access
+  }
+  access: public_access
+}
+pointer_types {
+  type_info {
+    name: "int *"
+    size: 4
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "Foo *"
+    size: 4
+    alignment: 4
+    referenced_type: "Foo"
+    source_file: ""
+    linker_set_key: "Foo *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "Cinner *"
+    size: 4
+    alignment: 4
+    referenced_type: "Cinner"
+    source_file: ""
+    linker_set_key: "Cinner *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "Cstruct *"
+    size: 4
+    alignment: 4
+    referenced_type: "Cstruct"
+    source_file: ""
+    linker_set_key: "Cstruct *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "Cstruct **"
+    size: 4
+    alignment: 4
+    referenced_type: "Cstruct *"
+    source_file: ""
+    linker_set_key: "Cstruct **"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unw_context_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "unw_context_t"
+    source_file: ""
+    linker_set_key: "unw_context_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unw_cursor_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "unw_cursor_t"
+    source_file: ""
+    linker_set_key: "unw_cursor_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unsigned int *"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unsigned long long *"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const char *"
+    size: 4
+    alignment: 4
+    referenced_type: "const char"
+    source_file: ""
+    linker_set_key: "const char *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unw_proc_info_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "unw_proc_info_t"
+    source_file: ""
+    linker_set_key: "unw_proc_info_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "char *"
+    size: 4
+    alignment: 4
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unw_addr_space *"
+    size: 4
+    alignment: 4
+    referenced_type: "unw_addr_space"
+    source_file: ""
+    linker_set_key: "unw_addr_space *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void *"
+    size: 4
+    alignment: 4
+    referenced_type: "void"
+    source_file: ""
+    linker_set_key: "void *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "__sFILE *"
+    size: 4
+    alignment: 4
+    referenced_type: "__sFILE"
+    source_file: ""
+    linker_set_key: "__sFILE *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const void *"
+    size: 4
+    alignment: 4
+    referenced_type: "const void"
+    source_file: ""
+    linker_set_key: "const void *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "char **"
+    size: 4
+    alignment: 4
+    referenced_type: "char *"
+    source_file: ""
+    linker_set_key: "char **"
+  }
+}
+pointer_types {
+  type_info {
+    name: "long *"
+    size: 4
+    alignment: 4
+    referenced_type: "long"
+    source_file: ""
+    linker_set_key: "long *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const long *"
+    size: 4
+    alignment: 4
+    referenced_type: "const long"
+    source_file: ""
+    linker_set_key: "const long *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "int (*)(void *, char *, int)"
+    size: 4
+    alignment: 4
+    referenced_type: "int (void *, char *, int)"
+    source_file: ""
+    linker_set_key: "int (*)(void *, char *, int)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "int (*)(void *, const char *, int)"
+    size: 4
+    alignment: 4
+    referenced_type: "int (void *, const char *, int)"
+    source_file: ""
+    linker_set_key: "int (*)(void *, const char *, int)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "long (*)(void *, long, int)"
+    size: 4
+    alignment: 4
+    referenced_type: "long (void *, long, int)"
+    source_file: ""
+    linker_set_key: "long (*)(void *, long, int)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "int (*)(void *)"
+    size: 4
+    alignment: 4
+    referenced_type: "int (void *)"
+    source_file: ""
+    linker_set_key: "int (*)(void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)()"
+    size: 4
+    alignment: 4
+    referenced_type: "void ()"
+    source_file: ""
+    linker_set_key: "void (*)()"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void **"
+    size: 4
+    alignment: 4
+    referenced_type: "void *"
+    source_file: ""
+    linker_set_key: "void **"
+  }
+}
+pointer_types {
+  type_info {
+    name: "int (*)(const void *, const void *)"
+    size: 4
+    alignment: 4
+    referenced_type: "int (const void *, const void *)"
+    source_file: ""
+    linker_set_key: "int (*)(const void *, const void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unsigned short *"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned short"
+    source_file: ""
+    linker_set_key: "unsigned short *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "wchar_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "wchar_t"
+    source_file: ""
+    linker_set_key: "wchar_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const wchar_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "const wchar_t"
+    source_file: ""
+    linker_set_key: "const wchar_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "__locale_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "__locale_t"
+    source_file: ""
+    linker_set_key: "__locale_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::integral_constant<bool, true> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::integral_constant<bool, true>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<bool, true> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::integral_constant<bool, false> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::integral_constant<bool, false>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<bool, false> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::integral_constant<unsigned int, 0> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::integral_constant<unsigned int, 0>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<unsigned int, 0> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::integral_constant<unsigned int, 2> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::integral_constant<unsigned int, 2>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<unsigned int, 2> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::integral_constant<int, 0> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::integral_constant<int, 0>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<int, 0> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::integral_constant<int, 1> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::integral_constant<int, 1>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<int, 1> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::integral_constant<int, 2> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::integral_constant<int, 2>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<int, 2> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__any *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__any"
+    source_file: ""
+    linker_set_key: "std::__any *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__nat *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__nat"
+    source_file: ""
+    linker_set_key: "std::__nat *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::exception *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::exception"
+    source_file: ""
+    linker_set_key: "std::exception *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::exception *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::exception"
+    source_file: ""
+    linker_set_key: "const std::exception *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::bad_exception *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_exception"
+    source_file: ""
+    linker_set_key: "std::bad_exception *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::bad_exception *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::bad_exception"
+    source_file: ""
+    linker_set_key: "const std::bad_exception *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::exception_ptr *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::exception_ptr"
+    source_file: ""
+    linker_set_key: "std::exception_ptr *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::exception_ptr *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::exception_ptr"
+    source_file: ""
+    linker_set_key: "const std::exception_ptr *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::nested_exception *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::nested_exception"
+    source_file: ""
+    linker_set_key: "std::nested_exception *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::nested_exception *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::nested_exception"
+    source_file: ""
+    linker_set_key: "const std::nested_exception *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::bad_alloc *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_alloc"
+    source_file: ""
+    linker_set_key: "std::bad_alloc *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::bad_alloc *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::bad_alloc"
+    source_file: ""
+    linker_set_key: "const std::bad_alloc *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::bad_array_new_length *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_array_new_length"
+    source_file: ""
+    linker_set_key: "std::bad_array_new_length *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::bad_array_new_length *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::bad_array_new_length"
+    source_file: ""
+    linker_set_key: "const std::bad_array_new_length *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::bad_array_length *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_array_length"
+    source_file: ""
+    linker_set_key: "std::bad_array_length *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::bad_array_length *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::bad_array_length"
+    source_file: ""
+    linker_set_key: "const std::bad_array_length *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__libcpp_debug_info *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__libcpp_debug_info"
+    source_file: ""
+    linker_set_key: "std::__libcpp_debug_info *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(const std::__libcpp_debug_info &)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (const std::__libcpp_debug_info &)"
+    source_file: ""
+    linker_set_key: "void (*)(const std::__libcpp_debug_info &)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__murmur2_or_cityhash<unsigned int, 32> *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__murmur2_or_cityhash<unsigned int, 32>"
+    source_file: ""
+    linker_set_key: "std::__murmur2_or_cityhash<unsigned int, 32> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__scalar_hash<std::_PairT, 2> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__scalar_hash<std::_PairT, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<std::_PairT, 2> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__scalar_hash<long long, 2> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__scalar_hash<long long, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<long long, 2> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__scalar_hash<unsigned long long, 2> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__scalar_hash<unsigned long long, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<unsigned long long, 2> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__scalar_hash<float, 1> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__scalar_hash<float, 1>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<float, 1> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__scalar_hash<double, 2> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__scalar_hash<double, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<double, 2> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__scalar_hash<long double, 2> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__scalar_hash<long double, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<long double, 2> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<bool> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<bool>"
+    source_file: ""
+    linker_set_key: "const std::hash<bool> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<char> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<char>"
+    source_file: ""
+    linker_set_key: "const std::hash<char> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<signed char> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<signed char>"
+    source_file: ""
+    linker_set_key: "const std::hash<signed char> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<unsigned char> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<unsigned char>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned char> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<char16_t> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<char16_t>"
+    source_file: ""
+    linker_set_key: "const std::hash<char16_t> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<char32_t> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<char32_t>"
+    source_file: ""
+    linker_set_key: "const std::hash<char32_t> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<wchar_t> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<wchar_t>"
+    source_file: ""
+    linker_set_key: "const std::hash<wchar_t> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<short> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<short>"
+    source_file: ""
+    linker_set_key: "const std::hash<short> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<unsigned short> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<unsigned short>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned short> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<int> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<int>"
+    source_file: ""
+    linker_set_key: "const std::hash<int> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<unsigned int> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<unsigned int>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned int> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<long> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<long>"
+    source_file: ""
+    linker_set_key: "const std::hash<long> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<unsigned long> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<unsigned long>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned long> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<float> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<float>"
+    source_file: ""
+    linker_set_key: "const std::hash<float> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<double> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<double>"
+    source_file: ""
+    linker_set_key: "const std::hash<double> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::hash<long double> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::hash<long double>"
+    source_file: ""
+    linker_set_key: "const std::hash<long double> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::type_info *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::type_info"
+    source_file: ""
+    linker_set_key: "std::type_info *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::type_info *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::type_info"
+    source_file: ""
+    linker_set_key: "const std::type_info *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::bad_cast *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_cast"
+    source_file: ""
+    linker_set_key: "std::bad_cast *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::bad_cast *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::bad_cast"
+    source_file: ""
+    linker_set_key: "const std::bad_cast *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::bad_typeid *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_typeid"
+    source_file: ""
+    linker_set_key: "std::bad_typeid *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::bad_typeid *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::bad_typeid"
+    source_file: ""
+    linker_set_key: "const std::bad_typeid *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(int)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (int)"
+    source_file: ""
+    linker_set_key: "void (*)(int)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(int, siginfo *, void *)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (int, siginfo *, void *)"
+    source_file: ""
+    linker_set_key: "void (*)(int, siginfo *, void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(sigval)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (sigval)"
+    source_file: ""
+    linker_set_key: "void (*)(sigval)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "user_regs *"
+    size: 4
+    alignment: 4
+    referenced_type: "user_regs"
+    source_file: ""
+    linker_set_key: "user_regs *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "user_fpregs *"
+    size: 4
+    alignment: 4
+    referenced_type: "user_fpregs"
+    source_file: ""
+    linker_set_key: "user_fpregs *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "ucontext *"
+    size: 4
+    alignment: 4
+    referenced_type: "ucontext"
+    source_file: ""
+    linker_set_key: "ucontext *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const sigaction *"
+    size: 4
+    alignment: 4
+    referenced_type: "const sigaction"
+    source_file: ""
+    linker_set_key: "const sigaction *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "sigaction *"
+    size: 4
+    alignment: 4
+    referenced_type: "sigaction"
+    source_file: ""
+    linker_set_key: "sigaction *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unsigned long *"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const unsigned long *"
+    size: 4
+    alignment: 4
+    referenced_type: "const unsigned long"
+    source_file: ""
+    linker_set_key: "const unsigned long *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const sigaltstack *"
+    size: 4
+    alignment: 4
+    referenced_type: "const sigaltstack"
+    source_file: ""
+    linker_set_key: "const sigaltstack *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "sigaltstack *"
+    size: 4
+    alignment: 4
+    referenced_type: "sigaltstack"
+    source_file: ""
+    linker_set_key: "sigaltstack *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const siginfo *"
+    size: 4
+    alignment: 4
+    referenced_type: "const siginfo"
+    source_file: ""
+    linker_set_key: "const siginfo *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "fd_set *"
+    size: 4
+    alignment: 4
+    referenced_type: "fd_set"
+    source_file: ""
+    linker_set_key: "fd_set *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "timeval *"
+    size: 4
+    alignment: 4
+    referenced_type: "timeval"
+    source_file: ""
+    linker_set_key: "timeval *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const timespec *"
+    size: 4
+    alignment: 4
+    referenced_type: "const timespec"
+    source_file: ""
+    linker_set_key: "const timespec *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "timezone *"
+    size: 4
+    alignment: 4
+    referenced_type: "timezone"
+    source_file: ""
+    linker_set_key: "timezone *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const timeval *"
+    size: 4
+    alignment: 4
+    referenced_type: "const timeval"
+    source_file: ""
+    linker_set_key: "const timeval *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const timezone *"
+    size: 4
+    alignment: 4
+    referenced_type: "const timezone"
+    source_file: ""
+    linker_set_key: "const timezone *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "itimerval *"
+    size: 4
+    alignment: 4
+    referenced_type: "itimerval"
+    source_file: ""
+    linker_set_key: "itimerval *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const itimerval *"
+    size: 4
+    alignment: 4
+    referenced_type: "const itimerval"
+    source_file: ""
+    linker_set_key: "const itimerval *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "timespec *"
+    size: 4
+    alignment: 4
+    referenced_type: "timespec"
+    source_file: ""
+    linker_set_key: "timespec *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const tm *"
+    size: 4
+    alignment: 4
+    referenced_type: "const tm"
+    source_file: ""
+    linker_set_key: "const tm *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "tm *"
+    size: 4
+    alignment: 4
+    referenced_type: "tm"
+    source_file: ""
+    linker_set_key: "tm *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "sigevent *"
+    size: 4
+    alignment: 4
+    referenced_type: "sigevent"
+    source_file: ""
+    linker_set_key: "sigevent *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const itimerspec *"
+    size: 4
+    alignment: 4
+    referenced_type: "const itimerspec"
+    source_file: ""
+    linker_set_key: "const itimerspec *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "itimerspec *"
+    size: 4
+    alignment: 4
+    referenced_type: "itimerspec"
+    source_file: ""
+    linker_set_key: "itimerspec *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const mbstate_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "const mbstate_t"
+    source_file: ""
+    linker_set_key: "const mbstate_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "mbstate_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "mbstate_t"
+    source_file: ""
+    linker_set_key: "mbstate_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const char **"
+    size: 4
+    alignment: 4
+    referenced_type: "const char *"
+    source_file: ""
+    linker_set_key: "const char **"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const wchar_t **"
+    size: 4
+    alignment: 4
+    referenced_type: "const wchar_t *"
+    source_file: ""
+    linker_set_key: "const wchar_t **"
+  }
+}
+pointer_types {
+  type_info {
+    name: "wchar_t **"
+    size: 4
+    alignment: 4
+    referenced_type: "wchar_t *"
+    source_file: ""
+    linker_set_key: "wchar_t **"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::random_access_iterator_tag *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::random_access_iterator_tag"
+    source_file: ""
+    linker_set_key: "std::random_access_iterator_tag *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::tuple<> *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::tuple<>"
+    source_file: ""
+    linker_set_key: "std::tuple<> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__libcpp_refstring *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__libcpp_refstring"
+    source_file: ""
+    linker_set_key: "const std::__libcpp_refstring *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__libcpp_refstring *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__libcpp_refstring"
+    source_file: ""
+    linker_set_key: "std::__libcpp_refstring *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::logic_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::logic_error"
+    source_file: ""
+    linker_set_key: "std::logic_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::logic_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::logic_error"
+    source_file: ""
+    linker_set_key: "const std::logic_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::runtime_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::runtime_error"
+    source_file: ""
+    linker_set_key: "std::runtime_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::runtime_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::runtime_error"
+    source_file: ""
+    linker_set_key: "const std::runtime_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::domain_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::domain_error"
+    source_file: ""
+    linker_set_key: "std::domain_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::invalid_argument *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::invalid_argument"
+    source_file: ""
+    linker_set_key: "std::invalid_argument *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::length_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::length_error"
+    source_file: ""
+    linker_set_key: "std::length_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::out_of_range *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::out_of_range"
+    source_file: ""
+    linker_set_key: "std::out_of_range *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::range_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::range_error"
+    source_file: ""
+    linker_set_key: "std::range_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::overflow_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::overflow_error"
+    source_file: ""
+    linker_set_key: "std::overflow_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::underflow_error *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::underflow_error"
+    source_file: ""
+    linker_set_key: "std::underflow_error *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "volatile std::atomic_flag *"
+    size: 4
+    alignment: 4
+    referenced_type: "volatile std::atomic_flag"
+    source_file: ""
+    linker_set_key: "volatile std::atomic_flag *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::atomic_flag *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::atomic_flag"
+    source_file: ""
+    linker_set_key: "std::atomic_flag *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__destruct_n *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__destruct_n"
+    source_file: ""
+    linker_set_key: "std::__destruct_n *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::bad_weak_ptr *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_weak_ptr"
+    source_file: ""
+    linker_set_key: "std::bad_weak_ptr *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::bad_weak_ptr *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::bad_weak_ptr"
+    source_file: ""
+    linker_set_key: "const std::bad_weak_ptr *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__shared_count *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__shared_count"
+    source_file: ""
+    linker_set_key: "std::__shared_count *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__shared_count *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__shared_count"
+    source_file: ""
+    linker_set_key: "const std::__shared_count *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__shared_weak_count *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__shared_weak_count"
+    source_file: ""
+    linker_set_key: "std::__shared_weak_count *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__shared_weak_count *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__shared_weak_count"
+    source_file: ""
+    linker_set_key: "const std::__shared_weak_count *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__sp_mut *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__sp_mut"
+    source_file: ""
+    linker_set_key: "std::__sp_mut *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::pointer_safety *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::pointer_safety"
+    source_file: ""
+    linker_set_key: "std::pointer_safety *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::pointer_safety *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::pointer_safety"
+    source_file: ""
+    linker_set_key: "const std::pointer_safety *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::__less<unsigned int, unsigned int> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__less<unsigned int, unsigned int>"
+    source_file: ""
+    linker_set_key: "const std::__less<unsigned int, unsigned int> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::uniform_int_distribution<int>::param_type *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::uniform_int_distribution<int>::param_type"
+    source_file: ""
+    linker_set_key: "std::uniform_int_distribution<int>::param_type *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::uniform_int_distribution<int>::param_type *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::uniform_int_distribution<int>::param_type"
+    source_file: ""
+    linker_set_key: "const std::uniform_int_distribution<int>::param_type *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::uniform_int_distribution<int> *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::uniform_int_distribution<int>"
+    source_file: ""
+    linker_set_key: "std::uniform_int_distribution<int> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const std::uniform_int_distribution<int> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::uniform_int_distribution<int>"
+    source_file: ""
+    linker_set_key: "const std::uniform_int_distribution<int> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "std::__rs_default *"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__rs_default"
+    source_file: ""
+    linker_set_key: "std::__rs_default *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(_Unwind_Reason_Code, _Unwind_Control_Block *)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (_Unwind_Reason_Code, _Unwind_Control_Block *)"
+    source_file: ""
+    linker_set_key: "void (*)(_Unwind_Reason_Code, _Unwind_Control_Block *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "_Unwind_Control_Block *"
+    size: 4
+    alignment: 4
+    referenced_type: "_Unwind_Control_Block"
+    source_file: ""
+    linker_set_key: "_Unwind_Control_Block *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "_Unwind_Context *"
+    size: 4
+    alignment: 4
+    referenced_type: "_Unwind_Context"
+    source_file: ""
+    linker_set_key: "_Unwind_Context *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "_Unwind_Reason_Code (*)(unsigned int, _Unwind_Control_Block *, _Unwind_Context *)"
+    size: 4
+    alignment: 4
+    referenced_type: "_Unwind_Reason_Code (unsigned int, _Unwind_Control_Block *, _Unwind_Context *)"
+    source_file: ""
+    linker_set_key: "_Unwind_Reason_Code (*)(unsigned int, _Unwind_Control_Block *, _Unwind_Context *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "_Unwind_Reason_Code (*)(_Unwind_Context *, void *)"
+    size: 4
+    alignment: 4
+    referenced_type: "_Unwind_Reason_Code (_Unwind_Context *, void *)"
+    source_file: ""
+    linker_set_key: "_Unwind_Reason_Code (*)(_Unwind_Context *, void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "dwarf_eh_bases *"
+    size: 4
+    alignment: 4
+    referenced_type: "dwarf_eh_bases"
+    source_file: ""
+    linker_set_key: "dwarf_eh_bases *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(unsigned int, unsigned int, unsigned int, unsigned int)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (unsigned int, unsigned int, unsigned int, unsigned int)"
+    source_file: ""
+    linker_set_key: "void (*)(unsigned int, unsigned int, unsigned int, unsigned int)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const unsigned int *"
+    size: 4
+    alignment: 4
+    referenced_type: "const unsigned int"
+    source_file: ""
+    linker_set_key: "const unsigned int *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "Dl_info *"
+    size: 4
+    alignment: 4
+    referenced_type: "Dl_info"
+    source_file: ""
+    linker_set_key: "Dl_info *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::Registers_x86 *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::Registers_x86"
+    source_file: ""
+    linker_set_key: "libunwind::Registers_x86 *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::Registers_x86 *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::Registers_x86"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_x86 *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::Registers_x86_64 *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::Registers_x86_64"
+    source_file: ""
+    linker_set_key: "libunwind::Registers_x86_64 *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::Registers_x86_64 *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::Registers_x86_64"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_x86_64 *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::Registers_ppc *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::Registers_ppc"
+    source_file: ""
+    linker_set_key: "libunwind::Registers_ppc *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::Registers_ppc *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::Registers_ppc"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_ppc *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::Registers_arm64 *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::Registers_arm64"
+    source_file: ""
+    linker_set_key: "libunwind::Registers_arm64 *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::Registers_arm64 *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::Registers_arm64"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_arm64 *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::Registers_arm *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::Registers_arm"
+    source_file: ""
+    linker_set_key: "libunwind::Registers_arm *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::Registers_arm *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::Registers_arm"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_arm *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::Registers_or1k *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::Registers_or1k"
+    source_file: ""
+    linker_set_key: "libunwind::Registers_or1k *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::Registers_or1k *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::Registers_or1k"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_or1k *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::LocalAddressSpace *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::LocalAddressSpace"
+    source_file: ""
+    linker_set_key: "libunwind::LocalAddressSpace *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::elf32_phdr *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::elf32_phdr"
+    source_file: ""
+    linker_set_key: "const libunwind::elf32_phdr *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "int (*)(libunwind::dl_phdr_info *, unsigned int, void *)"
+    size: 4
+    alignment: 4
+    referenced_type: "int (libunwind::dl_phdr_info *, unsigned int, void *)"
+    source_file: ""
+    linker_set_key: "int (*)(libunwind::dl_phdr_info *, unsigned int, void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::dynamic *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::dynamic"
+    source_file: ""
+    linker_set_key: "libunwind::dynamic *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::link_map *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::link_map"
+    source_file: ""
+    linker_set_key: "libunwind::link_map *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::UnwindInfoSections *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::UnwindInfoSections"
+    source_file: ""
+    linker_set_key: "libunwind::UnwindInfoSections *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const sched_param *"
+    size: 4
+    alignment: 4
+    referenced_type: "const sched_param"
+    source_file: ""
+    linker_set_key: "const sched_param *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "sched_param *"
+    size: 4
+    alignment: 4
+    referenced_type: "sched_param"
+    source_file: ""
+    linker_set_key: "sched_param *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const cpu_set_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "const cpu_set_t"
+    source_file: ""
+    linker_set_key: "const cpu_set_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "cpu_set_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "cpu_set_t"
+    source_file: ""
+    linker_set_key: "cpu_set_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "pthread_attr_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "pthread_attr_t"
+    source_file: ""
+    linker_set_key: "pthread_attr_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const pthread_attr_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "const pthread_attr_t"
+    source_file: ""
+    linker_set_key: "const pthread_attr_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "pthread_cond_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "pthread_cond_t"
+    source_file: ""
+    linker_set_key: "pthread_cond_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "pthread_mutex_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "pthread_mutex_t"
+    source_file: ""
+    linker_set_key: "pthread_mutex_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void *(*)(void *)"
+    size: 4
+    alignment: 4
+    referenced_type: "void *(void *)"
+    source_file: ""
+    linker_set_key: "void *(*)(void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(void *)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (void *)"
+    source_file: ""
+    linker_set_key: "void (*)(void *)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "pthread_rwlock_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "pthread_rwlock_t"
+    source_file: ""
+    linker_set_key: "pthread_rwlock_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "__pthread_cleanup_t *"
+    size: 4
+    alignment: 4
+    referenced_type: "__pthread_cleanup_t"
+    source_file: ""
+    linker_set_key: "__pthread_cleanup_t *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::AbstractUnwindCursor *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::AbstractUnwindCursor"
+    source_file: ""
+    linker_set_key: "libunwind::AbstractUnwindCursor *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::UnwindCursor<libunwind::LocalAddressSpace, libunwind::Registers_arm> *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::UnwindCursor<libunwind::LocalAddressSpace, libunwind::Registers_arm>"
+    source_file: ""
+    linker_set_key: "libunwind::UnwindCursor<libunwind::LocalAddressSpace, libunwind::Registers_arm> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::UnwindInfoSections *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::UnwindInfoSections"
+    source_file: ""
+    linker_set_key: "const libunwind::UnwindInfoSections *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> *"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::EHABISectionIterator<libunwind::LocalAddressSpace>"
+    source_file: ""
+    linker_set_key: "libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> *"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace>"
+    source_file: ""
+    linker_set_key: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "void (*)(void)"
+    size: 4
+    alignment: 4
+    referenced_type: "void (void)"
+    source_file: ""
+    linker_set_key: "void (*)(void)"
+  }
+}
+pointer_types {
+  type_info {
+    name: "_Unwind_FunctionContext *"
+    size: 4
+    alignment: 4
+    referenced_type: "_Unwind_FunctionContext"
+    source_file: ""
+    linker_set_key: "_Unwind_FunctionContext *"
+  }
+}
+pointer_types {
+  type_info {
+    name: "unsigned int **"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned int *"
+    source_file: ""
+    linker_set_key: "unsigned int **"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::__less<unsigned int, unsigned int> &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__less<unsigned int, unsigned int>"
+    source_file: ""
+    linker_set_key: "std::__less<unsigned int, unsigned int> &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::__nat &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__nat"
+    source_file: ""
+    linker_set_key: "const std::__nat &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::__nat &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__nat"
+    source_file: ""
+    linker_set_key: "std::__nat &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::exception_ptr &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::exception_ptr"
+    source_file: ""
+    linker_set_key: "const std::exception_ptr &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::exception_ptr &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::exception_ptr"
+    source_file: ""
+    linker_set_key: "std::exception_ptr &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::nothrow_t &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::nothrow_t"
+    source_file: ""
+    linker_set_key: "const std::nothrow_t &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::__libcpp_debug_info &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__libcpp_debug_info"
+    source_file: ""
+    linker_set_key: "const std::__libcpp_debug_info &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::type_info &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::type_info"
+    source_file: ""
+    linker_set_key: "std::type_info &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::type_info &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::type_info"
+    source_file: ""
+    linker_set_key: "const std::type_info &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> &"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::EHABISectionIterator<libunwind::LocalAddressSpace>"
+    source_file: ""
+    linker_set_key: "libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const istream_iterator<_Tp, _CharT, _Traits, _Distance> &"
+    size: 0
+    alignment: 0
+    referenced_type: "const istream_iterator<_Tp, _CharT, _Traits, _Distance>"
+    source_file: ""
+    linker_set_key: "const istream_iterator<_Tp, _CharT, _Traits, _Distance> &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::tuple<> &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::tuple<>"
+    source_file: ""
+    linker_set_key: "std::tuple<> &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::__libcpp_refstring &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__libcpp_refstring"
+    source_file: ""
+    linker_set_key: "const std::__libcpp_refstring &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::__libcpp_refstring &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__libcpp_refstring"
+    source_file: ""
+    linker_set_key: "std::__libcpp_refstring &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::basic_string<char, std::char_traits<char>, std::allocator<char> > &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::basic_string<char, std::char_traits<char>, std::allocator<char> >"
+    source_file: ""
+    linker_set_key: "const std::basic_string<char, std::char_traits<char>, std::allocator<char> > &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::logic_error &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::logic_error"
+    source_file: ""
+    linker_set_key: "const std::logic_error &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::logic_error &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::logic_error"
+    source_file: ""
+    linker_set_key: "std::logic_error &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::runtime_error &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::runtime_error"
+    source_file: ""
+    linker_set_key: "const std::runtime_error &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::runtime_error &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::runtime_error"
+    source_file: ""
+    linker_set_key: "std::runtime_error &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::atomic_flag &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::atomic_flag"
+    source_file: ""
+    linker_set_key: "const std::atomic_flag &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::atomic_flag &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::atomic_flag"
+    source_file: ""
+    linker_set_key: "std::atomic_flag &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "long &"
+    size: 4
+    alignment: 4
+    referenced_type: "long"
+    source_file: ""
+    linker_set_key: "long &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::__shared_count &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__shared_count"
+    source_file: ""
+    linker_set_key: "const std::__shared_count &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::__shared_count &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__shared_count"
+    source_file: ""
+    linker_set_key: "std::__shared_count &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::__sp_mut &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__sp_mut"
+    source_file: ""
+    linker_set_key: "const std::__sp_mut &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::__sp_mut &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__sp_mut"
+    source_file: ""
+    linker_set_key: "std::__sp_mut &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "void *&"
+    size: 4
+    alignment: 4
+    referenced_type: "void *"
+    source_file: ""
+    linker_set_key: "void *&"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "unsigned int &"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const unsigned int &"
+    size: 4
+    alignment: 4
+    referenced_type: "const unsigned int"
+    source_file: ""
+    linker_set_key: "const unsigned int &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const class std::__1::uniform_int_distribution::param_type &"
+    size: 0
+    alignment: 0
+    referenced_type: "const class std::__1::uniform_int_distribution::param_type"
+    source_file: ""
+    linker_set_key: "const class std::__1::uniform_int_distribution::param_type &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const uniform_int_distribution<_IntType> &"
+    size: 0
+    alignment: 0
+    referenced_type: "const uniform_int_distribution<_IntType>"
+    source_file: ""
+    linker_set_key: "const uniform_int_distribution<_IntType> &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::uniform_int_distribution<int>::param_type &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::uniform_int_distribution<int>::param_type"
+    source_file: ""
+    linker_set_key: "const std::uniform_int_distribution<int>::param_type &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "std::__rs_default &"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__rs_default"
+    source_file: ""
+    linker_set_key: "std::__rs_default &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::uniform_int_distribution<int> &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::uniform_int_distribution<int>"
+    source_file: ""
+    linker_set_key: "const std::uniform_int_distribution<int> &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const std::__rs_default &"
+    size: 4
+    alignment: 4
+    referenced_type: "const std::__rs_default"
+    source_file: ""
+    linker_set_key: "const std::__rs_default &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "libunwind::UnwindInfoSections &"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::UnwindInfoSections"
+    source_file: ""
+    linker_set_key: "libunwind::UnwindInfoSections &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "libunwind::LocalAddressSpace &"
+    size: 4
+    alignment: 4
+    referenced_type: "libunwind::LocalAddressSpace"
+    source_file: ""
+    linker_set_key: "libunwind::LocalAddressSpace &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const libunwind::UnwindInfoSections &"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::UnwindInfoSections"
+    source_file: ""
+    linker_set_key: "const libunwind::UnwindInfoSections &"
+  }
+}
+lvalue_reference_types {
+  type_info {
+    name: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> &"
+    size: 4
+    alignment: 4
+    referenced_type: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace>"
+    source_file: ""
+    linker_set_key: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace> &"
+  }
+}
+builtin_types {
+  type_info {
+    name: "int"
+    size: 4
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "void"
+    size: 0
+    alignment: 0
+    referenced_type: "void"
+    source_file: ""
+    linker_set_key: "void"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "long long"
+    size: 8
+    alignment: 8
+    referenced_type: "long long"
+    source_file: ""
+    linker_set_key: "long long"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "long double"
+    size: 8
+    alignment: 8
+    referenced_type: "long double"
+    source_file: ""
+    linker_set_key: "long double"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "unsigned long long"
+    size: 8
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "unsigned int"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "char"
+    size: 1
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "unsigned long"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "long"
+    size: 4
+    alignment: 4
+    referenced_type: "long"
+    source_file: ""
+    linker_set_key: "long"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "double"
+    size: 8
+    alignment: 8
+    referenced_type: "double"
+    source_file: ""
+    linker_set_key: "double"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "unsigned short"
+    size: 2
+    alignment: 2
+    referenced_type: "unsigned short"
+    source_file: ""
+    linker_set_key: "unsigned short"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "wchar_t"
+    size: 4
+    alignment: 4
+    referenced_type: "wchar_t"
+    source_file: ""
+    linker_set_key: "wchar_t"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "float"
+    size: 4
+    alignment: 4
+    referenced_type: "float"
+    source_file: ""
+    linker_set_key: "float"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "bool"
+    size: 1
+    alignment: 1
+    referenced_type: "bool"
+    source_file: ""
+    linker_set_key: "bool"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "nullptr_t"
+    size: 4
+    alignment: 4
+    referenced_type: "nullptr_t"
+    source_file: ""
+    linker_set_key: "nullptr_t"
+  }
+  is_unsigned: false
+  is_integral: false
+}
+builtin_types {
+  type_info {
+    name: "signed char"
+    size: 1
+    alignment: 1
+    referenced_type: "signed char"
+    source_file: ""
+    linker_set_key: "signed char"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "unsigned char"
+    size: 1
+    alignment: 1
+    referenced_type: "unsigned char"
+    source_file: ""
+    linker_set_key: "unsigned char"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "char16_t"
+    size: 2
+    alignment: 2
+    referenced_type: "char16_t"
+    source_file: ""
+    linker_set_key: "char16_t"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "char32_t"
+    size: 4
+    alignment: 4
+    referenced_type: "char32_t"
+    source_file: ""
+    linker_set_key: "char32_t"
+  }
+  is_unsigned: true
+  is_integral: true
+}
+builtin_types {
+  type_info {
+    name: "short"
+    size: 2
+    alignment: 2
+    referenced_type: "short"
+    source_file: ""
+    linker_set_key: "short"
+  }
+  is_unsigned: false
+  is_integral: true
+}
+qualified_types {
+  type_info {
+    name: "const char"
+    size: 1
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "const char"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const void"
+    size: 0
+    alignment: 0
+    referenced_type: "void"
+    source_file: ""
+    linker_set_key: "const void"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const long"
+    size: 4
+    alignment: 4
+    referenced_type: "long"
+    source_file: ""
+    linker_set_key: "const long"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const wchar_t"
+    size: 4
+    alignment: 4
+    referenced_type: "wchar_t"
+    source_file: ""
+    linker_set_key: "const wchar_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const bool"
+    size: 1
+    alignment: 1
+    referenced_type: "bool"
+    source_file: ""
+    linker_set_key: "const bool"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::integral_constant<bool, true>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::integral_constant<bool, true>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<bool, true>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::integral_constant<bool, false>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::integral_constant<bool, false>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<bool, false>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const unsigned int"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "const unsigned int"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::integral_constant<unsigned int, 0>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::integral_constant<unsigned int, 0>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<unsigned int, 0>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::integral_constant<unsigned int, 2>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::integral_constant<unsigned int, 2>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<unsigned int, 2>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const int"
+    size: 4
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "const int"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::integral_constant<int, 0>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::integral_constant<int, 0>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<int, 0>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::integral_constant<int, 1>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::integral_constant<int, 1>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<int, 1>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::integral_constant<int, 2>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::integral_constant<int, 2>"
+    source_file: ""
+    linker_set_key: "const std::integral_constant<int, 2>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__nat"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__nat"
+    source_file: ""
+    linker_set_key: "const std::__nat"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::exception"
+    size: 4
+    alignment: 4
+    referenced_type: "std::exception"
+    source_file: ""
+    linker_set_key: "const std::exception"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::bad_exception"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_exception"
+    source_file: ""
+    linker_set_key: "const std::bad_exception"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::exception_ptr"
+    size: 4
+    alignment: 4
+    referenced_type: "std::exception_ptr"
+    source_file: ""
+    linker_set_key: "const std::exception_ptr"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::nested_exception"
+    size: 8
+    alignment: 4
+    referenced_type: "std::nested_exception"
+    source_file: ""
+    linker_set_key: "const std::nested_exception"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::nothrow_t"
+    size: 1
+    alignment: 1
+    referenced_type: "std::nothrow_t"
+    source_file: ""
+    linker_set_key: "const std::nothrow_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::bad_alloc"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_alloc"
+    source_file: ""
+    linker_set_key: "const std::bad_alloc"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::bad_array_new_length"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_array_new_length"
+    source_file: ""
+    linker_set_key: "const std::bad_array_new_length"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::bad_array_length"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_array_length"
+    source_file: ""
+    linker_set_key: "const std::bad_array_length"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const void *const"
+    size: 4
+    alignment: 4
+    referenced_type: "const void *"
+    source_file: ""
+    linker_set_key: "const void *const"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "void *const"
+    size: 4
+    alignment: 4
+    referenced_type: "void *"
+    source_file: ""
+    linker_set_key: "void *const"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const char *const"
+    size: 4
+    alignment: 4
+    referenced_type: "const char *"
+    source_file: ""
+    linker_set_key: "const char *const"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "char *const"
+    size: 4
+    alignment: 4
+    referenced_type: "char *"
+    source_file: ""
+    linker_set_key: "char *const"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__libcpp_debug_info"
+    size: 16
+    alignment: 4
+    referenced_type: "std::__libcpp_debug_info"
+    source_file: ""
+    linker_set_key: "const std::__libcpp_debug_info"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::piecewise_construct_t"
+    size: 1
+    alignment: 1
+    referenced_type: "std::piecewise_construct_t"
+    source_file: ""
+    linker_set_key: "const std::piecewise_construct_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__scalar_hash<std::_PairT, 2>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__scalar_hash<std::_PairT, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<std::_PairT, 2>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__scalar_hash<long long, 2>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__scalar_hash<long long, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<long long, 2>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__scalar_hash<unsigned long long, 2>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__scalar_hash<unsigned long long, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<unsigned long long, 2>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__scalar_hash<float, 1>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__scalar_hash<float, 1>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<float, 1>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__scalar_hash<double, 2>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__scalar_hash<double, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<double, 2>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__scalar_hash<long double, 2>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__scalar_hash<long double, 2>"
+    source_file: ""
+    linker_set_key: "const std::__scalar_hash<long double, 2>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<bool>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<bool>"
+    source_file: ""
+    linker_set_key: "const std::hash<bool>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<char>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<char>"
+    source_file: ""
+    linker_set_key: "const std::hash<char>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<signed char>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<signed char>"
+    source_file: ""
+    linker_set_key: "const std::hash<signed char>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<unsigned char>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<unsigned char>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned char>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<char16_t>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<char16_t>"
+    source_file: ""
+    linker_set_key: "const std::hash<char16_t>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<char32_t>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<char32_t>"
+    source_file: ""
+    linker_set_key: "const std::hash<char32_t>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<wchar_t>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<wchar_t>"
+    source_file: ""
+    linker_set_key: "const std::hash<wchar_t>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<short>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<short>"
+    source_file: ""
+    linker_set_key: "const std::hash<short>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<unsigned short>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<unsigned short>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned short>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<int>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<int>"
+    source_file: ""
+    linker_set_key: "const std::hash<int>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<unsigned int>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<unsigned int>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned int>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<long>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<long>"
+    source_file: ""
+    linker_set_key: "const std::hash<long>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<unsigned long>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<unsigned long>"
+    source_file: ""
+    linker_set_key: "const std::hash<unsigned long>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<float>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<float>"
+    source_file: ""
+    linker_set_key: "const std::hash<float>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<double>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<double>"
+    source_file: ""
+    linker_set_key: "const std::hash<double>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::hash<long double>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::hash<long double>"
+    source_file: ""
+    linker_set_key: "const std::hash<long double>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::type_info"
+    size: 8
+    alignment: 4
+    referenced_type: "std::type_info"
+    source_file: ""
+    linker_set_key: "const std::type_info"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::bad_cast"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_cast"
+    source_file: ""
+    linker_set_key: "const std::bad_cast"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::bad_typeid"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_typeid"
+    source_file: ""
+    linker_set_key: "const std::bad_typeid"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::float_denorm_style"
+    size: 4
+    alignment: 4
+    referenced_type: "std::float_denorm_style"
+    source_file: ""
+    linker_set_key: "const std::float_denorm_style"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::float_round_style"
+    size: 4
+    alignment: 4
+    referenced_type: "std::float_round_style"
+    source_file: ""
+    linker_set_key: "const std::float_round_style"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const char *const[65]"
+    size: 260
+    alignment: 4
+    referenced_type: "const char *[65]"
+    source_file: ""
+    linker_set_key: "const char *const[65]"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const sigaction"
+    size: 16
+    alignment: 4
+    referenced_type: "sigaction"
+    source_file: ""
+    linker_set_key: "const sigaction"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const unsigned long"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "const unsigned long"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const sigaltstack"
+    size: 12
+    alignment: 4
+    referenced_type: "sigaltstack"
+    source_file: ""
+    linker_set_key: "const sigaltstack"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const siginfo"
+    size: 128
+    alignment: 4
+    referenced_type: "siginfo"
+    source_file: ""
+    linker_set_key: "const siginfo"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const timespec"
+    size: 8
+    alignment: 4
+    referenced_type: "timespec"
+    source_file: ""
+    linker_set_key: "const timespec"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const timeval"
+    size: 8
+    alignment: 4
+    referenced_type: "timeval"
+    source_file: ""
+    linker_set_key: "const timeval"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const timezone"
+    size: 8
+    alignment: 4
+    referenced_type: "timezone"
+    source_file: ""
+    linker_set_key: "const timezone"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const itimerval"
+    size: 16
+    alignment: 4
+    referenced_type: "itimerval"
+    source_file: ""
+    linker_set_key: "const itimerval"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const tm"
+    size: 44
+    alignment: 4
+    referenced_type: "tm"
+    source_file: ""
+    linker_set_key: "const tm"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const itimerspec"
+    size: 16
+    alignment: 4
+    referenced_type: "itimerspec"
+    source_file: ""
+    linker_set_key: "const itimerspec"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const mbstate_t"
+    size: 4
+    alignment: 1
+    referenced_type: "mbstate_t"
+    source_file: ""
+    linker_set_key: "const mbstate_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::allocator_arg_t"
+    size: 1
+    alignment: 1
+    referenced_type: "std::allocator_arg_t"
+    source_file: ""
+    linker_set_key: "const std::allocator_arg_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const istream_iterator<_Tp, _CharT, _Traits, _Distance>"
+    size: 0
+    alignment: 0
+    referenced_type: "istream_iterator<_Tp, _CharT, _Traits, _Distance>"
+    source_file: ""
+    linker_set_key: "const istream_iterator<_Tp, _CharT, _Traits, _Distance>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__ignore_t<unsigned char>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__ignore_t<unsigned char>"
+    source_file: ""
+    linker_set_key: "const std::__ignore_t<unsigned char>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__libcpp_refstring"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__libcpp_refstring"
+    source_file: ""
+    linker_set_key: "const std::__libcpp_refstring"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::basic_string<char, std::char_traits<char>, std::allocator<char> >"
+    size: 0
+    alignment: 0
+    referenced_type: "std::basic_string<char, std::char_traits<char>, std::allocator<char> >"
+    source_file: ""
+    linker_set_key: "const std::basic_string<char, std::char_traits<char>, std::allocator<char> >"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::logic_error"
+    size: 8
+    alignment: 4
+    referenced_type: "std::logic_error"
+    source_file: ""
+    linker_set_key: "const std::logic_error"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::runtime_error"
+    size: 8
+    alignment: 4
+    referenced_type: "std::runtime_error"
+    source_file: ""
+    linker_set_key: "const std::runtime_error"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "volatile std::atomic_flag"
+    size: 1
+    alignment: 1
+    referenced_type: "std::atomic_flag"
+    source_file: ""
+    linker_set_key: "volatile std::atomic_flag"
+  }
+  is_const: false
+  is_volatile: true
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::atomic_flag"
+    size: 1
+    alignment: 1
+    referenced_type: "std::atomic_flag"
+    source_file: ""
+    linker_set_key: "const std::atomic_flag"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::bad_weak_ptr"
+    size: 4
+    alignment: 4
+    referenced_type: "std::bad_weak_ptr"
+    source_file: ""
+    linker_set_key: "const std::bad_weak_ptr"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__shared_count"
+    size: 8
+    alignment: 4
+    referenced_type: "std::__shared_count"
+    source_file: ""
+    linker_set_key: "const std::__shared_count"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__shared_weak_count"
+    size: 12
+    alignment: 4
+    referenced_type: "std::__shared_weak_count"
+    source_file: ""
+    linker_set_key: "const std::__shared_weak_count"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__sp_mut"
+    size: 4
+    alignment: 4
+    referenced_type: "std::__sp_mut"
+    source_file: ""
+    linker_set_key: "const std::__sp_mut"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::pointer_safety"
+    size: 4
+    alignment: 4
+    referenced_type: "std::pointer_safety"
+    source_file: ""
+    linker_set_key: "const std::pointer_safety"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__less<unsigned int, unsigned int>"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__less<unsigned int, unsigned int>"
+    source_file: ""
+    linker_set_key: "const std::__less<unsigned int, unsigned int>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const class std::__1::uniform_int_distribution::param_type"
+    size: 0
+    alignment: 0
+    referenced_type: "class std::__1::uniform_int_distribution::param_type"
+    source_file: ""
+    linker_set_key: "const class std::__1::uniform_int_distribution::param_type"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const uniform_int_distribution<_IntType>"
+    size: 0
+    alignment: 0
+    referenced_type: "uniform_int_distribution<_IntType>"
+    source_file: ""
+    linker_set_key: "const uniform_int_distribution<_IntType>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::uniform_int_distribution<int>::param_type"
+    size: 8
+    alignment: 4
+    referenced_type: "std::uniform_int_distribution<int>::param_type"
+    source_file: ""
+    linker_set_key: "const std::uniform_int_distribution<int>::param_type"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::uniform_int_distribution<int>"
+    size: 8
+    alignment: 4
+    referenced_type: "std::uniform_int_distribution<int>"
+    source_file: ""
+    linker_set_key: "const std::uniform_int_distribution<int>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const std::__rs_default"
+    size: 1
+    alignment: 1
+    referenced_type: "std::__rs_default"
+    source_file: ""
+    linker_set_key: "const std::__rs_default"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::Registers_x86"
+    size: 64
+    alignment: 4
+    referenced_type: "libunwind::Registers_x86"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_x86"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::Registers_x86_64"
+    size: 168
+    alignment: 8
+    referenced_type: "libunwind::Registers_x86_64"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_x86_64"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::Registers_ppc"
+    size: 936
+    alignment: 8
+    referenced_type: "libunwind::Registers_ppc"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_ppc"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::Registers_arm64"
+    size: 528
+    alignment: 8
+    referenced_type: "libunwind::Registers_arm64"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_arm64"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::Registers_arm"
+    size: 336
+    alignment: 8
+    referenced_type: "libunwind::Registers_arm"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_arm"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::Registers_or1k"
+    size: 128
+    alignment: 4
+    referenced_type: "libunwind::Registers_or1k"
+    source_file: ""
+    linker_set_key: "const libunwind::Registers_or1k"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::elf32_phdr"
+    size: 32
+    alignment: 4
+    referenced_type: "libunwind::elf32_phdr"
+    source_file: ""
+    linker_set_key: "const libunwind::elf32_phdr"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const sched_param"
+    size: 4
+    alignment: 4
+    referenced_type: "sched_param"
+    source_file: ""
+    linker_set_key: "const sched_param"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const cpu_set_t"
+    size: 4
+    alignment: 4
+    referenced_type: "cpu_set_t"
+    source_file: ""
+    linker_set_key: "const cpu_set_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const pthread_attr_t"
+    size: 24
+    alignment: 4
+    referenced_type: "pthread_attr_t"
+    source_file: ""
+    linker_set_key: "const pthread_attr_t"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::UnwindInfoSections"
+    size: 8
+    alignment: 4
+    referenced_type: "libunwind::UnwindInfoSections"
+    source_file: ""
+    linker_set_key: "const libunwind::UnwindInfoSections"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+qualified_types {
+  type_info {
+    name: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace>"
+    size: 12
+    alignment: 4
+    referenced_type: "libunwind::EHABISectionIterator<libunwind::LocalAddressSpace>"
+    source_file: ""
+    linker_set_key: "const libunwind::EHABISectionIterator<libunwind::LocalAddressSpace>"
+  }
+  is_const: true
+  is_volatile: false
+  is_restricted: false
+}
+array_types {
+  type_info {
+    name: "unsigned long long [128]"
+    size: 1024
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long [128]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long long [140]"
+    size: 1120
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long [140]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long [32]"
+    size: 128
+    alignment: 4
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [2]"
+    size: 8
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [2]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [1]"
+    size: 4
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [1]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [10]"
+    size: 40
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [10]"
+  }
+}
+array_types {
+  type_info {
+    name: "char [84]"
+    size: 84
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [84]"
+  }
+}
+array_types {
+  type_info {
+    name: "__sFILE []"
+    size: 0
+    alignment: 0
+    referenced_type: "__sFILE"
+    source_file: ""
+    linker_set_key: "__sFILE []"
+  }
+}
+array_types {
+  type_info {
+    name: "char [2]"
+    size: 2
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [2]"
+  }
+}
+array_types {
+  type_info {
+    name: "double [4]"
+    size: 32
+    alignment: 8
+    referenced_type: "double"
+    source_file: ""
+    linker_set_key: "double [4]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [29]"
+    size: 116
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [29]"
+  }
+}
+array_types {
+  type_info {
+    name: "char [0]"
+    size: 0
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [0]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [13]"
+    size: 52
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [13]"
+  }
+}
+array_types {
+  type_info {
+    name: "user_fpregs::fp_reg [8]"
+    size: 96
+    alignment: 4
+    referenced_type: "user_fpregs::fp_reg"
+    source_file: ""
+    linker_set_key: "user_fpregs::fp_reg [8]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned char [8]"
+    size: 8
+    alignment: 1
+    referenced_type: "unsigned char"
+    source_file: ""
+    linker_set_key: "unsigned char [8]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long [18]"
+    size: 72
+    alignment: 4
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long [18]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long long [32]"
+    size: 256
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "char [32]"
+    size: 32
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "int [8]"
+    size: 32
+    alignment: 4
+    referenced_type: "int"
+    source_file: ""
+    linker_set_key: "int [8]"
+  }
+}
+array_types {
+  type_info {
+    name: "char [120]"
+    size: 120
+    alignment: 1
+    referenced_type: "char"
+    source_file: ""
+    linker_set_key: "char [120]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long [128]"
+    size: 512
+    alignment: 4
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long [128]"
+  }
+}
+array_types {
+  type_info {
+    name: "const char *[65]"
+    size: 260
+    alignment: 4
+    referenced_type: "const char *"
+    source_file: ""
+    linker_set_key: "const char *[65]"
+  }
+}
+array_types {
+  type_info {
+    name: "char *[]"
+    size: 0
+    alignment: 0
+    referenced_type: "char *"
+    source_file: ""
+    linker_set_key: "char *[]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned char [4]"
+    size: 4
+    alignment: 1
+    referenced_type: "unsigned char"
+    source_file: ""
+    linker_set_key: "unsigned char [4]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned int [5]"
+    size: 20
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int [5]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned int [4]"
+    size: 16
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int [4]"
+  }
+}
+array_types {
+  type_info {
+    name: "libunwind::v128 [32]"
+    size: 512
+    alignment: 4
+    referenced_type: "libunwind::v128"
+    source_file: ""
+    linker_set_key: "libunwind::v128 [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "double [32]"
+    size: 256
+    alignment: 8
+    referenced_type: "double"
+    source_file: ""
+    linker_set_key: "double [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long long [29]"
+    size: 232
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long [29]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long long [17]"
+    size: 136
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long [17]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long long [16]"
+    size: 128
+    alignment: 8
+    referenced_type: "unsigned long long"
+    source_file: ""
+    linker_set_key: "unsigned long long [16]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned int [13]"
+    size: 52
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int [13]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned int [32]"
+    size: 128
+    alignment: 4
+    referenced_type: "unsigned int"
+    source_file: ""
+    linker_set_key: "unsigned int [32]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned char [16]"
+    size: 16
+    alignment: 1
+    referenced_type: "unsigned char"
+    source_file: ""
+    linker_set_key: "unsigned char [16]"
+  }
+}
+array_types {
+  type_info {
+    name: "unsigned long [1]"
+    size: 4
+    alignment: 4
+    referenced_type: "unsigned long"
+    source_file: ""
+    linker_set_key: "unsigned long [1]"
+  }
+}
+functions {
+  referenced_type: "Foo"
+  function_name: "foo"
+  source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_and_cpp.h"
+  parameters {
+    referenced_type: "int *"
+    default_arg: false
+  }
+  parameters {
+    referenced_type: "int *"
+    default_arg: false
+  }
+  linker_set_key: "_Z3fooPiS_"
+  access: public_access
+}
+functions {
+  referenced_type: "void"
+  function_name: "CFunction"
+  source_file: "./development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_include.h"
+  parameters {
+    referenced_type: "Cstruct **"
+    default_arg: false
+  }
+  linker_set_key: "CFunction"
+  access: public_access
+}
+elf_functions {
+  name: "CFunction"
+}
+elf_functions {
+  name: "_Z3fooPiS_"
+}
