@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3d4a82e8_3aa5a252",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-04T09:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8629c30e_25908508",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d742cd49_047f7217",
         "filename": "vndk/tools/source-deps-reviewer/setup.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-04T08:33:13Z",
       "side": 1,
       "message": "Use AOSP URL instead:\n\n    https://android.googlesource.com/platform/development/+/master/vndk/tools/source-deps-reviewer/",
+      "range": {
+        "startLine": 6,
+        "startChar": 11,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "711694c2_092dce7e",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-04T09:49:46Z",
+      "side": 1,
+      "message": "Should I make this URL be within 80 columns too?",
+      "parentUuid": "d742cd49_047f7217",
       "range": {
         "startLine": 6,
         "startChar": 11,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "dae7fa8f_3e29883a",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-04T09:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75537696_c9cf3fb5",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 41
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ceb25798_5e04dc14",
         "filename": "vndk/tools/source-deps-reviewer/setup.py",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "862e4ae9_52ed99cd",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-04T09:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ceb25798_5e04dc14",
+      "range": {
+        "startLine": 9,
+        "startChar": 28,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ecf2d23d_5084edfe",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/config.py",
         "patchSetId": 1
@@ -105,6 +201,24 @@
       "writtenOn": "2017-08-04T08:33:13Z",
       "side": 1,
       "message": "Shouldn\u0027t you move these files with `git mv`?  It seems that you have created a copy of these files.",
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13f43642_8d8d0bc5",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-04T09:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecf2d23d_5084edfe",
       "revId": "10e40c608af9353d605a942505b01710f49615df",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
