@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8629c30e_25908508",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-04T08:33:13Z",
+      "side": 1,
+      "message": "Since this is much longer, we prefer a different convention (treat this as a special case):\n\n    setup(\n        name\u003d\u0027sourcedr\u0027,\n        version\u003d\u00271.0\u0027,\n        ...,\n    )\n\nBreak the line at (, and indent by 4, and move the ending ) to a new line.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d742cd49_047f7217",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-04T08:33:13Z",
+      "side": 1,
+      "message": "Use AOSP URL instead:\n\n    https://android.googlesource.com/platform/development/+/master/vndk/tools/source-deps-reviewer/",
+      "range": {
+        "startLine": 6,
+        "startChar": 11,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "75537696_c9cf3fb5",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-04T08:33:13Z",
+      "side": 1,
+      "message": "Don\u0027t leave your personal information",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 41
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ceb25798_5e04dc14",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-04T08:33:13Z",
+      "side": 1,
+      "message": "No trailing whitespace",
+      "range": {
+        "startLine": 9,
+        "startChar": 28,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ecf2d23d_5084edfe",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-04T08:33:13Z",
+      "side": 1,
+      "message": "Shouldn\u0027t you move these files with `git mv`?  It seems that you have created a copy of these files.",
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
