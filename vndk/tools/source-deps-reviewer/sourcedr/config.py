@@ -32,4 +32,6 @@ PATH_PATTERN_BLACK_LIST = (
     b'autom4te.cache',
     b'dejagnu',
     b'llvm/Config/Config',
+    b'.git',
+    b'.repo',
 )
