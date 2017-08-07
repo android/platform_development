@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "8a9bb3d5_2cf323bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-07T08:31:27Z",
+      "side": 1,
+      "message": "Replace with:\n\n    sourcedr: Reorganize directory structure\n\n    This commit reorganizes the files and directories and adds a setup.py for Python package distribution.\n\n    Test: pip install -e .[dev] \u0026\u0026 sourcedr",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "3356976675796da15cd9d57dde54ca28b5076ce0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9ebbb8c_bd9150f1",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
         "patchSetId": 3
