@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "e94f0f46_7156f9c0",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-07T08:39:02Z",
+      "side": 1,
+      "message": "You will need package_data as well:\n\n    package_data\u003d{\n        \u0027sourcedr\u0027: \u0027static/*\u0027,\n    },\n\nRef. https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files",
+      "revId": "3356976675796da15cd9d57dde54ca28b5076ce0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9ebbb8c_bd9150f1",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
         "patchSetId": 3
