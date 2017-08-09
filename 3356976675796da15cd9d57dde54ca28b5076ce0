@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c3cb712b_39c21a9f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-09T04:43:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a9bb3d5_2cf323bd",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "3356976675796da15cd9d57dde54ca28b5076ce0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e94f0f46_7156f9c0",
         "filename": "vndk/tools/source-deps-reviewer/setup.py",
         "patchSetId": 3
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "af00f217_08a4730c",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-09T04:43:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e94f0f46_7156f9c0",
+      "revId": "3356976675796da15cd9d57dde54ca28b5076ce0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9ebbb8c_bd9150f1",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
         "patchSetId": 3
@@ -53,6 +95,24 @@
       "writtenOn": "2017-08-07T08:26:21Z",
       "side": 1,
       "message": "Split this part into another CL",
+      "revId": "3356976675796da15cd9d57dde54ca28b5076ce0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b6f6f8c_df226649",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-09T04:43:36Z",
+      "side": 1,
+      "message": "what do you mean?",
+      "parentUuid": "f9ebbb8c_bd9150f1",
       "revId": "3356976675796da15cd9d57dde54ca28b5076ce0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false

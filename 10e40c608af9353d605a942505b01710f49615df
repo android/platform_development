@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "c22c9755_045e7795",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-09T04:43:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c116d18_cdf9331a",
+      "range": {
+        "startLine": 6,
+        "startChar": 11,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "10e40c608af9353d605a942505b01710f49615df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "75537696_c9cf3fb5",
         "filename": "vndk/tools/source-deps-reviewer/setup.py",
         "patchSetId": 1
