@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a92dfb3_f3185d3c",
+        "filename": "vndk/tools/header-checker/tests/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-09T23:58:37Z",
+      "side": 1,
+      "message": "fix these",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 3
+      },
+      "revId": "1488e2756beb25036d1b2c9a39dfe1031f238b8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
