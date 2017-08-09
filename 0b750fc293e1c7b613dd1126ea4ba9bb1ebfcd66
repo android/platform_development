@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e4104687_eaac674f",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-09T06:57:59Z",
+      "side": 1,
+      "message": "Unused.  Remove",
+      "range": {
+        "startLine": 1,
+        "startChar": 28,
+        "endLine": 1,
+        "endChar": 43
+      },
+      "revId": "0b750fc293e1c7b613dd1126ea4ba9bb1ebfcd66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af63ed53_c44e477f",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-09T06:57:59Z",
+      "side": 1,
+      "message": "Remove line 135.",
+      "revId": "0b750fc293e1c7b613dd1126ea4ba9bb1ebfcd66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
