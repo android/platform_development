@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "9e62d93c_11d4ff28",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-09T07:36:30Z",
+      "side": 1,
+      "message": "我試了 確實是不加就不會裝python以外的檔案",
+      "parentUuid": "af00f217_08a4730c",
+      "revId": "3356976675796da15cd9d57dde54ca28b5076ce0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9ebbb8c_bd9150f1",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
         "patchSetId": 3

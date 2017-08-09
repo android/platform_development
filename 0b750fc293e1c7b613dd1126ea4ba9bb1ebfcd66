@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7b744792_ef5ae8c3",
+        "filename": "vndk/tools/source-deps-reviewer/setup.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-09T07:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4104687_eaac674f",
+      "range": {
+        "startLine": 1,
+        "startChar": 28,
+        "endLine": 1,
+        "endChar": 43
+      },
+      "revId": "0b750fc293e1c7b613dd1126ea4ba9bb1ebfcd66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af63ed53_c44e477f",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/server.py",
         "patchSetId": 6
@@ -36,6 +60,24 @@
       "writtenOn": "2017-08-09T06:57:59Z",
       "side": 1,
       "message": "Remove line 135.",
+      "revId": "0b750fc293e1c7b613dd1126ea4ba9bb1ebfcd66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6747c39f_1684ae31",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-09T07:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af63ed53_c44e477f",
       "revId": "0b750fc293e1c7b613dd1126ea4ba9bb1ebfcd66",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
