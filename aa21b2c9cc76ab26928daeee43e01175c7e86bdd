@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9bc422cc_a45f38fb",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-10T23:09:17Z",
+      "side": 1,
+      "message": "Need to come up with some other way, adding a field could show up as multiple removed fields in the diff.",
+      "range": {
+        "startLine": 194,
+        "startChar": 2,
+        "endLine": 195,
+        "endChar": 70
+      },
+      "revId": "aa21b2c9cc76ab26928daeee43e01175c7e86bdd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db09dc0b_5bd7f030",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-10T23:09:17Z",
+      "side": 1,
+      "message": "remove, already done.",
+      "range": {
+        "startLine": 385,
+        "startChar": 5,
+        "endLine": 386,
+        "endChar": 34
+      },
+      "revId": "aa21b2c9cc76ab26928daeee43e01175c7e86bdd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c0ade0f7_38e77f8c",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-10T23:09:17Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 415,
+        "startChar": 6,
+        "endLine": 415,
+        "endChar": 56
+      },
+      "revId": "aa21b2c9cc76ab26928daeee43e01175c7e86bdd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69979024_1479dee8",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-10T23:09:17Z",
+      "side": 1,
+      "message": "Fix formatting, the output help message isn\u0027t well formatted.",
+      "range": {
+        "startLine": 53,
+        "startChar": 38,
+        "endLine": 55,
+        "endChar": 63
+      },
+      "revId": "aa21b2c9cc76ab26928daeee43e01175c7e86bdd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
