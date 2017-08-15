@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c5b9dbb_d555a967",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-15T15:13:20Z",
+      "side": 1,
+      "message": "add TODO comment with bug to make this multi-threaded.",
+      "range": {
+        "startLine": 240,
+        "startChar": 12,
+        "endLine": 240,
+        "endChar": 38
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
