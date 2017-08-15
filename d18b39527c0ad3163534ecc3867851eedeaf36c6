@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "89382fa7_0c1bd70f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-15T15:56:04Z",
+      "side": 1,
+      "message": "I should have mentioned that we infer any ABI information by parsing the AST of a source file (we can\u0027t just parse headers since 1) many many headers do not compile standalone, 2) C++ templated types are instantiated only when they\u0027re used with sources necessitating the instantiation) and then filtering out information not in exported headers.",
+      "parentUuid": "20e4b2df_85dec039",
+      "range": {
+        "startLine": 30,
+        "startChar": 62,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4c5b9dbb_d555a967",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 8
