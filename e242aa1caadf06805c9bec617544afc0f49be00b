@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5bf9846_c8b92ca8",
+        "filename": "vndk/tools/header-checker/tests/gen_all.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-15T15:11:26Z",
+      "side": 1,
+      "message": "Remove.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "e242aa1caadf06805c9bec617544afc0f49be00b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
