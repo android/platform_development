@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "f31d4015_6a8a9c6c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-15T15:49:24Z",
+      "side": 1,
+      "message": "Yes types reachable by global symbols (elf symbols of type object are also listed, I should improve the commit message). \nThe purpose of this optimization is that it reduces false positives / negatives (depends on if you a call a report of an ABI breakage a positive or a negative) since earlier, we were diffing all types in exported headers regardless of if they were being used in function / global variable signatures or not. Now a diff to a struct not being used by a function signature will not be shown as an error (it can still be seen as a warning by adding the -chek-all-apis option while invoking header-abi-diff).",
+      "parentUuid": "59982242_e1c68ddf",
+      "range": {
+        "startLine": 18,
+        "startChar": 3,
+        "endLine": 19,
+        "endChar": 24
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f2154ca_28b88dc5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-15T15:49:24Z",
+      "side": 1,
+      "message": "It is turned off / on directly in the build system invocation itself, I didn\u0027t want to have a build toggle to do this since it could be tampered with (you can tamper with code as well, but then you\u0027re explicitly being evil). I wanted to keep -check-all-apis and -advice-only options for the build system right now since that\u0027d give us the benefit of not breaking builds right away (I eventually want to do this, when we\u0027re sure there are absolutely minimal number of false errors), and also give us warnings about changes in types which aren\u0027t directly used by functions/ global variables but could be internally typecasted and used which could still cause ABI problems.",
+      "parentUuid": "e1ba8716_beee1d68",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "db0e1b4e_f28e7724",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -82,6 +130,30 @@
       "writtenOn": "2017-08-15T15:35:41Z",
       "side": 1,
       "message": "I don\u0027t understand how this caused the false report. Perhaps since they don\u0027t have headers?",
+      "range": {
+        "startLine": 30,
+        "startChar": 62,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20e4b2df_85dec039",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-15T15:49:24Z",
+      "side": 1,
+      "message": "For assembly, I don\u0027t see any AST being produced, neither do I think DWARF is produced (except location information :(), so for eg: if libFoo has Foo and Bar implemented in assembly on 1 arm target (A) but in c / c++ files in another arm target (B), they would not show up in our ABI dump for target A but would show up in the ABI dump for target B. Since we can get the reference only from 1 target (the ABI SHOULD be the same across all targets in an architecture), if we diff A and B without adding elf functions and objects directly from the .so as well, we would get a false ABI extended / broken report.",
+      "parentUuid": "cde8b47d_1a178e51",
       "range": {
         "startLine": 30,
         "startChar": 62,
