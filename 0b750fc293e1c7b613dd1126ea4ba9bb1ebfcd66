@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6e802449_4dbe46d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-15T01:20:14Z",
+      "side": 1,
+      "message": "Add empty lines between 10-11 and 11-12.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 2
+      },
+      "revId": "0b750fc293e1c7b613dd1126ea4ba9bb1ebfcd66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4104687_eaac674f",
         "filename": "vndk/tools/source-deps-reviewer/setup.py",
         "patchSetId": 6
