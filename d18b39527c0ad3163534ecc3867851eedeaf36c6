@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "e1ba8716_beee1d68",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-08-15T15:35:41Z",
+      "side": 1,
+      "message": "When and by whom, the optional is turned on or off? Is there any criteria?",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59982242_e1c68ddf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-08-15T15:35:41Z",
+      "side": 1,
+      "message": "Does this mean that the types not referred by a function signature is not dumped or diffed by default? What is the purpose of this? Optimization? What about global symbols?",
+      "range": {
+        "startLine": 18,
+        "startChar": 3,
+        "endLine": 19,
+        "endChar": 24
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db0e1b4e_f28e7724",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-08-15T15:35:41Z",
+      "side": 1,
+      "message": "This is cool. :)",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 66
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cde8b47d_1a178e51",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-08-15T15:35:41Z",
+      "side": 1,
+      "message": "I don\u0027t understand how this caused the false report. Perhaps since they don\u0027t have headers?",
+      "range": {
+        "startLine": 30,
+        "startChar": 62,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4c5b9dbb_d555a967",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 8
