@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55b3b881_5cdbefce",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-15T05:20:41Z",
+      "side": 1,
+      "message": "May you split this change to an independent CL?",
+      "revId": "c5c71a19a99cf8847719899ea67b51ff5028eb6a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86f7f8aa_47b9389e",
+        "filename": "vndk/tools/source-deps-reviewer/functional_tests.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-15T05:20:41Z",
+      "side": 0,
+      "message": "Don\u0027t delete this file.  Move this to proper location.",
+      "revId": "a5e2c3e3d83faa64b1c15ff151a99ebf05a2a913",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
