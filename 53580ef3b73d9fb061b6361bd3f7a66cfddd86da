@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "60e3ffa1_2f1493d5",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:31:56Z",
+      "side": 1,
+      "message": "Can\u0027t this simply be a non-static member (and move to line 133-134)?",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 42
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d40f75b2_af087dea",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
         "patchSetId": 10
@@ -110,6 +133,29 @@
         "startChar": 19,
         "endLine": 73,
         "endChar": 20
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc695a02_620cfba4",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:31:56Z",
+      "side": 1,
+      "message": "A space before \u0027p\u0027",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 1
       },
       "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
