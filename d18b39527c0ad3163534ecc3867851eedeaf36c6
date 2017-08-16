@@ -190,6 +190,23 @@
     },
     {
       "key": {
+        "uuid": "cf65443d_0a333a84",
+        "filename": "vndk/tools/header-checker/Android.bp",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:16:36Z",
+      "side": 1,
+      "message": "Isn\u0027t \u0027\"\u0027 smaller than \u0027C\u0027?",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c5b9dbb_d555a967",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 8
