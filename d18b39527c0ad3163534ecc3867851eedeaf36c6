@@ -475,6 +475,29 @@
     },
     {
       "key": {
+        "uuid": "3c7b1a66_a76e7d0a",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T01:40:24Z",
+      "side": 1,
+      "message": "I should also mention that it would be nice to split this into text format specific linkers used through a generic linker class. I\u0027ll do that in another CL later when it is more convenient.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c5b9dbb_d555a967",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 8
