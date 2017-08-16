@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "5c131953_97eff10f",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T11:04:49Z",
+      "side": 1,
+      "message": "ELFSymbolType",
+      "range": {
+        "startLine": 153,
+        "startChar": 31,
+        "endLine": 153,
+        "endChar": 46
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "64ed21a7_a90bd327",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 10
@@ -41,6 +64,52 @@
         "startChar": 0,
         "endLine": 30,
         "endChar": 62
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7ef4755_8f0e76a2",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T11:04:49Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 69,
+        "startChar": 2,
+        "endLine": 69,
+        "endChar": 4
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "042038f8_a6813527",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T11:04:49Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 74,
+        "startChar": 2,
+        "endLine": 74,
+        "endChar": 4
       },
       "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
