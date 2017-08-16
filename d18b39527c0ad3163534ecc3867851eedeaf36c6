@@ -495,6 +495,138 @@
       "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a3fa3666_d8649aba",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:39:16Z",
+      "side": 1,
+      "message": "Do you need this header?  I don\u0027t see the occurrences of `llvm::raw_ostream` in this file.  If it is the .cpp file that need this header, move the #include directive to that file.",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e9013481_e838ebfa",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:39:16Z",
+      "side": 1,
+      "message": "Weird indent here.  I think member function prototypes should only get 2 spaces instead of 3.",
+      "range": {
+        "startLine": 230,
+        "startChar": 2,
+        "endLine": 230,
+        "endChar": 3
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c78b382_e3b47302",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:39:16Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override since override implies virtual.  It is good to remove `virtual` here.",
+      "range": {
+        "startLine": 257,
+        "startChar": 2,
+        "endLine": 257,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e0f75cb_36dc9b13",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:39:16Z",
+      "side": 1,
+      "message": "Google\u0027s convention for access specifiers is to indent them by 1 space character instead of 2.",
+      "range": {
+        "startLine": 274,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 2
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12d4e51d_d084dde9",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:39:16Z",
+      "side": 1,
+      "message": "Do you need these?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 19
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "552d6bed_978fab83",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:39:16Z",
+      "side": 1,
+      "message": "Can this be replaced by:\n\n    std::make_unique\u003cProtobufIRDumper\u003e(dump_path)",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 69
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
