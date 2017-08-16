@@ -670,6 +670,24 @@
     },
     {
       "key": {
+        "uuid": "33dfe968_d0470952",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T02:06:35Z",
+      "side": 1,
+      "message": "Class static methods private by default ?",
+      "parentUuid": "b4a6ed86_bd1c8db0",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0927c1fb_c309973b",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 8
