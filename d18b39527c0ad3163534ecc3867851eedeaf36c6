@@ -96,6 +96,54 @@
     },
     {
       "key": {
+        "uuid": "68f8f489_07de1e47",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-08-16T01:30:02Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "6f2154ca_28b88dc5",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4da2de6_b1892f38",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-08-16T01:30:02Z",
+      "side": 1,
+      "message": "Got it.",
+      "parentUuid": "f31d4015_6a8a9c6c",
+      "range": {
+        "startLine": 18,
+        "startChar": 3,
+        "endLine": 19,
+        "endChar": 24
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "db0e1b4e_f28e7724",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -178,6 +226,30 @@
       "side": 1,
       "message": "I should have mentioned that we infer any ABI information by parsing the AST of a source file (we can\u0027t just parse headers since 1) many many headers do not compile standalone, 2) C++ templated types are instantiated only when they\u0027re used with sources necessitating the instantiation) and then filtering out information not in exported headers.",
       "parentUuid": "20e4b2df_85dec039",
+      "range": {
+        "startLine": 30,
+        "startChar": 62,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbc04c9c_f6546617",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-08-16T01:30:02Z",
+      "side": 1,
+      "message": "\u003e we infer any ABI information by parsing the AST of a source file\nThis explains many things. Thanks for the info.",
+      "parentUuid": "89382fa7_0c1bd70f",
       "range": {
         "startLine": 30,
         "startChar": 62,
