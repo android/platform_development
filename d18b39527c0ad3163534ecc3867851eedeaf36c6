@@ -207,6 +207,98 @@
     },
     {
       "key": {
+        "uuid": "a492ae44_de03bdf6",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:18:52Z",
+      "side": 1,
+      "message": "A space between \u0027e\u0027 and \u0027\u003c\u0027",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7010e9a6_24a30719",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:18:52Z",
+      "side": 1,
+      "message": "Align to \"new_dump_\"",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 6
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a7e96ae_c7a444e6",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:18:52Z",
+      "side": 1,
+      "message": "Use consistent style: add a space between T and *",
+      "range": {
+        "startLine": 65,
+        "startChar": 40,
+        "endLine": 65,
+        "endChar": 42
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c1432c4_f94b6f3b",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:18:52Z",
+      "side": 1,
+      "message": "Use consistent style: add a space between T and *",
+      "range": {
+        "startLine": 66,
+        "startChar": 40,
+        "endLine": 66,
+        "endChar": 42
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c5b9dbb_d555a967",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 8
