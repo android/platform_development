@@ -319,6 +319,24 @@
     },
     {
       "key": {
+        "uuid": "4d8a0a2a_61ab6416",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T01:33:24Z",
+      "side": 1,
+      "message": "My bad, I meant to keep this in HeaderAbiDiff.",
+      "parentUuid": "18a36780_01549990",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a492ae44_de03bdf6",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 8
