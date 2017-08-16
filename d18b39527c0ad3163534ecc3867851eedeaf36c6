@@ -521,6 +521,144 @@
     },
     {
       "key": {
+        "uuid": "cbcb3e82_d8e1fcc2",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T02:48:42Z",
+      "side": 1,
+      "message": "Fit into a line",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 45
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d90d46f_cd1907bc",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T02:48:42Z",
+      "side": 1,
+      "message": "Space between \u0027,\u0027 and \u0027T\u0027",
+      "range": {
+        "startLine": 149,
+        "startChar": 31,
+        "endLine": 149,
+        "endChar": 33
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "713b0fa9_58b7e039",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T02:48:42Z",
+      "side": 1,
+      "message": "Fit into a line",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 33
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2f0cab9_5a9ecf53",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T02:48:42Z",
+      "side": 1,
+      "message": "Fit into a line",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 33
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "158ff400_fca1a715",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T02:48:42Z",
+      "side": 1,
+      "message": "Add space between \u0027,\u0027 and T",
+      "range": {
+        "startLine": 167,
+        "startChar": 23,
+        "endLine": 167,
+        "endChar": 25
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c241422_dd0bba54",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T02:48:42Z",
+      "side": 1,
+      "message": "Add space between \u0027,\u0027 and T",
+      "range": {
+        "startLine": 170,
+        "startChar": 25,
+        "endLine": 170,
+        "endChar": 27
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa6ff78_a0fa3ed2",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
         "patchSetId": 8
