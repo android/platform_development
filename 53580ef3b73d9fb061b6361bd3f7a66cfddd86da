@@ -117,6 +117,121 @@
     },
     {
       "key": {
+        "uuid": "353fde5b_3e778da6",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:57:50Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 66,
+        "startChar": 2,
+        "endLine": 66,
+        "endChar": 4
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b1f888c_b1ca0a0e",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:57:50Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 112,
+        "startChar": 2,
+        "endLine": 112,
+        "endChar": 4
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e8e86d5_69dd99be",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:57:50Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 120,
+        "startChar": 2,
+        "endLine": 120,
+        "endChar": 4
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "044235b2_2fa35315",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:57:50Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 126,
+        "startChar": 2,
+        "endLine": 126,
+        "endChar": 4
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57e466a6_d8e6cbfb",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:57:50Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 132,
+        "startChar": 2,
+        "endLine": 132,
+        "endChar": 4
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f21baa44_ecf621d9",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
         "patchSetId": 10
@@ -179,6 +294,29 @@
         "startChar": 0,
         "endLine": 80,
         "endChar": 1
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a3af78fe_6b31b10b",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:57:50Z",
+      "side": 1,
+      "message": "Two more spaces",
+      "range": {
+        "startLine": 128,
+        "startChar": 2,
+        "endLine": 128,
+        "endChar": 4
       },
       "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
