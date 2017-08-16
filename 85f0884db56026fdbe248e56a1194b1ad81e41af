@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f60e2cc_ede21765",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fd7a395_f2897182",
+      "range": {
+        "startLine": 71,
+        "startChar": 70,
+        "endLine": 71,
+        "endChar": 71
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cbf915f4_a7802a14",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 591,
+        "startChar": 18,
+        "endLine": 591,
+        "endChar": 20
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e9bd655_79122a75",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbf915f4_a7802a14",
       "range": {
         "startLine": 591,
         "startChar": 18,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3eb08117_0cff4d61",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffb79821_5652a416",
+      "range": {
+        "startLine": 596,
+        "startChar": 18,
+        "endLine": 596,
+        "endChar": 20
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df578651_dceb96cc",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 9
@@ -82,6 +154,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 603,
+        "startChar": 18,
+        "endLine": 603,
+        "endChar": 20
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4bb699bb_db8ebf02",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df578651_dceb96cc",
       "range": {
         "startLine": 603,
         "startChar": 18,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "997a2b8e_aed610b2",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dd681c2_85f6b068",
+      "range": {
+        "startLine": 610,
+        "startChar": 18,
+        "endLine": 610,
+        "endChar": 20
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "04ee7a56_e2bd2459",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 9
@@ -128,6 +248,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "Indent",
+      "range": {
+        "startLine": 614,
+        "startChar": 8,
+        "endLine": 614,
+        "endChar": 10
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "700285e2_f372808d",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04ee7a56_e2bd2459",
       "range": {
         "startLine": 614,
         "startChar": 8,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "1afdee43_69f89f74",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ddf22d2_f54682b5",
+      "range": {
+        "startLine": 76,
+        "startChar": 12,
+        "endLine": 76,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "067aebb7_95edbf76",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -174,6 +342,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 79,
+        "startChar": 12,
+        "endLine": 79,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "440f8ac6_d1ba6679",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "067aebb7_95edbf76",
       "range": {
         "startLine": 79,
         "startChar": 12,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "04d2daef_166c9835",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe427a77_632286d3",
+      "range": {
+        "startLine": 82,
+        "startChar": 12,
+        "endLine": 82,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c07662d0_db6a6996",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -220,6 +436,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 85,
+        "startChar": 12,
+        "endLine": 85,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fbf67ca_a58265c8",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c07662d0_db6a6996",
       "range": {
         "startLine": 85,
         "startChar": 12,
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "08013c39_f194041a",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f17e782_8545f62a",
+      "range": {
+        "startLine": 86,
+        "startChar": 3,
+        "endLine": 87,
+        "endChar": 44
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a937a65a_c648a327",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -266,6 +530,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 94,
+        "startChar": 12,
+        "endLine": 94,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e63bc7d_99b9b0f3",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a937a65a_c648a327",
       "range": {
         "startLine": 94,
         "startChar": 12,
@@ -301,6 +589,30 @@
     },
     {
       "key": {
+        "uuid": "b01ccb43_5ec61605",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b65f611_ae5097ac",
+      "range": {
+        "startLine": 97,
+        "startChar": 12,
+        "endLine": 97,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "936c81a3_c4a87c72",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -324,6 +636,30 @@
     },
     {
       "key": {
+        "uuid": "176435ce_224a852f",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "936c81a3_c4a87c72",
+      "range": {
+        "startLine": 100,
+        "startChar": 12,
+        "endLine": 100,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4e9d9b1_cf19391b",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -335,6 +671,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 103,
+        "startChar": 12,
+        "endLine": 103,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6bae761_59f931d6",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4e9d9b1_cf19391b",
       "range": {
         "startLine": 103,
         "startChar": 12,
@@ -393,6 +753,30 @@
     },
     {
       "key": {
+        "uuid": "9984da06_b0aff7a3",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d87a2aec_d092709e",
+      "range": {
+        "startLine": 109,
+        "startChar": 12,
+        "endLine": 109,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25e9f5a4_65ff4ad4",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -404,6 +788,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 112,
+        "startChar": 12,
+        "endLine": 112,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a4a863e_ccc247cc",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25e9f5a4_65ff4ad4",
       "range": {
         "startLine": 112,
         "startChar": 12,
@@ -439,6 +847,30 @@
     },
     {
       "key": {
+        "uuid": "60321a22_900ef118",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eaf1f0c5_31dd0201",
+      "range": {
+        "startLine": 115,
+        "startChar": 12,
+        "endLine": 115,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a4f507f_543bfcc7",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -450,6 +882,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "Suppose to be unreachable?",
+      "range": {
+        "startLine": 116,
+        "startChar": 3,
+        "endLine": 117,
+        "endChar": 63
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca8b7e9b_5cde2db0",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a4f507f_543bfcc7",
       "range": {
         "startLine": 116,
         "startChar": 3,
@@ -485,6 +941,30 @@
     },
     {
       "key": {
+        "uuid": "f60f6a02_8d85fa8b",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0891731c_47b8e970",
+      "range": {
+        "startLine": 124,
+        "startChar": 12,
+        "endLine": 124,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c34b212_51aaffcb",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -496,6 +976,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 127,
+        "startChar": 12,
+        "endLine": 127,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d29b8cb8_b9b91264",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c34b212_51aaffcb",
       "range": {
         "startLine": 127,
         "startChar": 12,
@@ -531,6 +1035,30 @@
     },
     {
       "key": {
+        "uuid": "cfdaef27_7f53164f",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f1198fa_aae1879e",
+      "range": {
+        "startLine": 130,
+        "startChar": 12,
+        "endLine": 130,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "932bca96_7f50353b",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -542,6 +1070,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 133,
+        "startChar": 12,
+        "endLine": 133,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01b16bce_7e2a19fd",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "932bca96_7f50353b",
       "range": {
         "startLine": 133,
         "startChar": 12,
@@ -577,6 +1129,30 @@
     },
     {
       "key": {
+        "uuid": "4cf06396_833d4954",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57bab8f0_38a2937a",
+      "range": {
+        "startLine": 136,
+        "startChar": 12,
+        "endLine": 136,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0b630946_edc241e8",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -588,6 +1164,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "One space only",
+      "range": {
+        "startLine": 139,
+        "startChar": 12,
+        "endLine": 139,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "abf3db02_899daad6",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b630946_edc241e8",
       "range": {
         "startLine": 139,
         "startChar": 12,
@@ -623,6 +1223,30 @@
     },
     {
       "key": {
+        "uuid": "878ea03c_0ca0a24c",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9fa647b_7a15b2a2",
+      "range": {
+        "startLine": 142,
+        "startChar": 12,
+        "endLine": 142,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4000e255_b08704c8",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -646,6 +1270,30 @@
     },
     {
       "key": {
+        "uuid": "a5633a9a_ab53adb1",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4000e255_b08704c8",
+      "range": {
+        "startLine": 145,
+        "startChar": 12,
+        "endLine": 145,
+        "endChar": 14
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eb15e9b0_bd3ad29c",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 9
@@ -657,6 +1305,30 @@
       "writtenOn": "2017-08-16T07:07:46Z",
       "side": 1,
       "message": "Suppose to be unreachable?",
+      "range": {
+        "startLine": 146,
+        "startChar": 3,
+        "endLine": 147,
+        "endChar": 57
+      },
+      "revId": "85f0884db56026fdbe248e56a1194b1ad81e41af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3210202e_0259cce7",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-16T08:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb15e9b0_bd3ad29c",
       "range": {
         "startLine": 146,
         "startChar": 3,
