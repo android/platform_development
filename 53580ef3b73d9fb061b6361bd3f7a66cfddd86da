@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "64ed21a7_a90bd327",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T08:42:29Z",
+      "side": 1,
+      "message": "You missed this one.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 62
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d40f75b2_af087dea",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T08:42:29Z",
+      "side": 1,
+      "message": "Add space between \u0027e\u0027 and \u0027\u003c\u0027",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "502c8aec_62ebcd23",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T08:42:29Z",
+      "side": 1,
+      "message": "One more space before \u0027n\u0027",
+      "range": {
+        "startLine": 265,
+        "startChar": 8,
+        "endLine": 265,
+        "endChar": 9
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f21baa44_ecf621d9",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T08:42:29Z",
+      "side": 1,
+      "message": "Remove one space",
+      "range": {
+        "startLine": 72,
+        "startChar": 19,
+        "endLine": 72,
+        "endChar": 20
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db92188e_e2a64cfe",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T08:42:29Z",
+      "side": 1,
+      "message": "Remove one space",
+      "range": {
+        "startLine": 73,
+        "startChar": 19,
+        "endLine": 73,
+        "endChar": 20
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
