@@ -279,6 +279,24 @@
     },
     {
       "key": {
+        "uuid": "a48d2d90_d1540199",
+        "filename": "vndk/tools/header-checker/Android.bp",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:52:35Z",
+      "side": 1,
+      "message": "Never mind.  Static libs should be sorted topologically.  You are correct here.",
+      "parentUuid": "cf65443d_0a333a84",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9dd6deb6_9646b2a3",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
         "patchSetId": 8

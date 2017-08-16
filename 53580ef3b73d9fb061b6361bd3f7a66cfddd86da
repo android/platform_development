@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "cae3ec4e_5b7a287b",
+        "filename": "vndk/tools/header-checker/Android.bp",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T10:52:35Z",
+      "side": 1,
+      "message": "Now I figure out.  Remove this, and add cppflags section:\n\n    cppflags: [\n        \"-std\u003dc++14\",\n    ],\n\nWith this change, you should be able to use std::make_unique.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 21
+      },
+      "revId": "53580ef3b73d9fb061b6361bd3f7a66cfddd86da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "64ed21a7_a90bd327",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 10
