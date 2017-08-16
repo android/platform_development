@@ -207,6 +207,46 @@
     },
     {
       "key": {
+        "uuid": "dcc0c5cc_e92667a1",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:26:06Z",
+      "side": 1,
+      "message": "Weird indent here",
+      "range": {
+        "startLine": 229,
+        "startChar": 11,
+        "endLine": 232,
+        "endChar": 13
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18a36780_01549990",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:26:06Z",
+      "side": 1,
+      "message": "This is a bad practice in library design.  Try to avoid this.",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a492ae44_de03bdf6",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 8
@@ -230,6 +270,29 @@
     },
     {
       "key": {
+        "uuid": "b59f22de_cccdbb3a",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:26:06Z",
+      "side": 1,
+      "message": "If this is your intention, why don\u0027t you simply use:\n\n    using abi_util::CompatibilityStatusIR;\n\n?\n\nAlthough personally prefer to avoid both using and typedef in header files.  I should be fine to prepend abi_util:: to the occurrences in theheader.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 62
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7010e9a6_24a30719",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 8
@@ -246,6 +309,29 @@
         "startChar": 0,
         "endLine": 44,
         "endChar": 6
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17796895_58bce407",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:26:06Z",
+      "side": 1,
+      "message": "ELFSymbolType",
+      "range": {
+        "startLine": 53,
+        "startChar": 33,
+        "endLine": 53,
+        "endChar": 48
       },
       "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
