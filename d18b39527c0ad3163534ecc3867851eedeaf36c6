@@ -521,6 +521,121 @@
     },
     {
       "key": {
+        "uuid": "baa6ff78_a0fa3ed2",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "BTW, pick a consistent naming style for all enums in this file?  There are UPERCASE, lower_case, and CamelCase in a file.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 18
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7b95383_4270e403",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 1
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5936aadf_48111f08",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 6
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d28f86d9_21947a4d",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Use override instead of virtual",
+      "range": {
+        "startLine": 152,
+        "startChar": 2,
+        "endLine": 152,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a09ab820_e2ba3ce5",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 292,
+        "endChar": 6
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3fa3666_d8649aba",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
         "patchSetId": 8
@@ -532,6 +647,80 @@
       "writtenOn": "2017-08-16T01:39:16Z",
       "side": 1,
       "message": "Do you need this header?  I don\u0027t see the occurrences of `llvm::raw_ostream` in this file.  If it is the .cpp file that need this header, move the #include directive to that file.",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4a6ed86_bd1c8db0",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Add \"private:\" here.",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0927c1fb_c309973b",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Add \"private:\" here.",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "466c0fc3_b150d91e",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 23
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "360dde68_1328f39b",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Add \"private:\" here if these are private members.",
       "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -554,6 +743,29 @@
         "startChar": 2,
         "endLine": 230,
         "endChar": 3
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e9575b2f_4a54c084",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Space between \u0027)\u0027 and \u0027{\u0027",
+      "range": {
+        "startLine": 253,
+        "startChar": 68,
+        "endLine": 253,
+        "endChar": 70
       },
       "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
@@ -607,6 +819,305 @@
     },
     {
       "key": {
+        "uuid": "00c29543_394d6f8c",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 343,
+        "startChar": 2,
+        "endLine": 343,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3463190b_66940c95",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 347,
+        "startChar": 2,
+        "endLine": 347,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a44cd5bf_dd5f0959",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 350,
+        "startChar": 2,
+        "endLine": 350,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af42e3a_bbc19dfa",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 353,
+        "startChar": 2,
+        "endLine": 353,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3b6690d2_0f2b23b7",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 355,
+        "startChar": 2,
+        "endLine": 355,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb6377a6_376a7f0d",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 357,
+        "startChar": 2,
+        "endLine": 357,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce966143_b8978d43",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 359,
+        "startChar": 2,
+        "endLine": 359,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "88d07cbe_090b2efb",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "You don\u0027t need both virtual and override.  Remove the virtual.",
+      "range": {
+        "startLine": 361,
+        "startChar": 2,
+        "endLine": 361,
+        "endChar": 10
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b8ca2f5_2d9b182e",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 381,
+        "startChar": 0,
+        "endLine": 381,
+        "endChar": 25
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "927f3542_3c9a11cf",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "It seems that this can fit into a line",
+      "range": {
+        "startLine": 383,
+        "startChar": 0,
+        "endLine": 384,
+        "endChar": 51
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cde8f8b6_560ab707",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "It seems that this can fit into a line",
+      "range": {
+        "startLine": 386,
+        "startChar": 0,
+        "endLine": 387,
+        "endChar": 49
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3ef9a01_40085875",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "It seems that this can fit into a line",
+      "range": {
+        "startLine": 390,
+        "startChar": 0,
+        "endLine": 391,
+        "endChar": 49
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9c8e8c33_23fb6ff0",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "It seems that this can fit into a line",
+      "range": {
+        "startLine": 393,
+        "startChar": 0,
+        "endLine": 394,
+        "endChar": 50
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12d4e51d_d084dde9",
         "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
         "patchSetId": 8
@@ -646,6 +1157,29 @@
         "startChar": 10,
         "endLine": 38,
         "endChar": 69
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb0205ff_949c1414",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_protobuf.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T01:56:25Z",
+      "side": 1,
+      "message": "Wrong indents",
+      "range": {
+        "startLine": 1117,
+        "startChar": 0,
+        "endLine": 1117,
+        "endChar": 1
       },
       "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
