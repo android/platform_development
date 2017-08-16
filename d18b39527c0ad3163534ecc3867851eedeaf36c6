@@ -590,6 +590,322 @@
     },
     {
       "key": {
+        "uuid": "2d2693ec_59429556",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Move to new line with 4 space indent.",
+      "range": {
+        "startLine": 225,
+        "startChar": 55,
+        "endLine": 227,
+        "endChar": 55
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a41e8487_2f9f158a",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "You can cache the size in a local variable.  For example:\n\n    for (size_t i \u003d 0, n \u003d old_template_elements.size(); i \u003c n; ++i) {",
+      "range": {
+        "startLine": 281,
+        "startChar": 13,
+        "endLine": 281,
+        "endChar": 41
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0fc6dcb3_270dc337",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "[i]",
+      "range": {
+        "startLine": 283,
+        "startChar": 29,
+        "endLine": 283,
+        "endChar": 35
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4e4d895_685070c2",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "[i]",
+      "range": {
+        "startLine": 285,
+        "startChar": 29,
+        "endLine": 285,
+        "endChar": 35
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efee2f79_4ebe6751",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 372,
+        "startChar": 4,
+        "endLine": 372,
+        "endChar": 5
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99c97125_c239f3f5",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 373,
+        "startChar": 4,
+        "endLine": 373,
+        "endChar": 5
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15afeba3_d66cb03e",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 382,
+        "startChar": 4,
+        "endLine": 382,
+        "endChar": 5
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "997d56c1_6a17ea8d",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 383,
+        "startChar": 4,
+        "endLine": 383,
+        "endChar": 5
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59d457a1_7d21a719",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "for (size_t i \u003d 0, n \u003d old_parameters.size(); i \u003c n; ++i) {",
+      "range": {
+        "startLine": 434,
+        "startChar": 2,
+        "endLine": 435,
+        "endChar": 37
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2dbc9c1_bd8babea",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Quote this expression with parentheses.",
+      "range": {
+        "startLine": 438,
+        "startChar": 8,
+        "endLine": 441,
+        "endChar": 31
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4222244b_a7e7ecd6",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Remove",
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b588a1e_be136a3b",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 570,
+        "startChar": 4,
+        "endLine": 570,
+        "endChar": 6
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2d94a31_9b0452ca",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 585,
+        "startChar": 4,
+        "endLine": 585,
+        "endChar": 6
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f59cf53_72e1f688",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-16T03:32:00Z",
+      "side": 1,
+      "message": "Add space between \u0027e\u0027 and \u0027\u003c\u0027",
+      "range": {
+        "startLine": 25,
+        "startChar": 7,
+        "endLine": 25,
+        "endChar": 9
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bce6d685_19764a87",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.h",
         "patchSetId": 8
