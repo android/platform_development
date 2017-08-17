@@ -38,3 +38,5 @@ Path,Tag
 /system/${LIB}/vndk-sp/liblzma.so,VNDK-SP-Indirect
 /system/${LIB}/vndk-sp/libunwind.so,VNDK-SP-Indirect
 /system/${LIB}/vndk-sp/libutils.so,VNDK-SP
+/system/${LIB}/libft2.so,FWK-ONLY-RS
+/system/${LIB}/libmediandk.so,FWK-ONLY-RS
