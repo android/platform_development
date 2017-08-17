@@ -22,6 +22,30 @@
       "revId": "e0eec9a6fab5f3be0c8d9cb86287619f14678ea6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "482e7b49_27f8cc9f",
+        "filename": "vndk/tools/header-checker/Android.bp",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-17T04:46:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f7bb59e_1946b2dd",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "e0eec9a6fab5f3be0c8d9cb86287619f14678ea6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
