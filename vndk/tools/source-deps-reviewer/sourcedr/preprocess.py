@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 from sourcedr.config import *
+from sourcedr.data_utils import data_exist
 from sourcedr.data_utils import init_pattern
 from sourcedr.data_utils import load_data
+from sourcedr.data_utils import merge
 from sourcedr.data_utils import save_data
-from sourcedr.data_utils import save_pattern
 
 from subprocess import call
 import collections
@@ -13,57 +14,99 @@ import os
 import re
 import subprocess
 
+class ClikeFilter(object):
+    def __init__(self, skip_literals=True, skip_comments=True):
+        self.skip_literals = skip_literals
+        self.skip_comments = skip_comments
+
+    def process(self, code):
+        if self.skip_comments:
+            # Remove // comments.
+            code = re.sub(b'//[^\\r\\n]*$', b'', code)
+            # Remove matched /* */ comments.
+            code = re.sub(b'/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/', b'', code)
+        if self.skip_literals:
+            # Remove matching quotes.
+            code = re.sub(b'"(?:[^"\\\\]|(?:\\\\.))*"', b'', code)
+            code = re.sub(b'\'(?:[^\'\\\\]|(?:\\\\.))*\'', b'', code)
+        return code
+
+class PyFilter(object):
+    def __init__(self, skip_literals=True, skip_comments=True):
+        self.skip_literals = skip_literals
+        self.skip_comments = skip_comments
+
+    def process(self, code):
+        if self.skip_comments:
+            # Remove # comments
+            code = re.sub(b'#[^\\r\\n]*$')
+        if self.skip_literals:
+            # Remove matching quotes.
+            code = re.sub(b'"(?:[^"\\\\]|(?:\\\\.))*"', b'', code)
+            code = re.sub(b'\'(?:[^\'\\\\]|(?:\\\\.))*\'', b'', code)
+        return code
+
+class AssemblyFilter(object):
+    def __init__(self, skip_literals=True, skip_comments=True):
+        self.skip_literals = skip_literals
+        self.skip_comments = skip_comments
+
+    def process(self, code):
+        if self.skip_comments:
+            # Remove @ comments
+            code = re.sub(b'@[^\\r\\n]*$', b'', code)
+            # Remove // comments.
+            code = re.sub(b'//[^\\r\\n]*$', b'', code)
+            # Remove matched /* */ comments.
+            code = re.sub(b'/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/', b'', code)
+        return code
+
+class MkFilter(object):
+    def __init__(self, skip_literals=True, skip_comments=True):
+        self.skip_literals = skip_literals
+        self.skip_comments = skip_comments
+
+    def process(self, code):
+        if self.skip_comments:
+            # Remove # comments
+            code = re.sub(b'#[^\\r\\n]*$')
+        return code
+
 class CodeSearch(object):
-    def __init__(self, android_root, csearch_path='./csearchindex'):
-        self.android_root = android_root
-        android_root = os.path.expanduser(android_root)
-        print('building csearchindex ...')
-        self.d = dict(os.environ)
-        self.d["CSEARCHINDEX"] = os.path.abspath(csearch_path)
-        subprocess.call(['cindex', android_root], env=self.d)
-
-    def sanitize_code(self, file_path, skip_literals=True, skip_comments=True):
-        with open(file_path, 'rb') as f:
-            code = f.read()
-
+    @staticmethod
+    def create_default(android_root, index_path):
         clike = ['.c', '.cpp', '.cc', '.cxx', '.h', '.hpp', '.hxx', '.java']
         assembly = ['.s', '.S']
         python = ['.py']
         mk = ['.mk']
+        cs = CodeSearch(android_root, index_path)
+        cs.add_filter(clike, ClikeFilter())
+        cs.add_filter(assembly, AssemblyFilter())
+        cs.add_filter(python, PyFilter())
+        cs.add_filter(mk, MkFilter())
+        return cs
 
-        if any(file_path.endswith(ext) for ext in clike):
-            if skip_comments:
-                # Remove // comments.
-                code = re.sub(b'//[^\\r\\n]*$', b'', code)
-                # Remove matched /* */ comments.
-                code = re.sub(b'/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/', b'', code)
-            if skip_literals:
-                # Remove matching quotes.
-                code = re.sub(b'"(?:[^"\\\\]|(?:\\\\.))*"', b'', code)
-                code = re.sub(b'\'(?:[^\'\\\\]|(?:\\\\.))*\'', b'', code)
+    def __init__(self, android_root, index_path):
+        self.android_root = android_root
+        self.env = dict(os.environ)
+        self.env["CSEARCHINDEX"] = os.path.abspath(index_path)
+        self.filters = {}
 
-        if any(file_path.endswith(ext) for ext in assembly):
-            if skip_comments:
-                # Remove @ comments
-                code = re.sub(b'@[^\\r\\n]*$', b'', code)
-                # Remove // comments.
-                code = re.sub(b'//[^\\r\\n]*$', b'', code)
-                # Remove matched /* */ comments.
-                code = re.sub(b'/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/', b'', code)
+    def add_filter(self, exts, Filter):
+        for ext in exts:
+            self.filters[ext] = Filter
 
-        if any(file_path.endswith(ext) for ext in python):
-            if skip_comments:
-                # Remove # comments
-                code = re.sub(b'#[^\\r\\n]*$')
-            if skip_literals:
-                # Remove matching quotes.
-                code = re.sub(b'"(?:[^"\\\\]|(?:\\\\.))*"', b'', code)
-                code = re.sub(b'\'(?:[^\'\\\\]|(?:\\\\.))*\'', b'', code)
+    def build_index(self):
+        android_root = os.path.expanduser(self.android_root)
+        print('building csearchindex for the directory ' + android_root + '...')
+        subprocess.call(['cindex', android_root], env=self.env)
 
-        if any(file_path.endswith(ext) for ext in mk):
-            if skip_comments:
-                # Remove # comments
-                code = re.sub(b'#[^\\r\\n]*$')
+    def sanitize_code(self, file_path):
+        with open(file_path, 'rb') as f:
+            code = f.read()
+
+        f, ext = os.path.splitext(file_path)
+        code = self.filters[ext].process(code)
 
         if file_path == 'Android.bp':
             if skip_comments:
@@ -72,17 +115,14 @@ class CodeSearch(object):
 
         return code
 
-    def process_grep(self, raw_grep, pattern, is_regex, skip_literals,
-                     skip_comments):
-        patt = re.compile(b'([^:]+):(\\d+):(.*)$')
-
-        kw_patt = pattern.encode('utf-8')
+    def process_grep(self, raw_grep, pattern, is_regex):
+        pattern = pattern.encode('utf-8')
         if not is_regex:
-            kw_patt = b'\\b' + re.escape(kw_patt) + b'\\b'
-        kw_patt = re.compile(kw_patt)
+            pattern = re.escape(pattern)
+        pattern = re.compile(pattern)
 
+        patt = re.compile(b'([^:]+):(\\d+):(.*)$')
         suspect = collections.defaultdict(list)
-
         for line in raw_grep.split(b'\n'):
 
             match = patt.match(line)
@@ -96,7 +136,6 @@ class CodeSearch(object):
             file_name = os.path.basename(file_path)
             file_name_root, file_ext = os.path.splitext(file_name)
 
-
             # Check file name.
             if file_ext.lower() in FILE_EXT_BLACK_LIST:
                 continue
@@ -107,7 +146,7 @@ class CodeSearch(object):
 
             # Check matched line (quick filter).
             path = os.path.join(self.android_root, file_path.decode('utf-8'))
-            if not kw_patt.search(self.sanitize_code(path)):
+            if not pattern.search(self.sanitize_code(path)):
                 continue
 
             suspect[file_path].append((file_path, line_no, code))
@@ -120,52 +159,58 @@ class CodeSearch(object):
                 processed += (ent[0] + b':' + ent[1] + b':' + ent[2] + b'\n')
 
         return processed
-    def find(self, pattern, is_regex, skip_literals=True, skip_comments=True):
-        if not is_regex:
-            pattern = re.escape(pattern)
-        try:
-            raw_grep = subprocess.check_output(
-                ['csearch', '-n', pattern],
-                cwd=os.path.expanduser(self.android_root),
-                env=self.d)
-        except subprocess.CalledProcessError as e:
-            if e.output == b'':
-                print('nothing found')
-        processed = self.process_grep(raw_grep, pattern, is_regex, skip_comments,
-                          skip_comments)
-        self.to_json(processed)
-        init_pattern(pattern)
 
-    def add_pattern(self, pattern, is_regex, skip_literals=True, skip_comments=True):
+    # patterns and is_regexs are lists
+    def find(self, patterns, is_regexs):
+        # they shouldn't be empty
+        assert patterns and is_regexs
+        self.find_first_pattern(patterns[0], is_regexs[0])
+        for pattern, is_regex in zip(patterns, is_regexs):
+            self.add_pattern(pattern, is_regex)
+
+    def find_first_pattern(self, pattern, is_regex):
         if not is_regex:
             pattern = re.escape(pattern)
         try:
             raw_grep = subprocess.check_output(
                 ['csearch', '-n', pattern],
                 cwd=os.path.expanduser(self.android_root),
-                env=self.d)
+                env=self.env)
         except subprocess.CalledProcessError as e:
             if e.output == b'':
                 print('nothing found')
-        processed = self.process_grep(raw_grep, pattern, is_regex, skip_comments,
-                          skip_comments)
+                return
+        processed = self.process_grep(raw_grep, pattern, is_regex)
+        self.to_json(processed)
+
+    def add_pattern(self, pattern, is_regex):
+        if not is_regex:
+            pattern = re.escape(pattern)
+        try:
+            raw_grep = subprocess.check_output(
+                ['csearch', '-n', pattern],
+                cwd=os.path.expanduser(self.android_root),
+                env=self.env)
+        except subprocess.CalledProcessError as e:
+            if e.output == b'':
+                print('nothing found')
+                return
+        processed = self.process_grep(raw_grep, pattern, is_regex)
         self.add_to_json(processed)
-        save_pattern(pattern)
 
     def to_json(self, processed):
-
-        # Load all matched grep.
         data = {}
-        patt = re.compile('([^:]+):(\\d+):(.*)$')
         suspect = set()
+        patt = re.compile('([^:]+):(\\d+):(.*)$')
         for line in processed.decode('utf-8').split('\n'):
             match = patt.match(line)
             if not match:
                 continue
+            data[line] = ([], [])
 
-            file_path = match.group(1)
-            line_no = int(match.group(2))
-            data[file_path + ':' + str(line_no)] = ([], [])
+        if data_exist():
+            old_data = load_data()
+            data = merge(old_data, data)
 
         save_data(data)
 
@@ -173,22 +218,18 @@ class CodeSearch(object):
         # Load all matched grep.
         data = load_data()
         patt = re.compile('([^:]+):(\\d+):(.*)$')
-        suspect = set()
         for line in processed.decode('utf-8').split('\n'):
             match = patt.match(line)
             if not match:
                 continue
-
-            file_path = match.group(1)
-            line_no = int(match.group(2))
-            data[file_path + ':' + str(line_no)] = ([], [])
+            data[line] = ([], [])
 
         save_data(data)
 
 if __name__ == '__main__':
     # Initialize a codeSearch engine for the directory 'test'
-    engine = CodeSearch(android_root='sourcedr/test')
+    engine = CodeSearch.create_default('test', 'csearchindex')
+    # Build the index file for the directory
+    engine.build_index()
     # This sets up the search engine and save it to database
-    engine.find(pattern='dlopen', is_regex=False)
-    # This add a new pattern and save it to database
-    engine.add_pattern(pattern='cosine', is_regex=False)
+    engine.find(patterns=['dlopen', 'cosine'], is_regexs=[False, False])
