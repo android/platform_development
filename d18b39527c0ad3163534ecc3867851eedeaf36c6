@@ -1823,6 +1823,30 @@
     },
     {
       "key": {
+        "uuid": "b0f4b1ed_52e92f9c",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-17T00:12:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1708b29c_155b11c0",
+      "range": {
+        "startLine": 192,
+        "startChar": 23,
+        "endLine": 194,
+        "endChar": 44
+      },
+      "revId": "d18b39527c0ad3163534ecc3867851eedeaf36c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c27c50dc_7f287b93",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
         "patchSetId": 8
