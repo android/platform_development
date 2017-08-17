@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f151e626_9d8b783c",
+        "filename": "vndk/tools/header-checker/tests/Android.bp",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:13:58Z",
+      "side": 1,
+      "message": "It seems these properties can be extracted into one cc_default.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 59
+      },
+      "revId": "f0f0c7549ec597fdd7fcaf0f81035a803c6b4519",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c546400_841ba0fb",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:13:58Z",
+      "side": 1,
+      "message": "I don\u0027t quite understand your intention here.  But if this is what you mean, I will replace the selected code as:\n\n    in [None, \u0027\u0027, \u0027generic\u0027]",
+      "range": {
+        "startLine": 70,
+        "startChar": 26,
+        "endLine": 70,
+        "endChar": 96
+      },
+      "revId": "f0f0c7549ec597fdd7fcaf0f81035a803c6b4519",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a833f09_cf493cf2",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:13:58Z",
+      "side": 1,
+      "message": "e.g.\n\n    in [None, \u0027\u0027, target_arch]",
+      "range": {
+        "startLine": 72,
+        "startChar": 27,
+        "endLine": 72,
+        "endChar": 101
+      },
+      "revId": "f0f0c7549ec597fdd7fcaf0f81035a803c6b4519",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39df13f3_1c23971c",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:13:58Z",
+      "side": 1,
+      "message": "This is not necessary the case.  If OUT_DIR or OUT_DIR_COMMON_BASE is defined in the environment variable, ${AOSP_DIR}/out will not be the output directory.",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 72
+      },
+      "revId": "f0f0c7549ec597fdd7fcaf0f81035a803c6b4519",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
