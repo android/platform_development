@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f52be06_097efccd",
+        "filename": "vndk/tools/header-checker/tests/expected/example1.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "These absolute paths make me feel nervous.",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "496b10fe_3046bba0",
+        "filename": "vndk/tools/header-checker/tests/gen_all.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Can\u0027t we simply put all py files in the same directory?  Are you going to sure the utils/utils.py with other people?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f7a03a7_1ae55c7c",
+        "filename": "vndk/tools/header-checker/tests/gen_all.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Unused?",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 43
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15fdae69_109024cc",
+        "filename": "vndk/tools/header-checker/tests/gen_all.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Add space between \u0027#\u0027 and \u0027T\u0027",
+      "range": {
+        "startLine": 62,
+        "startChar": 5,
+        "endLine": 62,
+        "endChar": 11
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4aaad254_023081fb",
+        "filename": "vndk/tools/header-checker/tests/gen_all.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "framework",
+      "range": {
+        "startLine": 62,
+        "startChar": 26,
+        "endLine": 62,
+        "endChar": 36
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c24831ca_62ab20a8",
+        "filename": "vndk/tools/header-checker/tests/gen_all.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Can this code be extracted to something like:\n\n    class Target(object):\n        def __init__(self, is_2nd_arch):\n            extra \u003d \u0027_2ND\u0027 if is_2nd_arch else \u0027\u0027\n            self.arch \u003d get_build_var(\u0027TARGET{}_ARCH\u0027.format(extra))\n            self.arch_variant \u003d get_build_var(\u0027TARGET{}_ARCH_VARIANT\u0027.format(extra))\n            self.cpu_variant \u003d get_build_var(\u0027TARGET{}_CPU_VARIANT\u0027.format(extra))\n\nAnd use this class as:\n\n    for target in (Target(false), Target(true)):\n        print(target.arch, target.arch_variant, target.cpu_variant)",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 69
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b77af9d7_06223b19",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "4 more spaces",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 131,
+        "endChar": 12
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7b49331b_c237de4c",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Possible to append to previous line?",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 14
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1afdfd34_2375a64f",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Append to previous line",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 193,
+        "endChar": 14
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b527b5ef_9268b6f1",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Append to previous line",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 14
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e09e6ab1_fba62023",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-17T07:29:35Z",
+      "side": 1,
+      "message": "Append to previous line",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 14
+      },
+      "revId": "0a7ea466683370e406d9e821ac04dc1b12544159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
