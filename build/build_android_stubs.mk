@@ -19,6 +19,7 @@
 # resource files here.
 intermediates := $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/$(sdk_stub_name)_intermediates
 full_target := $(intermediates)/classes.jar
+header_target := $(intermediates)/classes-header.jar
 jack_lib := $(intermediates)/classes.jack
 dex_toc := $(intermediates)/classes.dex.toc
 full_src_target = $(intermediates)/android-stubs-src.jar
@@ -91,7 +92,7 @@ $(jack_lib) : $(stub_timestamp) $(framework_res_package) $(JACK_DEFAULT_ARGS) $(
 		|| ( rm -f $@ ; $(PRIVATE_INTERMEDIATES_DIR)/jack-rsc.tmp ; exit 41 )
 	$(hide) rm -rf $(PRIVATE_INTERMEDIATES_DIR)/jack-rsc.tmp
 
-$(call define-jar-to-toc-rule, $(full_target))
+$(eval $(call copy-one-file,$(full_target),$(header_target)))
 
 # As we don't have .dex file for the SDK stub, we cannot generate .toc
 # file from .dex file. Use .toc file generated from .jar instead.
