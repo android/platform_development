@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e9a0c9f_4abd6c6d",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-23T00:56:27Z",
+      "side": 1,
+      "message": "could potentially get rid of these if we just referred to the attributes directly due to lack of access qualifiers.",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 23
+      },
+      "revId": "9fba9db34fb16c2dc4a898543ddd8c13c38303fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}

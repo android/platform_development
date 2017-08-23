@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e226ad55_bf09ff13",
+        "filename": "vndk/tools/header-checker/tests/gen_all.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-23T00:56:27Z",
+      "side": 1,
+      "message": "moved utils.py up outside the test dir since even create_source_dumps.py uses functionality from it.",
+      "range": {
+        "startLine": 7,
+        "startChar": 1,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "10f92ad06744f2c9ea6dcf6e89d5829dfffeb7b6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
