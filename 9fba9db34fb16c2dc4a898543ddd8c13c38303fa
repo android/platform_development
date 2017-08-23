@@ -22,6 +22,29 @@
       "revId": "9fba9db34fb16c2dc4a898543ddd8c13c38303fa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06465ddf_19996f59",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-23T00:59:32Z",
+      "side": 1,
+      "message": "I think there are few other options other than depending on the build system(and do some hackery :( ) for this because of the intricacies of whole static libs and exporting inherited headers, it would be really complicated to implement standalone.",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 66
+      },
+      "revId": "9fba9db34fb16c2dc4a898543ddd8c13c38303fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
