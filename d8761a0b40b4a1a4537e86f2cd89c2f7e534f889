@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81440d03_a94a61fe",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-23T08:14:57Z",
+      "side": 1,
+      "message": "Empty line between 122-123.",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 24
+      },
+      "revId": "d8761a0b40b4a1a4537e86f2cd89c2f7e534f889",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f6ef34c_6c64b956",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/test/example.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-23T08:14:57Z",
+      "side": 1,
+      "message": "This is not valid C source code.  You don\u0027t have to test for this case.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 24
+      },
+      "revId": "d8761a0b40b4a1a4537e86f2cd89c2f7e534f889",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
