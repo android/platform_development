@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5b33b7ef_3efab46b",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/js/main.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-24T08:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff815d30_18fb4eab",
+      "range": {
+        "startLine": 136,
+        "startChar": 5,
+        "endLine": 136,
+        "endChar": 6
+      },
+      "revId": "136345f959ea355da8e6e296854b758a56cf7411",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "71b19b37_76c52f29",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/js/main.js",
         "patchSetId": 12
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-24T07:57:35Z",
       "side": 1,
       "message": "If you don\u0027t need this, you can remove these code completely.",
+      "range": {
+        "startLine": 141,
+        "startChar": 5,
+        "endLine": 143,
+        "endChar": 5
+      },
+      "revId": "136345f959ea355da8e6e296854b758a56cf7411",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b001cd2f_f03afbe6",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/js/main.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-24T08:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71b19b37_76c52f29",
       "range": {
         "startLine": 141,
         "startChar": 5,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9f67825a_7e8ea5be",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/js/main.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-24T08:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b755cdff_49b0c4a6",
+      "range": {
+        "startLine": 214,
+        "startChar": 80,
+        "endLine": 214,
+        "endChar": 81
+      },
+      "revId": "136345f959ea355da8e6e296854b758a56cf7411",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3c94d288_9331feda",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/js/main.js",
         "patchSetId": 12
@@ -82,6 +154,30 @@
       "writtenOn": "2017-08-24T07:57:35Z",
       "side": 1,
       "message": "If you don\u0027t need this, remove it.",
+      "range": {
+        "startLine": 229,
+        "startChar": 5,
+        "endLine": 231,
+        "endChar": 5
+      },
+      "revId": "136345f959ea355da8e6e296854b758a56cf7411",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1576e1b_95a61b31",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/js/main.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-24T08:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c94d288_9331feda",
       "range": {
         "startLine": 229,
         "startChar": 5,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "ef9131b0_c2782262",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/templates/index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-24T08:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfe2a236_671fd03e",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 8
+      },
+      "revId": "136345f959ea355da8e6e296854b758a56cf7411",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dd0f04c5_856fbd08",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/templates/index.html",
         "patchSetId": 12
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "5cdd9822_3c952c68",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/templates/index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-24T08:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd0f04c5_856fbd08",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 4
+      },
+      "revId": "136345f959ea355da8e6e296854b758a56cf7411",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c0f2338_7793ca95",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/templates/index.html",
         "patchSetId": 12
@@ -151,6 +295,30 @@
       "writtenOn": "2017-08-24T07:57:35Z",
       "side": 1,
       "message": "Wrong indent",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "136345f959ea355da8e6e296854b758a56cf7411",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ca6accd_0cff194d",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/templates/index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-24T08:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c0f2338_7793ca95",
       "range": {
         "startLine": 50,
         "startChar": 0,
