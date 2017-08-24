@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78ebed9a_b72d59c3",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-24T07:57:35Z",
+      "side": 1,
+      "message": "80-column",
+      "range": {
+        "startLine": 160,
+        "startChar": 74,
+        "endLine": 160,
+        "endChar": 84
+      },
+      "revId": "29c6fd5f7e3a2f3fd5be7e9fd44fe23995511091",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
