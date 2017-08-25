@@ -6,9 +6,11 @@ from sourcedr.preprocess import CodeSearch
 from flask import Flask, jsonify, render_template, request
 import argparse
 import bisect
+import collections
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import webbrowser
@@ -94,6 +96,28 @@ def _add_pattern():
     data = load_data()
     save_new_pattern(patt, is_regex)
     return jsonify(result='done')
+
+# This function does a temporary grep to the directory
+# Not adding the result to database
+@app.route('/temporary_search')
+def _temporary_search():
+    patt = request.args.get('pattern')
+    is_regex = request.args.get('is_regex')
+    result = engine.raw_search(patt, is_regex).decode('utf-8')
+    dic = collections.defaultdict(list)
+    patt = re.compile('([^:]+):(\\d+):(.*)$')
+    for line in result.split('\n'):
+        match = patt.match(line)
+        if not match:
+            continue
+
+        file_path = match.group(1)
+        line_no = match.group(2)
+        code = match.group(3)
+        dic[file_path].append((line_no, code))
+
+    result = sorted(dic.items())
+    return jsonify(result=json.dumps(result))
 
 @app.route('/')
 def render():
