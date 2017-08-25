@@ -1,0 +1,14 @@
+
+cc_binary_host {
+    name: "LLVMPrebuiltsTest",
+
+    srcs: ["LLVMPrebuiltsTest.cpp"],
+
+    shared_libs: [
+        "libLLVM",
+        "libclang",
+    ],
+
+    cflags: ["-Wno-unused", "-Wno-unused-parameter"],
+    stl: "none",
+}
