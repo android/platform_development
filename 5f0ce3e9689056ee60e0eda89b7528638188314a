@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "6a076ee7_981f0d6c",
+        "filename": "vndk/tools/header-checker/tests/reference_dumps/arm64/libgolden_cpp_removed_class.so.lsdump",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-25T06:44:55Z",
+      "side": 1,
+      "message": "I\u0027m sorry this file should not have been uploaded.",
+      "parentUuid": "fcf3bb7b_1bab298f",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 20
+      },
+      "revId": "5f0ce3e9689056ee60e0eda89b7528638188314a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfc9d8c2_7258b236",
         "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
         "patchSetId": 4
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "4e7b5863_03c9f06a",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-25T06:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfc9d8c2_7258b236",
+      "range": {
+        "startLine": 20,
+        "startChar": 25,
+        "endLine": 20,
+        "endChar": 27
+      },
+      "revId": "5f0ce3e9689056ee60e0eda89b7528638188314a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fd4526a_aa67bda5",
         "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
         "patchSetId": 4
@@ -82,6 +130,30 @@
       "writtenOn": "2017-08-25T01:52:23Z",
       "side": 1,
       "message": "You can return here",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "5f0ce3e9689056ee60e0eda89b7528638188314a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1d84714_f37d93ae",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-08-25T06:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fd4526a_aa67bda5",
       "range": {
         "startLine": 25,
         "startChar": 8,
