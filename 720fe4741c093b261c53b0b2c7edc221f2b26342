@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e688de30_04c6e60a",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/js/main.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-25T09:24:29Z",
+      "side": 1,
+      "message": "Can we sort the items according to the file paths:\n\n1. The file with the closest directory level.  e.g. diff(\u0027a/b/c\u0027, \u0027a\u0027) \u003d\u003d 2, diff(\u0027a/b\u0027, \u0027a\u0027) \u003d\u003d 1.\n\n2. If they have the same diff level, then prefer sub directories first.\n\n3. Finally, sort the paths with the lexicographical order.",
+      "revId": "720fe4741c093b261c53b0b2c7edc221f2b26342",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
