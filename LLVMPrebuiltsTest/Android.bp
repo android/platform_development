@@ -1,0 +1,26 @@
+
+cc_binary_host {
+    name: "LLVMPrebuiltsTest",
+
+    srcs: ["LLVMPrebuiltsTest.cpp"],
+
+    target: {
+        linux_glibc_x86_64: {
+            shared_libs: [
+                "libLLVM_linux",
+                "libclang_linux",
+                "libc++_linux",
+            ],
+        },
+        darwin_x86_64: {
+            shared_libs: [
+                "libLLVM_darwin",
+                "libclang_darwin",
+                "libc++_darwin",
+            ],
+        },
+    },
+
+    cflags: ["-Wno-unused", "-Wno-unused-parameter"],
+    stl: "none",
+}
