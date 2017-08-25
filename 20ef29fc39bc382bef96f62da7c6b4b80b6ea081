@@ -45,6 +45,30 @@
       "revId": "20ef29fc39bc382bef96f62da7c6b4b80b6ea081",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab8b131c_b3d2fa75",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/templates/index.html",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-25T02:36:47Z",
+      "side": 1,
+      "message": "\u003e Is this correct?\n\nI\u0027ll fix it",
+      "parentUuid": "a86b4636_ce021255",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 4
+      },
+      "revId": "20ef29fc39bc382bef96f62da7c6b4b80b6ea081",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
