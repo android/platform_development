@@ -206,7 +206,6 @@ class CodeSearch(object):
         patt = re.compile(b'([^:]+):(\\d+):(.*)$')
         suspect = collections.defaultdict(list)
         for line in raw_grep.split(b'\n'):
-
             match = patt.match(line)
             if not match:
                 continue
@@ -291,6 +290,20 @@ class CodeSearch(object):
                 return
         processed = self.process_grep(raw_grep, pattern, is_regex)
         self.add_to_json(processed)
+
+    def raw_search(self, pattern, is_regex):
+        if not is_regex:
+            pattern = re.escape(pattern)
+        try:
+            raw_grep = subprocess.check_output(
+                ['csearch', '-n', pattern],
+                cwd=os.path.expanduser(self.android_root),
+                env=self.env)
+        except subprocess.CalledProcessError as e:
+            if e.output == b'':
+                print('nothing found')
+                return b''
+        return raw_grep
 
     def to_json(self, processed):
         data = {}
