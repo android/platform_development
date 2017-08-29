@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c8724a4_c1e595d3",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/preprocess.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-29T03:48:03Z",
+      "side": 1,
+      "message": "Extract these code so that they can be shared by both raw_search(), add_pattern(), and find().",
+      "range": {
+        "startLine": 295,
+        "startChar": 0,
+        "endLine": 305,
+        "endChar": 26
+      },
+      "revId": "8150ceb99ab64a29c0da19be753c985f7a951021",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
