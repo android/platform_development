@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41581c07_d94e3fbf",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-29T08:33:38Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 484,
+        "startChar": 1,
+        "endLine": 484,
+        "endChar": 2
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e1c874d_1fbf794c",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-29T08:33:38Z",
+      "side": 1,
+      "message": "Use `var` in this file (since other code only use `var`)",
+      "range": {
+        "startLine": 639,
+        "startChar": 1,
+        "endLine": 639,
+        "endChar": 4
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9e9c792_5458a4a2",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-29T08:33:38Z",
+      "side": 1,
+      "message": "One space only",
+      "range": {
+        "startLine": 642,
+        "startChar": 19,
+        "endLine": 642,
+        "endChar": 22
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aec6f6d_75e345fe",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-29T08:33:38Z",
+      "side": 1,
+      "message": "elemOffset",
+      "range": {
+        "startLine": 642,
+        "startChar": 5,
+        "endLine": 642,
+        "endChar": 19
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b2e51a7_a3731ee6",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-08-29T08:33:38Z",
+      "side": 1,
+      "message": "Is it necessary to move these lines?",
+      "range": {
+        "startLine": 797,
+        "startChar": 0,
+        "endLine": 822,
+        "endChar": 1
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
