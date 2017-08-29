@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1d4e1b4e_f1fe5bb5",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-29T09:31:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41581c07_d94e3fbf",
+      "range": {
+        "startLine": 484,
+        "startChar": 1,
+        "endLine": 484,
+        "endChar": 2
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e1c874d_1fbf794c",
         "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
         "patchSetId": 2
@@ -82,6 +106,54 @@
       "writtenOn": "2017-08-29T08:33:38Z",
       "side": 1,
       "message": "elemOffset",
+      "range": {
+        "startLine": 642,
+        "startChar": 5,
+        "endLine": 642,
+        "endChar": 19
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d76c721_22a62b9f",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-29T09:31:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9e9c792_5458a4a2",
+      "range": {
+        "startLine": 642,
+        "startChar": 19,
+        "endLine": 642,
+        "endChar": 22
+      },
+      "revId": "dc6aa7580c1301a54b9c5a09273bbbbe4d520c15",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "454475dd_3cf10e90",
+        "filename": "vndk/tools/source-deps-reviewer/sourcedr/static/prism/js/prism.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1205613
+      },
+      "writtenOn": "2017-08-29T09:31:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aec6f6d_75e345fe",
       "range": {
         "startLine": 642,
         "startChar": 5,
