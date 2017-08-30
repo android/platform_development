@@ -6,4 +6,5 @@ int main() {
      * This dlopen shouldn't be found
      */
     dlopen("dlopen");
+    handle = dlopen("libm.so.6", RTLD_LAZY);
 }

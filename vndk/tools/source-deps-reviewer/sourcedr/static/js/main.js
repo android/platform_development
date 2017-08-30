@@ -5,6 +5,32 @@
   var counter = 0;
   var current_item = null;
 
+  // make item list sortable
+  $( function() {
+    $("#item_list").sortable();
+    $("#item_list").disableSelection();
+  });
+  
+  function moveToTop(index) {
+    if (index == 0) {
+        return;
+    }
+    let target = $('#item_list').children().eq(index);
+    let tp = $('#item_list').children().eq(0);
+    let old_offset = target.position();
+    tp.before(target);
+    let new_offset = target.position();
+    let tmp = target.clone().appendTo('#item_list')
+                    .css('position', 'absolute')
+                    .css('left', old_offset.left)
+                    .css('top', old_offset.top);
+    target.hide();
+    tmp.animate({'top': new_offset.top, 'left': new_offset.left}, 'slow', function() {
+      target.show();
+      tmp.remove();
+    });
+  }
+
   function getSelText() {
     let txt = window.getSelection();
     $('#selected_text').val(txt);
@@ -165,6 +191,23 @@
       deps: JSON.stringify(deps),
       codes: JSON.stringify(codes)
     });
+    let target = $(current_item).text().split(':')[2];
+    let children = $('#item_list')[0].children;
+    let len = children.length;
+    for (let i = 0; i < len; i++) {
+        let tt = children[i].getElementsByTagName('a')[0].innerHTML;
+        if (tt == $(current_item).text()) {
+            continue;
+        }
+        if (children[i].getElementsByTagName('a')[0].className == 
+            'list-group-item list-group-item-success' ) {
+            continue;
+        }
+        let content = tt.split(':')[2];
+        if (content == target) {
+            moveToTop(i);
+        }
+    }
     return false;
   }
 
