@@ -11,12 +11,7 @@ which are code segments that are highly related to the specific pattern.
 ## Installation and Dependencies
 
 This tool depends on [codesearch](https://github.com/google/codesearch)
-to generate regular expression index, please install them with:
-
-```
-$ go get github.com/google/codesearch/cmd/cindex
-$ go get github.com/google/codesearch/cmd/csearch
-```
+to generate regular expression index, please install them.
 
 This tool depends on several Python packages,
 
