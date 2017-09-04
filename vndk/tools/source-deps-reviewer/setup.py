@@ -26,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'sourcedr = sourcedr.server:main',
+            'sourcedr_combine = sourcedr.convert:main'
         ],
     }
 )
