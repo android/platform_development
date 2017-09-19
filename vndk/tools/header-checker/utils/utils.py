@@ -3,6 +3,7 @@
 import tempfile
 import os
 import subprocess
+from enum import Enum
 
 SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__))
 AOSP_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, *['..'] * 5))
@@ -19,8 +20,16 @@ EXPORTED_HEADERS_DIR = (
 )
 
 SOURCE_ABI_DUMP_EXT = ".so.lsdump"
+SOURCE_ABI_DIFF_EXT = ".so.abidiff"
 
 TARGET_ARCHS = ['arm', 'arm64', 'x86', 'x86_64', 'mips', 'mips64']
+
+class Artifact(Enum):
+    ABI_DUMP = 1
+    ABI_DIFF = 2
+
+ARTIFACT_EXT_DICT = {Artifact.ABI_DUMP : SOURCE_ABI_DUMP_EXT,
+                     Artifact.ABI_DIFF : SOURCE_ABI_DIFF_EXT}
 
 def get_reference_dump_dir(reference_dump_dir_stem,
                             reference_dump_dir_insertion, lib_arch):
@@ -104,11 +113,13 @@ def make_library(lib_name):
     make_cmd = ['make', '-j', lib_name]
     subprocess.check_call(make_cmd, cwd=AOSP_DIR)
 
-def find_lib_lsdump(lib_name, target_arch, target_arch_variant,
-                    target_cpu_variant):
+def find_lib_artifact(soong_dir, target_arch, target_arch_variant,
+                      target_cpu_variant, artifact):
     """ Find the lsdump corresponding to lib_name for the given arch parameters
         if it exists"""
     assert 'ANDROID_PRODUCT_OUT' in os.environ
+    lib_artifact_dict = dict()
+    artifact_ext = ARTIFACT_EXT_DICT[artifact]
     cpu_variant = '_' + target_cpu_variant
     arch_variant = '_' + target_arch_variant
 
@@ -118,18 +129,15 @@ def find_lib_lsdump(lib_name, target_arch, target_arch_variant,
     if target_arch_variant == target_arch or target_arch_variant is None or\
         target_arch_variant == '':
         arch_variant = ''
-
+    # Look at the directory where the vendor variant was built.
     target_dir = 'android_' + target_arch + arch_variant +\
-    cpu_variant + '_shared_core'
-    soong_dir = os.path.join(AOSP_DIR, 'out', 'soong', '.intermediates')
-    expected_lsdump_name = lib_name + SOURCE_ABI_DUMP_EXT
+    cpu_variant + '_shared_vendor'
     for base, dirnames, filenames in os.walk(soong_dir):
         for filename in filenames:
-            if filename == expected_lsdump_name:
                 path = os.path.join(base, filename)
-                if target_dir in os.path.dirname(path):
-                    return path
-    return None
+                if target_dir in os.path.dirname(path) and filename.endswith(artifact_ext):
+                    lib_artifact_dict[filename[:-len(artifact_ext)]] = path
+    return lib_artifact_dict
 
 def run_abi_diff(old_test_dump_path, new_test_dump_path, arch, lib_name,
                  flags=[]):
