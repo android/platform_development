@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b34b336_1e975b45",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2017-09-27T03:24:10Z",
+      "side": 1,
+      "message": "This needs a change to the Android.mk to add $(HOST_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/shrinkedAndroid_intermediates/shrinkedAndroid.jar to ALL_SDK_FILES to make sure its built before sdk.atree is used.",
+      "revId": "63cc4a06e5b3d4ec1f83966083ca1d4229182493",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
