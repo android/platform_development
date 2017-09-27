@@ -22,6 +22,30 @@
       "revId": "751472214410158de360f491f65c5d3412e1a0a1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "694c06cf_c50a7f8e",
+        "filename": "tools/repo_diff/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1124149
+      },
+      "writtenOn": "2017-09-27T18:37:47Z",
+      "side": 1,
+      "message": "Merge conflict resolutions generate patches just like any other commit. That means there will be line changes that will be unaccounted for in the list of \"commits not upstreamed\"",
+      "parentUuid": "ee8ef432_2fa7a56d",
+      "range": {
+        "startLine": 107,
+        "startChar": 2,
+        "endLine": 107,
+        "endChar": 56
+      },
+      "revId": "751472214410158de360f491f65c5d3412e1a0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
