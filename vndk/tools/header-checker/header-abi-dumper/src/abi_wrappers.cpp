@@ -50,7 +50,8 @@ std::string ABIWrapper::GetCachedDeclSourceFile(
 }
 
 std::string ABIWrapper::GetDeclSourceFile(const clang::Decl *decl,
-                                          const clang::CompilerInstance *cip) {
+                                          const clang::CompilerInstance *cip,
+                                          bool use_absolute_paths) {
   clang::SourceManager &sm = cip->getSourceManager();
   clang::SourceLocation location = decl->getLocation();
   // We need to use the expansion location to identify whether we should recurse
@@ -61,12 +62,11 @@ std::string ABIWrapper::GetDeclSourceFile(const clang::Decl *decl,
   // belonging to the library.
   clang::SourceLocation expansion_location = sm.getExpansionLoc(location);
   llvm::StringRef file_name = sm.getFilename(expansion_location);
-  std::string file_name_adjusted = "";
-  char file_abs_path[PATH_MAX];
-  if (realpath(file_name.str().c_str(), file_abs_path) == nullptr) {
-    return "";
+  std::string return_path = file_name.str();
+  if (use_absolute_paths) {
+    return_path = abi_util::RealPath(return_path);
   }
-  return file_abs_path;
+  return return_path;
 }
 
 static abi_util::AccessSpecifierIR AccessClangToIR(

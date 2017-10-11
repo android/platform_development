@@ -32,8 +32,11 @@ using llvm::object::ELFDataTypeTypedefHelper;
 
 namespace abi_util {
 
+std::string RealPath(const std::string &path);
+
 std::set<std::string> CollectAllExportedHeaders(
-    const std::vector<std::string> &exported_header_dirs);
+    const std::vector<std::string> &exported_header_dirs,
+    bool use_absolute_paths = false);
 
 class VersionScriptParser {
  public:

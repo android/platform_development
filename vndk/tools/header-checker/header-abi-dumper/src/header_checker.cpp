@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "frontend_action_factory.h"
+#include <header_abi_util.h>
 
 #include <clang/Frontend/FrontendActions.h>
 #include <clang/Tooling/CommonOptionsParser.h>
@@ -96,8 +97,14 @@ int main(int argc, const char **argv) {
     ::exit(1);
   }
 
+  std::set<std::string> exported_headers;
   if (no_filter) {
     static_cast<std::vector<std::string> &>(exported_header_dirs).clear();
+  } else {
+    // TODO: b/62380238 Add an option to use absolute paths for better
+    // testability.
+    exported_headers =
+        abi_util::CollectAllExportedHeaders(exported_header_dirs);
   }
 
   // Initialize clang tools and run front-end action.
@@ -105,7 +112,7 @@ int main(int argc, const char **argv) {
 
   clang::tooling::ClangTool tool(*compilations, header_files);
   std::unique_ptr<clang::tooling::FrontendActionFactory> factory(
-      new HeaderCheckerFrontendActionFactory(out_dump, exported_header_dirs));
+      new HeaderCheckerFrontendActionFactory(out_dump, exported_headers));
 
   return tool.run(factory.get());
 }

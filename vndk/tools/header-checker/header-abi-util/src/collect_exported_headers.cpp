@@ -37,13 +37,23 @@ static bool ShouldSkipFile(llvm::StringRef &file_name) {
   return false;
 }
 
+std::string RealPath(const std::string &path) {
+  char file_abs_path[PATH_MAX];
+  if (realpath(path.c_str(), file_abs_path) == nullptr) {
+      return "";
+  }
+  return file_abs_path;
+}
+
 bool CollectExportedHeaderSet(const std::string &dir_name,
-                              std::set<std::string> *exported_headers) {
+                              std::set<std::string> *exported_headers,
+                              bool use_absolute_paths) {
   std::error_code ec;
   llvm::sys::fs::recursive_directory_iterator walker(dir_name, ec);
   // Default construction - end of directory.
   llvm::sys::fs::recursive_directory_iterator end;
   llvm::sys::fs::file_status status;
+  std::string header_path;
   for ( ; walker != end; walker.increment(ec)) {
     if (ec) {
       llvm::errs() << "Failed to walk dir : " << dir_name << "\n";
@@ -51,6 +61,7 @@ bool CollectExportedHeaderSet(const std::string &dir_name,
     }
 
     const std::string &file_path = walker->path();
+    header_path = file_path;
 
     llvm::StringRef file_name(llvm::sys::path::filename(file_path));
     // Ignore swap files and hidden files / dirs. Do not recurse into them too.
@@ -66,26 +77,29 @@ bool CollectExportedHeaderSet(const std::string &dir_name,
       return false;
     }
 
-    if (!llvm::sys::fs::is_regular_file(status)) {
-      // Ignore non regular files. eg: soft links.
+    if (!use_absolute_paths &&
+        (status.type() != llvm::sys::fs::file_type::symlink_file) &&
+        !llvm::sys::fs::is_regular_file(status)) {
+      // Ignore non regular files, except symlinks.
       continue;
     }
 
-    llvm::SmallString<128> abs_path(file_path);
-    if (llvm::sys::fs::make_absolute(abs_path)) {
-      llvm::errs() << "Failed to get absolute path for : " << file_name << "\n";
-      return false;
+    if (use_absolute_paths) {
+      header_path = RealPath(file_path);
     }
-    exported_headers->insert(abs_path.str());
+
+    exported_headers->insert(header_path);
   }
   return true;
 }
 
 std::set<std::string> CollectAllExportedHeaders(
-    const std::vector<std::string> &exported_header_dirs) {
+    const std::vector<std::string> &exported_header_dirs,
+    bool use_absolute_paths) {
   std::set<std::string> exported_headers;
   for (auto &&dir : exported_header_dirs) {
-    if (!abi_util::CollectExportedHeaderSet(dir, &exported_headers)) {
+    if (!abi_util::CollectExportedHeaderSet(dir, &exported_headers,
+                                            use_absolute_paths)) {
       llvm::errs() << "Couldn't collect exported headers\n";
       ::exit(1);
     }

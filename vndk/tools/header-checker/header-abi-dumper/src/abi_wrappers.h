@@ -40,7 +40,8 @@ class ABIWrapper {
              std::map<const clang::Decl *, std::string> &decl_to_source_cache);
 
   static std::string GetDeclSourceFile(const clang::Decl *decl,
-                                       const clang::CompilerInstance *cip);
+                                       const clang::CompilerInstance *cip,
+                                       bool use_absolute_paths = false);
 
   static std::string GetMangledNameDecl(const clang::NamedDecl *decl,
                                         clang::MangleContext *mangle_context);
