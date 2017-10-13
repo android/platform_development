@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6a72fea5_236eedcf",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-13T18:18:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15b966bb_60d5b42f",
+      "range": {
+        "startLine": 28,
+        "startChar": 63,
+        "endLine": 28,
+        "endChar": 70
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "440c26fc_74edbbbd",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-10-13T07:46:03Z",
       "side": 1,
       "message": "exported_headers",
+      "range": {
+        "startLine": 29,
+        "startChar": 45,
+        "endLine": 29,
+        "endChar": 52
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b6b1ac4_d2e8c347",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-13T18:18:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "440c26fc_74edbbbd",
       "range": {
         "startLine": 29,
         "startChar": 45,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "0bdbedf6_8479e458",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-13T18:18:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c79c813b_d15d2431",
+      "range": {
+        "startLine": 39,
+        "startChar": 35,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7ca26e9_1954c87d",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/header_checker.cpp",
         "patchSetId": 2
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "99f9f809_476e3b57",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/header_checker.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-13T18:18:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7ca26e9_1954c87d",
+      "range": {
+        "startLine": 101,
+        "startChar": 2,
+        "endLine": 103,
+        "endChar": 10
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f05771cb_3662544c",
         "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
         "patchSetId": 2
@@ -105,6 +201,30 @@
       "writtenOn": "2017-10-13T07:46:03Z",
       "side": 1,
       "message": "Indent",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 6
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d00ad61b_0440f674",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-13T18:18:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f05771cb_3662544c",
       "range": {
         "startLine": 43,
         "startChar": 4,
