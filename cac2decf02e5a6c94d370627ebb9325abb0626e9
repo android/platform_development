@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15b966bb_60d5b42f",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-13T07:46:03Z",
+      "side": 1,
+      "message": "exported_headers",
+      "range": {
+        "startLine": 28,
+        "startChar": 63,
+        "endLine": 28,
+        "endChar": 70
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "440c26fc_74edbbbd",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-13T07:46:03Z",
+      "side": 1,
+      "message": "exported_headers",
+      "range": {
+        "startLine": 29,
+        "startChar": 45,
+        "endLine": 29,
+        "endChar": 52
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c79c813b_d15d2431",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-13T07:46:03Z",
+      "side": 1,
+      "message": "Use the same name: `exported_headers` (with `ed`)",
+      "range": {
+        "startLine": 39,
+        "startChar": 35,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7ca26e9_1954c87d",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/header_checker.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-13T07:46:03Z",
+      "side": 1,
+      "message": "Replace with:\n\n    if (!no_filter) {\n\n(ps. You don\u0027t need the function call to `.clear()`.)",
+      "range": {
+        "startLine": 101,
+        "startChar": 2,
+        "endLine": 103,
+        "endChar": 10
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f05771cb_3662544c",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-13T07:46:03Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 6
+      },
+      "revId": "cac2decf02e5a6c94d370627ebb9325abb0626e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
