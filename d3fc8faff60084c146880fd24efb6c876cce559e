@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "338f9f92_f801b070",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2017-10-17T22:51:51Z",
+      "side": 1,
+      "message": "Would you rather this be the API or the shell functions in envsetup.sh?",
+      "revId": "d3fc8faff60084c146880fd24efb6c876cce559e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
