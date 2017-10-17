@@ -16,6 +16,24 @@
       "revId": "d3fc8faff60084c146880fd24efb6c876cce559e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c267975c_3cc03d03",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-10-17T22:55:37Z",
+      "side": 1,
+      "message": "I don\u0027t particularly want to force sourcing envsetup.sh, especially since it\u0027s loading some number of vendor scripts that are doing who-knows-what.",
+      "parentUuid": "338f9f92_f801b070",
+      "revId": "d3fc8faff60084c146880fd24efb6c876cce559e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
