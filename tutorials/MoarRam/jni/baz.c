@@ -51,6 +51,8 @@ Java_com_android_benchmark_moarram_MainActivity_addVariableSizedBlocksNative(
     ALOGW("%d %d-byte blocks allocated so far (just allocated %p)",
           id == 0 ? ++num17ByteBlocks : ++num71ByteBlocks,
           size, ptr);
+    (void)env; /* unused */
+    (void)this; /* unused */
 }
 
 void
@@ -79,4 +81,6 @@ Java_com_android_benchmark_moarram_MainActivity_freeVariableSizedBlocksNative(
     ALOGW("%d %d-byte blocks allocated so far (just freed %p)",
           id == 0 ? --num17ByteBlocks : --num71ByteBlocks,
           size, ptr);
+    (void)env; /* unused */
+    (void)this; /* unused */
 }

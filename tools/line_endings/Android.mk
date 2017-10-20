@@ -9,6 +9,7 @@ LOCAL_SRC_FILES := \
 	line_endings.c
 
 LOCAL_MODULE := line_endings
+LOCAL_CFLAGS := -Wall -Werror
 
 include $(BUILD_HOST_EXECUTABLE)
 

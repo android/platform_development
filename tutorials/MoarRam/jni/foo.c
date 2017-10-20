@@ -38,6 +38,8 @@ Java_com_android_benchmark_moarram_MainActivity_add32ByteBlocksNative(
     num32ByteBlocks++;
     ALOGW("%d 32-byte blocks allocated so far (just allocated %p)",
           num32ByteBlocks, gPtr);
+    (void)env; /* unused */
+    (void)this; /* unused */
 }
 
 void
@@ -56,4 +58,6 @@ Java_com_android_benchmark_moarram_MainActivity_free32ByteBlocksNative(
     num32ByteBlocks--;
     ALOGW("%d 32-byte blocks allocated so far (just freed %p)",
           num32ByteBlocks, ptr);
+    (void)env; /* unused */
+    (void)this; /* unused */
 }

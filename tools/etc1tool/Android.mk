@@ -17,5 +17,6 @@ LOCAL_STATIC_LIBRARIES := \
 
 LOCAL_MODULE := etc1tool
 LOCAL_MODULE_HOST_OS := darwin linux windows
+LOCAL_CFLAGS := -Wall -Werror
 
 include $(BUILD_HOST_EXECUTABLE)
