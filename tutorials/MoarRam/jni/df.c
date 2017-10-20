@@ -34,4 +34,6 @@ Java_com_android_benchmark_moarram_MainActivity_forceDoubleFreeNative(
     ALOGW("About to double free %p", ptr);
     free(ptr);
     free(ptr);
+    (void)env; /* unused */
+    (void)this; /* unused */
 }

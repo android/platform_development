@@ -21,6 +21,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE    := libmoarram-32
 LOCAL_SRC_FILES := foo.c
 LOCAL_SHARED_LIBRARIES += liblog
+LOCAL_CFLAGS := -Wall -Werror
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -30,6 +31,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE    := libmoarram-2M
 LOCAL_SRC_FILES := bar.c
 LOCAL_SHARED_LIBRARIES += liblog
+LOCAL_CFLAGS := -Wall -Werror
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -39,6 +41,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE    := libmoarram-17_71
 LOCAL_SRC_FILES := baz.c
 LOCAL_SHARED_LIBRARIES += liblog
+LOCAL_CFLAGS := -Wall -Werror
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -48,5 +51,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE    := libmoarram-doublefree
 LOCAL_SRC_FILES := df.c
 LOCAL_SHARED_LIBRARIES += liblog
+LOCAL_CFLAGS := -Wall -Werror
 
 include $(BUILD_SHARED_LIBRARY)
