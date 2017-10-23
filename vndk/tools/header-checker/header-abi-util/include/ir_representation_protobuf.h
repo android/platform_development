@@ -294,32 +294,34 @@ class ProtobufTextFormatToIRReader : public TextFormatToIRReader {
       : TextFormatToIRReader(dump_path) { }
 
  private:
-  std::vector<FunctionIR> ReadFunctions(
+  std::map<std::string, FunctionIR> ReadFunctions(
        const abi_dump::TranslationUnit &tu);
 
-  std::vector<GlobalVarIR> ReadGlobalVariables(
-       const abi_dump::TranslationUnit &tu);
-
-  std::vector<EnumTypeIR> ReadEnumTypes(const abi_dump::TranslationUnit &tu);
-
-  std::vector<RecordTypeIR> ReadRecordTypes(
+  std::map<std::string, GlobalVarIR> ReadGlobalVariables(
       const abi_dump::TranslationUnit &tu);
 
-  std::vector<PointerTypeIR> ReadPointerTypes(
+  std::map<std::string, EnumTypeIR> ReadEnumTypes(
+      const abi_dump::TranslationUnit &tu);
+
+  std::map<std::string, RecordTypeIR> ReadRecordTypes(
+      const abi_dump::TranslationUnit &tu);
+
+  std::map<std::string, PointerTypeIR> ReadPointerTypes(
+      const abi_dump::TranslationUnit &tu);
+
+  std::map<std::string, BuiltinTypeIR> ReadBuiltinTypes(
        const abi_dump::TranslationUnit &tu);
 
-  std::vector<BuiltinTypeIR> ReadBuiltinTypes(
+  std::map<std::string, QualifiedTypeIR> ReadQualifiedTypes(
        const abi_dump::TranslationUnit &tu);
 
-  std::vector<QualifiedTypeIR> ReadQualifiedTypes(
+  std::map<std::string, ArrayTypeIR> ReadArrayTypes(
+      const abi_dump::TranslationUnit &tu);
+
+  std::map<std::string, LvalueReferenceTypeIR> ReadLvalueReferenceTypes(
        const abi_dump::TranslationUnit &tu);
 
-  std::vector<ArrayTypeIR> ReadArrayTypes(const abi_dump::TranslationUnit &tu);
-
-  std::vector<LvalueReferenceTypeIR> ReadLvalueReferenceTypes(
-       const abi_dump::TranslationUnit &tu);
-
-  std::vector<RvalueReferenceTypeIR> ReadRvalueReferenceTypes(
+  std::map<std::string, RvalueReferenceTypeIR> ReadRvalueReferenceTypes(
        const abi_dump::TranslationUnit &tu);
 
   std::vector<ElfFunctionIR> ReadElfFunctions (

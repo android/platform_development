@@ -171,9 +171,10 @@ EnumTypeIR ProtobufTextFormatToIRReader::EnumTypeProtobufToIR(
   return enum_type_ir;
 }
 
-std::vector<GlobalVarIR> ProtobufTextFormatToIRReader::ReadGlobalVariables(
+std::map<std::string, GlobalVarIR>
+ProtobufTextFormatToIRReader::ReadGlobalVariables(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<GlobalVarIR> global_variables;
+  std::map<std::string, GlobalVarIR> global_variables;
   for (auto &&global_variable_protobuf : tu.global_vars()) {
     GlobalVarIR global_variable_ir;
     global_variable_ir.SetName(global_variable_protobuf.name());
@@ -182,38 +183,44 @@ std::vector<GlobalVarIR> ProtobufTextFormatToIRReader::ReadGlobalVariables(
         global_variable_protobuf.referenced_type());
     global_variable_ir.SetLinkerSetKey(
         global_variable_protobuf.linker_set_key());
-    global_variables.emplace_back(std::move(global_variable_ir));
+    global_variables.insert(
+        {global_variable_ir.GetLinkerSetKey(), std::move(global_variable_ir)});
   }
   return global_variables;
 }
 
-std::vector<PointerTypeIR> ProtobufTextFormatToIRReader::ReadPointerTypes(
+std::map<std::string, PointerTypeIR>
+ProtobufTextFormatToIRReader::ReadPointerTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<PointerTypeIR> pointer_types;
+  std::map<std::string, PointerTypeIR> pointer_types;
   for (auto &&pointer_type_protobuf : tu.pointer_types()) {
     PointerTypeIR pointer_type_ir;
     ReadTypeInfo(pointer_type_protobuf.type_info(), &pointer_type_ir);
-    pointer_types.emplace_back(std::move(pointer_type_ir));
+    pointer_types.insert(
+        {pointer_type_ir.GetLinkerSetKey(), std::move(pointer_type_ir)});
   }
   return pointer_types;
 }
 
-std::vector<BuiltinTypeIR> ProtobufTextFormatToIRReader::ReadBuiltinTypes(
+std::map<std::string, BuiltinTypeIR>
+ProtobufTextFormatToIRReader::ReadBuiltinTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<BuiltinTypeIR> builtin_types;
+  std::map<std::string, BuiltinTypeIR> builtin_types;
   for (auto &&builtin_type_protobuf : tu.builtin_types()) {
     BuiltinTypeIR builtin_type_ir;
     ReadTypeInfo(builtin_type_protobuf.type_info(), &builtin_type_ir);
     builtin_type_ir.SetSignedness(builtin_type_protobuf.is_unsigned());
     builtin_type_ir.SetIntegralType(builtin_type_protobuf.is_integral());
-    builtin_types.emplace_back(std::move(builtin_type_ir));
+    builtin_types.insert(
+        {builtin_type_ir.GetLinkerSetKey(), std::move(builtin_type_ir)});
   }
   return builtin_types;
 }
 
-std::vector<QualifiedTypeIR> ProtobufTextFormatToIRReader::ReadQualifiedTypes(
+std::map<std::string, QualifiedTypeIR>
+ProtobufTextFormatToIRReader::ReadQualifiedTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<QualifiedTypeIR> qualified_types;
+  std::map<std::string, QualifiedTypeIR> qualified_types;
   for (auto &&qualified_type_protobuf : tu.qualified_types()) {
     QualifiedTypeIR qualified_type_ir;
     ReadTypeInfo(qualified_type_protobuf.type_info(), &qualified_type_ir);
@@ -221,74 +228,83 @@ std::vector<QualifiedTypeIR> ProtobufTextFormatToIRReader::ReadQualifiedTypes(
     qualified_type_ir.SetVolatility(qualified_type_protobuf.is_volatile());
     qualified_type_ir.SetRestrictedness(
         qualified_type_protobuf.is_restricted());
-    qualified_types.emplace_back(std::move(qualified_type_ir));
+    qualified_types.insert(
+        {qualified_type_ir.GetLinkerSetKey(), std::move(qualified_type_ir)});
   }
   return qualified_types;
 }
 
-std::vector<ArrayTypeIR> ProtobufTextFormatToIRReader::ReadArrayTypes(
+std::map<std::string, ArrayTypeIR> ProtobufTextFormatToIRReader::ReadArrayTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<ArrayTypeIR> array_types;
+  std::map<std::string, ArrayTypeIR> array_types;
   for (auto &&array_type_protobuf : tu.array_types()) {
     ArrayTypeIR array_type_ir;
     ReadTypeInfo(array_type_protobuf.type_info(), &array_type_ir);
-    array_types.emplace_back(std::move(array_type_ir));
+    array_types.insert(
+        {array_type_ir.GetLinkerSetKey(), std::move(array_type_ir)});
   }
   return array_types;
 }
 
-std::vector<LvalueReferenceTypeIR>
+std::map<std::string, LvalueReferenceTypeIR>
 ProtobufTextFormatToIRReader::ReadLvalueReferenceTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<LvalueReferenceTypeIR> lvalue_reference_types;
+  std::map<std::string, LvalueReferenceTypeIR> lvalue_reference_types;
   for (auto &&lvalue_reference_type_protobuf : tu.lvalue_reference_types()) {
     LvalueReferenceTypeIR lvalue_reference_type_ir;
     ReadTypeInfo(lvalue_reference_type_protobuf.type_info(),
                  &lvalue_reference_type_ir);
-    lvalue_reference_types.emplace_back(std::move(lvalue_reference_type_ir));
+    lvalue_reference_types.insert(
+        {lvalue_reference_type_ir.GetLinkerSetKey(),
+          std::move(lvalue_reference_type_ir)});
   }
   return lvalue_reference_types;
 }
 
-std::vector<RvalueReferenceTypeIR>
+std::map<std::string, RvalueReferenceTypeIR>
 ProtobufTextFormatToIRReader::ReadRvalueReferenceTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<RvalueReferenceTypeIR> rvalue_reference_types;
+  std::map<std::string, RvalueReferenceTypeIR> rvalue_reference_types;
   for (auto &&rvalue_reference_type_protobuf : tu.rvalue_reference_types()) {
     RvalueReferenceTypeIR rvalue_reference_type_ir;
     ReadTypeInfo(rvalue_reference_type_protobuf.type_info(),
                  &rvalue_reference_type_ir);
-    rvalue_reference_types.emplace_back(std::move(rvalue_reference_type_ir));
+    rvalue_reference_types.insert(
+        {rvalue_reference_type_ir.GetLinkerSetKey(),
+          std::move(rvalue_reference_type_ir)});
   }
   return rvalue_reference_types;
 }
 
-std::vector<FunctionIR> ProtobufTextFormatToIRReader::ReadFunctions(
+std::map<std::string, FunctionIR> ProtobufTextFormatToIRReader::ReadFunctions(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<FunctionIR> functions;
+  std::map<std::string, FunctionIR> functions;
   for (auto &&function_protobuf : tu.functions()) {
     FunctionIR function_ir = FunctionProtobufToIR(function_protobuf);
-    functions.emplace_back(std::move(function_ir));
+    functions.insert({function_ir.GetLinkerSetKey(), std::move(function_ir)});
   }
   return functions;
 }
 
-std::vector<RecordTypeIR> ProtobufTextFormatToIRReader::ReadRecordTypes(
+std::map<std::string, RecordTypeIR>
+ProtobufTextFormatToIRReader::ReadRecordTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<RecordTypeIR> record_types;
+  std::map<std::string, RecordTypeIR> record_types;
   for (auto &&record_type_protobuf : tu.record_types()) {
     RecordTypeIR record_type_ir = RecordTypeProtobufToIR(record_type_protobuf);
-    record_types.emplace_back(std::move(record_type_ir));
+    record_types.insert(
+        {record_type_ir.GetLinkerSetKey(), std::move(record_type_ir)});
   }
   return record_types;
 }
 
-std::vector<EnumTypeIR> ProtobufTextFormatToIRReader::ReadEnumTypes(
+std::map<std::string, EnumTypeIR> ProtobufTextFormatToIRReader::ReadEnumTypes(
     const abi_dump::TranslationUnit &tu) {
-  std::vector<EnumTypeIR> enum_types;
+  std::map<std::string, EnumTypeIR> enum_types;
   for (auto &&enum_type_protobuf : tu.enum_types()) {
     EnumTypeIR enum_type_ir = EnumTypeProtobufToIR(enum_type_protobuf);
-    enum_types.emplace_back(std::move(enum_type_ir));
+    enum_types.insert(
+        {enum_type_ir.GetLinkerSetKey(), std::move(enum_type_ir)});
   }
   return enum_types;
 }
