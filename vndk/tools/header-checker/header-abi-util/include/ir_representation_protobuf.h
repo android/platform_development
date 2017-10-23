@@ -294,33 +294,33 @@ class ProtobufTextFormatToIRReader : public TextFormatToIRReader {
       : TextFormatToIRReader(dump_path) { }
 
  private:
-  std::vector<FunctionIR> ReadFunctions(
-       const abi_dump::TranslationUnit &tu);
+  AbiElementMap<FunctionIR> ReadFunctions(const abi_dump::TranslationUnit &tu);
 
-  std::vector<GlobalVarIR> ReadGlobalVariables(
-       const abi_dump::TranslationUnit &tu);
-
-  std::vector<EnumTypeIR> ReadEnumTypes(const abi_dump::TranslationUnit &tu);
-
-  std::vector<RecordTypeIR> ReadRecordTypes(
+  AbiElementMap<GlobalVarIR> ReadGlobalVariables(
       const abi_dump::TranslationUnit &tu);
 
-  std::vector<PointerTypeIR> ReadPointerTypes(
-       const abi_dump::TranslationUnit &tu);
+  AbiElementMap<EnumTypeIR> ReadEnumTypes(const abi_dump::TranslationUnit &tu);
 
-  std::vector<BuiltinTypeIR> ReadBuiltinTypes(
-       const abi_dump::TranslationUnit &tu);
+  AbiElementMap<RecordTypeIR> ReadRecordTypes(
+      const abi_dump::TranslationUnit &tu);
 
-  std::vector<QualifiedTypeIR> ReadQualifiedTypes(
-       const abi_dump::TranslationUnit &tu);
+  AbiElementMap<PointerTypeIR> ReadPointerTypes(
+      const abi_dump::TranslationUnit &tu);
 
-  std::vector<ArrayTypeIR> ReadArrayTypes(const abi_dump::TranslationUnit &tu);
+  AbiElementMap<BuiltinTypeIR> ReadBuiltinTypes(
+      const abi_dump::TranslationUnit &tu);
 
-  std::vector<LvalueReferenceTypeIR> ReadLvalueReferenceTypes(
-       const abi_dump::TranslationUnit &tu);
+  AbiElementMap<QualifiedTypeIR> ReadQualifiedTypes(
+      const abi_dump::TranslationUnit &tu);
 
-  std::vector<RvalueReferenceTypeIR> ReadRvalueReferenceTypes(
-       const abi_dump::TranslationUnit &tu);
+  AbiElementMap<ArrayTypeIR> ReadArrayTypes(
+      const abi_dump::TranslationUnit &tu);
+
+  AbiElementMap<LvalueReferenceTypeIR> ReadLvalueReferenceTypes(
+      const abi_dump::TranslationUnit &tu);
+
+  AbiElementMap<RvalueReferenceTypeIR> ReadRvalueReferenceTypes(
+      const abi_dump::TranslationUnit &tu);
 
   std::vector<ElfFunctionIR> ReadElfFunctions (
       const abi_dump::TranslationUnit &tu);
