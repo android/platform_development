@@ -47,8 +47,8 @@ class HeaderAbiDiff {
 
   template <typename T, typename ElfSymbolType>
   bool CollectDynsymExportables(
-    const std::vector<T> &old_exportables,
-    const std::vector<T> &new_exportables,
+    const std::map<std::string, T> &old_exportables,
+    const std::map<std::string, T> &new_exportables,
     const std::vector<ElfSymbolType> &old_elf_symbols,
     const std::vector<ElfSymbolType> &new_elf_symbols,
     const std::map<std::string, const abi_util::TypeIR *> &old_types_map,
@@ -112,10 +112,10 @@ class HeaderAbiDiff {
       const std::map<std::string, const abi_util::TypeIR *> &new_types_map,
       abi_util::IRDiffDumper *ir_diff_dumper);
 
-  template <typename T>
+  template<typename T>
   bool CollectUserDefinedTypesInternal(
-      const std::vector<T> &old_ud_types,
-      const std::vector<T> &new_ud_types,
+      const std::map<std::string, T> &old_exportables,
+      const std::map<std::string, T> &new_exportables,
       const std::map<std::string, const abi_util::TypeIR *> &old_types_map,
       const std::map<std::string, const abi_util::TypeIR *> &new_types_map,
       abi_util::IRDiffDumper *ir_diff_dumper);

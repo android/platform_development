@@ -708,43 +708,45 @@ class TextFormatToIRReader {
  public:
   TextFormatToIRReader(const std::string &dump_path) : dump_path_(dump_path) { }
 
-  const std::vector<FunctionIR> &GetFunctions() const {
+  const std::map<std::string, FunctionIR> &GetFunctions() const {
     return functions_;
   }
 
-  const std::vector<GlobalVarIR> &GetGlobalVariables() const {
+  const std::map<std::string, GlobalVarIR> &GetGlobalVariables() const {
     return global_variables_;
   }
 
-  const std::vector<RecordTypeIR> &GetRecordTypes() const {
+  const std::map<std::string, RecordTypeIR> &GetRecordTypes() const {
     return record_types_;
   }
 
-  const std::vector<EnumTypeIR> &GetEnumTypes() const {
+  const std::map<std::string, EnumTypeIR> &GetEnumTypes() const {
     return enum_types_;
   }
 
-  const std::vector<LvalueReferenceTypeIR> &GetLvalueReferenceTypes() const {
+  const std::map<std::string, LvalueReferenceTypeIR> &
+      GetLvalueReferenceTypes() const {
     return lvalue_reference_types_;
   }
 
-  const std::vector<RvalueReferenceTypeIR> &GetRvalueReferenceTypes() const {
+  const std::map<std::string, RvalueReferenceTypeIR> &
+      GetRvalueReferenceTypes() const {
     return rvalue_reference_types_;
   }
 
-  const std::vector<QualifiedTypeIR> &GetQualifiedTypes() const {
+  const std::map<std::string, QualifiedTypeIR> &GetQualifiedTypes() const {
     return qualified_types_;
   }
 
-  const std::vector<ArrayTypeIR> &GetArrayTypes() const {
+  const std::map<std::string, ArrayTypeIR> &GetArrayTypes() const {
     return array_types_;
   }
 
-  const std::vector<PointerTypeIR> &GetPointerTypes() const {
+  const std::map<std::string, PointerTypeIR> &GetPointerTypes() const {
     return pointer_types_;
   }
 
-  const std::vector<BuiltinTypeIR> &GetBuiltinTypes() const {
+  const std::map<std::string, BuiltinTypeIR> &GetBuiltinTypes() const {
     return builtin_types_;
   }
 
@@ -765,16 +767,16 @@ class TextFormatToIRReader {
 
  protected:
   const std::string &dump_path_;
-  std::vector<FunctionIR> functions_;
-  std::vector<GlobalVarIR> global_variables_;
-  std::vector<RecordTypeIR> record_types_;
-  std::vector<EnumTypeIR> enum_types_;
-  std::vector<PointerTypeIR> pointer_types_;
-  std::vector<LvalueReferenceTypeIR> lvalue_reference_types_;
-  std::vector<RvalueReferenceTypeIR> rvalue_reference_types_;
-  std::vector<ArrayTypeIR> array_types_;
-  std::vector<BuiltinTypeIR> builtin_types_;
-  std::vector<QualifiedTypeIR> qualified_types_;
+  std::map<std::string, FunctionIR> functions_;
+  std::map<std::string, GlobalVarIR> global_variables_;
+  std::map<std::string, RecordTypeIR> record_types_;
+  std::map<std::string, EnumTypeIR> enum_types_;
+  std::map<std::string, PointerTypeIR> pointer_types_;
+  std::map<std::string, LvalueReferenceTypeIR> lvalue_reference_types_;
+  std::map<std::string, RvalueReferenceTypeIR> rvalue_reference_types_;
+  std::map<std::string, ArrayTypeIR> array_types_;
+  std::map<std::string, BuiltinTypeIR> builtin_types_;
+  std::map<std::string, QualifiedTypeIR> qualified_types_;
   std::vector<ElfFunctionIR> elf_functions_;
   std::vector<ElfObjectIR> elf_objects_;
 };

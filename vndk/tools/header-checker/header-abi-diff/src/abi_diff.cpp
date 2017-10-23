@@ -49,17 +49,18 @@ abi_util::CompatibilityStatusIR HeaderAbiDiff::GenerateCompatibilityReport() {
   return status;
 }
 
-template <typename F>
+template <typename F1, typename F2>
 static void AddTypesToMap(std::map<std::string, const abi_util::TypeIR *> *dst,
-                          const abi_util::TextFormatToIRReader *tu, F func) {
-  AddToMap(dst, tu->GetRecordTypes(), func);
-  AddToMap(dst, tu->GetEnumTypes(), func);
-  AddToMap(dst, tu->GetPointerTypes(), func);
-  AddToMap(dst, tu->GetBuiltinTypes(), func);
-  AddToMap(dst, tu->GetArrayTypes(), func);
-  AddToMap(dst, tu->GetLvalueReferenceTypes(), func);
-  AddToMap(dst, tu->GetRvalueReferenceTypes(), func);
-  AddToMap(dst, tu->GetQualifiedTypes(), func);
+                          const abi_util::TextFormatToIRReader *tu, F1 get_key,
+                          F2 get_value) {
+  AddToMap(dst, tu->GetRecordTypes(), get_key, get_value);
+  AddToMap(dst, tu->GetEnumTypes(), get_key, get_value);
+  AddToMap(dst, tu->GetPointerTypes(), get_key, get_value);
+  AddToMap(dst, tu->GetBuiltinTypes(), get_key, get_value);
+  AddToMap(dst, tu->GetArrayTypes(), get_key, get_value);
+  AddToMap(dst, tu->GetLvalueReferenceTypes(), get_key, get_value);
+  AddToMap(dst, tu->GetRvalueReferenceTypes(), get_key, get_value);
+  AddToMap(dst, tu->GetQualifiedTypes(), get_key, get_value);
 }
 
 abi_util::CompatibilityStatusIR HeaderAbiDiff::CompareTUs(
@@ -71,9 +72,11 @@ abi_util::CompatibilityStatusIR HeaderAbiDiff::CompareTUs(
   std::map<std::string, const abi_util::TypeIR *> old_types;
   std::map<std::string, const abi_util::TypeIR *> new_types;
   AddTypesToMap(&old_types, old_tu,
-                [](const abi_util::TypeIR *e) {return e->GetLinkerSetKey();});
+                [](auto e) {return e->first;},
+                [](auto e) {return &(e->second);});
   AddTypesToMap(&new_types, new_tu,
-                [](const abi_util::TypeIR *e) {return e->GetLinkerSetKey();});
+                [](auto e) {return e->first;},
+                [](auto e) {return &(e->second);});
 
   // Collect fills in added, removed ,unsafe and safe function diffs.
   if (!CollectDynsymExportables(old_tu->GetFunctions(), new_tu->GetFunctions(),
@@ -124,24 +127,25 @@ bool HeaderAbiDiff::CollectUserDefinedTypes(
 
 template <typename T>
 bool HeaderAbiDiff::CollectUserDefinedTypesInternal(
-    const std::vector<T> &old_ud_types,
-    const std::vector<T> &new_ud_types,
+    const std::map<std::string, T> &old_ud_types,
+    const std::map<std::string, T> &new_ud_types,
     const std::map<std::string, const abi_util::TypeIR *> &old_types_map,
     const std::map<std::string, const abi_util::TypeIR *> &new_types_map,
     abi_util::IRDiffDumper *ir_diff_dumper) {
+
   // No elf information for records and enums.
   std::map<std::string, const T *> old_ud_types_map;
   std::map<std::string, const T *> new_ud_types_map;
 
   abi_util::AddToMap(&old_ud_types_map, old_ud_types,
-                     [](const T *e)
-                     { return e->GetLinkerSetKey();});
+                     [](auto e) { return e->first;},
+                     [](auto e) {return &(e->second);});
 
   abi_util::AddToMap(&new_ud_types_map, new_ud_types,
-                     [](const T *e)
-                     { return e->GetLinkerSetKey();});
+                     [](auto e) { return e->first;},
+                     [](auto e) {return &(e->second);});
 
-  return Collect(old_ud_types_map, new_ud_types_map, nullptr, nullptr,
+  return Collect(old_types_map, new_types_map, nullptr, nullptr,
                  ir_diff_dumper) &&
       PopulateCommonElements(old_ud_types_map, new_ud_types_map, old_types_map,
                              new_types_map, ir_diff_dumper,
@@ -150,8 +154,8 @@ bool HeaderAbiDiff::CollectUserDefinedTypesInternal(
 
 template <typename T, typename ElfSymbolType>
 bool HeaderAbiDiff::CollectDynsymExportables(
-    const std::vector<T> &old_exportables,
-    const std::vector<T> &new_exportables,
+    const std::map<std::string, T> &old_exportables,
+    const std::map<std::string, T> &new_exportables,
     const std::vector<ElfSymbolType> &old_elf_symbols,
     const std::vector<ElfSymbolType> &new_elf_symbols,
     const std::map<std::string, const abi_util::TypeIR *> &old_types_map,
@@ -163,17 +167,21 @@ bool HeaderAbiDiff::CollectDynsymExportables(
   std::map<std::string, const abi_util::ElfSymbolIR *> new_elf_symbol_map;
 
   abi_util::AddToMap(&old_exportables_map, old_exportables,
-                     [](const T *e)
-                     { return e->GetLinkerSetKey();});
+                     [](auto e) { return e->first;},
+                     [](auto e) {return &(e->second);});
   abi_util::AddToMap(&new_exportables_map, new_exportables,
-                     [](const T *e)
-                     { return e->GetLinkerSetKey();});
+                     [](auto e) { return e->first;},
+                     [](auto e) { return &(e->second);});
+
   abi_util::AddToMap(
       &old_elf_symbol_map, old_elf_symbols,
-      [](const ElfSymbolType *symbol) { return symbol->GetName();});
+      [](const ElfSymbolType *symbol) { return symbol->GetName();},
+      [](const ElfSymbolType *symbol) {return symbol;});
+
   abi_util::AddToMap(
       &new_elf_symbol_map, new_elf_symbols,
-      [](const ElfSymbolType *symbol) { return symbol->GetName();});
+      [](const ElfSymbolType *symbol) { return symbol->GetName();},
+      [](const ElfSymbolType *symbol) {return symbol;});
 
   if (!Collect(old_exportables_map,
                new_exportables_map, &old_elf_symbol_map, &new_elf_symbol_map,
@@ -258,6 +266,9 @@ bool HeaderAbiDiff::PopulateRemovedElements(
   return true;
 }
 
+// Find the common elements (common records, common enums, common functions etc)
+// Dump the differences (we need type maps for this diff since we'll get
+// reachable types from here)
 template <typename T>
 bool HeaderAbiDiff::PopulateCommonElements(
     const std::map<std::string, const T *> &old_elements_map,
@@ -309,7 +320,6 @@ bool HeaderAbiDiff::DumpLoneElements(
   }
   return true;
 }
-
 
 template <typename T>
 bool HeaderAbiDiff::DumpDiffElements(
