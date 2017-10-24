@@ -699,6 +699,8 @@ class IRDumper {
 
   virtual bool AddLinkableMessageIR(const LinkableMessageIR *) = 0;
 
+  virtual bool AddElfSymbolMessageIR(const ElfSymbolIR *) = 0;
+
   virtual bool Dump() = 0;
 
   virtual ~IRDumper() {}
@@ -761,6 +763,20 @@ class TextFormatToIRReader {
     return elf_objects_;
   }
 
+  const TextFormatToIRReader &operator+=(const TextFormatToIRReader &addend) {
+    MergeElements(&functions_, addend.GetFunctions());
+    MergeElements(&global_variables_, addend.GetGlobalVariables());
+    MergeElements(&record_types_, addend.GetRecordTypes());
+    MergeElements(&enum_types_, addend.GetEnumTypes());
+    MergeElements(&pointer_types_, addend.GetPointerTypes());
+    MergeElements(&lvalue_reference_types_, addend.GetLvalueReferenceTypes());
+    MergeElements(&rvalue_reference_types_, addend.GetRvalueReferenceTypes());
+    MergeElements(&array_types_, addend.GetArrayTypes());
+    MergeElements(&builtin_types_, addend.GetBuiltinTypes());
+    MergeElements(&qualified_types_, addend.GetQualifiedTypes());
+    return *this;
+  }
+
   virtual bool ReadDump() = 0;
 
   virtual ~TextFormatToIRReader() { }
@@ -769,6 +785,12 @@ class TextFormatToIRReader {
       const std::string &text_format, const std::string &dump_path);
 
  protected:
+  template <typename Augend, typename Addend>
+  inline void MergeElements(Augend *augend, const Addend &addend) {
+    augend->insert(std::make_move_iterator(addend.begin()),
+                   std::make_move_iterator(addend.end()));
+  }
+
   const std::string &dump_path_;
   AbiElementMap<FunctionIR> functions_;
   AbiElementMap<GlobalVarIR> global_variables_;
