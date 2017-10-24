@@ -699,6 +699,8 @@ class IRDumper {
 
   virtual bool AddLinkableMessageIR(const LinkableMessageIR *) = 0;
 
+  virtual bool AddElfSymbolMessageIR(const ElfSymbolIR *) = 0;
+
   virtual bool Dump() = 0;
 
   virtual ~IRDumper() {}
@@ -762,12 +764,25 @@ class TextFormatToIRReader {
 
   virtual bool ReadDump(const std::string &dump_file) = 0;
 
+  template <typename Iterator>
+  bool ReadDumps(Iterator begin, Iterator end) {
+    Iterator it = begin;
+    while(it != end) {
+      if (!ReadDump(*it)) {
+        return false;
+      }
+      ++it;
+    }
+    return true;
+  }
+
   virtual ~TextFormatToIRReader() { }
 
   static std::unique_ptr<TextFormatToIRReader> CreateTextFormatToIRReader(
       const std::string &text_format);
 
  protected:
+
   AbiElementMap<FunctionIR> functions_;
   AbiElementMap<GlobalVarIR> global_variables_;
   AbiElementMap<RecordTypeIR> record_types_;
