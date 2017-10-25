@@ -182,7 +182,7 @@ static void LinkThread(abi_util::TextFormatToIRReader *greader,
             text_format, dump_files[i]);
     assert(reader != nullptr);
     if (!reader->ReadDump()) {
-      llvm::errs() << "ReadDump failed\n";
+      llvm::errs() << "TextFormatToIRReader::ReadDump() failed\n";
       ::exit(1);
     }
     *local_reader += *reader;

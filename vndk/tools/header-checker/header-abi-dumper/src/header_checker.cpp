@@ -49,6 +49,11 @@ static llvm::cl::opt<bool> no_filter(
     "no-filter", llvm::cl::desc("Do not filter any abi"), llvm::cl::Optional,
     llvm::cl::cat(header_checker_category));
 
+static llvm::cl::opt<std::string> text_format(
+    "text-format", llvm::cl::desc("<text-format : eg: protobuf, xml>"),
+    llvm::cl::Optional, llvm::cl::init("protobuf"),
+    llvm::cl::cat(header_checker_category));
+
 // Hide irrelevant command line options defined in LLVM libraries.
 static void HideIrrelevantCommandLineOptions() {
   llvm::StringMap<llvm::cl::Option *> &map = llvm::cl::getRegisteredOptions();
@@ -108,7 +113,8 @@ int main(int argc, const char **argv) {
 
   clang::tooling::ClangTool tool(*compilations, header_files);
   std::unique_ptr<clang::tooling::FrontendActionFactory> factory(
-      new HeaderCheckerFrontendActionFactory(out_dump, exported_headers));
+      new HeaderCheckerFrontendActionFactory(out_dump, exported_headers,
+                                             text_format));
 
   return tool.run(factory.get());
 }
