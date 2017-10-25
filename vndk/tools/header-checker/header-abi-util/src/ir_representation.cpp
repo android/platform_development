@@ -33,33 +33,39 @@
 namespace abi_util {
 
 std::unique_ptr<IRDumper> IRDumper::CreateIRDumper(
-    const std::string &type, const std::string &dump_path) {
-  if (type == "protobuf") {
-    return std::make_unique<ProtobufIRDumper>(dump_path);
+    TextFormatIR text_format, const std::string &dump_path) {
+  switch (text_format) {
+    case TextFormatIR::ProtobufTextFormat:
+      return std::make_unique<ProtobufIRDumper>(dump_path);
+    default:
+      // Nothing else is supported yet.
+      llvm::errs() << "Text format not supported yet\n";
+      return nullptr;
   }
-  // Nothing else is supported yet.
-  llvm::errs() << type << " message format is not supported yet!\n";
-  return nullptr;
 }
 
 std::unique_ptr<IRDiffDumper> IRDiffDumper::CreateIRDiffDumper(
-    const std::string &type, const std::string &dump_path) {
-  if (type == "protobuf") {
-    return std::make_unique<ProtobufIRDiffDumper>(dump_path);
+    TextFormatIR text_format, const std::string &dump_path) {
+  switch (text_format) {
+    case TextFormatIR::ProtobufTextFormat:
+      return std::make_unique<ProtobufIRDiffDumper>(dump_path);
+    default:
+      // Nothing else is supported yet.
+      llvm::errs() << "Text format not supported yet\n";
+      return nullptr;
   }
-  // Nothing else is supported yet.
-  llvm::errs() << type << " message format is not supported yet!\n";
-  return nullptr;
 }
 
 std::unique_ptr<TextFormatToIRReader>
-TextFormatToIRReader::CreateTextFormatToIRReader(const std::string &type) {
-  if (type == "protobuf") {
-    return std::make_unique<ProtobufTextFormatToIRReader>();
+TextFormatToIRReader::CreateTextFormatToIRReader(TextFormatIR text_format) {
+  switch (text_format) {
+    case TextFormatIR::ProtobufTextFormat:
+      return std::make_unique<ProtobufTextFormatToIRReader>();
+    default:
+      // Nothing else is supported yet.
+      llvm::errs() << "Text format not supported yet\n";
+      return nullptr;
   }
-  // Nothing else is supported yet.
-  llvm::errs() << type << " message format is not supported yet!\n";
-  return nullptr;
 }
 
 } // namespace abi_util
