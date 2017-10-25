@@ -14,6 +14,8 @@
 #ifndef IR_
 #define IR_
 
+#include <llvm/Support/CommandLine.h>
+
 #include <map>
 #include <regex>
 #include <set>
@@ -27,6 +29,12 @@ namespace abi_util {
 
 template <typename T>
 using AbiElementMap = std::map<std::string, T>;
+
+enum TextFormatIR {
+  ProtobufTextFormat = 0,
+};
+
+using TextFormatCl = llvm::cl::opt<abi_util::TextFormatIR>;
 
 enum CompatibilityStatusIR {
   Compatible = 0,
@@ -694,8 +702,8 @@ class IRDumper {
  public:
   IRDumper(const std::string &dump_path) : dump_path_(dump_path) { }
 
-  static std::unique_ptr<IRDumper> CreateIRDumper(const std::string &type,
-                                                  const std::string &dump_path);
+  static std::unique_ptr<IRDumper> CreateIRDumper(
+      const TextFormatCl &text_format, const std::string &dump_path);
 
   virtual bool AddLinkableMessageIR(const LinkableMessageIR *) = 0;
 
@@ -782,7 +790,7 @@ class TextFormatToIRReader {
   virtual ~TextFormatToIRReader() { }
 
   static std::unique_ptr<TextFormatToIRReader> CreateTextFormatToIRReader(
-      const std::string &text_format, const std::string &dump_path);
+      const TextFormatCl &text_format, const std::string &dump_path);
 
  protected:
   template <typename Augend, typename Addend>
@@ -1147,7 +1155,7 @@ class IRDiffDumper {
 
   virtual ~IRDiffDumper() {}
   static std::unique_ptr<IRDiffDumper> CreateIRDiffDumper(
-      const std::string &type, const std::string &dump_path);
+      const TextFormatCl &text_format, const std::string &dump_path);
  protected:
   const std::string &dump_path_;
 };
