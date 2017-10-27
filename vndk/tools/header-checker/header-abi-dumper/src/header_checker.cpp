@@ -71,6 +71,8 @@ int main(int argc, const char **argv) {
   // to disable FORTIFY for this tool to function correctly.
   std::vector<const char *> fixedArgv(argv, argv + argc);
   fixedArgv.push_back("-U_FORTIFY_SOURCE");
+  // FIXME: LLVM r275480 does not recognize flto=thin, so suppress this as well.
+  fixedArgv.push_back("-fno-lto");
   int fixedArgc = fixedArgv.size();
 
   // Create compilation database from command line arguments after "--".
