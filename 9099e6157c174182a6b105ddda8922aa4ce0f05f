@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0a3c368d_4e58689a",
+        "filename": "tools/line_endings/line_endings.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2017-10-27T21:47:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4462a76_f431647e",
+      "revId": "9099e6157c174182a6b105ddda8922aa4ce0f05f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3dfd7213_d36bf104",
         "filename": "tutorials/MoarRam/jni/bar.c",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-10-27T18:21:47Z",
       "side": 1,
       "message": "Rather than do this in all the .c files, let\u0027s just turn on -Wno-unused-parameter for this sample.",
+      "revId": "9099e6157c174182a6b105ddda8922aa4ce0f05f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2dea7435_9efe6d99",
+        "filename": "tutorials/MoarRam/jni/bar.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2017-10-27T21:47:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3dfd7213_d36bf104",
       "revId": "9099e6157c174182a6b105ddda8922aa4ce0f05f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
