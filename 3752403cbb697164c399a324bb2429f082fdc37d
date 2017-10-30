@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4510675_02592ad6",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-30T06:22:01Z",
+      "side": 1,
+      "message": "KeyGetter",
+      "range": {
+        "startLine": 52,
+        "startChar": 19,
+        "endLine": 52,
+        "endChar": 21
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da1a597c_bdff20a4",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-30T06:22:01Z",
+      "side": 1,
+      "message": "ValueGetter",
+      "range": {
+        "startLine": 52,
+        "startChar": 32,
+        "endLine": 52,
+        "endChar": 34
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8902049_0c156890",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-30T06:22:01Z",
+      "side": 1,
+      "message": "There are plenty of similar changes in this CL.  I feel it might worth to give this a meaningful type alias, e.g.\n\n    template \u003ctypename T\u003e\n    using SymbolMap \u003d std::map\u003cstd::string, T\u003e;\n\n(Please pick a better name for `SymbolMap`)",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 34
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64a54205_e1a49489",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-30T06:22:01Z",
+      "side": 1,
+      "message": "Is the renaming intentional?",
+      "range": {
+        "startLine": 117,
+        "startChar": 38,
+        "endLine": 117,
+        "endChar": 53
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "820a1307_2734fa3a",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-30T06:22:01Z",
+      "side": 1,
+      "message": "ValueGetter",
+      "range": {
+        "startLine": 149,
+        "startChar": 75,
+        "endLine": 149,
+        "endChar": 77
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed661dac_9726df7f",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-30T06:22:01Z",
+      "side": 1,
+      "message": "KeyGetter",
+      "range": {
+        "startLine": 149,
+        "startChar": 62,
+        "endLine": 149,
+        "endChar": 64
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
