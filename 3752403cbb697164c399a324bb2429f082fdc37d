@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "d62f5073_0b263688",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-30T20:34:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4510675_02592ad6",
+      "range": {
+        "startLine": 52,
+        "startChar": 19,
+        "endLine": 52,
+        "endChar": 21
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd07b2a7_f6ab3e27",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-30T20:34:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da1a597c_bdff20a4",
+      "range": {
+        "startLine": 52,
+        "startChar": 32,
+        "endLine": 52,
+        "endChar": 34
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c8902049_0c156890",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 2
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "d458c30a_ad3d54fe",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-30T20:34:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8902049_0c156890",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 34
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "64a54205_e1a49489",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2017-10-30T06:22:01Z",
       "side": 1,
       "message": "Is the renaming intentional?",
+      "range": {
+        "startLine": 117,
+        "startChar": 38,
+        "endLine": 117,
+        "endChar": 53
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ad6b5ea_e697b68f",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-30T20:34:53Z",
+      "side": 1,
+      "message": "Right. This is a mistake. Renamed these back.",
+      "parentUuid": "64a54205_e1a49489",
       "range": {
         "startLine": 117,
         "startChar": 38,
@@ -133,6 +229,54 @@
         "startChar": 62,
         "endLine": 149,
         "endChar": 64
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d32cbcbd_c5186f51",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-30T20:34:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed661dac_9726df7f",
+      "range": {
+        "startLine": 149,
+        "startChar": 62,
+        "endLine": 149,
+        "endChar": 64
+      },
+      "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "148cef65_4e5b0795",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-30T20:34:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "820a1307_2734fa3a",
+      "range": {
+        "startLine": 149,
+        "startChar": 75,
+        "endLine": 149,
+        "endChar": 77
       },
       "revId": "3752403cbb697164c399a324bb2429f082fdc37d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
