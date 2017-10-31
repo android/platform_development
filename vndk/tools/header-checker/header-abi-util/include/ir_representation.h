@@ -795,13 +795,13 @@ class TextFormatToIRReader {
       std::vector<std::string>::const_iterator end);
 
  protected:
-  std::vector<std::string> dump_paths_;
   template <typename Augend, typename Addend>
   inline void MergeElements(Augend *augend, Addend &&addend) {
     augend->insert(std::make_move_iterator(addend.begin()),
                    std::make_move_iterator(addend.end()));
   }
 
+  std::vector<std::string> dump_paths_;
   AbiElementMap<FunctionIR> functions_;
   AbiElementMap<GlobalVarIR> global_variables_;
   AbiElementMap<RecordTypeIR> record_types_;
