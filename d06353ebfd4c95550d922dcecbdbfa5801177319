@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bea87dce_62e93486",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-31T22:56:03Z",
+      "side": 1,
+      "message": "Thanks, used clEnumValueN (don\u0027t need to correlate the option string with enum field directly).",
+      "parentUuid": "797fd242_43515eb2",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 43
+      },
+      "revId": "d06353ebfd4c95550d922dcecbdbfa5801177319",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ad15e0b5_09c4e63c",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-10-31T09:19:07Z",
       "side": 1,
       "message": "May you split the concurrent code into another CL?  It will be great to focus on refactoring code to use IRReader in this CL.",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 5
+      },
+      "revId": "d06353ebfd4c95550d922dcecbdbfa5801177319",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37ecda7a_dd9c50e0",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-10-31T22:56:03Z",
+      "side": 1,
+      "message": "https://android-review.googlesource.com/c/platform/development/+/525395/1",
+      "parentUuid": "ad15e0b5_09c4e63c",
       "range": {
         "startLine": 211,
         "startChar": 0,
