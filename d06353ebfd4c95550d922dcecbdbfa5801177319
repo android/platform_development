@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "797fd242_43515eb2",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-31T09:22:57Z",
+      "side": 1,
+      "message": "Use clEnumValue to list the text format.  With clEnumValue, the command line option parser can check the option for us.\n\nref. https://android.googlesource.com/platform/external/llvm/+/master/docs/CommandLine.rst#353",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 43
+      },
+      "revId": "d06353ebfd4c95550d922dcecbdbfa5801177319",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ad15e0b5_09c4e63c",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 4
