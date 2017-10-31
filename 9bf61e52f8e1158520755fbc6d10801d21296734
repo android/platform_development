@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e32c9417_03d6833a",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-31T09:01:45Z",
+      "side": 1,
+      "message": "I would prefer fully-qualified name instead of using `using` statements in a header file.  But, it\u0027s your call.",
+      "range": {
+        "startLine": 52,
+        "startChar": 10,
+        "endLine": 52,
+        "endChar": 23
+      },
+      "revId": "9bf61e52f8e1158520755fbc6d10801d21296734",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
