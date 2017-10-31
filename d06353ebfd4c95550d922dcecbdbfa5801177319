@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad15e0b5_09c4e63c",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-10-31T09:19:07Z",
+      "side": 1,
+      "message": "May you split the concurrent code into another CL?  It will be great to focus on refactoring code to use IRReader in this CL.",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 5
+      },
+      "revId": "d06353ebfd4c95550d922dcecbdbfa5801177319",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
