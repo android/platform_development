@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5d4eaa4_00dcaee0",
+        "filename": "samples/XmlAdapters/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1242650
+      },
+      "writtenOn": "2017-10-31T00:28:35Z",
+      "side": 0,
+      "message": "E7XA6H",
+      "revId": "7f00068526bd49387ab5efa1ab9fdc4bcddb288a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
