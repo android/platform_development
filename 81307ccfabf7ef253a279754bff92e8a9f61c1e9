@@ -140,6 +140,30 @@
       "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "780002ae_16dfe015",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-01T17:52:09Z",
+      "side": 1,
+      "message": "Regarding 2) we should probably have multiple stages of linking threads so that we don\u0027t serialize the deduplication that does not need to be serialized.",
+      "parentUuid": "9f3f2bc2_80fcdc61",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
