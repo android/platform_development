@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "a0855025_582d1cb9",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T06:37:17Z",
+      "side": 1,
+      "message": "BTW, in the long run, I think it will be necessary to decouple the reader and the IR, i.e. there should be another data structure containing the loaded data and the reader actually load data into such structure.\n\nAnyway, this is beyond the scope of this CL.",
+      "range": {
+        "startLine": 168,
+        "startChar": 9,
+        "endLine": 168,
+        "endChar": 27
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "86345cc8_630f0550",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
