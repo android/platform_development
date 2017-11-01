@@ -1,3 +1,8 @@
 Pkg.UserSrc=false
+<<<<<<< HEAD   (1adecb Merge "Update platform-tools version to 25.0.6." into sdk-re)
 Pkg.Revision=${PLATFORM_SDK_VERSION}.0.6
 
+=======
+#Pkg.Revision=${PLATFORM_SDK_VERSION}.0.0
+Pkg.Revision=26.0.0 rc1
+>>>>>>> BRANCH (14b2ee Merge "Use -Werror in development")
