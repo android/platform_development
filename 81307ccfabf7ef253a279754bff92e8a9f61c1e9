@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86345cc8_630f0550",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T06:34:29Z",
+      "side": 1,
+      "message": "std::lock_guard is sufficient",
+      "range": {
+        "startLine": 174,
+        "startChar": 7,
+        "endLine": 174,
+        "endChar": 18
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "60b61545_a49a74ec",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T06:34:29Z",
+      "side": 1,
+      "message": "I don\u0027t like the algorithm here for 2 reasons:\n\n1. The code distribute workload by designating files to threads.  This may be sub-optimal if the sizes of files are unbalanced.\n\n2. There is a static variable in DeDuplicateAbiElementsThread\n\n----\n\nHere is my suggestion:\n\n    static void DeDuplicateAbiElementsThread(\n        std::mutex *reader_lock, abi_util::TextFormatToIRReader *reader,\n        std::atomic\u003cstd::size_t\u003e *cnt, const std::vector\u003cstd::string\u003e \u0026dump_files) {\n\n      static const char text_format[] \u003d \"protobuf\";\n\n      std::unique_ptr\u003cabi_util::TextFormatToIRReader\u003e local_reader \u003d\n          abi_util::TextFormatToIRReader::CreateTextFormatToIRReader(\n              text_format, \"\");\n\n      const std::size_t num_dump_files \u003d dump_files.size();\n      while (true) {\n        std::size_t i \u003d cnt-\u003efetch_add(1);\n        if (i \u003e\u003d num_dump_files) {\n          break;\n        }\n\n        std::unique_ptr\u003cabi_util::TextFormatToIRReader\u003e file_reader \u003d\n            abi_util::TextFormatToIRReader::CreateTextFormatToIRReader(\n                text_format, dump_files[i]);\n\n        assert(reader !\u003d nullptr);\n        if (!reader-\u003eReadDump()) {\n          llvm::errs() \u003c\u003c \"ReadDump failed\\n\";\n          ::exit(1);\n        }\n\n        local_reader-\u003eMerge(*file_reader);\n      }\n\n      std::lock_guard\u003cstd::mutex\u003e lock(*reader_lock);\n      reader-\u003eMerge(*local_reader);\n    }\n\n\n    bool HeaderAbiLinker::LinkAndDump() {\n      // ... skipped ...\n\n      std::atomic\u003cstd::size_t\u003e cnt(0);\n      std::mutex reader_lock;\n      std::unique_ptr\u003cabi_util::TextFormatToIRReader\u003e reader \u003d\n          abi_util::TextFormatToIRReader::CreateTextFormatToIRReader(\n              \"protobuf\", \"\");\n\n      std::size_t max_threads \u003d std::thread::hardware_concurrency();\n      std::vector\u003cstd::thread\u003e threads;\n      for (std::size_t i \u003d 1; i \u003c max_threads; ++i) {\n        threads.emplace_back(DeDuplicateAbiElementsThread, \u0026reader_lock,\n                             reader.get(), \u0026cnt, dump_files_);\n      }\n      DeDuplicateAbiElementsThread(\u0026reader_lock, reader.get(), \u0026cnt, dump_files_);\n      for (std::thread \u0026thread : threads) {\n        thread.join();\n      }\n\n      // ... skipped ...\n    }",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
