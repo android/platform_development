@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "1bdf58f7_c8ff6f8b",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:29:20Z",
+      "side": 1,
+      "message": "Append to previous line",
+      "range": {
+        "startLine": 128,
+        "startChar": 50,
+        "endLine": 129,
+        "endChar": 25
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f87d5_9d35af40",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:29:20Z",
+      "side": 1,
+      "message": "Use \u003c to match with the comment on Line 186.",
+      "range": {
+        "startLine": 150,
+        "startChar": 32,
+        "endLine": 150,
+        "endChar": 34
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33a51358_17a6c4b1",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:29:20Z",
+      "side": 1,
+      "message": "Follow the C++ common convention use [begin, end), i.e. inclusive begin and exclusive end.  Remove the `-1` here.",
+      "range": {
+        "startLine": 186,
+        "startChar": 74,
+        "endLine": 186,
+        "endChar": 78
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "afc84cd0_288cece0",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:29:20Z",
+      "side": 1,
+      "message": "Indention",
+      "range": {
+        "startLine": 188,
+        "startChar": 5,
+        "endLine": 188,
+        "endChar": 6
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "44274085_39b77ba6",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
         "patchSetId": 5
