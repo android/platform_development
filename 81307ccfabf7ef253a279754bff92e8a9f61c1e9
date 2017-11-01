@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "84b57263_690e5355",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T06:47:11Z",
+      "side": 1,
+      "message": "Or alternatively, you can refine the implementation of ReadDump() so that we can load multiple files with one local_reader (ReadDump() should accumulate the new input and should not discard the old input).",
+      "parentUuid": "a0855025_582d1cb9",
+      "range": {
+        "startLine": 168,
+        "startChar": 9,
+        "endLine": 168,
+        "endChar": 27
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "86345cc8_630f0550",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
