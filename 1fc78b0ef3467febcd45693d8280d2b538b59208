@@ -207,6 +207,30 @@
       "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de23f603_e364ef70",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-01T02:57:05Z",
+      "side": 1,
+      "message": "That\u0027s right I shouldn\u0027t be using a const reference here in the first place since I\u0027m going to modify the addend.",
+      "parentUuid": "2d714a0a_8b0d1cd0",
+      "range": {
+        "startLine": 790,
+        "startChar": 19,
+        "endLine": 790,
+        "endChar": 42
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
