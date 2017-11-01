@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "866ce63b_131abbff",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-01T17:30:04Z",
+      "side": 1,
+      "message": "I think this is a better way to go. Decoupling the reader and the IR seems unnecessary.",
+      "parentUuid": "84b57263_690e5355",
+      "range": {
+        "startLine": 168,
+        "startChar": 9,
+        "endLine": 168,
+        "endChar": 27
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "86345cc8_630f0550",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
@@ -92,6 +116,30 @@
       "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f3f2bc2_80fcdc61",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-01T17:30:04Z",
+      "side": 1,
+      "message": "Yes, you\u0027re right about the fact that there could be unbalanced loads. That definitely should be fixed (we probably want don\u0027t want to have a #define for the number of source files / thread). I see a couple of problems with your suggestion though:\n\n1) You\u0027re spawning off max_threads regardless of the number of source files which is probably not desirable. We should probably cap this at number of dump files being processed.\n\n2) The idea of dynamically assigning threads is a better way to go, however, I think we might be missing out on the fact that the results of these threads need to interact. Consider the scenario where we have 48 threads and 48 source files. It\u0027s possible that the assignment leads to each thread getting one source file each. This gets reduced to the case where everything is serialized. I tried out your code on libbcinfo.so(so that we compare it with the results in the commit message, near about 150 sources files) and got the following performance results (I capped the number of threads to be std::min(max_threads, dump_files.size()))\n:\nreal\t0m13.668s\nuser\t0m51.604s\nsys\t0m14.352s\n\nIn this case we can see that distributing the sources performed better. But yeah there are definitely going to be cases where dynamic distribution is going to be better (in the current algorithm we could very easily have threads which process very big dump files, and other threads finished well before them and now we\u0027re waiting on the join). We probably need to implement an algorithm where both these problems are somewhat solved.\n\n3) Do we need the second DeDuplicateAbiElements  at all?",
+      "parentUuid": "60b61545_a49a74ec",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
