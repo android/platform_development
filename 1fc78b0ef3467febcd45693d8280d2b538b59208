@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44274085_39b77ba6",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:23:04Z",
+      "side": 1,
+      "message": "I think it will be better to use explicit function call instead of overloading +\u003d operator.  For example:\n\n    void Merge(const TextFormatToIRReader \u0026addend) {\n      // ...\n    }",
+      "range": {
+        "startLine": 766,
+        "startChar": 2,
+        "endLine": 766,
+        "endChar": 78
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "73614b6b_8b3ccb9b",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:23:04Z",
+      "side": 1,
+      "message": "It will be great to use references.",
+      "range": {
+        "startLine": 789,
+        "startChar": 28,
+        "endLine": 789,
+        "endChar": 42
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d714a0a_8b0d1cd0",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:23:04Z",
+      "side": 1,
+      "message": "Since you are passing in an L-value reference, std::make_move_iterator won\u0027t help.\n\nIf this is critical to performance, then you\u0027ll have to overload the Merge() function (or operator+\u003d) with a R-value reference to TextFormatToIRReader, and refer AbiElements with member data operator.  For example:\n\n    template \u003ctypename Augend, typename Addend\u003e\n    inline void MergeElements(Augend \u0026augend, Addend\u0026\u0026 addend) {\n      augend.insert(std::make_move_iterator(addend.begin()),\n                    std::make_move_iterator(addend.end()));\n    }\n\n    void Merge(TextFormatToIRReader \u0026\u0026addend) {\n      MergeElements(functions_, addend.functions_);\n      MergeElements(global_variables_, addend.global_variables_);\n      MergeElements(record_types_, addend.record_types_);\n      MergeElements(enum_types_, addend.enum_types_);\n      MergeElements(pointer_types_, addend.pointer_types_);\n      MergeElements(lvalue_reference_types_, addend.lvalue_reference_types_);\n      MergeElements(rvalue_reference_types_, addend.rvalue_reference_types_);\n      MergeElements(array_types_, addend.array_types_);\n      MergeElements(builtin_types_, addend.builtin_types_);\n      MergeElements(qualified_types_, addend.qualified_types_);\n    }\n\nNote: GetFunctions() won\u0027t work because those functions return L-value references as well.",
+      "range": {
+        "startLine": 790,
+        "startChar": 19,
+        "endLine": 790,
+        "endChar": 42
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "604bd4fc_3291c70a",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-01T02:23:04Z",
+      "side": 1,
+      "message": "BTW, there is std::map\u003cK, V\u003e::merge() in C++17.  Just FYI.  I think we are not using C++17 ATM.",
+      "range": {
+        "startLine": 790,
+        "startChar": 4,
+        "endLine": 790,
+        "endChar": 18
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
