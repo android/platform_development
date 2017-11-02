@@ -188,6 +188,54 @@
       "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f8adbd0_08a08f41",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-02T05:38:40Z",
+      "side": 1,
+      "message": "BTW, there was an error in my version.  The `reader-\u003eReadDump()` and `assert(reader !\u003d nullptr)` after file_reader should be replaced by file reader.  Did you fix it as well?",
+      "parentUuid": "4751bb7a_94fb656f",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37f2f5af_329b932b",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-02T05:38:40Z",
+      "side": 1,
+      "message": "Regarding to performance, may you tweek the fetch_add with 5 and tweak the code accordingly?  I am interested in the performance.",
+      "parentUuid": "9f3f2bc2_80fcdc61",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
