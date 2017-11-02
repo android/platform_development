@@ -96,6 +96,29 @@
     },
     {
       "key": {
+        "uuid": "d21eb4bc_cb788c0b",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-02T05:51:53Z",
+      "side": 1,
+      "message": "Even when using static balancing schedule, this calculation is not ideal.  For example, if max_threads is 4, number of files is 100, SOURCES_PER_THREAD is 5, then the distribution will be (5, 5, 5, 85), which is quite imbalance.\n\nPlease also compare the performance with:\n\n    std::size_t num_files_per_thread \u003d dump_files_.size() / num_threads;\n    std::size_t num_remainders \u003d  dump_files_.size() % num_threads;\n    std::size_t start \u003d 0;\n    for (std::size_t i \u003d 0; i \u003c num_threads; ++i) {\n      std::size_t end \u003d start + num_files_per_thread + (i \u003c num_remainders);\n      threads.emplace_back(DeDuplicateAbiElementsThread, greader.get(), dump_files_, start, end);\n      start \u003d end;\n    }",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 48
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60b61545_a49a74ec",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
