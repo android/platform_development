@@ -45,6 +45,30 @@
       "revId": "6661409d9afff5016b323ccd6cf35fcbb1f59c23",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a637d47_422fd180",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T16:49:27Z",
+      "side": 1,
+      "message": "Well, I used this just in case we wanted to use llvm:cl::opt specific functions like (get Argstr etc) in the future, but I can remove it for now.",
+      "parentUuid": "f06d89e3_cf809406",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 59
+      },
+      "revId": "6661409d9afff5016b323ccd6cf35fcbb1f59c23",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
