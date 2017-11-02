@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd864ab3_ec00cd0b",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-02T05:22:42Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "6661409d9afff5016b323ccd6cf35fcbb1f59c23",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f06d89e3_cf809406",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-02T05:22:42Z",
+      "side": 1,
+      "message": "You don\u0027t need this.  Just use abi_util::TextFormatIR in most places (replace `const TextFormatCl \u0026` with `abi_util::TextFormatIR`.\n\nllvm::cl::opt\u003cabi_util::TextFormatIR\u003e should only be in the file with main() function.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 59
+      },
+      "revId": "6661409d9afff5016b323ccd6cf35fcbb1f59c23",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
