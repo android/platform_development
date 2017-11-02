@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ddde2742_a2f5573a",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:35:12Z",
+      "side": 1,
+      "message": "Done. Don\u0027t need this.",
+      "parentUuid": "f7735700_b74df2b2",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1bdf58f7_c8ff6f8b",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-01T02:29:20Z",
       "side": 1,
       "message": "Append to previous line",
+      "range": {
+        "startLine": 128,
+        "startChar": 50,
+        "endLine": 129,
+        "endChar": 25
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c428501_e97275a6",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:35:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1bdf58f7_c8ff6f8b",
       "range": {
         "startLine": 128,
         "startChar": 50,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "4e81f94f_0508608c",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:35:12Z",
+      "side": 1,
+      "message": "Not valid anymore.",
+      "parentUuid": "5a3f87d5_9d35af40",
+      "range": {
+        "startLine": 150,
+        "startChar": 32,
+        "endLine": 150,
+        "endChar": 34
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "33a51358_17a6c4b1",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 5
@@ -82,6 +154,30 @@
       "writtenOn": "2017-11-01T02:29:20Z",
       "side": 1,
       "message": "Follow the C++ common convention use [begin, end), i.e. inclusive begin and exclusive end.  Remove the `-1` here.",
+      "range": {
+        "startLine": 186,
+        "startChar": 74,
+        "endLine": 186,
+        "endChar": 78
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5efaaa41_6c48e04e",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:35:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33a51358_17a6c4b1",
       "range": {
         "startLine": 186,
         "startChar": 74,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "e2e26256_b634be23",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:35:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afc84cd0_288cece0",
+      "range": {
+        "startLine": 188,
+        "startChar": 5,
+        "endLine": 188,
+        "endChar": 6
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "44274085_39b77ba6",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
         "patchSetId": 5
@@ -128,6 +248,30 @@
       "writtenOn": "2017-11-01T02:23:04Z",
       "side": 1,
       "message": "I think it will be better to use explicit function call instead of overloading +\u003d operator.  For example:\n\n    void Merge(const TextFormatToIRReader \u0026addend) {\n      // ...\n    }",
+      "range": {
+        "startLine": 766,
+        "startChar": 2,
+        "endLine": 766,
+        "endChar": 78
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e4990e5_71f94058",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:35:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44274085_39b77ba6",
       "range": {
         "startLine": 766,
         "startChar": 2,
@@ -250,6 +394,30 @@
         "startChar": 19,
         "endLine": 790,
         "endChar": 42
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a7b6353_014e6c0e",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:35:12Z",
+      "side": 1,
+      "message": "Yes I\u0027d read this :)",
+      "parentUuid": "604bd4fc_3291c70a",
+      "range": {
+        "startLine": 790,
+        "startChar": 4,
+        "endLine": 790,
+        "endChar": 18
       },
       "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
