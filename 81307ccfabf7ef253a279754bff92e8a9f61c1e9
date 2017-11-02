@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "8524b36b_2921e47e",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T17:55:25Z",
+      "side": 1,
+      "message": "I compared static (approximately uniform distribution / allocation) with what you\u0027ve mentioned here and also dynamic allocation / distribution with batching (cnt-\u003efetch_add(SOURCES_PER_THREAD)), and both cases perform better than the earlier suggestion. The performance is nearly the same as what is currently there on this CL (which was a lucky hit) : Numbers for both new approaches are very nearly the same :\n\nreal\t0m9.070s\nuser\t0m39.640s\nsys\t0m5.168s\n\nI think the dynamic allocation with batching is the best approach since it\u0027ll take better care of cases where our load sizes themselves are unbalanced. The best one would be dynamic allocation + batching in stages, but that might be the subject of another CL.",
+      "parentUuid": "bf3521fd_c7674337",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 48
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60b61545_a49a74ec",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
