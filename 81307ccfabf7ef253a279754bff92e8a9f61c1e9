@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "bf3521fd_c7674337",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T05:56:21Z",
+      "side": 1,
+      "message": "Yep, I got that. This is definitely not right or even close to optimal. Like i\u0027ve mentioned in the comments below, with static distribution we are definitely not going to have a statically defined sources_per_thread.",
+      "parentUuid": "d21eb4bc_cb788c0b",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 48
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60b61545_a49a74ec",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
@@ -250,6 +274,78 @@
       "side": 1,
       "message": "Regarding to performance, may you tweek the fetch_add with 5 and tweak the code accordingly?  I am interested in the performance.",
       "parentUuid": "9f3f2bc2_80fcdc61",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09f6d3ac_05f42063",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T05:56:21Z",
+      "side": 1,
+      "message": "Yes, with this, since there\u0027s better distribution, along with lesser unbalanced load distribution, I expect better performance. I\u0027ll try this tomorrow. I\u0027ll also see if its easy enough implementing the multiple stages algorithm.",
+      "parentUuid": "37f2f5af_329b932b",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32dd003c_e0f2b3be",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T05:56:21Z",
+      "side": 1,
+      "message": "Yep, I did. That would be incorrect since its a shared resource and we\u0027re doing ReadDump() on it without using a lock.",
+      "parentUuid": "9f8adbd0_08a08f41",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85b1207a_08a79338",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T05:56:21Z",
+      "side": 1,
+      "message": "Aah, I missed that.",
+      "parentUuid": "4751bb7a_94fb656f",
       "range": {
         "startLine": 200,
         "startChar": 0,
