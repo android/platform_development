@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f7735700_b74df2b2",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-02T05:22:54Z",
+      "side": 1,
+      "message": "Why do you need this?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "1fc78b0ef3467febcd45693d8280d2b538b59208",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1bdf58f7_c8ff6f8b",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 5
