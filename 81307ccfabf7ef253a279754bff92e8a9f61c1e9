@@ -164,6 +164,30 @@
       "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4751bb7a_94fb656f",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-02T05:34:07Z",
+      "side": 1,
+      "message": "3) Notice that I started from 1 and using main thread as zero, i.e. if there are 48 cores, then I will spawn 47 threads and also run DeDuplicateAbiElements() in main thread.",
+      "parentUuid": "9f3f2bc2_80fcdc61",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
