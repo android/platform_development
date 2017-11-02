@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e285178d_34950a41",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T21:47:56Z",
+      "side": 1,
+      "message": "I changed these for the Reader to potentially take in multiple text format files, and populate its maps, so that we can reduce create -\u003e move -\u003e destroy cycles when we perform multi-threaded linking.",
+      "range": {
+        "startLine": 770,
+        "startChar": 2,
+        "endLine": 780,
+        "endChar": 39
+      },
+      "revId": "5d4b91b8f4a54134d38544b1b7d1739fa663b4e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
