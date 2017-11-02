@@ -355,6 +355,30 @@
       "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c76b6ac_1256c121",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-02T06:20:05Z",
+      "side": 1,
+      "message": "The \u0027missed that\u0027 was with reference to your answer to 3) btw.",
+      "parentUuid": "85b1207a_08a79338",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 3
+      },
+      "revId": "81307ccfabf7ef253a279754bff92e8a9f61c1e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
