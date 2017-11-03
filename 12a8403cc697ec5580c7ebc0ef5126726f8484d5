@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca2d8cfa_438ff4b3",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-03T02:19:09Z",
+      "side": 1,
+      "message": "This one as well",
+      "range": {
+        "startLine": 172,
+        "startChar": 5,
+        "endLine": 172,
+        "endChar": 6
+      },
+      "revId": "12a8403cc697ec5580c7ebc0ef5126726f8484d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bac29959_e5e49fe2",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-03T02:19:09Z",
+      "side": 1,
+      "message": "I feel that you don\u0027t have to keep this as a data member.  We can pass the file paths as an argument of ReadDump() and remove the argument from the constructor.\n\nFor example:\n\n    bool ReadDump(const std::string \u0026dump_path) {\n      // ... Original code in the loop ...\n      return true;\n    }\n\nAlso, I would avoid using `std::vector\u003cstd::string\u003e` in the reader class.  The user should call ReadDump multiple times instead.\n\nIf you think it worth the efforts, then I would suggest adding another ReadAllDumps() function:\n\n    #include \u003citerator\u003e\n\n    template \u003ctypename SequenceContainer\u003e\n    bool ReadAllDumps(SequenceContainer \u0026\u0026dump_paths) {\n      for (auto \u0026\u0026dump_path : dump_paths) {\n        if (!ReadDump(dump_path)) {\n          return false;\n        }\n      }\n      return true;\n    }\n\nThe idea is to extract the iteration logic from normal ReadDump() function.\n\nBesides, with this tweak, we don\u0027t have to overload CreateTextFormatToIRReader() anymore.",
+      "range": {
+        "startLine": 798,
+        "startChar": 2,
+        "endLine": 798,
+        "endChar": 39
+      },
+      "revId": "12a8403cc697ec5580c7ebc0ef5126726f8484d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
