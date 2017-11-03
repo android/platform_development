@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2cdb1ccd_41e6afa6",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-03T20:41:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc46106f_d13cfdea",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "fb2eb97aa7e8b0c2b1a06b76f11202c3504ce5ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4dbd6e40_f4ae1a07",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-03T02:32:07Z",
       "side": 1,
       "message": "Since we can always derive this from `dump_files.size()`, we don\u0027t have to pass it through a function argument, which may be error-prone.",
+      "range": {
+        "startLine": 151,
+        "startChar": 77,
+        "endLine": 152,
+        "endChar": 27
+      },
+      "revId": "fb2eb97aa7e8b0c2b1a06b76f11202c3504ce5ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33618787_98a1920f",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-03T20:41:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4dbd6e40_f4ae1a07",
       "range": {
         "startLine": 151,
         "startChar": 77,
@@ -137,6 +185,24 @@
     },
     {
       "key": {
+        "uuid": "93709f09_cc079cde",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-03T20:41:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c5888ca5_da84eaf0",
+      "revId": "fb2eb97aa7e8b0c2b1a06b76f11202c3504ce5ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e735c52_1eee43b9",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 3
@@ -148,6 +214,30 @@
       "writtenOn": "2017-11-03T02:32:07Z",
       "side": 1,
       "message": "I would re-write this as:\n\n    std::size_t end \u003d std::min(i + SOURCES_PER_BATCH_THREAD, num_dump_files);\n\nAnd use:\n\n    local_reader-\u003eReadAllDumps(begin_it + i, begin_it + end);",
+      "range": {
+        "startLine": 163,
+        "startChar": 4,
+        "endLine": 165,
+        "endChar": 68
+      },
+      "revId": "fb2eb97aa7e8b0c2b1a06b76f11202c3504ce5ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49edbca6_5bd5fbe7",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-03T20:41:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e735c52_1eee43b9",
       "range": {
         "startLine": 163,
         "startChar": 4,
