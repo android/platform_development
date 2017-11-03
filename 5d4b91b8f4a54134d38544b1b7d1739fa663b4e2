@@ -22,6 +22,30 @@
       "revId": "5d4b91b8f4a54134d38544b1b7d1739fa663b4e2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2c20306_da7f14c3",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-03T02:44:05Z",
+      "side": 1,
+      "message": "(Left comments in the wrong CL ... cherry-picking here ...)\n\nI feel that you don\u0027t have to keep this as a data member.  We can pass the file paths as an argument of ReadDump() and remove the argument from the constructor.\nFor example:\n\n    bool ReadDump(const std::string \u0026dump_path) {\n      // ... Original code in the loop ...\n      return true;\n    }\n\nAlso, I would avoid using `std::vector\u003cstd::string\u003e` in the reader class.  The user should call ReadDump multiple times instead.\nIf you think it worth the efforts, then I would suggest adding another ReadAllDumps() function:\n\n    #include \u003citerator\u003e\n    template \u003ctypename SequenceContainer\u003e\n    bool ReadAllDumps(SequenceContainer \u0026\u0026dump_paths) {\n      for (auto \u0026\u0026dump_path : dump_paths) {\n        if (!ReadDump(dump_path)) {\n          return false;\n        }\n      }\n      return true;\n    }\n\nThe idea is to extract the iteration logic from normal ReadDump() function.\nBesides, with this tweak, we don\u0027t have to overload CreateTextFormatToIRReader() anymore.\n\nIf you like the iterator style, then you can define this as well:\n\n    template \u003ctypename Iterator\u003e\n    bool ReadAllDumps(Iterator it, Iterator end) {\n      while (it !\u003d end) {\n        if (!ReadDump(*it)) {\n          return false;\n        }\n        ++it;\n      }\n      return true;\n    }",
+      "parentUuid": "e285178d_34950a41",
+      "range": {
+        "startLine": 770,
+        "startChar": 2,
+        "endLine": 780,
+        "endChar": 39
+      },
+      "revId": "5d4b91b8f4a54134d38544b1b7d1739fa663b4e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
