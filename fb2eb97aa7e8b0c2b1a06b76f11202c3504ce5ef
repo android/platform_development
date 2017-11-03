@@ -65,6 +65,24 @@
     },
     {
       "key": {
+        "uuid": "ba2112c8_19727bbe",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-03T02:42:14Z",
+      "side": 1,
+      "message": "I\u0027d done this earlier, but since we\u0027re passing the same vector to dump_files again and again, why should we\u0027re duplicating work, atleast in this case no ?, could have made it a static variable, but I\u0027m not sure if that would be thread safe.",
+      "parentUuid": "63552e3d_2895f37d",
+      "revId": "fb2eb97aa7e8b0c2b1a06b76f11202c3504ce5ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e735c52_1eee43b9",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 3
