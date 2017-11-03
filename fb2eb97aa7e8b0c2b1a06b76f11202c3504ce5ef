@@ -83,6 +83,24 @@
     },
     {
       "key": {
+        "uuid": "480695d7_5915ec98",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-03T02:47:05Z",
+      "side": 1,
+      "message": "Nevermind, its a separate thread should be fine. Unless they get scheduled on the same cpu..",
+      "parentUuid": "ba2112c8_19727bbe",
+      "revId": "fb2eb97aa7e8b0c2b1a06b76f11202c3504ce5ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e735c52_1eee43b9",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 3
