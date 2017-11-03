@@ -119,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "c5888ca5_da84eaf0",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-03T02:51:33Z",
+      "side": 1,
+      "message": "\u003e Nevermind, its a separate thread should be fine. Unless they get\n \u003e scheduled on the same cpu..\n\nBTW, static variable does not necessary to be `thread_local`.  So, it won\u0027t be a good idea in general.",
+      "parentUuid": "480695d7_5915ec98",
+      "revId": "fb2eb97aa7e8b0c2b1a06b76f11202c3504ce5ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e735c52_1eee43b9",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 3
