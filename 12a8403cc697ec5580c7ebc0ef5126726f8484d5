@@ -45,6 +45,30 @@
       "revId": "12a8403cc697ec5580c7ebc0ef5126726f8484d5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec0266e_7e807c23",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-03T02:24:04Z",
+      "side": 1,
+      "message": "If you like the iterator style, then you can define this as well:\n\n    template \u003ctypename Iterator\u003e\n    bool ReadAllDumps(Iterator it, Iterator end) {\n      while (it !\u003d end) {\n        if (!ReadDump(*it)) {\n          return false;\n        }\n        ++it;\n      }\n      return true;\n    }",
+      "parentUuid": "bac29959_e5e49fe2",
+      "range": {
+        "startLine": 798,
+        "startChar": 2,
+        "endLine": 798,
+        "endChar": 39
+      },
+      "revId": "12a8403cc697ec5580c7ebc0ef5126726f8484d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
