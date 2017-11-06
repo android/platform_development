@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42b38c38_a9e5bc20",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_protobuf.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-06T01:47:20Z",
+      "side": 1,
+      "message": "Since override implies virtual, remove this `virtual`",
+      "range": {
+        "startLine": 291,
+        "startChar": 2,
+        "endLine": 291,
+        "endChar": 10
+      },
+      "revId": "53c533885a0797edaff73de5b8e66ab2e92b1d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
