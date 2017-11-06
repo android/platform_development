@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "455e8299_b374fe60",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-06T01:40:39Z",
+      "side": 1,
+      "message": "Missing this one",
+      "range": {
+        "startLine": 172,
+        "startChar": 5,
+        "endLine": 172,
+        "endChar": 6
+      },
+      "revId": "c8358b718900da4ccc6e274b1c9b7ec0ad534839",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0fa13efa_d667cdfc",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-06T01:40:39Z",
+      "side": 1,
+      "message": "Although using a non-const pointer will work, I would prefer to use R-value reference to make it much more difficult to misuse this API.\n\nBesides, I think this function doesn\u0027t have to return a reference.  Returing `void` should be fine.\n\nFor example:\n\n    void Merge(TextFormatToIRReader \u0026\u0026addend) {\n      // ...\n    }",
+      "range": {
+        "startLine": 779,
+        "startChar": 36,
+        "endLine": 779,
+        "endChar": 58
+      },
+      "revId": "c8358b718900da4ccc6e274b1c9b7ec0ad534839",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fccf00f8_c7cfb469",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-06T01:40:39Z",
+      "side": 1,
+      "message": "Should this function belong to next CL?",
+      "range": {
+        "startLine": 779,
+        "startChar": 30,
+        "endLine": 779,
+        "endChar": 35
+      },
+      "revId": "c8358b718900da4ccc6e274b1c9b7ec0ad534839",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2ce4c34_06f914a9",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-06T01:40:39Z",
+      "side": 1,
+      "message": "Should this function belong to next CL?",
+      "range": {
+        "startLine": 802,
+        "startChar": 14,
+        "endLine": 802,
+        "endChar": 27
+      },
+      "revId": "c8358b718900da4ccc6e274b1c9b7ec0ad534839",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
