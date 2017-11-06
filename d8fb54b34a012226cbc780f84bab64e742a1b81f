@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2268980e_3e8a101e",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-06T01:43:24Z",
+      "side": 1,
+      "message": "You don\u0027t need backslash here",
+      "range": {
+        "startLine": 198,
+        "startChar": 73,
+        "endLine": 198,
+        "endChar": 74
+      },
+      "revId": "d8fb54b34a012226cbc780f84bab64e742a1b81f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e7b8145_e9cb9cd4",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-06T01:43:24Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 210,
+        "startChar": 4,
+        "endLine": 210,
+        "endChar": 6
+      },
+      "revId": "d8fb54b34a012226cbc780f84bab64e742a1b81f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
