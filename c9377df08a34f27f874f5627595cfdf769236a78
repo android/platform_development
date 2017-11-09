@@ -22,6 +22,30 @@
       "revId": "c9377df08a34f27f874f5627595cfdf769236a78",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6764d4f_5aad0292",
+        "filename": "build/sdk-linux-x86.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2017-11-09T23:54:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a27b9ca_fb8da6bc",
+      "range": {
+        "startLine": 31,
+        "startChar": 55,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "c9377df08a34f27f874f5627595cfdf769236a78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
