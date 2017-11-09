@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f21ee835_198833d1",
+        "filename": "testrunner/test_defs.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1076123
+      },
+      "writtenOn": "2017-11-09T16:54:06Z",
+      "side": 1,
+      "message": "nit: the white space looks broken.",
+      "range": {
+        "startLine": 264,
+        "startChar": 0,
+        "endLine": 264,
+        "endChar": 2
+      },
+      "revId": "2b049783835c45f4aecca7c02476d8b3dfd55bd2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
