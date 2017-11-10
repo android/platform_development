@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7e197f35_9198563c",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-10T02:04:54Z",
+      "side": 0,
+      "message": "This was uintended.",
+      "range": {
+        "startLine": 144,
+        "startChar": 21,
+        "endLine": 144,
+        "endChar": 42
+      },
+      "revId": "14b2eeb009b55cc1eeb9b366db6d22edfc6ee183",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
