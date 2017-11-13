@@ -102,9 +102,22 @@ def get_priv_permissions(requested_perms, priv_perms):
 
 def list_privapps():
     """
+    Extract for system/priv-app
+    """
+    apks = list_privapps_withPath('system/priv-app')
+
+    """
+    Extract for vendor/priv-app
+    """
+    apks += list_privapps_withPath('vendor/priv-app')
+
+    return apks
+
+def list_privapps_withPath(inPath):
+    """
     Extract package name and requested permissions.
     """
-    priv_app_dir = os.path.join(ANDROID_PRODUCT_OUT, 'system/priv-app')
+    priv_app_dir = os.path.join(ANDROID_PRODUCT_OUT, inPath)
     apks = []
     for dirName, subdirList, fileList in os.walk(priv_app_dir):
         for fname in fileList:
