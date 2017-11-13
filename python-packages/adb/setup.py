@@ -13,17 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from distutils.core import setup
+"""Setup module for adb python module."""
+import setuptools
 
 
-setup(
+setuptools.setup(
     name='adb',
     version='0.0.1',
     description='A Python interface to the Android Debug Bridge.',
     license='Apache 2.0',
     keywords='adb android',
-    package_dir={'adb': ''},
-    packages=['adb'],
+    packages=setuptools.find_packages(),
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
