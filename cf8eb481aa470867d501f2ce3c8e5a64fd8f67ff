@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a1a6ef33_e4ca1c80",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-15T09:26:03Z",
+      "side": 1,
+      "message": "Re-order the arguments to follow the Google coding style (i.e. const first):\n\n    const std::vector\u003cstd::string\u003e \u0026dump_files,\n    const std::set\u003cstd::string\u003e *exported_headers,\n    abi_util::TextFormatToIRReader *greader,\n    std::mutex *greader_lock,\n    std::atomic\u003cstd::size_t\u003e *cnt",
+      "range": {
+        "startLine": 150,
+        "startChar": 4,
+        "endLine": 152,
+        "endChar": 49
+      },
+      "revId": "cf8eb481aa470867d501f2ce3c8e5a64fd8f67ff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e6b7664_d6cc4ab0",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-15T09:26:03Z",
+      "side": 1,
+      "message": "`*local_reader` should be sufficient (you don\u0027t need .get())",
+      "range": {
+        "startLine": 176,
+        "startChar": 27,
+        "endLine": 176,
+        "endChar": 46
+      },
+      "revId": "cf8eb481aa470867d501f2ce3c8e5a64fd8f67ff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
