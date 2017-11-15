@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "56cbdbcc_eb746720",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-15T08:36:34Z",
+      "side": 1,
+      "message": "Add a space to follow the convention above.",
+      "range": {
+        "startLine": 117,
+        "startChar": 9,
+        "endLine": 117,
+        "endChar": 11
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51cbfb0f_60cbd8ee",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-15T08:36:34Z",
+      "side": 1,
+      "message": "Probably reorder as:\n\n    typename K, typename T",
+      "range": {
+        "startLine": 149,
+        "startChar": 10,
+        "endLine": 149,
+        "endChar": 34
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f06213b_e25a1079",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/header_abi_util.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-15T08:36:34Z",
+      "side": 1,
+      "message": "Move this to the end to match AddToMap",
+      "range": {
+        "startLine": 158,
+        "startChar": 10,
+        "endLine": 158,
+        "endChar": 30
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02c5ace4_d9451f1c",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
         "patchSetId": 8
