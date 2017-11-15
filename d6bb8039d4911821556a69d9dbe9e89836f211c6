@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "c975c8d8_e1c2bba9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-15T09:14:17Z",
+      "side": 1,
+      "message": "Is the \"insert()\" problem caused by this CL?  Or it has been there for a while?\n\nIf it was an existing problem, maybe we should fix it in a separate CL.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e204e768_c3bb0496",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-15T09:14:17Z",
+      "side": 1,
+      "message": "Can you add a test to demonstrate the \"insert()\" problem?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "56cbdbcc_eb746720",
         "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff.h",
         "patchSetId": 8
