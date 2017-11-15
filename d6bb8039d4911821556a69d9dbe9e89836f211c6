@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02c5ace4_d9451f1c",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-15T00:41:57Z",
+      "side": 1,
+      "message": "Logan, let me know if you think it\u0027s better to add exported headers to the ReadDump api instead. Adding it here reduces the delta between APIs, on the other hand adding it do ReadDump introduces more flexibility. Do you have a preference ?",
+      "range": {
+        "startLine": 772,
+        "startChar": 6,
+        "endLine": 772,
+        "endChar": 62
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
