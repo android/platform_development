@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c5516535_21deaee3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-15T18:11:12Z",
+      "side": 1,
+      "message": "This was caused because of this CL. Didn\u0027t happen earlier since we were going to through each declaration and checking the source file before filtering it out / adding it to the final linked dump.",
+      "parentUuid": "c975c8d8_e1c2bba9",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e204e768_c3bb0496",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-15T09:14:17Z",
       "side": 1,
       "message": "Can you add a test to demonstrate the \"insert()\" problem?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6864fb75_5fadcc57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-15T18:11:12Z",
+      "side": 1,
+      "message": "I\u0027m assuming this is not needed since this didn\u0027t exist earlier ? Or do you want me to add some comments to demonstrate the problem ?",
+      "parentUuid": "e204e768_c3bb0496",
       "range": {
         "startLine": 13,
         "startChar": 0,
