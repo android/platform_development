@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "375a63ff_3cfe5303",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-16T08:30:37Z",
+      "side": 1,
+      "message": "OK.  Make sense.",
+      "parentUuid": "c5516535_21deaee3",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e204e768_c3bb0496",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "I\u0027m assuming this is not needed since this didn\u0027t exist earlier ? Or do you want me to add some comments to demonstrate the problem ?",
       "parentUuid": "e204e768_c3bb0496",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "d6bb8039d4911821556a69d9dbe9e89836f211c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd3fb6cf_b1417b5a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-11-16T08:30:37Z",
+      "side": 1,
+      "message": "I think a concrete case that can demonstrate the problem can help us not to regress accidentally.",
+      "parentUuid": "6864fb75_5fadcc57",
       "range": {
         "startLine": 13,
         "startChar": 0,
