@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2529bc95_50276950",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-20T22:44:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1a6ef33_e4ca1c80",
+      "range": {
+        "startLine": 150,
+        "startChar": 4,
+        "endLine": 152,
+        "endChar": 49
+      },
+      "revId": "cf8eb481aa470867d501f2ce3c8e5a64fd8f67ff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e6b7664_d6cc4ab0",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-15T09:26:03Z",
       "side": 1,
       "message": "`*local_reader` should be sufficient (you don\u0027t need .get())",
+      "range": {
+        "startLine": 176,
+        "startChar": 27,
+        "endLine": 176,
+        "endChar": 46
+      },
+      "revId": "cf8eb481aa470867d501f2ce3c8e5a64fd8f67ff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71838aa4_76bd9c2a",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-11-20T22:44:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e6b7664_d6cc4ab0",
       "range": {
         "startLine": 176,
         "startChar": 27,
