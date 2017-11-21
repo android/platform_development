@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88c5b0a3_ea413f70",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-11-21T18:31:27Z",
+      "side": 1,
+      "message": "Add:\n\n -e\n\nOtherwise this script won\u0027t fail when the aosp_arm64_ab build fails.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c76dc94d_e1f53d1d",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-11-21T18:31:27Z",
+      "side": 1,
+      "message": "If you ever want to ship with snapshots built from this script, then this should be \u0027user\u0027",
+      "range": {
+        "startLine": 18,
+        "startChar": 21,
+        "endLine": 18,
+        "endChar": 9
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f5c1b27_6fcac3e2",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-11-21T18:31:27Z",
+      "side": 1,
+      "message": "If you\u0027re going to build like the build servers normally do, don\u0027t pick up envsetup. But if you do, change \u0027make -j\u0027 below with just \u0027m\u0027.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7cc4e095_b9cae328",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-11-21T18:31:27Z",
+      "side": 1,
+      "message": "We\u0027d need a separate arm snapshot due to the arm64 devices using armv8 instructions in 32-bit builds.",
+      "range": {
+        "startLine": 23,
+        "startChar": 40,
+        "endLine": 23,
+        "endChar": 50
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "329d5b6a_3e33f427",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-11-21T18:31:27Z",
+      "side": 1,
+      "message": "Why aren\u0027t you just exporting TARGET_BUILD_VARIANT above?",
+      "range": {
+        "startLine": 24,
+        "startChar": 47,
+        "endLine": 24,
+        "endChar": 89
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
