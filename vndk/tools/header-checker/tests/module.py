@@ -84,28 +84,36 @@ class Module(object):
                                          self.version_script, self.api,
                                          self.arch)
     @staticmethod
-    def mutate_module_for_all_arches(module):
-        modules = []
+    def mutate_module_for_arch(module, target_arch):
         name = module.get_name()
         srcs = module.get_srcs()
         version_script = module.get_version_script()
         cflags = module.get_cflags()
         export_include_dirs = module.get_export_include_dirs()
         api = module.get_api()
+        return Module(name, target_arch, srcs, version_script, cflags,
+                      export_include_dirs, api)
+
+    @staticmethod
+    def mutate_module_for_all_arches(module):
+        modules = []
         for target_arch in TARGET_ARCHS:
-            modules.append(Module(name, target_arch, srcs, version_script,
-                                  cflags, export_include_dirs, api))
+            modules.append(Module.mutate_module_for_arch(module, target_arch))
         return modules
 
     @staticmethod
     def get_test_modules():
         modules = []
-        for module in TEST_MODULES:
+        for module in TEST_MODULES.values():
             if module.get_arch() == '':
                 modules += Module.mutate_module_for_all_arches(module)
         return modules
 
-TEST_MODULES = [
+    @staticmethod
+    def get_test_module_by_name(name):
+        return TEST_MODULES[name]
+
+TEST_MODULES = {
     Module(
         name = 'libc_and_cpp',
         srcs = ['integration/c_and_cpp/source1.cpp',
@@ -308,4 +316,6 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-]
+}
+
+TEST_MODULES = { m.name:m for m in TEST_MODULES }
