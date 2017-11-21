@@ -84,29 +84,37 @@ class Module(object):
                                          self.version_script, self.api,
                                          self.arch)
     @staticmethod
-    def mutate_module_for_all_arches(module):
-        modules = []
+    def mutate_module_for_arch(module, target_arch):
         name = module.get_name()
         srcs = module.get_srcs()
         version_script = module.get_version_script()
         cflags = module.get_cflags()
         export_include_dirs = module.get_export_include_dirs()
         api = module.get_api()
+        return Module(name, target_arch, srcs, version_script, cflags,
+                      export_include_dirs, api)
+
+    @staticmethod
+    def mutate_module_for_all_arches(module):
+        modules = []
         for target_arch in TARGET_ARCHS:
-            modules.append(Module(name, target_arch, srcs, version_script,
-                                  cflags, export_include_dirs, api))
+          modules.append(mutate_module_for_arch(module, arch))
         return modules
 
     @staticmethod
     def get_test_modules():
         modules = []
-        for module in TEST_MODULES:
+        for module in TEST_MODULES.keys():
             if module.get_arch() == '':
                 modules += Module.mutate_module_for_all_arches(module)
         return modules
 
-TEST_MODULES = [
-    Module(
+    @staticmethod
+    def get_test_module_by_name(name):
+      return TEST_MODULES[name]
+
+TEST_MODULES = {
+    'libc_and_cpp' : Module(
         name = 'libc_and_cpp',
         srcs = ['integration/c_and_cpp/source1.cpp',
                 'integration/c_and_cpp/source2.c',
@@ -117,7 +125,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libc_and_cpp_with_unused_struct': Module(
         name = 'libc_and_cpp_with_unused_struct',
         srcs = ['integration/c_and_cpp/source1.cpp',
                 'integration/c_and_cpp/source2.c',
@@ -128,7 +136,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp' : Module(
         name = 'libgolden_cpp',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -140,7 +148,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_add_function' : Module(
         name = 'libgolden_cpp_add_function',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -152,7 +160,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_change_function_access' : Module(
         name = 'libgolden_cpp_change_function_access',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -164,7 +172,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_add_global_variable' : Module(
         name = 'libgolden_cpp_add_global_variable',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -176,7 +184,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_return_type_diff' : Module(
         name = 'libgolden_cpp_return_type_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -188,7 +196,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_parameter_type_diff' : Module(
         name = 'libgolden_cpp_parameter_type_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -200,7 +208,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_vtable_diff' : Module(
         name = 'libgolden_cpp_vtable_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -212,7 +220,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_member_diff' : Module(
         name = 'libgolden_cpp_member_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -224,7 +232,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_member_fake_diff' : Module(
         name = 'libgolden_cpp_member_fake_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -236,7 +244,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_member_cv_diff' : Module(
         name = 'libgolden_cpp_member_cv_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -248,7 +256,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_change_member_access' : Module(
         name = 'libgolden_cpp_change_member_access',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -260,7 +268,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_member_integral_type_diff' : Module(
         name = 'libgolden_cpp_member_integral_type_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -272,7 +280,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_enum_diff' : Module(
         name = 'libgolden_cpp_enum_diff',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -284,7 +292,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_enum_extended' : Module(
         name = 'libgolden_cpp_enum_extended',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -296,7 +304,7 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-    Module(
+    'libgolden_cpp_unreferenced_elf_symbol_removed' : Module(
         name = 'libgolden_cpp_unreferenced_elf_symbol_removed',
         srcs = ['integration/cpp/gold/golden_1.cpp',
                 'integration/cpp/gold/high_volume_speaker.cpp',
@@ -308,4 +316,4 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
-]
+}
