@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "d92d7445_43929db1",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-11-22T05:10:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c76dc94d_e1f53d1d",
+      "range": {
+        "startLine": 18,
+        "startChar": 21,
+        "endLine": 18,
+        "endChar": 9
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f5c1b27_6fcac3e2",
         "filename": "vndk/snapshot/build.sh",
         "patchSetId": 2
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "7821679b_b8669846",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-11-22T05:10:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1f5c1b27_6fcac3e2",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7cc4e095_b9cae328",
         "filename": "vndk/snapshot/build.sh",
         "patchSetId": 2
@@ -82,6 +130,30 @@
       "writtenOn": "2017-11-21T18:31:27Z",
       "side": 1,
       "message": "We\u0027d need a separate arm snapshot due to the arm64 devices using armv8 instructions in 32-bit builds.",
+      "range": {
+        "startLine": 23,
+        "startChar": 40,
+        "endLine": 23,
+        "endChar": 50
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2419c08_fbe2cd72",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-11-22T05:10:28Z",
+      "side": 1,
+      "message": "It appears that currently build/make/core/combo/arch/armv8-a.mk and ./armv7-a-neon.mk is the same, and therefore covering the \u0027arm\u0027 part of the snapshot with the \u0027arm64\u0027 build will work. Nonetheless, I guess we could either 1) offer one flavor of \u0027arm\u0027 built with the armv7 variant since v7 supports v8, or 2) offer two flavors of \u0027arm\u0027 builds, one with the armv8 variant and second with the armv7 variant. If we go with 2) then in the Android.bp in the snapshot (go/vndk-snapshot-dir) will need additional key options under arch to differentiate arm-armv7-a-neon and arm-armv8-a, and this will probably require changes in build/soong, is that correct?",
+      "parentUuid": "7cc4e095_b9cae328",
       "range": {
         "startLine": 23,
         "startChar": 40,
@@ -114,6 +186,30 @@
       "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a275733a_afc256f8",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-11-22T05:10:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "329d5b6a_3e33f427",
+      "range": {
+        "startLine": 24,
+        "startChar": 47,
+        "endLine": 24,
+        "endChar": 89
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
