@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "be9f3ac5_cd8757aa",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-11-22T07:02:14Z",
+      "side": 1,
+      "message": "Strictly speaking, I think this is right, but this will cause too many sets of prebuilt libs and I don\u0027t that is practical. \n\nSo, I think we should at first start with the most generic/popular ones: armv7-a-neon for arm and armv8-a for arm64 (cpu variant is generic for both).\n\nThen we might be able to gradually add more optimized libraries if needed. For example, we might have number of prebuilt libs for libm.so, libcrypto.so, etc for performance reason, but I don\u0027t expect the same for most of the libs.",
+      "parentUuid": "ceb82e7f_c1b44656",
+      "range": {
+        "startLine": 23,
+        "startChar": 40,
+        "endLine": 23,
+        "endChar": 50
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "329d5b6a_3e33f427",
         "filename": "vndk/snapshot/build.sh",
         "patchSetId": 2
