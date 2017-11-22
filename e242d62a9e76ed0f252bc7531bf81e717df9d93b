@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "ceb82e7f_c1b44656",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-11-22T05:44:58Z",
+      "side": 1,
+      "message": "Those mk files are completely irrelevant for all of these binaries, since these are all in Soong. Even for make libraries, the important compile flags are all controlled by the Soong configuration: https://android.googlesource.com/platform/build/soong/+/master/cc/config/arm_device.go#65\n\nFor production use, you probably actually care about the cpu variants as well. https://android.googlesource.com/platform/build/soong/+/master/android/arch.go#924 attempts to list all of the available configurations, but there are configs that don\u0027t make much sense for this use case, and it is not completely up to date (missing 32-bit armv8).\n\nIt may mostly work to share the v7 binaries with v8, but you should probably just be assuming that you\u0027ve got one set of libraries for \"arm\" (armv7-a-neon), and another set for \"arm64\" (armv8-a 32 + 64-bit). x86 is similar -- we adjust the set of expected cpu features for 32-bit platform code when we know we\u0027re also building for 64-bit.\n\nFor the definitions in Soong, you should be able to define prebuilts using the associated arch variables, so instead of:\n\n  arch: {\n      arm: {\n          srcs: [...],\n      },\n      arm64: {\n          srcs: [...],\n      },\n  },\n\nYou can specify:\n\n  arch: {\n      arm: {\n          armv7-a-neon: {\n              srcs: [...],\n          },\n          armv8-a: {\n              srcs: [...],\n          },\n      },\n      arm64: {\n          srcs: [...],\n      },\n  },\n\nOr even down to the cpu variant:\n\n  arch: {\n      arm: {\n          armv7-a-neon: {\n              srcs: [...],\n          },\n          armv8-a: {\n              srcs: [...],\n          },\n          cortex-a53: {\n              srcs: [...],\n              exclude_srcs: [...],\n          },\n      },\n      arm64: {\n          srcs: [...],\n      },\n  },",
+      "parentUuid": "f2419c08_fbe2cd72",
+      "range": {
+        "startLine": 23,
+        "startChar": 40,
+        "endLine": 23,
+        "endChar": 50
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "329d5b6a_3e33f427",
         "filename": "vndk/snapshot/build.sh",
         "patchSetId": 2
