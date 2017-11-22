@@ -214,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "69262ca7_4f40aaa2",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-11-22T08:21:06Z",
+      "side": 1,
+      "message": "I see...as Jiyong suggested, maybe in the first round of implementation we can start off with the most popular ones: (arch, variant) \u003d (arm64, armv8-a), (arm, armv7-a-neon). Then we can make a TODO to include other arch_variants in the next round.\n\nIn other words, vndk.mk will now only package the build outputs for TARGET_ARCH (and not TARGET_2ND_ARCH) and build.sh will invoke \u0027make vndk\u0027 four times for each arch \u003d (arm64, arm, x86_64, x86). In the snapshot we can specify the arch_variant in the dir name (\"arch-arm64-armv8-a\" instead of \"arch-arm64\") so it is clear what the arch_variant is.\n\nWould everybody be comfortable with this plan? Dan, please let us know if you think otherwise.",
+      "parentUuid": "be9f3ac5_cd8757aa",
+      "range": {
+        "startLine": 23,
+        "startChar": 40,
+        "endLine": 23,
+        "endChar": 50
+      },
+      "revId": "e242d62a9e76ed0f252bc7531bf81e717df9d93b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "329d5b6a_3e33f427",
         "filename": "vndk/snapshot/build.sh",
         "patchSetId": 2
