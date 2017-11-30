@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cbcc0f7_05eac1ed",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2017-11-30T22:59:50Z",
+      "side": 1,
+      "message": "Can we os.getenv(\"ANDROID_BUILD_TOP\") here instead?",
+      "range": {
+        "startLine": 29,
+        "startChar": 20,
+        "endLine": 29,
+        "endChar": 72
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef2934ef_51970efc",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2017-11-30T22:59:50Z",
+      "side": 1,
+      "message": "check for exception?",
+      "range": {
+        "startLine": 40,
+        "startChar": 15,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5af0d81_bda0fa85",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2017-11-30T22:59:50Z",
+      "side": 1,
+      "message": "nit: why assume that we are putting things here? I might want to just pull a VNDK snapshot to some other local folder for testing. How about making an \u0027-o\u0027 argument?",
+      "range": {
+        "startLine": 53,
+        "startChar": 46,
+        "endLine": 53,
+        "endChar": 49
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "560a60c6_61f824b7",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2017-11-30T22:59:50Z",
+      "side": 1,
+      "message": "Most tools aren\u0027t aware of the branch (I think this shouldn\u0027t even necessarily care that it is run from a git repo). Why not just always use the current branch (or do that as default since it\u0027s expected)?",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 76
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7541db10_c9864e5c",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2017-11-30T22:59:50Z",
+      "side": 1,
+      "message": "more pythonic: verbosity \u003d min(args.verbose, 2)",
+      "range": {
+        "startLine": 127,
+        "startChar": 4,
+        "endLine": 129,
+        "endChar": 21
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
