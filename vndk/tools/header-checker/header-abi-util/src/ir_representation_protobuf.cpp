@@ -156,7 +156,7 @@ RecordTypeIR ProtobufTextFormatToIRReader::RecordTypeProtobufToIR(
       record_type_protobuf.base_specifiers()));
   record_type_ir.SetRecordKind(
       RecordKindProtobufToIR(record_type_protobuf.record_kind()));
-
+  record_type_ir.SetUid(record_type_protobuf.tag_info().uid());
   return record_type_ir;
 }
 
@@ -179,6 +179,7 @@ EnumTypeIR ProtobufTextFormatToIRReader::EnumTypeProtobufToIR(
   enum_type_ir.SetAccess(AccessProtobufToIR(enum_type_protobuf.access()));
   enum_type_ir.SetFields(
       EnumFieldsProtobufToIR(enum_type_protobuf.enum_fields()));
+  enum_type_ir.SetUid(enum_type_protobuf.tag_info().uid());
   return enum_type_ir;
 }
 
@@ -462,6 +463,16 @@ bool IRToProtobufConverter::AddVTableLayout(
   return true;
 }
 
+bool IRToProtobufConverter::AddTagTypeInfo(
+    abi_dump::TagType *tag_type_protobuf,
+    const abi_util::TagTypeIR *tag_type_ir) {
+  if (!tag_type_protobuf || !tag_type_ir) {
+    return false;
+  }
+  tag_type_protobuf->set_uid(tag_type_ir->GetUid());
+  return true;
+}
+
 abi_dump::RecordType IRToProtobufConverter::ConvertRecordTypeIR(
     const RecordTypeIR *recordp) {
   abi_dump::RecordType added_record_type;
@@ -475,6 +486,7 @@ abi_dump::RecordType IRToProtobufConverter::ConvertRecordTypeIR(
       !AddRecordFields(&added_record_type, recordp) ||
       !AddBaseSpecifiers(&added_record_type, recordp) ||
       !AddVTableLayout(&added_record_type, recordp) ||
+      !AddTagTypeInfo(added_record_type.mutable_tag_info(), recordp) ||
       !(recordp->GetTemplateElements().size() ?
        AddTemplateInformation(added_record_type.mutable_template_info(),
                               recordp) : true)) {
@@ -561,7 +573,8 @@ abi_dump::EnumType IRToProtobufConverter::ConvertEnumTypeIR(
   added_enum_type.set_access(AccessIRToProtobuf(enump->GetAccess()));
   added_enum_type.set_underlying_type(enump->GetUnderlyingType());
   if (!AddTypeInfo(added_enum_type.mutable_type_info(), enump) ||
-      !AddEnumFields(&added_enum_type, enump)) {
+      !AddEnumFields(&added_enum_type, enump) ||
+      !AddTagTypeInfo(added_enum_type.mutable_tag_info(), enump)) {
     llvm::errs() << "EnumTypeIR could not be converted\n";
     ::exit(1);
   }

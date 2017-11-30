@@ -301,7 +301,7 @@ DiffStatus DiffWrapperBase::CompareRecordTypes(
     abi_util::DiffMessageIR::DiffKind diff_kind) {
   auto record_type_diff_ir = std::make_unique<abi_util::RecordTypeDiffIR>();
   // Compare names.
-  if (old_type->GetName() != new_type->GetName()) {
+  if (old_type->GetUid() != new_type->GetUid()) {
     // Do not dump anything since the record types themselves are fundamentally
     // different.
     return DiffStatus::direct_diff;
