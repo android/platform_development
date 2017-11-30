@@ -48,6 +48,29 @@
     },
     {
       "key": {
+        "uuid": "544e6195_17e34643",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-11-30T23:02:47Z",
+      "side": 1,
+      "message": "Generally I keep these scripts elsewhere due to the Google dependencies.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 75
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d5af0d81_bda0fa85",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 1
