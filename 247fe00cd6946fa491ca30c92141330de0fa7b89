@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7a02f534_c272bc18",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2017-12-01T01:19:09Z",
+      "side": 1,
+      "message": "Well, that isn\u0027t necessarily justification for putting it here. We could put it next to or in a similar place as fetch_artifact. Then again, I\u0027m also not *that* concerned.",
+      "parentUuid": "d29b99d2_63f82600",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 75
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d5af0d81_bda0fa85",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 1
