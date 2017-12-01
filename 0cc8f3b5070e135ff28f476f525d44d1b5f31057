@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9eade38b_729dcb60",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-01T06:39:54Z",
+      "side": 1,
+      "message": "Wrong indent",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 10
+      },
+      "revId": "0cc8f3b5070e135ff28f476f525d44d1b5f31057",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6f15280_c05d5280",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-01T06:39:54Z",
+      "side": 1,
+      "message": "Wrong indent",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 6
+      },
+      "revId": "0cc8f3b5070e135ff28f476f525d44d1b5f31057",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5360695_837a5c0d",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-01T06:39:54Z",
+      "side": 1,
+      "message": "Instead of writing module name twice, how about leaving it as-is and then to the transformation afterwards:\n\nTEST_MODULES \u003d { m.name: m for m in TEST_MODULES }",
+      "range": {
+        "startLine": 319,
+        "startChar": 0,
+        "endLine": 319,
+        "endChar": 1
+      },
+      "revId": "0cc8f3b5070e135ff28f476f525d44d1b5f31057",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9abb55d_0adf514c",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-01T06:39:54Z",
+      "side": 1,
+      "message": "Add an empty line",
+      "revId": "0cc8f3b5070e135ff28f476f525d44d1b5f31057",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
