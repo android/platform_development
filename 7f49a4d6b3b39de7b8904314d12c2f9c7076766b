@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b4319b2c_24e1b52c",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-01T06:41:55Z",
+      "side": 1,
+      "message": "In fact, this can be simplified as:\n\n    from utils import (\n        AOSP_DIR, copy_reference_dumps, find_lib_lsdumps, get_build_var,\n        make_library, read_output_content)",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 38
+      },
+      "revId": "7f49a4d6b3b39de7b8904314d12c2f9c7076766b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
