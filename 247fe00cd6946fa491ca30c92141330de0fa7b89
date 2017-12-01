@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c237e601_5fb12d1d",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-01T01:10:53Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "6cbcc0f7_05eac1ed",
+      "range": {
+        "startLine": 29,
+        "startChar": 20,
+        "endLine": 29,
+        "endChar": 72
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ef2934ef_51970efc",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2017-11-30T23:02:47Z",
       "side": 1,
       "message": "Generally I keep these scripts elsewhere due to the Google dependencies.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 75
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d29b99d2_63f82600",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-01T01:10:53Z",
+      "side": 1,
+      "message": "sadly, we already have that in many places in aosp.",
+      "parentUuid": "544e6195_17e34643",
       "range": {
         "startLine": 43,
         "startChar": 0,
