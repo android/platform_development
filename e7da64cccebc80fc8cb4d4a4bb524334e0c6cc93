@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a085b2e_76598357",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-05T13:01:06Z",
+      "side": 1,
+      "message": "This is okay for soong, but make comment should start with #",
+      "range": {
+        "startLine": 94,
+        "startChar": 17,
+        "endLine": 94,
+        "endChar": 19
+      },
+      "revId": "e7da64cccebc80fc8cb4d4a4bb524334e0c6cc93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0009d599_d11180e6",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-05T13:01:06Z",
+      "side": 1,
+      "message": "out isn\u0027t always out. People can (and do) override this via OUT_DIR",
+      "range": {
+        "startLine": 35,
+        "startChar": 61,
+        "endLine": 35,
+        "endChar": 64
+      },
+      "revId": "e7da64cccebc80fc8cb4d4a4bb524334e0c6cc93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb355dd8_5b0e9776",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-05T13:01:06Z",
+      "side": 1,
+      "message": "rename to _dir?",
+      "range": {
+        "startLine": 67,
+        "startChar": 12,
+        "endLine": 67,
+        "endChar": 17
+      },
+      "revId": "e7da64cccebc80fc8cb4d4a4bb524334e0c6cc93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
