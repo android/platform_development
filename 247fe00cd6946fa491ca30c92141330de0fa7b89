@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "dec00507_8e1fcbc3",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-05T12:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c237e601_5fb12d1d",
+      "range": {
+        "startLine": 29,
+        "startChar": 20,
+        "endLine": 29,
+        "endChar": 72
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef2934ef_51970efc",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 1
@@ -60,6 +84,30 @@
       "writtenOn": "2017-11-30T22:59:50Z",
       "side": 1,
       "message": "check for exception?",
+      "range": {
+        "startLine": 40,
+        "startChar": 15,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1432351_b11ae37b",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-05T12:24:27Z",
+      "side": 1,
+      "message": "subprocess.check_call raises a CalledProcessError if return code is not zero. Is that what you meant?",
+      "parentUuid": "ef2934ef_51970efc",
       "range": {
         "startLine": 40,
         "startChar": 15,
@@ -166,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "31ed9708_ad95f817",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-05T12:24:27Z",
+      "side": 1,
+      "message": "Do you mean installing a VNDK snapshot to a folder other than prebuilts/vndk? I guess this script is intended for installing the snapshot under prebuilts/vndk since the build system will only support installing snapshot prebuilts from the prebuilts/vndk dir.",
+      "parentUuid": "d5af0d81_bda0fa85",
+      "range": {
+        "startLine": 53,
+        "startChar": 46,
+        "endLine": 53,
+        "endChar": 49
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "560a60c6_61f824b7",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 1
@@ -177,6 +249,30 @@
       "writtenOn": "2017-11-30T22:59:50Z",
       "side": 1,
       "message": "Most tools aren\u0027t aware of the branch (I think this shouldn\u0027t even necessarily care that it is run from a git repo). Why not just always use the current branch (or do that as default since it\u0027s expected)?",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 76
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77da3b42_6828d22d",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-05T12:24:27Z",
+      "side": 1,
+      "message": "I\u0027m not sure if I understood your comment but this means use the current branch in prebuilts/vndk/v{version} rather than repo starting a new branch with start_branch(). Actually maybe just starting a new branch as a default makes more sense, since that seems likely to be the more common use case...?",
+      "parentUuid": "560a60c6_61f824b7",
       "range": {
         "startLine": 101,
         "startChar": 0,
@@ -209,6 +305,30 @@
       "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fed3ee3_c1b6f55b",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-05T12:24:27Z",
+      "side": 1,
+      "message": "nice :)",
+      "parentUuid": "7541db10_c9864e5c",
+      "range": {
+        "startLine": 127,
+        "startChar": 4,
+        "endLine": 129,
+        "endChar": 21
+      },
+      "revId": "247fe00cd6946fa491ca30c92141330de0fa7b89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
