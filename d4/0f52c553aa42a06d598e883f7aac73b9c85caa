@@ -1,0 +1,8 @@
+Presubmit-Ready+1: Chih-hung Hsieh <chh@google.com>
+Verified+1: Chih-hung Hsieh <chh@google.com>
+Code-Review+2: Stephen Hines <srhines@google.com>
+Submitted-by: Chih-hung Hsieh <chh@google.com>
+Submitted-at: Wed, 06 Dec 2017 00:49:08 +0000
+Reviewed-on: https://android-review.googlesource.com/556941
+Project: platform/development
+Branch: refs/heads/master
