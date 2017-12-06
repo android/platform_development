@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "076f772e_495fb7ec",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-12-06T02:10:47Z",
+      "side": 1,
+      "message": "This must be in the double quotation mark.",
+      "range": {
+        "startLine": 239,
+        "startChar": 28,
+        "endLine": 239,
+        "endChar": 34
+      },
+      "revId": "e7da64cccebc80fc8cb4d4a4bb524334e0c6cc93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66786d21_9b147760",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-12-06T02:10:47Z",
+      "side": 1,
+      "message": "This must be in the double quotation mark.",
+      "range": {
+        "startLine": 240,
+        "startChar": 31,
+        "endLine": 240,
+        "endChar": 36
+      },
+      "revId": "e7da64cccebc80fc8cb4d4a4bb524334e0c6cc93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0009d599_d11180e6",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 3
