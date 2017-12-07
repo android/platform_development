@@ -9,7 +9,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from compat import StringIO, patch
 from utils import GraphBuilder
-from vndk_definition_tool import (ELF, GenericRefs, PT_SYSTEM, PT_VENDOR)
+from vndk_definition_tool import (
+    ELF, ELFLinker, GenericRefs, PT_SYSTEM, PT_VENDOR)
+
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class ELFLinkerTest(unittest.TestCase):
@@ -375,6 +379,150 @@ class ELFLinkerTest(unittest.TestCase):
             self.assertNotIn(libc_path, vndk_sp_hal)
             self.assertNotIn(libc_path, sp_ndk)
             self.assertNotIn(libc_path, sp_ndk_indirect)
+
+
+    def test_link_vndk_ver_dirs(self):
+        input_dir = os.path.join(
+                SCRIPT_DIR, 'testdata', 'test_vndk', 'vndk_ver')
+
+        graph = ELFLinker.create_from_dump(
+                system_dirs=[os.path.join(input_dir, 'system')],
+                vendor_dirs=[os.path.join(input_dir, 'vendor')])
+
+        for lib_dir in ('lib', 'lib64'):
+            libc = graph.get_lib('/system/' + lib_dir + '/libc.so')
+
+            libvndk_a = graph.get_lib(
+                    '/system/' + lib_dir + '/vndk-28/libvndk_a.so')
+            libvndk_b = graph.get_lib(
+                    '/system/' + lib_dir + '/vndk-28/libvndk_b.so')
+            libvndk_c = graph.get_lib(
+                    '/vendor/' + lib_dir + '/vndk-28/libvndk_c.so')
+            libvndk_d = graph.get_lib(
+                    '/vendor/' + lib_dir + '/vndk-28/libvndk_d.so')
+
+            libvndk_sp_a = graph.get_lib(
+                    '/system/' + lib_dir + '/vndk-sp-28/libvndk_sp_a.so')
+            libvndk_sp_b = graph.get_lib(
+                    '/system/' + lib_dir + '/vndk-sp-28/libvndk_sp_b.so')
+            libvndk_sp_c = graph.get_lib(
+                    '/vendor/' + lib_dir + '/vndk-sp-28/libvndk_sp_c.so')
+            libvndk_sp_d = graph.get_lib(
+                    '/vendor/' + lib_dir + '/vndk-sp-28/libvndk_sp_d.so')
+
+            self.assertIsNotNone(libc)
+            self.assertIsNotNone(libvndk_a)
+            self.assertIsNotNone(libvndk_b)
+            self.assertIsNotNone(libvndk_c)
+            self.assertIsNotNone(libvndk_d)
+            self.assertIsNotNone(libvndk_sp_a)
+            self.assertIsNotNone(libvndk_sp_b)
+            self.assertIsNotNone(libvndk_sp_c)
+            self.assertIsNotNone(libvndk_sp_d)
+
+            self.assertIn(libc, libvndk_a.deps_all)
+            self.assertIn(libc, libvndk_b.deps_all)
+            self.assertIn(libc, libvndk_c.deps_all)
+            self.assertIn(libc, libvndk_d.deps_all)
+
+            self.assertIn(libc, libvndk_sp_a.deps_all)
+            self.assertIn(libc, libvndk_sp_b.deps_all)
+            self.assertIn(libc, libvndk_sp_c.deps_all)
+            self.assertIn(libc, libvndk_sp_d.deps_all)
+
+            self.assertIn(libvndk_b, libvndk_a.deps_all)
+            self.assertIn(libvndk_sp_b, libvndk_a.deps_all)
+            self.assertIn(libvndk_sp_b, libvndk_b.deps_all)
+            self.assertIn(libvndk_sp_b, libvndk_sp_a.deps_all)
+
+            self.assertIn(libvndk_d, libvndk_c.deps_all)
+            self.assertIn(libvndk_sp_d, libvndk_c.deps_all)
+            self.assertIn(libvndk_sp_d, libvndk_d.deps_all)
+            self.assertIn(libvndk_sp_d, libvndk_sp_c.deps_all)
+
+
+    def test_is_vndk_sp_dir_name(self):
+        self.assertTrue(ELFLinker._is_vndk_sp_dir_name('vndk-sp'))
+        self.assertTrue(ELFLinker._is_vndk_sp_dir_name('vndk-sp-28'))
+
+        self.assertFalse(ELFLinker._is_vndk_sp_dir_name('vndk'))
+        self.assertFalse(ELFLinker._is_vndk_sp_dir_name('vndk-28'))
+
+
+    def test_is_vndk_dir_name(self):
+        self.assertTrue(ELFLinker._is_vndk_dir_name('vndk'))
+        self.assertTrue(ELFLinker._is_vndk_dir_name('vndk-28'))
+
+        self.assertFalse(ELFLinker._is_vndk_dir_name('vndk-sp'))
+        self.assertFalse(ELFLinker._is_vndk_dir_name('vndk-sp-28'))
+
+
+    def test_is_in_vndk_sp_dir(self):
+        self.assertFalse(ELFLinker._is_in_vndk_sp_dir('/system/lib/liba.so'))
+        self.assertFalse(
+                ELFLinker._is_in_vndk_sp_dir('/system/lib/vndk/liba.so'))
+        self.assertFalse(
+                ELFLinker._is_in_vndk_sp_dir('/system/lib/vndk-28/liba.so'))
+        self.assertTrue(
+                ELFLinker._is_in_vndk_sp_dir('/system/lib/vndk-sp/liba.so'))
+        self.assertTrue(
+                ELFLinker._is_in_vndk_sp_dir('/system/lib/vndk-sp-28/liba.so'))
+
+
+    def test_is_in_vndk_dir(self):
+        self.assertFalse(ELFLinker._is_in_vndk_dir('/system/lib/liba.so'))
+        self.assertTrue(ELFLinker._is_in_vndk_dir('/system/lib/vndk/liba.so'))
+        self.assertTrue(
+                ELFLinker._is_in_vndk_dir('/system/lib/vndk-28/liba.so'))
+        self.assertFalse(
+                ELFLinker._is_in_vndk_dir('/system/lib/vndk-sp/liba.so'))
+        self.assertFalse(
+                ELFLinker._is_in_vndk_dir('/system/lib/vndk-sp-28/liba.so'))
+
+
+    def test_list_vndk_or_vndk_sp_dirs(self):
+        input_dir = os.path.join(SCRIPT_DIR, 'testdata', 'test_list_vndk_dirs')
+
+        system_dirs = [os.path.join(input_dir, 'system')]
+        vendor_dirs = [os.path.join(input_dir, 'vendor')]
+
+        for lib_dir in ('lib', 'lib64'):
+            vndk_sp_dirs, vndk_dirs = ELFLinker._list_vndk_or_vndk_sp_dirs(
+                    lib_dir, system_dirs, vendor_dirs)
+
+            expected_vndk_sp_dirs = [
+                '/vendor/' + lib_dir + '/vndk-sp-28',
+                '/vendor/' + lib_dir + '/vndk-sp',
+                '/system/' + lib_dir + '/vndk-sp-28',
+                '/system/' + lib_dir + '/vndk-sp',
+            ]
+
+            expected_vndk_dirs = [
+                '/vendor/' + lib_dir + '/vndk-28',
+                '/vendor/' + lib_dir + '/vndk',
+                '/system/' + lib_dir + '/vndk-28',
+                '/system/' + lib_dir + '/vndk',
+            ]
+
+            self.assertEqual(expected_vndk_sp_dirs, vndk_sp_dirs)
+            self.assertEqual(expected_vndk_dirs, vndk_dirs)
+
+            # To make sure the libraries in the vendor partition  are found
+            # before the one in the system partition, the order of the answer
+            # matters.
+            self.assertLessEqual(
+                    vndk_sp_dirs.index('/vendor/' + lib_dir + '/vndk-sp-28'),
+                    vndk_sp_dirs.index('/system/' + lib_dir + '/vndk-sp-28'))
+            self.assertLessEqual(
+                    vndk_sp_dirs.index('/vendor/' + lib_dir + '/vndk-sp'),
+                    vndk_sp_dirs.index('/system/' + lib_dir + '/vndk-sp'))
+            self.assertLessEqual(
+                    vndk_dirs.index('/vendor/' + lib_dir + '/vndk-28'),
+                    vndk_dirs.index('/system/' + lib_dir + '/vndk-28'))
+            self.assertLessEqual(
+                    vndk_dirs.index('/vendor/' + lib_dir + '/vndk'),
+                    vndk_dirs.index('/system/' + lib_dir + '/vndk'))
+
 
 
 class ELFLinkerDlopenDepsTest(unittest.TestCase):
