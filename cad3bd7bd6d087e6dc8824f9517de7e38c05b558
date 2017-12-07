@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "889483fc_768a8899",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-07T02:06:56Z",
+      "side": 1,
+      "message": "Leave this as \"[\"",
+      "range": {
+        "startLine": 116,
+        "startChar": 15,
+        "endLine": 116,
+        "endChar": 16
+      },
+      "revId": "cad3bd7bd6d087e6dc8824f9517de7e38c05b558",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e93f8c41_07779264",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-07T02:06:56Z",
+      "side": 1,
+      "message": "Add a space after semicolon",
+      "range": {
+        "startLine": 321,
+        "startChar": 23,
+        "endLine": 321,
+        "endChar": 24
+      },
+      "revId": "cad3bd7bd6d087e6dc8824f9517de7e38c05b558",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
