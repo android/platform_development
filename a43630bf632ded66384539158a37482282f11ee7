@@ -22,6 +22,30 @@
       "revId": "a43630bf632ded66384539158a37482282f11ee7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "639a1f03_cf0212a0",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1380,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-08T12:15:51Z",
+      "side": 1,
+      "message": "I am using different logic now.  Now, I will search for all dirs start with vndk-sp and get all vndk versions.",
+      "parentUuid": "dd1d810d_e3d22a84",
+      "range": {
+        "startLine": 1380,
+        "startChar": 50,
+        "endLine": 1380,
+        "endChar": 54
+      },
+      "revId": "a43630bf632ded66384539158a37482282f11ee7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
