@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd1d810d_e3d22a84",
+        "filename": "vndk/tools/definition-tool/vndk_definition_tool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1380,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2017-12-08T03:31:52Z",
+      "side": 1,
+      "message": "No problem in current design. But please note that I have concern on this to setting the version to integer. (https://android-review.googlesource.com/c/platform/build/+/559480/1/core/version_defaults.mk#200) Before we have an SDK version for Android new release, we are planning on having no vndk version suffix on the directory name. However, that may cause another bugs as this one, http://b/69984421. So I want to set this with CODE_NAME before Android release version, for example \"vndk-P\".",
+      "range": {
+        "startLine": 1380,
+        "startChar": 50,
+        "endLine": 1380,
+        "endChar": 54
+      },
+      "revId": "a43630bf632ded66384539158a37482282f11ee7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
