@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44a9ef31_cfc36f02",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-09T01:32:39Z",
+      "side": 1,
+      "message": "why do you assert this?",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 27
+      },
+      "revId": "9c2656199f1391147585e498bd5c01359defea49",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a229d31a_85b2ca3e",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-09T01:32:39Z",
+      "side": 1,
+      "message": "Does this work? You are referencing Android.mk defined modules in Android.bp, which AFAIK doesn\u0027t work.",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 69
+      },
+      "revId": "9c2656199f1391147585e498bd5c01359defea49",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd0750ad_9717d138",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-09T01:32:39Z",
+      "side": 1,
+      "message": "use tempfile.mkdtemp to download these to a temp directory so that you don\u0027t need to worry about deleting them?",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 64
+      },
+      "revId": "9c2656199f1391147585e498bd5c01359defea49",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
