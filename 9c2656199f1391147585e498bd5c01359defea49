@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "f70f742c_2d9a2c6d",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-11T12:28:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0527eef3_1337fe43",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 27
+      },
+      "revId": "9c2656199f1391147585e498bd5c01359defea49",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a229d31a_85b2ca3e",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 12
@@ -96,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "d82ddda5_9bb42f1e",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-11T12:28:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "13b1becd_f4e40d78",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 69
+      },
+      "revId": "9c2656199f1391147585e498bd5c01359defea49",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bd0750ad_9717d138",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 12
@@ -131,6 +179,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "bd0750ad_9717d138",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 64
+      },
+      "revId": "9c2656199f1391147585e498bd5c01359defea49",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4881e695_f1ee6286",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-11T12:28:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "810dfb92_c5369a77",
       "range": {
         "startLine": 96,
         "startChar": 0,
