@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "127e82f5_b8b320b7",
+        "filename": "gsi/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1126544
+      },
+      "writtenOn": "2017-12-11T17:05:39Z",
+      "side": 1,
+      "message": "I hope we\u0027re not planning to depend on sudo.",
+      "range": {
+        "startLine": 28,
+        "startChar": 54,
+        "endLine": 28,
+        "endChar": 58
+      },
+      "revId": "c2370dd97241f4fc4516685b1471376b9b041af0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
