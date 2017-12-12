@@ -22,6 +22,30 @@
       "revId": "c2370dd97241f4fc4516685b1471376b9b041af0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f8d1407f_2080a1c3",
+        "filename": "gsi/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-12T02:46:08Z",
+      "side": 1,
+      "message": "Yup, we hope so.\n\nDiscussed with Szuwei/Po-Chien a bit, we will figure out how to avoid sudo (but probably won\u0027t happen in the first version). Maybe we can \u0027extract\u0027 files from system.img then re-build the system.img from the extracted dirs/files.",
+      "parentUuid": "127e82f5_b8b320b7",
+      "range": {
+        "startLine": 28,
+        "startChar": 54,
+        "endLine": 28,
+        "endChar": 58
+      },
+      "revId": "c2370dd97241f4fc4516685b1471376b9b041af0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
