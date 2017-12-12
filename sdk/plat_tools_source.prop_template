@@ -1,3 +1,7 @@
 Pkg.UserSrc=false
+<<<<<<< HEAD   (8817df Merge "Revert "Update platform-tools version to 27.0.0."" in)
 #Pkg.Revision=${PLATFORM_SDK_VERSION}.0.0
 Pkg.Revision=26.0.0 rc1
+=======
+Pkg.Revision=${PLATFORM_SDK_VERSION}.0.1
+>>>>>>> BRANCH (138c68 Merge "Update platform-tools version to 27.0.1.")
