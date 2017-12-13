@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74667806_86140814",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 1059418
+      },
+      "writtenOn": "2017-12-13T18:49:48Z",
+      "side": 1,
+      "message": "I think you should use the latest version from internal master, e.g. you need to apply this cl https://googleplex-android-review.git.corp.google.com/#/c/platform/development/+/3034995/ . We\u0027ve added deny-permission element in O MR1.",
+      "range": {
+        "startLine": 542,
+        "startChar": 8,
+        "endLine": 542,
+        "endChar": 61
+      },
+      "revId": "2e661d7cecd0bd9dc492abc2b3ad500295f60f37",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
