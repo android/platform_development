@@ -22,6 +22,30 @@
       "revId": "2e661d7cecd0bd9dc492abc2b3ad500295f60f37",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41bcc08a_b8ff5344",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2017-12-13T22:55:56Z",
+      "side": 1,
+      "message": "I see. I\u0027ve added those changes in the latest patch.",
+      "parentUuid": "74667806_86140814",
+      "range": {
+        "startLine": 542,
+        "startChar": 8,
+        "endLine": 542,
+        "endChar": 61
+      },
+      "revId": "2e661d7cecd0bd9dc492abc2b3ad500295f60f37",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
