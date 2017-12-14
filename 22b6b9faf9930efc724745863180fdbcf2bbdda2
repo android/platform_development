@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "847f84be_2363dadd",
+        "filename": "python-packages/OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2017-12-14T21:28:51Z",
+      "side": 1,
+      "message": "Do I actually belong in here?",
+      "revId": "22b6b9faf9930efc724745863180fdbcf2bbdda2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
