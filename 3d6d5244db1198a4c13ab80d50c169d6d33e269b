@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42856464_74018896",
+        "filename": "tools/recovery_l10n/res/values-be/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2017-12-14T21:14:15Z",
+      "side": 0,
+      "message": "This file indeed looks outdated, since it doesn\u0027t contain the entry for \"recovery_installing_security\" (the one in bootable/recovery does). So it should be safe to be removed.",
+      "revId": "3d6d5244db1198a4c13ab80d50c169d6d33e269b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
