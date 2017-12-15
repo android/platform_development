@@ -160,6 +160,7 @@ function run_test_cases() {
     echo "[Test] Checking directory structure of snapshot"
     directories=(
         'configs/'
+        'NOTICE_FILES/'
         'shared/vndk-core/'
         'shared/vndk-sp/')
     for sub_dir in "${directories[@]}"; do
