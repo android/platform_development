@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8e143fa_b8c8f7b0",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T05:22:26Z",
+      "side": 1,
+      "message": "no need to use a local returncode.\n\nCan just use proc.returncode.",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 73,
+        "endChar": 66
+      },
+      "revId": "d8c3475c6f2cdbf317996c3ae2728d9ba407f30b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
