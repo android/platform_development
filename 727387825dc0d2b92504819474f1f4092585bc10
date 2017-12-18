@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69ba4e01_44eedaac",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-12-18T10:42:06Z",
+      "side": 1,
+      "message": "Can\u0027t make this a function since EnumTypes and RecordTypes aren\u0027t exactly in the same hierarchy. Can make this a macro if that improves code duplication / readability.",
+      "range": {
+        "startLine": 104,
+        "startChar": 1,
+        "endLine": 110,
+        "endChar": 3
+      },
+      "revId": "727387825dc0d2b92504819474f1f4092585bc10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
