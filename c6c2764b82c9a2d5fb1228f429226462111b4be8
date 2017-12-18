@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "634ff802_9e663a29",
+        "filename": "gsi/gsi_util/Android.bp",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T07:17:46Z",
+      "side": 1,
+      "message": "adds the dependency here.",
+      "range": {
+        "startLine": 22,
+        "startChar": 14,
+        "endLine": 22,
+        "endChar": 21
+      },
+      "revId": "c6c2764b82c9a2d5fb1228f429226462111b4be8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
