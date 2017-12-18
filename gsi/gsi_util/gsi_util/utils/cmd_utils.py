@@ -24,6 +24,33 @@ CommandResult = namedtuple('CommandResult', 'returncode stdoutdata, stderrdata')
 PIPE = subprocess.PIPE
 
 
+def fastboot_flash(partition_name, image_name=None, allow_error=False):
+  """fastboot flash a partition with a given image."""
+
+  cmd = ['fastboot', 'flash', partition_name]
+
+  # image_name can be None, for `fastboot` to flash
+  # ${ANDROID_PRODUCT_OUT}/{partition_name}.img.
+  if image_name is not None:
+    cmd.append(image_name)
+
+  run_command(cmd, raise_on_error=not allow_error)
+
+
+def fastboot_erase(partition_name=None, allow_error=False):
+  """fastboot erase a partition."""
+
+  if partition_name is None:
+    run_command(['fastboot', '-w'], raise_on_error=not allow_error)
+  else:
+    run_command(['fastboot', 'erase', partition_name],
+                raise_on_error=not allow_error)
+
+
+def fastboot_reboot():
+  run_command(['fastboot', 'reboot'], raise_on_error=False)
+
+
 def run_command(command, read_stdout=False, read_stderr=False,
                 log_stdout=False, log_stderr=False,
                 raise_on_error=True, sudo=False, **kwargs):
