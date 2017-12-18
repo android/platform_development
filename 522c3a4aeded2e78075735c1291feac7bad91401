@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a0d72007_658e0b1d",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T08:57:35Z",
+      "side": 1,
+      "message": "chmod from 755 to 644 for this file (in PS-7)",
+      "revId": "522c3a4aeded2e78075735c1291feac7bad91401",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
