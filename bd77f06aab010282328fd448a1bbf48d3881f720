@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08b3e1fd_c785333d",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T07:17:22Z",
+      "side": 1,
+      "message": "it\u0027s not good to reuse \u0027read_stdout/stderr\u0027 for logging purpose. I added \u0027log_stdout\u0027 and \u0027log_stderro_on_error\u0027 instead.",
+      "range": {
+        "startLine": 77,
+        "startChar": 3,
+        "endLine": 80,
+        "endChar": 43
+      },
+      "revId": "bd77f06aab010282328fd448a1bbf48d3881f720",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
