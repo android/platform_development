@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76e1b164_75fac9b8",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T05:26:25Z",
+      "side": 1,
+      "message": "it seems flash system will also erase system.\n\nNeed double check.",
+      "range": {
+        "startLine": 31,
+        "startChar": 2,
+        "endLine": 31,
+        "endChar": 48
+      },
+      "revId": "9a4a9cb93005f56909f37e7f6ea95461932e780d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
