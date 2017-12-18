@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95fb1cdb_27a7181a",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T05:11:59Z",
+      "side": 1,
+      "message": "The file will be auto deleted, via UnopenedTemporaryFile()",
+      "range": {
+        "startLine": 38,
+        "startChar": 45,
+        "endLine": 38,
+        "endChar": 57
+      },
+      "revId": "6ab9a7618470d90896840f121b1924b144621014",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
