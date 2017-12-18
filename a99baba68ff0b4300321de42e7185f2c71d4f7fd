@@ -45,6 +45,30 @@
       "revId": "a99baba68ff0b4300321de42e7185f2c71d4f7fd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1746d3cf_3219ecfb",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T09:02:07Z",
+      "side": 1,
+      "message": "But we\u0027ll eventually print the command (at either line 80 or line 89), for good and fail return values, respectively.\n\nSo seems we can keep this?",
+      "parentUuid": "5609b1f7_a73fb560",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 69
+      },
+      "revId": "a99baba68ff0b4300321de42e7185f2c71d4f7fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
