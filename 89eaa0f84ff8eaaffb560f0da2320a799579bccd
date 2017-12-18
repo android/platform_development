@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22fbbcb4_998d1461",
+        "filename": "gsi/gsi_util/gsi_util/commands/hello.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T08:56:31Z",
+      "side": 1,
+      "message": "change this file to 644 (non-executable)",
+      "revId": "89eaa0f84ff8eaaffb560f0da2320a799579bccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
