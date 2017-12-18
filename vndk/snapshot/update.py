@@ -26,24 +26,15 @@ import sys
 import tempfile
 import textwrap
 
+import utils
+
+from check_gpl_license import GPLChecker
 from gen_buildfiles import GenBuildFile
 
-ANDROID_BUILD_TOP = os.getenv('ANDROID_BUILD_TOP')
-if not ANDROID_BUILD_TOP:
-    print('Error: Missing ANDROID_BUILD_TOP env variable. Please run '
-          '\'. build/envsetup.sh; lunch <build target>\'. Exiting script.')
-    sys.exit(1)
 
-DIST_DIR = os.getenv('DIST_DIR')
-if not DIST_DIR:
-    OUT_DIR = os.getenv('OUT_DIR')
-    if OUT_DIR:
-        DIST_DIR = os.path.realpath(os.path.join(OUT_DIR, 'dist'))
-    else:
-        DIST_DIR = os.path.realpath(os.path.join(ANDROID_BUILD_TOP, 'out/dist'))
-
-PREBUILTS_VNDK_DIR = os.path.realpath(
-    os.path.join(ANDROID_BUILD_TOP, 'prebuilts/vndk'))
+ANDROID_BUILD_TOP = utils.get_android_build_top()
+DIST_DIR = utils.get_dist_dir(utils.get_out_dir(ANDROID_BUILD_TOP))
+PREBUILTS_VNDK_DIR = utils.join_realpath(ANDROID_BUILD_TOP, 'prebuilts/vndk')
 
 
 def logger():
@@ -163,6 +154,14 @@ def update_buildfiles(buildfile_generator):
     buildfile_generator.generate_android_bp()
 
 
+def check_gpl_license(license_checker):
+    try:
+        license_checker.check_gpl_projects()
+    except AssertionError as error:
+        print '***CANNOT INSTALL VNDK SNAPSHOT***', error
+        raise
+
+
 def commit(branch, build, version):
     logger().info('Making commit...')
     check_call(['git', 'add', '.'])
@@ -239,6 +238,8 @@ def main():
     update_buildfiles(buildfile_generator)
 
     if not args.local:
+        license_checker = GPLChecker(install_dir, ANDROID_BUILD_TOP)
+        check_gpl_license(license_checker)
         commit(args.branch, args.build, vndk_version)
 
 
