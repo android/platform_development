@@ -26,6 +26,7 @@ import sys
 import tempfile
 import textwrap
 
+from check_gpl_license import GPLChecker
 from gen_buildfiles import GenBuildFile
 
 ANDROID_BUILD_TOP = os.getenv('ANDROID_BUILD_TOP')
@@ -163,6 +164,17 @@ def update_buildfiles(buildfile_generator):
     buildfile_generator.generate_android_bp()
 
 
+def check_gpl_license(license_checker):
+    check, unreleased_projects = license_checker.check_gpl_projects()
+    if check:
+        logger.info('GPL license check: PASS.')
+    else:
+        print ('The following GPL projects have NOT been released in current '
+            'source tree: {}. VNDK snapshot CANNOT be installed'
+            .format(unreleased_projects))
+        sys.exit(1)
+
+
 def commit(branch, build, version):
     logger().info('Making commit...')
     check_call(['git', 'add', '.'])
@@ -239,6 +251,8 @@ def main():
     update_buildfiles(buildfile_generator)
 
     if not args.local:
+        license_checker = GPLChecker(install_dir, ANDROID_BUILD_TOP)
+        check_gpl_license(license_checker)
         commit(args.branch, args.build, vndk_version)
 
 
