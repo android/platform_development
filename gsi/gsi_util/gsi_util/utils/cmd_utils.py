@@ -23,6 +23,53 @@ import subprocess
 CommandResult = namedtuple('CommandResult', 'returncode stdoutdata, stderrdata')
 
 
+def fastboot_flash(partition_name, image_name=None, allow_error=False):
+  """fastboot flash a partition with a given image."""
+
+  cmd = ['fastboot', 'flash', partition_name]
+
+  # image_name can be None, for `fastboot` to flash
+  # ${ANDROID_PRODUCT_OUT}/{partition_name}.img.
+  if image_name is not None:
+    cmd.append(image_name)
+
+  check_call(cmd, allow_error=allow_error)
+
+
+def fastboot_erase(partition_name=None, allow_error=False):
+  """fastboot erase a partition."""
+
+  if partition_name is None:
+    check_call(['fastboot', '-w'], allow_error=allow_error)
+  else:
+    check_call(['fastboot', 'erase', partition_name], allow_error=allow_error)
+
+
+def fastboot_reboot():
+  check_call(['fastboot', 'reboot'], allow_error=True)
+
+
+def check_call(args, allow_error=False, **kwargs):
+  """Executes subprocess.check_call().
+
+  Args:
+    args: the command sequence for subprocess.check_call().
+    allow_error: won't raise CalledProcessError if True.
+    **kwargs: the keyword arguments passed to subprocess.check_call().
+
+  Raises:
+    subprocess.CalledProcessError: The return code of the command is not zero.
+  """
+
+  try:
+    subprocess.check_call(args, *kwargs)
+  except subprocess.CalledProcessError as e:
+    logging.critical('Failed to run %r, return code: %d', e.cmd, e.returncode)
+    logging.critical('  Error output: %r', e.output)
+    if not allow_error:
+      raise
+
+
 def run_command(command, raise_on_error=True, read_stdout=False,
                 read_stderr=False, sudo=False, **kwargs):
   """Runs a command and returns the results.
