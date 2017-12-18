@@ -22,6 +22,29 @@
       "revId": "a99baba68ff0b4300321de42e7185f2c71d4f7fd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5609b1f7_a73fb560",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2017-12-18T08:46:38Z",
+      "side": 1,
+      "message": "how about also printing the command before running it?",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 69
+      },
+      "revId": "a99baba68ff0b4300321de42e7185f2c71d4f7fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
