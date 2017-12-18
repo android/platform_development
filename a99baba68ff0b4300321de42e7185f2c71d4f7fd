@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c740989a_d2c79988",
+        "filename": "gsi/gsi_util/Android.bp",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-18T08:39:45Z",
+      "side": 1,
+      "message": "Adds this in PS9, otherwise, there will be import error.",
+      "range": {
+        "startLine": 21,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "a99baba68ff0b4300321de42e7185f2c71d4f7fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
