@@ -193,6 +193,35 @@ class GenBuildFile(object):
           prebuilt: string, name of prebuilt object
           is_vndk_sp: bool, True if prebuilt is a VNDK_SP lib
         """
+        def get_arch_srcs(prebuilt):
+            """Returns build rule for arch specific srcs.
+
+            e.g.,
+            arch: {
+                arm: {
+                    srcs: ["..."]
+                },
+                arm64: {
+
+                },
+                ...
+            }
+
+            Args:
+              prebuilt: string, name of prebuilt object
+            """
+            arch_srcs = '{ind}arch: {{\n'.format(ind=self.INDENT)
+            src_paths = find(self._install_dir, [prebuilt])
+            for src in sorted(src_paths):
+                arch_srcs += ('{ind}{ind}{arch}: {{\n'
+                              '{ind}{ind}{ind}srcs: ["{src}"],\n'
+                              '{ind}{ind}}},\n'.format(
+                                  ind=self.INDENT,
+                                  arch=arch_from_path(src),
+                                  src=src))
+            arch_srcs += '{ind}}},\n'.format(ind=self.INDENT)
+            return arch_srcs
+
         def get_notice_file(prebuilt):
             """Returns build rule for notice file (attribute 'notice').
 
@@ -223,37 +252,6 @@ class GenBuildFile(object):
                                      .format(ind=self.INDENT, path=path))
             return rel_install_path
 
-        def get_arch_srcs(prebuilt):
-            """Returns build rule for arch specific srcs.
-
-            e.g.,
-            arch: {
-                arm: {
-                    srcs: ["..."]
-                },
-                arm64: {
-
-                },
-                ...
-            }
-
-            Args:
-              prebuilt: string, name of prebuilt object
-            """
-            arch_srcs = '{ind}arch: {{\n'.format(ind=self.INDENT)
-            src_paths = find(self._install_dir, [prebuilt])
-            # if len(src_paths) < 4:
-            #     print prebuilt, src_paths
-            for src in sorted(src_paths):
-                arch_srcs += ('{ind}{ind}{arch}: {{\n'
-                              '{ind}{ind}{ind}srcs: ["{src}"],\n'
-                              '{ind}{ind}}},\n'.format(
-                                  ind=self.INDENT,
-                                  arch=arch_from_path(src),
-                                  src=src))
-            arch_srcs += '{ind}}},\n'.format(ind=self.INDENT)
-            return arch_srcs
-
         name = os.path.splitext(prebuilt)[0]
         vendor_available = 'false' if prebuilt in self._vndk_private else 'true'
         if is_vndk_sp:
@@ -261,9 +259,9 @@ class GenBuildFile(object):
                 ind=self.INDENT)
         else:
             vndk_sp = ''
-        notice = get_notice_file(prebuilt)
-        rel_install_path = get_rel_install_path(prebuilt)
         arch_srcs = get_arch_srcs(prebuilt)
+        rel_install_path = get_rel_install_path(prebuilt)
+        notice = get_notice_file(prebuilt)
 
         return ('vndk_prebuilt_shared {{\n'
                 '{ind}name: "{name}",\n'
