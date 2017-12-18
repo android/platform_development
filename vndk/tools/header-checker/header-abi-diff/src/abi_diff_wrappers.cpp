@@ -97,9 +97,18 @@ DiffStatus DiffWrapperBase::CompareEnumTypes(
     const abi_util::EnumTypeIR *old_type, const abi_util::EnumTypeIR *new_type,
      std::deque<std::string> *type_queue,
      abi_util::DiffMessageIR::DiffKind diff_kind) {
-  if (old_type->GetUniqueId() != new_type->GetUniqueId()) {
+  std::string old_type_unique_id = old_type->GetUniqueId();
+  std::string new_type_unique_id = new_type->GetUniqueId();
+
+ // Compare unique ids when both are C++ enums.
+ if (old_type_unique_id != "" && new_type_unique_id != "") {
+    if (old_type_unique_id != new_type_unique_id) {
+      return DiffStatus::direct_diff;
+    }
+  } else if (old_type->GetName() != new_type->GetName()) {
     return DiffStatus::direct_diff;
   }
+
   auto enum_type_diff_ir = std::make_unique<abi_util::EnumTypeDiffIR>();
   enum_type_diff_ir->SetName(old_type->GetName());
   const std::string &old_underlying_type = old_type->GetUnderlyingType();
@@ -301,11 +310,17 @@ DiffStatus DiffWrapperBase::CompareRecordTypes(
     abi_util::DiffMessageIR::DiffKind diff_kind) {
   auto record_type_diff_ir = std::make_unique<abi_util::RecordTypeDiffIR>();
   // Compare names.
-  if (old_type->GetUniqueId() != new_type->GetUniqueId()) {
-    // Do not dump anything since the record types themselves are fundamentally
-    // different.
+  std::string old_type_unique_id = old_type->GetUniqueId();
+  std::string new_type_unique_id = new_type->GetUniqueId();
+  // Compare unique ids when both are C++ records.
+  if (old_type_unique_id != "" && new_type_unique_id != "") {
+    if (old_type_unique_id != new_type_unique_id) {
+      return DiffStatus::direct_diff;
+    }
+  } else if (old_type->GetName() != new_type->GetName()) {
     return DiffStatus::direct_diff;
   }
+
   record_type_diff_ir->SetName(old_type->GetName());
   if (old_type->GetAccess() != new_type->GetAccess()) {
     record_type_diff_ir->SetAccessDiff(

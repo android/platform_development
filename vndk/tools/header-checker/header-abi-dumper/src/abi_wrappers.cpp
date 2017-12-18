@@ -163,7 +163,7 @@ std::string ABIWrapper::GetTypeUniqueId(const clang::TagDecl *tag_decl) {
     mangle_contextp_->mangleCXXRTTIName(qual_type, out);
     return uid.str();
   }
-  return ABIWrapper::QualTypeToString(qual_type);
+  return "";
 }
 
 // CreateBasicNamedAndTypedDecl creates a BasicNamedAndTypedDecl : that'll
