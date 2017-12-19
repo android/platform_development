@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ef16499_599e8213",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-19T08:11:25Z",
+      "side": 1,
+      "message": "Remove the indent",
+      "range": {
+        "startLine": 160,
+        "startChar": 2,
+        "endLine": 160,
+        "endChar": 4
+      },
+      "revId": "7b71d0ba39da7ccc73db2e35361af7c642376599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
