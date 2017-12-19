@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "163521ea_9ed7eb7b",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-19T07:25:27Z",
+      "side": 1,
+      "message": "I would prefer to do this in Python instead of running an external grep program and then parsing its output, e.g.\n\n    pattern \u003d \u0027GENERAL PUBLIC LICENSE\u0027\n    for notice_file_path in notice_files:\n        with open(notice_file_path, \u0027r\u0027) as notice_file:\n            if pattern in notice_file.read():\n                gpl_projects.append(os.path.basename(notice_file_path))",
+      "range": {
+        "startLine": 113,
+        "startChar": 8,
+        "endLine": 113,
+        "endChar": 54
+      },
+      "revId": "7847b95e572e06cf182ba58c4d3404f3d7cf7251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
