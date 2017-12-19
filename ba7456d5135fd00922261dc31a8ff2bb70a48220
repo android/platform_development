@@ -22,6 +22,30 @@
       "revId": "ba7456d5135fd00922261dc31a8ff2bb70a48220",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "201d1e48_e9b908f6",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-19T03:29:49Z",
+      "side": 1,
+      "message": "I removed the v27/arch-*/NOTICE_FILES directories here since after copying files to the new v27/NOTICE_FILES directory, the Android.bp references the license files from the new v27/NOTICE_FILES directory, and the old v27/arch-*/NOTICE_FILES is no longer used. Did you have a use case in mind where it would be better to keep these dirs?",
+      "parentUuid": "a752432c_4a2137f7",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 47
+      },
+      "revId": "ba7456d5135fd00922261dc31a8ff2bb70a48220",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
