@@ -93,6 +93,30 @@
       "revId": "727387825dc0d2b92504819474f1f4092585bc10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "874d07fe_190cfcde",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-19T06:21:12Z",
+      "side": 1,
+      "message": "\u003e Another option: while linking, link C and C++ types seperately. While diffing, diff two types from the same language context.\n\nI think this will not work because the problem you are facing is that the same struct definition has been compiled under different context.",
+      "parentUuid": "35327651_5860d759",
+      "range": {
+        "startLine": 160,
+        "startChar": 6,
+        "endLine": 160,
+        "endChar": 77
+      },
+      "revId": "727387825dc0d2b92504819474f1f4092585bc10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
