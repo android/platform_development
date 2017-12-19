@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "164984d5_aad232a7",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-19T11:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68fe593b_ab65992b",
+      "range": {
+        "startLine": 76,
+        "startChar": 12,
+        "endLine": 76,
+        "endChar": 16
+      },
+      "revId": "7847b95e572e06cf182ba58c4d3404f3d7cf7251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3c9f54c6_36d24448",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 5
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "200fbc6b_abbfe294",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-19T11:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c9f54c6_36d24448",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 75
+      },
+      "revId": "7847b95e572e06cf182ba58c4d3404f3d7cf7251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "163521ea_9ed7eb7b",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 5
@@ -68,6 +116,30 @@
       "revId": "7847b95e572e06cf182ba58c4d3404f3d7cf7251",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7fe90b33_d4b8540b",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-19T11:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "163521ea_9ed7eb7b",
+      "range": {
+        "startLine": 113,
+        "startChar": 8,
+        "endLine": 113,
+        "endChar": 54
+      },
+      "revId": "7847b95e572e06cf182ba58c4d3404f3d7cf7251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
