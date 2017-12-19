@@ -189,6 +189,30 @@
       "revId": "727387825dc0d2b92504819474f1f4092585bc10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d402bb8_80ecc6f9",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-19T07:16:45Z",
+      "side": 1,
+      "message": "Then, probably just make it simple and mangle all names.",
+      "parentUuid": "7336c391_d5e9a227",
+      "range": {
+        "startLine": 160,
+        "startChar": 6,
+        "endLine": 160,
+        "endChar": 77
+      },
+      "revId": "727387825dc0d2b92504819474f1f4092585bc10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
