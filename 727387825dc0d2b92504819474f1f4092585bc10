@@ -141,6 +141,30 @@
       "revId": "727387825dc0d2b92504819474f1f4092585bc10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd53c44e_0096e550",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2017-12-19T07:04:48Z",
+      "side": 1,
+      "message": "Let me see if this works with classes which are scoped inside a templated class.",
+      "parentUuid": "ced60863_60202cc9",
+      "range": {
+        "startLine": 160,
+        "startChar": 6,
+        "endLine": 160,
+        "endChar": 77
+      },
+      "revId": "727387825dc0d2b92504819474f1f4092585bc10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
