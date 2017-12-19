@@ -46,6 +46,30 @@
       "revId": "ba7456d5135fd00922261dc31a8ff2bb70a48220",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43df7ebb_09918cd5",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-19T04:56:02Z",
+      "side": 1,
+      "message": "OK.  Never mind.  I just feel that it is strange that a \"gather_\" function will delete files.",
+      "parentUuid": "201d1e48_e9b908f6",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 47
+      },
+      "revId": "ba7456d5135fd00922261dc31a8ff2bb70a48220",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
