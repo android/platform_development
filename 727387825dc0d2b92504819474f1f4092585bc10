@@ -117,6 +117,30 @@
       "revId": "727387825dc0d2b92504819474f1f4092585bc10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ced60863_60202cc9",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-19T06:24:38Z",
+      "side": 1,
+      "message": "Or alternatively, we can encode the unique id with another strategy:\n\nIf the type is a CXXRecordDecl and decl-\u003egetDescribedClassTemplate() !\u003d nullptr, then use mangled name.\n\nOtherwise, use normal name.",
+      "parentUuid": "874d07fe_190cfcde",
+      "range": {
+        "startLine": 160,
+        "startChar": 6,
+        "endLine": 160,
+        "endChar": 77
+      },
+      "revId": "727387825dc0d2b92504819474f1f4092585bc10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
