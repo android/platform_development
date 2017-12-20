@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "434fe4ad_2535faa3",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-20T02:54:57Z",
+      "side": 1,
+      "message": "I see, thanks for letting me know.",
+      "parentUuid": "44c3c943_cbea2098",
+      "range": {
+        "startLine": 127,
+        "startChar": 11,
+        "endLine": 127,
+        "endChar": 33
+      },
+      "revId": "9b3e0137ed3d8a6b9b68695dff35fa7f32a3f8e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "01fc6fe5_2f3e9002",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "8819968b_4f99946e",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-20T02:54:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01fc6fe5_2f3e9002",
+      "range": {
+        "startLine": 160,
+        "startChar": 8,
+        "endLine": 162,
+        "endChar": 41
+      },
+      "revId": "9b3e0137ed3d8a6b9b68695dff35fa7f32a3f8e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "18f19b20_85a4e2fa",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 6
@@ -68,6 +116,30 @@
       "revId": "9b3e0137ed3d8a6b9b68695dff35fa7f32a3f8e5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61746480_32ab2d68",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2017-12-20T02:54:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18f19b20_85a4e2fa",
+      "range": {
+        "startLine": 165,
+        "startChar": 0,
+        "endLine": 165,
+        "endChar": 14
+      },
+      "revId": "9b3e0137ed3d8a6b9b68695dff35fa7f32a3f8e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
