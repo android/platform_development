@@ -1,0 +1,31 @@
+cc_library {
+    name: "libomp_shared",
+    srcs: ["omp_shared.cc"],
+    openmp: true,
+}
+
+cc_library_static {
+    name: "libomp_static_static",
+    srcs: ["omp_static.cc"],
+    openmp: true,
+}
+
+cc_library {
+    name: "libomp_static_shared",
+    srcs: ["omp_static_shared.cc"],
+    static_libs: ["libomp_static_static"],
+    openmp: true,
+}
+
+cc_binary {
+    name: "libomp_static",
+    srcs: ["omp_static_binary.cc"],
+    static_libs: ["libomp_static_static"],
+    openmp: true,
+}
+
+cc_binary {
+    name: "libomp_binary",
+    srcs: ["omp_binary.cc"],
+    openmp: true,
+}
