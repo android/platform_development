@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c3ec726_105a7652",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-25T02:18:10Z",
+      "side": 1,
+      "message": "Add more comment to explain the function of this function, e.g.\n\n    \"\"\"Replace unversioned VNDK directories (e.g. /system/${LIB}/vndk) with versioned ones (e.g. /system/${LIB}/vndk-${VNDK-VER})\"\"\"",
+      "revId": "c47fdcd84c4ebd601c44627afe6007d199d2811b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18a7d87c_e669bd9b",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2017-12-25T02:18:10Z",
+      "side": 1,
+      "message": "Why not:\n\n    r\u0027\\1${VNDK_VER}\\2\u0027",
+      "range": {
+        "startLine": 159,
+        "startChar": 16,
+        "endLine": 159,
+        "endChar": 59
+      },
+      "revId": "c47fdcd84c4ebd601c44627afe6007d199d2811b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
