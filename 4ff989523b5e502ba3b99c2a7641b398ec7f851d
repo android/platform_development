@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "c5035f99_69ba7b7f",
+        "filename": "gsi/gsi_util/gsi_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddc0b383_7d71dc35",
+      "range": {
+        "startLine": 34,
+        "startChar": 27,
+        "endLine": 34,
+        "endChar": 35
+      },
+      "revId": "4ff989523b5e502ba3b99c2a7641b398ec7f851d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "649642d5_f2ce9855",
         "filename": "gsi/gsi_util/gsi_util.py",
         "patchSetId": 3
@@ -83,6 +107,30 @@
       "writtenOn": "2017-12-28T08:03:23Z",
       "side": 1,
       "message": "ok, will do.",
+      "parentUuid": "649642d5_f2ce9855",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 53
+      },
+      "revId": "4ff989523b5e502ba3b99c2a7641b398ec7f851d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e3f6b3e_4a42ae7a",
+        "filename": "gsi/gsi_util/gsi_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:10:32Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "649642d5_f2ce9855",
       "range": {
         "startLine": 56,
@@ -131,6 +179,30 @@
       "side": 1,
       "message": "Will switch to Critical on next PS.",
       "parentUuid": "0c919d1b_20116996",
+      "range": {
+        "startLine": 67,
+        "startChar": 6,
+        "endLine": 67,
+        "endChar": 49
+      },
+      "revId": "4ff989523b5e502ba3b99c2a7641b398ec7f851d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fefc02f9_03653f6b",
+        "filename": "gsi/gsi_util/gsi_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c835963_5a878e23",
       "range": {
         "startLine": 67,
         "startChar": 6,
