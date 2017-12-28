@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "649642d5_f2ce9855",
+        "filename": "gsi/gsi_util/gsi_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T07:52:43Z",
+      "side": 1,
+      "message": "nit: how about separate this to another line:\n\nmodule_name \u003d self._get_module_name(command)\nmod \u003d __import__(module_name, globals(), locals(),  [\u0027setup_command_args\u0027])\n\nI feel it will be good to self comment and no need to wrap this line",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 53
+      },
+      "revId": "4ff989523b5e502ba3b99c2a7641b398ec7f851d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c919d1b_20116996",
         "filename": "gsi/gsi_util/gsi_util.py",
         "patchSetId": 3
