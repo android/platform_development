@@ -1,0 +1,12 @@
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Code-Review+1: Bowgo Tsai <bowgotsai@google.com>
+Code-Review+2: Logan Chien <loganchien@google.com>
+Code-Review+1: Keun Soo Yim <yim@google.com>
+Code-Review+2: Andrew Hsieh <andrewhsieh@google.com>
+Verified+1: Michael Schwartz <schwartzmi@google.com>
+Autosubmit+1: Michael Schwartz <schwartzmi@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Thu, 28 Dec 2017 06:57:08 +0000
+Reviewed-on: https://android-review.googlesource.com/576603
+Project: platform/development
+Branch: refs/heads/master
