@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a77854d_cea9394c",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T08:18:49Z",
+      "side": 1,
+      "message": "How about: \n\n    os.getuid() !\u003d 0",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 42
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d034350_3e994b52",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T08:18:49Z",
+      "side": 1,
+      "message": "Need to Add the argument to docstring?\n\nOr maybe just using \u0027isinstance(s, basestring)\u0027?",
+      "range": {
+        "startLine": 54,
+        "startChar": 19,
+        "endLine": 54,
+        "endChar": 24
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d53d383d_5883ffba",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T08:18:49Z",
+      "side": 1,
+      "message": "why need this checking?",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2843c40_26d9bcb5",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T08:18:49Z",
+      "side": 1,
+      "message": "I think shouldn\u0027t reuse the variable.",
+      "range": {
+        "startLine": 73,
+        "startChar": 37,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6116f102_dfefb667",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T08:18:49Z",
+      "side": 1,
+      "message": "I think we also need \u0027log_stderr_on_error\u0027 here.",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 17
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
