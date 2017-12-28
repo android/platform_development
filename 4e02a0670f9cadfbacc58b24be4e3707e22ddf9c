@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "24c0c2ac_6b75adf3",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:15:42Z",
+      "side": 1,
+      "message": "**kwargs is the idiom for using python keyword arguments.\n\nhttps://docs.python.org/2.7/tutorial/controlflow.html#keyword-arguments",
+      "parentUuid": "2703e7b8_c5d3bc3c",
+      "range": {
+        "startLine": 73,
+        "startChar": 37,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6116f102_dfefb667",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
