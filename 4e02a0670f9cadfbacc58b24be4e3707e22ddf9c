@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4635865a_5fc6fdaf",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:06:19Z",
+      "side": 1,
+      "message": "But this only available on Unix:\nhttps://docs.python.org/2/library/os.html#os.getuid\n\ngetpass is more portable (also works on Windows).\nhttps://docs.python.org/2/library/getpass.html\n\nI agree this doesn\u0027t matter because gsi_util will only be used on Unix. But it\u0027s a good habit to code in a more portable way.",
+      "parentUuid": "0a77854d_cea9394c",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 42
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d034350_3e994b52",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-28T08:18:49Z",
       "side": 1,
       "message": "Need to Add the argument to docstring?\n\nOr maybe just using \u0027isinstance(s, basestring)\u0027?",
+      "range": {
+        "startLine": 54,
+        "startChar": 19,
+        "endLine": 54,
+        "endChar": 24
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c338c822_bf9ecfc6",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:06:19Z",
+      "side": 1,
+      "message": "kwargs already documented above (line 42), and they\u0027re just kwargs passed to subprocess.Popen().\n\nDo we want to document every arguments passed to Popen()?\nhttps://docs.python.org/2/library/subprocess.html#subprocess.Popen\n\nWe cannot use isinstance(s, basestring) because it\u0027s still ok to use a list when shell\u003dTrue. e.g., \n\n  p1 \u003d Popen([\"ls -al\"], shell\u003dTrue).\n\nhttps://docs.python.org/2/library/subprocess.html#popen-constructor\n\nIf shell is True, it is *recommended* to pass args as a string rather than as a sequence.",
+      "parentUuid": "4d034350_3e994b52",
       "range": {
         "startLine": 54,
         "startChar": 19,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "4ba789c9_2f40ebec",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:06:19Z",
+      "side": 1,
+      "message": "Because if the caller already redirect this to other places (e.g., another process.stdin or subprocess.STDOUT), we\u0027ll get None from the stdout at line 75 below.",
+      "parentUuid": "d53d383d_5883ffba",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c2843c40_26d9bcb5",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "2703e7b8_c5d3bc3c",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:06:19Z",
+      "side": 1,
+      "message": "It\u0027s ok, the ** will unpack the dictionary to keywords arguments for Popen. Even if Popen changes some kwargs there, it won\u0027t be changed here.",
+      "parentUuid": "c2843c40_26d9bcb5",
+      "range": {
+        "startLine": 73,
+        "startChar": 37,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6116f102_dfefb667",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -105,6 +201,30 @@
       "writtenOn": "2017-12-28T08:18:49Z",
       "side": 1,
       "message": "I think we also need \u0027log_stderr_on_error\u0027 here.",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 17
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "73e50bf1_b691e670",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-28T10:06:19Z",
+      "side": 1,
+      "message": "But here the return code is 0, so it\u0027s not \"on_error\".\nAnd normally most programs won\u0027t have stderr output if no error.\nSounds good?",
+      "parentUuid": "6116f102_dfefb667",
       "range": {
         "startLine": 90,
         "startChar": 7,
