@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38137baa_3c428723",
+        "filename": "gsi/gsi_util/gsi_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T06:49:20Z",
+      "side": 1,
+      "message": "I think WARNING (the default) is better.\nOr need to output the exception message (see below comment)",
+      "range": {
+        "startLine": 34,
+        "startChar": 27,
+        "endLine": 34,
+        "endChar": 35
+      },
+      "revId": "4ff989523b5e502ba3b99c2a7641b398ec7f851d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c919d1b_20116996",
+        "filename": "gsi/gsi_util/gsi_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-28T06:49:20Z",
+      "side": 1,
+      "message": "The error doesn\u0027t output in default _LOGGING_LEVEL.",
+      "range": {
+        "startLine": 67,
+        "startChar": 6,
+        "endLine": 67,
+        "endChar": 49
+      },
+      "revId": "4ff989523b5e502ba3b99c2a7641b398ec7f851d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
