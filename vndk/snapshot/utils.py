@@ -16,7 +16,9 @@
 #
 """Utility functions for VNDK snapshot."""
 
+import glob
 import os
+import re
 import sys
 
 
@@ -46,16 +48,42 @@ def get_dist_dir(out_dir):
     return _get_dir_from_env('DIST_DIR', join_realpath(out_dir, 'dist'))
 
 
+def get_snapshot_archs(install_dir):
+    """Returns a list of VNDK snapshot target_archs under install_dir.
+
+    Args:
+      install_dir: string, absolute path of prebuilts/vndk/v{version}
+    """
+    target_archs = []
+    for file in glob.glob('{}/*'.format(install_dir)):
+        basename = os.path.basename(file)
+        if os.path.isdir(file) and basename != 'NOTICE_FILES':
+            target_archs.append(basename)
+    return target_archs
+
+
 def arch_from_path(path):
     """Extracts arch from given VNDK snapshot path.
+
+    Args:
+      path: string, path that starts with 'arch-{arch}-*/...'
+
+    Returns:
+      arch string, (e.g., 'arm' or 'arm64' or 'x86' or 'x86_64')
+    """
+    return path.split('/')[0].split('-')[1]
+
+
+def target_arch_from_path(path):
+    """Extracts target_arch from given VNDK snapshot path.
 
     Args:
       path: string, path relative to prebuilts/vndk/v{version}
 
     Returns:
-      arch string, (e.g., "arm" or "arm64" or "x86" or "x86_64")
+      target_arch string, (e.g. 'arm64')
     """
-    return path.split('/')[0].split('-')[1]
+    return path.split('/')[0]
 
 
 def find(path, names):
