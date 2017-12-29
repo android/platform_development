@@ -128,17 +128,17 @@ def install_snapshot(branch, build, install_dir):
             shutil.rmtree(tempdir)
 
 
-def gather_notice_files():
+def gather_notice_files(install_dir):
     """Gathers all NOTICE files to a new NOTICE_FILES directory.
 
     Create a new NOTICE_FILES directory under install_dir and copy to it
-    all NOTICE files in arch-*/NOTICE_FILES.
+    all NOTICE files in aosp_*/NOTICE_FILES.
     """
     notices_dir_name = 'NOTICE_FILES'
     logger().info('Creating {} directory...'.format(notices_dir_name))
     os.makedirs(notices_dir_name)
-    for arch_dir in glob.glob('arch-*'):
-        notices_dir_per_arch = os.path.join(arch_dir, notices_dir_name)
+    for target_arch in utils.get_snapshot_archs(install_dir):
+        notices_dir_per_arch = os.path.join(target_arch, notices_dir_name)
         if os.path.isdir(notices_dir_per_arch):
             for notice_file in glob.glob(
                     '{}/*.txt'.format(notices_dir_per_arch)):
@@ -166,10 +166,10 @@ def revise_ld_config_txt():
 
 
 def update_buildfiles(buildfile_generator):
-    logger().info('Updating Android.mk...')
+    logger().info('Generating Android.mk file...')
     buildfile_generator.generate_android_mk()
 
-    logger().info('Updating Android.bp...')
+    logger().info('Generating Android.bp files...')
     buildfile_generator.generate_android_bp()
 
 
@@ -251,7 +251,7 @@ def main():
 
     remove_old_snapshot(install_dir)
     install_snapshot(args.branch, args.build, install_dir)
-    gather_notice_files()
+    gather_notice_files(install_dir)
 
     # Post-process ld.config.txt for O-MR1
     if vndk_version == '27':
