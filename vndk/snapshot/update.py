@@ -132,21 +132,21 @@ def gather_notice_files():
     """Gathers all NOTICE files to a new NOTICE_FILES directory.
 
     Create a new NOTICE_FILES directory under install_dir and copy to it
-    all NOTICE files in arch-*/NOTICE_FILES.
+    all NOTICE files in aosp_*/NOTICE_FILES.
     """
     notices_dir_name = 'NOTICE_FILES'
     logger().info('Creating {} directory...'.format(notices_dir_name))
     os.makedirs(notices_dir_name)
-    for arch_dir in glob.glob('arch-*'):
-        notices_dir_per_arch = os.path.join(arch_dir, notices_dir_name)
-        if os.path.isdir(notices_dir_per_arch):
+    for variant in glob.glob('aosp_*'):
+        notices_dir_per_variant = os.path.join(variant, notices_dir_name)
+        if os.path.isdir(notices_dir_per_variant):
             for notice_file in glob.glob(
-                    '{}/*.txt'.format(notices_dir_per_arch)):
+                    '{}/*.txt'.format(notices_dir_per_variant)):
                 if not os.path.isfile(
                         os.path.join(notices_dir_name,
                                      os.path.basename(notice_file))):
                     shutil.copy(notice_file, notices_dir_name)
-            shutil.rmtree(notices_dir_per_arch)
+            shutil.rmtree(notices_dir_per_variant)
 
 
 def revise_ld_config_txt():
@@ -166,10 +166,10 @@ def revise_ld_config_txt():
 
 
 def update_buildfiles(buildfile_generator):
-    logger().info('Updating Android.mk...')
+    logger().info('Generating Android.mk file...')
     buildfile_generator.generate_android_mk()
 
-    logger().info('Updating Android.bp...')
+    logger().info('Generating Android.bp files...')
     buildfile_generator.generate_android_bp()
 
 
