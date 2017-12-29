@@ -16,7 +16,9 @@
 #
 """Utility functions for VNDK snapshot."""
 
+import glob
 import os
+import re
 import sys
 
 
@@ -46,16 +48,71 @@ def get_dist_dir(out_dir):
     return _get_dir_from_env('DIST_DIR', join_realpath(out_dir, 'dist'))
 
 
+def get_etc_suffix(install_dir):
+    """Returns suffix of ETC config files, including the version portion.
+
+    e.g. '.P.txt' of 'ld.config.P.txt'
+    e.g. '.txt' of 'llndk.libraries.txt'
+    """
+    ld_config = glob.glob('{}/*/*/ld.config*'.format(install_dir))[0]
+    file_name = ld_config.split('/')[-1]
+    match = re.match('ld.config(\..*txt)', file_name)
+    if match:
+        return match.group(1)
+    else:
+        raise RuntimeError('Error in parsing ETC file suffix.')
+
+
+def get_snapshot_variants(install_dir):
+    """Returns list of VNDK snapshot variants under install_dir.
+
+    Args:
+      install_dir: string, absolute path of prebuilts/vndk/v${VER}
+    """
+    variants = []
+    for variant in glob.glob('{}/aosp_*'.format(install_dir)):
+        variants.append(variant.split('/')[-1])
+    return variants
+
+
 def arch_from_path(path):
     """Extracts arch from given VNDK snapshot path.
 
     Args:
-      path: string, path relative to prebuilts/vndk/v{version}
+      path: string, path that starts with 'arch-{arch}-*/...'
 
     Returns:
-      arch string, (e.g., "arm" or "arm64" or "x86" or "x86_64")
+      arch string, (e.g., 'arm' or 'arm64' or 'x86' or 'x86_64')
     """
     return path.split('/')[0].split('-')[1]
+
+
+def arch_from_variant(variant):
+    """Extracts arch from given VNDK snapshot variant.
+
+    Args:
+      variant: string, of pattern 'aosp_*_ab'
+
+    Returns:
+      arch string, (e.g., 'arm' or 'arm64' or 'x86' or 'x86_64')
+    """
+    match = re.match('aosp_(.*)_ab', variant)
+    if match:
+        return match.group(1)
+    else:
+        raise RuntimeError('Cannot get arch from variant: {}'.format(variant))
+
+
+def variant_from_path(path):
+    """Extracts variant from given VNDK snapshot path.
+
+    Args:
+      path: string, path relative to prebuilts/vndk/v27
+
+    Returns:
+      variant string, (e.g. 'aosp_arm64_ab')
+    """
+    return path.split('/')[0]
 
 
 def find(path, names):
