@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cef775dc_ffc4a20a",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-29T09:12:06Z",
+      "side": 1,
+      "message": "Should s/true/True for consistency.\nWill fix.",
+      "range": {
+        "startLine": 39,
+        "startChar": 19,
+        "endLine": 39,
+        "endChar": 23
+      },
+      "revId": "121bcc34d85369eef1aa80eac04a9a5f3abbd479",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
