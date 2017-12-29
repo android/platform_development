@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1b9380c7_d9800b02",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-29T03:32:02Z",
+      "side": 1,
+      "message": "You are right. I just not feel good for checking the user id with string \u0027root\u0027.\n\nBTW, after more searching. If check the uid, the correct solution is:\n\n    os.geteuid() !\u003d 0",
+      "parentUuid": "4635865a_5fc6fdaf",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 42
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d034350_3e994b52",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -96,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "85d2f4bc_1fd0d681",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-29T03:32:02Z",
+      "side": 1,
+      "message": "Oh got it, I missed the line 42.",
+      "parentUuid": "c338c822_bf9ecfc6",
+      "range": {
+        "startLine": 54,
+        "startChar": 19,
+        "endLine": 54,
+        "endChar": 24
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d53d383d_5883ffba",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -131,6 +179,78 @@
       "side": 1,
       "message": "Because if the caller already redirect this to other places (e.g., another process.stdin or subprocess.STDOUT), we\u0027ll get None from the stdout at line 75 below.",
       "parentUuid": "d53d383d_5883ffba",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e68ad57_e4fabda1",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-29T03:32:02Z",
+      "side": 1,
+      "message": "But in this case, the caller need to call the function like this?\n\n   run_command([\u0027do somthing\u0027], stdout\u003dNone)",
+      "parentUuid": "4ba789c9_2f40ebec",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "11e0496b_fae1b28e",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-29T03:32:02Z",
+      "side": 1,
+      "message": "But in this case, the caller need to call the function like this?\n\n   run_command([\u0027do somthing\u0027], stdout\u003dNone)",
+      "parentUuid": "4ba789c9_2f40ebec",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3790625d_a61049ad",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-29T03:32:02Z",
+      "side": 1,
+      "message": "So, in this case, the caller call the function looks like?\n\n    run_command([\u0027do_something\u0027], stdout\u003dNone)",
+      "parentUuid": "4ba789c9_2f40ebec",
       "range": {
         "startLine": 65,
         "startChar": 4,
@@ -214,6 +334,30 @@
     },
     {
       "key": {
+        "uuid": "6a52e33b_a5fd31cc",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-29T03:32:02Z",
+      "side": 1,
+      "message": "Thanks, I missed the comment at line 42. \nGot it now.",
+      "parentUuid": "24c0c2ac_6b75adf3",
+      "range": {
+        "startLine": 73,
+        "startChar": 37,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6116f102_dfefb667",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -249,6 +393,30 @@
       "side": 1,
       "message": "But here the return code is 0, so it\u0027s not \"on_error\".\nAnd normally most programs won\u0027t have stderr output if no error.\nSounds good?",
       "parentUuid": "6116f102_dfefb667",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 17
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "315a31f0_25125fc0",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2017-12-29T03:32:02Z",
+      "side": 1,
+      "message": "Not really:\n\n    https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout\n\nOf course in most case, we don\u0027t need the content in stderr if no error, maybe we could still leave the flexibility?",
+      "parentUuid": "73e50bf1_b691e670",
       "range": {
         "startLine": 90,
         "startChar": 7,
