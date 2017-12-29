@@ -44,7 +44,8 @@ class GPLChecker(object):
         self._android_build_top = android_build_top
         self._install_dir = install_dir
         self._manifest_file = os.path.join(install_dir, self.MANIFEST_XML)
-        self._notice_files_dir = os.path.join(install_dir, 'NOTICE_FILES')
+        self._notice_files_dir = os.path.join(install_dir,
+                                              utils.NOTICE_FILES_DIR_PATH)
 
         if not os.path.isfile(self._manifest_file):
             raise RuntimeError('{manifest} not found in {install_dir}'.format(
