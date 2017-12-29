@@ -73,6 +73,29 @@
     },
     {
       "key": {
+        "uuid": "1aaf2e07_19ca7786",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-29T09:05:50Z",
+      "side": 1,
+      "message": "I think os.getuid() is enough, because we just want to prepend \u0027sudo\u0027 if the user isn\u0027t \u0027root\u0027 and the caller sets sudo\u003dTrue. The code won\u0027t be executed if sudo\u003dFalse.\n\neuid usage is rare (e.g., for passwd).\nhttps://stackoverflow.com/questions/14950378/what-is-difference-between-os-getuid-and-os-geteuid\n\nThe passwd program would then see its UID as the launching user, and its EUID as root. Writing to the system password file requires the EUID to be privileged. The UID is useful too, since passwd needs to know which user it\u0027s changing the password for.\n\n\ne.g., I just wrote a C program to print uid/euid, respectively.\n$ sudo chmod 4750 a.out.\n$ ./a.out \nuid: 176461\neuid: 0",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 29
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d034350_3e994b52",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -263,6 +286,30 @@
     },
     {
       "key": {
+        "uuid": "930b8f19_e3969c1c",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-29T09:05:50Z",
+      "side": 1,
+      "message": "No need.\n\nIf stdout isn\u0027t in the kwargs, kwargs.get(\u0027stdout\u0027) will be None. https://docs.python.org/2/library/stdtypes.html#dict.get",
+      "parentUuid": "3790625d_a61049ad",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c2843c40_26d9bcb5",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 11
@@ -417,6 +464,30 @@
       "side": 1,
       "message": "Not really:\n\n    https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout\n\nOf course in most case, we don\u0027t need the content in stderr if no error, maybe we could still leave the flexibility?",
       "parentUuid": "73e50bf1_b691e670",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 17
+      },
+      "revId": "4e02a0670f9cadfbacc58b24be4e3707e22ddf9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "619ce752_f8714d88",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2017-12-29T09:05:50Z",
+      "side": 1,
+      "message": "Ok, if so I\u0027ll rename log_stderr_on_error to log_stderr.\nThanks for the info.",
+      "parentUuid": "315a31f0_25125fc0",
       "range": {
         "startLine": 90,
         "startChar": 7,
