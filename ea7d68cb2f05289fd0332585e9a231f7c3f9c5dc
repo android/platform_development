@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "315f7c45_af0cae36",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-29T09:22:13Z",
+      "side": 1,
+      "message": "why _ect_suffix isn\u0027t added here and _vndk_private?",
+      "range": {
+        "startLine": 49,
+        "startChar": 47,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31185946_b8d1f4c3",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-29T09:22:13Z",
+      "side": 1,
+      "message": "why are you using ld.config.*.txt file to extract the version?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 53
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "488cef6e_dc4dd33b",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-29T09:22:13Z",
+      "side": 1,
+      "message": "I don\u0027t like this. The target names used to build snapshots are directly shown here and thus this script became dependent to the names. Can we just have prebuilts/vndk/v27/$(TARGET_ARCH) from the moment when we create the snapshots?",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 62
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2a74c2c_4c5ccbd1",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2017-12-29T09:22:13Z",
+      "side": 1,
+      "message": "then we may remove this as well.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 78
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
