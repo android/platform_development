@@ -365,22 +365,27 @@ public class Monkey {
             Logger.err.println(processStats);
             StrictMode.setThreadPolicy(savedPolicy);
 
-            if (mMatchDescription == null || processStats.contains(mMatchDescription)) {
-                synchronized (Monkey.this) {
-                    mRequestAnrTraces = true;
-                    mRequestDumpsysMemInfo = true;
-                    mRequestProcRank = true;
-                    if (mRequestBugreport) {
-                        mRequestAnrBugreport = true;
-                        mReportProcessName = processName;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    if (mMatchDescription == null || processStats.contains(mMatchDescription)) {
+                        synchronized (Monkey.this) {
+                            mRequestAnrTraces = true;
+                            mRequestDumpsysMemInfo = true;
+                            mRequestProcRank = true;
+                            if (mRequestBugreport) {
+                                mRequestAnrBugreport = true;
+                                mReportProcessName = processName;
+                            }
+                        }
+                        if (!mIgnoreTimeouts) {
+                            synchronized (Monkey.this) {
+                                mAbort = true;
+                            }
+                        }
                     }
                 }
-                if (!mIgnoreTimeouts) {
-                    synchronized (Monkey.this) {
-                        mAbort = true;
-                    }
-                }
-            }
+            }).start();
 
             return (mKillProcessAfterError) ? -1 : 1;
         }
