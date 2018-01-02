@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ccddd1f_cd2953df",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-02T22:40:35Z",
+      "side": 1,
+      "message": "I\u0027ve intentionally not used std::remove_if here since the predicate function would complicate things more than needed.",
+      "range": {
+        "startLine": 237,
+        "startChar": 4,
+        "endLine": 237,
+        "endChar": 56
+      },
+      "revId": "6535a301a75f75aace9cd4d71fe284ba587328ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
