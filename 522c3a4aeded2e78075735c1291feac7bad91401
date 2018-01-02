@@ -39,6 +39,30 @@
       "revId": "522c3a4aeded2e78075735c1291feac7bad91401",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8e7480a_eba5de8a",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-02T04:56:46Z",
+      "side": 1,
+      "message": "OK, looks it works for most of the devices today.\n\nSo I\u0027ll remove this for now and see if we need to add this in the future.\n\n\nJust to provide more details (after checking):\nhttps://android.googlesource.com/platform/system/core/+/master/fastboot/fastboot.cpp#799\nhttps://android.googlesource.com/platform/system/core/+/master/fastboot/fastboot.cpp#1745\n\nThe \u0027erase\u0027 will be added when:\n  1. fastboot getvar returns \"partition-type:system\"\n     \n     $ fastboot getvar all 2\u003e\u00261 | grep partition-type\n     (bootloader) partition-type:system: ext4\n\n     or\n\n     (bootloader) partition-type:system_b:ext4\n     (bootloader) partition-type:system_a:ext4\n\n  2. The partition type is \"ext4\".",
+      "parentUuid": "f9adf61b_05382f22",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 36
+      },
+      "revId": "522c3a4aeded2e78075735c1291feac7bad91401",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
