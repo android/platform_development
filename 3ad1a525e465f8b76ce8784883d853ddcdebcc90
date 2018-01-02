@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6c044ebe_64f4b27d",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-02T08:11:37Z",
+      "side": 1,
+      "message": "Ah, yup, this is much better!",
+      "parentUuid": "0d60f2c4_50b533fe",
+      "range": {
+        "startLine": 55,
+        "startChar": 19,
+        "endLine": 55,
+        "endChar": 23
+      },
+      "revId": "3ad1a525e465f8b76ce8784883d853ddcdebcc90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2b124f08_c0f5c508",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-02T05:58:24Z",
       "side": 1,
       "message": "Maybe split these functions, \u0027fastboot_*\u0027, to a separate file?",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 18
+      },
+      "revId": "3ad1a525e465f8b76ce8784883d853ddcdebcc90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cfd7c133_9cdc0529",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-02T08:11:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b124f08_c0f5c508",
       "range": {
         "startLine": 27,
         "startChar": 4,
