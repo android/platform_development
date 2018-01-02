@@ -51,6 +51,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Application that injects random key events and other actions into the system.
@@ -473,53 +474,79 @@ public class Monkey {
      * @param command Command line to execute.
      */
     private void commandLineReport(String reportName, String command) {
-        Logger.err.println(reportName + ":");
-        Runtime rt = Runtime.getRuntime();
-        Writer logOutput = null;
+        final AtomicBoolean finished = new AtomicBoolean(false);
 
-        try {
-            // Process must be fully qualified here because android.os.Process
-            // is used elsewhere
-            java.lang.Process p = Runtime.getRuntime().exec(command);
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    Logger.err.println(reportName + ":");
+                    Runtime rt = Runtime.getRuntime();
+                    Writer logOutput = null;
 
-            if (mRequestBugreport) {
-                logOutput =
-                        new BufferedWriter(new FileWriter(new File(Environment
-                                .getLegacyExternalStorageDirectory(), reportName), true));
-            }
-            // pipe everything from process stdout -> System.err
-            InputStream inStream = p.getInputStream();
-            InputStreamReader inReader = new InputStreamReader(inStream);
-            BufferedReader inBuffer = new BufferedReader(inReader);
-            String s;
-            while ((s = inBuffer.readLine()) != null) {
-                if (mRequestBugreport) {
-                    try {
-                        // When no space left on the device the write will
-                        // occurs an I/O exception, so we needed to catch it
-                        // and continue to read the data of the sync pipe to
-                        // aviod the bugreport hang forever.
-                        logOutput.write(s);
-                        logOutput.write("\n");
-                    } catch (IOException e) {
-                        while(inBuffer.readLine() != null) {}
-                        Logger.err.println(e.toString());
-                        break;
+                    // Process must be fully qualified here because android.os.Process
+                    // is used elsewhere
+                    java.lang.Process p = Runtime.getRuntime().exec(command);
+
+                    if (mRequestBugreport) {
+                        logOutput =
+                                new BufferedWriter(new FileWriter(new File(Environment
+                                        .getLegacyExternalStorageDirectory(), reportName), true));
                     }
-                } else {
-                    Logger.err.println(s);
+                    // pipe everything from process stdout -> System.err
+                    InputStream inStream = p.getInputStream();
+                    InputStreamReader inReader = new InputStreamReader(inStream);
+                    BufferedReader inBuffer = new BufferedReader(inReader);
+                    String s;
+                    while ((s = inBuffer.readLine()) != null) {
+                        if (mRequestBugreport) {
+                            try {
+                                // When no space left on the device the write will
+                                // occurs an I/O exception, so we needed to catch it
+                                // and continue to read the data of the sync pipe to
+                                // aviod the bugreport hang forever.
+                                logOutput.write(s);
+                                logOutput.write("\n");
+                            } catch (IOException e) {
+                                while (inBuffer.readLine() != null) {
+                                }
+                                Logger.err.println(e.toString());
+                                break;
+                            }
+                        } else {
+                            Logger.err.println(s);
+                        }
+                    }
+
+                    int status = p.waitFor();
+                    Logger.err.println("// " + reportName + " status was " + status);
+
+                    if (logOutput != null) {
+                        logOutput.close();
+                    }
+                } catch (Exception e) {
+                    Logger.err.println("// Exception from " + reportName + ":");
+                    Logger.err.println(e.toString());
+                } finally {
+                    finished.set(true);
+                    synchronized (Monkey.this) {
+                        Monkey.this.notifyAll();
+                    }
                 }
             }
+        }.start();
 
-            int status = p.waitFor();
-            Logger.err.println("// " + reportName + " status was " + status);
-
-            if (logOutput != null) {
-                logOutput.close();
+        // If the thread above hasn't finished executing,
+        // wait() on it so that calls like appNotResponding()
+        // or systemNotResponding() or appCrashed() are not
+        // blocked on Monkey.this.
+        if (!finished.get()) {
+            synchronized (this) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                }
             }
-        } catch (Exception e) {
-            Logger.err.println("// Exception from " + reportName + ":");
-            Logger.err.println(e.toString());
         }
     }
 
