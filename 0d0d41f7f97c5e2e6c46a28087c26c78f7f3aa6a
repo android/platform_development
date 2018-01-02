@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82099662_664a26f3",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-02T08:50:29Z",
+      "side": 1,
+      "message": "https://docs.python.org/2/library/tempfile.html#tempfile.NamedTemporaryFile\n\n\nI think you could use tempfile.NamedTemporaryFile instead of this:\n\n    with tempfile.NamedTemporaryFile as vbmeta_image:\n      ... vbmeta_image.name\n\nIt will also delete the file when deleting the object vbmeta_image",
+      "range": {
+        "startLine": 40,
+        "startChar": 18,
+        "endLine": 40,
+        "endChar": 39
+      },
+      "revId": "0d0d41f7f97c5e2e6c46a28087c26c78f7f3aa6a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7393f02e_619b587e",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-02T08:50:29Z",
+      "side": 1,
+      "message": "The convention looks should be lower case",
+      "range": {
+        "startLine": 56,
+        "startChar": 25,
+        "endLine": 56,
+        "endChar": 26
+      },
+      "revId": "0d0d41f7f97c5e2e6c46a28087c26c78f7f3aa6a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
