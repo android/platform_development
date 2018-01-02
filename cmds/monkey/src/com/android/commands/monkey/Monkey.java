@@ -51,6 +51,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Application that injects random key events and other actions into the system.
@@ -365,22 +366,27 @@ public class Monkey {
             Logger.err.println(processStats);
             StrictMode.setThreadPolicy(savedPolicy);
 
-            if (mMatchDescription == null || processStats.contains(mMatchDescription)) {
-                synchronized (Monkey.this) {
-                    mRequestAnrTraces = true;
-                    mRequestDumpsysMemInfo = true;
-                    mRequestProcRank = true;
-                    if (mRequestBugreport) {
-                        mRequestAnrBugreport = true;
-                        mReportProcessName = processName;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    if (mMatchDescription == null || processStats.contains(mMatchDescription)) {
+                        synchronized (Monkey.this) {
+                            mRequestAnrTraces = true;
+                            mRequestDumpsysMemInfo = true;
+                            mRequestProcRank = true;
+                            if (mRequestBugreport) {
+                                mRequestAnrBugreport = true;
+                                mReportProcessName = processName;
+                            }
+                        }
+                        if (!mIgnoreTimeouts) {
+                            synchronized (Monkey.this) {
+                                mAbort = true;
+                            }
+                        }
                     }
                 }
-                if (!mIgnoreTimeouts) {
-                    synchronized (Monkey.this) {
-                        mAbort = true;
-                    }
-                }
-            }
+            }).start();
 
             return (mKillProcessAfterError) ? -1 : 1;
         }
@@ -476,50 +482,76 @@ public class Monkey {
         Logger.err.println(reportName + ":");
         Runtime rt = Runtime.getRuntime();
         Writer logOutput = null;
+        final AtomicBoolean finished = new AtomicBoolean(false);
 
-        try {
-            // Process must be fully qualified here because android.os.Process
-            // is used elsewhere
-            java.lang.Process p = Runtime.getRuntime().exec(command);
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    Logger.err.println(reportName + ":");
+                    Runtime rt = Runtime.getRuntime();
+                    Writer logOutput = null;
 
-            if (mRequestBugreport) {
-                logOutput =
-                        new BufferedWriter(new FileWriter(new File(Environment
-                                .getLegacyExternalStorageDirectory(), reportName), true));
-            }
-            // pipe everything from process stdout -> System.err
-            InputStream inStream = p.getInputStream();
-            InputStreamReader inReader = new InputStreamReader(inStream);
-            BufferedReader inBuffer = new BufferedReader(inReader);
-            String s;
-            while ((s = inBuffer.readLine()) != null) {
-                if (mRequestBugreport) {
-                    try {
-                        // When no space left on the device the write will
-                        // occurs an I/O exception, so we needed to catch it
-                        // and continue to read the data of the sync pipe to
-                        // aviod the bugreport hang forever.
-                        logOutput.write(s);
-                        logOutput.write("\n");
-                    } catch (IOException e) {
-                        while(inBuffer.readLine() != null) {}
-                        Logger.err.println(e.toString());
-                        break;
+                    // Process must be fully qualified here because android.os.Process
+                    // is used elsewhere
+                    java.lang.Process p = Runtime.getRuntime().exec(command);
+
+                    if (mRequestBugreport) {
+                        logOutput =
+                                new BufferedWriter(new FileWriter(new File(Environment
+                                        .getLegacyExternalStorageDirectory(), reportName), true));
                     }
-                } else {
-                    Logger.err.println(s);
+                    // pipe everything from process stdout -> System.err
+                    InputStream inStream = p.getInputStream();
+                    InputStreamReader inReader = new InputStreamReader(inStream);
+                    BufferedReader inBuffer = new BufferedReader(inReader);
+                    String s;
+                    while ((s = inBuffer.readLine()) != null) {
+                        if (mRequestBugreport) {
+                            try {
+                                // When no space left on the device the write will
+                                // occurs an I/O exception, so we needed to catch it
+                                // and continue to read the data of the sync pipe to
+                                // aviod the bugreport hang forever.
+                                logOutput.write(s);
+                                logOutput.write("\n");
+                            } catch (IOException e) {
+                                while (inBuffer.readLine() != null) {
+                                }
+                                Logger.err.println(e.toString());
+                                break;
+                            }
+                        } else {
+                            Logger.err.println(s);
+                        }
+                    }
+
+                    int status = p.waitFor();
+                    Logger.err.println("// " + reportName + " status was " + status);
+
+                    if (logOutput != null) {
+                        logOutput.close();
+                    }
+                } catch (Exception e) {
+                    Logger.err.println("// Exception from " + reportName + ":");
+                    Logger.err.println(e.toString());
+                } finally {
+                    finished.set(true);
+                    synchronized (Monkey.this) {
+                        Monkey.this.notifyAll();
+                    }
                 }
             }
 
-            int status = p.waitFor();
-            Logger.err.println("// " + reportName + " status was " + status);
+        }.start();
 
-            if (logOutput != null) {
-                logOutput.close();
+        if (!finished.get()) {
+            synchronized (this) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                }
             }
-        } catch (Exception e) {
-            Logger.err.println("// Exception from " + reportName + ":");
-            Logger.err.println(e.toString());
         }
     }
 
