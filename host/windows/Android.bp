@@ -1,0 +1,65 @@
+cc_prebuilt_library_static {
+    name: "AdbWinApi",
+    srcs: ["prebuilt/usb/AdbWinApi.a"],
+
+    export_include_dirs: ["usb/api"],
+    host_supported: true,
+    device_supported: false,
+    compile_multilib: "32",
+    target: {
+        windows: {
+            enabled: true,
+        },
+        linux_glibc: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+}
+
+/*
+cc_prebuilt_binary {
+    name: "AdbWinApi",
+
+    arch: {
+        x86: {
+            srcs: ["AdbWinApi.dll"],
+        },
+    },
+
+    compile_multilib: "32",
+    target: {
+        windows: {
+            enabled: true,
+        },
+        linux_glibc: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+}
+*/
+
+cc_prebuilt_binary {
+    name: "AdbWinUsbApi",
+    srcs: ["prebuilt/usb/AdbWinUsbApi.dll"],
+
+    host_supported: true,
+    device_supported: false,
+    compile_multilib: "32",
+    target: {
+        windows: {
+            enabled: true,
+        },
+        linux_glibc: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+}
