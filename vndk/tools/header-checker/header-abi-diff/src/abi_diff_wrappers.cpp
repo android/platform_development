@@ -214,27 +214,43 @@ DiffWrapperBase::CompareRecordFields(
   // remove it from the removed fields if they're compatible.
   std::vector<const abi_util::RecordFieldIR *> removed_fields =
       abi_util::FindRemovedElements(old_fields_map, new_fields_map);
-  uint32_t i = 0;
-  for (auto &&removed_field : removed_fields) {
+  for (auto removed_field = removed_fields.begin();
+       removed_field != removed_fields.end(); ) {
     // For the removed field, get the corresponding offset from the old map.
     // Compare the fields from old map and new map if there's a direct diff,
     // continue, otherwise remove that field from the removed fields map.
-    uint64_t old_field_offset = removed_field->GetOffset();
+    uint64_t old_field_offset = (*removed_field)->GetOffset();
     auto corresponding_field_at_same_offset =
         new_fields_offset_map.find(old_field_offset);
     // Correctly reported as removed.
     if (corresponding_field_at_same_offset == new_fields_offset_map.end()) {
+      removed_field++;
       continue;
     }
     auto comparison_result = CompareCommonRecordFields(
-        removed_field, corresponding_field_at_same_offset->second,
+        *removed_field, corresponding_field_at_same_offset->second,
         type_queue, diff_kind);
     if (comparison_result != nullptr) {
+      removed_field++;
       continue;
     }
-    removed_fields.erase(removed_fields.begin() + i);
-    i++;
+    removed_field = removed_fields.erase(removed_field);
   }
+  auto predicate =
+      [&](const abi_util::RecordFieldIR *removed_field) {
+        uint64_t old_field_offset = removed_field->GetOffset();
+        auto corresponding_field_at_same_offset =
+            new_fields_offset_map.find(old_field_offset);
+        // Correctly reported as removed.
+        if (corresponding_field_at_same_offset == new_fields_offset_map.end()) {
+          return false;
+        }
+        auto comparison_result = CompareCommonRecordFields(
+            removed_field, corresponding_field_at_same_offset->second,
+            type_queue, diff_kind);
+        return (comparison_result == nullptr);
+      };
+  std::remove_if(removed_fields.begin(), removed_fields.end(), predicate);
   diffed_and_removed_fields.second = std::move(removed_fields);
   std::vector<std::pair<
       const abi_util::RecordFieldIR *, const abi_util::RecordFieldIR *>> cf =
