@@ -16,6 +16,29 @@
       "revId": "522c3a4aeded2e78075735c1291feac7bad91401",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9adf61b_05382f22",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-02T03:15:21Z",
+      "side": 1,
+      "message": "Fastboot will check and erase the partition before flashing",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 36
+      },
+      "revId": "522c3a4aeded2e78075735c1291feac7bad91401",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
