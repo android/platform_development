@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "37f50bef_276871c9",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-01-03T06:30:30Z",
+      "side": 1,
+      "message": "Please rename this to \"target_arch:\" as well as all variables for this.",
+      "range": {
+        "startLine": 287,
+        "startChar": 22,
+        "endLine": 287,
+        "endChar": 34
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "31185946_b8d1f4c3",
         "filename": "vndk/snapshot/utils.py",
         "patchSetId": 4
