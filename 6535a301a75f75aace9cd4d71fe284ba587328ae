@@ -22,6 +22,30 @@
       "revId": "6535a301a75f75aace9cd4d71fe284ba587328ae",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6924c026_de983ecb",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/abi_diff_wrappers.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-01-03T01:12:16Z",
+      "side": 1,
+      "message": "But this will lead to an O(n^2) algorithm in the worst case.  Check the algorithm of std::remove_if() and mimic it if you don\u0027t want to use std::remove_if().",
+      "parentUuid": "7ccddd1f_cd2953df",
+      "range": {
+        "startLine": 237,
+        "startChar": 4,
+        "endLine": 237,
+        "endChar": 56
+      },
+      "revId": "6535a301a75f75aace9cd4d71fe284ba587328ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
