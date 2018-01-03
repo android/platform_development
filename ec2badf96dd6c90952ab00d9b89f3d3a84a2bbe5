@@ -1,0 +1,947 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d958f61_fb602958",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "please provide a few comments for those different mounters and their use cases.\n\ne.g., I\u0027m not sure what\u0027s the usage of FolderMounter.",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 14,
+        "endChar": 31
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2903fbc9_c43695e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: please provide the exact command, so others can learn/verify this.",
+      "range": {
+        "startLine": 17,
+        "startChar": 6,
+        "endLine": 17,
+        "endChar": 52
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41db3632_083a546b",
+        "filename": "gsi/gsi_util/Android.bp",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: how about separate lines per module?\n\nBtw, I\u0027m adding this as well:\nhttps://android-review.googlesource.com/#/c/platform/development/+/571046/12/gsi/gsi_util/Android.bp",
+      "range": {
+        "startLine": 24,
+        "startChar": 2,
+        "endLine": 24,
+        "endChar": 32
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a68e9438_3b0e35b4",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "no need to have this?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "20cbec95_6b18de65",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "sort lexicographically?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce7d3169_7c845cc1",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "default",
+      "range": {
+        "startLine": 65,
+        "startChar": 56,
+        "endLine": 65,
+        "endChar": 62
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "016d25ac_2aff3e7a",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "no need this as this file isn\u0027t executable?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0dfa272d_27ddcfb6",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "handle or prepare seems not quite clear to me.\n\nMaybe just _extract_file()?",
+      "range": {
+        "startLine": 54,
+        "startChar": 6,
+        "endLine": 54,
+        "endChar": 26
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f808a042_f1f5946a",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "add a blank line between Args/Returns.",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 59,
+        "endChar": 11
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e12041e2_74773bff",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "Please add period or comma to separate those sentences.\n\nWhy not just return MounterFile() instance, without different variants?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 66
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e88844c_f756ca70",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: how about just get_file(filepath) as prepare_file seems a bit vague.",
+      "range": {
+        "startLine": 68,
+        "startChar": 6,
+        "endLine": 68,
+        "endChar": 18
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "addc358a_3ca3158b",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "The meaning of mapping file seems not quite clear to me.\n\nMaybe just \"Gets the file from a given image or a device\"?",
+      "range": {
+        "startLine": 69,
+        "startChar": 17,
+        "endLine": 69,
+        "endChar": 29
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5d58c56_62ddb7f3",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "maybe we can also require all mounters to return MounterFile() directly?",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 40
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44513d00_33dc1d24",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "how about if pathfile_in_mount already has \"/\"?\n\nFor path manipulation, let\u0027s use os.path.join(\u0027/\u0027, ...) instead.",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 47
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5488003_52c88c09",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: maybe \u0027mount_target\u0027?",
+      "range": {
+        "startLine": 53,
+        "startChar": 38,
+        "endLine": 53,
+        "endChar": 51
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a95d48ce_98639ea9",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "Please provides all possible values with examples.\n\ne.g., \u0027adb\u0027, a given folder or a given image to mount",
+      "range": {
+        "startLine": 58,
+        "startChar": 6,
+        "endLine": 58,
+        "endChar": 32
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "190c2b53_282e5e60",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: s/is a file/is a image file (just to be clear)",
+      "range": {
+        "startLine": 63,
+        "startChar": 50,
+        "endLine": 63,
+        "endChar": 54
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06f17702_f554a0de",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: Returns.",
+      "range": {
+        "startLine": 63,
+        "startChar": 6,
+        "endLine": 63,
+        "endChar": 12
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e24b8b22_f7346f7b",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "Let\u0027s add a period at the end of each line.\n\nhttps://google.github.io/styleguide/pyguide.html?showone\u003dNaming#Comments",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 71
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f42cd2b9_d8ce5991",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: SUPPORTED_PARTITIONS.",
+      "range": {
+        "startLine": 68,
+        "startChar": 28,
+        "endLine": 68,
+        "endChar": 46
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e07d07a5_cfc4b5cd",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "how about just use os.path.join()",
+      "range": {
+        "startLine": 75,
+        "startChar": 19,
+        "endLine": 75,
+        "endChar": 42
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c0307cbc_de6e85ad",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "better to use os.path.join()",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 42
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab278ccd_8792cead",
+        "filename": "gsi/gsi_util/gsi_util/mounters/folder_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "not sure what\u0027s the use case and/or who will be the user?",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 25
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e20a1c81_e074de74",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: add a blank line above.\n\nAlso, please add some comments to describe this module.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 34
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ef259f6_5fc854a7",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "how about rename this function to _make_parent_dirs().\n\nAnd add some comments on it:\n  Make parent directories as needed, no error if it exists.",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 31,
+        "endChar": 28
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b930dcb_4b87d105",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: file_path or file_path_in_mount.",
+      "range": {
+        "startLine": 44,
+        "startChar": 33,
+        "endLine": 44,
+        "endChar": 50
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4cf4b404_74964713",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "does",
+      "range": {
+        "startLine": 49,
+        "startChar": 26,
+        "endLine": 49,
+        "endChar": 28
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e9d7e64_91856c67",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "it seems copy_file(src, dst) is better to me.",
+      "range": {
+        "startLine": 53,
+        "startChar": 16,
+        "endLine": 53,
+        "endChar": 51
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ace15fca_35438f1f",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "will the caller need to invoke cleanup() to delete the file?\n\nIt seems we\u0027ll eventually delete the entire self._temp_dir on umount, so not sure what\u0027s the use case here.",
+      "range": {
+        "startLine": 59,
+        "startChar": 22,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ddd4ec72_80051236",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: returns.",
+      "range": {
+        "startLine": 74,
+        "startChar": 7,
+        "endLine": 74,
+        "endChar": 13
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0c9c4e7_54a42165",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "How about let image_utils.unsparse() to return a unsparsed_filename?\n\nunsparsed_filename \u003d image_utils.unsparse(self._image_filename).\n\n\nBtw, do we handle the case that the given system.img is already \u0027unsparsed\u0027?",
+      "range": {
+        "startLine": 94,
+        "startChar": 4,
+        "endLine": 98,
+        "endChar": 66
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7252062_4601e829",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "For constant, use \u0027_PLACEHOLDER_SYSTEM_AS_ROOT\u0027\n\nhttps://google.github.io/styleguide/pyguide.html?showone\u003dNaming#Naming",
+      "range": {
+        "startLine": 107,
+        "startChar": 23,
+        "endLine": 107,
+        "endChar": 44
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02ca4b97_942e9282",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: Removing",
+      "range": {
+        "startLine": 124,
+        "startChar": 21,
+        "endLine": 124,
+        "endChar": 27
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4932762b_e5a48f80",
+        "filename": "gsi/gsi_util/gsi_util/utils/adb_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: add a blank line above.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e07b41e8_fb03133c",
+        "filename": "gsi/gsi_util/gsi_util/utils/adb_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "https://google.github.io/styleguide/pyguide.html?showone\u003dComments#Comments\n\nAdd a period at the end.\n\nA doc string should be organized as a summary line (one physical line) terminated by a period, question mark, or exclamation point, ...",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 40
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ddeedbf3_ca6395bd",
+        "filename": "gsi/gsi_util/gsi_util/utils/adb_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "as there is no output and nor raise exception, if there is something wrong, can the end user know which errors?\n\nOr this function doesn\u0027t need to interact with the end user?\nIf so, possible add the doc string a bit.\n\ne.g., possible outputs:\n  1. error: device \u0027(null)\u0027 not found\n  2. adbd cannot run as root in production builds\n  3. adbd is already running as root\n  ...",
+      "range": {
+        "startLine": 28,
+        "startChar": 23,
+        "endLine": 28,
+        "endChar": 37
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2db9229_668b6a92",
+        "filename": "gsi/gsi_util/gsi_util/utils/image_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "nit: add a blank line above.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d70fbd10_4c10a5ba",
+        "filename": "gsi/gsi_util/gsi_util/utils/image_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "If it\u0027s common to log the command before run_command, we can add this into run_command(). So you don\u0027t need those logging.debug() in each function.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fac312d_d27f3f6b",
+        "filename": "gsi/gsi_util/gsi_util/utils/image_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "this seems a general function and is better to be in file_utils? Btw, it seems copy_file(src, dst) is more intuitive to me.",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d06e4ad_8f67b077",
+        "filename": "gsi/gsi_util/gsi_util/utils/image_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "how about using https://docs.python.org/2/library/shutil.html#shutil.copyfile ?\n\nMy thought is try to avoid using native Linux command if possible.",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 43
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "56654301_0b4c9665",
+        "filename": "gsi/gsi_util/gsi_util/utils/image_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-03T10:01:00Z",
+      "side": 1,
+      "message": "maybe use https://docs.python.org/2/library/os.html#os.chmod ?",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 49
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
