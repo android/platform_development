@@ -104,11 +104,12 @@ class LinkableMessageIR {
 
 class BasicTypeInfoIR {
  public:
-  BasicTypeInfoIR(const std::string &name, const std::string &type,
+  BasicTypeInfoIR(const std::string &name, const std::string &referenced_type,
+                  const std::string &self_type,
                   const std::string linker_set_key, uint64_t size,
                   uint32_t alignment)
-      : name_(name), referenced_type_(type), linker_set_key_(linker_set_key) ,
-        size_(size), alignment_(alignment) { }
+      : name_(name), referenced_type_(referenced_type), self_type_(self_type),
+        linker_set_key_(linker_set_key), size_(size), alignment_(alignment) { }
 
   BasicTypeInfoIR() { }
 
@@ -119,9 +120,10 @@ class BasicTypeInfoIR {
  protected:
   std::string name_;
   std::string referenced_type_;
+  std::string self_type_;
   std::string linker_set_key_;
-  uint64_t size_;
-  uint32_t alignment_;
+  uint64_t size_ = 0;
+  uint32_t alignment_ = 0;
 };
 
 // TODO: Break this up into types with sizes and those without types ?
@@ -135,12 +137,20 @@ class TypeIR : public LinkableMessageIR {
     return name_;
   }
 
-  void SetReferencedType(const std::string &type) {
-    referenced_type_ = type;
+  void SetReferencedType(const std::string &referenced_type) {
+    referenced_type_ = referenced_type;
   }
 
   const std::string &GetReferencedType() const {
     return referenced_type_;
+  }
+
+  void SetSelfType(const std::string &self_type) {
+    self_type_ = self_type;
+  }
+
+  const std::string &GetSelfType() const {
+    return self_type_;
   }
 
   void SetSize(uint64_t size) {
@@ -160,8 +170,9 @@ class TypeIR : public LinkableMessageIR {
  protected:
   std::string name_;
   std::string referenced_type_;
-  uint64_t size_;
-  uint32_t alignment_;
+  std::string self_type_;
+  uint64_t size_ = 0;
+  uint32_t alignment_ = 0;
 };
 
 class TagTypeIR {
@@ -211,7 +222,7 @@ class VTableComponentIR {
  protected:
   std::string component_name_;
   Kind kind_;
-  int64_t value_;
+  int64_t value_ = 0;
 };
 
 class VTableLayoutIR {
@@ -332,7 +343,7 @@ class RecordFieldIR {
  protected:
   std::string name_;
   std::string referenced_type_;
-  uint64_t offset_;
+  uint64_t offset_ = 0;
   AccessSpecifierIR access_;
 };
 
@@ -430,7 +441,7 @@ class EnumFieldIR {
 
  protected:
   std::string name_;
-  int value_;
+  int value_ = 0;
 };
 
 class EnumTypeIR : public TypeIR, public TagTypeIR {
@@ -514,8 +525,8 @@ class BuiltinTypeIR : public TypeIR {
   }
 
  protected:
-  bool is_unsigned_;
-  bool is_integral_type_;
+  bool is_unsigned_ = false;
+  bool is_integral_type_ = false;
 };
 
 class LvalueReferenceTypeIR : public TypeIR {
@@ -621,7 +632,7 @@ class ParamIR {
 
  protected:
   std::string referenced_type_;
-  bool is_default_;
+  bool is_default_ = false;
 };
 
 class FunctionIR : public LinkableMessageIR, public TemplatedArtifactIR {
@@ -719,6 +730,8 @@ class IRDumper {
   virtual bool AddLinkableMessageIR(const LinkableMessageIR *) = 0;
 
   virtual bool AddElfSymbolMessageIR(const ElfSymbolIR *) = 0;
+
+  virtual void AddMaxTypeId(uint64_t max_type_id) = 0;
 
   virtual bool Dump() = 0;
 
@@ -826,7 +839,6 @@ class TextFormatToIRReader {
     augend->insert(std::make_move_iterator(addend.begin()),
                    std::make_move_iterator(addend.end()));
   }
-
   AbiElementMap<FunctionIR> functions_;
   AbiElementMap<GlobalVarIR> global_variables_;
   AbiElementMap<RecordTypeIR> record_types_;

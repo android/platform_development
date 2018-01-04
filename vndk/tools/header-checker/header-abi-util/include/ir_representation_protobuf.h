@@ -304,6 +304,8 @@ class ProtobufIRDumper : public IRDumper, public IRToProtobufConverter {
 
   bool AddElfSymbolMessageIR(const ElfSymbolIR *) override;
 
+  void AddMaxTypeId(uint64_t max_type_id) override;
+
   bool Dump() override;
 
   ~ProtobufIRDumper() override { }

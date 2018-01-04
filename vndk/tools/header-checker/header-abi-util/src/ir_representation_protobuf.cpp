@@ -368,6 +368,7 @@ bool IRToProtobufConverter::AddTypeInfo(
   type_info->set_size(typep->GetSize());
   type_info->set_alignment(typep->GetAlignment());
   type_info->set_referenced_type(typep->GetReferencedType());
+  type_info->set_self_type(typep->GetSelfType());
   return true;
 }
 
@@ -944,6 +945,10 @@ bool ProtobufIRDumper::AddLinkableMessageIR (const LinkableMessageIR *lm) {
       return AddFunctionIR(static_cast<const FunctionIR*>(lm));
   }
   return false;
+}
+
+void ProtobufIRDumper::AddMaxTypeId (uint64_t max_type_id) {
+  tu_ptr_->set_max_type_id(max_type_id);
 }
 
 bool ProtobufIRDumper::AddElfFunctionIR(const ElfFunctionIR *elf_function) {

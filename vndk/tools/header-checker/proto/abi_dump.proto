@@ -22,6 +22,7 @@ message BasicNamedAndTypedDecl {
   optional string referenced_type = 4;
   optional string source_file = 5;
   optional string linker_set_key = 6;
+  optional string self_type = 7;
 }
 
 message ArrayType {
@@ -172,4 +173,5 @@ message TranslationUnit {
   repeated GlobalVarDecl global_vars = 10;
   repeated ElfFunction elf_functions = 11;
   repeated ElfObject elf_objects = 12;
+  optional uint64 max_type_id = 13 [default = 0];
 }
