@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48ddc3fd_2c3dbdc7",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-04T15:50:28Z",
+      "side": 1,
+      "message": "this could be a convention for all sub commands.",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 32
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "acb729d6_ddb4dbab",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-04T15:50:28Z",
+      "side": 1,
+      "message": "It took me some time to understand the source should be a full path ( \u0027system/etc/something\u0027 ). Maybe an example in desc?",
+      "range": {
+        "startLine": 58,
+        "startChar": 28,
+        "endLine": 58,
+        "endChar": 34
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b15c2e54_b6404650",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-04T15:50:28Z",
+      "side": 1,
+      "message": "this looks good to me, but probably you would like to consider @abstractmethod",
+      "range": {
+        "startLine": 107,
+        "startChar": 10,
+        "endLine": 107,
+        "endChar": 29
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59adb45a_c9243d27",
+        "filename": "gsi/gsi_util/gsi_util/utils/adb_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-04T15:50:28Z",
+      "side": 1,
+      "message": "Maybe future work: adb -s device id?",
+      "range": {
+        "startLine": 36,
+        "startChar": 15,
+        "endLine": 36,
+        "endChar": 19
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
