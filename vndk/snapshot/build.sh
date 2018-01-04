@@ -17,6 +17,7 @@
 
 export TARGET_BUILD_VARIANT=user
 export BOARD_VNDK_VERSION=current
+export BOARD_VNDK_RUNTIME_DISABLE=false
 
 echo "-----Generating VNDK snapshot for arm64-armv8-a"
 make -j vndk dist TARGET_PRODUCT=aosp_arm64_ab
