@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "493a1131_f3ca71a8",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T07:27:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "170cf583_d9d55ad3",
+      "range": {
+        "startLine": 49,
+        "startChar": 47,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "37f50bef_276871c9",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 4
@@ -93,6 +117,30 @@
       "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5407594_303f53c9",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T07:27:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37f50bef_276871c9",
+      "range": {
+        "startLine": 287,
+        "startChar": 22,
+        "endLine": 287,
+        "endChar": 34
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -167,6 +215,30 @@
     },
     {
       "key": {
+        "uuid": "e2634835_9e076c33",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T07:27:56Z",
+      "side": 1,
+      "message": "Unfortunately the PLATFORM_VNDK_VERSION of the snapshot branch is not available in the install branch. Removed this function and instead found the etc file paths with glob.glob using wildcard pattern match in gen_buildfiles.py.",
+      "parentUuid": "45775dc7_49bb8f17",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 53
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "488cef6e_dc4dd33b",
         "filename": "vndk/snapshot/utils.py",
         "patchSetId": 4
@@ -211,6 +283,30 @@
       "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b3e36c8_dab6feff",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T07:27:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67791ee9_0215ce8a",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 62
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
