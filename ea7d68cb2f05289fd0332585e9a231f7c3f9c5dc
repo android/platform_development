@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "170cf583_d9d55ad3",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-01-04T03:17:57Z",
+      "side": 1,
+      "message": "These files are not used on runtime and not captured as a snapshot. So, we don\u0027t need to handle these files with version suffix.",
+      "parentUuid": "7f979c61_a9d42d3b",
+      "range": {
+        "startLine": 49,
+        "startChar": 47,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "37f50bef_276871c9",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 4
@@ -107,6 +131,30 @@
       "side": 1,
       "message": "The reason why the version is extracted in this way instead of assuming $VERSION to be the same as the $VERSION from prebuilts/vndk/v$VERSION is to support the case when a user wants to install a snapshot built from a branch where PLATFORM_VERSION_CODENAME has not been set to REL yet (for development purposes), so the etc_suffix is *.$PLATFORM_SDK_VERSION.txt (e.g. *.P.txt instead of *.28.txt, this is not an issue in O-MR1 because the suffix is always *.txt). Perhaps it could be argued that we shouldn\u0027t hard code this support in the code though...what are your thoughts?",
       "parentUuid": "31185946_b8d1f4c3",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 53
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45775dc7_49bb8f17",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-01-04T03:17:57Z",
+      "side": 1,
+      "message": "We have PLATFORM_VNDK_VERSION for this use. It will be a CODE_NAME before release, and be a SDK_VERSION after release. It is not available for O-MR1 though.",
+      "parentUuid": "f0deb85d_4e383612",
       "range": {
         "startLine": 57,
         "startChar": 0,
