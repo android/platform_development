@@ -387,6 +387,52 @@
     },
     {
       "key": {
+        "uuid": "dfbe7041_249645f0",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:51:43Z",
+      "side": 1,
+      "message": "how about:\n\n\"\"\"\nCompositeMounters class implementation.\n  \nCompositeMounters implements a BaseMounter interface but can add \nmultiple mounters inside, including AdbMounter, ImageMounter and/or \nFolderMounter.\n\"\"\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 80
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e334c2ae_959c93d1",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:51:43Z",
+      "side": 1,
+      "message": "nit: maybe can consider adding \u0027s\u0027, to clearly indicates this contains mounters. e.g., CompositeMounters or MounterContainer",
+      "range": {
+        "startLine": 46,
+        "startChar": 6,
+        "endLine": 46,
+        "endChar": 22
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ebfa2d7_891bc7b1",
         "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
         "patchSetId": 10
@@ -403,6 +449,29 @@
         "startChar": 2,
         "endLine": 49,
         "endChar": 22
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a52399d4_bd290cd4",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:51:43Z",
+      "side": 1,
+      "message": "nit: add_mounter()",
+      "range": {
+        "startLine": 102,
+        "startChar": 6,
+        "endLine": 102,
+        "endChar": 9
       },
       "revId": "16749a33ddde60787379340f704b43536affbb0b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
