@@ -2,6 +2,230 @@
   "comments": [
     {
       "key": {
+        "uuid": "d8df9e13_620b813a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "Maybe give more details of different mounters here.\n\n  1. image_mounter: used to mount an image file, e.g., system.img\n  2. adb_mounter: used to get files via adb from a running device\n  3. folder_mounter: used to get the files from a folder, usually $OUT in the build env",
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acb3015_54d20956",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "implementations",
+      "range": {
+        "startLine": 15,
+        "startChar": 49,
+        "endLine": 15,
+        "endChar": 64
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6db1c5c9_79f524c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "\u0027the same\u0027 seems better?",
+      "range": {
+        "startLine": 18,
+        "startChar": 5,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71fa3aab_59112472",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "s/an/a",
+      "range": {
+        "startLine": 19,
+        "startChar": 46,
+        "endLine": 19,
+        "endChar": 48
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0069076b_a89b89e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "\u0027with an unique interface\u0027 seems redundant?",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 33
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6173e96f_fdda03df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "nit: or just $OUT/system",
+      "range": {
+        "startLine": 27,
+        "startChar": 30,
+        "endLine": 27,
+        "endChar": 50
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "869f3eb9_980d3f11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "the?",
+      "range": {
+        "startLine": 29,
+        "startChar": 46,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b406b87_b25507ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "nit: \u0027see reference\u0027 or \u0027refer to\u0027",
+      "range": {
+        "startLine": 32,
+        "startChar": 22,
+        "endLine": 32,
+        "endChar": 31
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a50fb0df_3fcbe85a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "s/detail/detailed",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 14
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "419ee602_69d8811f",
+        "filename": "gsi/gsi_util/Android.bp",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "nit: sort this if possible",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 10
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "48ddc3fd_2c3dbdc7",
         "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
         "patchSetId": 10
@@ -48,6 +272,98 @@
     },
     {
       "key": {
+        "uuid": "384eb5d0_e9710174",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "s/in given image./in the given image\n\nseems usually no \u0027.\u0027 at the end of help\u003d\u0027\u0027",
+      "range": {
+        "startLine": 58,
+        "startChar": 63,
+        "endLine": 58,
+        "endChar": 78
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3ff7c21_a1274d82",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "Let\u0027s add a bit more description here, as AdbMounter doesn\u0027t provide much info.\n\ne.g., \n\"\"\"\nAdbMounter class implementation.\n  \nThe AdbMounter implements the common interfaces defined in BaseMounter,\nto get files from a running device through the adb connection.\n\"\"\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 28
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b14ce4c8_95458a2f",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "Maybe we can consider adding a decorator for this.\n\nThis isn\u0027t urgent and we can do that separately (I can do that later).\n\nhttps://stackoverflow.com/questions/1167617/in-python-how-do-i-indicate-im-overriding-a-method",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 12
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "411c6d46_ef2bdfe2",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "e.g.,",
+      "range": {
+        "startLine": 46,
+        "startChar": 31,
+        "endLine": 46,
+        "endChar": 34
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b15c2e54_b6404650",
         "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
         "patchSetId": 10
@@ -71,6 +387,98 @@
     },
     {
       "key": {
+        "uuid": "7ebfa2d7_891bc7b1",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "nit: _SUPPORTED_PARTITIONS (adding S)",
+      "range": {
+        "startLine": 49,
+        "startChar": 2,
+        "endLine": 49,
+        "endChar": 22
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37c733e0_710143fa",
+        "filename": "gsi/gsi_util/gsi_util/mounters/folder_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "nit:\n\n\"\"\"\nProvides class FolderMounter.\n  \nThe FolderMounter implements the common interfaces defined in BaseMounter,\nto get files from a given folder. usually the $OUT folder in an Android\nbuild envrionment.\n\"\"\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 35
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6c66e314_f0a56280",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "\"\"\"\nProvides class ImageMounter.\n  \nThe ImageMounter implements the common interfaces defined in BaseMounter,\nto get files from an image file. e.g., system.img or vendor.img.\n\"\"\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 34
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c31ecc13_7c1272fd",
+        "filename": "gsi/gsi_util/gsi_util/utils/adb_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "no need for this as this file is 644.\n\nusually we use #!/usr/bin/env python + 755 (need +x) to make a executable .py",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59adb45a_c9243d27",
         "filename": "gsi/gsi_util/gsi_util/utils/adb_utils.py",
         "patchSetId": 10
@@ -87,6 +495,29 @@
         "startChar": 15,
         "endLine": 36,
         "endChar": 19
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "031f6606_5e0030d0",
+        "filename": "gsi/gsi_util/gsi_util/utils/image_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-04T16:29:15Z",
+      "side": 1,
+      "message": "same here, could be removed.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
       },
       "revId": "16749a33ddde60787379340f704b43536affbb0b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
