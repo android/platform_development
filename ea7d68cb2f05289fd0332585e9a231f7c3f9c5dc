@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f979c61_a9d42d3b",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T02:09:25Z",
+      "side": 1,
+      "message": "vndkcore.libraries.txt and vndkprivate.libraries.txt are not ETC prebuilts (that get installed to /system/etc/) but config files generated specifically for the VNDK snapshot in core/tasks/vndk.mk. I guess we could add $PLATFORM_VNDK_VERSION in the suffix for these files as well to match the naming convention of the other ETC files...would that be preferred?",
+      "parentUuid": "315f7c45_af0cae36",
+      "range": {
+        "startLine": 49,
+        "startChar": 47,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "37f50bef_276871c9",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 4
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "f0deb85d_4e383612",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T02:09:25Z",
+      "side": 1,
+      "message": "The reason why the version is extracted in this way instead of assuming $VERSION to be the same as the $VERSION from prebuilts/vndk/v$VERSION is to support the case when a user wants to install a snapshot built from a branch where PLATFORM_VERSION_CODENAME has not been set to REL yet (for development purposes), so the etc_suffix is *.$PLATFORM_SDK_VERSION.txt (e.g. *.P.txt instead of *.28.txt, this is not an issue in O-MR1 because the suffix is always *.txt). Perhaps it could be argued that we shouldn\u0027t hard code this support in the code though...what are your thoughts?",
+      "parentUuid": "31185946_b8d1f4c3",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 53
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "488cef6e_dc4dd33b",
         "filename": "vndk/snapshot/utils.py",
         "patchSetId": 4
@@ -82,6 +130,30 @@
       "writtenOn": "2017-12-29T09:22:13Z",
       "side": 1,
       "message": "I don\u0027t like this. The target names used to build snapshots are directly shown here and thus this script became dependent to the names. Can we just have prebuilts/vndk/v27/$(TARGET_ARCH) from the moment when we create the snapshots?",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 62
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67791ee9_0215ce8a",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T02:09:25Z",
+      "side": 1,
+      "message": "Sounds good, I modified vndk.mk to apply your suggestion in the relevant CL.",
+      "parentUuid": "488cef6e_dc4dd33b",
       "range": {
         "startLine": 73,
         "startChar": 0,
@@ -114,6 +186,30 @@
       "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ace9452f_f65378fa",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-04T02:09:25Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e2a74c2c_4c5ccbd1",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 78
+      },
+      "revId": "ea7d68cb2f05289fd0332585e9a231f7c3f9c5dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
