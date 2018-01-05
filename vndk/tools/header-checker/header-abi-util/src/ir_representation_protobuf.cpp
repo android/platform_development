@@ -40,6 +40,7 @@ void ProtobufTextFormatToIRReader::ReadTypeInfo(
   typep->SetName(type_info.linker_set_key());
   typep->SetSourceFile(type_info.source_file());
   typep->SetReferencedType(type_info.referenced_type());
+  typep->SetSelfType(type_info.self_type());
   typep->SetSize(type_info.size());
   typep->SetAlignment(type_info.alignment());
 }
@@ -53,7 +54,10 @@ bool ProtobufTextFormatToIRReader::ReadDump(const std::string &dump_file) {
     llvm::errs() << "Failed to parse protobuf TextFormat file\n";
     return false;
   }
-
+  // TODO: These should really return IR elements and then we should be updating maps
+  // Otherwise each text format has to add to maps which is duplicating code
+  // But, but, that'd make reading slower, and that is a performance
+  // critical operation during linking.
   ReadFunctions(tu);
   ReadGlobalVariables(tu);
 
@@ -210,8 +214,8 @@ void ProtobufTextFormatToIRReader::ReadPointerTypes(
     if (!IsPresentInExportedHeaders(pointer_type_ir, exported_headers_)) {
       continue;
     }
-    pointer_types_.insert(
-        {pointer_type_ir.GetLinkerSetKey(), std::move(pointer_type_ir)});
+    AddToMapAndTypeGraph(std::move(pointer_type_ir), &pointer_types_,
+                         &type_graph_);
   }
 }
 
@@ -222,8 +226,8 @@ void ProtobufTextFormatToIRReader::ReadBuiltinTypes(
     ReadTypeInfo(builtin_type_protobuf.type_info(), &builtin_type_ir);
     builtin_type_ir.SetSignedness(builtin_type_protobuf.is_unsigned());
     builtin_type_ir.SetIntegralType(builtin_type_protobuf.is_integral());
-    builtin_types_.insert(
-        {builtin_type_ir.GetLinkerSetKey(), std::move(builtin_type_ir)});
+    AddToMapAndTypeGraph(std::move(builtin_type_ir), &builtin_types_,
+                         &type_graph_);
   }
 }
 
@@ -239,8 +243,8 @@ void ProtobufTextFormatToIRReader::ReadQualifiedTypes(
     if (!IsPresentInExportedHeaders(qualified_type_ir, exported_headers_)) {
       continue;
     }
-    qualified_types_.insert(
-        {qualified_type_ir.GetLinkerSetKey(), std::move(qualified_type_ir)});
+    AddToMapAndTypeGraph(std::move(qualified_type_ir), &qualified_types_,
+                         &type_graph_);
   }
 }
 
@@ -252,8 +256,8 @@ void ProtobufTextFormatToIRReader::ReadArrayTypes(
     if (!IsPresentInExportedHeaders(array_type_ir, exported_headers_)) {
       continue;
     }
-    array_types_.insert(
-        {array_type_ir.GetLinkerSetKey(), std::move(array_type_ir)});
+    AddToMapAndTypeGraph(std::move(array_type_ir), &array_types_,
+                         &type_graph_);
   }
 }
 
@@ -267,9 +271,8 @@ void ProtobufTextFormatToIRReader::ReadLvalueReferenceTypes(
                                     exported_headers_)) {
       continue;
     }
-    lvalue_reference_types_.insert(
-        {lvalue_reference_type_ir.GetLinkerSetKey(),
-          std::move(lvalue_reference_type_ir)});
+    AddToMapAndTypeGraph(std::move(lvalue_reference_type_ir),
+                         &lvalue_reference_types_, &type_graph_);
   }
 }
 
@@ -283,9 +286,8 @@ void ProtobufTextFormatToIRReader::ReadRvalueReferenceTypes(
                                     exported_headers_)) {
       continue;
     }
-    rvalue_reference_types_.insert(
-        {rvalue_reference_type_ir.GetLinkerSetKey(),
-          std::move(rvalue_reference_type_ir)});
+    AddToMapAndTypeGraph(std::move(rvalue_reference_type_ir),
+                         &rvalue_reference_types_, &type_graph_);
   }
 }
 
@@ -307,8 +309,10 @@ void ProtobufTextFormatToIRReader::ReadRecordTypes(
     if (!IsPresentInExportedHeaders(record_type_ir, exported_headers_)) {
       continue;
     }
-    record_types_.insert(
-        {record_type_ir.GetLinkerSetKey(), std::move(record_type_ir)});
+    auto it = AddToMapAndTypeGraph(std::move(record_type_ir), &record_types_,
+                                   &type_graph_);
+    std::string key = it->second.GetUniqueId() + it->second.GetSourceFile();
+    AddToODRListMap(key, &(it->second));
   }
 }
 
@@ -319,8 +323,10 @@ void ProtobufTextFormatToIRReader::ReadEnumTypes(
     if (!IsPresentInExportedHeaders(enum_type_ir, exported_headers_)) {
       continue;
     }
-    enum_types_.insert(
-        {enum_type_ir.GetLinkerSetKey(), std::move(enum_type_ir)});
+    auto it = AddToMapAndTypeGraph(std::move(enum_type_ir), &enum_types_,
+                                   &type_graph_);
+    AddToODRListMap(it->second.GetUniqueId() + it->second.GetSourceFile(),
+                    (&it->second));
   }
 }
 

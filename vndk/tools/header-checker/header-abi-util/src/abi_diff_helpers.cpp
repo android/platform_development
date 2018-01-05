@@ -5,6 +5,8 @@
 
 namespace abi_util {
 
+using FastDiffDecision = AbiDiffHelper::FastDiffDecision;
+
 std::string Unwind(const std::deque<std::string> *type_queue) {
   if (!type_queue) {
     return "";
@@ -507,14 +509,45 @@ static DiffStatus CompareDistinctKindMessages(
   return DiffStatus::direct_diff;
 }
 
+FastDiffDecision AbiDiffHelper::GetFastDiffDecision(
+    const std::string &old_type_id, const std::string &new_type_id) {
+  if (!local_to_global_type_id_map_) {
+    // The check is not possible.
+    return FastDiffDecision(false);
+  }
+  auto it = local_to_global_type_id_map_->find(new_type_id);
+  if (it == local_to_global_type_id_map_->end()) {
+    // The node hasn't been visited yet.
+    return FastDiffDecision(false);
+  }
+  // The type was completely added to the parent type graph if was_newly_added_
+  // is true and the type_id_ is also present in the parent graph.
+  const std::string &global_type_id_for_local_type = it->second.type_id_;
+  auto global_it = old_types_.find(global_type_id_for_local_type);
+  if (global_it != old_types_.end()) {
+    if (it->second.was_newly_added_) {
+      return FastDiffDecision(true, DiffStatus::direct_diff);
+    } else if (old_type_id == global_type_id_for_local_type) {
+      return FastDiffDecision(true, DiffStatus::no_diff);
+    }
+  }
+  return FastDiffDecision(false);
+}
+
 DiffStatus AbiDiffHelper::CompareAndDumpTypeDiff(
     const std::string &old_type_str, const std::string &new_type_str,
     std::deque<std::string> *type_queue,
     abi_util::DiffMessageIR::DiffKind diff_kind) {
-  // If either of the types are not found in their respective maps, the type
-  // was not exposed in a public header and we do a simple string comparison.
-  // Any diff found using a simple string comparison will be a direct diff.
 
+  // If the old type was newly added (completely, not proactively) to the parent
+  // type graph, it is a direct diff (otherwise, it would not have been added in
+  // the first place)
+  FastDiffDecision fast_diff_decision =
+      GetFastDiffDecision(old_type_str, new_type_str);
+
+  if (fast_diff_decision.was_decision_taken_) {
+    //return fast_diff_decision.diff_decision_;
+  }
   // Check the map for type ids which have already been compared
   // These types have already been diffed, return without further comparison.
   if (!type_cache_->insert(old_type_str + new_type_str).second) {

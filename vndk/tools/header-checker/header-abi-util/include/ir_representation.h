@@ -14,19 +14,32 @@
 #ifndef IR_
 #define IR_
 
+#include <cassert>
 #include <map>
+#include <unordered_map>
+#include <memory>
+#include <list>
 #include <regex>
 #include <set>
 #include <string>
 #include <vector>
-#include <memory>
 
 // Classes which act as middle-men between clang AST parsing routines and
 // message format specific dumpers.
 namespace abi_util {
 
+// TODO: Diffing could really do well with using unordered_maps instead of order
+// ones, to find out common differences, use nother type: ordered map for
+// functions and global variables. Faster for referred-type-id -> referring type
+// lookup as well.
 template <typename T>
 using AbiElementMap = std::map<std::string, T>;
+
+template <typename T>
+using AbiElementUnorderedMap = std::unordered_map<std::string, T>;
+
+template <typename T>
+using AbiElementList = std::list<T>;
 
 enum TextFormatIR {
   ProtobufTextFormat = 0,
@@ -92,12 +105,10 @@ class LinkableMessageIR {
   }
 
   virtual LinkableMessageKind GetKind() const = 0;
-
-  virtual ~LinkableMessageIR() {}
-
+  virtual ~LinkableMessageIR() { };
  protected:
   // The source file where this message comes from. This will be an empty string
-  // for built-in types
+  // for built-in types.
   std::string source_file_;
   std::string linker_set_key_;
 };
@@ -126,17 +137,8 @@ class BasicTypeInfoIR {
   uint32_t alignment_ = 0;
 };
 
-// TODO: Break this up into types with sizes and those without types ?
-class TypeIR : public LinkableMessageIR {
+class ReferencesOtherType {
  public:
-  void SetName(const std::string &name) {
-    name_ = name;
-  }
-
-  const std::string &GetName() const {
-    return name_;
-  }
-
   void SetReferencedType(const std::string &referenced_type) {
     referenced_type_ = referenced_type;
   }
@@ -145,12 +147,36 @@ class TypeIR : public LinkableMessageIR {
     return referenced_type_;
   }
 
+  ReferencesOtherType(const std::string &referenced_type)
+      : referenced_type_(referenced_type) { }
+
+  ReferencesOtherType(std::string &&referenced_type)
+      : referenced_type_(std::move(referenced_type)) { }
+
+  ReferencesOtherType() { }
+
+ protected:
+  std::string referenced_type_;
+};
+
+// TODO: Break this up into types with sizes and those without types ?
+class TypeIR : public LinkableMessageIR , public ReferencesOtherType {
+ public:
+
   void SetSelfType(const std::string &self_type) {
     self_type_ = self_type;
   }
 
   const std::string &GetSelfType() const {
     return self_type_;
+  }
+
+  void SetName(const std::string &name) {
+    name_ = name;
+  }
+
+  const std::string &GetName() const {
+    return name_;
   }
 
   void SetSize(uint64_t size) {
@@ -165,11 +191,11 @@ class TypeIR : public LinkableMessageIR {
   uint32_t GetAlignment() const {
     return alignment_;
   }
-  ~TypeIR() override { }
+
+  virtual ~TypeIR() { }
 
  protected:
   std::string name_;
-  std::string referenced_type_;
   std::string self_type_;
   uint64_t size_ = 0;
   uint32_t alignment_ = 0;
@@ -243,17 +269,13 @@ class VTableLayoutIR {
   std::vector<VTableComponentIR> vtable_components_;
 };
 
-class CXXBaseSpecifierIR {
+class CXXBaseSpecifierIR : public ReferencesOtherType {
  public:
   CXXBaseSpecifierIR(const std::string &type, bool is_virtual,
                      AccessSpecifierIR access) :
-    referenced_type_(type), is_virtual_(is_virtual), access_(access) { }
+    ReferencesOtherType(type), is_virtual_(is_virtual), access_(access) { }
 
   CXXBaseSpecifierIR() { }
-
-  const std::string &GetReferencedType() const {
-    return referenced_type_;
-  }
 
   bool IsVirtual() const {
     return is_virtual_;
@@ -264,27 +286,19 @@ class CXXBaseSpecifierIR {
   }
 
  protected:
-  std::string referenced_type_;
   bool is_virtual_;
   AccessSpecifierIR access_;
 };
 
-class TemplateElementIR {
+class TemplateElementIR : public ReferencesOtherType {
  public:
   TemplateElementIR(std::string &&type)
-      : referenced_type_(std::move(type)) { }
+      : ReferencesOtherType(std::move(type)) { }
 
   TemplateElementIR(const std::string &type)
-      : referenced_type_(type) { }
+      : ReferencesOtherType(type) { }
 
   TemplateElementIR() { }
-
-  const std::string &GetReferencedType() const {
-    return referenced_type_;
-  }
-
- protected:
-  std::string referenced_type_;
 };
 
 class TemplateInfoIR {
@@ -294,6 +308,10 @@ class TemplateInfoIR {
   }
 
   const std::vector<TemplateElementIR> &GetTemplateElements() const {
+    return template_elements_;
+  }
+
+  std::vector<TemplateElementIR> &GetTemplateElements() {
     return template_elements_;
   }
 
@@ -311,25 +329,25 @@ class TemplatedArtifactIR {
     return template_info_.GetTemplateElements();
   }
 
+  std::vector<TemplateElementIR> &GetTemplateElements() {
+    return template_info_.GetTemplateElements();
+  }
+
  protected:
   TemplateInfoIR template_info_;
 };
 
-class RecordFieldIR {
+class RecordFieldIR : public ReferencesOtherType {
  public:
   RecordFieldIR(const std::string &name, const std::string &type,
                 uint64_t offset, AccessSpecifierIR access)
-      : name_(name), referenced_type_(type), offset_(offset),
+      : ReferencesOtherType(type), name_(name), offset_(offset),
         access_(access) { }
 
   RecordFieldIR() { }
 
   const std::string &GetName() const {
     return name_;
-  }
-
-  const std::string &GetReferencedType() const {
-    return referenced_type_;
   }
 
   uint64_t GetOffset() const {
@@ -342,7 +360,6 @@ class RecordFieldIR {
 
  protected:
   std::string name_;
-  std::string referenced_type_;
   uint64_t offset_ = 0;
   AccessSpecifierIR access_;
 };
@@ -384,6 +401,10 @@ class RecordTypeIR: public TypeIR, public TemplatedArtifactIR,
     return bases_;
   }
 
+  std::vector<CXXBaseSpecifierIR> &GetBases() {
+    return bases_;
+  }
+
   void SetAccess(AccessSpecifierIR access) { access_ = access;}
 
   AccessSpecifierIR GetAccess() const {
@@ -394,7 +415,11 @@ class RecordTypeIR: public TypeIR, public TemplatedArtifactIR,
     return fields_;
   }
 
-  LinkableMessageKind GetKind() const override {
+  std::vector<RecordFieldIR> &GetFields() {
+    return fields_;
+  }
+
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::RecordTypeKind;
   }
 
@@ -453,7 +478,7 @@ class EnumTypeIR : public TypeIR, public TagTypeIR {
 
   void SetAccess(AccessSpecifierIR access) { access_ = access;}
 
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::EnumTypeKind;
   }
 
@@ -489,14 +514,14 @@ class EnumTypeIR : public TypeIR, public TagTypeIR {
 
 class ArrayTypeIR : public TypeIR {
  public:
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::ArrayTypeKind;
   }
 };
 
 class PointerTypeIR : public TypeIR {
  public:
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::PointerTypeKind;
   }
 };
@@ -520,7 +545,7 @@ class BuiltinTypeIR : public TypeIR {
   }
 
  public:
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::BuiltinTypeKind;
   }
 
@@ -531,14 +556,14 @@ class BuiltinTypeIR : public TypeIR {
 
 class LvalueReferenceTypeIR : public TypeIR {
  public:
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::LvalueReferenceTypeKind;
   }
 };
 
 class RvalueReferenceTypeIR : public TypeIR {
  public:
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::RvalueReferenceTypeKind;
   }
 };
@@ -570,7 +595,7 @@ class QualifiedTypeIR : public TypeIR {
   }
 
  public:
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::QualifiedTypeKind;
   }
 
@@ -580,17 +605,9 @@ class QualifiedTypeIR : public TypeIR {
   bool is_volatile_;
 };
 
-class GlobalVarIR: public LinkableMessageIR {
+class GlobalVarIR: public LinkableMessageIR , public ReferencesOtherType {
  public:
   // Add Methods to get information from the IR.
-  void SetReferencedType(const std::string &type) {
-    referenced_type_ = type;
-  }
-
-  const std::string &GetReferencedType() const {
-    return referenced_type_;
-  }
-
   void SetName(std::string &&name) {
     name_ = std::move(name);
   }
@@ -607,31 +624,25 @@ class GlobalVarIR: public LinkableMessageIR {
     return access_;
   }
 
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::GlobalVarKind;
   }
 
  protected:
-  std::string referenced_type_; // underlying type
   std::string name_;
   AccessSpecifierIR access_;
 };
 
-class ParamIR {
+class ParamIR : public ReferencesOtherType {
  public:
   ParamIR(const std::string &type, bool is_default) :
-    referenced_type_(type) , is_default_(is_default) {}
-
-  const std::string &GetReferencedType() const {
-    return referenced_type_;
-  }
+    ReferencesOtherType(type) , is_default_(is_default) {}
 
   bool GetIsDefault() const {
     return is_default_;
   }
 
  protected:
-  std::string referenced_type_;
   bool is_default_ = false;
 };
 
@@ -657,11 +668,15 @@ class FunctionIR : public LinkableMessageIR, public TemplatedArtifactIR {
     return access_;
   }
 
-  LinkableMessageKind GetKind() const override {
+   LinkableMessageKind GetKind() const override {
     return LinkableMessageKind::FunctionKind;
   }
 
   const std::vector<ParamIR> &GetParameters() const {
+    return parameters_;
+  }
+
+  std::vector<ParamIR> &GetParameters() {
     return parameters_;
   }
 
@@ -741,8 +756,64 @@ class IRDumper {
   const std::string &dump_path_;
 };
 
+template <typename T>
+inline std::string GetReferencedTypeMapKey(
+    T &element) {
+  return element.GetReferencedType();
+}
+
+template <>
+inline std::string GetReferencedTypeMapKey<ArrayTypeIR>(
+    ArrayTypeIR &element) {
+  return element.GetReferencedType() + ":" + std::to_string(element.GetSize());
+}
+
+template <>
+inline std::string GetReferencedTypeMapKey<BuiltinTypeIR>(
+    BuiltinTypeIR &element) {
+  return element.GetLinkerSetKey();
+}
+
+inline static std::string BoolToString(bool val) {
+  return val ? "true" : "false";
+}
+
+template <>
+inline std::string GetReferencedTypeMapKey<QualifiedTypeIR>(
+    QualifiedTypeIR &element) {
+  return element.GetReferencedType() + BoolToString(element.IsRestricted()) +
+      BoolToString(element.IsVolatile()) + BoolToString(element.IsConst());
+}
+
+
+template <typename T>
+typename AbiElementMap<T>::iterator AddToMapAndTypeGraph(
+    T &&element, AbiElementMap<T> *map_to_update,
+    AbiElementMap<const TypeIR *> *type_graph) {
+  auto it = map_to_update->emplace(GetReferencedTypeMapKey(element),
+                                   std::move(element));
+  //assert(it.second == true);
+  type_graph->emplace(it.first->second.GetSelfType(),
+                                 &(it.first->second));
+  return it.first;
+}
+
 class TextFormatToIRReader {
  public:
+
+  struct MergeStatus {
+    // type_id_ always has the global_type_id corresponding to the type this
+    // MergeStatus corresponds to. For
+    // generic reference types (pointers, qual types, l(r)value references etc),
+    // this will be a proactively added type_id, which will be added to the
+    // parent  type_graph if the we decide to add the referencing type to the
+    // parent post ODR checking.
+    bool was_newly_added_ = false;
+    std::string type_id_;
+    MergeStatus(bool was_newly_added, const std::string &type_id)
+        : was_newly_added_(was_newly_added), type_id_(type_id) { }
+    MergeStatus() { }
+  };
 
   TextFormatToIRReader(const std::set<std::string> *exported_headers)
       : exported_headers_(exported_headers) { }
@@ -828,6 +899,95 @@ class TextFormatToIRReader {
     MergeElements(&qualified_types_, std::move(addend.qualified_types_));
   }
 
+  void AddToODRListMap(const std::string &key, const TypeIR *value);
+
+  template <typename T>
+  MergeStatus MergeReferencingTypeInternalAndUpdateParent(
+      TextFormatToIRReader &addend, const T *addend_node,
+      uint64_t rollback_id,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map,
+      AbiElementMap<T> *parent_map,
+      const std::string  &updated_self_type_id);
+
+  MergeStatus DoesUDTypeODRViolationExist(
+    const TypeIR *ud_type, TextFormatToIRReader &addend,
+    const std::string ud_type_unique_id,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map_);
+
+  MergeStatus MergeReferencingTypeInternal(
+      TextFormatToIRReader &addend, ReferencesOtherType *references_type,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  MergeStatus MergeReferencingType(
+      TextFormatToIRReader &addend, const TypeIR *addend_node,
+      uint64_t rollback_id,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map,
+      const std::string  &updated_self_type_id);
+
+  MergeStatus MergeGenericReferringType(
+    TextFormatToIRReader &addend, const TypeIR *addend_node,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  MergeStatus MergeTypeInternal(
+    const TypeIR *addend_node, TextFormatToIRReader &addend,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  MergeStatus MergeEnumType(
+    const EnumTypeIR *addend_node, TextFormatToIRReader &addend,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeEnumDependencies(
+      TextFormatToIRReader &addend, EnumTypeIR *added_node,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  MergeStatus MergeRecordAndDependencies(
+    const RecordTypeIR *addend_node, TextFormatToIRReader &addend,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeRecordDependencies(
+      TextFormatToIRReader &addend, RecordTypeIR *added_node,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeRecordFields(
+      TextFormatToIRReader &addend, RecordTypeIR *added_node,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeRecordCXXBases(
+      TextFormatToIRReader &addend, RecordTypeIR *added_node,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeRecordTemplateElements(
+      TextFormatToIRReader &addend, RecordTypeIR *added_node,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+
+  MergeStatus IsBuiltinTypeNodePresent(const BuiltinTypeIR *builtin_type,TextFormatToIRReader &addend,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeFunctionDeps(
+    FunctionIR *addend_node, TextFormatToIRReader &addend,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeFunction(
+    const FunctionIR *addend_node, TextFormatToIRReader &addend,
+    AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  void MergeGraphs(TextFormatToIRReader &addend);
+
+  void UpdateTextFormatToIRReaderTypeGraph(
+      const TypeIR *addend_node, const std::string &added_type_id,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  MergeStatus IsTypeNodePresent(
+      const TypeIR *addend_node, TextFormatToIRReader &addend,
+      AbiElementMap<MergeStatus> *local_to_global_type_id_map);
+
+  MergeStatus MergeType(const TypeIR *addend_type,
+                        TextFormatToIRReader &addend,
+                        AbiElementMap<MergeStatus> *merged_types_cache);
+
+  std::string AllocateNewTypeId();
+
   static std::unique_ptr<TextFormatToIRReader> CreateTextFormatToIRReader(
       TextFormatIR text_format,
       const std::set<std::string> *exported_headers = nullptr);
@@ -839,10 +999,22 @@ class TextFormatToIRReader {
     augend->insert(std::make_move_iterator(addend.begin()),
                    std::make_move_iterator(addend.end()));
   }
+  // TODO: Consider putting these back into vectors. Since now we don't need to 
+  // 'de-duplicate' based on linker set key for types.
+  // Should probably keep graph of records and builtin types by tag ids and
+  // linker set keys respectively. tag ids to Records will help us with seeing
+  // source files, builtin types, immediately figure out if its in the parent
+  // graph.
+  AbiElementList<RecordTypeIR> record_types_list_;
   AbiElementMap<FunctionIR> functions_;
   AbiElementMap<GlobalVarIR> global_variables_;
   AbiElementMap<RecordTypeIR> record_types_;
   AbiElementMap<EnumTypeIR> enum_types_;
+  // These maps which contain generic referring types as values are used while
+  // looking up whether in the parent graph, a particular reffering type refers
+  // to a certain type id. The mechanism is useful while trying to determine
+  // whether a generic referring type needs to be newly added to the parent
+  // graph or not.
   AbiElementMap<PointerTypeIR> pointer_types_;
   AbiElementMap<LvalueReferenceTypeIR> lvalue_reference_types_;
   AbiElementMap<RvalueReferenceTypeIR> rvalue_reference_types_;
@@ -851,7 +1023,14 @@ class TextFormatToIRReader {
   AbiElementMap<QualifiedTypeIR> qualified_types_;
   AbiElementMap<ElfFunctionIR> elf_functions_;
   AbiElementMap<ElfObjectIR> elf_objects_;
+  // type-id -> LinkableMessageIR * map
+  // TODO: Make this TypeIR *, so that abi-diffing between Records and enums
+  // can be done easily. We can make a seperate map for Functions and GlobalVars
+  AbiElementMap<const TypeIR *> type_graph_;
+  // maps unique_id + source_file -> const TypeIR *
+  AbiElementUnorderedMap<std::list<const TypeIR *>> odr_list_map_;
   const std::set<std::string> *exported_headers_;
+  uint64_t max_type_id_ = 0;
 };
 
 class DiffMessageIR {
