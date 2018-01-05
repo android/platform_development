@@ -249,6 +249,29 @@
     },
     {
       "key": {
+        "uuid": "4105b8dd_0058dd97",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-05T00:07:12Z",
+      "side": 1,
+      "message": "usually I would indicate a single item v.s. multiple items.\n\ne.g., file v.s. files\n\nHow about:\n\n  mounters \u003d CompositeMounter() or MounterFactory()\n\n  if args.system:\n    mounters.add_mounter(\u0027system\u0027, args.system)\n  if args.vendor:\n    mounters.add_mounter(\u0027vendor\u0027, args.vendor)",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 38
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "acb729d6_ddb4dbab",
         "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
         "patchSetId": 10
