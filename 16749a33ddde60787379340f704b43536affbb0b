@@ -410,6 +410,30 @@
     },
     {
       "key": {
+        "uuid": "96c4ffa2_1a871e05",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-05T03:22:09Z",
+      "side": 1,
+      "message": "Yup, you can consider https://docs.python.org/2/library/abc.html.",
+      "parentUuid": "b15c2e54_b6404650",
+      "range": {
+        "startLine": 107,
+        "startChar": 10,
+        "endLine": 107,
+        "endChar": 29
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfbe7041_249645f0",
         "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
         "patchSetId": 10
