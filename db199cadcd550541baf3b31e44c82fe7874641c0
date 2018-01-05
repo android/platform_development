@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7608efae_05933292",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-05T06:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f04a238_0bc31896",
+      "revId": "db199cadcd550541baf3b31e44c82fe7874641c0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d45c8_5b2d196b",
         "filename": "vndk/snapshot/utils.py",
         "patchSetId": 6
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "a874cf49_1e856d12",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-05T06:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d45c8_5b2d196b",
+      "range": {
+        "startLine": 60,
+        "startChar": 31,
+        "endLine": 60,
+        "endChar": 62
+      },
+      "revId": "db199cadcd550541baf3b31e44c82fe7874641c0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25ff437a_1cfa8769",
         "filename": "vndk/snapshot/utils.py",
         "patchSetId": 6
@@ -53,6 +95,30 @@
       "writtenOn": "2018-01-04T08:50:23Z",
       "side": 1,
       "message": "arch v.s. target_arch which are still confusing. Can you use more intuitive term? how about \u0027configuration\u0027 or \u0027config\u0027 rather than target_arch? Since this actually represents the \u0027configuration\u0027 that we used to build the snapshot.\n\nAlso, the meaning of \u0027path\u0027 is different among these two; they are relative to different base directories.\n\nwhat if we can just have functions that all accept install_dir?",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 0
+      },
+      "revId": "db199cadcd550541baf3b31e44c82fe7874641c0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bf2b2e8_cd67d64a",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-05T06:04:29Z",
+      "side": 1,
+      "message": "Since there is a \"configs\" directory in the VNDK snapshot, how about \"variant\"? This also syncs with \"vndk_snapshot_variant\" defined in vndk.mk as $(vndk_snapshot_out)/$(TARGET_ARCH).\n\nI fixed the functions such that both accept paths relative to install_dir.",
+      "parentUuid": "25ff437a_1cfa8769",
       "range": {
         "startLine": 65,
         "startChar": 0,
