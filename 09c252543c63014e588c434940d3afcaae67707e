@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61cc997d_8656c272",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-01-06T15:11:00Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 29,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 6
+      },
+      "revId": "09c252543c63014e588c434940d3afcaae67707e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f9000c4_74ed3528",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-01-06T15:11:00Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 46,
+        "endChar": 6
+      },
+      "revId": "09c252543c63014e588c434940d3afcaae67707e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
