@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc24ef24_0a956312",
+        "filename": "host/windows/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-01-08T23:53:17Z",
+      "side": 1,
+      "message": "Either move `enabled: false` to the top level, or use a single not_windows section",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 10
+      },
+      "revId": "b7c8c5c30ac24828aabf42c49f651c688963fa6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbea0df9_5116b901",
+        "filename": "host/windows/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-01-08T23:53:17Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 10
+      },
+      "revId": "b7c8c5c30ac24828aabf42c49f651c688963fa6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a56f7f32_5083a257",
+        "filename": "host/windows/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-01-08T23:53:17Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 10
+      },
+      "revId": "b7c8c5c30ac24828aabf42c49f651c688963fa6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
