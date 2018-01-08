@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b65c8633_e9bb6e02",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-08T04:50:42Z",
+      "side": 1,
+      "message": "I think \"config\" would be better here since \"config\" includes ETC (LOCAL_MODULE_CLASS) modules (ld.config.txt, llndk.libraries.txt, vndksp.libraries.txt) plus snapshot specific config files (module_paths.txt, vndkcore.libraries.txt, vndkprivate.libraries.txt). In other words, my intention was that \"config\" would have a larger scope meaning that includes \"etc\".\n\nI can upload a separate CL to rename \"configs/\" to \"config/\" which will require a change in vndk.mk.",
+      "parentUuid": "879a109c_bf922a8d",
+      "range": {
+        "startLine": 43,
+        "startChar": 12,
+        "endLine": 43,
+        "endChar": 19
+      },
+      "revId": "7bb55f25859d7d13a0a6b6269a4b37ec370ad47e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4ed3db52_d0df6004",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 10
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "75da37c1_56945add",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-08T04:50:42Z",
+      "side": 1,
+      "message": "As I noted above, my intention was that \"config\" would have a larger scope meaning that includes \"etc\". So here ETC_MODULES seems appropriate since this list is a collection of the ETC modules.",
+      "parentUuid": "4ed3db52_d0df6004",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 7
+      },
+      "revId": "7bb55f25859d7d13a0a6b6269a4b37ec370ad47e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6427ad70_432bd726",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 10
@@ -59,6 +107,30 @@
       "writtenOn": "2018-01-06T15:11:00Z",
       "side": 1,
       "message": "it is implicitly assumed that this function is executed when cwd is the same as install_dir, and I think that is okay if the same assumption holds for all functions in this script. \n\nThen, why do you need install_dir as the argument? if you make all file operations (e.g. glob.blog(...) be based on the cwd (./), which is install_dir then you don\u0027t need to pass intall_dir here and there, and there is no need to join paths.",
+      "range": {
+        "startLine": 137,
+        "startChar": 4,
+        "endLine": 137,
+        "endChar": 35
+      },
+      "revId": "7bb55f25859d7d13a0a6b6269a4b37ec370ad47e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32b9227a_7b24e123",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-08T04:50:42Z",
+      "side": 1,
+      "message": "install_dir is needed for the utils.get_snapshot_variants function called right below in line 138. The other os.path.join\u0027s below are assuming the cwd is install_dir, i.e. notices_dir_per_variant and notice_file are all relative paths from install_dir.",
+      "parentUuid": "6427ad70_432bd726",
       "range": {
         "startLine": 137,
         "startChar": 4,
