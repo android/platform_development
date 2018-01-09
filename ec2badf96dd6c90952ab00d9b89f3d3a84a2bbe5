@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8964e49a_42cec20a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Okay, will do that!",
+      "parentUuid": "5d958f61_fb602958",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 14,
+        "endChar": 31
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2903fbc9_c43695e4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "nit: please provide the exact command, so others can learn/verify this.",
+      "range": {
+        "startLine": 17,
+        "startChar": 6,
+        "endLine": 17,
+        "endChar": 52
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0bd7da24_66c28a29",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Nice suggestion, will do that!",
+      "parentUuid": "2903fbc9_c43695e4",
       "range": {
         "startLine": 17,
         "startChar": 6,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "4e222a4d_206e6077",
+        "filename": "gsi/gsi_util/Android.bp",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41db3632_083a546b",
+      "range": {
+        "startLine": 24,
+        "startChar": 2,
+        "endLine": 24,
+        "endChar": 32
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a68e9438_3b0e35b4",
         "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
         "patchSetId": 8
@@ -82,6 +154,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "no need to have this?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97f87dec_b9ed1e83",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Oh! Need to also remove them form all other files.",
+      "parentUuid": "a68e9438_3b0e35b4",
       "range": {
         "startLine": 1,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "90bbbca8_36e6e1e3",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "os is unused, remove it.",
+      "parentUuid": "20cbec95_6b18de65",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce7d3169_7c845cc1",
         "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
         "patchSetId": 8
@@ -128,6 +248,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "default",
+      "range": {
+        "startLine": 65,
+        "startChar": 56,
+        "endLine": 65,
+        "endChar": 62
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e577f029_fd767e1e",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce7d3169_7c845cc1",
       "range": {
         "startLine": 65,
         "startChar": 56,
@@ -209,6 +353,30 @@
     },
     {
       "key": {
+        "uuid": "dbe38e66_693edb8c",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f808a042_f1f5946a",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 59,
+        "endChar": 11
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e12041e2_74773bff",
         "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
         "patchSetId": 8
@@ -220,6 +388,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "Please add period or comma to separate those sentences.\n\nWhy not just return MounterFile() instance, without different variants?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 66
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bca3324c_f1ebd8e4",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "After more thinking, agree to just return a MounterFile.\n\n(It looks like this due to the evolution history...)",
+      "parentUuid": "e12041e2_74773bff",
       "range": {
         "startLine": 60,
         "startChar": 0,
@@ -289,6 +481,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "maybe we can also require all mounters to return MounterFile() directly?",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 40
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a69c9ef7_8ddf55ad",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Agree!",
+      "parentUuid": "f5d58c56_62ddb7f3",
       "range": {
         "startLine": 83,
         "startChar": 0,
@@ -416,6 +632,54 @@
     },
     {
       "key": {
+        "uuid": "9a50b258_205a2c06",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "190c2b53_282e5e60",
+      "range": {
+        "startLine": 63,
+        "startChar": 50,
+        "endLine": 63,
+        "endChar": 54
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "571575ad_5ba5f31d",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06f17702_f554a0de",
+      "range": {
+        "startLine": 63,
+        "startChar": 6,
+        "endLine": 63,
+        "endChar": 12
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e24b8b22_f7346f7b",
         "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
         "patchSetId": 8
@@ -462,6 +726,30 @@
     },
     {
       "key": {
+        "uuid": "5e6a6b0d_031a7651",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f42cd2b9_d8ce5991",
+      "range": {
+        "startLine": 68,
+        "startChar": 28,
+        "endLine": 68,
+        "endChar": 46
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e07d07a5_cfc4b5cd",
         "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
         "patchSetId": 8
@@ -473,6 +761,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "how about just use os.path.join()",
+      "range": {
+        "startLine": 75,
+        "startChar": 19,
+        "endLine": 75,
+        "endChar": 42
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "923c8528_5b766806",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "This is not a real path, I think it is okay to just a string operation.",
+      "parentUuid": "e07d07a5_cfc4b5cd",
       "range": {
         "startLine": 75,
         "startChar": 19,
@@ -508,6 +820,30 @@
     },
     {
       "key": {
+        "uuid": "e5d90245_e4c6c20a",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "This is not a real path, I think it is okay to just a string operation.",
+      "parentUuid": "c0307cbc_de6e85ad",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 42
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ab278ccd_8792cead",
         "filename": "gsi/gsi_util/gsi_util/mounters/folder_mounter.py",
         "patchSetId": 8
@@ -519,6 +855,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "not sure what\u0027s the use case and/or who will be the user?",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 25
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0f9b632_5ea6dc55",
+        "filename": "gsi/gsi_util/gsi_util/mounters/folder_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "You could use this on the system/vendor folder in out folder.",
+      "parentUuid": "ab278ccd_8792cead",
       "range": {
         "startLine": 25,
         "startChar": 6,
@@ -680,6 +1040,30 @@
       "writtenOn": "2018-01-03T10:01:00Z",
       "side": 1,
       "message": "nit: returns.",
+      "range": {
+        "startLine": 74,
+        "startChar": 7,
+        "endLine": 74,
+        "endChar": 13
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f1682ee_83b6f6e7",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T03:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddd4ec72_80051236",
       "range": {
         "startLine": 74,
         "startChar": 7,
