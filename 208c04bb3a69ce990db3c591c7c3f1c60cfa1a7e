@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "245500fd_b9fa2ec1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-09T17:01:35Z",
+      "side": 1,
+      "message": "can you mention instead, that this commit changes the \u0027warning\u0027 message string to \u0027error\u0027 if --allow-extension is not passed on the command-line ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 4
+      },
+      "revId": "208c04bb3a69ce990db3c591c7c3f1c60cfa1a7e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
