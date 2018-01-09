@@ -91,7 +91,7 @@ class HeaderAbiLinker {
 
  private:
   template <typename T>
-  inline bool LinkDecl(abi_util::IRDumper *dst,
+  bool LinkDecl(abi_util::IRDumper *dst,
                        std::set<std::string> *link_set,
                        std::set<std::string> *regex_matched_link_set,
                        const std::regex *vs_regex,
@@ -170,19 +170,21 @@ static void DeDuplicateAbiElementsThread(
       break;
     }
     std::size_t end = std::min(i + kSourcesPerBatchThread, num_sources);
-    std::unique_ptr<abi_util::TextFormatToIRReader> reader =
-      abi_util::TextFormatToIRReader::CreateTextFormatToIRReader(
-          text_format, exported_headers);
-    assert(reader != nullptr);
-    if (!reader->ReadDumps(begin_it + i, begin_it + end)) {
-      llvm::errs() << "ReadDump failed\n";
-      ::exit(1);
+    for (auto it = begin_it; it != begin_it + end; it++) {
+      std::unique_ptr<abi_util::TextFormatToIRReader> reader =
+          abi_util::TextFormatToIRReader::CreateTextFormatToIRReader(
+              text_format, exported_headers);
+      assert(reader != nullptr);
+      if (!reader->ReadDump(*it)) {
+        llvm::errs() << "ReadDump failed\n";
+        ::exit(1);
+      }
+      // This merge is needed since the iterators might not be contigous.
+      local_reader->MergeGraphs(*reader);
     }
-    // This merge is needed since the iterators might not be contigous.
-    local_reader->Merge(std::move(*reader));
   }
   std::lock_guard<std::mutex> lock(*greader_lock);
-  greader->Merge(std::move(*local_reader));
+  greader->MergeGraphs(*local_reader);
 }
 
 bool HeaderAbiLinker::LinkAndDump() {
@@ -270,15 +272,17 @@ static std::regex CreateRegexMatchExprFromSet(
   }
   return std::regex(all_regex_match_str);
 }
+static int count = 0;
 
 template <typename T>
 inline bool HeaderAbiLinker::LinkDecl(
     abi_util::IRDumper *dst, std::set<std::string> *link_set,
     std::set<std::string> *regex_matched_link_set, const std::regex *vs_regex,
-    const  abi_util::AbiElementMap<T> &src, bool use_version_script) {
+    const  abi_util::AbiElementMap<T> &src, bool use_version_script_or_so) {
   assert(dst != nullptr);
   assert(link_set != nullptr);
   for (auto &&element : src) {
+    count++;
     // If we are not using a version script and exported headers are available,
     // filter out unexported abi.
     std::string source_file = element.second.GetSourceFile();
@@ -290,10 +294,12 @@ inline bool HeaderAbiLinker::LinkDecl(
     }
     const std::string &element_str = element.first;
     // Check for the existence of the element in linked dump / symbol file.
-    if (!use_version_script) {
-      if (!link_set->insert(element_str).second) {
-        continue;
-      }
+    if (!use_version_script_or_so) {
+      // TODO: This is now inccoret -> your elem.str will have the referenced
+      // type, can't link based on that. Base it on
+      //if (is_dynsym_exportable && !link_set->insert(element_str).second) {
+        //continue;
+      //} TODO: Types do not need to be de-duplicated now.
     } else {
       std::set<std::string>::iterator it =
           link_set->find(element_str);
@@ -422,5 +428,6 @@ int main(int argc, const char **argv) {
     llvm::errs() << "Failed to link and dump elements\n";
     return -1;
   }
+  llvm::errs() << "Count of linked elements:" << count;
   return 0;
 }
