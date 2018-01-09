@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "57c0053e_2c2271a7",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-09T01:30:28Z",
+      "side": 1,
+      "message": "Left my comment on Patch 10",
+      "parentUuid": "8db0dc54_801afd29",
+      "range": {
+        "startLine": 43,
+        "startChar": 12,
+        "endLine": 43,
+        "endChar": 20
+      },
+      "revId": "6868733440c6c743888ad16b06d016cfbcedc856",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39e15095_986490dc",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 9
@@ -45,6 +69,30 @@
       "revId": "6868733440c6c743888ad16b06d016cfbcedc856",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e59c94b_8a74f11e",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-09T01:30:28Z",
+      "side": 1,
+      "message": "Left my comment on Patch 10",
+      "parentUuid": "39e15095_986490dc",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 8
+      },
+      "revId": "6868733440c6c743888ad16b06d016cfbcedc856",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
