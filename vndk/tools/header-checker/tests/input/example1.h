@@ -1,7 +1,7 @@
 #ifndef EXAMPLE1_H_
 #define EXAMPLE1_H_
 
-#include "example2.h"
+/*#include "example2.h"
 
 #if defined(__cplusplus)
 extern "C" {
@@ -86,9 +86,9 @@ template<typename T>
 class List
 {
 public:
-    /*
-     * One element in the list.
-     */
+    //
+     // One element in the list.
+     //
     class _Node {
     public:
         explicit _Node(const T& val) : mVal(val) {}
@@ -122,4 +122,9 @@ void format() {
 castInterface<float, float, float , float>(List<float>(), "foo", true);
 }
 
+*/
+struct Foo {
+  int a;
+  Foo *fool;
+};
 #endif  // EXAMPLE1_H_
