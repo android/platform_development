@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5656e4ab_6ce3e21e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "implementations",
+      "range": {
+        "startLine": 15,
+        "startChar": 49,
+        "endLine": 15,
+        "endChar": 64
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "379c34fa_abca0703",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "examples",
+      "range": {
+        "startLine": 22,
+        "startChar": 14,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1756563a_8d9eced8",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "No need the parentheses, you can just use:\n\nsource, dest \u003d args.SOURCE, args.DEST",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "299e9849_cbc1e606",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "should this be add_with_source() per your comment?",
+      "range": {
+        "startLine": 38,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "74dd26df_2915e8a5",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "just curious, why capitalized?",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4601bfc9_18b5e64a",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "nit: serial_num\u003dNone? (just in case if other clients won\u0027t provide serial_num)",
+      "range": {
+        "startLine": 33,
+        "startChar": 31,
+        "endLine": 33,
+        "endChar": 41
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c9f4d1e_9610dc3d",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "You\u0027ll need:\n\n__metaclass__ \u003d ABCMeta\n\nOtherwise, it won\u0027t throw an error when a subclass doesn\u0027t implement some abstract method(s).\n\ne.g.,\nCan\u0027t instantiate abstract class BaseFileAccessor with abstract methods _handle_prepare_file",
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac1e2139_690e0292",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "same here for __metaclass__ \u003d ABCMeta",
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dbd4ad58_8f0083ea",
+        "filename": "gsi/gsi_util/gsi_util/utils/adb_utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "same here, no need the ()",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 20
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}

@@ -797,6 +797,30 @@
     },
     {
       "key": {
+        "uuid": "c264b946_ccb9a180",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "OK, got it!",
+      "parentUuid": "923c8528_5b766806",
+      "range": {
+        "startLine": 75,
+        "startChar": 19,
+        "endLine": 75,
+        "endChar": 42
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c0307cbc_de6e85ad",
         "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
         "patchSetId": 8
@@ -879,6 +903,30 @@
       "side": 1,
       "message": "You could use this on the system/vendor folder in out folder.",
       "parentUuid": "ab278ccd_8792cead",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 25
+      },
+      "revId": "ec2badf96dd6c90952ab00d9b89f3d3a84a2bbe5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "257094a4_844dc5c0",
+        "filename": "gsi/gsi_util/gsi_util/mounters/folder_mounter.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "Yup, I recalled this usage later.\n\nAs I commented before, maybe it\u0027s better to mention $OUT in the module docstring above.",
+      "parentUuid": "e0f9b632_5ea6dc55",
       "range": {
         "startLine": 25,
         "startChar": 6,

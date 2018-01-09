@@ -296,6 +296,30 @@
     },
     {
       "key": {
+        "uuid": "5574f1ca_41d62c7c",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T04:13:37Z",
+      "side": 1,
+      "message": "For 3. you can also consider the naming emplace(), borrowed from C++.\nhttp://www.cplusplus.com/reference/vector/vector/emplace/",
+      "parentUuid": "b3fff76f_3ac7adbd",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 38
+      },
+      "revId": "16749a33ddde60787379340f704b43536affbb0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "acb729d6_ddb4dbab",
         "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
         "patchSetId": 10
