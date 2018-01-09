@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "107396dc_731aa914",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T09:34:52Z",
+      "side": 1,
+      "message": "You could check the help description. The argument \"--system\" generates \"--system SYSTEM\", the variable is upper case. If you add the argument is \"source\", it will generate lower case in help description.",
+      "parentUuid": "74dd26df_2915e8a5",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4601bfc9_18b5e64a",
         "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
         "patchSetId": 12
@@ -140,6 +164,30 @@
     },
     {
       "key": {
+        "uuid": "a20d2fee_bc0963df",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T09:34:52Z",
+      "side": 1,
+      "message": "I think it is okay here, because _AdbFileAccssor is not a public class, we could force the user (it\u0027s me) must give serial_num.",
+      "parentUuid": "4601bfc9_18b5e64a",
+      "range": {
+        "startLine": 33,
+        "startChar": 31,
+        "endLine": 33,
+        "endChar": 41
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2c9f4d1e_9610dc3d",
         "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
         "patchSetId": 12
@@ -151,6 +199,24 @@
       "writtenOn": "2018-01-09T04:13:37Z",
       "side": 1,
       "message": "You\u0027ll need:\n\n__metaclass__ \u003d ABCMeta\n\nOtherwise, it won\u0027t throw an error when a subclass doesn\u0027t implement some abstract method(s).\n\ne.g.,\nCan\u0027t instantiate abstract class BaseFileAccessor with abstract methods _handle_prepare_file",
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "925aaf87_86feba74",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-09T09:34:52Z",
+      "side": 1,
+      "message": "Oh! so it is!\nWill fix it.",
+      "parentUuid": "2c9f4d1e_9610dc3d",
       "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
