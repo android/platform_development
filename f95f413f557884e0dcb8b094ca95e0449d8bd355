@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "016a7522_62adfc5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "property",
+      "range": {
+        "startLine": 16,
+        "startChar": 22,
+        "endLine": 16,
+        "endChar": 31
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b0b36832_3f60e184",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "please add brief docstring for the args.\n\nat least provides its usage and type (e.g., list, dict or string, etc)",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "204d56a0_9daddc08",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "seems for pull command?",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 96,
+        "endChar": 56
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2826bac_c1e478f3",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "dump?",
+      "range": {
+        "startLine": 105,
+        "startChar": 20,
+        "endLine": 105,
+        "endChar": 24
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "30f52d6e_e2271ad9",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "dump?",
+      "range": {
+        "startLine": 111,
+        "startChar": 20,
+        "endLine": 111,
+        "endChar": 24
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "416e1e75_58fc9e7f",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "info isn\u0027t countable",
+      "range": {
+        "startLine": 136,
+        "startChar": 31,
+        "endLine": 136,
+        "endChar": 36
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "039552b9_37b0a55d",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "does",
+      "range": {
+        "startLine": 136,
+        "startChar": 43,
+        "endLine": 136,
+        "endChar": 46
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2574741_0008fce6",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dump_info_list.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "id seems an integer by convention.\n\nHow about rename this to \u0027info_name\u0027 or \u0027canonical_name\u0027?",
+      "range": {
+        "startLine": 30,
+        "startChar": 25,
+        "endLine": 30,
+        "endChar": 27
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ec9ac36_978cfd0b",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dump_info_list.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "usually index is an integer to me.\n\nHow about rename this to \u0027lookup_key\u0027?",
+      "range": {
+        "startLine": 30,
+        "startChar": 47,
+        "endLine": 30,
+        "endChar": 57
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7dc2b4b_895d4e68",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dump_info_list.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "Just for discussion, how about using a dict, grouped by dumpers.\n\nDUMPERS_INFO \u003d {                                                                        \n    SYSTEM_BUILD_PROP_DUMPER: [                                                    \n        (\u0027system_build_id\u0027, \u0027ro.build.display.id\u0027),                                \n        (\u0027system_sdk_ver\u0027, \u0027ro.build.version.sdk\u0027),                                                                                                                          \n        (\u0027system_security_patch_level\u0027, \u0027ro.build.version.security_patch\u0027),        \n    ],                                                                             \n    SYSTEM_MATRIX_DUMPER: [                                                        \n        (\u0027system_kernel_sepolicy_ver\u0027, \u0027./sepolicy/kernel-sepolicy-version\u0027),   \n        (\u0027system_support_sepolicy_ver\u0027, \u0027./sepolicy/sepolicy-version\u0027),            \n    ],     \n    ...                                                                        \n}",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 9
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcf8f056_51194604",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "please add function comments for each Args\n\ne.g.,\nArgs:\n  dump_result: a dict of ...\n  dump_instance: ...",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 63
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e46050a1_b2285650",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "looks like this is output, maybe rename this to out_results and place it in the last arguments?\n\n _dump_by_dumper(dumper_instance",
+      "range": {
+        "startLine": 29,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0bff3b31_066df3c3",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "instantiation",
+      "range": {
+        "startLine": 37,
+        "startChar": 52,
+        "endLine": 37,
+        "endChar": 64
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c29db2a4_891e5b85",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-09T07:13:14Z",
+      "side": 1,
+      "message": "the name looks strange, maybe rename it to _do_dump() or allow each dumper_instance support .dump() a info list?\n\ne.g., \n  dump_results \u003d []\n  for each dumper_instance\n    values \u003d dumper_instance.dump(lookup_keys)\n    dump_results +\u003d zip(lookup_keys, values)   \u003c-- use zip to merge two lists.",
+      "range": {
+        "startLine": 44,
+        "startChar": 13,
+        "endLine": 44,
+        "endChar": 28
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
