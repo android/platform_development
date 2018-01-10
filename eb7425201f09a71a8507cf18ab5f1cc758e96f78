@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "491204a8_ace8bdfd",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-10T02:04:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1756563a_8d9eced8",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "299e9849_cbc1e606",
         "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
         "patchSetId": 12
@@ -82,6 +106,30 @@
       "writtenOn": "2018-01-09T04:13:37Z",
       "side": 1,
       "message": "should this be add_with_source() per your comment?",
+      "range": {
+        "startLine": 38,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "eb7425201f09a71a8507cf18ab5f1cc758e96f78",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87c5321f_4794b2ab",
+        "filename": "gsi/gsi_util/gsi_util/commands/pull.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-10T02:04:21Z",
+      "side": 1,
+      "message": "Let\u0027s align the _MounterFactory.create_by_mount_target() to be add_by_mount_target()",
+      "parentUuid": "299e9849_cbc1e606",
       "range": {
         "startLine": 38,
         "startChar": 12,
