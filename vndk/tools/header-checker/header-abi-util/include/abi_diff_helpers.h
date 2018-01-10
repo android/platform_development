@@ -1,52 +1,32 @@
-// Copyright (C) 2016 The Android Open Source Project
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+#ifndef ABI_DIFF_HELPERS
+#define ABI_DIFF_HELPERS
 
-#ifndef ABI_DIFF_WRAPPERS_H
-#define ABI_DIFF_WRAPPERS_H
-
-#include <abi_diff_helpers.h>
 #include <ir_representation.h>
 
 #include <deque>
 
-namespace abi_diff_wrappers {
+// Classes which act as middle-men between clang AST parsing routines and
+// message format specific dumpers.
+namespace abi_util {
 
-using abi_util::AbiElementMap;
-using abi_util::AbiDiffHelper;
-using abi_util::DiffStatus;
+enum DiffStatus {
+  // Previous stages of CompareAndTypeDiff should not dump the diff.
+  no_diff = 0,
+  // Previous stages of CompareAndTypeDiff should dump the diff if required.
+  direct_diff = 1,
+};
 
-template <typename T, typename F>
-static bool IgnoreSymbol(const T *element,
-                         const std::set<std::string> &ignored_symbols,
-                         F func) {
-  return ignored_symbols.find(func(element)) !=
-      ignored_symbols.end();
-}
+std::string Unwind(const std::deque<std::string> *type_queue);
 
-class DiffWrapperBase {
+class AbiDiffHelper {
  public:
-  virtual bool DumpDiff(abi_util::IRDiffDumper::DiffKind diff_kind) = 0;
-  virtual ~DiffWrapperBase() { }
- protected:
-  DiffWrapperBase(
-      abi_util::IRDiffDumper *ir_diff_dumper,
+  AbiDiffHelper(
       const AbiElementMap<const abi_util::TypeIR *> &old_types,
       const AbiElementMap<const abi_util::TypeIR *> &new_types,
-      std::set<std::string> *type_cache)
-      : ir_diff_dumper_(ir_diff_dumper),
-        old_types_(old_types), new_types_(new_types),
-        type_cache_(type_cache) { }
+      std::set<std::string> *type_cache,
+      abi_util::IRDiffDumper *ir_diff_dumper = nullptr)
+      : old_types_(old_types), new_types_(new_types),
+        type_cache_(type_cache), ir_diff_dumper_(ir_diff_dumper) { }
 
   DiffStatus CompareAndDumpTypeDiff(const std::string &old_type_str,
                                     const std::string &new_type_str,
@@ -147,28 +127,11 @@ class DiffWrapperBase {
                  const DiffElement *newp,
                  std::deque<std::string> *type_queue = nullptr);
  protected:
-  abi_util::IRDiffDumper *ir_diff_dumper_;
   const AbiElementMap<const abi_util::TypeIR *> &old_types_;
   const AbiElementMap<const abi_util::TypeIR *> &new_types_;
-  std::set<std::string> *type_cache_;
+  std::set<std::string> *type_cache_ = nullptr;
+  abi_util::IRDiffDumper *ir_diff_dumper_ = nullptr;
 };
 
-template <typename T>
-class DiffWrapper : public AbiDiffHelper {
- public:
-  DiffWrapper(const T *oldp, const T *newp,
-              abi_util::IRDiffDumper *ir_diff_dumper,
-              const AbiElementMap<const abi_util::TypeIR *> &old_types,
-              const AbiElementMap<const abi_util::TypeIR *> &new_types,
-              std::set<std::string> *type_cache)
-      : AbiDiffHelper(old_types, new_types, type_cache, ir_diff_dumper),
-        oldp_(oldp), newp_(newp) { }
-  bool DumpDiff(abi_util::IRDiffDumper::DiffKind diff_kind);
- private:
-  const T *oldp_;
-  const T *newp_;
-};
-
-} // abi_diff_wrappers
-
-#endif // ABI_DIFF_WRAPPERS_H
+} // namespace abi_util
+#endif
