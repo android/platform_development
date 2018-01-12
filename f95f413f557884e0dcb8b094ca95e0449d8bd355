@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "cfc172b9_6b531d6c",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-12T14:21:08Z",
+      "side": 1,
+      "message": "I just recall my original thought.\n\nFor dump users, they don\u0027t know we\u0027ll \u0027pull\u0027 the file in the background, right? Because it\u0027s implementation details that they don\u0027t need to know.\n\n\nSo you consider just using:\n   adb[:SERIAL_NUM]: dump info from the device which be connected with adb\n  image file name: dump info from the given image file ...\n      folder name: dump info from the given folder ...",
+      "parentUuid": "8a4407bf_e93d76a0",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 96,
+        "endChar": 56
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b2826bac_c1e478f3",
         "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
         "patchSetId": 17
