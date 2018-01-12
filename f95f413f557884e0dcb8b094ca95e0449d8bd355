@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "8a4407bf_e93d76a0",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-12T11:06:44Z",
+      "side": 1,
+      "message": "Ah, I see. Understood.",
+      "parentUuid": "f929e0ce_3e0b1d5f",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 96,
+        "endChar": 56
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b2826bac_c1e478f3",
         "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
         "patchSetId": 17
@@ -472,6 +496,30 @@
     },
     {
       "key": {
+        "uuid": "5a008667_7914b08b",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dump_info_list.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-12T11:06:44Z",
+      "side": 1,
+      "message": "Ah, ok.\nI didn\u0027t notice that you want to keep the order.\nMaybe you can also add a comment for this intention.\n\nSo someone won\u0027t wonder why this isn\u0027t sorted alphabetically by info_name.",
+      "parentUuid": "2b391a82_e28b5fa9",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 9
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bcf8f056_51194604",
         "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
         "patchSetId": 17
@@ -530,6 +578,30 @@
       "side": 1,
       "message": "out_xxx is a good suggestion.\n\nHowever, do we have convention that we need to put the output \nresult to the last argument? I was used to put the output result to the begin argument as left-hand-side.\n\nAnyway, I change to return a dictionary for the result.",
       "parentUuid": "e46050a1_b2285650",
+      "range": {
+        "startLine": 29,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d56614c7_07da60d0",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-12T11:06:44Z",
+      "side": 1,
+      "message": "For ordering, I learned this from C++ :)\nIt\u0027s not mentioned in the python guide though.\n\nhttps://google.github.io/styleguide/cppguide.html#Function_Parameter_Ordering",
+      "parentUuid": "8f98b1cf_b853068f",
       "range": {
         "startLine": 29,
         "startChar": 6,
@@ -624,6 +696,30 @@
       "side": 1,
       "message": "Done. But still return dictionary.",
       "parentUuid": "c29db2a4_891e5b85",
+      "range": {
+        "startLine": 44,
+        "startChar": 13,
+        "endLine": 44,
+        "endChar": 28
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe3ce8e5_ca5a9d28",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-12T11:06:44Z",
+      "side": 1,
+      "message": "Returning a dict is also good to me.",
+      "parentUuid": "7707146a_997f5adb",
       "range": {
         "startLine": 44,
         "startChar": 13,

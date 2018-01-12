@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd1c17be_cdeba8bb",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-12T11:06:44Z",
+      "side": 1,
+      "message": "Let\u0027s follow the pattern, using \u0027Attributes\u0027 for a class as ,\u0027Args\u0027 for a function.\n\nhttps://google.github.io/styleguide/pyguide.html?showone\u003dComments#Comments\n\nclass SampleClass(object):\n    \"\"\"Summary of class here.\n\n    Longer class information....\n    Longer class information....\n\n    Attributes:\n        likes_spam: A boolean indicating if we like SPAM or not.\n        eggs: An integer count of the eggs we have laid.\n    \"\"\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 23
+      },
+      "revId": "66c2f4827bb2424323b9d6d781bd49d57fb0f785",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a11e992_45ca9ec0",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-12T11:06:44Z",
+      "side": 1,
+      "message": "nit: add a . at the end.",
+      "revId": "66c2f4827bb2424323b9d6d781bd49d57fb0f785",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
