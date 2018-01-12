@@ -106,7 +106,9 @@ public class Eclipse {
 
         classpath.append("</classpath>\n");
 
-        Files.toFile(classpath.toString(), new File(".classpath"));
+        File classpathFile = new File(".classpath");
+        Files.toFile(classpath.toString(), classpathFile);
+        System.out.println("Eclipse project file created at - " + classpathFile.getCanonicalPath());
     }
 
 

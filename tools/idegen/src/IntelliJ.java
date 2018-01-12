@@ -32,7 +32,8 @@ public class IntelliJ {
     public static void generateFrom(Configuration c) throws IOException {
         File templatesDirectory = new File(c.toolDirectory, "templates");
         String ipr = Files.toString(new File(templatesDirectory, IDEA_IPR));
-        Files.toFile(ipr, new File(IDEA_IPR));
+        File iprFile = new File(IDEA_IPR);
+        Files.toFile(ipr, iprFile);
 
         String iml = Files.toString(new File(templatesDirectory, IDEA_IML));
 
@@ -87,6 +88,7 @@ public class IntelliJ {
         iml = iml.replace("JAR_ENTRIES", jarsXml.toString());
 
         Files.toFile(iml, new File(IDEA_IML));
+        System.out.println("IntelliJ project file created at - " + iprFile.getCanonicalPath());
     }
 
     private static boolean isTests(File file) {
