@@ -22,6 +22,30 @@
       "revId": "9b86d473dc7c30df88ef0180136987a328824097",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a642bb92_f70b5da0",
+        "filename": "gsi/gsi_util/build.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T10:22:06Z",
+      "side": 1,
+      "message": "Ah, wait.\n\nThe restriction only applies to Android.mk.\n\nAs this script is an offline script, you should be ok to use it.",
+      "parentUuid": "b217ff3b_e72b3509",
+      "range": {
+        "startLine": 50,
+        "startChar": 25,
+        "endLine": 50,
+        "endChar": 42
+      },
+      "revId": "9b86d473dc7c30df88ef0180136987a328824097",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
