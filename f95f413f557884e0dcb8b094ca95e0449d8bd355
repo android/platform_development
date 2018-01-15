@@ -686,6 +686,30 @@
     },
     {
       "key": {
+        "uuid": "d84b062b_30fa89b9",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T08:22:39Z",
+      "side": 1,
+      "message": "Ah, I see. \nYup, several C-libs did put the dest first.\n\nLooks some python functions also puts input before output:\nhttps://docs.python.org/2/library/shutil.html#shutil.copyfileobj\n\nSo let\u0027s follow this pattern later :)",
+      "parentUuid": "334cb3e0_d6f034c7",
+      "range": {
+        "startLine": 29,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0bff3b31_066df3c3",
         "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
         "patchSetId": 17
