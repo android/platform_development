@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef726090_8d31e08e",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T08:31:34Z",
+      "side": 1,
+      "message": "nit: \u0027check_results\u0027 or \u0027check_result_items\u0027 (as it\u0027s a list of CheckResultItem())",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 16
+      },
+      "revId": "1ce9d2176274fa5daf6d178660097f79a90f0575",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
