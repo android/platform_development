@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b217ff3b_e72b3509",
+        "filename": "gsi/gsi_util/build.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T09:09:55Z",
+      "side": 1,
+      "message": "hmm, this is deprecated.\nhttps://android-review.googlesource.com/#/c/platform/build/+/579743/\n\nhttps://android.googlesource.com/platform/build/+/master/Changes.md#android_build_top\n\nMaybe check other build variables?\nhttps://android.googlesource.com/platform/build/+/master/Changes.md#envsetup_sh-variables-with-make-equivalents",
+      "range": {
+        "startLine": 50,
+        "startChar": 25,
+        "endLine": 50,
+        "endChar": 42
+      },
+      "revId": "9b86d473dc7c30df88ef0180136987a328824097",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
