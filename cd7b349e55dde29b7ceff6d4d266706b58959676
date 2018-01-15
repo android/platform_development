@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "599e82a8_664edcf9",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:14:48Z",
+      "side": 1,
+      "message": "You are right, this is the habit from C, old C++. \nLet me change it.\n\nHowever, I hope the return should be a list to support multiple checking in a checker",
+      "parentUuid": "9a0d9ccb_fd69ff66",
+      "range": {
+        "startLine": 39,
+        "startChar": 14,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f8cd57fe_a5ee2a5c",
         "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
         "patchSetId": 13
@@ -59,6 +83,30 @@
       "writtenOn": "2018-01-15T03:58:25Z",
       "side": 1,
       "message": "nit: using \u0027info\u0027 seems a bit unclear to me.\n\nMaybe just \u0027check_list_item\u0027, as it\u0027s of type CheckListItem.\nOr \u0027matched_check_item\u0027.",
+      "range": {
+        "startLine": 47,
+        "startChar": 6,
+        "endLine": 47,
+        "endChar": 10
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0795a537_81b9cfd2",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8cd57fe_a5ee2a5c",
       "range": {
         "startLine": 47,
         "startChar": 6,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "eddd9687_6744f983",
+        "filename": "gsi/gsi_util/gsi_util/checkers/vintf_checker.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b24ee06_e0931249",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "781405b9_240b75f4",
         "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
         "patchSetId": 13
@@ -105,6 +177,30 @@
       "writtenOn": "2018-01-15T03:58:25Z",
       "side": 1,
       "message": "nit: () can be ignored.",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 27
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "208b779d_13adf1da",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "781405b9_240b75f4",
       "range": {
         "startLine": 35,
         "startChar": 4,
@@ -151,6 +247,30 @@
       "writtenOn": "2018-01-15T03:58:25Z",
       "side": 1,
       "message": "maybe just \u0027all_pass\u0027 \u003d True? (just to make it clear).",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 18
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5b40b79_da642286",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a8c8a0c_0e77a527",
       "range": {
         "startLine": 54,
         "startChar": 4,
