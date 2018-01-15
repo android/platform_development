@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d73b5188_02dc560f",
+        "filename": "gsi/gsi_util/gsi_util/checkers/check_result.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T03:58:25Z",
+      "side": 1,
+      "message": "nit: a namedtuple instead of a class?",
+      "range": {
+        "startLine": 15,
+        "startChar": 11,
+        "endLine": 15,
+        "endChar": 16
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0d9ccb_fd69ff66",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T03:58:25Z",
+      "side": 1,
+      "message": "checker.check() will append the result seems a bit unclear to me. i.e., I need to see it\u0027s implementation.\n\nHow about let checker.check() just returns a CheckResultItem().\n  \ncheck_results \u003d []\nfor x in check_list:\n  checker \u003d ...\n  check_results.append(checker.check())",
+      "range": {
+        "startLine": 39,
+        "startChar": 14,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f8cd57fe_a5ee2a5c",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T03:58:25Z",
+      "side": 1,
+      "message": "nit: using \u0027info\u0027 seems a bit unclear to me.\n\nMaybe just \u0027check_list_item\u0027, as it\u0027s of type CheckListItem.\nOr \u0027matched_check_item\u0027.",
+      "range": {
+        "startLine": 47,
+        "startChar": 6,
+        "endLine": 47,
+        "endChar": 10
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b24ee06_e0931249",
+        "filename": "gsi/gsi_util/gsi_util/checkers/vintf_checker.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T03:58:25Z",
+      "side": 1,
+      "message": "nit: () can be ignored.",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "781405b9_240b75f4",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T03:58:25Z",
+      "side": 1,
+      "message": "nit: () can be ignored.",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 27
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29e46a3c_47e9f783",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T03:58:25Z",
+      "side": 1,
+      "message": "nit: check_results",
+      "range": {
+        "startLine": 53,
+        "startChar": 19,
+        "endLine": 53,
+        "endChar": 31
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a8c8a0c_0e77a527",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-15T03:58:25Z",
+      "side": 1,
+      "message": "maybe just \u0027all_pass\u0027 \u003d True? (just to make it clear).",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 18
+      },
+      "revId": "cd7b349e55dde29b7ceff6d4d266706b58959676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
