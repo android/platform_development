@@ -191,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "2fb68f54_ebda24f2",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:02:38Z",
+      "side": 1,
+      "message": "Good point, let me modify it.",
+      "parentUuid": "cfc172b9_6b531d6c",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 96,
+        "endChar": 56
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b2826bac_c1e478f3",
         "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
         "patchSetId": 17
@@ -626,6 +650,30 @@
       "side": 1,
       "message": "For ordering, I learned this from C++ :)\nIt\u0027s not mentioned in the python guide though.\n\nhttps://google.github.io/styleguide/cppguide.html#Function_Parameter_Ordering",
       "parentUuid": "8f98b1cf_b853068f",
+      "range": {
+        "startLine": 29,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "f95f413f557884e0dcb8b094ca95e0449d8bd355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "334cb3e0_d6f034c7",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:02:38Z",
+      "side": 1,
+      "message": "This is interesting... because the ordering is reversed in C, for example:\n\n    char * strcpy ( char * dest, const char * src );\n\nLooks I am too old-school, I will change my conversion next time. \n\nThanks",
+      "parentUuid": "d56614c7_07da60d0",
       "range": {
         "startLine": 29,
         "startChar": 6,

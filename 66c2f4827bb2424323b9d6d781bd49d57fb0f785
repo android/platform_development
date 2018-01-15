@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e47f3974_54d88eb5",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:02:38Z",
+      "side": 1,
+      "message": "There is no public attribute in class, maybe I add more comment for public methods.",
+      "parentUuid": "bd1c17be_cdeba8bb",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 23
+      },
+      "revId": "66c2f4827bb2424323b9d6d781bd49d57fb0f785",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a11e992_45ca9ec0",
         "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
         "patchSetId": 20
@@ -36,6 +60,24 @@
       "writtenOn": "2018-01-12T11:06:44Z",
       "side": 1,
       "message": "nit: add a . at the end.",
+      "revId": "66c2f4827bb2424323b9d6d781bd49d57fb0f785",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2f954c68_dece3989",
+        "filename": "gsi/gsi_util/gsi_util/dumpers/dumper.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T08:02:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a11e992_45ca9ec0",
       "revId": "66c2f4827bb2424323b9d6d781bd49d57fb0f785",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
