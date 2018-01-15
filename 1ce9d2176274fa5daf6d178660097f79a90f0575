@@ -22,6 +22,30 @@
       "revId": "1ce9d2176274fa5daf6d178660097f79a90f0575",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e6a43fd3_a580c825",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-15T10:23:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef726090_8d31e08e",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 16
+      },
+      "revId": "1ce9d2176274fa5daf6d178660097f79a90f0575",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
