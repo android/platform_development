@@ -22,6 +22,30 @@
       "revId": "6e1a79667f17e1168b067f45f4793335e051ef6f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "926a0b11_46f267c9",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-01-16T11:31:33Z",
+      "side": 1,
+      "message": "Uploaded CL: https://android-review.googlesource.com/c/platform/development/+/589288",
+      "parentUuid": "15ef7956_b04db7b0",
+      "range": {
+        "startLine": 163,
+        "startChar": 50,
+        "endLine": 163,
+        "endChar": 61
+      },
+      "revId": "6e1a79667f17e1168b067f45f4793335e051ef6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
