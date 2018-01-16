@@ -149,10 +149,10 @@ def gather_notice_files(install_dir):
 
 
 def revise_ld_config_txt():
-    """Replaces unversioned VNDK directories with versioned ones.
+    """For O-MR1, replaces unversioned VNDK directories with versioned ones.
 
     Unversioned VNDK directories: /system/${LIB}/vndk[-sp]
-    Versioned VNDK directories: /system/${LIB}/vndk[-sp]${VNDK_VER}
+    Versioned VNDK directories: /system/${LIB}/vndk[-sp]-27
     """
     re_pattern = '(system\/\${LIB}\/vndk(?:-sp)?)([:/]|$)'
     VNDK_INSTALL_DIR_RE = re.compile(re_pattern, flags=re.MULTILINE)
@@ -160,7 +160,7 @@ def revise_ld_config_txt():
         os.path.join(utils.CONFIG_DIR_PATH_PATTERN, 'ld.config*'))
     for ld_config_file in ld_config_txt_paths:
         with open(ld_config_file, 'r') as file:
-            revised = VNDK_INSTALL_DIR_RE.sub(r'\1${VNDK_VER}\2', file.read())
+            revised = VNDK_INSTALL_DIR_RE.sub(r'\1-27\2', file.read())
         with open(ld_config_file, 'w') as file:
             file.write(revised)
 
