@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41e8d1f5_27cb12c6",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-01-16T11:35:39Z",
+      "side": 1,
+      "message": "please rename this to revise_ld_config_txt_if_needed (or similar) and move the if statement inside the function.",
+      "range": {
+        "startLine": 258,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 30
+      },
+      "revId": "455e17b2f41f2b619e2606375aa180baed288428",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
