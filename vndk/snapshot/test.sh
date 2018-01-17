@@ -188,7 +188,7 @@ function run_test_cases() {
         "vndkprivate.libraries.txt"
         "module_paths.txt")
     for config_file in "${config_files[@]}"; do
-        config_file_abs_path=$snapshot_variant_top/configs/$config_file
+        config_file_abs_path=$snapshot_variant_top/config/$config_file
         if [ ! -e $config_file_abs_path ]; then
             echo -e "$FAIL The file \"$config_file_abs_path\" was not found in snapshot."
             exit 1
@@ -199,7 +199,7 @@ function run_test_cases() {
 
     echo "[Test] Checking directory structure of snapshot"
     directories=(
-        'configs/'
+        'config/'
         'NOTICE_FILES/')
     for sub_dir in "${directories[@]}"; do
         dir_abs_path=$snapshot_variant_top/$sub_dir
