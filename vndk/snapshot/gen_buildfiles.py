@@ -40,7 +40,7 @@ class GenBuildFile(object):
                         (VNDK-core libraries, e.g. libbinder.so)
                     vndk-sp/
                         (VNDK-SP libraries, e.g. libc++.so)
-            configs/
+            config/
                 (various *.txt configuration files, e.g. ld.config.*.txt)
         ... (other {SNAPSHOT_VARIANT}/ directories)
         common/
