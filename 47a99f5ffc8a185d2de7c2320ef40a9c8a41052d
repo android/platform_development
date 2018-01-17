@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9d70d77_f974008d",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-17T10:18:28Z",
+      "side": 1,
+      "message": "Let\u0027s use: from gsi_util.commands import images_sources",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91caa18d_f84c0b27",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-17T10:18:28Z",
+      "side": 1,
+      "message": "let\u0027s use:\nfrom gsi_util.commands import image_sources\n\nhttps://google.github.io/styleguide/pyguide.html?showone\u003dImports#Imports\n\nUse from x import y as z if two modules named y are to be imported or if y is an inconveniently long name.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d1eed0f1_a8d9c03b",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-17T10:18:28Z",
+      "side": 1,
+      "message": "Same here, let\u0027s prevent import the class directly (but not related to this change though).",
+      "range": {
+        "startLine": 21,
+        "startChar": 36,
+        "endLine": 21,
+        "endChar": 42
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e9948dd_306fb0e8",
+        "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-17T10:18:28Z",
+      "side": 1,
+      "message": "time for 2018? same for other files.",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "399da3f3_ebd8a04a",
+        "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-17T10:18:28Z",
+      "side": 1,
+      "message": "Putting this file under commands/* seems a bit weird, as it\u0027s not a real command \u0027gsi_util image_sources\u0027.\n\nHow about put this under (or other dir):\n  gsi_util/gsi_util/commands/parsers/image_sources.py",
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f94f6d2_8cfc27f9",
+        "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-17T10:18:28Z",
+      "side": 1,
+      "message": "This imports a class, which should be prevented.\n\nhttps://google.github.io/styleguide/pyguide.html?showone\u003dImports#Imports\n\nUse imports for packages and modules only.\n\nhttps://stackoverflow.com/questions/7948494/whats-the-difference-between-a-python-module-and-a-python-package",
+      "range": {
+        "startLine": 16,
+        "startChar": 48,
+        "endLine": 16,
+        "endChar": 64
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
