@@ -111,6 +111,24 @@
     },
     {
       "key": {
+        "uuid": "5a717a98_9cdda0b8",
+        "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-17T12:23:49Z",
+      "side": 1,
+      "message": "Or just:\n gsi_util/gsi_util/commands/common/image_sources.py\n\nTo indicate this is a common module that will be shared.",
+      "parentUuid": "399da3f3_ebd8a04a",
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f94f6d2_8cfc27f9",
         "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
         "patchSetId": 4
