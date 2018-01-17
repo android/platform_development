@@ -26,7 +26,7 @@ import sys
 COMMON_DIR_NAME = 'common'
 COMMON_DIR_PATH = COMMON_DIR_NAME
 ANDROID_MK_PATH = os.path.join(COMMON_DIR_PATH, 'Android.mk')
-CONFIG_DIR_PATH_PATTERN = '*/configs'
+CONFIG_DIR_PATH_PATTERN = '*/config'
 MANIFEST_FILE_NAME = 'manifest.xml'
 MANIFEST_FILE_PATH = os.path.join(COMMON_DIR_PATH, MANIFEST_FILE_NAME)
 MODULE_PATHS_FILE_NAME = 'module_paths.txt'
