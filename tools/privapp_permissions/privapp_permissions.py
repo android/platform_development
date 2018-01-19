@@ -143,7 +143,7 @@ def extract_pkg_and_requested_permissions(apk_path):
     package_name = None
     rawLines = txt.split('\n')
     for line in rawLines:
-        regex = r"uses-permission: name='([\S]+)'"
+        regex = r"uses-permission.*: name='([\S]+)'"
         matches = re.search(regex, line)
         if matches:
             name = matches.group(1)
