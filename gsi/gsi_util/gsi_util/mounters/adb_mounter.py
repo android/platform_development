@@ -69,7 +69,7 @@ class AdbMounter(base_mounter.BaseMounter):
   def _handle_mount(self):
     adb_utils.root(self._serial_num)
 
-    self._temp_dir = tempfile.mkdtemp()
+    self._temp_dir = tempfile.mkdtemp()  # pylint: disable=attribute-defined-outside-init
     logging.debug('Created temp dir: %s', self._temp_dir)
 
     return _AdbFileAccessor(self._temp_dir, self._serial_num)
@@ -77,6 +77,6 @@ class AdbMounter(base_mounter.BaseMounter):
   # override
   def _handle_unmount(self):
     if hasattr(self, '_temp_dir'):
-      logging.debug('Remove temp dir: %s', self._temp_dir)
+      logging.debug('Removing temp dir: %s', self._temp_dir)
       shutil.rmtree(self._temp_dir)
       del self._temp_dir
