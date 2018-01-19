@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "4e82d391_a532fd90",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-19T02:58:08Z",
+      "side": 1,
+      "message": "We could probably improve on some performance by using unordered maps in places where we don\u0027t need them to be ordered. We only need them (ordered) to find out added / removed functions and u.d types while diffing.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 47
+      },
+      "revId": "b9fa8ea5af528deb3f9ca39639cf48cc2b2c60c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8a51437_fecf5d11",
         "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
         "patchSetId": 1
