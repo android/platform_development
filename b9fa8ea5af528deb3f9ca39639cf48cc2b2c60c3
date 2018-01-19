@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "e8c3d5b7_d86b939d",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/abi_diff_helpers.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-19T08:01:32Z",
+      "side": 1,
+      "message": "This should somewhat improve our performance drop due to ODR checks.",
+      "range": {
+        "startLine": 512,
+        "startChar": 32,
+        "endLine": 512,
+        "endChar": 51
+      },
+      "revId": "b9fa8ea5af528deb3f9ca39639cf48cc2b2c60c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d8a51437_fecf5d11",
         "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
         "patchSetId": 1
