@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8a51437_fecf5d11",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-19T02:13:03Z",
+      "side": 1,
+      "message": "This is sub-optimal since even though we\u0027re recursing through the type graph while doing the diff, we aren\u0027t doing a MergeType on those nodes. However, the problem with doing that is correcting reference_type fields with nodes which were merged earlier.",
+      "range": {
+        "startLine": 147,
+        "startChar": 20,
+        "endLine": 148,
+        "endChar": 69
+      },
+      "revId": "b9fa8ea5af528deb3f9ca39639cf48cc2b2c60c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
