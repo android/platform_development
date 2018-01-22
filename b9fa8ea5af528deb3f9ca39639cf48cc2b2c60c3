@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9948230d_b523cfd5",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/abi_diff_helpers.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-22T18:10:35Z",
+      "side": 1,
+      "message": "Took this out as this will cause problems with unexported types and ODR checks.",
+      "parentUuid": "e8c3d5b7_d86b939d",
+      "range": {
+        "startLine": 512,
+        "startChar": 32,
+        "endLine": 512,
+        "endChar": 51
+      },
+      "revId": "b9fa8ea5af528deb3f9ca39639cf48cc2b2c60c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d8a51437_fecf5d11",
         "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
         "patchSetId": 1
