@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "aef6a365_cca5a4d8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:48Z",
+      "side": 1,
+      "message": "Thus our script is more python-3 ready when someday we\u0027ve switched to py3.",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 30
+      },
+      "revId": "00f35cf683c2c0514b06382152c6c15d72777be5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7501bd2_c7be9fc2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:48Z",
+      "side": 1,
+      "message": "Let\u0027s make sure all future CLs can pass pylint and gpylint.\n\nFor the error/warning, let\u0027s use pylint: disable to explicitly indicate it\u0027s disabled.\n\ne.g., the missing import errno can be caught by pylint.",
+      "range": {
+        "startLine": 19,
+        "startChar": 12,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "00f35cf683c2c0514b06382152c6c15d72777be5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89da9d75_dfcd7daa",
         "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
         "patchSetId": 1
