@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3870ad1e_42860d9f",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-22T11:03:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9d70d77_f974008d",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "91caa18d_f84c0b27",
         "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-17T10:18:28Z",
       "side": 1,
       "message": "let\u0027s use:\nfrom gsi_util.commands import image_sources\n\nhttps://google.github.io/styleguide/pyguide.html?showone\u003dImports#Imports\n\nUse from x import y as z if two modules named y are to be imported or if y is an inconveniently long name.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07af4364_d03dbcbd",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-22T11:03:19Z",
+      "side": 1,
+      "message": "Done, thanks for the info.",
+      "parentUuid": "91caa18d_f84c0b27",
       "range": {
         "startLine": 20,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c5f91a9b_b9d8f1ef",
+        "filename": "gsi/gsi_util/gsi_util/commands/dump.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-22T11:03:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1eed0f1_a8d9c03b",
+      "range": {
+        "startLine": 21,
+        "startChar": 36,
+        "endLine": 21,
+        "endChar": 42
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e9948dd_306fb0e8",
         "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
         "patchSetId": 4
@@ -82,6 +154,30 @@
       "writtenOn": "2018-01-17T10:18:28Z",
       "side": 1,
       "message": "time for 2018? same for other files.",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a0523803_15ebe883",
+        "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-22T11:03:19Z",
+      "side": 1,
+      "message": "Done, for new files",
+      "parentUuid": "7e9948dd_306fb0e8",
       "range": {
         "startLine": 1,
         "startChar": 12,
@@ -129,6 +225,24 @@
     },
     {
       "key": {
+        "uuid": "be2af9d4_c9f0d4fd",
+        "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-22T11:03:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a717a98_9cdda0b8",
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f94f6d2_8cfc27f9",
         "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
         "patchSetId": 4
@@ -140,6 +254,30 @@
       "writtenOn": "2018-01-17T10:18:28Z",
       "side": 1,
       "message": "This imports a class, which should be prevented.\n\nhttps://google.github.io/styleguide/pyguide.html?showone\u003dImports#Imports\n\nUse imports for packages and modules only.\n\nhttps://stackoverflow.com/questions/7948494/whats-the-difference-between-a-python-module-and-a-python-package",
+      "range": {
+        "startLine": 16,
+        "startChar": 48,
+        "endLine": 16,
+        "endChar": 64
+      },
+      "revId": "47a99f5ffc8a185d2de7c2320ef40a9c8a41052d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44225cba_d922c4ab",
+        "filename": "gsi/gsi_util/gsi_util/commands/image_sources.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-22T11:03:19Z",
+      "side": 1,
+      "message": "Done, thanks for the info.",
+      "parentUuid": "3f94f6d2_8cfc27f9",
       "range": {
         "startLine": 16,
         "startChar": 48,
