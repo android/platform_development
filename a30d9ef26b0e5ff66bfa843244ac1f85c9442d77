@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "458d34f5_a1d21afb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:51Z",
+      "side": 1,
+      "message": "gsi :)",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "a30d9ef26b0e5ff66bfa843244ac1f85c9442d77",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9331c234_4d2346c4",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:51Z",
+      "side": 1,
+      "message": "Use Implements.\n\nhttps://engdoc.corp.google.com/eng/doc/devguide/cpp/styleguide.shtml?cl\u003dhead#Function_Comments\n\nThese comments should be descriptive (\"Opens the file\") rather than imperative (\"Open the file\"); the comment describes the function, it does not tell the function what to do.",
+      "range": {
+        "startLine": 29,
+        "startChar": 5,
+        "endLine": 29,
+        "endChar": 14
+      },
+      "revId": "a30d9ef26b0e5ff66bfa843244ac1f85c9442d77",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7a0e46b_ebb4b4ff",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:51Z",
+      "side": 1,
+      "message": "shouldn\u0027t there be only one match?",
+      "range": {
+        "startLine": 47,
+        "startChar": 13,
+        "endLine": 47,
+        "endChar": 27
+      },
+      "revId": "a30d9ef26b0e5ff66bfa843244ac1f85c9442d77",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45070c01_ddef1ec4",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:51Z",
+      "side": 1,
+      "message": "This returns the global list to the caller.\n\nThe caller can change this list directly, which will affect later get_all_check_list().\n\nReturn a copy via list(_CHECK_LIST) or change _CHECK_LIST to a immutable tuple.",
+      "range": {
+        "startLine": 57,
+        "startChar": 11,
+        "endLine": 57,
+        "endChar": 22
+      },
+      "revId": "a30d9ef26b0e5ff66bfa843244ac1f85c9442d77",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0d8304e_3617ea0e",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:51Z",
+      "side": 1,
+      "message": "dump?",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 4
+      },
+      "revId": "a30d9ef26b0e5ff66bfa843244ac1f85c9442d77",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d85bbab_1220d64d",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-22T09:07:51Z",
+      "side": 1,
+      "message": "How about \u0027CHECK_ITEM\u0027? (just want to make it clear).\n\nID usually is an integer to me (e.g., thread ID, PID).\nOr an unique identifier used internally (e.g., sha256), that isn\u0027t viewable by end users.",
+      "range": {
+        "startLine": 141,
+        "startChar": 7,
+        "endLine": 141,
+        "endChar": 9
+      },
+      "revId": "a30d9ef26b0e5ff66bfa843244ac1f85c9442d77",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
