@@ -1072,8 +1072,8 @@ class VTableLayoutDiffIR {
 
 class RecordFieldDiffIR {
  public:
-  RecordFieldDiffIR(const RecordFieldIR *old_field,
-                    const RecordFieldIR *new_field)
+  RecordFieldDiffIR(RecordFieldIR *old_field,
+                    RecordFieldIR *new_field)
       : old_field_(old_field), new_field_(new_field) { }
   const RecordFieldIR *GetOldField() const {
     return old_field_;
@@ -1083,9 +1083,8 @@ class RecordFieldDiffIR {
     return new_field_;
   }
 
- protected:
-  const RecordFieldIR *old_field_;
-  const RecordFieldIR *new_field_;
+  RecordFieldIR *old_field_;
+  RecordFieldIR *new_field_;
 };
 
 class CXXBaseSpecifierDiffIR {
