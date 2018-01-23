@@ -48,6 +48,52 @@
     },
     {
       "key": {
+        "uuid": "e930b08b_102f5368",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-23T10:45:49Z",
+      "side": 1,
+      "message": "shouldn\u0027t import class directly.",
+      "range": {
+        "startLine": 24,
+        "startChar": 44,
+        "endLine": 24,
+        "endChar": 56
+      },
+      "revId": "00f35cf683c2c0514b06382152c6c15d72777be5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "854d733c_721592f2",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-23T10:45:49Z",
+      "side": 1,
+      "message": "#pass/#total tests.",
+      "range": {
+        "startLine": 37,
+        "startChar": 36,
+        "endLine": 37,
+        "endChar": 69
+      },
+      "revId": "00f35cf683c2c0514b06382152c6c15d72777be5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89da9d75_dfcd7daa",
         "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
         "patchSetId": 1
