@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9dd4c518_d872dea1",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-23T10:53:17Z",
+      "side": 1,
+      "message": "this is a weird assumption, as I posted in the original CL.\n\nOK for now, but better to revise a bit later.",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 98,
+        "endChar": 67
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
