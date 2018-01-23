@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a334c278_dd28c1a2",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-23T08:29:46Z",
+      "side": 1,
+      "message": "Add global variables to graph as well.",
+      "range": {
+        "startLine": 551,
+        "startChar": 1,
+        "endLine": 551,
+        "endChar": 3
+      },
+      "revId": "4ac0be6b0cd87d65c0f84cb0f395cbb3a96cb429",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
