@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb468750_ea091775",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-24T01:08:43Z",
+      "side": 1,
+      "message": "This will make us miss out on merging parameter types when the return type is hidden. Worse, the parameters will now point to some random incorrect type after linking. Correct this.",
+      "range": {
+        "startLine": 479,
+        "startChar": 6,
+        "endLine": 479,
+        "endChar": 13
+      },
+      "revId": "88700ee0bb0719610c9be8f7827fab00a7b20973",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
