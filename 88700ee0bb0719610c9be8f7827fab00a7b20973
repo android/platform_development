@@ -22,6 +22,29 @@
       "revId": "88700ee0bb0719610c9be8f7827fab00a7b20973",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a800fa0f_8a2dd184",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-01-24T02:47:41Z",
+      "side": 1,
+      "message": "Same problem with template parameters.",
+      "range": {
+        "startLine": 486,
+        "startChar": 1,
+        "endLine": 486,
+        "endChar": 3
+      },
+      "revId": "88700ee0bb0719610c9be8f7827fab00a7b20973",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
