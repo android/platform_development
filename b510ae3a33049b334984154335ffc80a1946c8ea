@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "099d3f55_91361921",
+        "filename": "gsi/gsi_util/gsi_util/commands/flash_gsi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-24T08:54:05Z",
+      "side": 1,
+      "message": "Hi schwartzmi@,\nHere are the detailed steps for \u0027flash_gsi\u0027.\nFYI!",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 16
+      },
+      "revId": "b510ae3a33049b334984154335ffc80a1946c8ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
