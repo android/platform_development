@@ -22,6 +22,30 @@
       "revId": "a07883696ed4e2d1dc27da1d5d2e8810183acf2e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e281e1d_829abdf8",
+        "filename": "gsi/gsi_util/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T08:23:10Z",
+      "side": 1,
+      "message": "Yeah, because the folder is created from this patch.\nWithout this, gsi_util cannot be ran after built.",
+      "parentUuid": "3dd1cb02_f0be3e60",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 34
+      },
+      "revId": "a07883696ed4e2d1dc27da1d5d2e8810183acf2e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
