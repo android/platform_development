@@ -1,0 +1,510 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62470666_a1022b5a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Maybe just:\n\ngsi_util: removing root permission requirement",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f17ab6eb_125d406e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Replaces \u0027mount\u0027 with \u0027debugfs\u0027",
+      "range": {
+        "startLine": 10,
+        "startChar": 33,
+        "endLine": 10,
+        "endChar": 57
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0fba5994_6175e6e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "which needs",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2bc9863a_7f4d759b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": ", which does not need root permission and will be useful on server side usage.",
+      "range": {
+        "startLine": 10,
+        "startChar": 59,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14311a75_4dd3bfa1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "does",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 2
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2bf4f65f_c048f093",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Just use:\n  \u0027from gsi_util.utils import debugfs\u0027\n\nhttps://google.github.io/styleguide/pyguide.html#Imports",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 40
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c245441_76c8037f",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "what does file_spec mean? (it seems not a general term).\n\nIs this a special term from debugfs?\n\nAnd maybe we should use \u0027file_spec\u0027?\n\nBtw, why it needs to prepend \u0027/\u0027?",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 12
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efd6d7b3_60993e69",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "maybe just file_path (could be a file or a dir)?",
+      "range": {
+        "startLine": 27,
+        "startChar": 21,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e7fdbd2_85133b95",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Dumps",
+      "range": {
+        "startLine": 28,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 9
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "19c23a71_fdf9321e",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e859af64_bb882106",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 32,
+        "startChar": 14,
+        "endLine": 32,
+        "endChar": 17
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31f6e2a0_ba68f1bd",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "in the image_file",
+      "range": {
+        "startLine": 32,
+        "startChar": 39,
+        "endLine": 32,
+        "endChar": 52
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61f685a1_435289d0",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "directory?",
+      "range": {
+        "startLine": 32,
+        "startChar": 28,
+        "endLine": 32,
+        "endChar": 38
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "95c58541_9738e1de",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 33,
+        "startChar": 14,
+        "endLine": 33,
+        "endChar": 17
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cfab6d58_992390af",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Is it: \u0027in the local directory.\u0027?",
+      "range": {
+        "startLine": 33,
+        "startChar": 35,
+        "endLine": 33,
+        "endChar": 47
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39eed969_b3529e6c",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Please add \u0027.\u0027 for each sentence.\n\nhttps://google.github.io/styleguide/pyguide.html#Comments",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 35,
+        "endChar": 50
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26e6d6d3_c8093931",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "\u0027Return\u0027 under \u0027Returns\u0027 seems redundant.\n\nHow about:\n\nReturns:\n  True if \u0027debugfs\u0027 command succeeded, False otherwise.",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 50
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7b5e779f_82f65c40",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Gets",
+      "range": {
+        "startLine": 47,
+        "startChar": 5,
+        "endLine": 47,
+        "endChar": 8
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1db8ec5b_204af2c8",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 50,
+        "startChar": 16,
+        "endLine": 50,
+        "endChar": 19
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "041149a7_b10e9099",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 51,
+        "startChar": 14,
+        "endLine": 51,
+        "endChar": 17
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "907e7ac5_f8386188",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Let\u0027s add \u0027.\u0027 for all sentences.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 42
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9503e929_2385b89d",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T08:15:00Z",
+      "side": 1,
+      "message": "Maybe copy/paste a sample output of debugfs into comment?\nSo it\u0027s easier for us to know the RE.\n\nAnd easier to debug, if someday debugfs changes its outoupt.",
+      "range": {
+        "startLine": 67,
+        "startChar": 2,
+        "endLine": 70,
+        "endChar": 18
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
