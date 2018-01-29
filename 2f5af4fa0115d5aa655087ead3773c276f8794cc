@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4c5f484a_d67d0aa7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62470666_a1022b5a",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f17ab6eb_125d406e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -59,6 +83,54 @@
       "writtenOn": "2018-01-29T08:15:00Z",
       "side": 1,
       "message": "which needs",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ccc13be5_f09aa599",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f17ab6eb_125d406e",
+      "range": {
+        "startLine": 10,
+        "startChar": 33,
+        "endLine": 10,
+        "endChar": 57
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fe47e52_ab10f61f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fba5994_6175e6e7",
       "range": {
         "startLine": 10,
         "startChar": 9,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "23df0ab3_bbac4789",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2bc9863a_7f4d759b",
+      "range": {
+        "startLine": 10,
+        "startChar": 59,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2bf4f65f_c048f093",
         "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
         "patchSetId": 4
@@ -163,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "14158488_372e3b87",
+        "filename": "gsi/gsi_util/gsi_util/mounters/image_mounter.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "The filename_in_storage does no start from \u0027/\u0027, because we usually need to append filename_in_storage to another base path in each mounter, for example append to the temp folder.",
+      "parentUuid": "4c245441_76c8037f",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 12
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "efd6d7b3_60993e69",
         "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
         "patchSetId": 4
@@ -174,6 +294,30 @@
       "writtenOn": "2018-01-29T08:15:00Z",
       "side": 1,
       "message": "maybe just file_path (could be a file or a dir)?",
+      "range": {
+        "startLine": 27,
+        "startChar": 21,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08af03b6_4a814088",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "filespec is the name of debugfs, so I reuse it here.",
+      "parentUuid": "efd6d7b3_60993e69",
       "range": {
         "startLine": 27,
         "startChar": 21,
@@ -393,6 +537,30 @@
     },
     {
       "key": {
+        "uuid": "8e431ab0_326ac642",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26e6d6d3_c8093931",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 50
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b5e779f_82f65c40",
         "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
         "patchSetId": 4
@@ -485,6 +653,30 @@
     },
     {
       "key": {
+        "uuid": "a1de5a48_109d7118",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "907e7ac5_f8386188",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 42
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9503e929_2385b89d",
         "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
         "patchSetId": 4
@@ -496,6 +688,30 @@
       "writtenOn": "2018-01-29T08:15:00Z",
       "side": 1,
       "message": "Maybe copy/paste a sample output of debugfs into comment?\nSo it\u0027s easier for us to know the RE.\n\nAnd easier to debug, if someday debugfs changes its outoupt.",
+      "range": {
+        "startLine": 67,
+        "startChar": 2,
+        "endLine": 70,
+        "endChar": 18
+      },
+      "revId": "2f5af4fa0115d5aa655087ead3773c276f8794cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "178fd7dd_d45f8ff7",
+        "filename": "gsi/gsi_util/gsi_util/utils/debugfs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-29T11:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9503e929_2385b89d",
       "range": {
         "startLine": 67,
         "startChar": 2,
