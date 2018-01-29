@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3dd1cb02_f0be3e60",
+        "filename": "gsi/gsi_util/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-29T07:07:00Z",
+      "side": 1,
+      "message": "Only added this in PS-6.",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 34
+      },
+      "revId": "a07883696ed4e2d1dc27da1d5d2e8810183acf2e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
