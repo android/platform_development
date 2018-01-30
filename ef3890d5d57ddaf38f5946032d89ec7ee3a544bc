@@ -269,6 +269,29 @@
       "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa85b72_869fc894",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-30T16:40:31Z",
+      "side": 1,
+      "message": "it would be better not to disable this lint.\nmaybe add \"self._temp_dir \u003d None\" in __init__()?",
+      "range": {
+        "startLine": 72,
+        "startChar": 41,
+        "endLine": 72,
+        "endChar": 89
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
