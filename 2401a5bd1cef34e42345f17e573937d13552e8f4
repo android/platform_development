@@ -22,6 +22,52 @@
       "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db366e08_c20721d8",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-30T16:29:33Z",
+      "side": 1,
+      "message": "some paths are defined as constants, while some are not.",
+      "range": {
+        "startLine": 101,
+        "startChar": 10,
+        "endLine": 101,
+        "endChar": 42
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7a30a36_8cc705b2",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-30T16:29:33Z",
+      "side": 1,
+      "message": "maybe use format()?",
+      "range": {
+        "startLine": 119,
+        "startChar": 28,
+        "endLine": 120,
+        "endChar": 53
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
