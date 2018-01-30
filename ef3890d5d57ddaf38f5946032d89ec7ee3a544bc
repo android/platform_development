@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4a56adb_dd631b5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "fields?",
+      "range": {
+        "startLine": 11,
+        "startChar": 17,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "995bac90_39877d8b",
+        "filename": "gsi/gsi_util/gsi_util/checkers/check_result.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Maybe put the comment before the definition?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 3
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "874851da_b419f44b",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Is \u0027s\u0027 good enough?",
+      "range": {
+        "startLine": 77,
+        "startChar": 51,
+        "endLine": 77,
+        "endChar": 52
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "46ea01eb_1dd4431d",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "I would like raise a exception here, because sometimes the caller want to handle it. Further, some de-initialize can be run.",
+      "range": {
+        "startLine": 77,
+        "startChar": 6,
+        "endLine": 77,
+        "endChar": 12
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "72e4667b_5c80ab3e",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 79,
+        "startChar": 6,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "937425a9_77d7dcab",
+        "filename": "gsi/gsi_util/gsi_util/checkers/vintf_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Maybe we could add this check in to prepare_file() and prepare_multi_files() by default, and add a parameter raise_on_error\u003dfalse to disable it.\n\nWe can do it in another CL.",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 24
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8647d4d_86a5b18d",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Does this redundant?",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f4fd824_4357372f",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "could be print(\u0027-\u0027 * 36)",
+      "range": {
+        "startLine": 75,
+        "startChar": 10,
+        "endLine": 75,
+        "endChar": 48
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e21725e_b9462424",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Please rebase this to aosp/589273",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "68214ea5_d599bf8c",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Please rebase this to aosp/589273",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 24
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2a774750_e220fbc3",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:13:40Z",
+      "side": 1,
+      "message": "Please rebase this to aosp/589273",
+      "range": {
+        "startLine": 151,
+        "startChar": 4,
+        "endLine": 151,
+        "endChar": 22
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
