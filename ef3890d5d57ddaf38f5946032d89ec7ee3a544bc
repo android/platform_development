@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "d0dc048c_d4574f25",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-30T10:14:44Z",
+      "side": 1,
+      "message": "+ and VintfChecker",
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a4a56adb_dd631b5c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
