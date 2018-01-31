@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "615dceff_b13eeb84",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-01-31T02:28:46Z",
+      "side": 1,
+      "message": "In fact, this means we can\u0027t export things like GuardedBy - but hopefully we do not have such public methods? (I know Studio has its own set of annotations to accommodate this, though.)",
+      "range": {
+        "startLine": 9,
+        "startChar": 38,
+        "endLine": 9,
+        "endChar": 57
+      },
+      "revId": "753a8f4dc43b765142f77ed49fe21d49a029205f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
