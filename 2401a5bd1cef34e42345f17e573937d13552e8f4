@@ -238,6 +238,30 @@
     },
     {
       "key": {
+        "uuid": "529f8f91_9ae4f394",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T10:45:20Z",
+      "side": 1,
+      "message": "Or, maybe we could separate these code to be a function at this time.",
+      "parentUuid": "83083dbc_b9496860",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 13
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7a30a36_8cc705b2",
         "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
         "patchSetId": 2
