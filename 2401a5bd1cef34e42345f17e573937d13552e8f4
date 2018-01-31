@@ -138,6 +138,30 @@
       "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ff7732b_d7ca4522",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T07:59:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "b7a30a36_8cc705b2",
+      "range": {
+        "startLine": 119,
+        "startChar": 28,
+        "endLine": 120,
+        "endChar": 53
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
