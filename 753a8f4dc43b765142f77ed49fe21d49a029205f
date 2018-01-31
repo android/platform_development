@@ -39,6 +39,24 @@
       "revId": "753a8f4dc43b765142f77ed49fe21d49a029205f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18f8eb83_f4e726cd",
+        "filename": "build/build_android_stubs.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1103203
+      },
+      "writtenOn": "2018-01-31T23:37:35Z",
+      "side": 1,
+      "message": "Or even PRIVATE_ERRORPRONE_FLAGS or similar?",
+      "parentUuid": "c9cd18b5_0de6c45c",
+      "revId": "753a8f4dc43b765142f77ed49fe21d49a029205f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
