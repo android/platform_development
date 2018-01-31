@@ -214,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "83083dbc_b9496860",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T10:42:20Z",
+      "side": 1,
+      "message": "It\u0027s okay to me.\nHowever, I have some reasons why do I suggest to do that:\n\n1. We could know what commands does gsi_util depend.\n2. We could know what parameters the command.",
+      "parentUuid": "062ee4f5_aa9f1460",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 13
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7a30a36_8cc705b2",
         "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
         "patchSetId": 2
