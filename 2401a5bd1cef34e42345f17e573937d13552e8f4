@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "2f0f21d1_7036dca6",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T07:58:09Z",
+      "side": 1,
+      "message": "gsi_util mounters need to support odm image, create a separate bug to track.",
+      "range": {
+        "startLine": 49,
+        "startChar": 20,
+        "endLine": 49,
+        "endChar": 23
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9dd4c518_d872dea1",
         "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
         "patchSetId": 2
@@ -13,6 +36,30 @@
       "writtenOn": "2018-01-23T10:53:17Z",
       "side": 1,
       "message": "this is a weird assumption, as I posted in the original CL.\n\nOK for now, but better to revise a bit later.",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 98,
+        "endChar": 67
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4ce7030_4a077a1a",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T07:58:09Z",
+      "side": 1,
+      "message": "How about:\n\n    d \u003d dumper.Dumper(file_accessor)\n    dump_result_dict \u003d d.dump([\u0027system_kernel_sepolicy_ver\u0027])\n    return dump_result_dict[\u0027system_kernel_sepolicy_ver\u0027]\n\nor add a new method to Dumper?",
+      "parentUuid": "9dd4c518_d872dea1",
       "range": {
         "startLine": 97,
         "startChar": 4,
@@ -41,6 +88,29 @@
         "startChar": 10,
         "endLine": 101,
         "endChar": 42
+      },
+      "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "30bb0e9b_fe286927",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T07:58:09Z",
+      "side": 1,
+      "message": "How about add a function \u0027merge()\u0027 into folder \u0027utils\u0027 to be sepolicy.py or secilc.py?",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 13
       },
       "revId": "2401a5bd1cef34e42345f17e573937d13552e8f4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
