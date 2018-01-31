@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e328023d_1ea7bf9e",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T11:56:44Z",
+      "side": 1,
+      "message": "looks better :)",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 49
+      },
+      "revId": "ce842c18ac8af5ef7374b9e85b9b259664e80253",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
