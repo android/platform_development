@@ -25,6 +25,13 @@ src_dir := $(intermediates)/src
 classes_dir := $(intermediates)/classes
 framework_res_package := $(call intermediates-dir-for,APPS,framework-res,,COMMON)/package-export.apk
 
+# Disable all warnings. For one, stubs are auto-generated and lack annotations currently. Second,
+# any warnings should have been emitted for the stub sources.
+disable_errorprone_warnings :=
+ifeq (true,$(RUN_ERROR_PRONE))
+  disable_errorprone_warnings := -XepDisableAllChecks
+endif
+
 $(full_target) $(full_src_target): PRIVATE_SRC_DIR := $(src_dir)
 $(full_target) $(full_src_target): PRIVATE_INTERMEDIATES_DIR := $(intermediates)
 $(full_target): PRIVATE_FRAMEWORK_RES_PACKAGE := $(framework_res_package)
@@ -54,7 +61,8 @@ $(full_target): $(stub_timestamp) $(framework_res_package) $(ZIPTIME)
 	$(hide) $(ACP) libcore/ojluni/NOTICE $(PRIVATE_CLASS_INTERMEDIATES_DIR)/NOTICES/ojluni-NOTICE
 	$(hide) find $(PRIVATE_SRC_DIR) -name "*.java" > \
         $(PRIVATE_INTERMEDIATES_DIR)/java-source-list
-	$(hide) $(TARGET_JAVAC) -source 1.8 -target 1.8 -encoding UTF-8 -bootclasspath "" \
+	$(hide) $(TARGET_JAVAC) $(disable_errorprone_warnings) \
+                        -source 1.8 -target 1.8 -encoding UTF-8 -bootclasspath "" \
 			-g -d $(PRIVATE_CLASS_INTERMEDIATES_DIR) \
 			\@$(PRIVATE_INTERMEDIATES_DIR)/java-source-list \
 		|| ( rm -rf $(PRIVATE_CLASS_INTERMEDIATES_DIR) ; exit 41 )
