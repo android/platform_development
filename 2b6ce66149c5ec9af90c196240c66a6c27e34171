@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a55a24dd_d6b0b352",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T10:48:03Z",
+      "side": 1,
+      "message": "Ah, bad+1",
+      "parentUuid": "2352c1a8_da595c8c",
+      "range": {
+        "startLine": 34,
+        "startChar": 14,
+        "endLine": 34,
+        "endChar": 15
+      },
+      "revId": "2b6ce66149c5ec9af90c196240c66a6c27e34171",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "761241fc_f7674209",
         "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-31T10:06:31Z",
       "side": 1,
       "message": "nit: maybe just \"self._temp_dir:\" is good enough.",
+      "range": {
+        "startLine": 81,
+        "startChar": 21,
+        "endLine": 81,
+        "endChar": 33
+      },
+      "revId": "2b6ce66149c5ec9af90c196240c66a6c27e34171",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcd26595_d1d8236c",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T10:48:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "761241fc_f7674209",
       "range": {
         "startLine": 81,
         "startChar": 21,
