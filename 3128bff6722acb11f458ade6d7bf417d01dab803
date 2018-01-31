@@ -22,6 +22,30 @@
       "revId": "3128bff6722acb11f458ade6d7bf417d01dab803",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c08e7d86_4e7cebc3",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T23:45:08Z",
+      "side": 1,
+      "message": "Great, looks a fancy design.\n\nBut this is a bit overkill to me here.\nAnd if secilc has some new options, we have to add a new method for it, right? e.g., secilc_helper.my_new_option(my_new_value).\n\nIn current implementation, we just need the caller to put { my_new_option: my_new value } into the options dict, no need to change sepolicy_utils.py.\n\nI\u0027m ok to add this change though.\nLet\u0027s see how Szuwei think about it.",
+      "parentUuid": "ada24f36_0dd03ea5",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 18
+      },
+      "revId": "3128bff6722acb11f458ade6d7bf417d01dab803",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
