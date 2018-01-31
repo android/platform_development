@@ -131,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "cfb79c6e_c31b5cf6",
+        "filename": "gsi/gsi_util/gsi_util/checkers/check_result.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T10:06:31Z",
+      "side": 1,
+      "message": "Thanks, its so complex :)",
+      "parentUuid": "07688042_6c2f8c4b",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 3
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "874851da_b419f44b",
         "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
         "patchSetId": 2
@@ -589,6 +613,30 @@
       "side": 1,
       "message": "Ah, good suggestion.\nThanks!",
       "parentUuid": "9aa85b72_869fc894",
+      "range": {
+        "startLine": 72,
+        "startChar": 41,
+        "endLine": 72,
+        "endChar": 89
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "473dbc62_2d2b9660",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-01-31T10:06:31Z",
+      "side": 1,
+      "message": "Oh! good!",
+      "parentUuid": "a623ac95_406c9eb0",
       "range": {
         "startLine": 72,
         "startChar": 41,
