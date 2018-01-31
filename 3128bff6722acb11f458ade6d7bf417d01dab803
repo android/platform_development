@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ada24f36_0dd03ea5",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-01-31T15:36:40Z",
+      "side": 1,
+      "message": "This looks good to me.\n\nAnother idea.. if you would like to use a command helper, how about something like\n\nsecilic_helper \u003d sepolicy_utils.helper(). \\\n  multiple_decl(). \\\n  mls(). \\\n  disable_neverallow(). \\\n  set_output(\u0027/dev/null\u0027). \\\n  set_file_context(\u0027/dev/null\u0027)\n\n...\n\nseclic_helper.add_cil_file(plat_sepolicy)\n...\n\nresult_ok, stderr \u003d seclic_helper.execute()",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 18
+      },
+      "revId": "3128bff6722acb11f458ade6d7bf417d01dab803",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
