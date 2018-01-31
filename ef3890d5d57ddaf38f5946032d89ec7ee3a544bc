@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0920052f_eeb153fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0dc048c_d4574f25",
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a4a56adb_dd631b5c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "7f173f2b_c6c8cc3f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4a56adb_dd631b5c",
+      "range": {
+        "startLine": 11,
+        "startChar": 17,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "995bac90_39877d8b",
         "filename": "gsi/gsi_util/gsi_util/checkers/check_result.py",
         "patchSetId": 2
@@ -53,6 +95,30 @@
       "writtenOn": "2018-01-30T10:13:40Z",
       "side": 1,
       "message": "Maybe put the comment before the definition?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 3
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07688042_6c2f8c4b",
+        "filename": "gsi/gsi_util/gsi_util/checkers/check_result.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Ah, I\u0027ll get pylint error if moving above.\n\nW: 27,-1: String statement has no effect (pointless-string-statement)\n\nIf you look at function/class comments, they\u0027re actually behind the definition :)\nhttps://google.github.io/styleguide/pyguide.html#Comments",
+      "parentUuid": "995bac90_39877d8b",
       "range": {
         "startLine": 20,
         "startChar": 0,
@@ -111,6 +177,54 @@
     },
     {
       "key": {
+        "uuid": "6cd2d6b2_1a11a838",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46ea01eb_1dd4431d",
+      "range": {
+        "startLine": 77,
+        "startChar": 6,
+        "endLine": 77,
+        "endChar": 12
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24af9dfa_7301e59a",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "874851da_b419f44b",
+      "range": {
+        "startLine": 77,
+        "startChar": 51,
+        "endLine": 77,
+        "endChar": 52
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72e4667b_5c80ab3e",
         "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
         "patchSetId": 2
@@ -122,6 +236,30 @@
       "writtenOn": "2018-01-30T10:13:40Z",
       "side": 1,
       "message": "Same as above.",
+      "range": {
+        "startLine": 79,
+        "startChar": 6,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efcd0dde_fcff83b2",
+        "filename": "gsi/gsi_util/gsi_util/checkers/checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72e4667b_5c80ab3e",
       "range": {
         "startLine": 79,
         "startChar": 6,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "be08de37_d23811d6",
+        "filename": "gsi/gsi_util/gsi_util/checkers/vintf_checker.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Yup, it will be better.\nLet\u0027s do that in another CL.\n\nSometimes we might need raise_on_error \"per file\", because some files are optional, while others are mandatory.",
+      "parentUuid": "937425a9_77d7dcab",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 24
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c8647d4d_86a5b18d",
         "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
         "patchSetId": 2
@@ -168,6 +330,30 @@
       "writtenOn": "2018-01-30T10:13:40Z",
       "side": 1,
       "message": "Does this redundant?",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84f32a7e_aa2e6caa",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Ah, right. Good catch!",
+      "parentUuid": "c8647d4d_86a5b18d",
       "range": {
         "startLine": 30,
         "startChar": 29,
@@ -203,6 +389,30 @@
     },
     {
       "key": {
+        "uuid": "2405d0c7_40030469",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f4fd824_4357372f",
+      "range": {
+        "startLine": 75,
+        "startChar": 10,
+        "endLine": 75,
+        "endChar": 48
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e21725e_b9462424",
         "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
         "patchSetId": 2
@@ -214,6 +424,30 @@
       "writtenOn": "2018-01-30T10:13:40Z",
       "side": 1,
       "message": "Please rebase this to aosp/589273",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "506feb3c_da749099",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e21725e_b9462424",
       "range": {
         "startLine": 102,
         "startChar": 4,
@@ -249,6 +483,30 @@
     },
     {
       "key": {
+        "uuid": "409af28f_2fd0208d",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68214ea5_d599bf8c",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 24
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a774750_e220fbc3",
         "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
         "patchSetId": 2
@@ -272,6 +530,30 @@
     },
     {
       "key": {
+        "uuid": "e8f86cb2_e078c66a",
+        "filename": "gsi/gsi_util/gsi_util/commands/check_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a774750_e220fbc3",
+      "range": {
+        "startLine": 151,
+        "startChar": 4,
+        "endLine": 151,
+        "endChar": 22
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa85b72_869fc894",
         "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
         "patchSetId": 2
@@ -283,6 +565,30 @@
       "writtenOn": "2018-01-30T16:40:31Z",
       "side": 1,
       "message": "it would be better not to disable this lint.\nmaybe add \"self._temp_dir \u003d None\" in __init__()?",
+      "range": {
+        "startLine": 72,
+        "startChar": 41,
+        "endLine": 72,
+        "endChar": 89
+      },
+      "revId": "ef3890d5d57ddaf38f5946032d89ec7ee3a544bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a623ac95_406c9eb0",
+        "filename": "gsi/gsi_util/gsi_util/mounters/adb_mounter.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-01-31T08:16:49Z",
+      "side": 1,
+      "message": "Ah, good suggestion.\nThanks!",
+      "parentUuid": "9aa85b72_869fc894",
       "range": {
         "startLine": 72,
         "startChar": 41,
