@@ -46,6 +46,30 @@
       "revId": "3128bff6722acb11f458ade6d7bf417d01dab803",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c61223e_e84b0d4f",
+        "filename": "gsi/gsi_util/gsi_util/checkers/sepolicy_checker.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-02-01T02:47:05Z",
+      "side": 1,
+      "message": "I like Po-Chien\u0027s suggestion, it is the \"builder\" design pattern.\nHowever, current function is good enough to me, because we have only one user here. It is good enough to understand the code to me. I think we could modify it if we have further user to use it.",
+      "parentUuid": "c08e7d86_4e7cebc3",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 18
+      },
+      "revId": "3128bff6722acb11f458ade6d7bf417d01dab803",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
