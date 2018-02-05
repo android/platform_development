@@ -20,6 +20,11 @@
 #define CLASS_MEMBERS \
     unsigned int speaker_uint_t_;\
     float *speaker_float_star_;
+#elif GOLDEN_RECORD_EXTENSION
+#define CLASS_MEMBERS \
+    unsigned int speaker_uint_t; \
+    float *speaker_float_star; \
+    int field_for_extension;
 #else
 #define CLASS_MEMBERS \
     unsigned int speaker_uint_t; \

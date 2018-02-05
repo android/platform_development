@@ -34,9 +34,10 @@ message RecordTypeDiff {
   optional string type_stack = 2;
   optional TypeInfoDiff type_info_diff = 3;
   repeated abi_dump.RecordFieldDecl fields_removed = 4;
-  repeated RecordFieldDeclDiff fields_diff = 5;
-  optional CXXBaseSpecifierDiff bases_diff = 6;
-  optional VTableLayoutDiff vtable_layout_diff = 7;
+  repeated abi_dump.RecordFieldDecl fields_added = 5;
+  repeated RecordFieldDeclDiff fields_diff = 6;
+  optional CXXBaseSpecifierDiff bases_diff = 7;
+  optional VTableLayoutDiff vtable_layout_diff = 8;
 }
 
 message UnderlyingTypeDiff {
@@ -80,36 +81,38 @@ message TranslationUnitDiff {
   optional string arch = 2;
   // Records.
   repeated RecordTypeDiff record_type_diffs = 3;
-  repeated RecordTypeDiff unreferenced_record_type_diffs = 4;
-  repeated abi_dump.RecordType unreferenced_record_types_removed = 5;
-  repeated abi_dump.RecordType unreferenced_record_types_added = 6;
+  repeated RecordTypeDiff record_type_extension_diffs = 4;
+  repeated RecordTypeDiff unreferenced_record_type_diffs = 5;
+  repeated RecordTypeDiff unreferenced_record_type_extension_diffs = 6;
+  repeated abi_dump.RecordType unreferenced_record_types_removed = 7;
+  repeated abi_dump.RecordType unreferenced_record_types_added = 8;
 
   // Enums
-  repeated EnumTypeDiff enum_type_diffs = 7;
-  repeated EnumTypeDiff enum_type_extension_diffs = 8;
-  repeated EnumTypeDiff unreferenced_enum_type_diffs = 9;
-  repeated EnumTypeDiff unreferenced_enum_type_extension_diffs = 10;
-  repeated abi_dump.EnumType unreferenced_enum_types_removed = 11;
-  repeated abi_dump.EnumType unreferenced_enum_types_added = 12;
+  repeated EnumTypeDiff enum_type_diffs = 9;
+  repeated EnumTypeDiff enum_type_extension_diffs = 10;
+  repeated EnumTypeDiff unreferenced_enum_type_diffs = 11;
+  repeated EnumTypeDiff unreferenced_enum_type_extension_diffs = 12;
+  repeated abi_dump.EnumType unreferenced_enum_types_removed = 13;
+  repeated abi_dump.EnumType unreferenced_enum_types_added = 14;
 
   // Functions and Global variables.
-  repeated FunctionDeclDiff function_diffs = 13;
-  repeated GlobalVarDeclDiff global_var_diffs = 14;
+  repeated FunctionDeclDiff function_diffs = 15;
+  repeated GlobalVarDeclDiff global_var_diffs = 16;
 
-  repeated abi_dump.FunctionDecl functions_removed = 15;
-  repeated abi_dump.GlobalVarDecl global_vars_removed = 16;
+  repeated abi_dump.FunctionDecl functions_removed = 17;
+  repeated abi_dump.GlobalVarDecl global_vars_removed = 18;
 
-  repeated abi_dump.FunctionDecl functions_added = 17;
-  repeated abi_dump.GlobalVarDecl global_vars_added = 18;
+  repeated abi_dump.FunctionDecl functions_added = 19;
+  repeated abi_dump.GlobalVarDecl global_vars_added = 20;
 
-  repeated abi_dump.ElfFunction added_elf_functions = 19;
-  repeated abi_dump.ElfFunction removed_elf_functions = 20;
+  repeated abi_dump.ElfFunction added_elf_functions = 21;
+  repeated abi_dump.ElfFunction removed_elf_functions = 22;
 
-  repeated abi_dump.ElfObject added_elf_objects = 21;
-  repeated abi_dump.ElfObject removed_elf_objects = 22;
+  repeated abi_dump.ElfObject added_elf_objects = 23;
+  repeated abi_dump.ElfObject removed_elf_objects = 24;
 
   // Compatiblity Status
-  optional CompatibilityStatus compatibility_status = 23;
+  optional CompatibilityStatus compatibility_status = 25;
 }
 
 // Not merged with TranslationUnitDiff to allow future extensions.
