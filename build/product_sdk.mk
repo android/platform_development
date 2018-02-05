@@ -48,4 +48,5 @@ PRODUCT_PACKAGES += \
 	llvm-rs-cc \
 	sqlite3 \
 	vgabios-cirrus.bin \
-	split-select
+	split-select \
+	deployagent
