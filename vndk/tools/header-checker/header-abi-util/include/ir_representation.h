@@ -1146,8 +1146,16 @@ class RecordTypeDiffIR : public DiffMessageIR {
     fields_removed_ = std::move(fields_removed);
   }
 
+  void SetFieldsAdded(std::vector<const RecordFieldIR *> &&fields_added) {
+    fields_added_ = std::move(fields_added);
+  }
+
   const std::vector<const RecordFieldIR *> &GetFieldsRemoved() const {
     return fields_removed_;
+  }
+
+  const std::vector<const RecordFieldIR *> &GetFieldsAdded() const {
+    return fields_added_;
   }
 
   void SetVTableLayoutDiff(std::unique_ptr<VTableLayoutDiffIR> &&vtable_diffs) {
@@ -1167,10 +1175,20 @@ class RecordTypeDiffIR : public DiffMessageIR {
     base_specifier_diffs_ = std::move(base_diffs);
   }
 
-  bool DiffExists() const {
-    return (type_diff_ != nullptr) || (vtable_diffs_ != nullptr) ||
+  bool IncompatibleDiffExists() const {
+    return TypeAlignmentDiffExists() || (vtable_diffs_ != nullptr) ||
         (fields_removed_.size() != 0) || (field_diffs_.size() != 0) ||
         (access_diff_ != nullptr) || (base_specifier_diffs_ != nullptr);
+  }
+
+  bool IsExtended() const {
+    return (fields_added_.size() != 0) && !IncompatibleDiffExists();
+  }
+
+  bool TypeAlignmentDiffExists() const {
+    return (type_diff_ != nullptr) &&
+        (type_diff_->GetAlignments().first !=
+         type_diff_->GetAlignments().second);
   }
 
   const TypeDiffIR *GetTypeDiff() const {
@@ -1191,6 +1209,7 @@ class RecordTypeDiffIR : public DiffMessageIR {
   std::unique_ptr<VTableLayoutDiffIR> vtable_diffs_;
   std::vector<RecordFieldDiffIR> field_diffs_;
   std::vector<const RecordFieldIR *> fields_removed_;
+  std::vector<const RecordFieldIR *> fields_added_;
   std::unique_ptr<AccessSpecifierDiffIR> access_diff_;
   std::unique_ptr<CXXBaseSpecifierDiffIR> base_specifier_diffs_;
   // Template Diffs are not needed since they will show up in the linker set
