@@ -218,6 +218,11 @@ class MyTest(unittest.TestCase):
             "libgolden_cpp",
             "libgolden_cpp_member_name_changed", 0)
 
+    def test_libgolden_cpp_record_extended(self):
+        self.prepare_and_run_abi_diff_all_archs("libgolden_cpp",
+                                                "libgolden_cpp_record_extended",
+                                                4);
+
 
 if __name__ == '__main__':
     unittest.main()

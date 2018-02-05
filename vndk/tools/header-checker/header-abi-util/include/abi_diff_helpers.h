@@ -36,6 +36,13 @@ static inline DiffStatus operator& (DiffStatus f, DiffStatus s) {
 template <typename T>
 using DiffStatusPair = std::pair<DiffStatus, T>;
 
+struct RecordFieldDiffInfo {
+  DiffStatus diff_status_;
+  std::vector<abi_util::RecordFieldDiffIR> diffed_fields_;
+  std::vector<const abi_util::RecordFieldIR *> removed_fields_;
+  std::vector<const abi_util::RecordFieldIR *> added_fields_;
+};
+
 std::string Unwind(const std::deque<std::string> *type_queue);
 
 class AbiDiffHelper {
@@ -122,9 +129,7 @@ class AbiDiffHelper {
     std::deque<std::string> *type_queue,
     abi_util::IRDiffDumper::DiffKind diff_kind);
 
-  DiffStatusPair<std::pair<std::vector<abi_util::RecordFieldDiffIR>,
-      std::vector<const abi_util::RecordFieldIR *>>>
-  CompareRecordFields(
+  RecordFieldDiffInfo CompareRecordFields(
       const std::vector<abi_util::RecordFieldIR> &old_fields,
       const std::vector<abi_util::RecordFieldIR> &new_fields,
       std::deque<std::string> *type_queue,
