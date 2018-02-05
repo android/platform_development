@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ccd83559_41758e11",
+        "filename": "build/build_android_stubs.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-02-05T22:53:02Z",
+      "side": 1,
+      "message": "Ups, that\u0027s dumb.",
+      "range": {
+        "startLine": 37,
+        "startChar": 46,
+        "endLine": 37,
+        "endChar": 73
+      },
+      "revId": "7f1b5141b86e61b37d457eae528cf03ce3ceed13",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
