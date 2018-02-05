@@ -43,6 +43,7 @@ development/sdk/plat_tools_source.properties  platform-tools/source.properties
 
 # host tools from out/host/$(HOST_OS)-$(HOST_ARCH)/
 bin/adb                                 strip platform-tools/adb
+framework/deploypatchgenerator.jar      platform-tools/deploypatchgenerator.jar
 bin/fastboot                            strip platform-tools/fastboot
 bin/mke2fs                              strip platform-tools/mke2fs
 bin/mke2fs.conf                         platform-tools/mke2fs.conf
@@ -145,6 +146,10 @@ bin/dexdump                                   build-tools/${PLATFORM_NAME}/dexdu
 # d8
 prebuilts/r8/d8-master.jar                    build-tools/${PLATFORM_NAME}/lib/d8.jar
 prebuilts/r8/d8                               build-tools/${PLATFORM_NAME}/d8
+
+# fastdeploy
+framework/deployagent.jar                     platform-tools/deployagent.jar
+bin/deployagent.sh                            platform-tools/deployagent.sh
 
 # multi-dex
 ${OUT_DIR}/host/common/obj/JAVA_LIBRARIES/shrinkedAndroid_intermediates/shrinkedAndroid.jar  build-tools/${PLATFORM_NAME}/lib/shrinkedAndroid.jar
