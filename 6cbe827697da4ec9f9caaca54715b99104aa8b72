@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d531c9c7_49650c7f",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-02-09T17:48:56Z",
+      "side": 1,
+      "message": "This won\u0027t be correct on some builds (any non-arm-sdk build). It looks like jut \u0027framework/deployagent.jar\u0027 would work for this path, since .../system is in the lookup paths.",
+      "range": {
+        "startLine": 147,
+        "startChar": 26,
+        "endLine": 147,
+        "endChar": 33
+      },
+      "revId": "6cbe827697da4ec9f9caaca54715b99104aa8b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
