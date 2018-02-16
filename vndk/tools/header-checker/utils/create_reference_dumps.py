@@ -16,28 +16,54 @@ class Target(object):
         self.cpu_variant = \
             get_build_var('TARGET{}_CPU_VARIANT'.format(extra))
 
+def find_and_copy_lib_lsdumps(arch, arch_variant, cpu_variant, soong_dir,
+                              ref_dump_dir_stem, ref_dump_dir_insertion,
+                              core_or_vendor_shared_str, libs):
+    arch_lsdump_paths = find_lib_lsdumps(arch, arch_variant, cpu_variant,
+                                         soong_dir, core_or_vendor_shared_str,
+                                         libs)
+    # Copy the contents of the lsdump into it's corresponding
+    # reference  directory.
+    return copy_reference_dumps(arch_lsdump_paths, ref_dump_dir_stem,
+                                ref_dump_dir_insertion, arch)
+
+def get_ref_dump_dir_stem(args, vndk_or_ndk):
+    version = args.version
+    if version != '' and version[0].isdigit() == False :
+        version = 'current'
+    ref_dump_dir_stem = os.path.join(args.ref_dump_dir, vndk_or_ndk)
+    ref_dump_dir_stem = os.path.join(ref_dump_dir_stem, version)
+    return ref_dump_dir_stem
+
 def create_source_abi_reference_dumps(soong_dir, args):
-    ref_dump_dir_stem = os.path.join(args.ref_dump_dir, args.version)
+    ref_dump_dir_stem_vndk = get_ref_dump_dir_stem(args, 'vndk')
+    ref_dump_dir_stem_ndk = get_ref_dump_dir_stem(args, 'ndk')
     ref_dump_dir_insertion = 'source-based'
     num_libs_copied = 0
     for target in [Target(True), Target(False)]:
-        arch_lsdump_paths = find_lib_lsdumps(target.arch, target.arch_variant,
-                                             target.cpu_variant, soong_dir)
-        # Copy the contents of the lsdump into it's corresponding
-        # reference  directory.
-        num_libs_copied += copy_reference_dumps(arch_lsdump_paths,
-                                                ref_dump_dir_stem,
-                                                ref_dump_dir_insertion,
-                                                target.arch)
+        num_libs_copied += find_and_copy_lib_lsdumps(
+            target.arch, target.arch_variant, target.cpu_variant, soong_dir,
+            ref_dump_dir_stem_vndk, ref_dump_dir_insertion, '_vendor_shared',
+            args.libs)
+
+        num_libs_copied += find_and_copy_lib_lsdumps(
+            target.arch, target.arch_variant, target.cpu_variant, soong_dir,
+            ref_dump_dir_stem_ndk, ref_dump_dir_insertion, '_core_shared',
+            args.libs)
+
     return num_libs_copied
 
 
 def main():
     # Parse command line options.
     parser = argparse.ArgumentParser()
-    parser.add_argument('--version', help='VNDK version')
+    parser.add_argument('--version', help='VNDK version',
+                        default=get_build_var('PLATFORM_VNDK_VERSION'))
+    parser.add_argument('-libs', help='libs to create references for',
+                        action='append')
     parser.add_argument('-ref-dump-dir',
-                        help='directory to copy reference abi dumps into')
+                        help='directory to copy reference abi dumps into',
+                        default=AOSP_DIR + '/prebuilts/abi-dumps')
     args = parser.parse_args()
     num_processed = 0
     soong_dir = os.path.join(AOSP_DIR, 'out', 'soong', '.intermediates')
