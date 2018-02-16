@@ -125,7 +125,8 @@ def make_library(lib_name):
     subprocess.check_call(make_cmd, cwd=AOSP_DIR)
 
 def find_lib_lsdumps(target_arch, target_arch_variant,
-                     target_cpu_variant, soong_dir):
+                     target_cpu_variant, soong_dir,
+                     core_or_vendor_shared_str):
     """ Find the lsdump corresponding to lib_name for the given arch parameters
         if it exists"""
     assert 'ANDROID_PRODUCT_OUT' in os.environ
@@ -140,7 +141,7 @@ def find_lib_lsdumps(target_arch, target_arch_variant,
         arch_variant = ''
 
     target_dir = 'android_' + target_arch + arch_variant +\
-    cpu_variant + '_vendor_shared'
+    cpu_variant + core_or_vendor_shared_str
     for base, dirnames, filenames in os.walk(soong_dir):
         for filename in filenames:
             name, ext = os.path.splitext(filename)
