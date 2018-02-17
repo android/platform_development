@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4cd18013_7d1e0b63",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-02-17T00:05:14Z",
+      "side": 1,
+      "message": "Since arch variants can actually make libraries have different APIs as well, not only ABIs, based on cflags.",
+      "range": {
+        "startLine": 29,
+        "startChar": 32,
+        "endLine": 29,
+        "endChar": 57
+      },
+      "revId": "a7f3e9345e24c997a991618830572eadba80b18c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
