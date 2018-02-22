@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3c77530_0519491a",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-02-22T09:25:32Z",
+      "side": 1,
+      "message": "Using Arch().String(), \u0027generic\u0027 will be shown.",
+      "range": {
+        "startLine": 28,
+        "startChar": 22,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49a57e7b_d625f3bd",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-02-22T09:25:32Z",
+      "side": 1,
+      "message": "This need to be changed to \u0027_\u0027.",
+      "range": {
+        "startLine": 29,
+        "startChar": 26,
+        "endLine": 29,
+        "endChar": 29
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f169375a_fb0cc6c7",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-02-22T09:25:32Z",
+      "side": 1,
+      "message": "This, too. (https://cs.corp.google.com/android/build/soong/android/arch.go?rcl\u003de5f729a371f752083d988dede152ee7a490cc406\u0026l\u003d148)",
+      "range": {
+        "startLine": 32,
+        "startChar": 39,
+        "endLine": 32,
+        "endChar": 42
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16615418_4e5715c9",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-02-22T09:25:32Z",
+      "side": 1,
+      "message": "Also need to be updated.",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
