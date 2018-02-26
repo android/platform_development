@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a4289ecd_4b61a360",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-02-26T22:36:08Z",
+      "side": 1,
+      "message": "Is that true ? I don\u0027t see generic been shown for aosp_arm64_ab, where the target cpu variant is generic for both TARGET_ARCH and TARGET_2ND_ARCH.",
+      "parentUuid": "d3c77530_0519491a",
+      "range": {
+        "startLine": 28,
+        "startChar": 22,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "49a57e7b_d625f3bd",
         "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3dec0e6_9856d9a4",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-02-26T22:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49a57e7b_d625f3bd",
+      "range": {
+        "startLine": 29,
+        "startChar": 26,
+        "endLine": 29,
+        "endChar": 29
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8d28c980_75e8e198",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-02-26T22:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f169375a_fb0cc6c7",
+      "range": {
+        "startLine": 32,
+        "startChar": 39,
+        "endLine": 32,
+        "endChar": 42
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "16615418_4e5715c9",
         "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
         "patchSetId": 5
@@ -91,6 +163,30 @@
       "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ec1d952_a9ed1e8b",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-02-26T22:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16615418_4e5715c9",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "9fafe53f360538572c928d467ef0a62ed3f1985d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
