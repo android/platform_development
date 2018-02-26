@@ -1013,6 +1013,13 @@ class TaggedDict(object):
         'vndk_indirect': 'vndk',  # Legacy
         'vndk_sp_hal': 'vndk_sp',  # Legacy
         'vndk_sp_both': 'vndk_sp',  # Legacy
+
+        # FIXME: VNDK-Private and VNDK-SP-Private are new tags.  They should
+        # not be treated as aliases.
+        # TODO: Refine the code that compute and verify VNDK sets and reverse
+        # the aliases.
+        'vndk_private': 'vndk',
+        'vndk_sp_private': 'vndk_sp_indirect_private',
     }
 
     @classmethod
