@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4f72f8f_5e697c35",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-02-28T23:27:03Z",
+      "side": 1,
+      "message": "add ,",
+      "range": {
+        "startLine": 127,
+        "startChar": 67,
+        "endLine": 127,
+        "endChar": 80
+      },
+      "revId": "41d3a308f91205e5838a7683d592062feebe7445",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
