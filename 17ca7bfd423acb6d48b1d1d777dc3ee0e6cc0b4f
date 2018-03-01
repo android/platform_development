@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3adb20fd_2a0e2eef",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-01T03:10:33Z",
+      "side": 1,
+      "message": "I usually add a whitespace before backslash",
+      "range": {
+        "startLine": 61,
+        "startChar": 73,
+        "endLine": 61,
+        "endChar": 74
+      },
+      "revId": "17ca7bfd423acb6d48b1d1d777dc3ee0e6cc0b4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7db8896b_3c82dfdd",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-01T03:10:33Z",
+      "side": 1,
+      "message": "BTW, won\u0027t this looks weird in `--help`?",
+      "range": {
+        "startLine": 144,
+        "startChar": 77,
+        "endLine": 145,
+        "endChar": 24
+      },
+      "revId": "17ca7bfd423acb6d48b1d1d777dc3ee0e6cc0b4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
