@@ -16,6 +16,24 @@
       "revId": "2c111bd94a3c594308985ecf095b47f4fe3d2ed9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a0fab762_90afb377",
+        "filename": "apps/SdkSetup/src/com/android/sdksetup/DefaultActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1046320
+      },
+      "writtenOn": "2018-03-05T19:37:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d6d8ec54_7edf5780",
+      "revId": "2c111bd94a3c594308985ecf095b47f4fe3d2ed9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
