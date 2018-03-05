@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6d8ec54_7edf5780",
+        "filename": "apps/SdkSetup/src/com/android/sdksetup/DefaultActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1087303
+      },
+      "writtenOn": "2018-03-05T19:34:50Z",
+      "side": 1,
+      "message": "nit: space?",
+      "revId": "2c111bd94a3c594308985ecf095b47f4fe3d2ed9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
