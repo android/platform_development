@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a45f2e1_4dfcfe16",
+        "filename": "build/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2018-03-05T19:40:30Z",
+      "side": 1,
+      "message": "This is unnecessary, it is implied by no_standard_libs.",
+      "revId": "29a61f60069757dc4c663343728340164a67a278",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6c8881c_d6091d6b",
+        "filename": "build/Android.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2018-03-05T19:40:30Z",
+      "side": 1,
+      "message": "full_target :\u003d $(call intermediates-dir-for,JAVA_LIBRARIES,android_stubs_current,,COMMON)/classes.jar",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 43
+      },
+      "revId": "29a61f60069757dc4c663343728340164a67a278",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
