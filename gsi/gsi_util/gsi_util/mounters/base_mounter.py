@@ -1,4 +1,4 @@
-# Copyright 2017 - The Android Open Source Project
+# Copyright 2018 - The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,16 +43,34 @@ class MounterFile(object):
     self._handle_clean_up()
 
 
-class MounterFileList(object):
+class _MounterMultiFiles(object):
 
-  def __init__(self, file_list):
-    self._file_list = file_list
+  def __init__(self, prepared_files):
+    assert isinstance(prepared_files, (dict, tuple, list))
+    self._prepared_files = prepared_files
 
   def _handle_get_filenames(self):
-    return [x.get_filename() for x in self._file_list]
+    prepared_files = self._prepared_files
+    if isinstance(prepared_files, dict):
+      return dict((k, v.get_filename()) for k, v in prepared_files.iteritems())
+    elif isinstance(prepared_files, tuple):
+      return tuple(x.get_filename() for x in prepared_files)
+    elif isinstance(prepared_files, list):
+      return [x.get_filename() for x in prepared_files]
+    else:
+      assert False
 
   def _handle_clean_up(self):
-    for x in reversed(self._file_list):
+    prepared_files = self._prepared_files
+    if isinstance(prepared_files, dict):
+      clean_up_list = prepared_files.values()
+    elif isinstance(prepared_files, (tuple, list)):
+      clean_up_list = prepared_files
+    else:
+      assert False
+
+    # Cleanup all files in reversed order
+    for x in reversed(clean_up_list):
       x.clean_up()
 
   def __enter__(self):
@@ -90,8 +108,8 @@ class BaseFileAccessor(object):
     path_prefix = self._path_prefix
 
     if not file_to_map.startswith(path_prefix):
-      raise RuntimeError('"%s" does not start with "%s"', file_to_map,
-                         path_prefix)
+      raise RuntimeError('"{}" does not start with "{}"'.format(file_to_map,
+                                                                path_prefix))
 
     return file_to_map[len(path_prefix):]
 
@@ -107,31 +125,120 @@ class BaseFileAccessor(object):
       in the mount.
     """
 
-  def prepare_file(self, filename_in_mount):
-    """Return the accessable file name in the storage.
+  def prepare_file(self, file_to_prepare):
+    """Return the file from mount source to the temp folder.
 
-    The function prepares a accessable file which contains the content of the
-    filename_in_mount.
+    This method will prepare the given file by files_to_prepare.
+    which can be different types. For example:
 
-    See BaseFileAccessor for the detail.
+      '/system/manifest.xml' (string)
+
+      ['/system/manifest.xml', '/system/etc/vintf/manifest.xml'] (list)
+
+      {'fallbacks': ['/system/manifest.xml'], optional: True}
+
+    With different types, file_to_prepare will be:
+
+      string: the only one filename to prepare in the fallback list
+      list: a fallback list with filenames to prepare in order
+      dict: with item by following keys:
+        'fallbacks': same as a string or a list
+        'optional': describ the file is optional
+
+    The filename(s) in file_to_prepare should be a full path file as the path in
+    a real device, and must start with a '/'. For example: '/system/build.prop',
+    '/vendor/default.prop', '/init.rc', etc.
+
+    The method Mounter will look the filenames in the fallback list in order,
+    and prepare the first existing file in the list.
+
+    When the method can not prepare the file by an any filename in the fallback
+    list, it will raise an exception if the file is not optional, otherwise
+    return None.
+
+    For more examples, see test_prepare_file_with_diff_styles() and
+    test_prepare_file_by_rule_with_fallback() in base_mounter_unittest.py
 
     Args:
-      filename_in_mount: the file to map.
-        filename_in_mount should be a full path file as the path in a real
-        device, and must start with a '/'. For example: '/system/build.prop',
-        '/vendor/default.prop', '/init.rc', etc.
+      file_to_prepare: the file to be prepared
 
     Returns:
-      A MounterFile instance. Return None if the file is not exit in the
-      storage.
+      A MounterFile instance which contains the prepared filename.
     """
-    filename_in_storage = self._get_pathfile_to_access(filename_in_mount)
-    ret = self._handle_prepare_file(filename_in_storage)
-    return ret if ret else MounterFile(None)
+    if isinstance(file_to_prepare, dict):
+      fallbacks = file_to_prepare.get('fallbacks')
+      optional = file_to_prepare.get('optional')
+    else:
+      fallbacks = file_to_prepare
+      optional = False
 
-  def prepare_multi_files(self, filenames_in_mount):
-    file_list = [self.prepare_file(x) for x in filenames_in_mount]
-    return MounterFileList(file_list)
+    # Make sure fallback_list is a list
+    if isinstance(fallbacks, basestring):
+      fallbacks = [fallbacks]
+    elif isinstance(fallbacks, list):
+      pass
+    else:
+      raise ValueError("Unsupported type.")
+
+    if not fallbacks:
+      raise ValueError("No fallbacks.")
+
+    for filename_in_mount in fallbacks:
+      filename_in_storage = self._get_pathfile_to_access(filename_in_mount)
+      ret = self._handle_prepare_file(filename_in_storage)
+      if ret:
+        return ret
+
+    # Can not find any file in fallbacks
+    if optional:
+      return MounterFile(None)
+
+    raise RuntimeError('Cannot prepare file: {}.'.format(fallbacks))
+
+  def prepare_multi_files(self, files_to_prepare):
+    """ Prepare multiple files from mount source to the temp folder.
+
+      This method will prepare all files which in the files_to_prepare.
+      files_to_prepare can be a dict, a tuple or a list. The return value will
+      be the same type as the input.
+
+      If the files_to_prepare is a dict, the return dict contains the prepared
+      filenames with same key in the given dict. This style is more clear for
+      preparing a lot of files.
+
+      For example:
+
+        RULES = { 'file1': '/system/the_file1', 'file2': '/system/the_file2' }
+        with file_accessor.prepare_multi_files(RULES) as prepared
+
+      And prepared will be similar to:
+
+        { 'file1': '/prepared/the_file1', 'file2': '/prepared/the_file2'}
+
+      Each file in files_to_prepare could be any type supported as the parameter
+      file_to_prepare of method prepare_file(). See prepare_file() for the
+      detail.
+
+      For more examples, see test_prepare_multi_files_with_diff_styles() in
+      base_mounter_unittest.py
+
+      Args:
+        files_to_prepare: The files in mount to be prepared.
+
+      Return:
+        A MounterMultiFiles contains the prepared filenames.
+    """
+    if isinstance(files_to_prepare, dict):
+      prepared_files = dict(
+          (k, self.prepare_file(v)) for k, v in files_to_prepare.iteritems())
+    elif isinstance(files_to_prepare, tuple):
+      prepared_files = tuple(self.prepare_file(x) for x in files_to_prepare)
+    elif isinstance(files_to_prepare, list):
+      prepared_files = [self.prepare_file(x) for x in files_to_prepare]
+    else:
+      raise ValueError("Unsupported type.")
+
+    return _MounterMultiFiles(prepared_files)
 
 
 class BaseMounter(object):

@@ -90,7 +90,11 @@ class _CompositeFileAccessor(base_mounter.BaseFileAccessor):
     pathfile_to_prepare = '/' + filename_in_storage
     for (prefix_path, file_accessor) in self._file_accessors:
       if pathfile_to_prepare.startswith(prefix_path):
-        return file_accessor.prepare_file(pathfile_to_prepare)
+        # We don't want raise assert if not exist, it will be raise by caller
+        # of this method
+        rule = {'fallbacks': pathfile_to_prepare, 'optional': True}
+        prepared = file_accessor.prepare_file(rule)
+        return prepared if prepared.get_filename() else None
 
     logging.debug('  Not found')
     return None
