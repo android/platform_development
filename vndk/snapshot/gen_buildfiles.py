@@ -205,17 +205,21 @@ class GenBuildFile(object):
             required.append(self._get_versioned_name(prebuilt, None, True))
 
         required_str = ['"{}",'.format(prebuilt) for prebuilt in required]
-        required_formatted = '\n{ind}{ind}'.format(
+        required_formatted = '\n{ind}{ind}{ind}{ind}'.format(
             ind=self.INDENT).join(required_str)
-        required_buildrule = ('{ind}required: [\n'
-                              '{ind}{ind}{required_formatted}\n'
-                              '{ind}],\n'.format(
+        required_buildrule = ('{ind}{ind}{ind}required: [\n'
+                              '{ind}{ind}{ind}{ind}{required_formatted}\n'
+                              '{ind}{ind}{ind}],\n'.format(
                                   ind=self.INDENT,
                                   required_formatted=required_formatted))
 
         return ('phony {{\n'
                 '{ind}name: "vndk_v{ver}_{variant}",\n'
+                '{ind}arch: {{\n'
+                '{ind}{ind}{variant}: {{\n'
                 '{required_buildrule}'
+                '{ind}{ind}}},\n'
+                '{ind}}},\n'
                 '}}\n'.format(
                     ind=self.INDENT,
                     ver=self._vndk_version,
