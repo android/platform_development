@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1045f012_1f7627df",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-09T09:44:16Z",
+      "side": 1,
+      "message": "BTW, this command make me nervous.  Can we avoid wildcard here?",
+      "range": {
+        "startLine": 98,
+        "startChar": 26,
+        "endLine": 98,
+        "endChar": 34
+      },
+      "revId": "5ab281f3136d7fcca04b9da8aa9e0305d034f1e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
