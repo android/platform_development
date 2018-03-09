@@ -25,6 +25,17 @@
 #include <clang/Frontend/CompilerInstance.h>
 
 namespace abi_wrapper {
+
+struct TypeAndStatus {
+  std::unique_ptr<abi_util::TypeIR> typep_;
+  bool is_valid_ = true;
+  TypeAndStatus(std::unique_ptr<abi_util::TypeIR> &&typep, bool is_valid = true)
+  {
+         typep_ = std::move(typep);
+         is_valid_ = is_valid;
+  }
+};
+
 class ABIWrapper {
  public:
   ABIWrapper(clang::MangleContext *mangle_contextp,
@@ -50,6 +61,11 @@ class ABIWrapper {
                               abi_util::TemplatedArtifactIR *ta,
                               const std::string &source_file);
 
+  bool SetupFunctionParameter(abi_util::CFunctionLikeIR *functionp,
+                              const clang::QualType qual_type,
+                              bool has_default_arg,
+                              const std::string &source_file);
+
   std::string QualTypeToString(const clang::QualType &sweet_qt);
 
   std::string GetTagDeclQualifiedName(const clang::TagDecl *decl);
@@ -69,8 +85,8 @@ class ABIWrapper {
 
   std::string GetTypeLinkageName(const clang::Type *typep);
 
-  std::unique_ptr<abi_util::TypeIR> SetTypeKind(const clang::QualType qtype,
-                                                const std::string &source_file);
+  TypeAndStatus SetTypeKind(const clang::QualType qtype,
+                                              const std::string &source_file);
 
   std::string GetTypeUniqueId(const clang::TagDecl *tag_decl);
 
@@ -149,14 +165,26 @@ class FunctionDeclWrapper : public ABIWrapper {
   bool SetupFunctionParameters(abi_util::FunctionIR *functionp,
                                const std::string &source_file);
 
-  bool SetupFunctionParameter(abi_util::FunctionIR *functionp,
-                              const clang::QualType qual_type,
-                              bool has_default_arg,
-                              const std::string &source_file);
-
   bool SetupThisParameter(abi_util::FunctionIR *functionp,
                           const std::string &source_file);
 
+};
+
+class FunctionTypeWrapper : public ABIWrapper {
+
+  bool SetupFunctionType(abi_util::FunctionTypeIR *function_type_ir);
+
+ public:
+  FunctionTypeWrapper(
+      clang::MangleContext *mangle_contextp, clang::ASTContext *ast_contextp,
+      const clang::CompilerInstance *compiler_instance_p,
+      const clang::FunctionType *function_type, abi_util::IRDumper *ir_dumper,
+      ast_util::ASTCaches *ast_caches, const std::string &source_file);
+
+  bool GetFunctionType();
+ private:
+  const clang::FunctionType *function_type_= nullptr;
+  const std::string &source_file_;
 };
 
 class EnumDeclWrapper : public ABIWrapper {
