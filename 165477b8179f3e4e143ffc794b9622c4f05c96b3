@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7a6ebc_bbdda7b2",
+        "filename": "build/Android.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2018-03-14T20:06:11Z",
+      "side": 0,
+      "message": "Can you delete build_android_stubs.mk too?",
+      "revId": "165477b8179f3e4e143ffc794b9622c4f05c96b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
