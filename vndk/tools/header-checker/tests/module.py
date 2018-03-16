@@ -361,6 +361,31 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
+  Module(
+        name = 'libgolden_cpp_function_pointer',
+        srcs = ['integration/cpp/gold/golden_1.cpp',
+                'integration/cpp/gold/high_volume_speaker.cpp',
+                'integration/cpp/gold/low_volume_speaker.cpp',
+                ],
+        version_script = 'integration/cpp/gold/map.txt',
+        export_include_dirs = ['integration/cpp/gold/include'],
+        cflags = ['-DGOLDEN_FUNCTION_POINTER=1'],
+        arch = '',
+        api = 'current',
+    ),
+  Module(
+        name = 'libgolden_cpp_function_pointer_parameter_added',
+        srcs = ['integration/cpp/gold/golden_1.cpp',
+                'integration/cpp/gold/high_volume_speaker.cpp',
+                'integration/cpp/gold/low_volume_speaker.cpp',
+                ],
+        version_script = 'integration/cpp/gold/map.txt',
+        export_include_dirs = ['integration/cpp/gold/include'],
+        cflags = ['-DGOLDEN_FUNCTION_POINTER_ADD_PARAM=1',
+                  '-DGOLDEN_FUNCTION_POINTER=1'],
+        arch = '',
+        api = 'current',
+    ),
 ]
 
 TEST_MODULES = { m.name: m for m in TEST_MODULES }
