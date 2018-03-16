@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0d0b23b2_791dd61c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-03-16T08:05:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a04e8f78_ed18cca0",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "5e7885bad301291f0c16ddd3ebf4d5d8b3dd476e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d725253_4a473ab4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-03-15T10:26:20Z",
       "side": 1,
       "message": "outputs",
+      "range": {
+        "startLine": 9,
+        "startChar": 13,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "5e7885bad301291f0c16ddd3ebf4d5d8b3dd476e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04366704_7928d7aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-03-16T08:05:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d725253_4a473ab4",
       "range": {
         "startLine": 9,
         "startChar": 13,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8fbdd244_7e3efb2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-03-16T08:05:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "182bf670_8b96112b",
+      "range": {
+        "startLine": 21,
+        "startChar": 16,
+        "endLine": 21,
+        "endChar": 38
+      },
+      "revId": "5e7885bad301291f0c16ddd3ebf4d5d8b3dd476e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cf43fc08_a29bad96",
         "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
         "patchSetId": 3
@@ -82,6 +154,24 @@
       "writtenOn": "2018-03-15T10:26:20Z",
       "side": 1,
       "message": "let\u0027s run unit test for the cmd_utils.py\n\nJust run ./run_test.py",
+      "revId": "5e7885bad301291f0c16ddd3ebf4d5d8b3dd476e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f57a2b1b_a6eb352b",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2018-03-16T08:05:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf43fc08_a29bad96",
       "revId": "5e7885bad301291f0c16ddd3ebf4d5d8b3dd476e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
