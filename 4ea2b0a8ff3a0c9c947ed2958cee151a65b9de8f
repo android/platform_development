@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67c26802_96e78ac3",
+        "filename": "build/Android.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-03-19T12:01:35Z",
+      "side": 0,
+      "message": "deleting this file as it is not used anymore?",
+      "range": {
+        "startLine": 61,
+        "startChar": 22,
+        "endLine": 61,
+        "endChar": 44
+      },
+      "revId": "4ea2b0a8ff3a0c9c947ed2958cee151a65b9de8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
