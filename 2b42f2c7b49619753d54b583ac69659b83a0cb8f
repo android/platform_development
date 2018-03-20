@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63289ad8_80eff29e",
+        "filename": "vndk/tools/header-checker/proto/abi_dump.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-03-20T23:22:21Z",
+      "side": 1,
+      "message": "This should probably be reverted back to original numbers for backwards compatibility (if someone writes a binary protobuf reader)",
+      "range": {
+        "startLine": 178,
+        "startChar": 2,
+        "endLine": 182,
+        "endChar": 38
+      },
+      "revId": "2b42f2c7b49619753d54b583ac69659b83a0cb8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
