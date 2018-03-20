@@ -1,0 +1,3 @@
+[console_scripts]
+sourcedr = sourcedr.commands:main
+

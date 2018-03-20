@@ -1,0 +1,4 @@
+flask
+
+[dev]
+flask_testing

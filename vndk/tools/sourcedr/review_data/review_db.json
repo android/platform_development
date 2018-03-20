@@ -1,0 +1,34 @@
+{
+    "build.ninja:13:build dlopen/test.o: cc dlopen/test.c ": [
+        [],
+        []
+    ],
+    "build.ninja:15:build dlopen/test.so: ld dlopen/test.o": [
+        [],
+        []
+    ],
+    "dlopen/test.c:10:    handle = dlopen(\"libm.so.6\", RTLD_LAZY);": [
+        [],
+        []
+    ],
+    "dlopen/test.c:16:    cosine = dlsym(handle, \"cos\");": [
+        [],
+        []
+    ],
+    "dlopen/test.c:22:    printf (\"%f\\n\", (*cosine)(2.0));": [
+        [],
+        []
+    ],
+    "dlopen/test.c:7:    double (*cosine)(double);": [
+        [],
+        []
+    ],
+    "example.c:8:    dlopen(\"dlopen\");": [
+        [],
+        []
+    ],
+    "example.c:9:    handle = dlopen(\"libm.so.6\", RTLD_LAZY);": [
+        [],
+        []
+    ]
+}
