@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6c2dc5e_e861acaf",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-03-21T01:03:24Z",
+      "side": 1,
+      "message": "nit: can consider update unittest to test this",
+      "revId": "8343ea94f9711b561d5d81839fabd0ca38e340b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0600c73b_2a0f93a4",
+        "filename": "gsi/gsi_util/gsi_util/utils/cmd_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-03-21T01:03:24Z",
+      "side": 1,
+      "message": "Using?",
+      "range": {
+        "startLine": 40,
+        "startChar": 19,
+        "endLine": 40,
+        "endChar": 22
+      },
+      "revId": "8343ea94f9711b561d5d81839fabd0ca38e340b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
