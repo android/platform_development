@@ -22,6 +22,30 @@
       "revId": "176183eb3f229c886add9fda6c2e6bb0ac4262d6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22f71e95_fa2eb1a8",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-03-22T00:45:02Z",
+      "side": 1,
+      "message": "oops, \u0027choose\u0027 chosen.",
+      "parentUuid": "03c44ac8_a55692b5",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 10
+      },
+      "revId": "176183eb3f229c886add9fda6c2e6bb0ac4262d6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
