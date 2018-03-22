@@ -93,6 +93,29 @@
       "revId": "a504c1f94133ad9de46527c964bb63255014bd85",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65a6be20_d2e564df",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T03:28:57Z",
+      "side": 1,
+      "message": "Indent by 4",
+      "range": {
+        "startLine": 387,
+        "startChar": 0,
+        "endLine": 387,
+        "endChar": 6
+      },
+      "revId": "a504c1f94133ad9de46527c964bb63255014bd85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
