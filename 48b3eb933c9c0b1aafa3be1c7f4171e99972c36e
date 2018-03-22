@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "660028d9_97bd7039",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:51:14Z",
+      "side": 1,
+      "message": "What is the meaning of \"status\"?  Can the name be more specific to the its purpose?",
+      "range": {
+        "startLine": 29,
+        "startChar": 7,
+        "endLine": 29,
+        "endChar": 20
+      },
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55f71609_3c6b5abe",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:51:14Z",
+      "side": 1,
+      "message": "Since you are always initializing this in the constructor, you don\u0027t have to provide a default value here.",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3355ec58_b2da0fc4",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
         "patchSetId": 3
@@ -41,6 +87,29 @@
         "startChar": 0,
         "endLine": 34,
         "endChar": 9
+      },
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86efc056_640372f7",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:51:14Z",
+      "side": 1,
+      "message": "Also, the idiomatic way to initialize the variable is:\n\n    TypeAndStatus(std::unique_ptr\u003cabi_util::TypeIR\u003e \u0026\u0026typep,\n                  bool is_valid \u003d true)\n      : typep_(std::move(typep)), is_valid_(is_valid) { }",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 30
       },
       "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
