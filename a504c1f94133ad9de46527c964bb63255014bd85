@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "696d649c_f41bd3bc",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T02:55:12Z",
+      "side": 1,
+      "message": "if (auto\u0026\u0026 func_type_ptr \u003d llvm::dyn_cast\u003cclang::FunctionType\u003e(type_ptr)) {",
+      "range": {
+        "startLine": 317,
+        "startChar": 2,
+        "endLine": 317,
+        "endChar": 35
+      },
+      "revId": "a504c1f94133ad9de46527c964bb63255014bd85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7be2ff9_d217f2f1",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T02:55:12Z",
+      "side": 1,
+      "message": "func_type_ptr",
+      "range": {
+        "startLine": 320,
+        "startChar": 10,
+        "endLine": 320,
+        "endChar": 60
+      },
+      "revId": "a504c1f94133ad9de46527c964bb63255014bd85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
