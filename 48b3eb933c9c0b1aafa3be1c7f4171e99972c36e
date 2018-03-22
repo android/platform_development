@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3355ec58_b2da0fc4",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:28:36Z",
+      "side": 1,
+      "message": "Line break after the comma before bool.  Attach { to previous line.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 3
+      },
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "172b95e5_8ac65283",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:28:36Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 9
+      },
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12d1df38_1b672f18",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:28:36Z",
+      "side": 1,
+      "message": "Add private: here",
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2b6cd8c_00079ed9",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:28:36Z",
+      "side": 1,
+      "message": "Two spaces",
+      "range": {
+        "startLine": 644,
+        "startChar": 29,
+        "endLine": 644,
+        "endChar": 30
+      },
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60e92ac1_2aa099b5",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:28:36Z",
+      "side": 1,
+      "message": "Indent",
+      "range": {
+        "startLine": 644,
+        "startChar": 2,
+        "endLine": 644,
+        "endChar": 4
+      },
+      "revId": "48b3eb933c9c0b1aafa3be1c7f4171e99972c36e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
