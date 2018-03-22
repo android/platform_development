@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "37879e03_3f13cb6a",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T03:41:05Z",
+      "side": 1,
+      "message": "Wrong indent",
+      "range": {
+        "startLine": 319,
+        "startChar": 3,
+        "endLine": 319,
+        "endChar": 6
+      },
+      "revId": "62cab36eef00bfbfef7a963f81926c0f7a87093b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
