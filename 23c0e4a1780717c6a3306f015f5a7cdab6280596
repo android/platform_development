@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81a06c67_1677a2d1",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:36:00Z",
+      "side": 1,
+      "message": "Indent by 4",
+      "range": {
+        "startLine": 342,
+        "startChar": 0,
+        "endLine": 342,
+        "endChar": 3
+      },
+      "revId": "23c0e4a1780717c6a3306f015f5a7cdab6280596",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8f02ffd_b2d19e23",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:36:00Z",
+      "side": 1,
+      "message": "Indent by 4",
+      "range": {
+        "startLine": 352,
+        "startChar": 0,
+        "endLine": 352,
+        "endChar": 3
+      },
+      "revId": "23c0e4a1780717c6a3306f015f5a7cdab6280596",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c96756c5_fc1a2757",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:36:00Z",
+      "side": 1,
+      "message": "Indent by 4",
+      "range": {
+        "startLine": 364,
+        "startChar": 0,
+        "endLine": 364,
+        "endChar": 2
+      },
+      "revId": "23c0e4a1780717c6a3306f015f5a7cdab6280596",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8db8051_f278ece1",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:36:00Z",
+      "side": 1,
+      "message": "Indent by 4",
+      "range": {
+        "startLine": 376,
+        "startChar": 0,
+        "endLine": 376,
+        "endChar": 2
+      },
+      "revId": "23c0e4a1780717c6a3306f015f5a7cdab6280596",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa3f0fc3_8e3aae34",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-03-22T01:36:00Z",
+      "side": 1,
+      "message": "Although this can be done in another CL, however please replace these with more readable constant variables, e.g. SUCCESS, INCOMATIBLE, EXTENSION, etc.",
+      "range": {
+        "startLine": 234,
+        "startChar": 62,
+        "endLine": 234,
+        "endChar": 63
+      },
+      "revId": "23c0e4a1780717c6a3306f015f5a7cdab6280596",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
