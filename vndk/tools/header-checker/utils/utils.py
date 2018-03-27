@@ -133,15 +133,17 @@ def make_targets(targets, product):
     for target in targets:
         make_cmd.append(target)
     make_cmd.append('TARGET_PRODUCT=' + product)
+    print('make targets cmd: ', make_cmd)
     subprocess.check_call(make_cmd, cwd=AOSP_DIR, stdout=subprocess.DEVNULL,
                           stderr=subprocess.STDOUT)
 
-def make_libraries(libs, product):
+def make_libraries(libs, product, llndk_mode):
     # To aid creation of reference dumps. Makes lib.vendor for the current
     # configuration.
     lib_targets = []
     for lib in libs:
-        lib_targets.append(lib + VENDOR_SUFFIX)
+        lib = lib if llndk_mode else lib + VENDOR_SUFFIX
+        lib_targets.append(lib)
     make_targets(lib_targets, product)
 
 def find_lib_lsdumps(target_arch, target_arch_variant,
