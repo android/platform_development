@@ -101,14 +101,14 @@ def _build_zipfile(filename):
       zf.write(f[0])
 
 
-def do_setup_env(args):
+def do_setup_env(unused_args):
   _check_android_env()
   _make_all()
   _switch_to_prog_dir()
   _copy_deps()
 
 
-def do_list_deps(args):
+def do_list_deps(unused_args):
   print 'Depend files (zip <== host out):'
   for item in REQUIRED_ITEMS:
     print '  {:20} <== {}'.format(item.dest, item.src)
