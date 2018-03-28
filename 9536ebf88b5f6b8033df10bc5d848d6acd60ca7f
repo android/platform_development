@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ceebef88_017fa121",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-03-28T08:28:08Z",
+      "side": 1,
+      "message": "Explicitly mark unused arguments as unused_*",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "9536ebf88b5f6b8033df10bc5d848d6acd60ca7f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "60fd84c7_c6b0f197",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-03-28T08:28:08Z",
+      "side": 1,
+      "message": "Can you just copy/paste the \u0027exact\u0027 command you did?\nIt\u0027s simpler and easy for others to verify.",
+      "range": {
+        "startLine": 9,
+        "startChar": 6,
+        "endLine": 9,
+        "endChar": 35
+      },
+      "revId": "9536ebf88b5f6b8033df10bc5d848d6acd60ca7f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
