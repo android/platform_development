@@ -109,10 +109,13 @@ backtraces = []
 mappings = []
 
 for line in open(native_heap, "r"):
+    # Format of line:
+    #   z 0  sz       50  num    1  bt 000000000000a100 000000000000b200
     parts = line.split()
     if len(parts) > 7 and parts[0] == "z" and parts[2] == "sz":
         is_zygote = parts[1] != "1"
-        size = int(parts[3])
+        # Multiply the size by the number of allocations.
+        size = int(parts[3]) * int(parts[5])
         frames = map(lambda x: int(x, 16), parts[7:])
         if reverse_frames:
             frames = list(reversed(frames))
