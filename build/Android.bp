@@ -50,3 +50,11 @@ java_library_static {
     ],
     defaults: ["framework-stubs-default"],
 }
+
+java_library_static {
+    name: "hwbinder.current.stubs",
+    defaults: ["framework-stubs-default"],
+    srcs: [
+        ":hwbinder-current-stubs-docs",
+    ],
+}
