@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6103930b_2d2b75d3",
+        "filename": "build/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-03-30T00:17:25Z",
+      "side": 1,
+      "message": "rename to hwbinder.stubs and move this module under frameworks/base?",
+      "range": {
+        "startLine": 55,
+        "startChar": 11,
+        "endLine": 55,
+        "endChar": 33
+      },
+      "revId": "59cb4bcbfc2cbf657bb14748bf83b070753d9a43",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
