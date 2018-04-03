@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b9d0cc5d_c337b74b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-04-03T21:02:02Z",
+      "side": 1,
+      "message": "There is no infrastructure for doing this right now. I could try and find time to do this, but it won\u0027t be immediate.",
+      "parentUuid": "5d0b58b7_512d4fdc",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 75
+      },
+      "revId": "98bf661c31acf704141d84a17dc26ccc1a352943",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c9b3a190_d902053b",
         "filename": "scripts/native_heapdump_viewer.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-03T11:36:25Z",
       "side": 1,
       "message": "Will this break the script for older versions of the platform where the number was set to the number of entries in the stack rather than the number of allocations at that stack trace?",
+      "range": {
+        "startLine": 118,
+        "startChar": 15,
+        "endLine": 118,
+        "endChar": 28
+      },
+      "revId": "98bf661c31acf704141d84a17dc26ccc1a352943",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f08f5e19_dc606b2c",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-04-03T21:02:02Z",
+      "side": 1,
+      "message": "Hmm, that\u0027s a good point. I need to think how best to handle this case.",
+      "parentUuid": "c9b3a190_d902053b",
       "range": {
         "startLine": 118,
         "startChar": 15,
