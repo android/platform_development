@@ -1,0 +1,18 @@
+
+cc_library_static {
+  name: "libstatic",
+  srcs: ["static.cpp"],
+}
+
+cc_library_shared {
+  name: "libshared",
+  static_libs: ["libstatic"],
+  srcs: ["shared.cpp"],
+}
+
+cc_library_shared {
+  name: "libshared_excluded",
+  static_libs: ["libstatic"],
+  srcs: ["shared.cpp"],
+  ldflags: ["-Wl,--exclude-libs=libstatic"],
+}
