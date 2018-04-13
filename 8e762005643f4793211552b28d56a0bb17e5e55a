@@ -1,0 +1,625 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4cadcaf4_94b506d8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "versions?\n\nOr how about:\ngsi_util should support GSIs from different Android releases (e.g., O, P, Q, etc).",
+      "range": {
+        "startLine": 9,
+        "startChar": 60,
+        "endLine": 9,
+        "endChar": 67
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c1bf13e_c82835fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "How about:\n\nSome files might be renamed or moved to a different location across different Android versions.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 8
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6192f497_40a0f779",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "what does the type mean here?",
+      "range": {
+        "startLine": 17,
+        "startChar": 10,
+        "endLine": 17,
+        "endChar": 24
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4d09567_d8cbde0b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "how about:\nif file not found?",
+      "range": {
+        "startLine": 18,
+        "startChar": 46,
+        "endLine": 18,
+        "endChar": 70
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66938edc_64bd917c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "why file1 doesn\u0027t need \u0027fallbacks\u0027 but file2 does?",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 68
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ae042a4_4e378956",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "detailed usage?",
+      "range": {
+        "startLine": 33,
+        "startChar": 64,
+        "endLine": 34,
+        "endChar": 5
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24213e1c_7d8a0651",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "How about add some comments to describe those difference?\n\nIt\u0027s unclear to me what\u0027s the diff between dict and tuple/list (seems just need to be iterable?).\n\nBtw, let\u0027s provide a better error msg.\nassert isinstance(prepared_files, (...)), (\n    \u0027prepared files should be of type dict/tuple but is %r\u0027 % (\n         type(prepared_files))",
+      "range": {
+        "startLine": 49,
+        "startChar": 39,
+        "endLine": 49,
+        "endChar": 56
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4000a90_b7560270",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "what\u0027s the diff between using a tuple and a list?\nIf not much diff, can we just provide one of them? (e.g., tuple)",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 59,
+        "endChar": 55
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b74813bc_880108c9",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "Can you provide more accurate error info?\n\ne.g.,                                                                 \nassert False, (                                                                                                                                                    \n    \"self._prepared_files isn\u0027t dict or tuple\"",
+      "range": {
+        "startLine": 61,
+        "startChar": 6,
+        "endLine": 61,
+        "endChar": 18
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff38f592_41b9363d",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "It seems we have multiple \"if isinstance(dict) else .... else: assert False\" in this file. Might be better to have a central function to do those checks together.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 18
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "459c0e66_8c751115",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "where is the temp folder?\n\nHow about:\nReturns a single file from multiple source paths. ?",
+      "range": {
+        "startLine": 129,
+        "startChar": 44,
+        "endLine": 129,
+        "endChar": 59
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17b68387_0aab9c9a",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "s/./, ?",
+      "range": {
+        "startLine": 131,
+        "startChar": 63,
+        "endLine": 131,
+        "endChar": 64
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d788d49_677e9d1b",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "can be of different types",
+      "range": {
+        "startLine": 132,
+        "startChar": 10,
+        "endLine": 132,
+        "endChar": 32
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4254496_86530afa",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "This seems not \u0027fallbacks\u0027.\nUsually we\u0027ll have a primary solution, and use \u0027fallback\u0027 when the primary solution doesn\u0027t work.\n\nHow about s/fallbacks/search_paths ?",
+      "range": {
+        "startLine": 138,
+        "startChar": 8,
+        "endLine": 138,
+        "endChar": 17
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "448082db_90d98070",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "How about make it clear:\n  When True, not raise an exception if the file is not found.",
+      "range": {
+        "startLine": 146,
+        "startChar": 8,
+        "endLine": 146,
+        "endChar": 48
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c42ad367_6431dd55",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "describe",
+      "range": {
+        "startLine": 146,
+        "startChar": 20,
+        "endLine": 146,
+        "endChar": 27
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4919b894_8c5bf1c8",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "maybe: first found",
+      "range": {
+        "startLine": 153,
+        "startChar": 20,
+        "endLine": 153,
+        "endChar": 34
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd02ee6_8cb4527f",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "add a period to the end.",
+      "range": {
+        "startLine": 163,
+        "startChar": 6,
+        "endLine": 163,
+        "endChar": 46
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5613d8c_7c28e261",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "As prepare_file() only prepares \"one\" file, can we move the optional out of the dict?  And let the caller specify the optional value.\n\n  def prepare_file(self, file_to_prepare, optional\u003dFalse):\n     ...\n\nAnd file_to_prepare only needs to be an iterable (either tuple or list).",
+      "range": {
+        "startLine": 168,
+        "startChar": 2,
+        "endLine": 173,
+        "endChar": 22
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "399d2482_eb83b3f0",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "Again, fallbacks seems not quite good.\nMaybe use \u0027search_paths\u0027.",
+      "range": {
+        "startLine": 177,
+        "startChar": 6,
+        "endLine": 177,
+        "endChar": 15
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e518f9ef_37e6bb0b",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "can we be consistent for either \u0027raise\u0027 or \u0027assert\u0027 when the type check fails here? But not mix both.",
+      "range": {
+        "startLine": 181,
+        "startChar": 6,
+        "endLine": 181,
+        "endChar": 43
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eef1c6a_d1c35e79",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "How about just:\n\n  if not isinstance(search_paths, tuple):\n     raise ValueError(...)",
+      "range": {
+        "startLine": 178,
+        "startChar": 2,
+        "endLine": 181,
+        "endChar": 43
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10a5d972_3f9c86bd",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "How about s/ret/mounter_file to clearly indicate the type.\nOtherwise, ret seems an integer to me.",
+      "range": {
+        "startLine": 188,
+        "startChar": 6,
+        "endLine": 188,
+        "endChar": 9
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b636e61_3361e1cc",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "seems don\u0027t know where is the temp folder here",
+      "range": {
+        "startLine": 199,
+        "startChar": 56,
+        "endLine": 199,
+        "endChar": 67
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ddcf9f7_280189e1",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "could be of any type",
+      "range": {
+        "startLine": 218,
+        "startChar": 36,
+        "endLine": 218,
+        "endChar": 53
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2f9fb12f_8fa63346",
+        "filename": "gsi/gsi_util/gsi_util/mounters/base_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "For list/tuple, let\u0027s see if we can just provide one of them\nAny reason for need to provide both?",
+      "range": {
+        "startLine": 234,
+        "startChar": 3,
+        "endLine": 237,
+        "endChar": 71
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9032e4d4_6c75b2e8",
+        "filename": "gsi/gsi_util/gsi_util/mounters/composite_mounter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-04-13T10:45:42Z",
+      "side": 1,
+      "message": "How about:\n# Sets optional to True to skip raising an exception.\n# The caller is expected to raise by themselves when necessary.",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 24
+      },
+      "revId": "8e762005643f4793211552b28d56a0bb17e5e55a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
