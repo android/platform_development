@@ -186,9 +186,11 @@ functions {
   parameters {
     referenced_type: "type-7"
     default_arg: false
+    is_this_ptr: false
   }
   linker_set_key: "CFunction"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-8"
@@ -197,13 +199,62 @@ functions {
   parameters {
     referenced_type: "type-9"
     default_arg: false
+    is_this_ptr: false
   }
   parameters {
     referenced_type: "type-9"
     default_arg: false
+    is_this_ptr: false
   }
   linker_set_key: "_Z3fooPiS_"
   access: public_access
+  is_header_defined: false
+}
+functions {
+  return_type: "type-10"
+  function_name: "Foo::Foo"
+  source_file: "/development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_and_cpp.h"
+  parameters {
+    referenced_type: "type-11"
+    default_arg: false
+    is_this_ptr: true
+  }
+  parameters {
+    referenced_type: "type-9"
+    default_arg: false
+    is_this_ptr: false
+  }
+  parameters {
+    referenced_type: "type-9"
+    default_arg: false
+    is_this_ptr: false
+  }
+  linker_set_key: "_ZN3FooC1EPiS0_"
+  access: public_access
+  is_header_defined: true
+}
+functions {
+  return_type: "type-10"
+  function_name: "Foo::Foo"
+  source_file: "/development/vndk/tools/header-checker/tests/integration/c_and_cpp/include/c_and_cpp.h"
+  parameters {
+    referenced_type: "type-11"
+    default_arg: false
+    is_this_ptr: true
+  }
+  parameters {
+    referenced_type: "type-9"
+    default_arg: false
+    is_this_ptr: false
+  }
+  parameters {
+    referenced_type: "type-9"
+    default_arg: false
+    is_this_ptr: false
+  }
+  linker_set_key: "_ZN3FooC2EPiS0_"
+  access: public_access
+  is_header_defined: true
 }
 elf_functions {
   name: "CFunction"

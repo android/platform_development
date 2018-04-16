@@ -234,6 +234,12 @@ class MyTest(unittest.TestCase):
             "libgolden_cpp_function_pointer_parameter_added", 8, [], True,
             True)
 
+    def test_libgolden_cpp_header_defined_function_added(self):
+        self.prepare_and_run_abi_diff_all_archs(
+            "libgolden_cpp",
+            "libgolden_cpp_header_defined_function_added", 0, [], True,
+            True)
+
 
 
 if __name__ == '__main__':
