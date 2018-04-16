@@ -240,21 +240,6 @@ bool HeaderAbiLinker::LinkAndDump() {
   return true;
 }
 
-static bool QueryRegexMatches(std::set<std::string> *regex_matched_link_set,
-                              const std::regex *vs_regex,
-                              const std::string &symbol) {
-  assert(regex_matched_link_set != nullptr);
-  assert(vs_regex != nullptr);
-  if (regex_matched_link_set->find(symbol) != regex_matched_link_set->end()) {
-    return false;
-  }
-  if (std::regex_search(symbol, *vs_regex)) {
-    regex_matched_link_set->insert(symbol);
-    return true;
-  }
-  return false;
-}
-
 static std::regex CreateRegexMatchExprFromSet(
     const std::set<std::string> &link_set) {
   std::string all_regex_match_str = "";
@@ -289,20 +274,6 @@ bool HeaderAbiLinker::LinkDecl(
         exported_headers_.find(source_file) ==
         exported_headers_.end()) {
       continue;
-    }
-    const std::string &element_str = element.first;
-    // Check for the existence of the element in linked dump / symbol file.
-    if (use_version_script_or_so) {
-      std::set<std::string>::iterator it =
-          link_set->find(element_str);
-      if (it == link_set->end()) {
-        if (!QueryRegexMatches(regex_matched_link_set, vs_regex, element_str)) {
-          continue;
-        }
-      } else {
-        // We get a pre-filled link name set while using version script.
-        link_set->erase(*it); // Avoid multiple instances of the same symbol.
-      }
     }
     if (!dst->AddLinkableMessageIR(&(element.second))) {
       llvm::errs() << "Failed to add element to linked dump\n";

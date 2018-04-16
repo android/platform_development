@@ -267,6 +267,22 @@ bool HeaderAbiDiff::PopulateElfElements(
 }
 
 template <typename T>
+void RemoveHeaderDefinedElements(
+    std::vector<const T *> *removed_elements) {
+  // Default: do nothing
+}
+
+template<>
+void  RemoveHeaderDefinedElements<abi_util::FunctionIR>(
+    std::vector<const abi_util::FunctionIR *> *removed_elements) {
+  auto predicate =
+      [&](const abi_util::FunctionIR *removed_function) {
+        return removed_function->GetIsHeaderDefined();
+      };
+  std::remove_if(removed_elements->begin(), removed_elements->end(), predicate);
+}
+
+template <typename T>
 bool HeaderAbiDiff::PopulateRemovedElements(
     const AbiElementMap<const T*> &old_elements_map,
     const AbiElementMap<const T*> &new_elements_map,
@@ -276,6 +292,7 @@ bool HeaderAbiDiff::PopulateRemovedElements(
     const AbiElementMap<const abi_util::TypeIR *> &removed_types_map) {
   std::vector<const T *> removed_elements =
       abi_util::FindRemovedElements(old_elements_map, new_elements_map);
+  RemoveHeaderDefinedElements(&removed_elements);
   if (!DumpLoneElements(removed_elements, elf_map, ir_diff_dumper, diff_kind,
                         removed_types_map)) {
     llvm::errs() << "Dumping added / removed element to report failed\n";
