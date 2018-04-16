@@ -593,6 +593,10 @@ class GlobalVarIR: public LinkableMessageIR , public ReferencesOtherType {
     return name_;
   }
 
+  void SetAccess(AccessSpecifierIR access) {
+    access_ = access;
+  }
+
   AccessSpecifierIR GetAccess() const {
     return access_;
   }
@@ -681,10 +685,19 @@ class FunctionIR : public LinkableMessageIR, public TemplatedArtifactIR,
     return name_;
   }
 
+  void SetIsHeaderDefined(bool is_header_defined) {
+    is_header_defined_ = is_header_defined;
+  }
+
+  bool GetIsHeaderDefined() const {
+    return is_header_defined_;
+  }
+
  protected:
   std::string linkage_name_;
   std::string name_;
   AccessSpecifierIR access_;
+  bool is_header_defined_ = false;
 };
 
 class ElfSymbolIR {

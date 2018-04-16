@@ -101,6 +101,7 @@ FunctionIR ProtobufTextFormatToIRReader::FunctionProtobufToIR(
   function_ir.SetName(function_protobuf.function_name());
   function_ir.SetAccess(AccessProtobufToIR(function_protobuf.access()));
   function_ir.SetSourceFile(function_protobuf.source_file());
+  function_ir.SetIsHeaderDefined(function_protobuf.is_header_defined());
   // Set parameters
   for (auto &&parameter: function_protobuf.parameters()) {
     ParamIR param_ir(parameter.referenced_type(), parameter.default_arg(),
@@ -210,6 +211,7 @@ void ProtobufTextFormatToIRReader::ReadGlobalVariables(
   for (auto &&global_variable_protobuf : tu.global_vars()) {
     GlobalVarIR global_variable_ir;
     global_variable_ir.SetName(global_variable_protobuf.name());
+    global_variable_ir.SetAccess(AccessProtobufToIR(global_variable_protobuf.access()));
     global_variable_ir.SetSourceFile(global_variable_protobuf.source_file());
     global_variable_ir.SetReferencedType(
         global_variable_protobuf.referenced_type());
@@ -596,6 +598,7 @@ abi_dump::FunctionDecl IRToProtobufConverter::ConvertFunctionIR(
   added_function.set_linker_set_key(functionp->GetLinkerSetKey());
   added_function.set_source_file(functionp->GetSourceFile());
   added_function.set_function_name(functionp->GetName());
+  added_function.set_is_header_defined(functionp->GetIsHeaderDefined());
   if (!AddFunctionParametersAndSetReturnType(&added_function, functionp) ||
       !(functionp->GetTemplateElements().size() ?
       AddTemplateInformation(added_function.mutable_template_info(), functionp)
