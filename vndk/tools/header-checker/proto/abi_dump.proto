@@ -69,6 +69,7 @@ message FunctionDecl {
   optional TemplateInfo template_info = 5;
   optional string linker_set_key = 6;
   optional AccessSpecifier access = 7 [default = public_access];
+  optional bool is_header_defined = 8;
 }
 
 message ParamDecl {
