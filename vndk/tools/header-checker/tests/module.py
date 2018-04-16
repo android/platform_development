@@ -386,6 +386,20 @@ TEST_MODULES = [
         arch = '',
         api = 'current',
     ),
+    Module(
+        name = 'libgolden_cpp_header_defined_function_added',
+        srcs = ['integration/cpp/gold/golden_1.cpp',
+                'integration/cpp/gold/high_volume_speaker.cpp',
+                'integration/cpp/gold/low_volume_speaker.cpp',
+                ],
+        version_script = \
+            'integration/cpp/gold/map_header_defined_function_added.txt',
+        export_include_dirs = ['integration/cpp/gold/include'],
+        cflags = [],
+        arch = '',
+        api = 'current',
+    ),
+
 ]
 
 TEST_MODULES = { m.name: m for m in TEST_MODULES }

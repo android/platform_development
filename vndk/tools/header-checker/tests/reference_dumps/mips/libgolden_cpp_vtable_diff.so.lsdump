@@ -304,6 +304,7 @@ functions {
   source_file: "/development/vndk/tools/header-checker/tests/integration/cpp/gold/include/abstract_class.h"
   linker_set_key: "_ZN12SuperSpeaker11SpeakLouderEv"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-9"
@@ -312,9 +313,11 @@ functions {
   parameters {
     referenced_type: "type-2"
     default_arg: false
+    is_this_ptr: false
   }
   linker_set_key: "_ZN12SuperSpeaker18CreateSuperSpeakerEi"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-8"
@@ -323,9 +326,11 @@ functions {
   parameters {
     referenced_type: "type-9"
     default_arg: false
+    is_this_ptr: true
   }
   linker_set_key: "_ZN12SuperSpeaker9SpeakLoudEv"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-10"
@@ -334,9 +339,11 @@ functions {
   parameters {
     referenced_type: "type-4"
     default_arg: false
+    is_this_ptr: true
   }
   linker_set_key: "_ZN16LowVolumeSpeaker5SpeakEv"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-10"
@@ -345,9 +352,11 @@ functions {
   parameters {
     referenced_type: "type-4"
     default_arg: false
+    is_this_ptr: true
   }
   linker_set_key: "_ZN16LowVolumeSpeaker6ListenEv"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-12"
@@ -356,13 +365,16 @@ functions {
   parameters {
     referenced_type: "type-12"
     default_arg: false
+    is_this_ptr: true
   }
   parameters {
     referenced_type: "type-3"
     default_arg: false
+    is_this_ptr: false
   }
   linker_set_key: "_ZN17HighVolumeSpeaker11BadPracticeEf"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-10"
@@ -371,9 +383,11 @@ functions {
   parameters {
     referenced_type: "type-12"
     default_arg: false
+    is_this_ptr: true
   }
   linker_set_key: "_ZN17HighVolumeSpeaker5SpeakEv"
   access: public_access
+  is_header_defined: false
 }
 functions {
   return_type: "type-10"
@@ -382,9 +396,11 @@ functions {
   parameters {
     referenced_type: "type-12"
     default_arg: false
+    is_this_ptr: true
   }
   linker_set_key: "_ZN17HighVolumeSpeaker6ListenEv"
   access: public_access
+  is_header_defined: false
 }
 elf_functions {
   name: "_Z26test_virtual_function_callP12SuperSpeaker"
