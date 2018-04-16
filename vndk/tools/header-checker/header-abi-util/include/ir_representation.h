@@ -681,10 +681,19 @@ class FunctionIR : public LinkableMessageIR, public TemplatedArtifactIR,
     return name_;
   }
 
+  void SetIsHeaderDefined(bool is_header_defined) {
+    is_header_defined_ = is_header_defined;
+  }
+
+  bool GetIsHeaderDefined() const {
+    return is_header_defined_;
+  }
+
  protected:
   std::string linkage_name_;
   std::string name_;
   AccessSpecifierIR access_;
+  bool is_header_defined_ = false;
 };
 
 class ElfSymbolIR {

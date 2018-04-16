@@ -526,6 +526,16 @@ bool FunctionDeclWrapper::SetupFunctionParameters(
   return true;
 }
 
+static bool IsFunctionDeclHeaderDefined(
+    const clang::FunctionDecl *function_decl,
+    const clang::CompilerInstance *cip) {
+  clang::SourceManager &sm = cip->getSourceManager();
+  clang::SourceLocation definition_begin =
+      function_decl->getDefinition()->getSourceRange().getBegin();
+  llvm::StringRef file_name = sm.getFilename(definition_begin);
+  return file_name.endswith(".h") || file_name.endswith(".hpp");
+}
+
 bool FunctionDeclWrapper::SetupFunction(abi_util::FunctionIR *functionp,
                                         const std::string &source_file)  {
   // Go through all the parameters in the method and add them to the fields.
@@ -533,6 +543,8 @@ bool FunctionDeclWrapper::SetupFunction(abi_util::FunctionIR *functionp,
   // TODO: Change this to get the complete function signature
   functionp->SetName(function_decl_->getQualifiedNameAsString());
   functionp->SetSourceFile(source_file);
+  functionp->SetIsHeaderDefined(IsFunctionDeclHeaderDefined(function_decl_,
+                                                            cip_));
   clang::QualType return_type = function_decl_->getReturnType();
 
   functionp->SetReturnType(
