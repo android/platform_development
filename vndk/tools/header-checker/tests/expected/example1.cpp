@@ -806,6 +806,7 @@ functions {
   }
   linker_set_key: "_ZN5test210HelloAgainD2Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -818,6 +819,7 @@ functions {
   }
   linker_set_key: "_ZN5test210HelloAgainD1Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -830,6 +832,7 @@ functions {
   }
   linker_set_key: "_ZN5test210HelloAgainD0Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-12"
@@ -842,6 +845,7 @@ functions {
   }
   linker_set_key: "_ZN5test33EndEf"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-2"
@@ -854,6 +858,7 @@ functions {
   }
   linker_set_key: "_ZN8CPPHello5againEv"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -866,6 +871,7 @@ functions {
   }
   linker_set_key: "_ZN8CPPHelloC2Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -878,6 +884,7 @@ functions {
   }
   linker_set_key: "_ZN8CPPHelloC1Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-2"
@@ -890,6 +897,7 @@ functions {
   }
   linker_set_key: "_ZN8CPPHello9test_enumEv"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-2"
@@ -912,6 +920,7 @@ functions {
   }
   linker_set_key: "_Z3boo8CPPHelloPiPf"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -929,6 +938,7 @@ functions {
   }
   linker_set_key: "_ZN4ListIfE5_NodeC2ERKf"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -946,6 +956,7 @@ functions {
   }
   linker_set_key: "_ZN4ListIfE5_NodeC1ERKf"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -958,6 +969,7 @@ functions {
   }
   linker_set_key: "_ZN4ListIfE5_NodeD2Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -970,6 +982,7 @@ functions {
   }
   linker_set_key: "_ZN4ListIfE5_NodeD1Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-31"
@@ -1006,6 +1019,7 @@ functions {
   }
   linker_set_key: "_Z13castInterfaceIffffE4ListIT_ES0_IT0_EPKcb"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -1013,6 +1027,7 @@ functions {
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   linker_set_key: "_Z6formatv"
   access: public_access
+  is_header_defined: true
 }
 global_vars {
   name: "test2::HelloAgain::hello_forever"
