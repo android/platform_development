@@ -364,6 +364,7 @@ functions {
   }
   linker_set_key: "_ZN5test210HelloAgainD2Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -376,6 +377,7 @@ functions {
   }
   linker_set_key: "_ZN5test210HelloAgainD1Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-6"
@@ -388,6 +390,7 @@ functions {
   }
   linker_set_key: "_ZN5test210HelloAgainD0Ev"
   access: public_access
+  is_header_defined: true
 }
 functions {
   return_type: "type-12"
@@ -400,6 +403,7 @@ functions {
   }
   linker_set_key: "_ZN5test33EndEf"
   access: public_access
+  is_header_defined: true
 }
 global_vars {
   name: "test2::HelloAgain::hello_forever"
