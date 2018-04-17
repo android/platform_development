@@ -22,6 +22,30 @@
       "revId": "7478dfae2b5dcad63006d23a8d46ec4c76668185",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a1f4f79_6efc57ee",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-04-17T15:10:01Z",
+      "side": 1,
+      "message": "That could be a good idea, however, what happens if we\u0027re parsing just headers, like we would do (in the future) in the case of llndk libraries ? Then, the source will be a header.",
+      "parentUuid": "04f31071_5cc631bc",
+      "range": {
+        "startLine": 536,
+        "startChar": 9,
+        "endLine": 536,
+        "endChar": 64
+      },
+      "revId": "7478dfae2b5dcad63006d23a8d46ec4c76668185",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
