@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dac2ccaa_fbc36689",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1289047
+      },
+      "writtenOn": "2018-04-19T16:55:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "139aa255_7aba69ab",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "1f34d0fee997adae62deed027e222ec5c237e269",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5a443d_e1b850cb",
         "filename": "tools/repo_diff/git_commits_not_upstreamed.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "1f34d0fee997adae62deed027e222ec5c237e269",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2ed00cc_c5c59fed",
+        "filename": "tools/repo_diff/git_commits_not_upstreamed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1289047
+      },
+      "writtenOn": "2018-04-19T16:55:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5a443d_e1b850cb",
+      "range": {
+        "startLine": 113,
+        "startChar": 9,
+        "endLine": 113,
+        "endChar": 17
+      },
+      "revId": "1f34d0fee997adae62deed027e222ec5c237e269",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
