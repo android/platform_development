@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "139aa255_7aba69ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1126544
+      },
+      "writtenOn": "2018-04-19T02:30:22Z",
+      "side": 1,
+      "message": "The format is \"Bug: 77971800\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "1f34d0fee997adae62deed027e222ec5c237e269",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba5a443d_e1b850cb",
+        "filename": "tools/repo_diff/git_commits_not_upstreamed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1126544
+      },
+      "writtenOn": "2018-04-19T02:30:22Z",
+      "side": 1,
+      "message": "Ideally use TODO(b/bugnumber) for better tracking and context.",
+      "range": {
+        "startLine": 113,
+        "startChar": 9,
+        "endLine": 113,
+        "endChar": 17
+      },
+      "revId": "1f34d0fee997adae62deed027e222ec5c237e269",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
