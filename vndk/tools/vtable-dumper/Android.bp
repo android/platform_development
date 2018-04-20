@@ -26,6 +26,9 @@ cc_binary_host {
         "vndk_vtable_dumper.cpp",
     ],
 
+    // TODO: Remove this so that VTS can run on Windows
+    target: {windows: {enabled: false,},},
+
     cflags: [
         "-Wall",
         "-Werror",
@@ -33,6 +36,6 @@ cc_binary_host {
     ],
 
     shared_libs: [
-        "libLLVM_android",
+        "libLLVM_host",
     ],
 }

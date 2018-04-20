@@ -31,6 +31,8 @@ using llvm::ELF::R_MIPS_64;
 using llvm::ELF::R_MIPS_REL32;
 using llvm::ELF::R_MIPS_NONE;
 using llvm::ELF::SHT_PROGBITS;
+using llvm::ELF::SHT_ANDROID_REL;
+using llvm::ELF::SHT_ANDROID_RELA;
 using llvm::ELF::SHT_REL;
 using llvm::ELF::SHT_RELA;
 using llvm::Expected;
@@ -107,8 +109,10 @@ bool ELFSharedObject<ELFT>::cacheELFSections() {
             return false;
         }
         switch (ElfShdr->sh_type) {
-            case SHT_RELA:
+            case SHT_ANDROID_REL:
+            case SHT_ANDROID_RELA:
             case SHT_REL:
+            case SHT_RELA:
                 mRelSectionRefs.emplace_back(ElfSection);
                 break;
             case SHT_PROGBITS:
@@ -297,7 +301,8 @@ bool ELFSharedObject<ELFT>::relativeRelocation(
         VTable *Vtablep) {
     uint64_t Addend = 0;
     uint64_t RelOffset = Relocation.getOffset();
-    if (mObj->getSection(Section.getRawDataRefImpl())->sh_type == SHT_RELA) {
+    uint32_t SectionType = mObj->getSection(Section.getRawDataRefImpl())->sh_type;
+    if (SectionType == SHT_ANDROID_RELA || SectionType == SHT_RELA) {
         const Elf_Rela *Rela = mObj->getRela(Relocation.getRawDataRefImpl());
         Addend = static_cast<uint64_t>(Rela->r_addend);
     }
