@@ -22,6 +22,30 @@
       "revId": "ced6ac12acd39ba3bcd246a83d852bb1f2f0724a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b21e8379_f0eaff95",
+        "filename": "vndk/tools/vtable-dumper/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-04-20T07:48:07Z",
+      "side": 1,
+      "message": "Done\n\nbut the 2 errors in the bug still occur.",
+      "parentUuid": "c825479d_f8ab7d5b",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 6
+      },
+      "revId": "ced6ac12acd39ba3bcd246a83d852bb1f2f0724a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
