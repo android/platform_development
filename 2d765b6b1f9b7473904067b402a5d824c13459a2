@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d4ff663_4d4f813e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1057373
+      },
+      "writtenOn": "2018-04-27T12:05:14Z",
+      "side": 1,
+      "message": "I notice the am dumpheap -n output has a version line in the file. Does it make sense to update the version line output to the file for the new version of malloc debug and use that to detect frames?",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "2d765b6b1f9b7473904067b402a5d824c13459a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ab646da_e9a83d7f",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1057373
+      },
+      "writtenOn": "2018-04-27T12:05:14Z",
+      "side": 1,
+      "message": "Does it make sense to use this regular expression for the parsing below (line 153) rather than have two different implementations for parsing these lines? Maybe you could integrate the GetNumFieldValid check with the parsing below, check all lines instead of just three, and reset the Backtraces.size fields to 1 after the fact if it becomes clear that the num field is not valid?",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 126
+      },
+      "revId": "2d765b6b1f9b7473904067b402a5d824c13459a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec18bb33_188ab68a",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1057373
+      },
+      "writtenOn": "2018-04-27T12:05:14Z",
+      "side": 1,
+      "message": "Does this work in html mode as well as txt mode?\n\nMaybe expand the message so the user knows this is not an error? Or, if there is nothing the user should do about it, remove it entirely?",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 48
+      },
+      "revId": "2d765b6b1f9b7473904067b402a5d824c13459a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "405bff35_2db2b38d",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1057373
+      },
+      "writtenOn": "2018-04-27T12:05:14Z",
+      "side": 1,
+      "message": "This count of the number of allocations with a given stack trace is going to be wrong if you treat each line as a single allocation of size \"size * int(parts[5])\" from line 159 above. Perhaps add a field to the Backtrace class to track the number of allocations, and do the size adjustment at this line instead?",
+      "range": {
+        "startLine": 260,
+        "startChar": 2,
+        "endLine": 260,
+        "endChar": 24
+      },
+      "revId": "2d765b6b1f9b7473904067b402a5d824c13459a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
