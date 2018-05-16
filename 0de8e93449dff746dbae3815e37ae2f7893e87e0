@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ad9d6bd_50096369",
+        "filename": "ndk/icu/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-05-16T20:08:56Z",
+      "side": 1,
+      "message": "Not for this CL, but we need to find a way to make this unnecessary on the client\u0027s end before this is really ready to ship. The dead simple way to do this would be to sed replace the `#define U_DISABLE_RENAMING 0` in uconfig.h before it is installed to the NDK sysroot. The more robust implementation of this would use libclang to perform the replacement.\n\nAnother option would be to shadow uconfig.h in the NDK sysroot from another location (like $SYSROOT/usr/local/include), #include_next to the real one, and then override the U_DISABLE_RENAMING macro in ours. This is already how libandroid_support\u0027s headers work, but frankly it\u0027s messy and I\u0027d rather not add more cases of that.",
+      "revId": "0de8e93449dff746dbae3815e37ae2f7893e87e0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4530eee2_be4c60c1",
+        "filename": "ndk/icu/icu_test.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-05-16T20:08:56Z",
+      "side": 1,
+      "message": "Longer term it might be better to use the actual ICU tests so we get better coverage, and also to add those to CTS.",
+      "revId": "0de8e93449dff746dbae3815e37ae2f7893e87e0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
