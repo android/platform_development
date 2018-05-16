@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eb46851_efc0104c",
+        "filename": "ndk/icu/templates/icundk.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-05-16T20:18:18Z",
+      "side": 1,
+      "message": "The test in the next CL worked fine on a Galaxy Nexus running android-16, so maybe this is good enough, but maybe we should change how this works such that it\u0027s a little less drop-in and instead requires actual initialization that can receive a success/failure status rather than abort?",
+      "revId": "82369b2492733ac5cbafb0c0e40e109894dc1c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8997e75e_89f7bed0",
+        "filename": "ndk/icu/templates/icundk.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-05-16T20:18:18Z",
+      "side": 1,
+      "message": "This part of this API definitely needs to change: there\u0027s no good way to test if you can use a function short of checking the ICU version and gating based on that.\n\nI\u0027m not sure how we want to do this, but some ideas off the top of my head:\n\n1. Create a function pointer for each API we expose that is called rather than the stubs below. If the function isn\u0027t available, the pointer is null (similar to the behavior of a weak symbol). This would require a different sort of initialization (manual or perhaps a static constructor, but I\u0027m worried about how the latter would behave if this library was multiply loaded as it would be if this library were used in multiple shared libraries in an app).\n\n2. Add something akin to eglGetProcAddress.",
+      "revId": "82369b2492733ac5cbafb0c0e40e109894dc1c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
