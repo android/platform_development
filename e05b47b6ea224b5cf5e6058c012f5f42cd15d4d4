@@ -46,6 +46,30 @@
       "revId": "e05b47b6ea224b5cf5e6058c012f5f42cd15d4d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aacce929_69f65f1a",
+        "filename": "build/sdk-windows-x86.atree",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1023201
+      },
+      "writtenOn": "2018-05-17T13:26:18Z",
+      "side": 1,
+      "message": "OK, nice :D",
+      "parentUuid": "662bd614_a08ea538",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 19
+      },
+      "revId": "e05b47b6ea224b5cf5e6058c012f5f42cd15d4d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
