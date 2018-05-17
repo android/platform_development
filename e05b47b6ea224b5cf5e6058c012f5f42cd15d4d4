@@ -22,6 +22,30 @@
       "revId": "e05b47b6ea224b5cf5e6058c012f5f42cd15d4d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "662bd614_a08ea538",
+        "filename": "build/sdk-windows-x86.atree",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1106303
+      },
+      "writtenOn": "2018-05-17T13:24:01Z",
+      "side": 1,
+      "message": "It is added by http://aosp/688901 from the topic.",
+      "parentUuid": "ce2757fd_89a6b1cd",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 19
+      },
+      "revId": "e05b47b6ea224b5cf5e6058c012f5f42cd15d4d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
