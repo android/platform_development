@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfbf0335_905a1e85",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/abi_diff_helpers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-05-17T04:13:04Z",
+      "side": 1,
+      "message": "Is this correct?  If I read the code correctly, IsAccessDownGraded(A, B) means the access specifier A is less restrictive than the access specifier B.\n\nFor example, IsAccessDownGraded(Protected, Private) \u003d\u003d true.",
+      "revId": "6893d8cc69ce64a5514b37a069f567bf501117b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
