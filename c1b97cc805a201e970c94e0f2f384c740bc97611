@@ -22,6 +22,30 @@
       "revId": "c1b97cc805a201e970c94e0f2f384c740bc97611",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d73f67ec_5eb00344",
+        "filename": "tools/compare_failed_tests/compare_failed_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-05-18T08:55:05Z",
+      "side": 1,
+      "message": "how about print()\u0027s in read_test_result_xml()?",
+      "parentUuid": "f458d3af_81269ba5",
+      "range": {
+        "startLine": 177,
+        "startChar": 6,
+        "endLine": 177,
+        "endChar": 51
+      },
+      "revId": "c1b97cc805a201e970c94e0f2f384c740bc97611",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
