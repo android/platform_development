@@ -46,6 +46,30 @@
       "revId": "c1b97cc805a201e970c94e0f2f384c740bc97611",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9822bd75_50600f22",
+        "filename": "tools/compare_failed_tests/compare_failed_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2018-05-18T09:41:53Z",
+      "side": 1,
+      "message": "Done.\nLet me know if you need to remove warnings in read_test_result_xml()",
+      "parentUuid": "d73f67ec_5eb00344",
+      "range": {
+        "startLine": 177,
+        "startChar": 6,
+        "endLine": 177,
+        "endChar": 51
+      },
+      "revId": "c1b97cc805a201e970c94e0f2f384c740bc97611",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
