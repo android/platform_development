@@ -70,6 +70,30 @@
       "revId": "c1b97cc805a201e970c94e0f2f384c740bc97611",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f44e134_c85d1258",
+        "filename": "tools/compare_failed_tests/compare_failed_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-05-21T02:32:31Z",
+      "side": 1,
+      "message": "I think the warnings are okay. Normally they do not occur.",
+      "parentUuid": "9822bd75_50600f22",
+      "range": {
+        "startLine": 177,
+        "startChar": 6,
+        "endLine": 177,
+        "endChar": 51
+      },
+      "revId": "c1b97cc805a201e970c94e0f2f384c740bc97611",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
