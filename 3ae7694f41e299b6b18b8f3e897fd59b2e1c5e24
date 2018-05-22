@@ -16,6 +16,24 @@
       "revId": "3ae7694f41e299b6b18b8f3e897fd59b2e1c5e24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb882afd_8c2189e9",
+        "filename": "build/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1060959
+      },
+      "writtenOn": "2018-05-22T18:11:32Z",
+      "side": 1,
+      "message": "ah sorry, maybe the jar filename isn\u0027t changing. Anyway, worth a sanity check :)",
+      "parentUuid": "f3ab6576_f55c98c9",
+      "revId": "3ae7694f41e299b6b18b8f3e897fd59b2e1c5e24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
