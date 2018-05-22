@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f3ab6576_f55c98c9",
+        "filename": "build/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1060959
+      },
+      "writtenOn": "2018-05-22T18:11:00Z",
+      "side": 1,
+      "message": "note this name is hardcoded into the update_prebuilts script too. We\u0027re refactoring it to be naming-agnostic soon, but until then this rename will break the script I think.",
+      "revId": "3ae7694f41e299b6b18b8f3e897fd59b2e1c5e24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
