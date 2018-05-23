@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "1b6187f4_10ee969c",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-05-23T02:09:07Z",
+      "side": 1,
+      "message": "I changed this to use version number, and I\u0027ve incremented the version number.\n\nI made more changes in malloc debug so keeping this the same didn\u0027t make sense.",
+      "parentUuid": "8ab646da_e9a83d7f",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 126
+      },
+      "revId": "2d765b6b1f9b7473904067b402a5d824c13459a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ec18bb33_188ab68a",
         "filename": "scripts/native_heapdump_viewer.py",
         "patchSetId": 2
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "d5ce9139_caf02072",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-05-23T02:09:07Z",
+      "side": 1,
+      "message": "This was actually just debug output which is gone now.",
+      "parentUuid": "ec18bb33_188ab68a",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 48
+      },
+      "revId": "2d765b6b1f9b7473904067b402a5d824c13459a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "405bff35_2db2b38d",
         "filename": "scripts/native_heapdump_viewer.py",
         "patchSetId": 2
@@ -82,6 +130,30 @@
       "writtenOn": "2018-04-27T12:05:14Z",
       "side": 1,
       "message": "This count of the number of allocations with a given stack trace is going to be wrong if you treat each line as a single allocation of size \"size * int(parts[5])\" from line 159 above. Perhaps add a field to the Backtrace class to track the number of allocations, and do the size adjustment at this line instead?",
+      "range": {
+        "startLine": 260,
+        "startChar": 2,
+        "endLine": 260,
+        "endChar": 24
+      },
+      "revId": "2d765b6b1f9b7473904067b402a5d824c13459a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fed695b3_4920d713",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-05-23T02:09:07Z",
+      "side": 1,
+      "message": "Done, I added a num_allocs field to Backtrace object.",
+      "parentUuid": "405bff35_2db2b38d",
       "range": {
         "startLine": 260,
         "startChar": 2,
