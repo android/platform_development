@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bd428f5f_70275efb",
+        "filename": "ndk/icu/icundk.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-05-24T22:28:59Z",
+      "side": 1,
+      "message": "Yeah, I was wondering about how we might save some space here but hadn\u0027t given it a ton of thought yet. There are about 1000 entries in this list, so the array ends up being ~32KiB (~16KiB on LP32), and that\u0027s not even counting the space for the function names.\n\nThe problem with it all being local to the function is that then it isn\u0027t shared between the wrapper and ndk_icu_available. ndk_icu_available would end up needing the full list anyway, so we\u0027d just end up using twice as much space unless the user never calls ndk_icu_available. That might actually be the common case though, so there\u0027s a chance that\u0027s the right trade off anyway...\n\nAlternatively, ndk_icu_available wouldn\u0027t need the list if the signature included a bit to indicate whether the function was expected to be in libicuuc.so or libicu18n.so. If we did that it would be little more than a wrapper around dlsym, but maybe the slightly less friendly UX there is reasonable given the space savings.",
+      "parentUuid": "d93dcb52_4c8cf093",
+      "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "846b5f95_49ed9fe5",
         "filename": "ndk/icu/icundk.c",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-05-24T01:17:25Z",
       "side": 1,
       "message": "does clang deduplicate these strings for you? otherwise that\u0027s another easy saving.",
+      "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "427096d4_b68e7b66",
+        "filename": "ndk/icu/icundk.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 8164,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-05-24T22:28:59Z",
+      "side": 1,
+      "message": "I would sure hope so, but it\u0027s easy enough to just fix it so might as well assume it doesn\u0027t.",
+      "parentUuid": "846b5f95_49ed9fe5",
       "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
