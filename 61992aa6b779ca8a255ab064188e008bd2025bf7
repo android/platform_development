@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c9706d8_5b8c4b19",
+        "filename": "ndk/icu/templates/icundk.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-05-24T01:13:39Z",
+      "side": 1,
+      "message": "(the cleaned up version of all this code is in https://cs.corp.google.com/android/bionic/libc/bionic/icu.cpp?q\u003dfile:bionic+file:icu\u0026g\u003d0\u0026l\u003d49 )",
+      "revId": "61992aa6b779ca8a255ab064188e008bd2025bf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
