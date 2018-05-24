@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d93dcb52_4c8cf093",
+        "filename": "ndk/icu/icundk.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-05-24T01:17:25Z",
+      "side": 1,
+      "message": "/me wonders if your users would love you more if you used a bool to distinguish i18n and common.\n\nthough do we even want the array in the final thing? might be cheaper if this is all just local in each function?",
+      "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "846b5f95_49ed9fe5",
+        "filename": "ndk/icu/icundk.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 8164,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-05-24T01:17:25Z",
+      "side": 1,
+      "message": "does clang deduplicate these strings for you? otherwise that\u0027s another easy saving.",
+      "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
