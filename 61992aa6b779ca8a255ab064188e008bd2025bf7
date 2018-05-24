@@ -16,6 +16,24 @@
       "revId": "61992aa6b779ca8a255ab064188e008bd2025bf7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43b9d2ca_a4049264",
+        "filename": "ndk/icu/templates/icundk.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-05-24T20:24:13Z",
+      "side": 1,
+      "message": "FYI, looks like the bionic version of this code doesn\u0027t have the check on L85-L89. I kept that, but otherwise pulled in most of the other differences (and C++ified things all over).",
+      "parentUuid": "7c9706d8_5b8c4b19",
+      "revId": "61992aa6b779ca8a255ab064188e008bd2025bf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
