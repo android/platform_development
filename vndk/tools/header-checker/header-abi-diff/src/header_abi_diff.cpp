@@ -175,8 +175,7 @@ int main(int argc, const char **argv) {
       allow_unreferenced_elf_symbol_changes &&
       (status & abi_util::CompatibilityStatusIR::ElfIncompatible);
 
-  if (!suppress_local_warnings && !suppress_extending_warnings &&
-      !suppress_elf_warnings && status) {
+  if ((!suppress_extending_warnings || !suppress_elf_warnings) && status) {
     llvm::errs() << "******************************************************\n"
                  << error_or_warning_str
                  << "VNDK library: "
