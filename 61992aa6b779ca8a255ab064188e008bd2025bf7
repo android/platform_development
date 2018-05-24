@@ -34,6 +34,24 @@
       "revId": "61992aa6b779ca8a255ab064188e008bd2025bf7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc967257_b8377b91",
+        "filename": "ndk/icu/templates/icundk.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-05-24T22:20:07Z",
+      "side": 1,
+      "message": "it does, it\u0027s just invisible because it relies on the fact that we know there\u0027s no icu version 0.",
+      "parentUuid": "43b9d2ca_a4049264",
+      "revId": "61992aa6b779ca8a255ab064188e008bd2025bf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
