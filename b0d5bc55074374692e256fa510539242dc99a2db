@@ -22,6 +22,30 @@
       "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d30f5f76_97d14fe6",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-05-30T23:46:46Z",
+      "side": 1,
+      "message": "Ah, sorry, it\u0027s the other python script in the other change being used during the build. As long as this is only run by a small number of developers willing to install extra components into their environment, it wouldn\u0027t be critical to import jinja2 into the build.",
+      "parentUuid": "ba6e76a4_9d661385",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
