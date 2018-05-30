@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba6e76a4_9d661385",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-05-30T23:44:46Z",
+      "side": 1,
+      "message": "jinja2 is not part of the stdlib, so you\u0027d need to import jinja2 into the tree and use python_binary_host in order to build this into a self-contained host tool for use in the build.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
