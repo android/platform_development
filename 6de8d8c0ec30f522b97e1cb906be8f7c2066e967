@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "178bb67f_003c2e61",
+        "filename": "testrunner/adb_interface.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1038443
+      },
+      "writtenOn": "2018-05-31T09:57:06Z",
+      "side": 1,
+      "message": "This could lead to the inverted surprise of a test behaving differently between AOSP and master.\n\nLooking at code below, looks like you could make it an option to runtest?",
+      "range": {
+        "startLine": 301,
+        "startChar": 0,
+        "endLine": 303,
+        "endChar": 59
+      },
+      "revId": "6de8d8c0ec30f522b97e1cb906be8f7c2066e967",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
