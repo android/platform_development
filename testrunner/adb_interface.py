@@ -298,7 +298,9 @@ class AdbInterface:
   def _BuildInstrumentationCommandPath(
       self, instrumentation_path, no_window_animation=False, profile=False,
       raw_mode=True, instrumentation_args={}, user=None):
-    command_string = "am instrument"
+    # runtest does not support switching hidden API checks on/off.
+    # Disable those to allow internal tests to run.
+    command_string = "am instrument --no-hidden-api-checks"
     if user:
       command_string += " --user %s" % user
     if no_window_animation:
