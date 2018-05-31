@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "951ed0a8_dfb5b222",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "s/an/a/",
+      "range": {
+        "startLine": 9,
+        "startChar": 68,
+        "endLine": 9,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9cb62be_3be33164",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "... to the ICU4C C API (not C++) for ...",
+      "range": {
+        "startLine": 10,
+        "startChar": 33,
+        "endLine": 10,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba6e76a4_9d661385",
         "filename": "ndk/icu/gen_ndk_icu.py",
         "patchSetId": 9
@@ -42,6 +88,259 @@
         "startChar": 0,
         "endLine": 37,
         "endChar": 13
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77605398_61d4b8d2",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "... from string from_str.",
+      "range": {
+        "startLine": 50,
+        "startChar": 41,
+        "endLine": 50,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbf5b5e1_b07d4b1f",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "I suggest renaming this to short_header_path(...) or similar.",
+      "range": {
+        "startLine": 100,
+        "startChar": 21,
+        "endLine": 100,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6d44cb7_c3ed42d0",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "I am pretty sure that we are not consistent with prefixing exactly the @stable functions with U_STABLE. What we pay attention to is the @stable line in the API doc comment. Please look for that instead.\n\nWe are actually planning to get rid of the hard-to-keep-in-sync U_STABLE vs. U_DRAFT etc. things and just use U_CAPI.\n\nIn addition, We need to also include @deprecated ICU xyz functions starting from some cut-off xyz version, because they used to be @stable and they may be the only way to get at that functionality in an older version of ICU.",
+      "range": {
+        "startLine": 160,
+        "startChar": 50,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a863ed6a_70f2c87d",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "Please add some details about u_strlen() in ICU 46. Otherwise this comment is mysterious.",
+      "range": {
+        "startLine": 171,
+        "startChar": 69,
+        "endLine": 171,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a53ddfd7_aec42682",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "s/and etc./etc./",
+      "range": {
+        "startLine": 218,
+        "startChar": 79,
+        "endLine": 218,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24d5f515_e56b1e63",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "This seems very specific. Will that clang-... number change often?",
+      "range": {
+        "startLine": 221,
+        "startChar": 75,
+        "endLine": 221,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "916ca467_c7bb9c6b",
+        "filename": "ndk/icu/icundk.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "Please add an API doc comment.",
+      "range": {
+        "startLine": 24,
+        "startChar": 41,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94e788c9_17aba74c",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "Could you add a comment for the uninitiated about the templating language/tool used here?",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3f37912_d20ce8d5",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "This is ok, but FYI we have no plan for what to do after 99...",
+      "range": {
+        "startLine": 36,
+        "startChar": 36,
+        "endLine": 36,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c0389c4_06717be3",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "I would use strtoul() and then check if the endptr is after the start and the rest of the string is \"l.dat\".",
+      "range": {
+        "startLine": 91,
+        "startChar": 62,
+        "endLine": 91,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "212ff87f_fc5b845c",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-05-31T23:54:40Z",
+      "side": 1,
+      "message": "What happens if there is a mismatch between the set of functions in the system ICU vs. the set when the stub library was generated?\n\nIn previous discussion with Tao we discussed ways to set an unsupported-error if the function has that parameter and it\u0027s U_SUCCESS() so far, and I think he was returning (return.type)0 from functions that don\u0027t have the parameter.",
+      "range": {
+        "startLine": 157,
+        "startChar": 65,
+        "endLine": 157,
+        "endChar": 0
       },
       "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
