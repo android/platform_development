@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "141113af_2beb1836",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-01T22:10:38Z",
+      "side": 1,
+      "message": "s/and etc./etc./",
+      "range": {
+        "startLine": 223,
+        "startChar": 79,
+        "endLine": 223,
+        "endChar": 0
+      },
+      "revId": "218a944c7a8f2b48c423bb53bf70002132081d2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "734d9d6e_b59170f1",
+        "filename": "ndk/icu/icundk.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-01T22:10:38Z",
+      "side": 1,
+      "message": "The function name sounds like you are asking if all of ICU is available.\n\nHow about   ndk_is_icu_function_available(name)   ?",
+      "range": {
+        "startLine": 43,
+        "startChar": 41,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "218a944c7a8f2b48c423bb53bf70002132081d2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}

@@ -260,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "40f14940_0ef6cf85",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-01T22:10:38Z",
+      "side": 1,
+      "message": "\u003e In other words we should just go ahead and expose the deprecated APIs?\n\nI think we have two choices:\na) whitelist some @deprecated APIs\nb) retain all @deprecated APIs starting from some version that had been @stable ICU \u003e\u003d4.4 before\n\nIt might be hard enough to figure out which @deprecated things were @stable before vs. went from @draft to @deprecated without ever being stable... that we just do a whitelist.\n\nIt would be ok to start right now with an empty whitelist.\n\nIt would also be ok if we start right now with omitting all @deprecated API, but revisit (and create a whitelist mechanism) only when the NDK ICU shim is updated and something that was @stable before gets @deprecated then. (This is easily visible in the API change report; we would need to pay attention to that.)\n\nExample 1:\n\nIn unicode/uidna.h we have old API that was originally written for IDNA2003. It is now @deprecated ICU 55. In the same header, we have newer API for IDNA2008, with an implementation of the superset UTS #46 spec. This is @stable ICU 4.6. That is, if the NDK shim is used on Gingerbread with ICU 4.4, then the newer API does not exist yet.\n\nWe could decide that\u0027s ok, and an app running on Gingerbread would just not get any IDNA API.\nOr we could whitelist it.\nOr we could retain all @stable ICU \u003e\u003d4.4 even if they later became @deprecated ICU \u003e\u003d4.6.\n\nExample 2:\n\nLet\u0027s say that you are publishing the first version of the NDK ICU shim based on ICU 60. I assume that the shim wants to be backward compatible. If so, then anything that is @stable ICU \u003c\u003d60 must always be there -- meaning that any such now-@stable API that is deprecated later (\u003e\u003d61) needs to be retained in the future, by whitelist or by rule.",
+      "parentUuid": "9078cc09_636f17a4",
+      "range": {
+        "startLine": 160,
+        "startChar": 50,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a863ed6a_70f2c87d",
         "filename": "ndk/icu/gen_ndk_icu.py",
         "patchSetId": 9
