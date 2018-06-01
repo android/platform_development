@@ -302,6 +302,30 @@
     },
     {
       "key": {
+        "uuid": "7cfe50ad_0bd27a84",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-06-01T00:03:17Z",
+      "side": 1,
+      "message": "that\u0027ll be someone else\u0027s problem anyway :-)",
+      "parentUuid": "e3f37912_d20ce8d5",
+      "range": {
+        "startLine": 36,
+        "startChar": 36,
+        "endLine": 36,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c0389c4_06717be3",
         "filename": "ndk/icu/templates/icundk.cpp",
         "patchSetId": 9
@@ -313,6 +337,30 @@
       "writtenOn": "2018-05-31T23:54:40Z",
       "side": 1,
       "message": "I would use strtoul() and then check if the endptr is after the start and the rest of the string is \"l.dat\".",
+      "range": {
+        "startLine": 91,
+        "startChar": 62,
+        "endLine": 91,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fd6fa16_2390005f",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-06-01T00:03:17Z",
+      "side": 1,
+      "message": "why? you\u0027re already looking in /system/usr/icu. more than that, bionic uses this exact code, so you\u0027re already protected by CTS.",
+      "parentUuid": "5c0389c4_06717be3",
       "range": {
         "startLine": 91,
         "startChar": 62,
