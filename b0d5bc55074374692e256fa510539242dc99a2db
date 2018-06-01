@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "7d3bfc64_e2c1945a",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Yeah, that was the plan since this isn\u0027t run by the build system.",
+      "parentUuid": "d30f5f76_97d14fe6",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "77605398_61d4b8d2",
         "filename": "ndk/icu/gen_ndk_icu.py",
         "patchSetId": 9
@@ -115,6 +139,30 @@
       "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d614e8c_8eb649ce",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77605398_61d4b8d2",
+      "range": {
+        "startLine": 50,
+        "startChar": 41,
+        "endLine": 50,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -141,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "9f995239_549658ed",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbf5b5e1_b07d4b1f",
+      "range": {
+        "startLine": 100,
+        "startChar": 21,
+        "endLine": 100,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f6d44cb7_c3ed42d0",
         "filename": "ndk/icu/gen_ndk_icu.py",
         "patchSetId": 9
@@ -152,6 +224,30 @@
       "writtenOn": "2018-05-31T23:54:40Z",
       "side": 1,
       "message": "I am pretty sure that we are not consistent with prefixing exactly the @stable functions with U_STABLE. What we pay attention to is the @stable line in the API doc comment. Please look for that instead.\n\nWe are actually planning to get rid of the hard-to-keep-in-sync U_STABLE vs. U_DRAFT etc. things and just use U_CAPI.\n\nIn addition, We need to also include @deprecated ICU xyz functions starting from some cut-off xyz version, because they used to be @stable and they may be the only way to get at that functionality in an older version of ICU.",
+      "range": {
+        "startLine": 160,
+        "startChar": 50,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9078cc09_636f17a4",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "I was wondering about that. I think it\u0027s actually easier to do based on the comment anyway.\n\n\u003e In addition, We need to also include @deprecated ICU xyz functions starting from some cut-off xyz version, because they used to be @stable and they may be the only way to get at that functionality in an older version of ICU.\n\nIn other words we should just go ahead and expose the deprecated APIs?",
+      "parentUuid": "f6d44cb7_c3ed42d0",
       "range": {
         "startLine": 160,
         "startChar": 50,
@@ -187,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "565488e0_55fb6276",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "I\u0027m not the original author, so I\u0027m not sure what this is about either.\n\n@tbao: what\u0027s this about?",
+      "parentUuid": "a863ed6a_70f2c87d",
+      "range": {
+        "startLine": 171,
+        "startChar": 69,
+        "endLine": 171,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a53ddfd7_aec42682",
         "filename": "ndk/icu/gen_ndk_icu.py",
         "patchSetId": 9
@@ -207,6 +327,30 @@
       "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8678694_e87104b7",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a53ddfd7_aec42682",
+      "range": {
+        "startLine": 218,
+        "startChar": 79,
+        "endLine": 218,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -233,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "0eb6582a_d537fa0d",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Yes, but atm there isn\u0027t a better way to access this.\n\nI have updated this to use a more recent clang though.",
+      "parentUuid": "24d5f515_e56b1e63",
+      "range": {
+        "startLine": 221,
+        "startChar": 75,
+        "endLine": 221,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "916ca467_c7bb9c6b",
         "filename": "ndk/icu/icundk.h",
         "patchSetId": 9
@@ -256,6 +424,30 @@
     },
     {
       "key": {
+        "uuid": "709bd2f3_6dbc79aa",
+        "filename": "ndk/icu/icundk.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "916ca467_c7bb9c6b",
+      "range": {
+        "startLine": 24,
+        "startChar": 41,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "94e788c9_17aba74c",
         "filename": "ndk/icu/templates/icundk.cpp",
         "patchSetId": 9
@@ -276,6 +468,30 @@
       "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d06e6e2_d891749e",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94e788c9_17aba74c",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -314,6 +530,30 @@
       "side": 1,
       "message": "that\u0027ll be someone else\u0027s problem anyway :-)",
       "parentUuid": "e3f37912_d20ce8d5",
+      "range": {
+        "startLine": 36,
+        "startChar": 36,
+        "endLine": 36,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5e92c84_7126475b",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7cfe50ad_0bd27a84",
       "range": {
         "startLine": 36,
         "startChar": 36,
@@ -373,6 +613,30 @@
     },
     {
       "key": {
+        "uuid": "6b05f30b_1dfd6d8a",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "I don\u0027t care either way, but the change (if any) should be made in bionic first since I\u0027m just mirroring that.",
+      "parentUuid": "3fd6fa16_2390005f",
+      "range": {
+        "startLine": 91,
+        "startChar": 62,
+        "endLine": 91,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "212ff87f_fc5b845c",
         "filename": "ndk/icu/templates/icundk.cpp",
         "patchSetId": 9
@@ -393,6 +657,30 @@
       "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c24e259_06c88673",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-01T20:47:53Z",
+      "side": 1,
+      "message": "That\u0027s what I\u0027ve added ndk_icu_available for. It\u0027s up to the user to guarantee that a function is available before calling it. This is fairly common in Android Java (though it would instead be done by comparing the function against null rather than calling an availability function), and is also how possibly-available EGL functions are accessed.",
+      "parentUuid": "212ff87f_fc5b845c",
+      "range": {
+        "startLine": 157,
+        "startChar": 65,
+        "endLine": 157,
+        "endChar": 0
+      },
+      "revId": "b0d5bc55074374692e256fa510539242dc99a2db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
