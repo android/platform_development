@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "e564a658_6d2ccdb7",
+        "filename": "ndk/icu/icundk.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-04T22:50:54Z",
+      "side": 1,
+      "message": "I ended up just removing the table entirely. ndk_is_icu_function_available just calls dlsym on both libraries.",
+      "parentUuid": "8f9761bf_f858c044",
+      "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "846b5f95_49ed9fe5",
         "filename": "ndk/icu/icundk.c",
         "patchSetId": 3
@@ -87,6 +105,24 @@
       "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf7efdee_96f65d02",
+        "filename": "ndk/icu/icundk.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 8164,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-04T22:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "427096d4_b68e7b66",
+      "revId": "0c2d3cc0b92d90248896c05e12788a5eb2f78a07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
