@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bc58b615_930341df",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-04T22:05:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "141113af_2beb1836",
+      "range": {
+        "startLine": 223,
+        "startChar": 79,
+        "endLine": 223,
+        "endChar": 0
+      },
+      "revId": "218a944c7a8f2b48c423bb53bf70002132081d2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "734d9d6e_b59170f1",
         "filename": "ndk/icu/icundk.h",
         "patchSetId": 10
@@ -45,6 +69,30 @@
       "revId": "218a944c7a8f2b48c423bb53bf70002132081d2a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d14a8f0_80363ba0",
+        "filename": "ndk/icu/icundk.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-04T22:05:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "734d9d6e_b59170f1",
+      "range": {
+        "startLine": 43,
+        "startChar": 41,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "218a944c7a8f2b48c423bb53bf70002132081d2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
