@@ -1,0 +1,5 @@
+[MESSAGES CONTROL]
+disable=design
+
+[BASIC]
+good-names=i,j,k,ex,Run,_
