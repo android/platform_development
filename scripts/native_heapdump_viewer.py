@@ -284,7 +284,6 @@ def display_html(total, node, extra):
     print '<li>'
     if len(children) > 0:
         print '<label for="' + str(label_count) + '">' + label + '</label>'
-        print '<input type="checkbox" id="' + str(label_count) + '"/>'
         print '<ol>'
         label_count+=1
         for child in children:
