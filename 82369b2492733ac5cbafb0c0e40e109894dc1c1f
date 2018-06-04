@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "64a80240_eefea6cb",
+        "filename": "ndk/icu/templates/icundk.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-04T22:46:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6eb46851_efc0104c",
+      "revId": "82369b2492733ac5cbafb0c0e40e109894dc1c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8997e75e_89f7bed0",
         "filename": "ndk/icu/templates/icundk.c",
         "patchSetId": 7
@@ -33,6 +51,24 @@
       "revId": "82369b2492733ac5cbafb0c0e40e109894dc1c1f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69d4ecba_f7d23fb3",
+        "filename": "ndk/icu/templates/icundk.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-04T22:46:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8997e75e_89f7bed0",
+      "revId": "82369b2492733ac5cbafb0c0e40e109894dc1c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
