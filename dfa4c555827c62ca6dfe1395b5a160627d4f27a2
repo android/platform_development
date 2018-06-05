@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "384510d7_cd525db0",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-06-05T05:41:27Z",
+      "side": 1,
+      "message": "how big is the generated library as it stands? do we want to factor more of this out to make the body of each function smaller? if only by using the usual C++ \"free initializer lock\"...\n\n  {\n    static FuncPtr ptr \u003d reinterpret_cast\u003cFuncPtr\u003e(do_dlsym(\"uloc_getLanguage\"));\n    if (ptr \u003d\u003d nullptr) do_fail(\"uloc_getLanguage\");\n    return ptr(...);\n  }",
+      "range": {
+        "startLine": 230,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 0
+      },
+      "revId": "dfa4c555827c62ca6dfe1395b5a160627d4f27a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
