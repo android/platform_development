@@ -22,6 +22,30 @@
       "revId": "dfa4c555827c62ca6dfe1395b5a160627d4f27a2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca5e259c_9eb00512",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-06-05T18:31:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "384510d7_cd525db0",
+      "range": {
+        "startLine": 230,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 0
+      },
+      "revId": "dfa4c555827c62ca6dfe1395b5a160627d4f27a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
