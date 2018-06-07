@@ -140,6 +140,30 @@
     },
     {
       "key": {
+        "uuid": "2d740d39_f3f6b99e",
+        "filename": "ndk/icu/templates/icundk.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:11Z",
+      "side": 1,
+      "message": "At a second look, there is only one version of ndk_is_icu_function_available() and one of do_dlsym(), right? That is, every time someone calls an ICU function the shim calls dlsym(DLL handle, function name) which has to do a lookup -- no caching at all. If so, this could lead to unpleasant performance.",
+      "parentUuid": "0eed532b_9ffbeec8",
+      "range": {
+        "startLine": 133,
+        "startChar": 53,
+        "endLine": 134,
+        "endChar": 0
+      },
+      "revId": "ad158082963590c1da00ad340e5a2c726d53d9cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4e682a7e_974744c5",
         "filename": "ndk/icu/templates/icundk.cpp",
         "patchSetId": 17
