@@ -1,0 +1,441 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3020f9a6_cdd17940",
+        "filename": "ndk/icu/icu_test.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Double negative... I would use EXPECT_TRUE(U_SUCCESS(status)) ...",
+      "range": {
+        "startLine": 33,
+        "startChar": 76,
+        "endLine": 33,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fbf2c2a_88b85c87",
+        "filename": "ndk/icu/icu_test.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 41,
+        "startChar": 34,
+        "endLine": 41,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "531c4c47_21a9d1ed",
+        "filename": "ndk/icu/icu_test.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Note that this function only works for a subset of ASCII. It is also unnecessary -- just use u\"hrnec\" etc. UTF-16 string literals.",
+      "range": {
+        "startLine": 45,
+        "startChar": 50,
+        "endLine": 45,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "750fe06e_bf09d794",
+        "filename": "ndk/icu/icu_test.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Please use real characters in the string. Use the u8\"...\" syntax to force it to UTF-8.\n\nWhere real characters don\u0027t work (because they are invisible or something) please use \\uhhhh or \\U00hhhhhh escapes of code points, never \\xhh escapes of UTF-8 bytes.",
+      "range": {
+        "startLine": 141,
+        "startChar": 58,
+        "endLine": 141,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72cd8583_fca5d7bc",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist? Discuss with libcore team.",
+      "range": {
+        "startLine": 205,
+        "startChar": 66,
+        "endLine": 205,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a2fa937_47b90dfb",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Is the order of header files and functions stable?\nFor review of future updates, it might be useful to order by header file name (regardless of common vs. i18n) -\u003e function name.\n\nAround here, it looks like we are going from uloc.h to icudataver.h to uchar.h.",
+      "range": {
+        "startLine": 656,
+        "startChar": 55,
+        "endLine": 656,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8de52d86_b41cb61f",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist.",
+      "range": {
+        "startLine": 1426,
+        "startChar": 63,
+        "endLine": 1426,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfea6d3b_dd414858",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 1448,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist.",
+      "range": {
+        "startLine": 1448,
+        "startChar": 71,
+        "endLine": 1448,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af8bca23_5b045c7f",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 2009,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist? Discuss with libcore team.",
+      "range": {
+        "startLine": 2009,
+        "startChar": 45,
+        "endLine": 2009,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48873c1a_0270e375",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 3637,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Definitely blacklist.",
+      "range": {
+        "startLine": 3637,
+        "startChar": 18,
+        "endLine": 3637,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "360649b6_fe83d60e",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 3648,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Blacklist.",
+      "range": {
+        "startLine": 3648,
+        "startChar": 122,
+        "endLine": 3648,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05c47573_2e94f41d",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 3682,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist.\n\nFor ICU4J in the SDK, we have recommended hiding all of the \"service registration\" type of APIs; they work but have not proven useful, and we might want to gut them. I don\u0027t think we have much of that in C.",
+      "range": {
+        "startLine": 3682,
+        "startChar": 44,
+        "endLine": 3682,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c6a2ec0_070e6a17",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 3692,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 3692,
+        "startChar": 67,
+        "endLine": 3692,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48bce083_0828e13e",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 4704,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Blacklist utrace_* functions.",
+      "range": {
+        "startLine": 4704,
+        "startChar": 42,
+        "endLine": 4704,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70214e6b_3faca5d6",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 5335,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist.",
+      "range": {
+        "startLine": 5335,
+        "startChar": 35,
+        "endLine": 5335,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74eec0ad_931b9687",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 5346,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Blacklist.",
+      "range": {
+        "startLine": 5346,
+        "startChar": 49,
+        "endLine": 5346,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbb7f8c4_62333315",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 9088,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist, see ucurr_register().",
+      "range": {
+        "startLine": 9088,
+        "startChar": 75,
+        "endLine": 9088,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7988de6a_ffba7e33",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 9099,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist, see ucurr_register().",
+      "range": {
+        "startLine": 9099,
+        "startChar": 62,
+        "endLine": 9099,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55376d7f_31baf7ca",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 9924,
+      "author": {
+        "id": 1022037
+      },
+      "writtenOn": "2018-06-07T21:57:47Z",
+      "side": 1,
+      "message": "Candidate for blacklist? Discuss with libcore team.",
+      "range": {
+        "startLine": 9924,
+        "startChar": 69,
+        "endLine": 9924,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
