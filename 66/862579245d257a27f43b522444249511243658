@@ -1,0 +1,12 @@
+Verified+1: Erik Kline <ek@google.com>
+Code-Review+1: Erik Kline <ek@google.com>
+Code-Review+1: Nicolas Geoffray <ngeoffray@google.com>
+Code-Review+1: Lorenzo Colitti <lorenzo@google.com>
+Code-Review+1: Bernie Innocenti <codewiz@google.com>
+Code-Review+2: Narayan Kamath <narayan@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Remi NGUYEN VAN <reminv@google.com>
+Submitted-at: Fri, 08 Jun 2018 09:28:12 +0000
+Reviewed-on: https://android-review.googlesource.com/697084
+Project: platform/development
+Branch: refs/heads/master
