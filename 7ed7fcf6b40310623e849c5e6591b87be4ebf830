@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "220a3411_fa5db8b9",
+        "filename": "vndk/tools/header-checker/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2018-06-13T18:46:04Z",
+      "side": 1,
+      "message": "You\u0027d also need \u0027stl: \"none\"\u0027 here.  With that, the clang-tools branch builds fine (until linker errors - which should be addressed by your \"complete\" libclang.so).",
+      "revId": "7ed7fcf6b40310623e849c5e6591b87be4ebf830",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
