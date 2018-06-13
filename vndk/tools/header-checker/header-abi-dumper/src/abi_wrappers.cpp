@@ -18,7 +18,7 @@
 
 #include <limits.h>
 #include <stdlib.h>
-#include <clang/Tooling/Core/QualTypeNames.h>
+#include <clang/AST/QualTypeNames.h>
 #include <clang/Index/CodegenNameGenerator.h>
 
 #include <string>
@@ -656,8 +656,9 @@ bool RecordDeclWrapper::SetupRecordVTable(
   }
   const clang::VTableLayout &vtable_layout =
       itanium_vtable_contextp->getVTableLayout(cxx_record_decl);
-  ThunkMap thunk_map(vtable_layout.vtable_thunk_begin(),
-                     vtable_layout.vtable_thunk_end());
+  llvm::ArrayRef<clang::VTableLayout::VTableThunkTy> thunks =
+      vtable_layout.vtable_thunks();
+  ThunkMap thunk_map(thunks.begin(), thunks.end());
   abi_util::VTableLayoutIR vtable_ir_layout;
 
   uint64_t index = 0;
