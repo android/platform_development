@@ -42,46 +42,18 @@ cc_defaults {
 cc_defaults {
     name: "header-checker-lib-defaults",
 
-    static_libs: [
-        "libclangToolingCore",
-        "libclangTooling",
-        "libclangFrontendTool",
-        "libclangFrontend",
-        "libclangDriver",
-        "libclangIndex",
-        "libclangSerialization",
-        "libclangCodeGen",
-        "libclangRewriteFrontend",
-        "libclangRewrite",
-        "libclangParse",
-        "libclangSema",
-        "libclangStaticAnalyzerFrontend",
-        "libclangStaticAnalyzerCheckers",
-        "libclangStaticAnalyzerMPIChecker",
-        "libclangStaticAnalyzerCore",
-        "libclangAnalysis",
-        "libclangEdit",
-        "libclangAST",
-        "libclangLex",
-        "libclangBasic",
-        "libLLVMIRReader",
-        "libLLVMAsmParser",
-        "libLLVMAsmPrinter",
-        "libLLVMBitReader",
-        "libLLVMBitWriter",
-        "libLLVMMC",
-        "libLLVMMCParser",
-        "libLLVMCore",
-        "libLLVMOption",
-        "libLLVMProfileData",
-        "libLLVMObject",
-        "libLLVMMCDisassembler",
-        "libLLVMSupport",
-    ],
-
     shared_libs: [
         "libprotobuf-cpp-full",
+				"libLLVM_host",
+				"libclang_host",
+				"libc++_host",
     ],
+		cflags: ["-Wno-unused", "-Wno-unused-parameter"],
+    target: {
+        windows: {
+            enabled: false
+        }
+    }
 }
 
 cc_defaults {
