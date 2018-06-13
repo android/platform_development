@@ -53,9 +53,8 @@ static llvm::cl::opt<bool> no_filter(
 
 static llvm::cl::opt<abi_util::TextFormatIR> text_format(
     "text-format", llvm::cl::desc("Specify text format of abi dump"),
-    llvm::cl::values(clEnumValN(abi_util::TextFormatIR::ProtobufTextFormat,
-                                "ProtobufTextFormat", "ProtobufTextFormat"),
-                     clEnumValEnd),
+    llvm::cl::values(clEnumVal(abi_util::TextFormatIR::ProtobufTextFormat,
+                                "ProtobufTextFormat")),
     llvm::cl::init(abi_util::TextFormatIR::ProtobufTextFormat),
     llvm::cl::cat(header_checker_category));
 
@@ -83,14 +82,14 @@ int main(int argc, const char **argv) {
 
   // Create compilation database from command line arguments after "--".
   std::unique_ptr<clang::tooling::CompilationDatabase> compilations;
-
+  std::string cmdline_error_msg = "Command-line options not loaded\n ";
   {
     // loadFromCommandLine() may alter argc and argv, thus access fixed_argv
     // through FixedArgvAccess.
     FixedArgvAccess raw(fixed_argv);
     compilations.reset(
         clang::tooling::FixedCompilationDatabase::loadFromCommandLine(
-            raw.argc_, raw.argv_));
+            raw.argc_, raw.argv_, cmdline_error_msg).get());
   }
 
   // Parse the command line options.

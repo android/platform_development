@@ -18,7 +18,7 @@
 
 #include <limits.h>
 #include <stdlib.h>
-#include <clang/Tooling/Core/QualTypeNames.h>
+#include <clang/AST/QualTypeNames.h>
 #include <clang/Index/CodegenNameGenerator.h>
 
 #include <string>

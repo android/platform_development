@@ -17,71 +17,54 @@
 cc_defaults {
     name: "header-checker-defaults",
 
-    defaults: [
-        "clang-defaults",
-    ],
-
     cflags: [
         "-Wall",
-        "-Werror",
+        "-Wno-error",
         "-DGOOGLE_PROTOBUF_NO_RTTI",
-        "-UNDEBUG"
+        "-UNDEBUG",
     ],
 
     cppflags: [
         "-std=c++14",
+        "-fno-rtti",
+        "-fno-exceptions",
     ],
 
     target: {
         windows: {
-            enabled: false
-        }
-    }
+            enabled: false,
+        },
+    },
+    compile_multilib: "64",
+    stl: "none",
 }
 
 cc_defaults {
     name: "header-checker-lib-defaults",
 
-    static_libs: [
-        "libclangToolingCore",
-        "libclangTooling",
-        "libclangFrontendTool",
-        "libclangFrontend",
-        "libclangDriver",
-        "libclangIndex",
-        "libclangSerialization",
-        "libclangCodeGen",
-        "libclangRewriteFrontend",
-        "libclangRewrite",
-        "libclangParse",
-        "libclangSema",
-        "libclangStaticAnalyzerFrontend",
-        "libclangStaticAnalyzerCheckers",
-        "libclangStaticAnalyzerMPIChecker",
-        "libclangStaticAnalyzerCore",
-        "libclangAnalysis",
-        "libclangEdit",
-        "libclangAST",
-        "libclangLex",
-        "libclangBasic",
-        "libLLVMIRReader",
-        "libLLVMAsmParser",
-        "libLLVMAsmPrinter",
-        "libLLVMBitReader",
-        "libLLVMBitWriter",
-        "libLLVMMC",
-        "libLLVMMCParser",
-        "libLLVMCore",
-        "libLLVMOption",
-        "libLLVMProfileData",
-        "libLLVMObject",
-        "libLLVMMCDisassembler",
-        "libLLVMSupport",
-    ],
-
     shared_libs: [
         "libprotobuf-cpp-full",
+        "libLLVM_host",
+        "libclang_host",
+        "libc++_host",
     ],
+    cppflags: [
+        "-std=c++14",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+
+    cflags: [
+        "-Wno-unused",
+        "-Wno-unused-parameter",
+    ],
+    target: {
+        windows: {
+            enabled: false,
+        },
+    },
+    stl: "none",
+    compile_multilib: "64",
 }
 
 cc_defaults {
@@ -89,17 +72,21 @@ cc_defaults {
 
     static_libs: [
         "libheader-abi-util",
-        "libLLVMObject",
-        "libLLVMBitReader",
-        "libLLVMMC",
-        "libLLVMMCParser",
-        "libLLVMCore",
-        "libLLVMSupport",
     ],
 
     shared_libs: [
         "libprotobuf-cpp-full",
+        "libLLVM_host",
+        "libclang_host",
+        "libc++_host",
     ],
+    cppflags: [
+        "-std=c++14",
+        "-fno-rtti",
+        "-fno-exceptions",
+    ],
+
+    stl: "none",
 }
 
 cc_library_static {
@@ -204,22 +191,17 @@ cc_library_static {
     export_include_dirs: ["header-abi-util/include"],
 
     srcs: [
-        "header-abi-util/src/*.cpp"
+        "header-abi-util/src/*.cpp",
     ],
     static_libs: [
-        "libLLVMObject",
-        "libLLVMBitReader",
-        "libLLVMMC",
-        "libLLVMMCParser",
-        "libLLVMCore",
-        "libLLVMSupport",
         "libheader-checker-proto",
     ],
 
     shared_libs: [
         "libprotobuf-cpp-full",
+        "libc++_host",
+        "libLLVM_host",
     ],
-
 
     cflags: [
         "-Wcast-qual",
