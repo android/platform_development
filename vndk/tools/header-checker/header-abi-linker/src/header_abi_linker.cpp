@@ -67,9 +67,8 @@ static llvm::cl::opt<std::string> so_file(
 
 static llvm::cl::opt<abi_util::TextFormatIR> text_format(
     "text-format", llvm::cl::desc("Specify text format of abi dumps"),
-    llvm::cl::values(clEnumValN(abi_util::TextFormatIR::ProtobufTextFormat,
-                                "ProtobufTextFormat", "ProtobufTextFormat"),
-                     clEnumValEnd),
+    llvm::cl::values(clEnumVal(abi_util::TextFormatIR::ProtobufTextFormat,
+                                "ProtobufTextFormat")),
     llvm::cl::init(abi_util::TextFormatIR::ProtobufTextFormat),
     llvm::cl::cat(header_linker_category));
 
