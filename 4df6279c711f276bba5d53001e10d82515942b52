@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed7259f_ab7264bb",
+        "filename": "scripts/pid",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1003801
+      },
+      "writtenOn": "2018-06-15T15:39:52Z",
+      "side": 1,
+      "message": "nit: you can use [[ ... ]]  in bash. [ is an external command but [[ ]] is internal, so it\u0027s faster. we don\u0027t need to fix previous code now though.",
+      "revId": "4df6279c711f276bba5d53001e10d82515942b52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1d6b318_811711be",
+        "filename": "scripts/pid",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1003801
+      },
+      "writtenOn": "2018-06-15T15:39:52Z",
+      "side": 1,
+      "message": "It should be faster if you do the pipe on the host side. It\u0027s also an awk one liner... \n\nadb shell ps -o PID,NAME | awk -v exe\u003d\"$EXE\" \u0027(NR\u003e1 \u0026\u0026 match($2, exe)) { print $1 }\u0027",
+      "revId": "4df6279c711f276bba5d53001e10d82515942b52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
