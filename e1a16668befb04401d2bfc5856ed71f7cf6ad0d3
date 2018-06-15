@@ -94,6 +94,29 @@
     },
     {
       "key": {
+        "uuid": "fcaa3959_8e826b31",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1047684
+      },
+      "writtenOn": "2018-06-15T15:54:54Z",
+      "side": 1,
+      "message": "Is it pre-processed before exposing in NDK? We blacklist several constants because they change over release, and not suitable to be linked statically.\nSee Icu4jTransform#DECLARATIONS_TO_HIDE",
+      "range": {
+        "startLine": 36,
+        "startChar": 10,
+        "endLine": 36,
+        "endChar": 25
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "72cd8583_fca5d7bc",
         "filename": "ndk/icu/icundk.cpp",
         "patchSetId": 14
@@ -370,6 +393,29 @@
     },
     {
       "key": {
+        "uuid": "3c1d9886_42c16dbd",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 5984,
+      "author": {
+        "id": 1047684
+      },
+      "writtenOn": "2018-06-15T15:54:54Z",
+      "side": 1,
+      "message": "Android ICU4J doesn\u0027t expose UResourceBundle. It\u0027s mainly used for reading .res format. I am not sure if anyone needs it on android.",
+      "range": {
+        "startLine": 5984,
+        "startChar": 18,
+        "endLine": 5984,
+        "endChar": 27
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dbb7f8c4_62333315",
         "filename": "ndk/icu/icundk.cpp",
         "patchSetId": 14
@@ -427,6 +473,30 @@
       "writtenOn": "2018-06-07T21:57:47Z",
       "side": 1,
       "message": "Candidate for blacklist? Discuss with libcore team.",
+      "range": {
+        "startLine": 9924,
+        "startChar": 69,
+        "endLine": 9924,
+        "endChar": 0
+      },
+      "revId": "e1a16668befb04401d2bfc5856ed71f7cf6ad0d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2242212_bf613c69",
+        "filename": "ndk/icu/icundk.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 9924,
+      "author": {
+        "id": 1047684
+      },
+      "writtenOn": "2018-06-15T15:54:54Z",
+      "side": 1,
+      "message": "It\u0027s blacklisted in ICU4J. \nSee tools/srcgen/src/main/java/com/android/icu4j/srcgen/Icu4jTransform#DECLARATIONS_TO_HIDE\nGenerally, if it\u0027s blacklisted in ICU4J, I think we should blacklist in ICU4C as well. Could we have the same blacklist in ICU4C?\n\nFor this particular case, We patch java.util.TimeZone#setDefault to do the same job, thus blacklist android.icu.util.Timezone#setDefault to avoid the extra bit we don\u0027t want to support. I am not sure if it\u0027s the same case for ucal_setDefaultTimeZone.",
+      "parentUuid": "55376d7f_31baf7ca",
       "range": {
         "startLine": 9924,
         "startChar": 69,
