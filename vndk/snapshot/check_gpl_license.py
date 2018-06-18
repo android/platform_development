@@ -106,12 +106,67 @@ class GPLChecker(object):
         """
         path = utils.join_realpath(self._android_build_top, git_project_path)
         try:
-            cmd = ['git', '-C', path, 'rev-list', 'HEAD..{}'.format(revision)]
-            utils.check_call(cmd, logger)
-            return True
-        except subprocess.CalledProcessError as error:
-            logger.error('Error: {}'.format(error))
-            return False
+            logger.info('Checking if revision {rev} exists in {proj}'.format(
+                rev=revision, proj=git_project_path))
+            try:
+                cmd = [
+                    'git', '-C', path, 'rev-list', 'HEAD..{}'.format(revision)
+                ]
+                output = utils.check_output(cmd, logger).strip()
+            except subprocess.CalledProcessError as error:
+                logger.error('Error: {}'.format(error))
+                raise Exception
+            else:
+                if output:
+                    logger.debug(
+                        '{proj} does not have the following revisions: {rev}'.
+                        format(proj=git_project_path, rev=output))
+                    raise Exception
+                else:
+                    logger.info(
+                        'Found revision {rev} in project {proj}'.format(
+                            rev=revision, proj=git_project_path))
+        except Exception:
+            # VNDK snapshots built from a *-release branch will have merge
+            # CLs in the manifest because the *-dev branch is merged to the
+            # *-release branch periodically. In order to extract the
+            # revision relevant to the source of the git_project_path,
+            # we fetch the *-release branch and get the revision of the
+            # parent commit with FETCH_HEAD^2.
+            try:
+                logger.info(
+                    'Checking if the parent commit of revision {rev} exists in {proj}'.
+                    format(rev=revision, proj=git_project_path))
+                try:
+                    cmd = ['git', '-C', path, 'fetch', 'goog', revision]
+                    utils.check_call(cmd, logger)
+                    cmd = ['git', '-C', path, 'rev-parse', 'FETCH_HEAD^2']
+                    parent_revision = utils.check_output(cmd, logger).strip()
+                    cmd = [
+                        'git', '-C', path, 'rev-list',
+                        'HEAD..{}'.format(parent_revision)
+                    ]
+                    output = utils.check_output(cmd, logger).strip()
+                except subprocess.CalledProcessError as error:
+                    logger.error('Error: {}'.format(error))
+                    raise Exception
+                else:
+                    if output:
+                        logger.debug(
+                            '{proj} does not have the following revisions: {rev}'.
+                            format(proj=git_project_path, rev=output))
+                        raise Exception
+                    else:
+                        logger.info(
+                            'Found revision {rev} in project {proj}'.format(
+                                rev=parent_revision, proj=git_project_path))
+            except Exception:
+                logger.error(
+                    'Error: Failed to verify {} has source in current tree'.
+                    format(git_project_path))
+                return False
+
+        return True
 
     def check_gpl_projects(self):
         """Checks that all GPL projects have released sources.
