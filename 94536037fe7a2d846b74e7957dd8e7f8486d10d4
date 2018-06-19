@@ -16,6 +16,24 @@
       "revId": "94536037fe7a2d846b74e7957dd8e7f8486d10d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "426fcfd1_5b2200c2",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/MonkeyFlipEvent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-06-19T17:27:46Z",
+      "side": 1,
+      "message": "I was thinking about this, but the problem is the reporting (the INJECT_FAIL for write fails, while the close() should only log). So even a try-with-resources would need an inner and an outer catch block, which means it doesn\u0027t simplify the code.",
+      "parentUuid": "dd102590_a79401f3",
+      "revId": "94536037fe7a2d846b74e7957dd8e7f8486d10d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
