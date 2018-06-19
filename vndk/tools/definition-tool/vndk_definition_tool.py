@@ -99,15 +99,10 @@ def encode_mutf8(input, errors='strict'):
                                  0x80 | ((code >> 6) & 0x3f),
                                  0x80 | (code & 0x3f))))
         elif code < 0x110000:
-            code -= 0x10000
-            code_hi = 0xd800 + (code >> 10)
-            code_lo = 0xdc00 + (code & 0x3ff)
-            res.write(bytearray((0xe0 | (code_hi >> 12),
-                                 0x80 | ((code_hi >> 6) & 0x3f),
-                                 0x80 | (code_hi & 0x3f),
-                                 0xe0 | (code_lo >> 12),
-                                 0x80 | ((code_lo >> 6) & 0x3f),
-                                 0x80 | (code_lo & 0x3f))))
+            res.write(bytearray((0xf0 | (code >> 18),
+                                 0x80 | ((code >> 12) & 0x3f),
+                                 0x80 | ((code >> 6) & 0x3f),
+                                 0x80 | (code & 0x3f))))
         else:
             raise UnicodeEncodeError('mutf-8', input, i, i + 1,
                                      'illegal code point')
@@ -123,9 +118,6 @@ def decode_mutf8(input, errors='strict'):
     i = 0
     code = 0
     start = 0
-
-    code_surrogate = None
-    start_surrogate = None
 
     def raise_error(start, reason):
         raise UnicodeDecodeError('mutf-8', input, start, i + 1, reason)
@@ -154,38 +146,21 @@ def decode_mutf8(input, errors='strict'):
             num_next = 2
             code = byte & 0x0f
             start = i
+        elif (byte & 0xf8) == 0xf0:
+            if num_next > 0:
+                raise_error(start, 'invalid continuation byte')
+            num_next = 3
+            code = byte & 0x0f
+            start = i
         else:
             raise_error(i, 'invalid start byte')
 
         if num_next == 0:
-            if code >= 0xd800 and code <= 0xdbff:  # High surrogate
-                if code_surrogate is not None:
-                    raise_error(start_surrogate, 'invalid high surrogate')
-                code_surrogate = code
-                start_surrogate = start
-                continue
-
-            if code >= 0xdc00 and code <= 0xdfff:  # Low surrogate
-                if code_surrogate is None:
-                    raise_error(start, 'invalid low surrogate')
-                code = ((code_surrogate & 0x3f) << 10) | (code & 0x3f) + 0x10000
-                code_surrogate = None
-                start_surrogate = None
-            elif code_surrogate is not None:
-                if errors == 'ignore':
-                    res.write(create_chr(code_surrogate))
-                    code_surrogate = None
-                    start_surrogate = None
-                else:
-                    raise_error(start_surrogate, 'illegal surrogate')
-
             res.write(create_chr(code))
 
     # Check the unexpected end of input
     if num_next > 0:
         raise_error(start, 'unexpected end')
-    if code_surrogate is not None:
-        raise_error(start_surrogate, 'unexpected end')
 
     return (res.getvalue(), i)
 

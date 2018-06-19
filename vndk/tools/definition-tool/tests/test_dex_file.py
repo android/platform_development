@@ -26,8 +26,7 @@ class ModifiedUTF8Test(unittest.TestCase):
         self.assertEqual(b'\xdf\xbf', u'\u07ff'.encode('mutf-8'))
         self.assertEqual(b'\xe0\xa0\x80', u'\u0800'.encode('mutf-8'))
         self.assertEqual(b'\xe7\xbf\xbf', u'\u7fff'.encode('mutf-8'))
-        self.assertEqual(b'\xed\xa0\x81\xed\xb0\x80',
-                         u'\U00010400'.encode('mutf-8'))
+        self.assertEqual(b'\xf0\x90\x90\x80', u'\U00010400'.encode('mutf-8'))
 
 
     def test_decode(self):
@@ -39,7 +38,7 @@ class ModifiedUTF8Test(unittest.TestCase):
         self.assertEqual(u'\u0800', b'\xe0\xa0\x80'.decode('mutf-8'))
         self.assertEqual(u'\u7fff', b'\xe7\xbf\xbf'.decode('mutf-8'))
         self.assertEqual(u'\U00010400',
-                         b'\xed\xa0\x81\xed\xb0\x80'.decode('mutf-8'))
+                         b'\xf0\x90\x90\x80'.decode('mutf-8'))
 
 
 class DexFileTest(unittest.TestCase):
