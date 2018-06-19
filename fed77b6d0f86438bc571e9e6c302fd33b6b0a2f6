@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "e128eaa5_cf01b792",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-06-19T13:57:08Z",
+      "side": 1,
+      "message": "well, the string literal \"FETCH_HEAD^2\" can be passed to _check_rev_list(), isn\u0027t it? Anyway, this is a minor issue. I am okay with this.",
+      "parentUuid": "40752f5a_22612aec",
+      "range": {
+        "startLine": 147,
+        "startChar": 31,
+        "endLine": 147,
+        "endChar": 33
+      },
+      "revId": "fed77b6d0f86438bc571e9e6c302fd33b6b0a2f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "85b0634d_1aee8f0f",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 2
@@ -93,6 +117,30 @@
       "revId": "fed77b6d0f86438bc571e9e6c302fd33b6b0a2f6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80da5181_fa5adbdb",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-06-19T13:57:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1cd2ed45_d9019fdd",
+      "range": {
+        "startLine": 150,
+        "startChar": 1,
+        "endLine": 162,
+        "endChar": 76
+      },
+      "revId": "fed77b6d0f86438bc571e9e6c302fd33b6b0a2f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
