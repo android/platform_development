@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bed1fa1d_9a2821fc",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-06-19T03:52:02Z",
+      "side": 1,
+      "message": "you can just use FETCH_HEAD^2 here. No need to run rev-parse.",
+      "range": {
+        "startLine": 147,
+        "startChar": 31,
+        "endLine": 147,
+        "endChar": 33
+      },
+      "revId": "fed77b6d0f86438bc571e9e6c302fd33b6b0a2f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85b0634d_1aee8f0f",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2018-06-19T03:52:02Z",
+      "side": 1,
+      "message": "I am uncomfortable with the duplication of this error handling routine. Do you think you can make it simpler?",
+      "range": {
+        "startLine": 150,
+        "startChar": 1,
+        "endLine": 162,
+        "endChar": 76
+      },
+      "revId": "fed77b6d0f86438bc571e9e6c302fd33b6b0a2f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
