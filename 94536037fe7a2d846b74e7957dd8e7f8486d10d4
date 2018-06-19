@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd102590_a79401f3",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/MonkeyFlipEvent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1014491
+      },
+      "writtenOn": "2018-06-19T17:24:20Z",
+      "side": 1,
+      "message": "Simplify this with try with resources?",
+      "revId": "94536037fe7a2d846b74e7957dd8e7f8486d10d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
