@@ -62,15 +62,23 @@ public class MonkeyFlipEvent extends MonkeyEvent {
             Logger.out.println(":Sending Flip keyboardOpen=" + mKeyboardOpen);
         }
 
+        FileOutputStream f = null;
         // inject flip event
         try {
-            FileOutputStream f = new FileOutputStream("/dev/input/event0");
+            f = new FileOutputStream("/dev/input/event0");
             f.write(mKeyboardOpen ? FLIP_0 : FLIP_1);
-            f.close();
             return MonkeyEvent.INJECT_SUCCESS;
         } catch (IOException e) {
             Logger.out.println("Got IOException performing flip" + e);
             return MonkeyEvent.INJECT_FAIL;
+        } finally {
+            if(f != null) {
+                try {
+                    f.close();
+                } catch (IOException e) {
+                    Logger.out.println("close fd IOException" + e);
+                }
+            }
         }
     }
 }
