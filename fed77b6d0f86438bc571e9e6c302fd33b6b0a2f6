@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "e62dad84_eee503d7",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-06-20T01:40:26Z",
+      "side": 1,
+      "message": "that\u0027s true, but I will leave it so the logs can show the revision value rather than the literal string \u0027FETCH_HEAD^2\u0027",
+      "parentUuid": "e128eaa5_cf01b792",
+      "range": {
+        "startLine": 147,
+        "startChar": 31,
+        "endLine": 147,
+        "endChar": 33
+      },
+      "revId": "fed77b6d0f86438bc571e9e6c302fd33b6b0a2f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "85b0634d_1aee8f0f",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 2
