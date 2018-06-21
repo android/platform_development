@@ -197,15 +197,19 @@ def main():
     """Program entry point."""
     args = get_args()
 
+    local = None
     if args.local:
+        local = os.path.expanduser(args.local)
+
+    if local:
         if args.build or args.branch:
             raise ValueError(
                 'When --local option is set, --branch or --build cannot be '
                 'specified.')
-        elif not os.path.isdir(args.local):
+        elif not os.path.isdir(local):
             raise RuntimeError(
                 'The specified local directory, {}, does not exist.'.format(
-                    args.local))
+                    local))
     else:
         if not (args.build and args.branch):
             raise ValueError(
@@ -232,11 +236,11 @@ def main():
     os.makedirs(utils.COMMON_DIR_PATH)
 
     temp_artifact_dir = None
-    if not args.local:
+    if not local:
         temp_artifact_dir = tempfile.mkdtemp()
 
     try:
-        install_snapshot(args.branch, args.build, args.local, install_dir,
+        install_snapshot(args.branch, args.build, local, install_dir,
                          temp_artifact_dir)
         gather_notice_files(install_dir)
         revise_ld_config_txt_if_needed(vndk_version)
@@ -244,7 +248,7 @@ def main():
         buildfile_generator = GenBuildFile(install_dir, vndk_version)
         update_buildfiles(buildfile_generator)
 
-        if not args.local:
+        if not local:
             license_checker = GPLChecker(install_dir, ANDROID_BUILD_TOP,
                                          temp_artifact_dir)
             check_gpl_license(license_checker)
@@ -259,7 +263,7 @@ def main():
                 'Deleting temp_artifact_dir: {}'.format(temp_artifact_dir))
             shutil.rmtree(temp_artifact_dir)
 
-    if not args.local:
+    if not local:
         commit(args.branch, args.build, vndk_version)
         logger.info('Successfully created commit for VNDK snapshot v{}'.format(
             vndk_version))
