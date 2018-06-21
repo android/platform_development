@@ -34,6 +34,24 @@
       "revId": "94536037fe7a2d846b74e7957dd8e7f8486d10d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d8f554d_b73002ac",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/MonkeyFlipEvent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1014491
+      },
+      "writtenOn": "2018-06-21T17:00:43Z",
+      "side": 1,
+      "message": "Actually that\u0027s a good point, if we were to follow the exact behavior as before, the catch block below should return INJECT_FAIL. Using try with resources will simply cause that path (write okay, close throws) to disappear.",
+      "parentUuid": "426fcfd1_5b2200c2",
+      "revId": "94536037fe7a2d846b74e7957dd8e7f8486d10d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
