@@ -105,17 +105,16 @@ def gather_notice_files(install_dir):
     logger.info('Creating {} directory to gather all NOTICE files...'.format(
         common_notices_dir))
     os.makedirs(common_notices_dir)
-    for variant in utils.get_snapshot_variants(install_dir):
-        notices_dir_per_variant = os.path.join(variant,
-                                               utils.NOTICE_FILES_DIR_NAME)
-        if os.path.isdir(notices_dir_per_variant):
+    for arch in utils.get_snapshot_archs(install_dir):
+        notices_dir_per_arch = os.path.join(arch, utils.NOTICE_FILES_DIR_NAME)
+        if os.path.isdir(notices_dir_per_arch):
             for notice_file in glob.glob(
-                    '{}/*.txt'.format(notices_dir_per_variant)):
+                    '{}/*.txt'.format(notices_dir_per_arch)):
                 if not os.path.isfile(
                         os.path.join(common_notices_dir,
                                      os.path.basename(notice_file))):
                     shutil.copy(notice_file, common_notices_dir)
-            shutil.rmtree(notices_dir_per_variant)
+            shutil.rmtree(notices_dir_per_arch)
 
 
 def revise_ld_config_txt_if_needed(vndk_version):
@@ -127,8 +126,8 @@ def revise_ld_config_txt_if_needed(vndk_version):
     Args:
       vndk_version: string, version of VNDK snapshot
     """
-    logger.info('Revising ld.config.txt for O-MR1...')
     if vndk_version == '27':
+        logger.info('Revising ld.config.txt for O-MR1...')
         re_pattern = '(system\/\${LIB}\/vndk(?:-sp)?)([:/]|$)'
         VNDK_INSTALL_DIR_RE = re.compile(re_pattern, flags=re.MULTILINE)
         ld_config_txt_paths = glob.glob(
