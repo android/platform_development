@@ -25,9 +25,10 @@ java_defaults {
     no_standard_libs: true,
     system_modules: "none",
     java_version: "1.8",
+    installable: true,
 }
 
-java_library_static {
+java_library {
     name: "android_stubs_current",
     srcs: [
         ":api-stubs-docs",
@@ -35,7 +36,7 @@ java_library_static {
     defaults: ["framework-stubs-default"],
 }
 
-java_library_static {
+java_library {
     name: "metalava_android_stubs_current",
     srcs: [
         ":metalava-api-stubs-docs",
@@ -51,7 +52,7 @@ java_system_modules {
     libs: ["android_stubs_current"],
 }
 
-java_library_static {
+java_library {
     name: "android_system_stubs_current",
     srcs: [
         ":system-api-stubs-docs",
@@ -59,7 +60,7 @@ java_library_static {
     defaults: ["framework-stubs-default"],
 }
 
-java_library_static {
+java_library {
     name: "metalava_android_system_stubs_current",
     srcs: [
         ":metalava-system-api-stubs-docs",
@@ -75,7 +76,7 @@ java_system_modules {
     libs: ["android_system_stubs_current"],
 }
 
-java_library_static {
+java_library {
     name: "android_test_stubs_current",
     srcs: [
         ":test-api-stubs-docs",
@@ -83,7 +84,7 @@ java_library_static {
     defaults: ["framework-stubs-default"],
 }
 
-java_library_static {
+java_library {
     name: "metalava_android_test_stubs_current",
     srcs: [
         ":metalava-test-api-stubs-docs",
