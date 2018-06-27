@@ -22,6 +22,30 @@
       "revId": "6cbe827697da4ec9f9caaca54715b99104aa8b72",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7526672_2124b5ff",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1269249
+      },
+      "writtenOn": "2018-06-27T16:30:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d531c9c7_49650c7f",
+      "range": {
+        "startLine": 147,
+        "startChar": 26,
+        "endLine": 147,
+        "endChar": 33
+      },
+      "revId": "6cbe827697da4ec9f9caaca54715b99104aa8b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
