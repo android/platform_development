@@ -52,6 +52,24 @@
       "revId": "94536037fe7a2d846b74e7957dd8e7f8486d10d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4e57ecb_df4086e2",
+        "filename": "cmds/monkey/src/com/android/commands/monkey/MonkeyFlipEvent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1122970
+      },
+      "writtenOn": "2018-06-28T14:51:37Z",
+      "side": 1,
+      "message": "It seems that there is no simple way。\nFailure to close will cause monkey to stop affecting the test",
+      "parentUuid": "426fcfd1_5b2200c2",
+      "revId": "94536037fe7a2d846b74e7957dd8e7f8486d10d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
