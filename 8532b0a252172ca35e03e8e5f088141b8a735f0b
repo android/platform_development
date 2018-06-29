@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ce09271_eb35e3a0",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-06-29T06:28:52Z",
+      "side": 1,
+      "message": "typedef std::map\u003cuint64_t, clang::ThunkInfo\u003e ThunkMap;\n\nThunkMap",
+      "range": {
+        "startLine": 657,
+        "startChar": 2,
+        "endLine": 657,
+        "endChar": 38
+      },
+      "revId": "8532b0a252172ca35e03e8e5f088141b8a735f0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "beb127e9_57fd33e3",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/abi_wrappers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-06-29T06:28:52Z",
+      "side": 1,
+      "message": "ThunkMap::iterator it \u003d thunk_map.find(index);\nif (it !\u003d thunk_map.end()) {\n  thunk_info \u003d *it;\n}",
+      "range": {
+        "startLine": 664,
+        "startChar": 0,
+        "endLine": 666,
+        "endChar": 5
+      },
+      "revId": "8532b0a252172ca35e03e8e5f088141b8a735f0b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
