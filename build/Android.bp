@@ -31,7 +31,10 @@ java_defaults {
 java_library_static {
     name: "android_stubs_current",
     srcs: [
-        ":api-stubs-docs",
+        ":metalava-api-stubs-docs",
+    ],
+    libs: [
+        "stub-annotations",
     ],
     defaults: ["framework-stubs-default"],
 }
@@ -55,7 +58,10 @@ java_system_modules {
 java_library_static {
     name: "android_system_stubs_current",
     srcs: [
-        ":system-api-stubs-docs",
+        ":metalava-system-api-stubs-docs",
+    ],
+    libs: [
+        "stub-annotations",
     ],
     defaults: ["framework-stubs-default"],
 }
@@ -79,7 +85,10 @@ java_system_modules {
 java_library_static {
     name: "android_test_stubs_current",
     srcs: [
-        ":test-api-stubs-docs",
+        ":metalava-test-api-stubs-docs",
+    ],
+    libs: [
+        "stub-annotations",
     ],
     defaults: ["framework-stubs-default"],
 }
