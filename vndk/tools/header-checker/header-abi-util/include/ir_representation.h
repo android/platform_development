@@ -218,10 +218,28 @@ class VTableComponentIR {
     return component_name_;
   }
 
+  bool GetIsInlined() const {
+    return is_inlined_;
+  }
+
+  void SetIsInlined(bool is_inlined) {
+    is_inlined_ = is_inlined;
+  }
+
+  bool GetIsPure() const {
+    return is_pure_;
+  }
+
+  void SetIsPure(bool is_pure) {
+    is_pure_ = is_pure;
+  }
+
  protected:
   std::string component_name_;
   Kind kind_;
   int64_t value_ = 0;
+  bool is_inlined_;
+  bool is_pure_;
 };
 
 class VTableLayoutIR {
