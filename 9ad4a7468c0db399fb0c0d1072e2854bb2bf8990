@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "320da0b8_a3f03209",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/header_checker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-07-24T03:54:02Z",
+      "side": 1,
+      "message": "This will cause use-after-free ...",
+      "range": {
+        "startLine": 92,
+        "startChar": 52,
+        "endLine": 92,
+        "endChar": 58
+      },
+      "revId": "9ad4a7468c0db399fb0c0d1072e2854bb2bf8990",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
