@@ -16,6 +16,24 @@
       "revId": "58ab9ef051162f17f521ff4c3beb5e2724be7b00",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bda0e0e_068f47ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1136354
+      },
+      "writtenOn": "2018-07-24T19:37:37Z",
+      "side": 1,
+      "message": "The original one in pi-dev already have Merged-In with it. So the original one didn\u0027t get merged into Master.",
+      "parentUuid": "3b28413a_2622a6ce",
+      "revId": "58ab9ef051162f17f521ff4c3beb5e2724be7b00",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
