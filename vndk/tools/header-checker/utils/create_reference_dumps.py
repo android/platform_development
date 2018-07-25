@@ -43,7 +43,7 @@ def get_lsdump_paths_from_out(product):
     assert(os.path.exists(lsdump_paths_file) == True)
     lsdump_paths = dict()
     with open(lsdump_paths_file) as f:
-        for path in f.read().split(' '):
+        for path in f.read().split('\n'):
             add_to_path_dict(path, lsdump_paths)
     return lsdump_paths
 
