@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8a58c0b6_bce829eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-07-26T02:39:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1874286c_67d3dad3",
+      "range": {
+        "startLine": 7,
+        "startChar": 54,
+        "endLine": 7,
+        "endChar": 71
+      },
+      "revId": "0514c8562e185fd9ee53bbc53545a101ea089ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2d985c5f_6eee0188",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "180099de_2640133d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-07-26T02:39:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d985c5f_6eee0188",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 70
+      },
+      "revId": "0514c8562e185fd9ee53bbc53545a101ea089ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c33a34c9_d28cfa32",
         "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2018-07-25T15:03:25Z",
       "side": 1,
       "message": "splitlines()",
+      "range": {
+        "startLine": 46,
+        "startChar": 29,
+        "endLine": 46,
+        "endChar": 40
+      },
+      "revId": "0514c8562e185fd9ee53bbc53545a101ea089ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ba99031_a7e40995",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-07-26T02:39:35Z",
+      "side": 1,
+      "message": "what about:\n\nfor path in f:\n  add_to_path_dict(path.rstrip(), lsdump_paths)",
+      "parentUuid": "c33a34c9_d28cfa32",
       "range": {
         "startLine": 46,
         "startChar": 29,
