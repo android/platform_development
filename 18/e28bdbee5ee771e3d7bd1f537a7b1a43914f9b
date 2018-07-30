@@ -1,0 +1,10 @@
+Verified+1: Nan Zhang <nanzhang@google.com>
+Autosubmit+1: Nan Zhang <nanzhang@google.com>
+Presubmit-Ready+1: Nan Zhang <nanzhang@google.com>
+Build-Cop-Override+1: Chris Fries <cfries@google.com>
+Code-Review+2: Zhomart Mukhamejanov <zhomart@google.com>
+Submitted-by: Nan Zhang <nanzhang@google.com>
+Submitted-at: Mon, 30 Jul 2018 21:14:30 +0000
+Reviewed-on: https://android-review.googlesource.com/723553
+Project: platform/development
+Branch: refs/heads/master
