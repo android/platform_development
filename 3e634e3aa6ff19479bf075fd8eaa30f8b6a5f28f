@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b458c4f3_0c6c6966",
+        "filename": "tools/core_connectivity/check_style.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1306837
+      },
+      "writtenOn": "2018-08-02T08:13:47Z",
+      "side": 1,
+      "message": "Actually it is not used anymore. So I think it could be removed safely.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 1
+      },
+      "revId": "3e634e3aa6ff19479bf075fd8eaa30f8b6a5f28f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
