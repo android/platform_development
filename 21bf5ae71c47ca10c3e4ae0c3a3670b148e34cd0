@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebb355fc_193800c7",
+        "filename": "vndk/tools/vtable-dumper/elf_handling.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-02T16:38:04Z",
+      "side": 1,
+      "message": "I would rather maintain the original structure and only change Line 60 to return MangledName.\n\nEven though it is fine to call `free(nullptr)`, I prefer avoiding it whenever possible.",
+      "range": {
+        "startLine": 59,
+        "startChar": 16,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "21bf5ae71c47ca10c3e4ae0c3a3670b148e34cd0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
