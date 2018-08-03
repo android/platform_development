@@ -46,6 +46,30 @@
       "revId": "21bf5ae71c47ca10c3e4ae0c3a3670b148e34cd0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c23fa18_a2c900b7",
+        "filename": "vndk/tools/vtable-dumper/elf_handling.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-03T02:38:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "123554a3_a614375d",
+      "range": {
+        "startLine": 59,
+        "startChar": 16,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "21bf5ae71c47ca10c3e4ae0c3a3670b148e34cd0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
