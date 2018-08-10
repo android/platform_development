@@ -34,6 +34,24 @@
       "revId": "7fb53f5d2bfe4a112340da9c6daeefb10f9d9d1d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cf59990_c15c90fa",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-08-10T19:20:03Z",
+      "side": 1,
+      "message": "I modified the code so that the error shows up on the line that had the problem. I verified this by raising an IOError and seeing the error in the output.",
+      "parentUuid": "de51cb14_ef6f1583",
+      "revId": "7fb53f5d2bfe4a112340da9c6daeefb10f9d9d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
