@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f459c4c1_8ccbff0e",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2018-08-10T15:24:04Z",
+      "side": 1,
+      "message": "does this mean there\u0027s no kind of error message in this case now?",
+      "revId": "7fb53f5d2bfe4a112340da9c6daeefb10f9d9d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
