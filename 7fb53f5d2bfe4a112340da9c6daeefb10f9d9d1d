@@ -16,6 +16,24 @@
       "revId": "7fb53f5d2bfe4a112340da9c6daeefb10f9d9d1d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de51cb14_ef6f1583",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2018-08-10T16:35:21Z",
+      "side": 1,
+      "message": "Should probably logging.exception it before continuing. There isn\u0027t much to be done about it, but hiding the error could be confusing to the user.\n\nHow is `(None, None)` going to get displayed? Would it be better to use `(\u0027addr2line failed\u0027, str(ex))` or something?",
+      "parentUuid": "f459c4c1_8ccbff0e",
+      "revId": "7fb53f5d2bfe4a112340da9c6daeefb10f9d9d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
