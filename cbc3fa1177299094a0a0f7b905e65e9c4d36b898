@@ -22,6 +22,30 @@
       "revId": "cbc3fa1177299094a0a0f7b905e65e9c4d36b898",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "addf000f_76862e0d",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1135414
+      },
+      "writtenOn": "2018-08-14T09:26:25Z",
+      "side": 1,
+      "message": "ah thanks for catching that! uploaded new patch",
+      "parentUuid": "5db155e3_4c21d631",
+      "range": {
+        "startLine": 84,
+        "startChar": 10,
+        "endLine": 84,
+        "endChar": 12
+      },
+      "revId": "cbc3fa1177299094a0a0f7b905e65e9c4d36b898",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
