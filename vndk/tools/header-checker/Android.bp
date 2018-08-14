@@ -14,21 +14,28 @@
 // limitations under the License.
 //
 
+header_checker_defaults {
+    name: "header-checker-defaults-base",
+}
+
 cc_defaults {
     name: "header-checker-defaults",
 
     defaults: [
-        "clang-defaults",
+        "header-checker-defaults-base",
     ],
 
     cflags: [
         "-Wall",
         "-Werror",
+        "-Wno-unused-parameter",
         "-DGOOGLE_PROTOBUF_NO_RTTI",
         "-UNDEBUG",
     ],
 
     cppflags: [
+        "-fno-exceptions",
+        "-fno-rtti",
         "-std=c++14",
     ],
 
@@ -37,10 +44,15 @@ cc_defaults {
             enabled: false,
         },
     },
+
+    compile_multilib: "64",
+    stl: "none",
 }
 
 cc_library_host_static {
     name: "libheader-checker-proto",
+
+    defaults: ["header-checker-defaults-base"],
 
     srcs: [
         "proto/abi_dump.proto",
@@ -51,6 +63,8 @@ cc_library_host_static {
         export_proto_headers: true,
         type: "full",
     },
+
+    shared_libs: ["libc++_host"],
 
     cflags: [
         "-Wall",
@@ -67,6 +81,9 @@ cc_library_host_static {
             enabled: false,
         },
     },
+
+    stl: "none",
+    compile_multilib: "64",
 }
 
 cc_binary_host {
@@ -90,53 +107,31 @@ cc_binary_host {
     static_libs: [
         "libheader-abi-util",
         "libheader-checker-proto",
-        "libclangToolingCore",
-        "libclangTooling",
-        "libclangFrontendTool",
-        "libclangFrontend",
-        "libclangDriver",
-        "libclangIndex",
-        "libclangSerialization",
-        "libclangCodeGen",
-        "libclangParse",
-        "libclangSema",
-        "libclangAnalysis",
-        "libclangEdit",
-        "libclangAST",
-        "libclangLex",
-        "libclangBasic",
-        "libLLVMBitReader",
-        "libLLVMBitWriter",
-        "libLLVMMC",
-        "libLLVMMCParser",
-        "libLLVMCore",
-        "libLLVMOption",
-        "libLLVMProfileData",
-        "libLLVMObject",
-        "libLLVMSupport",
     ],
 
     shared_libs: [
         "libprotobuf-cpp-full",
+        "libLLVM_host",
+        "libclang_host",
+        "libc++_host",
     ],
 }
 
 cc_defaults {
     name: "header-abi-linker-defaults",
 
+    defaults: ["header-checker-defaults"],
+
     static_libs: [
         "libheader-abi-util",
         "libheader-checker-proto",
-        "libLLVMObject",
-        "libLLVMBitReader",
-        "libLLVMMC",
-        "libLLVMMCParser",
-        "libLLVMCore",
-        "libLLVMSupport",
     ],
 
     shared_libs: [
         "libprotobuf-cpp-full",
+        "libLLVM_host",
+        "libclang_host",
+        "libc++_host",
     ],
 }
 
@@ -202,6 +197,8 @@ cc_library_host_static {
     ],
 
     shared_libs: [
+        "libLLVM_host",
+        "libc++_host",
         "libprotobuf-cpp-full",
     ],
 
