@@ -1,0 +1,10 @@
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Code-Review+1: Justin Yun <justinyun@google.com>
+Code-Review+2: Andrew Hsieh <andrewhsieh@google.com>
+Verified+1: Jae Shin <jaeshin@google.com>
+Autosubmit+1: Jae Shin <jaeshin@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Thu, 16 Aug 2018 00:43:42 +0000
+Reviewed-on: https://android-review.googlesource.com/730971
+Project: platform/development
+Branch: refs/heads/master
