@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5256afd6_63cee89d",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_protobuf.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-21T09:14:08Z",
+      "side": 1,
+      "message": "Remove this.",
+      "range": {
+        "startLine": 373,
+        "startChar": 4,
+        "endLine": 373,
+        "endChar": 128
+      },
+      "revId": "f849bee0d473ec53bb7f2d5dcd476f59669f67de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
