@@ -22,6 +22,69 @@
       "revId": "f849bee0d473ec53bb7f2d5dcd476f59669f67de",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46f60729_e287cff7",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-21T11:38:30Z",
+      "side": 1,
+      "message": "Remove this line",
+      "revId": "f849bee0d473ec53bb7f2d5dcd476f59669f67de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "598a259c_22faa6b0",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-21T11:38:30Z",
+      "side": 1,
+      "message": "Space between comma",
+      "range": {
+        "startLine": 97,
+        "startChar": 50,
+        "endLine": 97,
+        "endChar": 52
+      },
+      "revId": "f849bee0d473ec53bb7f2d5dcd476f59669f67de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8022996e_6026f376",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/so_file_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-21T11:38:30Z",
+      "side": 1,
+      "message": "Space between comma",
+      "range": {
+        "startLine": 99,
+        "startChar": 60,
+        "endLine": 99,
+        "endChar": 62
+      },
+      "revId": "f849bee0d473ec53bb7f2d5dcd476f59669f67de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
