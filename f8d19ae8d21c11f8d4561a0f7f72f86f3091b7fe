@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b29fe017_6fb11db7",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2018-08-22T06:00:13Z",
+      "side": 1,
+      "message": "This command shouldn\u0027t work. You should need 2 pull commands.",
+      "range": {
+        "startLine": 320,
+        "startChar": 16,
+        "endLine": 320,
+        "endChar": 85
+      },
+      "revId": "f8d19ae8d21c11f8d4561a0f7f72f86f3091b7fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
