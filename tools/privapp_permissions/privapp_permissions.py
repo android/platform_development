@@ -38,7 +38,7 @@ Generates privapp-permissions.xml file for priv-apps.
 Usage:
     Specify which apk to generate priv-app permissions for. If no apk is \
 specified, this will default to all APKs under "<ANDROID_PRODUCT_OUT>/ \
-system/priv-app".
+system|product/priv-app".
 
 Examples:
 
@@ -65,8 +65,6 @@ Examples:
 
 # An array of all generated temp directories.
 temp_dirs = []
-# An array of all generated temp files.
-temp_files = []
 
 
 class MissingResourceError(Exception):
@@ -89,14 +87,16 @@ class Adb(object):
         Throws:
             subprocess.CalledProcessError upon pull failure.
         """
+        target_srcs = src.split()
+
         if not dst:
-            if self.call('shell \'if [ -d "%s" ]; then echo True; fi\'' % src):
-                dst = tempfile.mkdtemp()
-                temp_dirs.append(dst)
-            else:
-                _, dst = tempfile.mkstemp()
-                temp_files.append(dst)
-        self.call('pull %s %s' % (src, dst))
+            dst = tempfile.mkdtemp()
+            temp_dirs.append(dst)
+
+        for target_src in target_srcs:
+            if self.call('shell \'if [ -e "%s" ]; then echo True; fi\'' % target_src):
+                self.call('pull %s %s' % (target_src, dst))
+
         return dst
 
     def call(self, cmdline):
@@ -283,9 +283,9 @@ class Resources(object):
 
         Returns:
             If no apk is specified in the arguments, return all apks in
-            system/priv-app. Otherwise, returns a list with the specified apk.
+            system|product/priv-app. Otherwise, returns a list with the specified apk.
         Throws:
-            MissingResourceError if the specified apk or system/priv-app cannot
+            MissingResourceError if the specified apk or system|product/priv-app cannot
             be found.
         """
         if not apks:
@@ -311,17 +311,19 @@ class Resources(object):
     def _resolve_all_privapps(self):
         """Extract package name and requested permissions."""
         if self._is_android_env:
-            priv_app_dir = os.path.join(os.environ['ANDROID_PRODUCT_OUT'],
-                                        'system/priv-app')
+            target_dirs = ['system/priv-app', 'product/priv-app', 'system/product/priv-app']
+            priv_app_dirs = [os.path.join(os.environ['ANDROID_PRODUCT_OUT'], target_dir)
+                                        for target_dir in target_dirs]
+            priv_app_dirs = ' '.join(str(e) for e in priv_app_dirs if os.path.exists(e))
         else:
             try:
-                priv_app_dir = self.adb.pull('/system/priv-app/')
+                priv_app_dirs = self.adb.pull('/system/priv-app/ /product/priv-app/')
             except subprocess.CalledProcessError:
                 raise MissingResourceError(
-                    'Directory "/system/priv-app" could not be pulled from on '
+                    'Directory "/system|product/priv-app" could not be pulled from on '
                     'device "%s".' % self.adb.serial)
 
-        return get_output('find %s -name "*.apk"' % priv_app_dir).split()
+        return get_output('find %s -name "*.apk"' % priv_app_dirs).split()
 
     def _resolve_sys_path(self, file_path):
         """Resolves a path that is a part of an Android System Image."""
@@ -556,10 +558,7 @@ def cleanup():
     """Cleans up temp files."""
     for directory in temp_dirs:
         shutil.rmtree(directory, ignore_errors=True)
-    for file in temp_files:
-        os.remove(file)
     del temp_dirs[:]
-    del temp_files[:]
 
 
 if __name__ == '__main__':
