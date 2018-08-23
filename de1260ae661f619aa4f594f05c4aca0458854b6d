@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21d94fae_d96f5bcb",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1217797
+      },
+      "writtenOn": "2018-08-23T01:48:32Z",
+      "side": 1,
+      "message": "Isn\u0027t it a typo? I think this line intends to check whether destination folder exists or not. Then, that should be a \u0027dst\u0027, not \u0027src\u0027.",
+      "revId": "de1260ae661f619aa4f594f05c4aca0458854b6d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
