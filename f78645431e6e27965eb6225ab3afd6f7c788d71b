@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7bd1c9c_d0480dcd",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-24T06:38:42Z",
+      "side": 1,
+      "message": "Add a space character before access specifier, e.g.:\n\n    class IRToJsonConverter {\n     private:\n      IRToJsonConverter(...) {\n        // Some code\n      }\n    };",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 8
+      },
+      "revId": "f78645431e6e27965eb6225ab3afd6f7c788d71b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dec20e50_9c2327c2",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-24T06:38:42Z",
+      "side": 1,
+      "message": "Remove this",
+      "range": {
+        "startLine": 352,
+        "startChar": 4,
+        "endLine": 352,
+        "endChar": 6
+      },
+      "revId": "f78645431e6e27965eb6225ab3afd6f7c788d71b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
