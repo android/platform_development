@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96bde931_f37dde1e",
+        "filename": "build/sdk.atree",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-08-24T00:06:34Z",
+      "side": 1,
+      "message": "this is in the build-tools section, not platform-tools",
+      "range": {
+        "startLine": 152,
+        "startChar": 46,
+        "endLine": 152,
+        "endChar": 60
+      },
+      "revId": "5f1ee44962e4b63f5944af2ab8ee65c598513f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
