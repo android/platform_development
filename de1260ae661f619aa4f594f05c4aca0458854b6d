@@ -16,6 +16,24 @@
       "revId": "de1260ae661f619aa4f594f05c4aca0458854b6d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac0c05b0_2c57b91d",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2018-08-24T01:02:49Z",
+      "side": 1,
+      "message": "This line is definitely more complicated than it needs to be. The check here checks if the source is a directory. If it is a directory, it marks the temporary file created as a directory, so it can be cleaned up with shutil.rmtree().\n\nOtherwise, if the source is a file, it appends the destination location as a temporary file, to be removed with os.remove().\n\nThe logic here can definitely be simplified. We can first call pull, and then check the host machine (rather than the device) to see if the pulled file was a directory or a file using os.path.isdir() and os.path.isfile().",
+      "parentUuid": "21d94fae_d96f5bcb",
+      "revId": "de1260ae661f619aa4f594f05c4aca0458854b6d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
