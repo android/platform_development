@@ -1047,6 +1047,9 @@ class TextFormatToIRReader {
                    std::make_move_iterator(addend.end()));
   }
 
+  bool IsLinkableMessageInExportedHeaders(
+      const LinkableMessageIR *linkable_message) const;
+
   AbiElementList<RecordTypeIR> record_types_list_;
   AbiElementMap<FunctionIR> functions_;
   AbiElementMap<GlobalVarIR> global_variables_;
