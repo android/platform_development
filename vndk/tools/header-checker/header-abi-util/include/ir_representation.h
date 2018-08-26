@@ -84,6 +84,15 @@ enum LinkableMessageKind {
   GlobalVarKind
 };
 
+template <typename K, typename V>
+std::map<V,K> CreateReverseMap(const std::map<K,V> &m) {
+  std::map<V,K> reverse_map;
+  for (auto it : m) {
+    reverse_map[it.second] = it.first;
+  }
+  return reverse_map;
+}
+
 template <typename K, typename V, typename DefaultValueType = V>
 V GetWithDefault(const std::map<K, V> &m, const K &k,
                  const DefaultValueType &default_value) {
@@ -1072,6 +1081,9 @@ class TextFormatToIRReader {
     augend->insert(std::make_move_iterator(addend.begin()),
                    std::make_move_iterator(addend.end()));
   }
+
+  bool IsLinkableMessageInExportedHeaders(
+      const LinkableMessageIR *linkable_message) const;
 
   AbiElementList<RecordTypeIR> record_types_list_;
   AbiElementMap<FunctionIR> functions_;
