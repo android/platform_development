@@ -22,6 +22,30 @@
       "revId": "4934fcd3a55271241a8907aa14e206be87a40877",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1729eb6c_5dfe304b",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-27T06:55:00Z",
+      "side": 1,
+      "message": "Done\nRemoved unused constructor.",
+      "parentUuid": "aaf26fd1_7d521369",
+      "range": {
+        "startLine": 744,
+        "startChar": 2,
+        "endLine": 744,
+        "endChar": 40
+      },
+      "revId": "4934fcd3a55271241a8907aa14e206be87a40877",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
