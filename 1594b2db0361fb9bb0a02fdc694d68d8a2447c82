@@ -46,6 +46,53 @@
       "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "720d6194_76642ef0",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-08-28T16:00:26Z",
+      "side": 0,
+      "message": "Ah, yes I think I do remember that I had erroneously just put these in when I was creating this patch, so that it would compile. IIRC, we don\u0027t need to rely on link_set anymore for linking types since all the de-duplication is done in DeDuplicateAbiElementsThread already. Please do check that my reasoning is correct though.",
+      "parentUuid": "8d773289_2a914d22",
+      "range": {
+        "startLine": 321,
+        "startChar": 30,
+        "endLine": 321,
+        "endChar": 40
+      },
+      "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07847193_972a4300",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-08-28T16:00:26Z",
+      "side": 0,
+      "message": "shouldn\u0027t these be aligned ? so maybe delete 4 spaces ?",
+      "range": {
+        "startLine": 95,
+        "startChar": 16,
+        "endLine": 95,
+        "endChar": 24
+      },
+      "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
