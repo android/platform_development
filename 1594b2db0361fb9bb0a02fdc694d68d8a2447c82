@@ -22,6 +22,30 @@
       "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d773289_2a914d22",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-28T05:28:49Z",
+      "side": 0,
+      "message": "Jayant: Is this thing used at all? It seems like \"link_set\" in LinkDecl() is never used as \"use_version_script_or_so\" is always false.",
+      "parentUuid": "eacc253e_8035a89e",
+      "range": {
+        "startLine": 321,
+        "startChar": 30,
+        "endLine": 321,
+        "endChar": 40
+      },
+      "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
