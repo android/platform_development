@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec50bcaf_a4a14170",
+        "filename": "build/sdk.atree",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2018-08-28T22:10:57Z",
+      "side": 1,
+      "message": "If you use the wrapper property this will be system/bin/deployagent",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 26
+      },
+      "revId": "4aa9fb9ab8735cb1579eef0a99d1d4acb617e813",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
