@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "db4a058e_d5e3cc40",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-28T17:11:52Z",
+      "side": 0,
+      "message": "I cannot understand this comment. Does this comment still reflect the current state?",
+      "range": {
+        "startLine": 319,
+        "startChar": 2,
+        "endLine": 320,
+        "endChar": 73
+      },
+      "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "eacc253e_8035a89e",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
@@ -73,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "453dd083_4aa1f351",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-28T17:11:52Z",
+      "side": 0,
+      "message": "I believe \"types_set_\" has no user after this commit (https://android.googlesource.com/platform/development/+/3dc86c5263e50fb797d297aece4a7ec79ffc1d09%5E%21/#F0).\nI think it\u0027s safe to remove types_set_ and change these function calls to LinkDecl(ir_dumper, nullptr, nullptr, nullptr, reader-\u003eGetXXXTypes(), false).",
+      "parentUuid": "720d6194_76642ef0",
+      "range": {
+        "startLine": 321,
+        "startChar": 30,
+        "endLine": 321,
+        "endChar": 40
+      },
+      "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07847193_972a4300",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 3
@@ -84,6 +131,30 @@
       "writtenOn": "2018-08-28T16:00:26Z",
       "side": 0,
       "message": "shouldn\u0027t these be aligned ? so maybe delete 4 spaces ?",
+      "range": {
+        "startLine": 95,
+        "startChar": 16,
+        "endLine": 95,
+        "endChar": 24
+      },
+      "revId": "1594b2db0361fb9bb0a02fdc694d68d8a2447c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5365b92_fe22dcfd",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-28T17:11:52Z",
+      "side": 0,
+      "message": "I believe it\u0027s aligned now.",
+      "parentUuid": "07847193_972a4300",
       "range": {
         "startLine": 95,
         "startChar": 16,
