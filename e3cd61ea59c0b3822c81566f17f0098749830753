@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d5b4870_6798b49d",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2018-08-29T15:23:36Z",
+      "side": 1,
+      "message": "Keep this list sorted",
+      "revId": "e3cd61ea59c0b3822c81566f17f0098749830753",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
