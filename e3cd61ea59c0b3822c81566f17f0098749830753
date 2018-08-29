@@ -16,6 +16,24 @@
       "revId": "e3cd61ea59c0b3822c81566f17f0098749830753",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b19a226_09a14de0",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1269249
+      },
+      "writtenOn": "2018-08-29T15:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d5b4870_6798b49d",
+      "revId": "e3cd61ea59c0b3822c81566f17f0098749830753",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
