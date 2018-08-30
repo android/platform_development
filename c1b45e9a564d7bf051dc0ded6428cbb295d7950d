@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "69759d28_4d5f93df",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-30T13:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c1af01a_22b4bdf4",
+      "range": {
+        "startLine": 90,
+        "startChar": 6,
+        "endLine": 90,
+        "endChar": 8
+      },
+      "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "328469d7_8a67f074",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
@@ -68,6 +92,54 @@
       "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f33d922_c432358c",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-30T13:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6001fdb7_6a02411c",
+      "range": {
+        "startLine": 92,
+        "startChar": 15,
+        "endLine": 92,
+        "endChar": 16
+      },
+      "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f52999b1_9b99cc8b",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-30T13:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "328469d7_8a67f074",
+      "range": {
+        "startLine": 92,
+        "startChar": 18,
+        "endLine": 92,
+        "endChar": 19
+      },
+      "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +189,54 @@
     },
     {
       "key": {
+        "uuid": "06520cb3_46de00e1",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-30T13:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d59c05ec_ef0464cb",
+      "range": {
+        "startLine": 101,
+        "startChar": 44,
+        "endLine": 101,
+        "endChar": 45
+      },
+      "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a918a8c6_af3da693",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-30T13:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2119dbde_6a85273b",
+      "range": {
+        "startLine": 101,
+        "startChar": 47,
+        "endLine": 101,
+        "endChar": 48
+      },
+      "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c0f9168_294ccc05",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "32a62b3c_06fa3e1f",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-30T13:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c0f9168_294ccc05",
+      "range": {
+        "startLine": 105,
+        "startChar": 2,
+        "endLine": 109,
+        "endChar": 14
+      },
+      "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7212e3df_2626cb31",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 1
@@ -160,6 +304,30 @@
       "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e17f716a_726a9548",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-30T13:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7212e3df_2626cb31",
+      "range": {
+        "startLine": 132,
+        "startChar": 32,
+        "endLine": 132,
+        "endChar": 38
+      },
+      "revId": "c1b45e9a564d7bf051dc0ded6428cbb295d7950d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
