@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8ee797a_27fd90e8",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-08-31T05:28:58Z",
+      "side": 1,
+      "message": "std::function\u003cbool(const std::string\u0026)\u003e",
+      "range": {
+        "startLine": 273,
+        "startChar": 31,
+        "endLine": 273,
+        "endChar": 46
+      },
+      "revId": "254505debc36514f0070552a41045118a930e517",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
