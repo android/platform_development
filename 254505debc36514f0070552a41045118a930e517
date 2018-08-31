@@ -93,6 +93,30 @@
       "revId": "254505debc36514f0070552a41045118a930e517",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "062dda75_1b849059",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-31T06:34:52Z",
+      "side": 1,
+      "message": "BTW, I am not a fan of std::function.  (Just murmuring)",
+      "parentUuid": "a2fe9179_745d7fa1",
+      "range": {
+        "startLine": 273,
+        "startChar": 31,
+        "endLine": 273,
+        "endChar": 46
+      },
+      "revId": "254505debc36514f0070552a41045118a930e517",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
