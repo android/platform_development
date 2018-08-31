@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "e40a2aac_ca9b6320",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-31T02:31:27Z",
+      "side": 1,
+      "message": "Unused code?",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 0
+      },
+      "revId": "ea523a8d228ce95b0f242c70dc97bf1abdfa2a7c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "126d4d41_483109b6",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 2
@@ -13,6 +36,30 @@
       "writtenOn": "2018-08-31T02:03:01Z",
       "side": 1,
       "message": "Lambda function can replace ExportedSymbolFilter.\n\nauto symbol_filter \u003d [this](const std::string\u0026 linker_set_key) {\n  return globvar_decl_map_.find(linker_set_key) !\u003d globvar_decl_map_.end() ||\n      QueryRegexMatches(\u0026globvars_regex_matched_set, \u0026globvars_vs_regex_, linker_set_key);\n};",
+      "range": {
+        "startLine": 359,
+        "startChar": 2,
+        "endLine": 359,
+        "endChar": 22
+      },
+      "revId": "ea523a8d228ce95b0f242c70dc97bf1abdfa2a7c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fd0d5ee_8664b3d5",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-08-31T02:31:27Z",
+      "side": 1,
+      "message": "Good advice.  Originally, I would like to share the `.find() !\u003d .end() || QueryRegexMatchs(...)` logic between globvar and func.  Since this is short and 3 variables are different between two filters, it is reasonable to use simple lambda functions here.",
+      "parentUuid": "126d4d41_483109b6",
       "range": {
         "startLine": 359,
         "startChar": 2,
