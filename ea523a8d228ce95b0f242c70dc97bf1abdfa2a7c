@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a5e0faf9_fa37ee67",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-31T04:31:31Z",
+      "side": 1,
+      "message": "QueryRegexMatches() was used by ExportedSymbolFilter.\nRemoved this declaration because we now prefer lambdas over ExportedSymbolFilter.",
+      "parentUuid": "e40a2aac_ca9b6320",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 0
+      },
+      "revId": "ea523a8d228ce95b0f242c70dc97bf1abdfa2a7c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "126d4d41_483109b6",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 2
@@ -69,6 +93,30 @@
       "revId": "ea523a8d228ce95b0f242c70dc97bf1abdfa2a7c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e76c0735_2d174ad1",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-08-31T04:31:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fd0d5ee_8664b3d5",
+      "range": {
+        "startLine": 359,
+        "startChar": 2,
+        "endLine": 359,
+        "endChar": 22
+      },
+      "revId": "ea523a8d228ce95b0f242c70dc97bf1abdfa2a7c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
