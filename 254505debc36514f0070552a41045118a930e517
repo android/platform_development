@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3b7bc933_0870738a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-08-31T05:36:38Z",
+      "side": 1,
+      "message": "What is the bug number?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 1
+      },
+      "revId": "254505debc36514f0070552a41045118a930e517",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8ee797a_27fd90e8",
         "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
         "patchSetId": 3
