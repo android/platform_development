@@ -68,42 +68,52 @@
  [
   
   {
+   "binding" : 1,
    "name" : "_Z26test_virtual_function_callP12SuperSpeaker"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN12NotReferenced"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN12SuperSpeaker11SpeakLouderEv"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN12SuperSpeaker18CreateSuperSpeakerEi"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN12SuperSpeaker9SpeakLoudEv"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN16LowVolumeSpeaker5SpeakEv"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN16LowVolumeSpeaker6ListenEv"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN17HighVolumeSpeaker11BadPracticeEf"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN17HighVolumeSpeaker5SpeakEv"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZN17HighVolumeSpeaker6ListenEv"
   }
  ],
@@ -111,10 +121,12 @@
  [
   
   {
+   "binding" : 1,
    "name" : "_ZTV16LowVolumeSpeaker"
   },
   
   {
+   "binding" : 1,
    "name" : "_ZTV17HighVolumeSpeaker"
   }
  ],
