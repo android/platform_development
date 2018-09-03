@@ -122,7 +122,7 @@
  [
   
   {
-   "access" : 2,
+   "access" : 3,
    "enum_fields" : 
    [
     
@@ -385,14 +385,14 @@
    [
     
     {
-     "access" : 2,
+     "access" : 3,
      "field_name" : "mSpeakderId",
      "field_offset" : 32,
      "referenced_type" : "type-2"
     }
    ],
    "is_anonymous" : false,
-   "record_kind" : 2,
+   "record_kind" : 1,
    "tag_info" : 
    {
     "unique_id" : "_ZTS12SuperSpeaker"
@@ -471,7 +471,7 @@
    ],
    "fields" : [],
    "is_anonymous" : false,
-   "record_kind" : 2,
+   "record_kind" : 1,
    "tag_info" : 
    {
     "unique_id" : "_ZTS17HighVolumeSpeaker"
@@ -566,7 +566,7 @@
     }
    ],
    "is_anonymous" : false,
-   "record_kind" : 2,
+   "record_kind" : 1,
    "tag_info" : 
    {
     "unique_id" : "_ZTS16LowVolumeSpeaker"
