@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a291cd71_76f5c6b4",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-09-03T12:53:36Z",
+      "side": 1,
+      "message": "What do you think about to change this to\nAccessIRToProtobuf(record_field_ir-\u003eGetAccess())\nso that the enum values between protobuf/json formats can stay consistent.",
+      "range": {
+        "startLine": 51,
+        "startChar": 27,
+        "endLine": 51,
+        "endChar": 55
+      },
+      "revId": "994cdf6f71365405eba6b765dcc70d33176173fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5f62618_bae3d600",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-09-03T12:53:36Z",
+      "side": 1,
+      "message": "VTableComponentKindIRToProtobuf(...)",
+      "range": {
+        "startLine": 90,
+        "startChar": 31,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "994cdf6f71365405eba6b765dcc70d33176173fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95750561_dc47ffd3",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-09-03T12:53:36Z",
+      "side": 1,
+      "message": "RecordKindIRToProtobuf(...)",
+      "range": {
+        "startLine": 116,
+        "startChar": 31,
+        "endLine": 116,
+        "endChar": 55
+      },
+      "revId": "994cdf6f71365405eba6b765dcc70d33176173fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
