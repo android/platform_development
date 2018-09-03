@@ -47,6 +47,12 @@ static const std::map<VTableComponentIR::Kind, std::string>
   {VTableComponentIR::Kind::UnusedFunctionPointer, "unused_function_pointer"},
 };
 
+static const std::map<ElfSymbolIR::ElfSymbolBinding, std::string>
+    elf_symbol_binding_ir_to_json{
+  {ElfSymbolIR::ElfSymbolBinding::Weak, "weak"},
+  {ElfSymbolIR::ElfSymbolBinding::Global, "global"},
+};
+
 static inline std::string AccessIRToJson(AccessSpecifierIR access) {
   return GetWithDefault(access_ir_to_json, access, "public");
 }
@@ -59,6 +65,11 @@ static inline std::string
 VTableComponentKindIRToJson(VTableComponentIR::Kind kind) {
   return GetWithDefault(vtable_component_kind_ir_to_json, kind,
                         "unused_function_pointer");
+}
+
+static inline std::string
+ElfSymbolBindingIRToJson(ElfSymbolIR::ElfSymbolBinding binding) {
+  return GetWithDefault(elf_symbol_binding_ir_to_json, binding, "global");
 }
 
 void IRToJsonConverter::AddTemplateInfo(
@@ -163,20 +174,6 @@ JsonObject IRToJsonConverter::ConvertRecordTypeIR(const RecordTypeIR *recordp) {
   AddTagTypeInfo(record_type, recordp);
   AddTemplateInfo(record_type, recordp);
   return record_type;
-}
-
-JsonObject
-IRToJsonConverter::ConvertElfObjectIR(const ElfObjectIR *elf_object_ir) {
-  JsonObject elf_object;
-  elf_object["name"] = elf_object_ir->GetName();
-  return elf_object;
-}
-
-JsonObject
-IRToJsonConverter::ConvertElfFunctionIR(const ElfFunctionIR *elf_function_ir) {
-  JsonObject elf_function;
-  elf_function["name"] = elf_function_ir->GetName();
-  return elf_function;
 }
 
 void IRToJsonConverter::AddFunctionParametersAndSetReturnType(
@@ -359,11 +356,9 @@ bool JsonIRDumper::AddLinkableMessageIR(const LinkableMessageIR *lm) {
   return true;
 }
 
-bool JsonIRDumper::AddElfSymbolMessageIR(const ElfSymbolIR *em) {
+bool JsonIRDumper::AddElfSymbolMessageIR(const ElfSymbolIR *elf_symbol_ir) {
   std::string key;
-  JsonObject elf_symbol;
-  elf_symbol["name"] = em->GetName();
-  switch (em->GetKind()) {
+  switch (elf_symbol_ir->GetKind()) {
   case ElfSymbolIR::ElfFunctionKind:
     key = "elf_functions";
     break;
@@ -373,7 +368,10 @@ bool JsonIRDumper::AddElfSymbolMessageIR(const ElfSymbolIR *em) {
   default:
     return false;
   }
-  translation_unit_[key].append(elf_symbol);
+  Json::Value &elf_symbol = translation_unit_[key].append(JsonObject());
+  elf_symbol["name"] = elf_symbol_ir->GetName();
+  elf_symbol["binding"] =
+      ElfSymbolBindingIRToJson(elf_symbol_ir->GetBinding());
   return true;
 }
 
