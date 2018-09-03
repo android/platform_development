@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include <ir_representation_json.h>
+#include <ir_representation_protobuf.h>
 
 #include <json/writer.h>
 
@@ -48,7 +49,7 @@ static JsonObject ConvertRecordFieldIR(const RecordFieldIR *record_field_ir) {
   JsonObject record_field;
   record_field["field_name"] = record_field_ir->GetName();
   record_field["referenced_type"] = record_field_ir->GetReferencedType();
-  record_field["access"] = AccessIRToJson(record_field_ir->GetAccess());
+  record_field["access"] = AccessIRToProtobuf(record_field_ir->GetAccess());
   record_field["field_offset"] = Json::UInt64(record_field_ir->GetOffset());
   return record_field;
 }
@@ -67,7 +68,7 @@ ConvertBaseSpecifierIR(const CXXBaseSpecifierIR &base_specifier_ir) {
   JsonObject base_specifier;
   base_specifier["referenced_type"] = base_specifier_ir.GetReferencedType();
   base_specifier["is_virtual"] = base_specifier_ir.IsVirtual();
-  base_specifier["access"] = AccessIRToJson(base_specifier_ir.GetAccess());
+  base_specifier["access"] = AccessIRToProtobuf(base_specifier_ir.GetAccess());
   return base_specifier;
 }
 
@@ -88,7 +89,7 @@ ConvertVTableLayoutIR(const VTableLayoutIR &vtable_layout_ir) {
   for (auto &&vtable_component_ir : vtable_layout_ir.GetVTableComponents()) {
     Json::Value &vtable_component = vtable_components.append(JsonObject());
     vtable_component["kind"] =
-        VTableComponentKindIRToJson(vtable_component_ir.GetKind());
+        VTableComponentKindIRToProtobuf(vtable_component_ir.GetKind());
     vtable_component["component_value"] =
         Json::Int64(vtable_component_ir.GetValue());
     vtable_component["mangled_component_name"] = vtable_component_ir.GetName();
@@ -113,8 +114,8 @@ void IRToJsonConverter::AddTagTypeInfo(JsonObject &record_type,
 JsonObject IRToJsonConverter::ConvertRecordTypeIR(const RecordTypeIR *recordp) {
   JsonObject record_type;
 
-  record_type["access"] = AccessIRToJson(recordp->GetAccess());
-  record_type["record_kind"] = RecordKindIRToJson(recordp->GetRecordKind());
+  record_type["access"] = AccessIRToProtobuf(recordp->GetAccess());
+  record_type["record_kind"] = RecordKindIRToProtobuf(recordp->GetRecordKind());
   record_type["is_anonymous"] = recordp->IsAnonymous();
   AddTypeInfo(record_type, recordp);
   AddRecordFields(record_type, recordp);
@@ -167,7 +168,7 @@ IRToJsonConverter::ConvertFunctionTypeIR(const FunctionTypeIR *function_typep) {
 
 JsonObject IRToJsonConverter::ConvertFunctionIR(const FunctionIR *functionp) {
   JsonObject function;
-  function["access"] = AccessIRToJson(functionp->GetAccess());
+  function["access"] = AccessIRToProtobuf(functionp->GetAccess());
   function["linker_set_key"] = functionp->GetLinkerSetKey();
   function["source_file"] = functionp->GetSourceFile();
   function["function_name"] = functionp->GetName();
@@ -194,7 +195,7 @@ void IRToJsonConverter::AddEnumFields(JsonObject &enum_type,
 
 JsonObject IRToJsonConverter::ConvertEnumTypeIR(const EnumTypeIR *enump) {
   JsonObject enum_type;
-  enum_type["access"] = AccessIRToJson(enump->GetAccess());
+  enum_type["access"] = AccessIRToProtobuf(enump->GetAccess());
   enum_type["underlying_type"] = enump->GetUnderlyingType();
   AddTypeInfo(enum_type, enump);
   AddEnumFields(enum_type, enump);
@@ -209,7 +210,7 @@ IRToJsonConverter::ConvertGlobalVarIR(const GlobalVarIR *global_varp) {
   global_var["source_file"] = global_varp->GetSourceFile();
   global_var["name"] = global_varp->GetName();
   global_var["linker_set_key"] = global_varp->GetLinkerSetKey();
-  global_var["access"] = AccessIRToJson(global_varp->GetAccess());
+  global_var["access"] = AccessIRToProtobuf(global_varp->GetAccess());
   return global_var;
 }
 
