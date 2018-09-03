@@ -17,6 +17,7 @@
 #include <json/writer.h>
 
 #include <fstream>
+#include <sstream>
 #include <string>
 
 namespace abi_util {
@@ -323,9 +324,33 @@ bool JsonIRDumper::AddElfSymbolMessageIR(const ElfSymbolIR *elf_symbol_ir) {
 }
 
 bool JsonIRDumper::Dump() {
-  std::ofstream output(dump_path_);
+  std::ostringstream output_stream;
   Json::StyledStreamWriter writer(/* indentation */ " ");
-  writer.write(output, translation_unit_);
+  writer.write(output_stream, translation_unit_);
+  std::string output_string = output_stream.str();
+  // clear buffer
+  output_stream.str("");
+
+  std::ofstream output_file(dump_path_);
+  size_t line_start = 0;
+  while (line_start < output_string.size()) {
+    size_t trailing_space_start = line_start;
+    size_t index;
+    for (index = line_start;
+         index < output_string.size() && output_string[index] != '\n';
+         index++) {
+      if (output_string[index] != ' ') {
+        trailing_space_start = index + 1;
+      }
+    }
+    // do not write empty lines
+    if (trailing_space_start != line_start) {
+      output_file.write(output_string.c_str() + line_start,
+                        trailing_space_start - line_start);
+      output_file.write("\n", 1);
+    }
+    line_start = index + 1;
+  }
   return true;
 }
 
