@@ -84,6 +84,13 @@ enum LinkableMessageKind {
   GlobalVarKind
 };
 
+template <typename K, typename V, typename DefaultValueType = V>
+inline static V GetWithDefault(const std::map<K, V> m, const K &k,
+                               const DefaultValueType &default_value) {
+  auto it = m.find(k);
+  return it != m.end() ? it->second : default_value;
+}
+
 class LinkableMessageIR {
  public:
   const std::string &GetLinkerSetKey() const {

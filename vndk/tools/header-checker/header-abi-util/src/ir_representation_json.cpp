@@ -21,6 +21,46 @@
 
 namespace abi_util {
 
+// Conversion between IR enums and JSON strings.
+static const std::map<AccessSpecifierIR, std::string> access_ir_to_json{
+  {AccessSpecifierIR::PublicAccess, "public"},
+  {AccessSpecifierIR::ProtectedAccess, "protected"},
+  {AccessSpecifierIR::PrivateAccess, "private"},
+};
+
+static const std::map<RecordTypeIR::RecordKind, std::string>
+    record_kind_ir_to_json{
+  {RecordTypeIR::RecordKind::struct_kind, "struct"},
+  {RecordTypeIR::RecordKind::class_kind, "class"},
+  {RecordTypeIR::RecordKind::union_kind, "union"},
+};
+
+static const std::map<VTableComponentIR::Kind, std::string>
+    vtable_component_kind_ir_to_json{
+  {VTableComponentIR::Kind::VCallOffset, "vcall_offset"},
+  {VTableComponentIR::Kind::VBaseOffset, "vbase_offset"},
+  {VTableComponentIR::Kind::OffsetToTop, "offset_to_top"},
+  {VTableComponentIR::Kind::RTTI, "rtti"},
+  {VTableComponentIR::Kind::FunctionPointer, "function_pointer"},
+  {VTableComponentIR::Kind::CompleteDtorPointer, "complete_dtor_pointer"},
+  {VTableComponentIR::Kind::DeletingDtorPointer, "deleting_dtor_pointer"},
+  {VTableComponentIR::Kind::UnusedFunctionPointer, "unused_function_pointer"},
+};
+
+static inline std::string AccessIRToJson(AccessSpecifierIR access) {
+  return GetWithDefault(access_ir_to_json, access, "public");
+}
+
+static inline std::string RecordKindIRToJson(RecordTypeIR::RecordKind kind) {
+  return GetWithDefault(record_kind_ir_to_json, kind, "struct");
+}
+
+static inline std::string
+VTableComponentKindIRToJson(VTableComponentIR::Kind kind) {
+  return GetWithDefault(vtable_component_kind_ir_to_json, kind,
+                        "unused_function_pointer");
+}
+
 void IRToJsonConverter::AddTemplateInfo(
     JsonObject &type_decl, const abi_util::TemplatedArtifactIR *template_ir) {
   Json::Value &elements = type_decl["template_info"];
