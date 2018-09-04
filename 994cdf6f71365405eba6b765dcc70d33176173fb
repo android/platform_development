@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a57cce4f_1ec9c22c",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-04T11:18:18Z",
+      "side": 1,
+      "message": "Done\n\nMaybe I will change them to strings so that the dump files are readable.",
+      "parentUuid": "a291cd71_76f5c6b4",
+      "range": {
+        "startLine": 51,
+        "startChar": 27,
+        "endLine": 51,
+        "endChar": 55
+      },
+      "revId": "994cdf6f71365405eba6b765dcc70d33176173fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5f62618_bae3d600",
         "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "db1cc8ba_8cda53f0",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-04T11:18:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5f62618_bae3d600",
+      "range": {
+        "startLine": 90,
+        "startChar": 31,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "994cdf6f71365405eba6b765dcc70d33176173fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "95750561_dc47ffd3",
         "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "994cdf6f71365405eba6b765dcc70d33176173fb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0dfb40fa_e28beeb1",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-04T11:18:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95750561_dc47ffd3",
+      "range": {
+        "startLine": 116,
+        "startChar": 31,
+        "endLine": 116,
+        "endChar": 55
+      },
+      "revId": "994cdf6f71365405eba6b765dcc70d33176173fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
