@@ -66,11 +66,16 @@ public class ChatManager implements Runnable {
     }
 
     public void write(byte[] buffer) {
-        try {
-            oStream.write(buffer);
-        } catch (IOException e) {
-            Log.e(TAG, "Exception during write", e);
-        }
+        Thread thread = new Thread() {
+            public void run() {
+                try {
+                    oStream.write(buffer);
+                } catch (IOException e) {
+                    Log.e(TAG, "Exception during write", e);
+                }
+            }
+        };
+        thread.start();
     }
 
 }
