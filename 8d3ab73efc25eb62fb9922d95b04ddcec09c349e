@@ -22,6 +22,30 @@
       "revId": "8d3ab73efc25eb62fb9922d95b04ddcec09c349e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f0cc247_23562bf8",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2018-09-07T05:35:49Z",
+      "side": 1,
+      "message": "Sorry I am wrong, std::map doesn\u0027t have constexpr constructor.",
+      "parentUuid": "a8277db8_00159732",
+      "range": {
+        "startLine": 25,
+        "startChar": 7,
+        "endLine": 25,
+        "endChar": 13
+      },
+      "revId": "8d3ab73efc25eb62fb9922d95b04ddcec09c349e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
