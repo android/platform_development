@@ -31,7 +31,8 @@ except ImportError:
     from urllib2 import HTTPError  # PY2
 
 from gerrit import (
-    create_url_opener_from_args, query_change_lists, set_review, abandon)
+    abandon, create_url_opener_from_args, delete_topic, query_change_lists,
+    set_hashtags, set_review, set_topic)
 
 
 def _get_labels_from_args(args):
@@ -100,6 +101,17 @@ def _parse_args():
 
     parser.add_argument('--abandon', help='Abandon a CL with a message')
 
+    parser.add_argument('--add-hashtag', action='append', help='Add hashtag')
+    parser.add_argument('--remove-hashtag', action='append',
+                        help='Remove hashtag')
+    parser.add_argument('--delete-hashtag', action='append',
+                        help='Remove hashtag', dest='remove_hashtag')
+
+    parser.add_argument('--set-topic', help='Set topic name')
+    parser.add_argument('--delete-topic', help='Delete topic name')
+    parser.add_argument('--remove-topic', help='Delete topic name',
+                        dest='delete_topic')
+
     return parser.parse_args()
 
 
@@ -151,8 +163,12 @@ def main():
     args = _parse_args()
 
     # Check the command line options
-    if args.label is None and args.message is None and args.abandon is None:
-        print('error: Either --label, --message, or --abandon must be ',
+    if args.label is None and args.message is None and \
+       args.abandon is None and \
+       not args.add_hashtag and not args.remove_hashtag and \
+       not args.set_topic and not args.delete_topic:
+        print('error: Either --label, --message, --abandon, --add-hashtag, '
+              '--remove-hashtag, --set-topic, or --delete-topic must be ',
               'specified', file=sys.stderr)
 
     # Convert label arguments
@@ -180,6 +196,15 @@ def main():
         if args.label or args.message:
             _process(set_reivew, url_opener, args.gerrit, change['id'],
                      labels, args.message)
+        if args.add_hashtag or args.remove_hashtag:
+            _process(set_hashtags, url_opener, args.gerrit, change['id'],
+                     args.add_hashtag, args.remove_hashtag)
+        if args.set_topic:
+            _process(set_topic, url_opener, args.gerrit, change['id'],
+                     args.set_topic)
+        if args.delete_topic:
+            _process(delete_topic, url_opener, args.gerrit, change['id'],
+                     expected_http_code=204)
         if args.abandon:
             _process(abandon, url_opener, args.gerrit, change['id'],
                      args.abandon)
