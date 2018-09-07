@@ -282,6 +282,10 @@ class MyTest(unittest.TestCase):
         self.prepare_and_absolute_diff_all_archs(
             "libgolden_cpp_json", "libgolden_cpp_json")
 
+    def test_libc_and_cpp_protobuf_json_diff(self):
+        self.prepare_and_run_abi_diff_all_archs(
+            "libgolden_cpp", "libgolden_cpp_json_sdump", 0)
+
 
 if __name__ == '__main__':
     unittest.main()
