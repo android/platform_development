@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab49a883_55a790dd",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-09-11T02:42:17Z",
+      "side": 1,
+      "message": "I prefer to abort the program if we cannot find a matching entry.",
+      "range": {
+        "startLine": 72,
+        "startChar": 64,
+        "endLine": 72,
+        "endChar": 72
+      },
+      "revId": "310e0538d2a3e574b1c0a94d7ff12d851d377451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
