@@ -46,6 +46,29 @@
       "revId": "8d3ab73efc25eb62fb9922d95b04ddcec09c349e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e95b2d5b_b2a1e0e2",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-09-11T02:40:28Z",
+      "side": 1,
+      "message": "I feel that it might be better to abort the program if we failed to find a string for an enum.",
+      "range": {
+        "startLine": 51,
+        "startChar": 51,
+        "endLine": 51,
+        "endChar": 59
+      },
+      "revId": "8d3ab73efc25eb62fb9922d95b04ddcec09c349e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
