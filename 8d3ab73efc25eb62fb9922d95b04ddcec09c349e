@@ -69,6 +69,30 @@
       "revId": "8d3ab73efc25eb62fb9922d95b04ddcec09c349e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24e4e5b1_ac8afd78",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-17T04:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e95b2d5b_b2a1e0e2",
+      "range": {
+        "startLine": 51,
+        "startChar": 51,
+        "endLine": 51,
+        "endChar": 59
+      },
+      "revId": "8d3ab73efc25eb62fb9922d95b04ddcec09c349e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
