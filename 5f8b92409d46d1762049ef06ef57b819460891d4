@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f4a82eb_a03dfa73",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/ir_representation_json.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-09-19T03:29:33Z",
+      "side": 1,
+      "message": "I would prefer \"template_args\"",
+      "range": {
+        "startLine": 97,
+        "startChar": 46,
+        "endLine": 97,
+        "endChar": 54
+      },
+      "revId": "5f8b92409d46d1762049ef06ef57b819460891d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
