@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3c1a188_58f1f20f",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-09-20T02:29:09Z",
+      "side": 1,
+      "message": "Inverse",
+      "range": {
+        "startLine": 88,
+        "startChar": 21,
+        "endLine": 88,
+        "endChar": 28
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92d027ac_e2bfe614",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-09-20T02:29:09Z",
+      "side": 1,
+      "message": "\u0026key",
+      "range": {
+        "startLine": 118,
+        "startChar": 33,
+        "endLine": 118,
+        "endChar": 36
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
