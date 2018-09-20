@@ -45,6 +45,52 @@
       "revId": "30837a9719c79156d51b046b928302be0cb00355",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6c789b8_daa44765",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-09-20T02:38:49Z",
+      "side": 1,
+      "message": "Define a typedef for this member function pointer.",
+      "range": {
+        "startLine": 140,
+        "startChar": 25,
+        "endLine": 140,
+        "endChar": 70
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06262f84_c5d6eb11",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-09-20T02:38:49Z",
+      "side": 1,
+      "message": "Is it possible to avoid this?",
+      "range": {
+        "startLine": 143,
+        "startChar": 2,
+        "endLine": 143,
+        "endChar": 12
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
