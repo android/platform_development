@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7339501_db7b4623",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2018-09-20T01:09:52Z",
+      "side": 1,
+      "message": "Do not do this inside of Adb.pull\n\nAdb.pull is a convenient wrapper around calling the following in bash:\n\n    $ adb -s \u003cSERIAL\u003e pull\n\nThis should not take in multiple sources, because the bash implementation does not take in multiple sources. Feel free to create a function along the lines of pull_all() that takes in a list of paths and pulls all of the files.",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 33
+      },
+      "revId": "ad0854641b853746c1b3084137197b9347398ab5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24a7acf0_ae78397f",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2018-09-20T01:09:52Z",
+      "side": 1,
+      "message": "This does not guarantee the following:\n\n    1) All files copied will be removed. \n\nPreviously, we copied the file into a temporary file and stored it within temp_files to ensure it gets deleted later. This change seems to get rid of that entirely.\n\n    2) All files will be able to be copied without overwriting another file.\n\nIf I run the following code, there will be an overwritten file, and the generated privapp_permissions may not cover all apks:\n\n    \u003e\u003e\u003e adb \u003d Adb(\u002753R147\u0027)\n    \u003e\u003e\u003e adb.pull(\u0027/path/to/an.apk /a/different/path/to/an.apk\u0027)\n\nThis will copy \u0027/path/to/an.apk\u0027 and \u0027/a/different/path/to/an.apk\u0027 over to the host machine\u0027s same \u0027an.apk\u0027 file, causing one of them to go missing.",
+      "range": {
+        "startLine": 98,
+        "startChar": 16,
+        "endLine": 98,
+        "endChar": 59
+      },
+      "revId": "ad0854641b853746c1b3084137197b9347398ab5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
