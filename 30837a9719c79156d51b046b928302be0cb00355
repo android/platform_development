@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d817f57c_fc6e3a92",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-20T03:41:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3c1a188_58f1f20f",
+      "range": {
+        "startLine": 88,
+        "startChar": 21,
+        "endLine": 88,
+        "endChar": 28
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "92d027ac_e2bfe614",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
         "patchSetId": 6
@@ -45,6 +69,30 @@
       "revId": "30837a9719c79156d51b046b928302be0cb00355",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff548a6f_da46d7e6",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-20T03:41:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92d027ac_e2bfe614",
+      "range": {
+        "startLine": 118,
+        "startChar": 33,
+        "endLine": 118,
+        "endChar": 36
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "612f0eaa_041433eb",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-20T03:41:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6c789b8_daa44765",
+      "range": {
+        "startLine": 140,
+        "startChar": 25,
+        "endLine": 140,
+        "endChar": 70
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "06262f84_c5d6eb11",
         "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
         "patchSetId": 6
@@ -82,6 +154,30 @@
       "writtenOn": "2018-09-20T02:38:49Z",
       "side": 1,
       "message": "Is it possible to avoid this?",
+      "range": {
+        "startLine": 143,
+        "startChar": 2,
+        "endLine": 143,
+        "endChar": 12
+      },
+      "revId": "30837a9719c79156d51b046b928302be0cb00355",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23f47290_bad62637",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/ir_representation_json.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-20T03:41:45Z",
+      "side": 1,
+      "message": "The flag is for type checking. If it\u0027s removed, every Get function needs an additional argument.",
+      "parentUuid": "06262f84_c5d6eb11",
       "range": {
         "startLine": 143,
         "startChar": 2,
