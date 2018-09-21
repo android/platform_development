@@ -22,7 +22,7 @@
 // message format specific dumpers.
 namespace abi_util {
 
-// Classes that wrap constructor of Json::Value.
+// These classes wrap constructor of Json::Value.
 class JsonArray : public Json::Value {
  public:
   JsonArray() : Json::Value(Json::ValueType::arrayValue) {}
@@ -31,6 +31,27 @@ class JsonArray : public Json::Value {
 class JsonObject : public Json::Value {
  public:
   JsonObject() : Json::Value(Json::ValueType::objectValue) {}
+
+  void Set(const char *key, bool value);
+
+  void Set(const char *key, uint64_t value);
+
+  void Set(const char *key, int64_t value);
+
+  void Set(const char *key, const std::string &value);
+
+  void Set(const char *key, const JsonArray &value);
+
+ private:
+  // Sets value if it is not omissible.
+  template <typename T>
+  inline void SetOmissible(const char *key, T value, T omissible_value) {
+    if (value != omissible_value) {
+      (*this)[key] = value;
+    } else {
+      removeMember(key);
+    }
+  }
 };
 
 class IRToJsonConverter {
