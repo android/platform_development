@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf70c4cd_09d8127c",
+        "filename": "samples/WiFiDirectDemo/src/com/example/android/wifidirect/WiFiDirectActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1126614
+      },
+      "writtenOn": "2018-09-26T17:52:36Z",
+      "side": 1,
+      "message": "overridden",
+      "range": {
+        "startLine": 90,
+        "startChar": 64,
+        "endLine": 90,
+        "endChar": 73
+      },
+      "revId": "98b998a7ded0af08e59469d09a15e68fdc70a2c8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
