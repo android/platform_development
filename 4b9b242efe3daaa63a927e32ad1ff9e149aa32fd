@@ -22,6 +22,30 @@
       "revId": "4b9b242efe3daaa63a927e32ad1ff9e149aa32fd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bab1f2d1_b2a86b3c",
+        "filename": "vndk/tools/header-checker/header-abi-diff/src/header_abi_diff.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-09-26T08:39:26Z",
+      "side": 1,
+      "message": "I don\u0027t want to change it in this commit. Let\u0027s change it when we have more than one diff format.",
+      "parentUuid": "50b86f8b_c98b59bd",
+      "range": {
+        "startLine": 114,
+        "startChar": 5,
+        "endLine": 114,
+        "endChar": 9
+      },
+      "revId": "4b9b242efe3daaa63a927e32ad1ff9e149aa32fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
