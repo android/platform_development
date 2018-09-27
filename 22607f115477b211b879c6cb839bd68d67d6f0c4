@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60483953_1952a01d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-09-27T17:04:55Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we also test by running this over the tree and making sure all the lsdumps are produced successfully ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "22607f115477b211b879c6cb839bd68d67d6f0c4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
