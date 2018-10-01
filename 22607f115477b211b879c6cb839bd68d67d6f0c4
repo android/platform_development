@@ -22,6 +22,30 @@
       "revId": "22607f115477b211b879c6cb839bd68d67d6f0c4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dcda69c7_bc09aa02",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-10-01T09:58:00Z",
+      "side": 1,
+      "message": "Just tested.  I\u0027ll need another CL to update clang headers:\n\nhttps://android.googlesource.com/platform/build/soong/+/2997123f7318da7a6c34bc5f0a1efaef37a65aeb/cc/builder.go#183\n\nProbably, we should pack those headers with `prebuilt/clang-tools` too.  I\u0027ll upload them soon.",
+      "parentUuid": "60483953_1952a01d",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "22607f115477b211b879c6cb839bd68d67d6f0c4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
