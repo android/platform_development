@@ -1,0 +1,9 @@
+Code-Review+2: Bo Hu <bohu@google.com>
+Verified+1: Roman Kiryanov <rkir@google.com>
+Autosubmit+1: Roman Kiryanov <rkir@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Mon, 01 Oct 2018 21:16:33 +0000
+Reviewed-on: https://android-review.googlesource.com/774345
+Project: platform/development
+Branch: refs/heads/master
