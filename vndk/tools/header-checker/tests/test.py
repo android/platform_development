@@ -74,6 +74,12 @@ class MyTest(unittest.TestCase):
     def prepare_and_run_abi_diff_all_archs(self, old_lib, new_lib,
                                            expected_return_code, flags=[],
                                            create_old=False, create_new=True):
+        default_format = 'ProtobufTextFormat'
+        if '-input-format-old' not in flags:
+            flags = flags + ['-input-format-old', default_format]
+        if '-input-format-new' not in flags:
+            flags = flags + ['-input-format-new', default_format]
+
         with tempfile.TemporaryDirectory() as tmp:
             for target_arch in TARGET_ARCHS:
                 old_ref_dump_path = self.get_or_create_ref_dump(old_lib,

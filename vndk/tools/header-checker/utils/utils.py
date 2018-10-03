@@ -85,7 +85,8 @@ def run_header_abi_dumper(input_path, remove_absolute_paths, cflags=[],
     with tempfile.TemporaryDirectory() as tmp:
         output_path = os.path.join(tmp, os.path.basename(input_path)) + '.dump'
         run_header_abi_dumper_on_file(input_path, output_path,
-                                      export_include_dirs, cflags)
+                                      export_include_dirs, cflags,
+                                      ['-output-format', 'ProtobufTextFormat'])
         with open(output_path, 'r') as f:
             if remove_absolute_paths:
                 return read_output_content(output_path, AOSP_DIR)
