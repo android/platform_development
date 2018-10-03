@@ -42,7 +42,9 @@ def main():
             output_path = os.path.join(EXPECTED_DIR, input_rel_path)
 
             print('generating', output_path, '...')
-            output_content = run_header_abi_dumper(input_path, True)
+            output_content = run_header_abi_dumper(
+                input_path, True,
+                flags=['-output-format', 'ProtobufTextFormat'])
 
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
             with open(output_path, 'w') as f:

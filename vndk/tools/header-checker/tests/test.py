@@ -19,6 +19,7 @@ SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__))
 INPUT_DIR = os.path.join(SCRIPT_DIR, 'input')
 EXPECTED_DIR = os.path.join(SCRIPT_DIR, 'expected')
 REF_DUMP_DIR = os.path.join(SCRIPT_DIR,  'reference_dumps')
+DEFAULT_FORMAT = 'ProtobufTextFormat'
 
 class MyTest(unittest.TestCase):
     @classmethod
@@ -34,7 +35,9 @@ class MyTest(unittest.TestCase):
     def run_and_compare(self, input_path, expected_path, cflags=[]):
         with open(expected_path, 'r') as f:
             expected_output = f.read()
-        actual_output = run_header_abi_dumper(input_path, True, cflags)
+        actual_output = run_header_abi_dumper(
+            input_path, True, cflags,
+            flags=['-output-format', DEFAULT_FORMAT])
         self.assertEqual(actual_output, expected_output)
 
     def run_and_compare_name(self, name, cflags=[]):
@@ -51,6 +54,11 @@ class MyTest(unittest.TestCase):
 
     def run_and_compare_abi_diff(self, old_dump, new_dump, lib, arch,
                                  expected_return_code, flags=[]) :
+        if '-input-format-old' not in flags:
+            flags = flags + ['-input-format-old', DEFAULT_FORMAT]
+        if '-input-format-new' not in flags:
+            flags = flags + ['-input-format-new', DEFAULT_FORMAT]
+
         actual_output = run_abi_diff(old_dump, new_dump, arch, lib, flags)
         self.assertEqual(actual_output, expected_return_code)
 

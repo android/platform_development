@@ -46,8 +46,15 @@ class Module(object):
             self.arch_cflags = ARCH_TARGET_CFLAGS.get(self.arch)
         self.export_include_dirs = relative_to_abs_path_list(export_include_dirs)
         self.api = api
-        self.dumper_flags = dumper_flags
-        self.linker_flags = linker_flags
+        self.dumper_flags = list(dumper_flags)
+        self.linker_flags = list(linker_flags)
+
+        default_format = 'ProtobufTextFormat'
+        if '-output-format' not in self.dumper_flags:
+            self.dumper_flags += ['-output-format', default_format]
+            self.linker_flags += ['-input-format', default_format]
+        if '-output-format' not in self.linker_flags:
+            self.linker_flags += ['-output-format', default_format]
 
     def get_name(self):
         return self.name
