@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0f632ce3_d64b96db",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-05T15:08:36Z",
+      "side": 1,
+      "message": "I think there needs to be a stronger indication of the crash.",
+      "range": {
+        "startLine": 330,
+        "startChar": 66,
+        "endLine": 330,
+        "endChar": 78
+      },
+      "revId": "aa08d5aa3736e0b50d0035cccd9ec7c28ae98c07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
