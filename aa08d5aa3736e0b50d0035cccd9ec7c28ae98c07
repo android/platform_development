@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f445427_5d0f984b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1105104
+      },
+      "writtenOn": "2018-10-05T16:33:47Z",
+      "side": 1,
+      "message": "I ran the test, but it seems to be broken. I see that https://android-review.googlesource.com/c/platform/development/+/724065 extended ParseNativeHeap() by one more argument but the tests haven\u0027t been updated to reflect that.\n\n$ python heapdump_viewer_tests.py\n\n....EEEE\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nERROR: test_backtrace_num_field_invalid (__main__.ParseNativeHeapTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"native_heapdump_viewer_tests.py\", line 127, in test_backtrace_num_field_invalid\n    backtraces, mapppings \u003d native_heapdump_viewer.ParseNativeHeap(heap, False, False)\nTypeError: ParseNativeHeap() takes exactly 4 arguments (3 given)\n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nERROR: test_backtrace_num_field_valid (__main__.ParseNativeHeapTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"native_heapdump_viewer_tests.py\", line 111, in test_backtrace_num_field_valid\n    backtraces, mapppings \u003d native_heapdump_viewer.ParseNativeHeap(heap, False, True)\nTypeError: ParseNativeHeap() takes exactly 4 arguments (3 given)\n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nERROR: test_backtrace_reverse_field_valid (__main__.ParseNativeHeapTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"native_heapdump_viewer_tests.py\", line 143, in test_backtrace_reverse_field_valid\n    backtraces, mapppings \u003d native_heapdump_viewer.ParseNativeHeap(heap, True, True)\nTypeError: ParseNativeHeap() takes exactly 4 arguments (3 given)\n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nERROR: test_mappings (__main__.ParseNativeHeapTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"native_heapdump_viewer_tests.py\", line 167, in test_mappings\n    backtraces, mappings \u003d native_heapdump_viewer.ParseNativeHeap(heap, True, True)\nTypeError: ParseNativeHeap() takes exactly 4 arguments (3 given)\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nFAILED (errors\u003d4)\nshibing@shibing-linux:/local/mnt/workspace/shibing/temp/aospmaster/development/sc",
+      "parentUuid": "0c74357b_b3e33b23",
+      "revId": "aa08d5aa3736e0b50d0035cccd9ec7c28ae98c07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0f632ce3_d64b96db",
         "filename": "scripts/native_heapdump_viewer.py",
         "patchSetId": 2
