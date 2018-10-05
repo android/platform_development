@@ -187,9 +187,12 @@ for lib in addrs_by_lib:
         result = p.communicate(input_addrs)[0]
         splitted = result.split("\n")
         for x in range(0, len(addrs_by_lib[lib])):
-            function = splitted[2*x];
-            location = splitted[2*x+1];
-            resolved_addrs[addrs_by_lib[lib][x]] = FrameDescription(function, location, lib)
+            try:
+                function = splitted[2*x];
+                location = splitted[2*x+1];
+                resolved_addrs[addrs_by_lib[lib][x]] = FrameDescription(function, location, lib)
+            except:
+                resolved_addrs[addrs_by_lib[lib][x]] = FrameDescription("???", "???", lib)
 
     else:
         if html_output == False:
