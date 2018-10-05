@@ -57,6 +57,30 @@
       "revId": "aa08d5aa3736e0b50d0035cccd9ec7c28ae98c07",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67b9fc6b_198f8099",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1105104
+      },
+      "writtenOn": "2018-10-05T16:35:25Z",
+      "side": 1,
+      "message": "printed the return code of addr2line and loggin an exception as well (will be logged to stderr so no worries with --html as well)",
+      "parentUuid": "0f632ce3_d64b96db",
+      "range": {
+        "startLine": 330,
+        "startChar": 66,
+        "endLine": 330,
+        "endChar": 78
+      },
+      "revId": "aa08d5aa3736e0b50d0035cccd9ec7c28ae98c07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
