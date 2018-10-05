@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0c74357b_b3e33b23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-05T15:11:36Z",
+      "side": 1,
+      "message": "Test: ...\n\nThere are native_heapdump_viewer_tests.",
+      "revId": "aa08d5aa3736e0b50d0035cccd9ec7c28ae98c07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0f632ce3_d64b96db",
         "filename": "scripts/native_heapdump_viewer.py",
         "patchSetId": 2
