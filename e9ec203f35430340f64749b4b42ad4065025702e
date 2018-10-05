@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a2626488_ddf28c5b",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-10-05T05:57:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4462bc07_7116a970",
+      "range": {
+        "startLine": 83,
+        "startChar": 9,
+        "endLine": 83,
+        "endChar": 36
+      },
+      "revId": "e9ec203f35430340f64749b4b42ad4065025702e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "36a0fdcb_3552b991",
         "filename": "vndk/tools/build_mixed",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "c0bea0ec_b5c344b8",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-10-05T05:57:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36a0fdcb_3552b991",
+      "range": {
+        "startLine": 132,
+        "startChar": 2,
+        "endLine": 132,
+        "endChar": 12
+      },
+      "revId": "e9ec203f35430340f64749b4b42ad4065025702e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a47468a1_9e31d16a",
         "filename": "vndk/tools/build_mixed",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "e9ec203f35430340f64749b4b42ad4065025702e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f12ed2d_9c5bf8f9",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-10-05T05:57:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a47468a1_9e31d16a",
+      "range": {
+        "startLine": 136,
+        "startChar": 12,
+        "endLine": 137,
+        "endChar": 59
+      },
+      "revId": "e9ec203f35430340f64749b4b42ad4065025702e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
