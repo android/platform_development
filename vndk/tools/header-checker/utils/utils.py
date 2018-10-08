@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 
-import tempfile
+import gzip
 import os
 import subprocess
-import gzip
-import shutil
-import time
+import sys
+import tempfile
 
 SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__))
-AOSP_DIR = os.getenv('ANDROID_BUILD_TOP')
+
+try:
+    AOSP_DIR = os.environ['ANDROID_BUILD_TOP']
+except KeyError:
+    print('error: ANDROID_BUILD_TOP environment variable is not set.',
+          file=sys.stderr)
+    sys.exit(1)
 
 BUILTIN_HEADERS_DIR = (
     os.path.join(AOSP_DIR, 'bionic', 'libc', 'include'),
