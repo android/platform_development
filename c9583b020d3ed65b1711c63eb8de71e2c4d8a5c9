@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff5cbbc3_008b644d",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-10-09T02:24:07Z",
+      "side": 1,
+      "message": "add a space",
+      "range": {
+        "startLine": 49,
+        "startChar": 60,
+        "endLine": 49,
+        "endChar": 62
+      },
+      "revId": "c9583b020d3ed65b1711c63eb8de71e2c4d8a5c9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84a564dc_a72683e5",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-10-09T02:24:07Z",
+      "side": 1,
+      "message": "one space",
+      "range": {
+        "startLine": 64,
+        "startChar": 12,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "c9583b020d3ed65b1711c63eb8de71e2c4d8a5c9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b462616b_ff56051a",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-10-09T02:24:07Z",
+      "side": 1,
+      "message": "aosp_x86_64, aosp_x86_ab,",
+      "range": {
+        "startLine": 64,
+        "startChar": 35,
+        "endLine": 64,
+        "endChar": 49
+      },
+      "revId": "c9583b020d3ed65b1711c63eb8de71e2c4d8a5c9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8acc4ccd_04280318",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-10-09T02:24:07Z",
+      "side": 1,
+      "message": "2 blank lines",
+      "revId": "c9583b020d3ed65b1711c63eb8de71e2c4d8a5c9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
