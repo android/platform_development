@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f452506_6ae284aa",
+        "filename": "scripts/native_heapdump_viewer.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-09T00:22:01Z",
+      "side": 1,
+      "message": "Sort.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 14
+      },
+      "revId": "a0c4a71cad9a72093f77c9009eac0854e41428d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
