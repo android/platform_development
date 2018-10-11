@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "75165a8e_087a436e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2018-10-11T20:53:50Z",
+      "side": 1,
+      "message": "This can be updated to clang-r339409b.",
+      "range": {
+        "startLine": 10,
+        "startChar": 21,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "ae3db908c3b225d86be3a5d1d5df5c19964aa70c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "41c36b10_40aad373",
         "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
         "patchSetId": 19
