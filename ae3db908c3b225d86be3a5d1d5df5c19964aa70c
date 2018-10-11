@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41c36b10_40aad373",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2018-10-11T20:53:14Z",
+      "side": 1,
+      "message": "nit: Use \u0027auto\u0027 here to avoid the long type?",
+      "revId": "ae3db908c3b225d86be3a5d1d5df5c19964aa70c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
