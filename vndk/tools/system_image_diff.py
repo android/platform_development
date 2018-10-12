@@ -24,6 +24,16 @@ VENDOR_PATH_MAP = {
     'vendor/realtek' : 'Realtek'
 }
 
+def _get_relative_out_path_from_root(out_path):
+  """Given a path to a target out directory, get the relative path from the
+  Android root.
+
+  The module-info.json file paths are relative to the root source folder
+  ie. one directory before out."""
+  system_path = os.path.join(out_path, 'system')
+  out_index = system_path.find("out")
+  return system_path[out_index:]
+
 def system_files(path):
   """Returns an array of the files under /system, recursively, and ignoring
   symbolic-links"""
@@ -44,7 +54,7 @@ def system_files_to_package_map(path):
   """Returns a dictionary mapping from each file in the /system partition to its
   package, according to modules-info.json."""
   system_files_to_package_map = {}
-  system_prefix = os.path.join(path, 'system')
+  system_prefix = _get_relative_out_path_from_root(path)
   # Skip trailing '/'
   system_prefix_len = len(system_prefix) + 1
 
