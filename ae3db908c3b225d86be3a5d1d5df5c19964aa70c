@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "81824a77_a04b05df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-10-12T02:28:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75165a8e_087a436e",
+      "range": {
+        "startLine": 10,
+        "startChar": 21,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "ae3db908c3b225d86be3a5d1d5df5c19964aa70c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "41c36b10_40aad373",
         "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
         "patchSetId": 19
@@ -36,6 +60,24 @@
       "writtenOn": "2018-10-11T20:53:14Z",
       "side": 1,
       "message": "nit: Use \u0027auto\u0027 here to avoid the long type?",
+      "revId": "ae3db908c3b225d86be3a5d1d5df5c19964aa70c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "888c44d0_bc44205a",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-10-12T02:28:03Z",
+      "side": 1,
+      "message": "I think this is fine because this line still fits in 80-column width.  I prefer being explicit in this case.",
+      "parentUuid": "41c36b10_40aad373",
       "revId": "ae3db908c3b225d86be3a5d1d5df5c19964aa70c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
