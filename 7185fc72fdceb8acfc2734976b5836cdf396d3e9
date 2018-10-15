@@ -16,6 +16,24 @@
       "revId": "7185fc72fdceb8acfc2734976b5836cdf396d3e9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21c8f0cc_9b2afea6",
+        "filename": "vndk/tools/system_image_diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1126544
+      },
+      "writtenOn": "2018-10-15T20:13:53Z",
+      "side": 1,
+      "message": "These string manipulations are definitely brittle. Reworked it to use the paths directly.",
+      "parentUuid": "0546dbae_abbdbc58",
+      "revId": "7185fc72fdceb8acfc2734976b5836cdf396d3e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
