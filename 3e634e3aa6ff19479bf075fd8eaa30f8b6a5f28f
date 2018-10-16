@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "d93cd6c0_04e4eaf9",
+        "filename": "tools/core_connectivity/check_style.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2018-10-16T09:58:37Z",
+      "side": 1,
+      "message": "Sorry I was trigger-happy with the submit button. The joy of seeing this submittable after months.\n\nComments addressed in aosp/790181",
+      "parentUuid": "c2879ef9_97e3772f",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 1
+      },
+      "revId": "3e634e3aa6ff19479bf075fd8eaa30f8b6a5f28f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "976927c3_cf4a2919",
         "filename": "tools/core_connectivity/check_style.sh",
         "patchSetId": 2
@@ -60,6 +84,24 @@
       "writtenOn": "2018-10-16T05:58:59Z",
       "side": 1,
       "message": "git repository",
+      "revId": "3e634e3aa6ff19479bf075fd8eaa30f8b6a5f28f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32d20117_62bb42b2",
+        "filename": "tools/core_connectivity/check_style.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2018-10-16T09:58:37Z",
+      "side": 1,
+      "message": "Likewise",
+      "parentUuid": "976927c3_cf4a2919",
       "revId": "3e634e3aa6ff19479bf075fd8eaa30f8b6a5f28f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
