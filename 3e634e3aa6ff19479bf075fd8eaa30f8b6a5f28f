@@ -22,6 +22,47 @@
       "revId": "3e634e3aa6ff19479bf075fd8eaa30f8b6a5f28f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2879ef9_97e3772f",
+        "filename": "tools/core_connectivity/check_style.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-10-16T05:58:59Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "b458c4f3_0c6c6966",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 1
+      },
+      "revId": "3e634e3aa6ff19479bf075fd8eaa30f8b6a5f28f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "976927c3_cf4a2919",
+        "filename": "tools/core_connectivity/check_style.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000835
+      },
+      "writtenOn": "2018-10-16T05:58:59Z",
+      "side": 1,
+      "message": "git repository",
+      "revId": "3e634e3aa6ff19479bf075fd8eaa30f8b6a5f28f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
