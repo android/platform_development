@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "560c58bd_94802f45",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-10-16T09:21:58Z",
+      "side": 1,
+      "message": "2 blank lines",
+      "revId": "b153decbf2e0176640a8ce3c2fd54f6b2182267d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
