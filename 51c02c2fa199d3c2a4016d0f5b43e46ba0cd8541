@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5166441e_23ac075a",
+        "filename": "vndk/tools/header-checker/header-abi-util/include/abi_diff_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-10-16T07:08:37Z",
+      "side": 1,
+      "message": "2 spaces",
+      "range": {
+        "startLine": 214,
+        "startChar": 1,
+        "endLine": 214,
+        "endChar": 2
+      },
+      "revId": "51c02c2fa199d3c2a4016d0f5b43e46ba0cd8541",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1da2418_847a6cea",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/collect_exported_headers.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-10-16T07:08:37Z",
+      "side": 1,
+      "message": "swap files, hidden files, and hidden dirs",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 28,
+        "endChar": 47
+      },
+      "revId": "51c02c2fa199d3c2a4016d0f5b43e46ba0cd8541",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
