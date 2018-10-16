@@ -12,10 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <ir_representation_json.h>
+#include "ir_representation_json.h"
 
 #include <json/reader.h>
 #include <json/writer.h>
+
 #include <llvm/Support/raw_ostream.h>
 
 #include <cstdlib>
