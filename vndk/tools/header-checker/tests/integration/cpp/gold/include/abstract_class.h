@@ -51,9 +51,8 @@ class SuperSpeaker {
  public:
   VIRTUAL_FUNCTIONS
   Volume SpeakLoud();
-  void SpeakLoudest() { };
-
-  virtual ~SuperSpeaker() { }
+  void SpeakLoudest() {}
+  virtual ~SuperSpeaker() {}
  private:
 #if GOLDEN_CHANGE_MEMBER_NAME_SAME_OFFSET
   int mSpeakderId_;
