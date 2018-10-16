@@ -72,8 +72,7 @@ static void ReplaceReferencesOtherTypeIdWithName(
 }
 
 static void ReplaceEnumTypeIRTypeIdsWithTypeNames(
-    const AbiElementMap<const TypeIR *> &type_graph,
-    EnumTypeIR *enum_type_ir) {
+    const AbiElementMap<const TypeIR *> &type_graph, EnumTypeIR *enum_type_ir) {
   // Replace underlying type.
   enum_type_ir->SetUnderlyingType(
       ConvertTypeIdToString(type_graph, enum_type_ir->GetUnderlyingType()));
@@ -129,7 +128,6 @@ void ReplaceTypeIdsWithTypeNames(
     case RecordTypeKind:
       ReplaceRecordTypeIRTypeIdsWithTypeNames(type_graph,
                                               static_cast<RecordTypeIR *>(lm));
-
       break;
     case EnumTypeKind:
      ReplaceEnumTypeIRTypeIdsWithTypeNames(type_graph,
@@ -165,8 +163,8 @@ void AbiDiffHelper::CompareEnumFields(
 
   enum_type_diff_ir->SetFieldsRemoved(std::move(removed_fields));
 
-  std::vector<std::pair<
-      const abi_util::EnumFieldIR *, const abi_util::EnumFieldIR *>> cf =
+  std::vector<std::pair<const abi_util::EnumFieldIR *,
+                        const abi_util::EnumFieldIR *>> cf =
       abi_util::FindCommonElements(old_fields_map, new_fields_map);
   std::vector<abi_util::EnumFieldDiffIR> enum_field_diffs;
   for (auto &&common_fields : cf) {
@@ -181,8 +179,8 @@ void AbiDiffHelper::CompareEnumFields(
 
 DiffStatus AbiDiffHelper::CompareEnumTypes(
     const abi_util::EnumTypeIR *old_type, const abi_util::EnumTypeIR *new_type,
-     std::deque<std::string> *type_queue,
-     abi_util::DiffMessageIR::DiffKind diff_kind) {
+    std::deque<std::string> *type_queue,
+    abi_util::DiffMessageIR::DiffKind diff_kind) {
   if (old_type->GetUniqueId() != new_type->GetUniqueId()) {
     return DiffStatus::direct_diff;
   }
@@ -372,9 +370,8 @@ AbiDiffHelper::CompareRecordFields(
       abi_util::FindCommonElements(old_fields_map, new_fields_map);
   bool common_field_diff_exists = false;
   for (auto &&common_fields : cf) {
-    auto diffed_field_ptr = CompareCommonRecordFields(common_fields.first,
-                                                      common_fields.second,
-                                                      type_queue, diff_kind);
+    auto diffed_field_ptr = CompareCommonRecordFields(
+        common_fields.first, common_fields.second, type_queue, diff_kind);
     if (!common_field_diff_exists &&
         (diffed_field_ptr.first &
         (DiffStatus::direct_diff | DiffStatus::indirect_diff))) {
@@ -522,7 +519,7 @@ DiffStatus AbiDiffHelper::CompareFunctionTypes(
     return DiffStatus::indirect_diff;
   }
 
-  return  DiffStatus::no_diff;
+  return DiffStatus::no_diff;
 }
 
 DiffStatus AbiDiffHelper::CompareRecordTypes(
@@ -563,10 +560,9 @@ DiffStatus AbiDiffHelper::CompareRecordTypes(
   }
   auto &old_fields_dup = old_type->GetFields();
   auto &new_fields_dup = new_type->GetFields();
-  auto field_status_and_diffs =
-      CompareRecordFields(old_fields_dup, new_fields_dup,
-                          type_queue, diff_kind);
-  // TODO: combine this with base class diffs as well.
+  auto field_status_and_diffs = CompareRecordFields(
+      old_fields_dup, new_fields_dup, type_queue, diff_kind);
+  // TODO: Combine this with base class diffs as well.
   final_diff_status = final_diff_status | field_status_and_diffs.diff_status_;
 
   std::vector<abi_util::CXXBaseSpecifierIR> old_bases = old_type->GetBases();
@@ -611,17 +607,17 @@ DiffStatus AbiDiffHelper::CompareRecordTypes(
       llvm::errs() << "AddDiffMessage on record type failed\n";
       ::exit(1);
     }
-  } // Records cannot be 'extended' compatibly, without a certain amount of
-    // risk.
+  }
+
   final_diff_status = final_diff_status |
       CompareTemplateInfo(old_type->GetTemplateElements(),
                           new_type->GetTemplateElements(),
                           type_queue, diff_kind);
 
-  return
-      (final_diff_status &
-      (DiffStatus::direct_diff | DiffStatus::indirect_diff)) ?
-        DiffStatus::indirect_diff : DiffStatus::no_diff;
+  // Records cannot be 'extended' compatibly, without a certain amount of risk.
+  return ((final_diff_status &
+           (DiffStatus::direct_diff | DiffStatus::indirect_diff)) ?
+          DiffStatus::indirect_diff : DiffStatus::no_diff);
 }
 
 DiffStatus AbiDiffHelper::CompareLvalueReferenceTypes(
@@ -681,11 +677,8 @@ DiffStatus AbiDiffHelper::CompareBuiltinTypes(
     const abi_util::BuiltinTypeIR *new_type) {
   // If the size, alignment and is_unsigned are the same, return no_diff
   // else return direct_diff.
-  uint64_t old_signedness = old_type->IsUnsigned();
-  uint64_t new_signedness = new_type->IsUnsigned();
-
   if (!CompareSizeAndAlignment(old_type, new_type) ||
-      old_signedness != new_signedness ||
+      old_type->IsUnsigned() != new_type->IsUnsigned() ||
       old_type->IsIntegralType() != new_type->IsIntegralType()) {
     return DiffStatus::direct_diff;
   }
@@ -735,11 +728,10 @@ DiffStatus AbiDiffHelper::CompareAndDumpTypeDiff(
   }
 
   if (kind == abi_util::LinkableMessageKind::EnumTypeKind) {
-      return CompareEnumTypes(
-          static_cast<const abi_util::EnumTypeIR *>(old_type),
-          static_cast<const abi_util::EnumTypeIR *>(new_type),
-          type_queue, diff_kind);
-
+    return CompareEnumTypes(
+        static_cast<const abi_util::EnumTypeIR *>(old_type),
+        static_cast<const abi_util::EnumTypeIR *>(new_type),
+        type_queue, diff_kind);
   }
 
   if (kind == abi_util::LinkableMessageKind::LvalueReferenceTypeKind) {
@@ -747,7 +739,6 @@ DiffStatus AbiDiffHelper::CompareAndDumpTypeDiff(
         static_cast<const abi_util::LvalueReferenceTypeIR *>(old_type),
         static_cast<const abi_util::LvalueReferenceTypeIR *>(new_type),
         type_queue, diff_kind);
-
   }
 
   if (kind == abi_util::LinkableMessageKind::RvalueReferenceTypeKind) {
@@ -792,15 +783,15 @@ DiffStatus AbiDiffHelper::CompareAndDumpTypeDiff(
     const std::string &old_type_id, const std::string &new_type_id,
     std::deque<std::string> *type_queue,
     abi_util::DiffMessageIR::DiffKind diff_kind) {
-
   // Check the map for type ids which have already been compared
   // These types have already been diffed, return without further comparison.
   if (!type_cache_->insert(old_type_id + new_type_id).second) {
     return DiffStatus::no_diff;
-  } else {
-    TypeQueueCheckAndPushBack(type_queue,
-                              ConvertTypeIdToString(old_types_,old_type_id));
   }
+
+  TypeQueueCheckAndPushBack(
+      type_queue, ConvertTypeIdToString(old_types_,old_type_id));
+
   AbiElementMap<const abi_util::TypeIR *>::const_iterator old_it =
       old_types_.find(old_type_id);
   AbiElementMap<const abi_util::TypeIR *>::const_iterator new_it =
@@ -813,10 +804,9 @@ DiffStatus AbiDiffHelper::CompareAndDumpTypeDiff(
     }
     return DiffStatus::no_diff;
   }
-  abi_util::LinkableMessageKind old_kind =
-      old_it->second->GetKind();
-  abi_util::LinkableMessageKind new_kind =
-      new_it->second->GetKind();
+
+  abi_util::LinkableMessageKind old_kind = old_it->second->GetKind();
+  abi_util::LinkableMessageKind new_kind = new_it->second->GetKind();
   DiffStatus diff_status = DiffStatus::no_diff;
   if (old_kind != new_kind) {
     diff_status = CompareDistinctKindMessages(old_it->second, new_it->second);
@@ -824,6 +814,7 @@ DiffStatus AbiDiffHelper::CompareAndDumpTypeDiff(
     diff_status = CompareAndDumpTypeDiff(old_it->second , new_it->second ,
                                          old_kind, type_queue, diff_kind);
   }
+
   TypeQueueCheckAndPop(type_queue);
   if (diff_policy_options_.consider_opaque_types_different_ &&
       diff_status == DiffStatus::opaque_diff &&
@@ -833,4 +824,4 @@ DiffStatus AbiDiffHelper::CompareAndDumpTypeDiff(
   return diff_status;
 }
 
-} // namespace abi_util
+}  // namespace abi_util

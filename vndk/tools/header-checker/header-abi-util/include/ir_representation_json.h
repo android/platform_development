@@ -11,8 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-#ifndef IR_JSON_
-#define IR_JSON_
+
+#ifndef IR_REPRESENTATION_JSON_H_
+#define IR_REPRESENTATION_JSON_H_
 
 #include <ir_representation.h>
 
@@ -281,6 +282,7 @@ class JsonToIRReader : public TextFormatToIRReader {
 
   static EnumTypeIR EnumTypeJsonToIR(const JsonObjectRef &enum_type);
 };
-} // namespace abi_util
 
-#endif // IR_JSON_
+}  // namespace abi_util
+
+#endif  // IR_REPRESENTATION_JSON_H_
