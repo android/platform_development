@@ -157,6 +157,9 @@ bool HeaderASTVisitor::TraverseDecl(clang::Decl *decl) {
   if (!decl) {
     return true;
   }
+  if (decl->isInvalidDecl()) {
+    return true;
+  }
   std::string source_file = ABIWrapper::GetDeclSourceFile(decl, cip_);
   ast_caches_->decl_to_source_file_cache_.insert(
       std::make_pair(decl, source_file));
@@ -183,7 +186,9 @@ HeaderASTConsumer::HeaderASTConsumer(
     : cip_(compiler_instancep),
       out_dump_name_(out_dump_name),
       exported_headers_(exported_headers),
-      text_format_(text_format) {}
+      text_format_(text_format) {
+  compiler_instancep->getDiagnostics().setSuppressAllDiagnostics(true);
+}
 
 void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
   clang::PrintingPolicy policy(ctx.getPrintingPolicy());
