@@ -183,7 +183,9 @@ HeaderASTConsumer::HeaderASTConsumer(
     : cip_(compiler_instancep),
       out_dump_name_(out_dump_name),
       exported_headers_(exported_headers),
-      text_format_(text_format) {}
+      text_format_(text_format) {
+  compiler_instancep->getDiagnostics().setSuppressAllDiagnostics();
+}
 
 void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
   clang::PrintingPolicy policy(ctx.getPrintingPolicy());
