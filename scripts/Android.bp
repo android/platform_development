@@ -27,3 +27,12 @@ python_library_host {
     },
 }
 
+python_test_host {
+    name: "python_symbol_test",
+    main: "symbol.py",
+    // Would be nice to use the library above, but as it's single-source
+    // this doesn't work.
+    srcs: ["symbol.py"],
+    test_config: "symbol-tests.xml",
+    test_suites: ["general-tests"],
+}
