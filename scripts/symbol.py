@@ -28,7 +28,10 @@ import signal
 import subprocess
 import unittest
 
-ANDROID_BUILD_TOP = str(os.environ["ANDROID_BUILD_TOP"])
+try:
+  ANDROID_BUILD_TOP = str(os.environ["ANDROID_BUILD_TOP"])
+except:
+  pass
 if not ANDROID_BUILD_TOP:
   ANDROID_BUILD_TOP = "."
 
