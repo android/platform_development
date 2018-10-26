@@ -35,16 +35,20 @@ class HeaderCheckerFrontendAction : public clang::ASTFrontendAction {
   const std::string &dump_name_;
   std::set<std::string> &exported_headers_;
   abi_util::TextFormatIR text_format_;
+  const bool suppress_errors_;
 
  public:
   HeaderCheckerFrontendAction(
       const std::string &dump_name,
       std::set<std::string> &exported_headers,
-      abi_util::TextFormatIR text_format);
+      abi_util::TextFormatIR text_format,
+      bool suppress_errors_);
 
  protected:
   std::unique_ptr<clang::ASTConsumer> CreateASTConsumer(
       clang::CompilerInstance &ci, llvm::StringRef header_file) override;
+
+  bool BeginInvocation(clang::CompilerInstance &ci) override;
 };
 
 #endif  // FRONTEND_ACTION_H_

@@ -27,12 +27,14 @@ class HeaderCheckerFrontendActionFactory
   const std::string &dump_name_;
   std::set<std::string> &exported_headers_;
   abi_util::TextFormatIR text_format_;
+  const bool suppress_errors_;
 
  public:
   HeaderCheckerFrontendActionFactory(
       const std::string &dump_name,
       std::set<std::string> &exported_headers,
-      abi_util::TextFormatIR text_format);
+      abi_util::TextFormatIR text_format,
+      bool suppress_errors);
 
   clang::FrontendAction *create() override;
 };

@@ -50,6 +50,10 @@ static llvm::cl::opt<bool> no_filter(
     "no-filter", llvm::cl::desc("Do not filter any abi"), llvm::cl::Optional,
     llvm::cl::cat(header_checker_category));
 
+static llvm::cl::opt<bool> suppress_errors(
+    "suppress-errors", llvm::cl::desc("Suppress all compilation errors"),
+    llvm::cl::Optional, llvm::cl::cat(header_checker_category));
+
 static llvm::cl::opt<abi_util::TextFormatIR> output_format(
     "output-format", llvm::cl::desc("Specify format of output dump file"),
     llvm::cl::values(clEnumValN(abi_util::TextFormatIR::ProtobufTextFormat,
@@ -128,7 +132,7 @@ int main(int argc, const char **argv) {
   clang::tooling::ClangTool tool(*compilations, header_files);
   std::unique_ptr<clang::tooling::FrontendActionFactory> factory(
       new HeaderCheckerFrontendActionFactory(out_dump, exported_headers,
-                                             output_format));
+                                             output_format, suppress_errors));
 
   return tool.run(factory.get());
 }
