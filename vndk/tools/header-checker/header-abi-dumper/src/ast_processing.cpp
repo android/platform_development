@@ -47,6 +47,10 @@ HeaderASTVisitor::HeaderASTVisitor(
       ast_caches_(ast_caches) {}
 
 bool HeaderASTVisitor::VisitRecordDecl(const clang::RecordDecl *decl) {
+  // Avoid segmentation fault in getASTRecordLayout.
+  if (decl->isInvalidDecl()) {
+    return true;
+  }
   // Skip forward declarations, dependent records. Also skip anonymous records
   // as they will be traversed through record fields.
   if (!decl->isThisDeclarationADefinition() ||

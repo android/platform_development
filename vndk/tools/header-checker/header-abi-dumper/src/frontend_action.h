@@ -30,21 +30,32 @@ namespace clang {
   class CompilerInstance;
 }  // namespace clang
 
+class HeaderCheckerFrontendOptions {
+ public:
+  const std::string &dump_name;
+  std::set<std::string> &exported_headers;
+  abi_util::TextFormatIR text_format;
+  bool suppress_errors;
+
+  HeaderCheckerFrontendOptions(const std::string &dump_name_arg,
+                               std::set<std::string> &exported_headers_arg,
+                               abi_util::TextFormatIR text_format_arg,
+                               bool suppress_errors_arg);
+};
+
 class HeaderCheckerFrontendAction : public clang::ASTFrontendAction {
  private:
-  const std::string &dump_name_;
-  std::set<std::string> &exported_headers_;
-  abi_util::TextFormatIR text_format_;
+  const HeaderCheckerFrontendOptions &options_;
 
  public:
-  HeaderCheckerFrontendAction(
-      const std::string &dump_name,
-      std::set<std::string> &exported_headers,
-      abi_util::TextFormatIR text_format);
+  HeaderCheckerFrontendAction(const HeaderCheckerFrontendOptions &options);
 
  protected:
   std::unique_ptr<clang::ASTConsumer> CreateASTConsumer(
       clang::CompilerInstance &ci, llvm::StringRef header_file) override;
+
+  bool BeginInvocation(clang::CompilerInstance &ci) override;
+  bool BeginSourceFileAction(clang::CompilerInstance &ci) override;
 };
 
 #endif  // FRONTEND_ACTION_H_
