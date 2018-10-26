@@ -1,4 +1,4 @@
-// Copyright (C) 2016 The Android Open Source Project
+// Copyright (C) 2018 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,25 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef FRONTEND_ACTION_FACTORY_H_
-#define FRONTEND_ACTION_FACTORY_H_
+#ifndef HEADER_CHECKER_H_
+#define HEADER_CHECKER_H_
 
-#include "frontend_action.h"
 #include "ir_representation.h"
 
-#include <clang/Tooling/Tooling.h>
+#include <set>
+#include <string>
 
-#include <vector>
-
-class HeaderCheckerFrontendActionFactory
-    : public clang::tooling::FrontendActionFactory {
- private:
-  const HeaderCheckerOptions &options_;
-
+class HeaderCheckerOptions {
  public:
-  HeaderCheckerFrontendActionFactory(const HeaderCheckerOptions &options);
+  const std::string &dump_name_;
+  std::set<std::string> &exported_headers_;
+  abi_util::TextFormatIR text_format_;
+  bool suppress_errors_;
 
-  clang::FrontendAction *create() override;
+  HeaderCheckerOptions(const std::string &dump_name,
+                       std::set<std::string> &exported_headers,
+                       abi_util::TextFormatIR text_format,
+                       bool suppress_errors);
 };
 
-#endif  // FRONTEND_ACTION_FACTORY_H_
+#endif  // HEADER_CHECKER_H_
