@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bb97c7d0_c7cadfcb",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-30T17:12:44Z",
+      "side": 1,
+      "message": "Open for it either way. It was more of a core test fix (as atest etc run in a sandbox that isn\u0027t lunched), so I left it with adding the test.",
+      "parentUuid": "70d79a46_154d64b2",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 56
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5d9eaf03_a646856d",
         "filename": "scripts/symbol.py",
         "patchSetId": 2
@@ -83,6 +107,30 @@
       "writtenOn": "2018-10-30T17:10:50Z",
       "side": 1,
       "message": "You can replace this with:\n\n    if not hasattr(unittest.TestCase, \u0027assertRaisesRegex\u0027):\n      unittest.TestCase.assertRaisesRegex \u003d getattr(unittest.TestCase, \u0027assertRaisesRegexp\u0027)\n\nAnd then change the call to assertRaisesRegex.",
+      "range": {
+        "startLine": 723,
+        "startChar": 6,
+        "endLine": 723,
+        "endChar": 69
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa326898_c9eac7ad",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-30T17:12:44Z",
+      "side": 1,
+      "message": "We\u0027re OK \"fixing up\" classes? :-)",
+      "parentUuid": "9a0b3160_9b345c14",
       "range": {
         "startLine": 723,
         "startChar": 6,
