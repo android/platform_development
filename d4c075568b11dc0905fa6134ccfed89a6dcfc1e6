@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "2616a2b7_947599fe",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-30T18:03:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "34bd947c_03052da7",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 56
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5d9eaf03_a646856d",
         "filename": "scripts/symbol.py",
         "patchSetId": 2
@@ -108,6 +132,30 @@
       "side": 1,
       "message": "It doesn\u0027t seem too bad to leave it like this.",
       "parentUuid": "5d9eaf03_a646856d",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 45,
+        "endChar": 22
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca669478_783bd9fd",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-30T18:03:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4a2dce27_32203689",
       "range": {
         "startLine": 38,
         "startChar": 2,
@@ -188,6 +236,30 @@
       "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f147080a_a7f89f53",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-30T18:03:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7dce27f2_8c61979f",
+      "range": {
+        "startLine": 723,
+        "startChar": 6,
+        "endLine": 723,
+        "endChar": 69
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
