@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d9eaf03_a646856d",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1041833
+      },
+      "writtenOn": "2018-10-30T15:03:28Z",
+      "side": 1,
+      "message": "Thinking about it, I guess I could do \"with Popen as stream\" here if that\u0027s preferred...",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 45,
+        "endChar": 22
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
