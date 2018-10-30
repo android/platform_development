@@ -33,10 +33,10 @@ class HeaderASTVisitor
   HeaderASTVisitor(clang::MangleContext *mangle_contextp,
                    clang::ASTContext *ast_contextp,
                    const clang::CompilerInstance *compiler_instance_p,
-                   const std::set<std::string> &exported_headers,
                    const clang::Decl *tu_decl,
                    abi_util::IRDumper *ir_dumper,
-                   ast_util::ASTCaches *ast_caches);
+                   ast_util::ASTCaches *ast_caches,
+                   const HeaderCheckerOptions &options);
 
   bool VisitRecordDecl(const clang::RecordDecl *decl);
 
@@ -49,21 +49,21 @@ class HeaderASTVisitor
   bool TraverseDecl(clang::Decl *decl);
 
   // Enable recursive traversal of template instantiations.
-  bool shouldVisitTemplateInstantiations() const {
-    return true;
-  }
+  bool shouldVisitTemplateInstantiations() const { return true; }
 
  private:
+  bool ShouldSkipFunctionDecl(const clang::FunctionDecl *decl);
+
   clang::MangleContext *mangle_contextp_;
   clang::ASTContext *ast_contextp_;
   const clang::CompilerInstance *cip_;
-  const std::set<std::string> &exported_headers_;
   // To optimize recursion into only exported abi.
   const clang::Decl *tu_decl_;
   abi_util::IRDumper *ir_dumper_;
   // We cache the source file an AST node corresponds to, to avoid repeated
   // calls to "realpath".
   ast_util::ASTCaches *ast_caches_;
+  const HeaderCheckerOptions &options_;
 };
 
 class HeaderASTConsumer : public clang::ASTConsumer {
