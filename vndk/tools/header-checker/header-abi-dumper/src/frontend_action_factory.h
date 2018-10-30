@@ -15,6 +15,7 @@
 #ifndef FRONTEND_ACTION_FACTORY_H_
 #define FRONTEND_ACTION_FACTORY_H_
 
+#include "frontend_action.h"
 #include "ir_representation.h"
 
 #include <clang/Tooling/Tooling.h>
@@ -24,18 +25,10 @@
 class HeaderCheckerFrontendActionFactory
     : public clang::tooling::FrontendActionFactory {
  private:
-  const std::string &dump_name_;
-  std::set<std::string> &exported_headers_;
-  abi_util::TextFormatIR text_format_;
-  const bool suppress_errors_;
+  const HeaderCheckerFrontendOptions &options_;
 
  public:
-  HeaderCheckerFrontendActionFactory(
-      const std::string &dump_name,
-      std::set<std::string> &exported_headers,
-      abi_util::TextFormatIR text_format,
-      bool suppress_errors);
-
+  HeaderCheckerFrontendActionFactory(const HeaderCheckerFrontendOptions &options);
   clang::FrontendAction *create() override;
 };
 

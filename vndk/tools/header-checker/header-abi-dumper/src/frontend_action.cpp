@@ -24,21 +24,28 @@
 
 #include <llvm/ADT/STLExtras.h>
 
+HeaderCheckerFrontendOptions::HeaderCheckerFrontendOptions(
+    const std::string &source_file_arg, const std::string &dump_name_arg, std::set<std::string> &exported_headers_arg,
+    abi_util::TextFormatIR text_format_arg, bool include_undefined_functions_arg, bool suppress_errors_arg)
+    : source_file(source_file_arg), dump_name(dump_name_arg), exported_headers(exported_headers_arg),
+      text_format(text_format_arg),
+      include_undefined_functions(include_undefined_functions_arg),
+      suppress_errors(suppress_errors_arg) {}
+
 HeaderCheckerFrontendAction::HeaderCheckerFrontendAction(
-    const std::string &dump_name, std::set<std::string> &exported_headers,
-    abi_util::TextFormatIR text_format, bool suppress_errors)
-    : dump_name_(dump_name), exported_headers_(exported_headers),
-      text_format_(text_format), suppress_errors_(suppress_errors) {}
+    const HeaderCheckerFrontendOptions &options) : options_(options) {}
 
 std::unique_ptr<clang::ASTConsumer>
 HeaderCheckerFrontendAction::CreateASTConsumer(clang::CompilerInstance &ci,
                                                llvm::StringRef header_file) {
   // Create AST consumers.
-  return llvm::make_unique<HeaderASTConsumer>(&ci, dump_name_,
-                                              exported_headers_, text_format_);
+  return llvm::make_unique<HeaderASTConsumer>(&ci, options_.source_file, options_.dump_name,
+                                              options_.exported_headers,
+                                              options_.text_format,
+                                              options_.include_undefined_functions);
 }
 
 bool HeaderCheckerFrontendAction::BeginInvocation(clang::CompilerInstance &ci) {
-  ci.getDiagnostics().setSuppressAllDiagnostics(suppress_errors_);
+  ci.getDiagnostics().setSuppressAllDiagnostics(options_.suppress_errors);
   return true;
 }
