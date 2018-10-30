@@ -31,20 +31,13 @@ using abi_wrapper::EnumDeclWrapper;
 using abi_wrapper::GlobalVarDeclWrapper;
 
 HeaderASTVisitor::HeaderASTVisitor(
-    clang::MangleContext *mangle_contextp,
-    clang::ASTContext *ast_contextp,
+    clang::MangleContext *mangle_contextp, clang::ASTContext *ast_contextp,
     const clang::CompilerInstance *compiler_instance_p,
-    const std::set<std::string> &exported_headers,
-    const clang::Decl *tu_decl,
-    abi_util::IRDumper *ir_dumper,
-    ast_util::ASTCaches *ast_caches)
-    : mangle_contextp_(mangle_contextp),
-      ast_contextp_(ast_contextp),
-      cip_(compiler_instance_p),
-      exported_headers_(exported_headers),
-      tu_decl_(tu_decl),
-      ir_dumper_(ir_dumper),
-      ast_caches_(ast_caches) {}
+    const clang::Decl *tu_decl, abi_util::IRDumper *ir_dumper,
+    ast_util::ASTCaches *ast_caches, const HeaderCheckerOptions &options)
+    : mangle_contextp_(mangle_contextp), ast_contextp_(ast_contextp),
+      cip_(compiler_instance_p), tu_decl_(tu_decl), ir_dumper_(ir_dumper),
+      ast_caches_(ast_caches), options_(options) {}
 
 bool HeaderASTVisitor::VisitRecordDecl(const clang::RecordDecl *decl) {
   // Avoid segmentation fault in getASTRecordLayout.
@@ -96,8 +89,14 @@ static bool AddMangledFunctions(const abi_util::FunctionIR *function,
   return true;
 }
 
-static bool ShouldSkipFunctionDecl(const clang::FunctionDecl *decl) {
+bool HeaderASTVisitor::ShouldSkipFunctionDecl(const clang::FunctionDecl *decl) {
   if (!decl->getDefinition()) {
+    if (!options_.include_undefined_functions_ ||
+        options_.source_file_ != ABIWrapper::GetDeclSourceFile(decl, cip_)) {
+      return true;
+    }
+  }
+  if (decl->isDeleted()) {
     return true;
   }
   if (decl->getLinkageAndVisibility().getLinkage() !=
@@ -165,8 +164,9 @@ bool HeaderASTVisitor::TraverseDecl(clang::Decl *decl) {
   ast_caches_->decl_to_source_file_cache_.insert(
       std::make_pair(decl, source_file));
   // If no exported headers are specified we assume the whole AST is exported.
-  if ((decl != tu_decl_) && AreHeadersExported(exported_headers_) &&
-      (exported_headers_.find(source_file) == exported_headers_.end())) {
+  const auto &exported_headers = options_.exported_headers_;
+  if ((decl != tu_decl_) && AreHeadersExported(exported_headers) &&
+      (exported_headers.find(source_file) == exported_headers.end())) {
     return true;
   }
   // If at all we're looking at the source file's AST decl node, it should be a
@@ -203,9 +203,8 @@ void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
   std::unique_ptr<abi_util::IRDumper> ir_dumper =
       abi_util::IRDumper::CreateIRDumper(options_.text_format_,
                                          options_.dump_name_);
-  HeaderASTVisitor v(mangle_contextp.get(), &ctx, cip_,
-                     options_.exported_headers_, translation_unit,
-                     ir_dumper.get(), &ast_caches);
+  HeaderASTVisitor v(mangle_contextp.get(), &ctx, cip_, translation_unit,
+                     ir_dumper.get(), &ast_caches, options_);
 
   if (!v.TraverseDecl(translation_unit) || !ir_dumper->Dump()) {
     llvm::errs() << "Serialization to ostream failed\n";

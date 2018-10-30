@@ -22,14 +22,18 @@
 
 class HeaderCheckerOptions {
  public:
+  const std::string &source_file_;
   const std::string &dump_name_;
   std::set<std::string> &exported_headers_;
   abi_util::TextFormatIR text_format_;
+  bool include_undefined_functions_;
   bool suppress_errors_;
 
-  HeaderCheckerOptions(const std::string &dump_name,
+  HeaderCheckerOptions(const std::string &source_file,
+                       const std::string &dump_name,
                        std::set<std::string> &exported_headers,
                        abi_util::TextFormatIR text_format,
+                       bool include_undefined_functions,
                        bool suppress_errors);
 };
 
