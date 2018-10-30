@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "70d79a46_154d64b2",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-10-30T17:10:50Z",
+      "side": 1,
+      "message": "Did you want to add the try around this the same as you did in the other file?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 56
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5d9eaf03_a646856d",
         "filename": "scripts/symbol.py",
         "patchSetId": 2
@@ -22,6 +45,53 @@
       "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a2dce27_32203689",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-10-30T17:10:50Z",
+      "side": 1,
+      "message": "It doesn\u0027t seem too bad to leave it like this.",
+      "parentUuid": "5d9eaf03_a646856d",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 45,
+        "endChar": 22
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b3160_9b345c14",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-10-30T17:10:50Z",
+      "side": 1,
+      "message": "You can replace this with:\n\n    if not hasattr(unittest.TestCase, \u0027assertRaisesRegex\u0027):\n      unittest.TestCase.assertRaisesRegex \u003d getattr(unittest.TestCase, \u0027assertRaisesRegexp\u0027)\n\nAnd then change the call to assertRaisesRegex.",
+      "range": {
+        "startLine": 723,
+        "startChar": 6,
+        "endLine": 723,
+        "endChar": 69
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
