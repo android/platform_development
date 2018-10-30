@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "34bd947c_03052da7",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-10-30T17:26:35Z",
+      "side": 1,
+      "message": "I\u0027m fine either way, if you don\u0027t think it\u0027s worth it, don\u0027t bother since we\u0027ve worked so far without it.",
+      "parentUuid": "bb97c7d0_c7cadfcb",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 56
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5d9eaf03_a646856d",
         "filename": "scripts/symbol.py",
         "patchSetId": 2
@@ -131,6 +155,30 @@
       "side": 1,
       "message": "We\u0027re OK \"fixing up\" classes? :-)",
       "parentUuid": "9a0b3160_9b345c14",
+      "range": {
+        "startLine": 723,
+        "startChar": 6,
+        "endLine": 723,
+        "endChar": 69
+      },
+      "revId": "d4c075568b11dc0905fa6134ccfed89a6dcfc1e6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7dce27f2_8c61979f",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2018-10-30T17:26:35Z",
+      "side": 1,
+      "message": "I think it\u0027s fine in this case. Probably add a comment mentioning that this is to make it work for python2 or python3.",
+      "parentUuid": "aa326898_c9eac7ad",
       "range": {
         "startLine": 723,
         "startChar": 6,
