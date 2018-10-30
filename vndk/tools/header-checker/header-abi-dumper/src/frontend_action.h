@@ -32,14 +32,18 @@ namespace clang {
 
 class HeaderCheckerFrontendOptions {
  public:
+  const std::string &source_file;
   const std::string &dump_name;
   std::set<std::string> &exported_headers;
   abi_util::TextFormatIR text_format;
+  bool include_undefined_functions;
   bool suppress_errors;
 
-  HeaderCheckerFrontendOptions(const std::string &dump_name_arg,
+  HeaderCheckerFrontendOptions(const std::string &source_file_arg,
+                               const std::string &dump_name_arg,
                                std::set<std::string> &exported_headers_arg,
                                abi_util::TextFormatIR text_format_arg,
+                               bool include_undefined_functions_arg,
                                bool suppress_errors_arg);
 };
 

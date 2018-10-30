@@ -31,20 +31,17 @@ using abi_wrapper::EnumDeclWrapper;
 using abi_wrapper::GlobalVarDeclWrapper;
 
 HeaderASTVisitor::HeaderASTVisitor(
-    clang::MangleContext *mangle_contextp,
-    clang::ASTContext *ast_contextp,
+    clang::MangleContext *mangle_contextp, clang::ASTContext *ast_contextp,
     const clang::CompilerInstance *compiler_instance_p,
-    const std::set<std::string> &exported_headers,
-    const clang::Decl *tu_decl,
-    abi_util::IRDumper *ir_dumper,
-    ast_util::ASTCaches *ast_caches)
-    : mangle_contextp_(mangle_contextp),
-      ast_contextp_(ast_contextp),
-      cip_(compiler_instance_p),
-      exported_headers_(exported_headers),
-      tu_decl_(tu_decl),
-      ir_dumper_(ir_dumper),
-      ast_caches_(ast_caches) {}
+    const std::string &source_file,
+    const std::set<std::string> &exported_headers, const clang::Decl *tu_decl,
+    abi_util::IRDumper *ir_dumper, ast_util::ASTCaches *ast_caches,
+    bool include_undefined_functions)
+    : mangle_contextp_(mangle_contextp), ast_contextp_(ast_contextp),
+      cip_(compiler_instance_p), source_file_(source_file),
+      exported_headers_(exported_headers), tu_decl_(tu_decl),
+      ir_dumper_(ir_dumper), ast_caches_(ast_caches),
+      include_undefined_functions_(include_undefined_functions) {}
 
 bool HeaderASTVisitor::VisitRecordDecl(const clang::RecordDecl *decl) {
   // Avoid segmentation fault in getASTRecordLayout.
@@ -96,8 +93,14 @@ static bool AddMangledFunctions(const abi_util::FunctionIR *function,
   return true;
 }
 
-static bool ShouldSkipFunctionDecl(const clang::FunctionDecl *decl) {
+bool HeaderASTVisitor::ShouldSkipFunctionDecl(const clang::FunctionDecl *decl) {
   if (!decl->getDefinition()) {
+    if (!include_undefined_functions_ ||
+        source_file_ != ABIWrapper::GetDeclSourceFile(decl, cip_)) {
+      return true;
+    }
+  }
+  if (decl->isDeleted()) {
     return true;
   }
   if (decl->getLinkageAndVisibility().getLinkage() !=
@@ -180,14 +183,13 @@ bool HeaderASTVisitor::TraverseDecl(clang::Decl *decl) {
 }
 
 HeaderASTConsumer::HeaderASTConsumer(
-    clang::CompilerInstance *compiler_instancep,
-    const std::string &out_dump_name,
-    std::set<std::string> &exported_headers,
-    abi_util::TextFormatIR text_format)
-    : cip_(compiler_instancep),
-      out_dump_name_(out_dump_name),
-      exported_headers_(exported_headers),
-      text_format_(text_format) {}
+    clang::CompilerInstance *compiler_instancep, const std::string &source_file,
+    const std::string &out_dump_name, std::set<std::string> &exported_headers,
+    abi_util::TextFormatIR text_format, bool include_undefined_functions)
+    : cip_(compiler_instancep), source_file_(source_file),
+      out_dump_name_(out_dump_name), exported_headers_(exported_headers),
+      text_format_(text_format),
+      include_undefined_functions_(include_undefined_functions) {}
 
 void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
   clang::PrintingPolicy policy(ctx.getPrintingPolicy());
@@ -207,8 +209,9 @@ void HeaderASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
   }
   std::unique_ptr<abi_util::IRDumper> ir_dumper =
       abi_util::IRDumper::CreateIRDumper(text_format_, out_dump_name_);
-  HeaderASTVisitor v(mangle_contextp.get(), &ctx, cip_, exported_headers_,
-                     translation_unit, ir_dumper.get(), &ast_caches);
+  HeaderASTVisitor v(mangle_contextp.get(), &ctx, cip_, source_file_,
+                     exported_headers_, translation_unit, ir_dumper.get(),
+                     &ast_caches, include_undefined_functions_);
 
   if (!v.TraverseDecl(translation_unit) || !ir_dumper->Dump()) {
     llvm::errs() << "Serialization to ostream failed\n";
