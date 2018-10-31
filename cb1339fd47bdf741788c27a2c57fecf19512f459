@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34b63958_693abd03",
+        "filename": "tools/core_connectivity/check_style.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1273909
+      },
+      "writtenOn": "2018-10-31T03:41:17Z",
+      "side": 1,
+      "message": "We already have an automated clang-format check in system/netd/PREUPLOAD.cfg\n\nWhen is this script used?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 63
+      },
+      "revId": "cb1339fd47bdf741788c27a2c57fecf19512f459",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
