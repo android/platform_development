@@ -22,6 +22,30 @@
       "revId": "cb1339fd47bdf741788c27a2c57fecf19512f459",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adad0a39_f25768a6",
+        "filename": "tools/core_connectivity/check_style.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1306837
+      },
+      "writtenOn": "2018-10-31T06:27:22Z",
+      "side": 1,
+      "message": "The script is used to run manually for some cases that precommit hook does not applied.\nE.g. framework/base and external/android-clat.\nAs talked in offline discussion, agreed that we should also increase automation for coding style check.\nI\u0027ll submit another commit for presubmit hook for clat.\n\nFor java, +jchalard@ how about we add diretories that we own to the white list. https://cs.corp.google.com/aosp-master/frameworks/base/PREUPLOAD.cfg?type\u003dcs\u0026q\u003dframeworks/base/PREUPLOAD.cfg\u0026sq\u003dpackage:aosp-master\u0026g\u003d0\u0026l\u003d1\n\nFor c++, do we still have other code that does not covered by presubmit hook?",
+      "parentUuid": "34b63958_693abd03",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 63
+      },
+      "revId": "cb1339fd47bdf741788c27a2c57fecf19512f459",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
