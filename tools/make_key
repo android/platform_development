@@ -69,7 +69,7 @@ if [ "${password}" == "" ]; then
 else
   echo "creating ${1}.pk8 with password [${password}]"
   export password
-  openssl pkcs8 -in ${one} -topk8 -outform DER -out $1.pk8 \
+  openssl pkcs8 -in ${one} -topk8 -v1 PBE-SHA1-3DES -outform DER -out $1.pk8 \
     -passout env:password
   unset password
 fi
