@@ -16,6 +16,7 @@
 
 #include "ast_processing.h"
 #include "diagnostic_consumer.h"
+#include "fake_decl_source.h"
 #include "header_abi_util.h"
 #include "ir_representation.h"
 
@@ -48,7 +49,10 @@ bool HeaderCheckerFrontendAction::BeginInvocation(clang::CompilerInstance &ci) {
 
 bool HeaderCheckerFrontendAction::BeginSourceFileAction(
     clang::CompilerInstance &ci) {
-  ci.getPreprocessor().SetSuppressIncludeNotFoundError(
-      options_.suppress_errors_);
+  if (options_.suppress_errors_) {
+    ci.setExternalSemaSource(new FakeDeclSource(ci));
+    ci.getPreprocessor().SetSuppressIncludeNotFoundError(
+        options_.suppress_errors_);
+  }
   return true;
 }
