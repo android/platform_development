@@ -19,6 +19,8 @@ package com.example.android.toyvpn;
 import static java.nio.charset.StandardCharsets.US_ASCII;
 
 import android.app.PendingIntent;
+import android.content.pm.PackageManager;
+import android.net.ProxyInfo;
 import android.net.VpnService;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
@@ -31,6 +33,7 @@ import java.net.SocketAddress;
 import java.net.SocketException;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class ToyVpnConnection implements Runnable {
@@ -83,14 +86,34 @@ public class ToyVpnConnection implements Runnable {
     private PendingIntent mConfigureIntent;
     private OnEstablishListener mOnEstablishListener;
 
+    // Proxy settings
+    private String mProxyHostName;
+    private int mProxyHostPort;
+
+    // Allowed/Disallowed packages for VPN usage
+    private final boolean mAllow;
+    private final Set<String> mPackages;
+
     public ToyVpnConnection(final VpnService service, final int connectionId,
-            final String serverName, final int serverPort, final byte[] sharedSecret) {
+            final String serverName, final int serverPort, final byte[] sharedSecret,
+            final String proxyHostName, final String proxyHostPort, boolean allow,
+            final Set<String> packages) {
         mService = service;
         mConnectionId = connectionId;
 
         mServerName = serverName;
         mServerPort= serverPort;
         mSharedSecret = sharedSecret;
+
+        if (proxyHostName != null && !proxyHostName.isEmpty()) {
+            mProxyHostName = proxyHostName;
+        }
+        if (proxyHostPort != null && !proxyHostPort.isEmpty()) {
+            // The port value is always an integer due to the configured inputType.
+            mProxyHostPort = Integer.valueOf(proxyHostPort);
+        }
+        mAllow = allow;
+        mPackages = packages;
     }
 
     /**
@@ -310,10 +333,30 @@ public class ToyVpnConnection implements Runnable {
         // Create a new interface using the builder and save the parameters.
         final ParcelFileDescriptor vpnInterface;
         synchronized (mService) {
-            vpnInterface = builder
-                    .setSession(mServerName)
-                    .setConfigureIntent(mConfigureIntent)
-                    .establish();
+            if (!mPackages.isEmpty()) {
+                for (String packageName : mPackages) {
+                    try {
+                        if (mAllow) {
+                            Log.w(getTag(), "ToyVpn allows package " + packageName);
+                            builder.addAllowedApplication(packageName);
+                        } else {
+
+                            Log.w(getTag(), "ToyVpn disallows package " + packageName);
+                            builder.addDisallowedApplication(packageName);
+                        }
+
+                    } catch (PackageManager.NameNotFoundException e){
+                        Log.w(getTag(), "Package not available: " + packageName, e);
+                    }
+                }
+            }
+            builder.setSession(mServerName).setConfigureIntent(mConfigureIntent);
+            if (mProxyHostName != null) {
+                builder.setHttpProxy(
+                        ProxyInfo.buildDirectProxy(mProxyHostName, mProxyHostPort));
+            }
+
+            vpnInterface = builder.establish();
             if (mOnEstablishListener != null) {
                 mOnEstablishListener.onEstablish(vpnInterface);
             }
