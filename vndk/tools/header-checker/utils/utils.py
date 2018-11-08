@@ -35,6 +35,7 @@ VENDOR_SUFFIX = '.vendor'
 
 DEFAULT_CPPFLAGS = ['-x', 'c++', '-std=c++11']
 DEFAULT_CFLAGS = ['-std=gnu99']
+DEFAULT_HEADER_FLAGS = ["-dump-function-declarations"]
 DEFAULT_FORMAT = 'ProtobufTextFormat'
 
 TARGET_ARCHS = ['arm', 'arm64', 'x86', 'x86_64', 'mips', 'mips64']
@@ -99,11 +100,12 @@ def read_output_content(output_path, replace_str):
 
 
 def run_header_abi_dumper(input_path, remove_absolute_paths, cflags=tuple(),
-                          export_include_dirs=EXPORTED_HEADERS_DIR):
+                          export_include_dirs=EXPORTED_HEADERS_DIR,
+                          flags=tuple()):
     with tempfile.TemporaryDirectory() as tmp:
         output_path = os.path.join(tmp, os.path.basename(input_path)) + '.dump'
         run_header_abi_dumper_on_file(input_path, output_path,
-                                      export_include_dirs, cflags)
+                                      export_include_dirs, cflags, flags)
         if remove_absolute_paths:
             return read_output_content(output_path, AOSP_DIR)
         with open(output_path, 'r') as f:
@@ -120,6 +122,8 @@ def run_header_abi_dumper_on_file(input_path, output_path,
     cmd += flags
     if '-output-format' not in flags:
         cmd += ['-output-format', DEFAULT_FORMAT]
+    if input_ext == ".h":
+        cmd += DEFAULT_HEADER_FLAGS
     cmd += ['--']
     cmd += cflags
     if input_ext in ('.cpp', '.cc', '.h'):
