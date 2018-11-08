@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f70aacd_bd17112e",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-08T06:13:25Z",
+      "side": 1,
+      "message": "Add some explanation for this case.  For example:\n\n    // FunctionDecls with errors are still being visited when `-suppress-errors` is specified. Skip those functions to avoid SEGVs.",
+      "revId": "b61f41c866699c3f5a93c60762ada5019839bb75",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b7c7b6d_2a117fca",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-08T06:13:25Z",
+      "side": 1,
+      "message": "Add this as the first argument for this constructor.",
+      "range": {
+        "startLine": 39,
+        "startChar": 19,
+        "endLine": 39,
+        "endChar": 54
+      },
+      "revId": "b61f41c866699c3f5a93c60762ada5019839bb75",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd46cd50_0063438e",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/header_checker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-08T06:13:25Z",
+      "side": 1,
+      "message": "I feel that `dump-function-declarations` or `dump-function-prototypes` might be better.  I prefer affirmative terms to substrative terms.  Furthermore, depending on the context, `include` and `undefined` might be interpreted in different ways.",
+      "range": {
+        "startLine": 61,
+        "startChar": 5,
+        "endLine": 61,
+        "endChar": 32
+      },
+      "revId": "b61f41c866699c3f5a93c60762ada5019839bb75",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d182baab_03d627af",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/header_checker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-08T06:13:25Z",
+      "side": 1,
+      "message": "Simply use `abi_util::RealPath(...)` below?",
+      "range": {
+        "startLine": 139,
+        "startChar": 2,
+        "endLine": 139,
+        "endChar": 64
+      },
+      "revId": "b61f41c866699c3f5a93c60762ada5019839bb75",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
