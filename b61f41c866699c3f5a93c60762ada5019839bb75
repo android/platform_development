@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "d21607e8_33e34ba8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-08T06:14:07Z",
+      "side": 1,
+      "message": "Add 71485848 as well:\n\n    Bug: 71485848",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "b61f41c866699c3f5a93c60762ada5019839bb75",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8f70aacd_bd17112e",
         "filename": "vndk/tools/header-checker/header-abi-dumper/src/ast_processing.cpp",
         "patchSetId": 4
