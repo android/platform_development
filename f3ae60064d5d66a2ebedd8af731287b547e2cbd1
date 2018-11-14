@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "75db58f3_d3e743a8",
+        "filename": "samples/WiFiDirectServiceDiscovery/src/com/example/android/wifidirect/discovery/ChatManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1126614
+      },
+      "writtenOn": "2018-11-14T19:14:04Z",
+      "side": 1,
+      "message": "Better to change this to accept a String, so there is no possibility of modification by the caller. The one existing caller has a String anyway.",
+      "range": {
+        "startLine": 68,
+        "startChar": 4,
+        "endLine": 68,
+        "endChar": 36
+      },
+      "revId": "f3ae60064d5d66a2ebedd8af731287b547e2cbd1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
