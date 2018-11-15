@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eea9defc_1e359f03",
+        "filename": "vndk/tools/header-checker/header-abi-dumper/src/frontend_action.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-15T09:14:33Z",
+      "side": 1,
+      "message": "Simply use `true`?",
+      "range": {
+        "startLine": 55,
+        "startChar": 57,
+        "endLine": 56,
+        "endChar": 33
+      },
+      "revId": "8ec760416fe3a6524cb83e106215f78c7ae1b22a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
