@@ -11,14 +11,10 @@ sys.path.insert(1, import_path)
 from utils import run_header_abi_dumper
 from utils import run_header_abi_dumper_on_file
 from utils import run_header_abi_linker
-from utils import TARGET_ARCHS
 from utils import SOURCE_ABI_DUMP_EXT
 
 
 SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__))
-INPUT_DIR = os.path.join(SCRIPT_DIR, 'input')
-EXPECTED_DIR = os.path.join(SCRIPT_DIR, 'expected')
-REF_DUMP_DIR = os.path.join(SCRIPT_DIR, 'reference_dumps')
 ARCH_TARGET_CFLAGS = {
     'arm': ['-target', 'arm-linux-androideabi'],
     'arm64': ['-target', 'aarch64-linux-android'],
@@ -27,6 +23,8 @@ ARCH_TARGET_CFLAGS = {
     'mips': ['-target', 'mips-linux-androideabi'],
     'mips64': ['-target', 'mips64-linux-android'],
 }
+TARGET_ARCHS = ['arm', 'arm64', 'x86', 'x86_64', 'mips', 'mips64']
+
 
 def relative_to_abs_path(relative_path):
     return os.path.join(SCRIPT_DIR, relative_path)
@@ -43,16 +41,17 @@ class Module(object):
         self.name = name
         self.arch = arch
         self.cflags = cflags
-        self.arch_cflags = ['']
+        self.arch_cflags = []
         if self.arch != '':
             self.arch_cflags = ARCH_TARGET_CFLAGS.get(self.arch)
-        self.export_include_dirs = relative_to_abs_path_list(export_include_dirs)
+        self.export_include_dirs = relative_to_abs_path_list(
+            export_include_dirs)
 
     def get_dump_name(self):
         """Returns the module name followed by file extension."""
         raise NotImplementedError()
 
-    def make_dump(self, default_cflags):
+    def make_dump(self):
         """Returns the dump content as a string."""
         raise NotImplementedError()
 
@@ -61,6 +60,8 @@ class Module(object):
         raise NotImplementedError()
 
     def mutate_for_all_arches(self):
+        if self.arch:
+            return [self]
         modules = []
         for target_arch in TARGET_ARCHS:
             modules.append(self.mutate_for_arch(target_arch))
@@ -90,7 +91,7 @@ class SdumpModule(Module):
     def get_dump_name(self):
         return self.name + ".sdump"
 
-    def make_dump(self, default_cflags):
+    def make_dump(self):
         return run_header_abi_dumper(
             self.src, remove_absolute_paths=True, cflags=self.cflags,
             export_include_dirs=self.export_include_dirs,
@@ -116,7 +117,7 @@ class LsdumpModule(Module):
     def get_dump_name(self):
         return self.name + SOURCE_ABI_DUMP_EXT
 
-    def make_dump(self, default_cflags):
+    def make_dump(self):
         """ For each source file, produce a .sdump file, and link them to form
             an lsump file"""
         dumps_to_link = []
@@ -127,7 +128,7 @@ class LsdumpModule(Module):
                 dumps_to_link.append(output_path)
                 run_header_abi_dumper_on_file(
                     src, output_path, self.export_include_dirs,
-                    self.cflags + self.arch_cflags + default_cflags,
+                    self.cflags + self.arch_cflags,
                     self.dumper_flags)
             return run_header_abi_linker(output_lsdump, dumps_to_link,
                                          self.version_script, self.api,

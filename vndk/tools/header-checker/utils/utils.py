@@ -38,8 +38,6 @@ DEFAULT_CFLAGS = ['-std=gnu99']
 DEFAULT_HEADER_FLAGS = ["-dump-function-declarations"]
 DEFAULT_FORMAT = 'ProtobufTextFormat'
 
-TARGET_ARCHS = ['arm', 'arm64', 'x86', 'x86_64', 'mips', 'mips64']
-
 
 def get_reference_dump_dir(reference_dump_dir_stem,
                            reference_dump_dir_insertion, lib_arch):
@@ -74,21 +72,6 @@ def copy_reference_dump(lib_path, reference_dump_dir, compress):
     else:
         with open(reference_dump_path, 'wb') as f:
             f.write(bytes(output_content, 'utf-8'))
-    print('Created abi dump at', reference_dump_path)
-    return reference_dump_path
-
-
-def copy_reference_dump_content(file_name, output_content,
-                                reference_dump_dir_stem,
-                                reference_dump_dir_insertion, lib_arch):
-    reference_dump_dir = get_reference_dump_dir(reference_dump_dir_stem,
-                                                reference_dump_dir_insertion,
-                                                lib_arch)
-    reference_dump_path = os.path.join(reference_dump_dir, file_name)
-    os.makedirs(os.path.dirname(reference_dump_path), exist_ok=True)
-    with open(reference_dump_path, 'w') as f:
-        f.write(output_content)
-
     print('Created abi dump at', reference_dump_path)
     return reference_dump_path
 
