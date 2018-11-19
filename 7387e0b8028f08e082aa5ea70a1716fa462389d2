@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e8b4c500_f7e7cbd2",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-19T09:50:27Z",
+      "side": 1,
+      "message": "Use single quote \u0027",
+      "range": {
+        "startLine": 91,
+        "startChar": 27,
+        "endLine": 91,
+        "endChar": 28
+      },
+      "revId": "7387e0b8028f08e082aa5ea70a1716fa462389d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cd86a53_735b624f",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-11-19T09:50:27Z",
+      "side": 1,
+      "message": "Nice catch.",
+      "range": {
+        "startLine": 217,
+        "startChar": 58,
+        "endLine": 217,
+        "endChar": 68
+      },
+      "revId": "7387e0b8028f08e082aa5ea70a1716fa462389d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
