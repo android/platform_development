@@ -45,6 +45,30 @@
       "revId": "7387e0b8028f08e082aa5ea70a1716fa462389d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9da72d45_b0eb0ae0",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-19T10:14:19Z",
+      "side": 1,
+      "message": "Hi Jayant,\nThe dump has no source code and is not updated by script. Do you remember what the test is for?",
+      "parentUuid": "6cd86a53_735b624f",
+      "range": {
+        "startLine": 217,
+        "startChar": 58,
+        "endLine": 217,
+        "endChar": 68
+      },
+      "revId": "7387e0b8028f08e082aa5ea70a1716fa462389d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
