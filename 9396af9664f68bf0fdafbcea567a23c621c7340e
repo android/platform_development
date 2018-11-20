@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12bb3f50_0073963e",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1374564
+      },
+      "writtenOn": "2018-11-20T04:50:11Z",
+      "side": 1,
+      "message": "Would be more consistent if the sentence starts with the parameter, but not a big deal.\n\ne.g. \"-s is used to flash both product.img and system.img for devices with a product partition. By default, [...]\"",
+      "revId": "9396af9664f68bf0fdafbcea567a23c621c7340e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
