@@ -16,6 +16,24 @@
       "revId": "9396af9664f68bf0fdafbcea567a23c621c7340e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7091310_a7ec3104",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-11-20T04:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12bb3f50_0073963e",
+      "revId": "9396af9664f68bf0fdafbcea567a23c621c7340e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
