@@ -48,6 +48,23 @@
     },
     {
       "key": {
+        "uuid": "f9bac564_1cd2b41d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-26T09:18:23Z",
+      "side": 1,
+      "message": "Is there a bug number?",
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ff5660b6_3dcfe88f",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -87,6 +104,29 @@
         "startChar": 11,
         "endLine": 3,
         "endChar": 29
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84b574fa_dede024d",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-26T09:18:23Z",
+      "side": 1,
+      "message": "w/o",
+      "range": {
+        "startLine": 5,
+        "startChar": 18,
+        "endLine": 5,
+        "endChar": 21
       },
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
@@ -209,6 +249,29 @@
     },
     {
       "key": {
+        "uuid": "cbdff73a_8e2f3ea5",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-26T09:18:23Z",
+      "side": 1,
+      "message": "I prefer not using current directory.\n\nIs it possible that ${cache} exists but current dir doesn\u0027t contain the unzipped files?",
+      "range": {
+        "startLine": 34,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 21
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "915b22cc_2ddd7e96",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -324,6 +387,29 @@
     },
     {
       "key": {
+        "uuid": "a5b8575c_4712c2b8",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-26T09:18:23Z",
+      "side": 1,
+      "message": "to",
+      "range": {
+        "startLine": 21,
+        "startChar": 25,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c4d633ca_8469a620",
         "filename": "tools/live-image/live-image-deploy.sh",
         "patchSetId": 3
@@ -386,6 +472,52 @@
         "startChar": 10,
         "endLine": 68,
         "endChar": 17
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "529ac070_cfce8b73",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-26T09:18:23Z",
+      "side": 1,
+      "message": "Need to check if the user has set the env variables.",
+      "range": {
+        "startLine": 71,
+        "startChar": 27,
+        "endLine": 71,
+        "endChar": 41
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "522424de_571a9426",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-26T09:18:23Z",
+      "side": 1,
+      "message": "This shell script uploads files to GCP but doesn\u0027t seem to restart any service on cloud.\nI suggest change the name to live-image-upload.sh.",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 25
       },
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
