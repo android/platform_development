@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92df0449_705d2cc8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "to where?\n\nHow about:\n...publish live images on GCP?\n\nAlso, there is another script \u0027live-image-boot.sh\u0027 in this CL.\nMaybe add descriptions for it and also state how did you test it? (so others can follow it easily).",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b4f1921_4f57cd86",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "what does the \u0027q\u0027 mean?\nCan you state it clearly, and also describe it in the script.",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 13
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff5660b6_3dcfe88f",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "Missing AOSP license header?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e12922e3_f1df60a0",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "live-image-boot?",
+      "range": {
+        "startLine": 3,
+        "startChar": 11,
+        "endLine": 3,
+        "endChar": 29
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fde33e6b_b9549f99",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "Capitalized for constants, also readonly is recommended.\n\ne.g.,\nreadonly GCP_BUCKET\u003d\"https://storage.googleapis.com/treble-gsi\"\nreadonly IMAGE_LIST_HTML\u003d\"gsi.html\"\n...\nhttps://google.github.io/styleguide/shell.xml#Constants_and_Environment_Variable_Names",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99db807e_922114f0",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "Please quote it, in case there is spaces there.\n\nfile\u003d\"$1\"\n\nhttps://google.github.io/styleguide/shell.xml?showone\u003dQuoting#Quoting",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 7
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c6a7790_f045bf96",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "did you mean \u0027-f\u0027? (check file existence).",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2eee03c0_7e75d393",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "how about add an example string here? \nSo it\u0027s easy to understand the 3, 4, 5, 6 are for what.",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 46
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "790b01d6_5679cede",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "there seems multiple duplication of echoing a command, before running it. (e.g., same for L35)\nMaybe put this into a function?\n\nrun_command() {                                                                 \n  local cmd\u003d\"$1\"                                                                \n  local message\u003d\"$2\"                                                            \n                                                                                \n  echo \"${message}\"                                                             \n  (${cmd})                                                                                                                                                                   \n}\n                                                                              \nrun_command \"wget $url -O ${cache_dir}/${file}\" \"Fetching images from GCP...\"      \nrun_command \"gunzip /${file}\" \"gzip...\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 7,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "915b22cc_2ddd7e96",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "there are some utils used in this script.\n\nHow about adding functions to check if those tools are installed in the beginning?\n\ne.g.,\n\nreadonly REQUIRED_EXTERNAL_UTILS\u003d\"gunzip wget\"\nreadonly REQUIRED_AOSP_UTILS\u003d\"adb simg2img\"\n\ncheck_required_utils() {\n  for util in ${REQUIRED_EXTERNAL_UTILS}; do\n    type ${util} || \"Command ${util} not found.\" \n  done\n}\n\ncheck_aosp_utils() {\n  similar checks here, but maybe help to `m {$util}` if it\u0027s missing?\n  also, should you check if it\u0027s under AOSP build top? \n}",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 12
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a31e0b0_d5337c68",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "Remove if no need it anymore?",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 52
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d04f722c_d66e90a9",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "Seems a duplication to L50-L54.\n\nMaybe add a function for it?\n\nprompt_to_continue() {\n  local command_to_run\u003d\"$1\"\n  echo \u0027#\u0027\n  ...\n}\n\nprompt_to_continue \"adb reboot\"",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 8
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8d2980a_4566b5c3",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "nit: Usually I\u0027ll just use the following, so no need to type \u0027function\u0027 each time.\ngcp_login() {\n  ...\n}\n\nhttps://google.github.io/styleguide/shell.xml#Function_Names",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 18
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44ee4421_2c0cee4d",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "same here, seems better to check if gcloud and gsutil exist or not.\n\nBtw, can this script be used for external? Or just Google-internal usage.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 10
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4d633ca_8469a620",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "nit: ali? maybe just use live_image_* as function prefixes.",
+      "range": {
+        "startLine": 66,
+        "startChar": 9,
+        "endLine": 66,
+        "endChar": 12
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e44df205_4e437887",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "not sure what\u0027s the _all here mean.\nCan it be more descriptive?",
+      "range": {
+        "startLine": 66,
+        "startChar": 12,
+        "endLine": 66,
+        "endChar": 16
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce1abb2b_0f7d7344",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "Is there any format requirement for the dessert?\nWhat happen if someone use arbitrary file name?\n\nOr is it possible to get dessert from build env?",
+      "range": {
+        "startLine": 68,
+        "startChar": 10,
+        "endLine": 68,
+        "endChar": 17
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b4b0c4f_9c844ddc",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-26T08:06:57Z",
+      "side": 1,
+      "message": "Should we just run the \"ali_all\" here? So we can just run this script without need to \"\u0026\u0026 ali_all ...\".",
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
