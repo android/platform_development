@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "87b04f1f_87e01a41",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff5660b6_3dcfe88f",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e12922e3_f1df60a0",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -108,6 +132,30 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e177bd2f_3959402e",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e12922e3_f1df60a0",
+      "range": {
+        "startLine": 3,
+        "startChar": 11,
+        "endLine": 3,
+        "endChar": 29
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -134,6 +182,30 @@
     },
     {
       "key": {
+        "uuid": "43813c35_1a11ad9b",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "84b574fa_dede024d",
+      "range": {
+        "startLine": 5,
+        "startChar": 18,
+        "endLine": 5,
+        "endChar": 21
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fde33e6b_b9549f99",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -145,6 +217,30 @@
       "writtenOn": "2018-11-26T08:06:57Z",
       "side": 1,
       "message": "Capitalized for constants, also readonly is recommended.\n\ne.g.,\nreadonly GCP_BUCKET\u003d\"https://storage.googleapis.com/treble-gsi\"\nreadonly IMAGE_LIST_HTML\u003d\"gsi.html\"\n...\nhttps://google.github.io/styleguide/shell.xml#Constants_and_Environment_Variable_Names",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c53859e3_b5968021",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Will capitalized variable names. However, the readonly keyword make leave immutable variables and probably not good for a script to source.",
+      "parentUuid": "fde33e6b_b9549f99",
       "range": {
         "startLine": 8,
         "startChar": 0,
@@ -180,6 +276,30 @@
     },
     {
       "key": {
+        "uuid": "5679eb29_95401638",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99db807e_922114f0",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 7
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c6a7790_f045bf96",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -191,6 +311,30 @@
       "writtenOn": "2018-11-26T08:06:57Z",
       "side": 1,
       "message": "did you mean \u0027-f\u0027? (check file existence).",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d613212_288ae873",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "It\u0027s intended. The condition is true when the $1 is not set.",
+      "parentUuid": "5c6a7790_f045bf96",
       "range": {
         "startLine": 12,
         "startChar": 5,
@@ -226,6 +370,30 @@
     },
     {
       "key": {
+        "uuid": "ab7b2d6c_3238c414",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2eee03c0_7e75d393",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 46
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "790b01d6_5679cede",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -246,6 +414,30 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9414041_6874b4ef",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "790b01d6_5679cede",
+      "range": {
+        "startLine": 32,
+        "startChar": 7,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -272,6 +464,30 @@
     },
     {
       "key": {
+        "uuid": "225222ad_8bc8005e",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbdff73a_8e2f3ea5",
+      "range": {
+        "startLine": 34,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 21
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "915b22cc_2ddd7e96",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -292,6 +508,30 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9986b8a2_abdf8567",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "915b22cc_2ddd7e96",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 12
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -318,6 +558,30 @@
     },
     {
       "key": {
+        "uuid": "e6bca081_e6874d0b",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a31e0b0_d5337c68",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 52
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d04f722c_d66e90a9",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -338,6 +602,30 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8766f6d2_434db2b3",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d04f722c_d66e90a9",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 8
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -364,6 +652,30 @@
     },
     {
       "key": {
+        "uuid": "4ba79cf7_cac69fc2",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8d2980a_4566b5c3",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 18
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "44ee4421_2c0cee4d",
         "filename": "tools/live-image/live-image-deploy.sh",
         "patchSetId": 3
@@ -375,6 +687,30 @@
       "writtenOn": "2018-11-26T08:06:57Z",
       "side": 1,
       "message": "same here, seems better to check if gcloud and gsutil exist or not.\n\nBtw, can this script be used for external? Or just Google-internal usage.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 10
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1c72607_55ab21ca",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "gcloud is public available.",
+      "parentUuid": "44ee4421_2c0cee4d",
       "range": {
         "startLine": 11,
         "startChar": 4,
@@ -407,6 +743,30 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6453deba_4da8a2c8",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5b8575c_4712c2b8",
+      "range": {
+        "startLine": 21,
+        "startChar": 25,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -456,6 +816,54 @@
     },
     {
       "key": {
+        "uuid": "fce7f59b_00a42203",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e44df205_4e437887",
+      "range": {
+        "startLine": 66,
+        "startChar": 12,
+        "endLine": 66,
+        "endChar": 16
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2866670a_84c429eb",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4d633ca_8469a620",
+      "range": {
+        "startLine": 66,
+        "startChar": 9,
+        "endLine": 66,
+        "endChar": 12
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce1abb2b_0f7d7344",
         "filename": "tools/live-image/live-image-deploy.sh",
         "patchSetId": 3
@@ -476,6 +884,30 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e8e46af_1ee47eb8",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce1abb2b_0f7d7344",
+      "range": {
+        "startLine": 68,
+        "startChar": 10,
+        "endLine": 68,
+        "endChar": 17
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -502,6 +934,30 @@
     },
     {
       "key": {
+        "uuid": "892105ca_aa142d67",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "529ac070_cfce8b73",
+      "range": {
+        "startLine": 71,
+        "startChar": 27,
+        "endLine": 71,
+        "endChar": 41
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "522424de_571a9426",
         "filename": "tools/live-image/live-image-deploy.sh",
         "patchSetId": 3
@@ -525,6 +981,30 @@
     },
     {
       "key": {
+        "uuid": "d9ff2188_92eaab2a",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "522424de_571a9426",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 25
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5b4b0c4f_9c844ddc",
         "filename": "tools/live-image/live-image-deploy.sh",
         "patchSetId": 3
@@ -536,6 +1016,24 @@
       "writtenOn": "2018-11-26T08:06:57Z",
       "side": 1,
       "message": "Should we just run the \"ali_all\" here? So we can just run this script without need to \"\u0026\u0026 ali_all ...\".",
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b02e53c5_e83fbd2f",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-27T10:18:03Z",
+      "side": 1,
+      "message": "Each function can be test and executed separately.",
+      "parentUuid": "5b4b0c4f_9c844ddc",
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
