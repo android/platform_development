@@ -1037,6 +1037,24 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "798f14a6_33712de2",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-11-27T10:42:33Z",
+      "side": 1,
+      "message": "I\u0027m okay with this CL,\nthough I don\u0027t think anyone would like to remember the function names.",
+      "parentUuid": "b02e53c5_e83fbd2f",
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
