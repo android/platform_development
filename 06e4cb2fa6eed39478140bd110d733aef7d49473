@@ -1055,6 +1055,24 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c235362_770521c5",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-29T07:11:53Z",
+      "side": 1,
+      "message": "Got it. Add an additional live-image-upload.sh as the wrapper.",
+      "parentUuid": "798f14a6_33712de2",
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
