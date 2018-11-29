@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c860391f_a6c2ee0d",
+        "filename": "tools/live-image/live-image-utils.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "double quote the string variable: \"$ANDROID_BUILD_TOP\", in case there is space in between.",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 26
+      },
+      "revId": "0810f26313dc28c77e3fe289588b3250094354ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}

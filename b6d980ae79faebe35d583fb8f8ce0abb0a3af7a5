@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "10df6010_1b3c9eb4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "upload to where? Also GCP?\n\nThen what\u0027s the diff between live-image-upload.sh and live-image-utils.sh?",
+      "range": {
+        "startLine": 10,
+        "startChar": 21,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a12ad5b0_dd334bf8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "nit: a live image",
+      "range": {
+        "startLine": 11,
+        "startChar": 27,
+        "endLine": 11,
+        "endChar": 40
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c709e6a_da4740fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "Just source?\n\nIt\u0027s better to provide *exact* command you used to verify each script.\nSo others can repro or learn how to use it easily.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 62
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6c08142_d749836b",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "double quote, in case there is any space in the parent dirs.\n\nAlso, if the script my be invoked by a symlink, you might want:\n\nSCRIPT_DIR\u003d\"$(dirname \"$(readlink -f \"$0\")\")\" \nsource \"${SCRIPT_DIR}\"/live-image-utils.sh",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f324e057_82159082",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "Do we need to delete those downloaded files in the end?\n\nOr it might be better to keep it (as they\u0027re downloaded), should we display the file path of downloaded images?\n\nThen echo a command for the user to try next time?\ne.g., \necho \"Live image is downloaded in: {CACHE_DIR}/${file}\"\necho \"To re-boot the same live image, try \u0027{$0} {CACHE_DIR}/${file}\u0027\"",
+      "range": {
+        "startLine": 38,
+        "startChar": 11,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cbeeb2e_4711ed7e",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "any bug number? If so, please add b/{bugnazer_id}",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 41
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46fd60fc_fc19f895",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "double quote",
+      "range": {
+        "startLine": 77,
+        "startChar": 11,
+        "endLine": 77,
+        "endChar": 14
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ec414b6_27b38a28",
+        "filename": "tools/live-image/live-image-utils.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "please double quote, in case there is space in between.\n\nhttps://google.github.io/styleguide/shell.xml?showone\u003dQuoting#Quoting",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 26
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75bdad1d_1eb8de45",
+        "filename": "tools/live-image/live-image-utils.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "nit: double quite, although we\u0027re sure it doesn\u0027t have space.",
+      "range": {
+        "startLine": 39,
+        "startChar": 30,
+        "endLine": 39,
+        "endChar": 43
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e5392a2_42a9bb90",
+        "filename": "tools/live-image/live-image-utils.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "80 chars per line.\n\nhttps://google.github.io/styleguide/shell.xml?showone\u003dLine_Length_and_Long_Strings#Line_Length_and_Long_Strings\n\nBetter to add a few examples for the output.\ne.g., PPR1, QPR1, etc.\n\nAlso, let\u0027s quote \"${ANDROID_BUILD_TOP}\"",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 130
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}

@@ -1073,6 +1073,24 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aac1ddcb_93ba2bdb",
+        "filename": "tools/live-image/live-image-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:10:35Z",
+      "side": 1,
+      "message": "Right, it seems weird to request the client to look into the source, to know how to use the script.\n\nCan you add a \"--help\" or \"-h\" command, and also print out usage, if nothing is specified?\n\nFinally, I\u0027m not sure if exposing the functions names is a good idea or not.\nWe might consider exposing some simple commands to keep the freedom of changing function names easily in the future. e.g., if this script is used in some build infra and we don\u0027t require the client script to change when we change or refactor function names inside.",
+      "parentUuid": "798f14a6_33712de2",
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
