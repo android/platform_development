@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "b741f71c_341b9676",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:14:37Z",
+      "side": 1,
+      "message": "Oh, nvm, looks like the \"user-facing\" scripts are the -boot.sh and -upload.sh, while the -util.sh is for function definition (good to keep the function name as internal use).\n\nIf so, probably just use:\nTest: source development/tools/live-image/live-image-boot.sh\nTest: source development/tools/live-image/live-image-upload.sh",
+      "parentUuid": "0c709e6a_da4740fc",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 62
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e6c08142_d749836b",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 6
