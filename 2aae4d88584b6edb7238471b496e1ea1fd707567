@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "254a534e_7c611cd2",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-11-29T08:22:03Z",
+      "side": 1,
+      "message": "This is only for testing purpose.\nWe must add this command on update.py, too.",
+      "range": {
+        "startLine": 528,
+        "startChar": 4,
+        "endLine": 528,
+        "endChar": 52
+      },
+      "revId": "2aae4d88584b6edb7238471b496e1ea1fd707567",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
