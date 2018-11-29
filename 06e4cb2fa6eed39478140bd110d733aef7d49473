@@ -253,6 +253,30 @@
     },
     {
       "key": {
+        "uuid": "8d50bd10_607cb090",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:35:30Z",
+      "side": 1,
+      "message": "OK for not use readonly, just capitalized should be fine.",
+      "parentUuid": "c53859e3_b5968021",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "99db807e_922114f0",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 3
@@ -344,6 +368,30 @@
       "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0ee9673_969f66ba",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2018-11-29T08:35:30Z",
+      "side": 1,
+      "message": "Got it, my bad...",
+      "parentUuid": "0d613212_288ae873",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "06e4cb2fa6eed39478140bd110d733aef7d49473",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
