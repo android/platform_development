@@ -22,6 +22,30 @@
       "revId": "7ea18cc4c9ac1d01d788724b41311308875d3cb3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51b27b88_cd24c904",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1060667
+      },
+      "writtenOn": "2018-11-30T06:19:32Z",
+      "side": 1,
+      "message": "Oops, done.",
+      "parentUuid": "eff7a8c1_90ddb7b1",
+      "range": {
+        "startLine": 145,
+        "startChar": 24,
+        "endLine": 145,
+        "endChar": 45
+      },
+      "revId": "7ea18cc4c9ac1d01d788724b41311308875d3cb3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
