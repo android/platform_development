@@ -69,6 +69,30 @@
       "revId": "7387e0b8028f08e082aa5ea70a1716fa462389d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb470f88_0f3611a0",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2018-11-30T07:09:15Z",
+      "side": 1,
+      "message": "Apologies for the delay, afair this test was for the case when we do have a symbol in the dynsym table (weak | global) but have no ast for it. It shouldn\u0027t get reported as removed. Yeah I think the script support for it was missing...",
+      "parentUuid": "9da72d45_b0eb0ae0",
+      "range": {
+        "startLine": 217,
+        "startChar": 58,
+        "endLine": 217,
+        "endChar": 68
+      },
+      "revId": "7387e0b8028f08e082aa5ea70a1716fa462389d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
