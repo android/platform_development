@@ -118,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "6c26343e_03fb7457",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-30T08:31:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e6c08142_d749836b",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f324e057_82159082",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 6
@@ -129,6 +153,30 @@
       "writtenOn": "2018-11-29T08:10:35Z",
       "side": 1,
       "message": "Do we need to delete those downloaded files in the end?\n\nOr it might be better to keep it (as they\u0027re downloaded), should we display the file path of downloaded images?\n\nThen echo a command for the user to try next time?\ne.g., \necho \"Live image is downloaded in: {CACHE_DIR}/${file}\"\necho \"To re-boot the same live image, try \u0027{$0} {CACHE_DIR}/${file}\u0027\"",
+      "range": {
+        "startLine": 38,
+        "startChar": 11,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2b328a8_ef402d7e",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-30T08:31:36Z",
+      "side": 1,
+      "message": "I\u0027d prefer to keep it. Will add the information message.",
+      "parentUuid": "f324e057_82159082",
       "range": {
         "startLine": 38,
         "startChar": 11,
@@ -164,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "73e0b8b3_c8666d48",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-30T08:31:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6cbeeb2e_4711ed7e",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 41
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "46fd60fc_fc19f895",
         "filename": "tools/live-image/live-image-boot.sh",
         "patchSetId": 6
@@ -184,6 +256,30 @@
       "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c814eae6_ed724ad9",
+        "filename": "tools/live-image/live-image-boot.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-30T08:31:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "46fd60fc_fc19f895",
+      "range": {
+        "startLine": 77,
+        "startChar": 11,
+        "endLine": 77,
+        "endChar": 14
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -253,6 +349,30 @@
       "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "114cfad0_0e557000",
+        "filename": "tools/live-image/live-image-utils.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1135739
+      },
+      "writtenOn": "2018-11-30T08:31:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0e5392a2_42a9bb90",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 130
+      },
+      "revId": "b6d980ae79faebe35d583fb8f8ce0abb0a3af7a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
