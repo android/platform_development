@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eff7a8c1_90ddb7b1",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2018-11-30T01:03:45Z",
+      "side": 1,
+      "message": "Must be \u0027generate_common_android_bp()\u0027",
+      "range": {
+        "startLine": 145,
+        "startChar": 24,
+        "endLine": 145,
+        "endChar": 45
+      },
+      "revId": "7ea18cc4c9ac1d01d788724b41311308875d3cb3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
