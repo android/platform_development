@@ -240,9 +240,9 @@ def get_build_vars_for_product(names, product=None):
     cmd += ' '.join(names)
     cmd += '\"'
 
-    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
-                            stderr=subprocess.DEVNULL, cwd=AOSP_DIR, shell=True)
-    out, _ = proc.communicate()
+    # Run build/envsetup.sh with bash instead of sh.
+    out = subprocess.check_output(cmd, cwd=AOSP_DIR, shell=True,
+                                  executable='/bin/bash')
 
     build_vars = out.decode('utf-8').strip().splitlines()
 
