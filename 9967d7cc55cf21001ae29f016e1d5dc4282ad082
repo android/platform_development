@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a30d70ae_69dc8443",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2018-12-11T18:55:37Z",
+      "side": 1,
+      "message": "Why are we using envsetup.sh in the first place? Just set TARGET_PRODUCT / TARGET_BUILD_VARIANT",
+      "revId": "9967d7cc55cf21001ae29f016e1d5dc4282ad082",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
