@@ -226,7 +226,7 @@ def run_abi_diff(old_test_dump_path, new_test_dump_path, arch, lib_name,
     return 0
 
 
-def get_build_vars_for_product(names, product=None):
+def get_build_vars_for_product(names, product=None, variant=None):
     """ Get build system variable for the launched target."""
 
     if product is None and 'ANDROID_PRODUCT_OUT' not in os.environ:
@@ -234,8 +234,9 @@ def get_build_vars_for_product(names, product=None):
 
     cmd = ''
     if product is not None:
-        cmd += 'source build/envsetup.sh > /dev/null && '
-        cmd += 'lunch ' + product + ' > /dev/null && '
+        cmd += 'TARGET_PRODUCT=' + product + ' '
+    if variant is not None:
+        cmd += 'TARGET_BUILD_VARIANT=' + variant + ' '
     cmd += 'build/soong/soong_ui.bash --dumpvars-mode -vars \"'
     cmd += ' '.join(names)
     cmd += '\"'
