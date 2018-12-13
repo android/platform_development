@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "53cc1023_60a1c1b2",
+        "filename": "ndk/icu/gen_ndk_icu.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1047684
+      },
+      "writtenOn": "2018-12-13T13:23:07Z",
+      "side": 1,
+      "message": "https://unicode-org.atlassian.net/browse/ICU-20309. The PR has been approved.",
+      "parentUuid": "89c94fc2_dc6c9ef7",
+      "range": {
+        "startLine": 114,
+        "startChar": 73,
+        "endLine": 114,
+        "endChar": 0
+      },
+      "revId": "ad158082963590c1da00ad340e5a2c726d53d9cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "93c5ffae_5d2dbd1c",
         "filename": "ndk/icu/gen_ndk_icu.py",
         "patchSetId": 17
