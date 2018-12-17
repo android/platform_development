@@ -16,6 +16,24 @@
       "revId": "9967d7cc55cf21001ae29f016e1d5dc4282ad082",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1264e70_1db89040",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-12-17T08:55:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a30d70ae_69dc8443",
+      "revId": "9967d7cc55cf21001ae29f016e1d5dc4282ad082",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
