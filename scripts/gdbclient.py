@@ -64,6 +64,9 @@ def parse_args():
     parser.add_argument(
         "--user", nargs="?", default="root",
         help="user to run commands as on the device [default: root]")
+    parser.add_argument(
+        '--only-server', dest="only_server", action='store_true',
+        default=False, help="if only start server")
 
     return parser.parse_args()
 
@@ -73,7 +76,7 @@ def verify_device(root, device):
     target_device = os.environ["TARGET_PRODUCT"]
     if target_device != name:
         msg = "TARGET_PRODUCT ({}) does not match attached device ({})"
-        sys.exit(msg.format(target_device, name))
+        #sys.exit(msg.format(target_device, name))
 
 
 def get_remote_pid(device, process_name):
@@ -142,6 +145,7 @@ def handle_switches(args, sysroot):
     if binary_file is None:
         assert pid is not None
         try:
+
             binary_file, local = gdbrunner.find_binary(device, pid, sysroot,
                                                        run_as_cmd=args.su_cmd)
         except adb.ShellError:
@@ -150,7 +154,8 @@ def handle_switches(args, sysroot):
     if not local:
         logging.warning("Couldn't find local unstripped executable in {},"
                         " symbols may not be available.".format(sysroot))
-
+    print 'pid'
+    print pid
     return (binary_file, pid, run_cmd)
 
 
@@ -249,36 +254,47 @@ def main():
             # Start gdbserver.
             gdbserver_local_path = get_gdbserver_path(root, arch)
             gdbserver_remote_path = "/data/local/tmp/{}-gdbserver".format(arch)
-            gdbrunner.start_gdbserver(
+            process = gdbrunner.start_gdbserver(
                 device, gdbserver_local_path, gdbserver_remote_path,
                 target_pid=pid, run_cmd=run_cmd, debug_socket=debug_socket,
-                port=args.port, run_as_cmd=args.su_cmd)
+                port=args.port, run_as_cmd=args.su_cmd, only_server=args.only_server)
         else:
             print "Connecting to tracing pid {} using local port {}".format(tracer_pid, args.port)
             gdbrunner.forward_gdbserver_port(device, local=args.port,
-                                             remote="tcp:{}".format(args.port))
+                                                     remote="tcp:{}".format(args.port))
+        if not args.only_server:
+            # Generate a gdb script.
+            gdb_commands = generate_gdb_script(sysroot=sysroot,
+                                               binary_file=binary_file,
+                                               is64bit=is64bit,
+                                               port=args.port)
+            print 'gds client commands'
+            print gdb_commands
+            # Find where gdb is
+            if sys.platform.startswith("linux"):
+                platform_name = "linux-x86"
+            elif sys.platform.startswith("darwin"):
+                platform_name = "darwin-x86"
+            else:
+                sys.exit("Unknown platform: {}".format(sys.platform))
+            gdb_path = os.path.join(root, "prebuilts", "gdb", platform_name, "bin",
+                                    "gdb")
 
-        # Generate a gdb script.
-        gdb_commands = generate_gdb_script(sysroot=sysroot,
-                                           binary_file=binary_file,
-                                           is64bit=is64bit,
-                                           port=args.port)
+            # Print a newline to separate our messages from the GDB session.
+            print("")
 
-        # Find where gdb is
-        if sys.platform.startswith("linux"):
-            platform_name = "linux-x86"
-        elif sys.platform.startswith("darwin"):
-            platform_name = "darwin-x86"
-        else:
-            sys.exit("Unknown platform: {}".format(sys.platform))
-        gdb_path = os.path.join(root, "prebuilts", "gdb", platform_name, "bin",
-                                "gdb")
+            # Start gdb.
+            gdbrunner.start_gdb(gdb_path, gdb_commands)
 
-        # Print a newline to separate our messages from the GDB session.
-        print("")
-
-        # Start gdb.
-        gdbrunner.start_gdb(gdb_path, gdb_commands)
 
 if __name__ == "__main__":
+    # import pydevd
+    # port = 5678
+    # file = os.environ['HOME']+'/python_debug_port'
+    # if os.path.exists(file):
+    #     with open(file,'r') as debug_port_file:
+    #         port_str = debug_port_file.read()
+    #         if '' != port_str:
+    #             port = int(port_str.strip())
+    # pydevd.settrace('127.0.0.1', port=port, stdoutToServer=True, stderrToServer=True)
     main()

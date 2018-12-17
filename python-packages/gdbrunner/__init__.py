@@ -140,7 +140,7 @@ def get_pids(device, process_name):
 
 
 def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
-                    target_pid, run_cmd, debug_socket, port, run_as_cmd=None):
+                    target_pid, run_cmd, debug_socket, port, run_as_cmd=None, only_server=False):
     """Start gdbserver in the background and forward necessary ports.
 
     Args:
@@ -181,8 +181,12 @@ def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
                                          "gdbclient.log")
     print("Redirecting gdbserver output to {}".format(gdbserver_output_path))
     gdbserver_output = file(gdbserver_output_path, 'w')
+    print 'gdb server cmd'
+    print gdbserver_cmd
     return device.shell_popen(gdbserver_cmd, stdout=gdbserver_output,
-                              stderr=gdbserver_output)
+                              stderr=gdbserver_output, kill_atexit=not only_server)
+    # return device.shell_popen(gdbserver_cmd, stdout=gdbserver_output,
+                              # stderr=gdbserver_output)
 
 
 def forward_gdbserver_port(device, local, remote):
@@ -238,7 +242,8 @@ def find_file(device, executable_path, sysroot, run_as_cmd=None):
 
         try:
             device.shell(cmd)
-        except adb.ShellError:
+        except adb.ShellError as e:
+            print e
             raise RuntimeError("Failed to copy '{}' to temporary folder on "
                                "device".format(executable_path))
         device.pull(remote_temp_path, local_path)
@@ -329,9 +334,15 @@ def start_gdb(gdb_path, gdb_commands, gdb_flags=None):
 
     # Windows disallows opening the file while it's open for writing.
     gdb_script_fd, gdb_script_path = tempfile.mkstemp()
+    print 'gdb_script_fd'
+    print gdb_script_fd
+    print 'gdb_commands'
+    print gdb_commands
     os.write(gdb_script_fd, gdb_commands)
     os.close(gdb_script_fd)
     gdb_args = [gdb_path, "-x", gdb_script_path] + (gdb_flags or [])
+    print 'gdb client args'
+    print gdb_args
 
     kwargs = {}
     if sys.platform.startswith("win"):
