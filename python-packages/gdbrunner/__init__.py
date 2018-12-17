@@ -140,7 +140,7 @@ def get_pids(device, process_name):
 
 
 def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
-                    target_pid, run_cmd, debug_socket, port, run_as_cmd=None):
+                    target_pid, run_cmd, debug_socket, port, run_as_cmd=None, only_server=False):
     """Start gdbserver in the background and forward necessary ports.
 
     Args:
@@ -180,10 +180,9 @@ def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
     gdbserver_output_path = os.path.join(tempfile.gettempdir(),
                                          "gdbclient.log")
     print("Redirecting gdbserver output to {}".format(gdbserver_output_path))
-    gdbserver_output = file(gdbserver_output_path, 'w')
+    gdbserver_output = None if only_server else open(gdbserver_output_path, 'w')
     return device.shell_popen(gdbserver_cmd, stdout=gdbserver_output,
                               stderr=gdbserver_output)
-
 
 def forward_gdbserver_port(device, local, remote):
     """Forwards local TCP port `port` to `remote` via `adb forward`."""
@@ -238,7 +237,8 @@ def find_file(device, executable_path, sysroot, run_as_cmd=None):
 
         try:
             device.shell(cmd)
-        except adb.ShellError:
+        except adb.ShellError as e:
+            print e
             raise RuntimeError("Failed to copy '{}' to temporary folder on "
                                "device".format(executable_path))
         device.pull(remote_temp_path, local_path)
