@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6602f2e_c72477cb",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-12-25T02:22:20Z",
+      "side": 1,
+      "message": "Try this:\n\n    env \u003d {\n        \u0027TARGET_PRODUCT\u0027: product,\n        \u0027TARGET_BUILD_VARIANT\u0027: variant,\n    }\n\n    cmd \u003d [\n        os.path.join(\u0027build\u0027, \u0027soong\u0027, \u0027soong_ui.bash\u0027),\n        \u0027--dumpvars-mode\u0027, \u0027-vars\u0027, \u0027\"\u0027 + \u0027 \u0027.join(names) + \u0027\"\u0027,\n    ]\n\n    proc \u003d subprocess.Popen(cmd, stdout\u003dsubprocess.PIPE,\n                            stderr\u003dsubprocess.PIPE, cwd\u003dAOSP_DIR, env\u003denv)",
+      "range": {
+        "startLine": 235,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 77
+      },
+      "revId": "8e9c89c1a6a857781e486e90323d7d5a6ff558d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
