@@ -46,6 +46,30 @@
       "revId": "9698e38ec33bdccb7b1d256e1dd2d153d0fd2e1c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e6f584ce_6d088b34",
+        "filename": "samples/WiFiDirectDemo/AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1039103
+      },
+      "writtenOn": "2018-12-26T20:51:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "afca8362_a57951a7",
+      "range": {
+        "startLine": 6,
+        "startChar": 37,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9698e38ec33bdccb7b1d256e1dd2d153d0fd2e1c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
