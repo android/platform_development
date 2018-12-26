@@ -22,6 +22,30 @@
       "revId": "523f57857d36402fae498e2a5dc9e57581054742",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "267b0590_4873f507",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-12-26T09:37:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f4bb4dd_40dfa839",
+      "range": {
+        "startLine": 245,
+        "startChar": 25,
+        "endLine": 245,
+        "endChar": 39
+      },
+      "revId": "523f57857d36402fae498e2a5dc9e57581054742",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
