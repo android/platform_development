@@ -22,6 +22,30 @@
       "revId": "9698e38ec33bdccb7b1d256e1dd2d153d0fd2e1c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afca8362_a57951a7",
+        "filename": "samples/WiFiDirectDemo/AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1126614
+      },
+      "writtenOn": "2018-12-26T20:44:29Z",
+      "side": 1,
+      "message": "The added comment explains why - it needs the runtime permission check API",
+      "parentUuid": "fdd725fc_292b9315",
+      "range": {
+        "startLine": 6,
+        "startChar": 37,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9698e38ec33bdccb7b1d256e1dd2d153d0fd2e1c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
