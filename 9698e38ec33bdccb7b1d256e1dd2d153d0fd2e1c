@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fdd725fc_292b9315",
+        "filename": "samples/WiFiDirectDemo/AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1039103
+      },
+      "writtenOn": "2018-12-26T18:21:19Z",
+      "side": 1,
+      "message": "Why does this have to change?",
+      "range": {
+        "startLine": 6,
+        "startChar": 37,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9698e38ec33bdccb7b1d256e1dd2d153d0fd2e1c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
