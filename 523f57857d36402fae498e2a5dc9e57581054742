@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f4bb4dd_40dfa839",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-12-26T09:00:23Z",
+      "side": 1,
+      "message": "Use `--build-variant` instead (I regret that I did spot other `-xx` options in the past ...)",
+      "range": {
+        "startLine": 245,
+        "startChar": 25,
+        "endLine": 245,
+        "endChar": 39
+      },
+      "revId": "523f57857d36402fae498e2a5dc9e57581054742",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
