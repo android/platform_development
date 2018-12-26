@@ -146,7 +146,7 @@ def make_tree(product):
 
 
 def make_targets(targets, product):
-    make_cmd = ['build/soong/soong_ui.bash', '--make-mode', '-j']
+    make_cmd = ['build/soong/soong_ui.bash', '--make-mode', '-j', 'findlsdumps']
     for target in targets:
         make_cmd.append(target)
     make_cmd.append('TARGET_PRODUCT=' + product)
