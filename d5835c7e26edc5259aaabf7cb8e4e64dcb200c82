@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97b2e83d_ba88e031",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2018-12-27T06:22:38Z",
+      "side": 1,
+      "message": "Does it depend on all vndk libraries and take a long time to create one reference dump?\nIn b/120858317, some developers complain about the performance of the script.",
+      "range": {
+        "startLine": 150,
+        "startChar": 67,
+        "endLine": 150,
+        "endChar": 78
+      },
+      "revId": "d5835c7e26edc5259aaabf7cb8e4e64dcb200c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
