@@ -22,6 +22,30 @@
       "revId": "d5835c7e26edc5259aaabf7cb8e4e64dcb200c82",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "026284f1_123343c5",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2018-12-27T06:32:33Z",
+      "side": 1,
+      "message": "Urr... I think you are right.  Currently, it brings in all lsdump files as dependencies:\nhttps://android.googlesource.com/platform/build/+/master/core/Makefile#4364\n\nAlthough I think we can remove the dependencies in the build system as well, let\u0027s skip this CL first.",
+      "parentUuid": "97b2e83d_ba88e031",
+      "range": {
+        "startLine": 150,
+        "startChar": 67,
+        "endLine": 150,
+        "endChar": 78
+      },
+      "revId": "d5835c7e26edc5259aaabf7cb8e4e64dcb200c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
