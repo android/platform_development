@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f32acb46_4e8cab15",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1131829
+      },
+      "writtenOn": "2019-01-15T17:30:59Z",
+      "side": 1,
+      "message": "line too long. I\u0027d break before .filter and .collect",
+      "range": {
+        "startLine": 78,
+        "startChar": 100,
+        "endLine": 78,
+        "endChar": 101
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98dfd029_d33ff7a6",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1131829
+      },
+      "writtenOn": "2019-01-15T17:30:59Z",
+      "side": 1,
+      "message": "Here and below. no need to have a variable, you can just do Toast.makeText(...).show().\nIf you prefer to have variable, please break after \u0027\u003d\u0027",
+      "range": {
+        "startLine": 81,
+        "startChar": 28,
+        "endLine": 81,
+        "endChar": 33
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44f5c809_d82f8d73",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1131829
+      },
+      "writtenOn": "2019-01-15T17:30:59Z",
+      "side": 1,
+      "message": "Please move toast showing to checkPackages to be more consistent with checkProxyConfigs",
+      "range": {
+        "startLine": 81,
+        "startChar": 22,
+        "endLine": 81,
+        "endChar": 27
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d312720a_aa66b154",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1131829
+      },
+      "writtenOn": "2019-01-15T17:30:59Z",
+      "side": 1,
+      "message": "I think this can be moved up out of synchronized block.",
+      "range": {
+        "startLine": 336,
+        "startChar": 12,
+        "endLine": 358,
+        "endChar": 0
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
