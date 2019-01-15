@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "201e1e2a_3d57d25e",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1398554
+      },
+      "writtenOn": "2019-01-15T23:25:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f32acb46_4e8cab15",
+      "range": {
+        "startLine": 78,
+        "startChar": 100,
+        "endLine": 78,
+        "endChar": 101
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98dfd029_d33ff7a6",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
         "patchSetId": 1
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "5aaf449f_2b523618",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1398554
+      },
+      "writtenOn": "2019-01-15T23:25:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44f5c809_d82f8d73",
+      "range": {
+        "startLine": 81,
+        "startChar": 22,
+        "endLine": 81,
+        "endChar": 27
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b716c055_dc0bfb0b",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1398554
+      },
+      "writtenOn": "2019-01-15T23:25:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98dfd029_d33ff7a6",
+      "range": {
+        "startLine": 81,
+        "startChar": 28,
+        "endLine": 81,
+        "endChar": 33
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d312720a_aa66b154",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
         "patchSetId": 1
@@ -91,6 +163,30 @@
       "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3ea5be1_3df374fb",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1398554
+      },
+      "writtenOn": "2019-01-15T23:25:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d312720a_aa66b154",
+      "range": {
+        "startLine": 336,
+        "startChar": 12,
+        "endLine": 358,
+        "endChar": 0
+      },
+      "revId": "a5b6a6cc16407c13a95e9e37dd2a578f55eadca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
