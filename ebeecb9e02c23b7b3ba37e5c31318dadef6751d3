@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b90687b_41ecdd7b",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1131829
+      },
+      "writtenOn": "2019-01-16T11:39:56Z",
+      "side": 1,
+      "message": "I think this will be false when both are empty, which should be acceptable configuration.\nproxyHost.isEmpty() !\u003d proxyPort.isEmpty() seems the correct condition.",
+      "range": {
+        "startLine": 107,
+        "startChar": 40,
+        "endLine": 107,
+        "endChar": 84
+      },
+      "revId": "ebeecb9e02c23b7b3ba37e5c31318dadef6751d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
