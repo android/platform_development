@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a62c6d70_cc5be8ad",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1131829
+      },
+      "writtenOn": "2019-01-16T15:21:01Z",
+      "side": 1,
+      "message": "Actually should be something like \"hasUnknownPackages\", it checks whether all packages are installed.\nAlso toast text should probably be updated.",
+      "range": {
+        "startLine": 120,
+        "startChar": 13,
+        "endLine": 120,
+        "endChar": 28
+      },
+      "revId": "8c820d436d965b0f5bf19756e63b369f1d780910",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
