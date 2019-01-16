@@ -419,7 +419,19 @@ CombineExportedSymbols(std::unique_ptr<std::map<std::string, T>> lhs,
 }
 
 bool HeaderAbiLinker::ReadExportedSymbolsFromVersionScript() {
-  abi_util::VersionScriptParser parser(version_script_, arch_, api_);
+  std::optional<abi_util::ApiLevel> api_level = abi_util::ParseApiLevel(api_);
+  if (!api_level) {
+    llvm::errs() << "-api must be either \"current\" or an integer (e.g. 21)\n";
+    return false;
+  }
+
+  std::ifstream stream(version_script_, std::ios_base::in);
+  if (!stream) {
+    llvm::errs() << "Failed to open version script file\n";
+    return false;
+  }
+
+  abi_util::VersionScriptParser parser(stream, arch_, api_level.value());
   if (!parser.Parse()) {
     return false;
   }
