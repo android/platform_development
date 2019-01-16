@@ -34,6 +34,18 @@ namespace abi_util {
 std::unordered_set<std::string> AllArches({
     "arm", "arm64", "x86", "x86_64", "mips", "mips64"});
 
+static std::string StringTrim(std::string s) {
+  std::string::size_type start = s.find_first_not_of(" \t\r\n");
+  if (start == std::string::npos) {
+    return "";
+  }
+  std::string::size_type end = s.find_last_not_of(" \t\r\n");
+  if (end == std::string::npos) {
+    return s.substr(start);
+  }
+  return s.substr(start, end - start + 1);
+}
+
 static bool StringContains(const std::string &line,
                            const std::string &substring) {
   return (line.find(substring) != std::string::npos);
@@ -156,6 +168,11 @@ bool VersionScriptParser::ParseInnerBlock(std::ifstream &symbol_ifstream) {
   LineScope scope = LineScope::global;
 
   while (std::getline(symbol_ifstream, line)) {
+    line = StringTrim(std::move(line));
+    if (line.empty() || line[0] == '#') {
+      // Skip empty or comment lines.
+      continue;
+    }
     if (line.find("}") != std::string::npos) {
       break;
     }
@@ -197,10 +214,13 @@ bool VersionScriptParser::Parse() {
 
   std::string line;
   while (std::getline(symbol_ifstream, line)) {
-    // Skip comment lines.
-    if (line.c_str()[0] == '#') {
+    line = StringTrim(std::move(line));
+
+    if (line.empty() || line[0] == '#') {
+      // Skip empty or comment lines.
       continue;
     }
+
     if (StringContains(line, "{")) {
       if ((StringContains(line, "PRIVATE"))) {
         continue;
