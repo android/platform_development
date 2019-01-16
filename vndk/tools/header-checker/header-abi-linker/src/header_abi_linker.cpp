@@ -52,8 +52,17 @@ static llvm::cl::opt<std::string> version_script(
     "v", llvm::cl::desc("<version_script>"), llvm::cl::Optional,
     llvm::cl::cat(header_linker_category));
 
+static llvm::cl::list<std::string> excluded_symbol_versions [[maybe_unused]](
+    "exclude-symbol-version", llvm::cl::Optional,
+    llvm::cl::cat(header_linker_category));
+
+static llvm::cl::list<std::string> excluded_symbol_tags [[maybe_unused]](
+    "exclude-symbol-tag", llvm::cl::Optional,
+    llvm::cl::cat(header_linker_category));
+
 static llvm::cl::opt<std::string> api(
     "api", llvm::cl::desc("<api>"), llvm::cl::Optional,
+    llvm::cl::init("current"),
     llvm::cl::cat(header_linker_category));
 
 static llvm::cl::opt<std::string> arch(
@@ -136,8 +145,10 @@ class HeaderAbiLinker {
 
   std::set<std::string> exported_headers_;
 
-  std::map<std::string, abi_util::ElfFunctionIR> function_decl_map_;
-  std::map<std::string, abi_util::ElfObjectIR> globvar_decl_map_;
+  std::unique_ptr<std::map<std::string, abi_util::ElfFunctionIR>>
+      function_decl_map_;
+  std::unique_ptr<std::map<std::string, abi_util::ElfObjectIR>>
+      globvar_decl_map_;
 
   // Version Script Regex Matching.
   std::set<std::string> functions_regex_matched_set_;
@@ -324,8 +335,8 @@ bool HeaderAbiLinker::LinkFunctions(
     abi_util::IRDumper *ir_dumper) {
   assert(reader != nullptr);
   auto symbol_filter = [this](const std::string &linker_set_key) {
-    return function_decl_map_.find(linker_set_key) !=
-               function_decl_map_.end() ||
+    return function_decl_map_->find(linker_set_key) !=
+               function_decl_map_->end() ||
            QueryRegexMatches(&functions_regex_matched_set_,
                              &functions_vs_regex_, linker_set_key);
   };
@@ -337,8 +348,8 @@ bool HeaderAbiLinker::LinkGlobalVars(
     abi_util::IRDumper *ir_dumper) {
   assert(reader != nullptr);
   auto symbol_filter = [this](const std::string &linker_set_key) {
-    return globvar_decl_map_.find(linker_set_key) !=
-               globvar_decl_map_.end() ||
+    return globvar_decl_map_->find(linker_set_key) !=
+               globvar_decl_map_->end() ||
            QueryRegexMatches(&globvars_regex_matched_set_, &globvars_vs_regex_,
                              linker_set_key);
   };
@@ -358,8 +369,8 @@ static bool LinkExportedSymbols(abi_util::IRDumper *dst,
 
 // To be called right after parsing the .so file / version script.
 bool HeaderAbiLinker::LinkExportedSymbols(abi_util::IRDumper *ir_dumper) {
-  return ::LinkExportedSymbols(ir_dumper, function_decl_map_) &&
-         ::LinkExportedSymbols(ir_dumper, globvar_decl_map_);
+  return ::LinkExportedSymbols(ir_dumper, *function_decl_map_) &&
+         ::LinkExportedSymbols(ir_dumper, *globvar_decl_map_);
 }
 
 bool HeaderAbiLinker::ReadExportedSymbols() {
@@ -369,7 +380,6 @@ bool HeaderAbiLinker::ReadExportedSymbols() {
                    << so_file_ << "\n";
       return false;
     }
-    return true;
   }
 
   if (!version_script_.empty()) {
@@ -378,29 +388,52 @@ bool HeaderAbiLinker::ReadExportedSymbols() {
                    << "\n";
       return false;
     }
-    return true;
   }
 
-  llvm::errs() << "Either shared lib or version script must be specified.\n";
-  return false;
-}
-
-bool HeaderAbiLinker::ReadExportedSymbolsFromVersionScript() {
-  abi_util::VersionScriptParser version_script_parser(
-      version_script_, arch_, api_);
-  if (!version_script_parser.Parse()) {
+  if (!function_decl_map_ || !globvar_decl_map_) {
+    llvm::errs() << "Either shared lib or version script must be specified.\n";
     return false;
   }
 
-  function_decl_map_ = version_script_parser.GetFunctions();
-  globvar_decl_map_ = version_script_parser.GetGlobVars();
+  return true;
+}
 
-  std::set<std::string> function_regexs =
-      version_script_parser.GetFunctionRegexs();
-  std::set<std::string> globvar_regexs =
-      version_script_parser.GetGlobVarRegexs();
-  functions_vs_regex_ = CreateRegexMatchExprFromSet(function_regexs);
-  globvars_vs_regex_ = CreateRegexMatchExprFromSet(globvar_regexs);
+template <typename T>
+static inline std::unique_ptr<std::map<std::string, T>>
+CombineExportedSymbols(std::unique_ptr<std::map<std::string, T>> lhs,
+                       const std::map<std::string, T> &rhs) {
+  if (!lhs) {
+    // If lhs has not be initialized, rhs is the first set of symbols.
+    return std::make_unique<std::map<std::string, T>>(rhs);
+  }
+
+  // If both lhs and rhs exist, return the intersection of them (prefer
+  // p.second from rhs).
+  std::map<std::string, T> result;
+  for (auto &p : rhs) {
+    if (lhs->find(p.first) != lhs->end()) {
+      result.insert(p);
+    }
+  }
+  return std::make_unique<std::map<std::string, T>>(std::move(result));
+}
+
+bool HeaderAbiLinker::ReadExportedSymbolsFromVersionScript() {
+  abi_util::VersionScriptParser parser(version_script_, arch_, api_);
+  if (!parser.Parse()) {
+    return false;
+  }
+
+  function_decl_map_ = CombineExportedSymbols(
+      std::move(function_decl_map_), parser.GetFunctions());
+  globvar_decl_map_ = CombineExportedSymbols(
+      std::move(globvar_decl_map_), parser.GetGlobVars());
+
+  functions_vs_regex_ = CreateRegexMatchExprFromSet(
+      parser.GetFunctionRegexs());
+  globvars_vs_regex_ = CreateRegexMatchExprFromSet(
+      parser.GetGlobVarRegexs());
+
   return true;
 }
 
@@ -411,8 +444,10 @@ bool HeaderAbiLinker::ReadExportedSymbolsFromSharedObjectFile() {
     return false;
   }
 
-  function_decl_map_ = so_parser->GetFunctions();
-  globvar_decl_map_ = so_parser->GetGlobVars();
+  function_decl_map_ = CombineExportedSymbols(
+      std::move(function_decl_map_), so_parser->GetFunctions());
+  globvar_decl_map_ = CombineExportedSymbols(
+      std::move(globvar_decl_map_), so_parser->GetGlobVars());
   return true;
 }
 
@@ -450,5 +485,6 @@ int main(int argc, const char **argv) {
     llvm::errs() << "Failed to link and dump elements\n";
     return -1;
   }
+
   return 0;
 }
