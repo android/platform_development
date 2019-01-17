@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c619cf0a_1e7255aa",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1060667
+      },
+      "writtenOn": "2019-01-17T23:53:24Z",
+      "side": 1,
+      "message": "FYI, I had to move Android.bp up to the snapshot root to get rid of the parent dir syntax (..) from src fields. Now I\u0027m thinking it might be cleaner if I move common/Android.bp up to merge the two into one big Android.bp. Let me know what you think plz.",
+      "revId": "6a5aaca7bfa1bcbdc6bc373220cbb22ae871f490",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
