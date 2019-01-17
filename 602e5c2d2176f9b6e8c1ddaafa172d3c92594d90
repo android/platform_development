@@ -22,6 +22,30 @@
       "revId": "602e5c2d2176f9b6e8c1ddaafa172d3c92594d90",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ed72d4e_fbdd3a70",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-01-17T06:33:14Z",
+      "side": 1,
+      "message": "The motivation is to distinguish \"empty sets\" and \"uninitialized yet\" (line 405-408).",
+      "parentUuid": "7ecdeafb_17994b39",
+      "range": {
+        "startLine": 393,
+        "startChar": 2,
+        "endLine": 393,
+        "endChar": 50
+      },
+      "revId": "602e5c2d2176f9b6e8c1ddaafa172d3c92594d90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
