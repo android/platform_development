@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ecdeafb_17994b39",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-01-17T06:29:50Z",
+      "side": 1,
+      "message": "This function can check\nif (so_file_.empty() \u0026\u0026 version_script_.empty())\nbefore line 377.\nAnd I don\u0027t think you have to change the maps to unique pointers.",
+      "range": {
+        "startLine": 393,
+        "startChar": 2,
+        "endLine": 393,
+        "endChar": 50
+      },
+      "revId": "602e5c2d2176f9b6e8c1ddaafa172d3c92594d90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
