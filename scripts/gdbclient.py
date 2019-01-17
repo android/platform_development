@@ -17,6 +17,7 @@
 
 import adb
 import argparse
+import json
 import logging
 import os
 import re
@@ -64,6 +65,11 @@ def parse_args():
     parser.add_argument(
         "--user", nargs="?", default="root",
         help="user to run commands as on the device [default: root]")
+    parser.add_argument(
+        "--setup-forwarding", default=None, choices=["gdb", "vscode"],
+        help=("Setup the gdbserver and port forwarding. Prints commands or " +
+              ".vscode/launch.json configuration needed to connect the debugging " +
+              "client to the server."))
 
     return parser.parse_args()
 
@@ -154,8 +160,8 @@ def handle_switches(args, sysroot):
     return (binary_file, pid, run_cmd)
 
 
-def generate_gdb_script(sysroot, binary_file, is64bit, port, connect_timeout=5):
-    # Generate a gdb script.
+def generate_setup_script(gdbpath, sysroot, binary_file, is64bit, port, type, connect_timeout=5):
+    # Generate a setup script.
     # TODO: Detect the zygote and run 'art-on' automatically.
     root = os.environ["ANDROID_BUILD_TOP"]
     symbols_dir = os.path.join(sysroot, "system", "lib64" if is64bit else "lib")
@@ -166,25 +172,71 @@ def generate_gdb_script(sysroot, binary_file, is64bit, port, connect_timeout=5):
     vendor_paths = ["", "hw", "egl"]
     solib_search_path += [os.path.join(symbols_dir, x) for x in symbols_paths]
     solib_search_path += [os.path.join(vendor_dir, x) for x in vendor_paths]
-    solib_search_path = ":".join(solib_search_path)
-
-    gdb_commands = ""
-    gdb_commands += "file '{}'\n".format(binary_file.name)
-    gdb_commands += "directory '{}'\n".format(root)
-    gdb_commands += "set solib-absolute-prefix {}\n".format(sysroot)
-    gdb_commands += "set solib-search-path {}\n".format(solib_search_path)
 
     dalvik_gdb_script = os.path.join(root, "development", "scripts", "gdb",
-                                     "dalvik.gdb")
+                                    "dalvik.gdb")
     if not os.path.exists(dalvik_gdb_script):
         logging.warning(("couldn't find {} - ART debugging options will not " +
                          "be available").format(dalvik_gdb_script))
-    else:
-        gdb_commands += "source {}\n".format(dalvik_gdb_script)
+        dalvik_gdb_script = None
 
-    # Try to connect for a few seconds, sometimes the device gdbserver takes
-    # a little bit to come up, especially on emulators.
-    gdb_commands += """
+    if type == "vscode":
+        # TODO It would be nice if we didn't need to copy this or run the gdbclient.py program
+        #      manually.
+        res = {
+            "name": "(gdb) Attach " + binary_file.name.split("/")[-1],
+            "type": "cppdbg",
+            "request": "launch",  # Needed for gdbserver.
+            "cwd": root,
+            "program": binary_file.name,
+            "MIMode": "gdb",
+            "miDebuggerServerAddress": "localhost:{}".format(port),
+            "miDebuggerPath": gdbpath,
+            "setupCommands": [
+                {
+                    # Required for vscode.
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": True,
+                },
+                {
+                    "description": "gdb command: dir",
+                    "text": "-environment-directory {}".format(root),
+                    "ignoreFailures": False 
+                },
+                {
+                    "description": "gdb command: set solib-search-path",
+                    "text": "-gdb-set solib-search-path {}".format(":".join(solib_search_path)),
+                    "ignoreFailures": False
+                },
+                {
+                    "description": "gdb command: set solib-absolute-prefix",
+                    "text": "-gdb-set solib-absolute-prefix {}".format(sysroot),
+                    "ignoreFailures": False
+                },
+            ]
+        }
+        if dalvik_gdb_script:
+            res["setupCommands"].append({
+                "description": "gdb command: source art commands",
+                "text": "-interpreter-exec console \"source {}\"".format(dalvik_gdb_script),
+                "ignoreFailures": False,
+            })
+        return json.dumps(res, indent=4)
+    elif type == "gdb":
+        solib_search_path = ":".join(solib_search_path)
+
+        gdb_commands = ""
+        gdb_commands += "file '{}'\n".format(binary_file.name)
+        gdb_commands += "directory '{}'\n".format(root)
+        gdb_commands += "set solib-absolute-prefix {}\n".format(sysroot)
+        gdb_commands += "set solib-search-path {}\n".format(solib_search_path)
+        if dalvik_gdb_script:
+            gdb_commands += "source {}\n".format(dalvik_gdb_script)
+
+        # Try to connect for a few seconds, sometimes the device gdbserver takes
+        # a little bit to come up, especially on emulators.
+        gdb_commands += """
 python
 
 def target_remote_with_retry(target, timeout_seconds):
@@ -207,7 +259,9 @@ target_remote_with_retry(':{}', {})
 end
 """.format(port, connect_timeout)
 
-    return gdb_commands
+        return gdb_commands
+    else:
+        raise Exception("Unknown configuration type " + type)
 
 
 def main():
@@ -258,12 +312,6 @@ def main():
             gdbrunner.forward_gdbserver_port(device, local=args.port,
                                              remote="tcp:{}".format(args.port))
 
-        # Generate a gdb script.
-        gdb_commands = generate_gdb_script(sysroot=sysroot,
-                                           binary_file=binary_file,
-                                           is64bit=is64bit,
-                                           port=args.port)
-
         # Find where gdb is
         if sys.platform.startswith("linux"):
             platform_name = "linux-x86"
@@ -271,14 +319,29 @@ def main():
             platform_name = "darwin-x86"
         else:
             sys.exit("Unknown platform: {}".format(sys.platform))
+
         gdb_path = os.path.join(root, "prebuilts", "gdb", platform_name, "bin",
                                 "gdb")
+        # Generate a gdb script.
+        gdb_commands = generate_setup_script(gdbpath=gdb_path,
+                                             sysroot=sysroot,
+                                             binary_file=binary_file,
+                                             is64bit=is64bit,
+                                             port=args.port,
+                                             type=args.setup_forwarding or "gdb")
 
-        # Print a newline to separate our messages from the GDB session.
-        print("")
+        if not args.setup_forwarding:
+            # Print a newline to separate our messages from the GDB session.
+            print("")
 
-        # Start gdb.
-        gdbrunner.start_gdb(gdb_path, gdb_commands)
+            # Start gdb.
+            gdbrunner.start_gdb(gdb_path, gdb_commands)
+        else:
+            print("")
+            print gdb_commands
+            print("")
+            print("")
+            raw_input("Press enter to kill gdbserver")
 
 if __name__ == "__main__":
     main()
