@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3144c2af_d9ef5331",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-17T19:59:08Z",
+      "side": 1,
+      "message": "This name is exactly the opposite of what it holds.",
+      "range": {
+        "startLine": 115,
+        "startChar": 22,
+        "endLine": 115,
+        "endChar": 44
+      },
+      "revId": "19e7a77cff5258e176b951b6fb124121d0c12c51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b728584c_8e240c8a",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-17T19:59:08Z",
+      "side": 1,
+      "message": "make this int",
+      "range": {
+        "startLine": 99,
+        "startChar": 46,
+        "endLine": 99,
+        "endChar": 52
+      },
+      "revId": "19e7a77cff5258e176b951b6fb124121d0c12c51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88a0acc3_4e429149",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-17T19:59:08Z",
+      "side": 1,
+      "message": "TextUtils.isEmpty(proxyHostName)",
+      "range": {
+        "startLine": 108,
+        "startChar": 12,
+        "endLine": 108,
+        "endChar": 59
+      },
+      "revId": "19e7a77cff5258e176b951b6fb124121d0c12c51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1eea8094_f2d21448",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-17T19:59:08Z",
+      "side": 1,
+      "message": "not really necessary?",
+      "range": {
+        "startLine": 335,
+        "startChar": 8,
+        "endLine": 335,
+        "endChar": 35
+      },
+      "revId": "19e7a77cff5258e176b951b6fb124121d0c12c51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11a48f9f_b6b5541a",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-17T19:59:08Z",
+      "side": 1,
+      "message": "Let\u0027s just remove the logs here, we don\u0027t log any other VPN parameters.",
+      "range": {
+        "startLine": 339,
+        "startChar": 24,
+        "endLine": 339,
+        "endChar": 80
+      },
+      "revId": "19e7a77cff5258e176b951b6fb124121d0c12c51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef4bbe91_ba19ab41",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-17T19:59:08Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 342,
+        "startChar": 24,
+        "endLine": 342,
+        "endChar": 83
+      },
+      "revId": "19e7a77cff5258e176b951b6fb124121d0c12c51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1582a477_07762b86",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnConnection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-17T19:59:08Z",
+      "side": 1,
+      "message": "Doesn\u0027t look like you need to line wrap here?",
+      "range": {
+        "startLine": 352,
+        "startChar": 33,
+        "endLine": 353,
+        "endChar": 80
+      },
+      "revId": "19e7a77cff5258e176b951b6fb124121d0c12c51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
