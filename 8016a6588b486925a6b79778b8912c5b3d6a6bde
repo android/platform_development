@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "093caf9c_830d6ebc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2019-01-18T01:26:16Z",
+      "side": 1,
+      "message": "should this be what the script prints? (rather than just the \"enter\" bit?)",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "8016a6588b486925a6b79778b8912c5b3d6a6bde",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb185de1_c0c84494",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2019-01-18T01:26:16Z",
+      "side": 1,
+      "message": "write a vscode extension?\n\ntake an extra argument that\u0027s the directory to write this in?\n\n(i\u0027m more sad that this doesn\u0027t help NDK users :-( )",
+      "revId": "8016a6588b486925a6b79778b8912c5b3d6a6bde",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
