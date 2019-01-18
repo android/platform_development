@@ -16,6 +16,24 @@
       "revId": "6a5aaca7bfa1bcbdc6bc373220cbb22ae871f490",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c62d2083_3b0fdf81",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-01-18T01:45:52Z",
+      "side": 1,
+      "message": "I have no objection to move the common/Android.bp to snapshot root. But I also like as is now because we may split filegroup and prebuilt_etc definitions. prebuilt_etc for the config files are dependent on arch variant, so they have enough reason to be included in root/Android.bp; while the filegroup for notice files don\u0027t.",
+      "parentUuid": "c619cf0a_1e7255aa",
+      "revId": "6a5aaca7bfa1bcbdc6bc373220cbb22ae871f490",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
