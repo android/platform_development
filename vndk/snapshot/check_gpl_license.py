@@ -140,7 +140,7 @@ class GPLChecker(object):
                 'Checking if the parent of revision {rev} exists in {proj}'.
                 format(rev=revision, proj=git_project_path))
             try:
-                cmd = ['git', '-C', path, 'fetch', 'goog', revision]
+                cmd = ['git', '-C', path, 'fetch', 'aosp', revision]
                 utils.check_call(cmd)
                 cmd = ['git', '-C', path, 'rev-parse', 'FETCH_HEAD^2']
                 parent_revision = utils.check_output(cmd).strip()
