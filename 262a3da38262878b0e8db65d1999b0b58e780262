@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "411992c6_d2a2bcab",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-18T16:53:39Z",
+      "side": 1,
+      "message": "One last nitpicking: when prefs.getInt() returns 0, just set proxyPort to empty instead of 0. That saves the user from needing to delete the 0 if there is no proxy configured.",
+      "range": {
+        "startLine": 64,
+        "startChar": 26,
+        "endLine": 64,
+        "endChar": 75
+      },
+      "revId": "262a3da38262878b0e8db65d1999b0b58e780262",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
