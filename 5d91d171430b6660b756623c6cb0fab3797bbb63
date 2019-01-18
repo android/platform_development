@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68e2aaaa_3c5e164c",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-18T17:10:03Z",
+      "side": 1,
+      "message": "proxyPortPrefvalue \u003d\u003d 0 ? \"\" : String.valueOf(proxyPortPrefvalue)",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 90
+      },
+      "revId": "5d91d171430b6660b756623c6cb0fab3797bbb63",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
