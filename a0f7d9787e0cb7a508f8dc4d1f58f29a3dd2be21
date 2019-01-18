@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "26e9c077_82fb5d14",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1398554
+      },
+      "writtenOn": "2019-01-18T15:23:31Z",
+      "side": 1,
+      "message": "Not sure why this was here, it\u0027s not actually needed it seems.",
+      "parentUuid": "bc720a52_bc355955",
+      "range": {
+        "startLine": 35,
+        "startChar": 34,
+        "endLine": 35,
+        "endChar": 52
+      },
+      "revId": "a0f7d9787e0cb7a508f8dc4d1f58f29a3dd2be21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fea4d438_a3c0c352",
         "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
         "patchSetId": 6
@@ -39,6 +63,24 @@
       "revId": "a0f7d9787e0cb7a508f8dc4d1f58f29a3dd2be21",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c32b951a_8006862f",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1398554
+      },
+      "writtenOn": "2019-01-18T15:23:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fea4d438_a3c0c352",
+      "revId": "a0f7d9787e0cb7a508f8dc4d1f58f29a3dd2be21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
