@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc720a52_bc355955",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-18T14:58:14Z",
+      "side": 1,
+      "message": "Either remove this import, or replace your existing \"ToyVpnClient.Prefs\" to just \"Prefs\"",
+      "range": {
+        "startLine": 35,
+        "startChar": 34,
+        "endLine": 35,
+        "endChar": 52
+      },
+      "revId": "a0f7d9787e0cb7a508f8dc4d1f58f29a3dd2be21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fea4d438_a3c0c352",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1059499
+      },
+      "writtenOn": "2019-01-18T14:58:14Z",
+      "side": 1,
+      "message": "Can you just use getInt()?",
+      "revId": "a0f7d9787e0cb7a508f8dc4d1f58f29a3dd2be21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
