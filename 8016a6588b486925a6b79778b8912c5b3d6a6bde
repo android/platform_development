@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6ced6d27_f72d843f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1047769
+      },
+      "writtenOn": "2019-01-18T17:07:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "093caf9c_830d6ebc",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "8016a6588b486925a6b79778b8912c5b3d6a6bde",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb185de1_c0c84494",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 1
@@ -39,6 +63,24 @@
       "revId": "8016a6588b486925a6b79778b8912c5b3d6a6bde",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa3c41cd_de7f88ef",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1047769
+      },
+      "writtenOn": "2019-01-18T17:07:42Z",
+      "side": 1,
+      "message": "write an extension probably, vscode doesn\u0027t seem to use inotify on the config file so it won\u0027t update the debugger list without opening the file and saving it in vscode (and even that sometimes doesn\u0027t work, requiring you to reload the window). Also you can generally save this config and it will continue to work even for different programs as long as the gdbserver is setup and the isa is correct, so adding an ever expanding list of debuggers isn\u0027t the best imo.\n\nIDK exactly what would be needed for use by ndk users but I\u0027d expect it would just be a few additional \u0027dir\u0027 commands and more search-paths (maybe, I thought the ndk had a different debugging script they used?).",
+      "parentUuid": "bb185de1_c0c84494",
+      "revId": "8016a6588b486925a6b79778b8912c5b3d6a6bde",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
