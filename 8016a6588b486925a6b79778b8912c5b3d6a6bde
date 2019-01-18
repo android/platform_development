@@ -81,6 +81,24 @@
       "revId": "8016a6588b486925a6b79778b8912c5b3d6a6bde",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7aa1a79_da125f35",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2019-01-18T17:24:08Z",
+      "side": 1,
+      "message": "yeah, that fact (that there\u0027s a separate script) is my real woe. it would be great to have a vscode extension, though i\u0027m hopeful that when we have lldb in the NDK that\u0027ll make it easy for someone who already maintains vscode debugging support to extend that to the NDK.\n\n(though i\u0027d assume that still won\u0027t help with your platform-specific needs.)",
+      "parentUuid": "aa3c41cd_de7f88ef",
+      "revId": "8016a6588b486925a6b79778b8912c5b3d6a6bde",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
