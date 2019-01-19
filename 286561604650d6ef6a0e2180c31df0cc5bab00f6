@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72550014_a1eab3c9",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/version_script_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-01-19T05:52:39Z",
+      "side": 1,
+      "message": "const std::string \u0026",
+      "range": {
+        "startLine": 37,
+        "startChar": 30,
+        "endLine": 37,
+        "endChar": 41
+      },
+      "revId": "286561604650d6ef6a0e2180c31df0cc5bab00f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
