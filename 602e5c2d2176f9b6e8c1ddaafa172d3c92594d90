@@ -46,6 +46,30 @@
       "revId": "602e5c2d2176f9b6e8c1ddaafa172d3c92594d90",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27d8cdd8_bf0e7c15",
+        "filename": "vndk/tools/header-checker/header-abi-linker/src/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-01-19T05:56:22Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1ed72d4e_fbdd3a70",
+      "range": {
+        "startLine": 393,
+        "startChar": 2,
+        "endLine": 393,
+        "endChar": 50
+      },
+      "revId": "602e5c2d2176f9b6e8c1ddaafa172d3c92594d90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
