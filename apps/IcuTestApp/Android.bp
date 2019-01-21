@@ -1,0 +1,34 @@
+cc_library_shared {
+    name: "libicu4c_test_app_native_lib",
+    srcs: [
+        "jni/test.cpp"
+    ],
+    shared_libs: [
+        "libicuuc",
+        "libicui18n",
+        "liblog",
+    ],
+    cflags: [
+        "-DANDROID_LINK_SHARED_ICU4C",
+        "-Wno-unused-parameter",
+    ],
+    cpp_std: "c++17",
+}
+
+android_test_helper_app {
+    name: "icu4c_test_app",
+    sdk_version: "current",
+    min_sdk_version: "14",
+    manifest: "AndroidManifest.xml",
+    owner: "google",
+    jni_libs: [
+        "libicu4c_test_app_native_lib",
+        "libc++",
+    ],
+    srcs: [
+        "src/**/*.java"
+    ],
+    resource_dirs: [
+        "res",
+    ],
+}
