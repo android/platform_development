@@ -22,6 +22,30 @@
       "revId": "44d572ca93dd90ae50795bf320a3444d12e66b14",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07232a2e_1c6c5ac1",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-01-22T02:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9e88ecf_cb1abcee",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 74
+      },
+      "revId": "44d572ca93dd90ae50795bf320a3444d12e66b14",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
