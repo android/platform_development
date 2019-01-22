@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9e88ecf_cb1abcee",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-01-22T01:50:38Z",
+      "side": 1,
+      "message": "I feel it might be better to split this into 2 lines:\n\n    logging.error(\u0027Failed to get parent of revision {rev} from \"{remote}\": {err}\u0027.format(...))\n    logging.error(\u0027Try --remote to manually set remote name\u0027)",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 74
+      },
+      "revId": "44d572ca93dd90ae50795bf320a3444d12e66b14",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
