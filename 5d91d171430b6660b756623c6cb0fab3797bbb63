@@ -22,6 +22,30 @@
       "revId": "5d91d171430b6660b756623c6cb0fab3797bbb63",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77febc6c_5bd4fbe3",
+        "filename": "samples/ToyVpn/src/com/example/android/toyvpn/ToyVpnClient.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1131829
+      },
+      "writtenOn": "2019-01-24T17:23:29Z",
+      "side": 1,
+      "message": "Seems not addressed. Does this compile?",
+      "parentUuid": "68e2aaaa_3c5e164c",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 90
+      },
+      "revId": "5d91d171430b6660b756623c6cb0fab3797bbb63",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
