@@ -93,6 +93,52 @@
       "revId": "0ea228727d8a5f9b804ea9ec357d8625161eaa63",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "142959b6_4105bec8",
+        "filename": "vndk/tools/header-checker/header-abi-util/src/version_script_parser.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-01-28T10:46:10Z",
+      "side": 1,
+      "message": "raw string",
+      "range": {
+        "startLine": 196,
+        "startChar": 45,
+        "endLine": 196,
+        "endChar": 58
+      },
+      "revId": "0ea228727d8a5f9b804ea9ec357d8625161eaa63",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8eb8b981_63769323",
+        "filename": "vndk/tools/header-checker/tests/integration/version_script_example/regenerate.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-01-28T10:46:10Z",
+      "side": 1,
+      "message": "Is this the same as libversion_script_example.so.lsdump created by gen_all.py?\nCan we use gen_all.py instead of this script?",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "0ea228727d8a5f9b804ea9ec357d8625161eaa63",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
