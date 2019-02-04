@@ -22,8 +22,8 @@ If you're using IntelliJ...
         Repeat these steps after each sync...
 
         1) make (to produce generated .java source)
-        2) development/tools/idegen/idegen.sh
-        3) Open android.ipr in IntelliJ. If you already have the project open,
+        2) development/tools/idegen/idegen.sh <ipr_file_name> (optional, android.ipr by default)
+        3) Open <ipr_file_name>.ipr in IntelliJ. If you already have the project open,
            hit the sync button in IntelliJ, and it will automatically detect the
            updated configuration.
 
