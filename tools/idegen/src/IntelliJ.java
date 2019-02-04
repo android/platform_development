@@ -23,18 +23,38 @@ import java.util.SortedSet;
  */
 public class IntelliJ {
 
-    private static final String IDEA_IML = "android.iml";
-    private static final String IDEA_IPR = "android.ipr";
+    private static final String IML_EXT = ".iml";
+    private static final String IPR_EXT = ".ipr";
+    private static final String DEFAULT_IDEA_IML = "android" + IML_EXT;
+    private static final String DEFAULT_IDEA_IPR = "android" + IPR_EXT;
 
     /**
      * Generates IntelliJ configuration files from the given configuration.
      */
-    public static void generateFrom(Configuration c) throws IOException {
+    public static void generateFrom(Configuration c, String targetName) throws IOException {
         File templatesDirectory = new File(c.toolDirectory, "templates");
-        String ipr = Files.toString(new File(templatesDirectory, IDEA_IPR));
-        Files.toFile(ipr, new File(IDEA_IPR));
+        String ipr = Files.toString(new File(templatesDirectory, DEFAULT_IDEA_IPR));
+        String targetIprName;
+        String targetImlName;
+        if (targetName == null || targetName.length() == 0){
+            targetIprName = DEFAULT_IDEA_IPR;
+            targetImlName = DEFAULT_IDEA_IML;
+        } else {
+            targetIprName = targetName + IPR_EXT;
+            targetImlName = targetName + IML_EXT;
+        }
 
-        String iml = Files.toString(new File(templatesDirectory, IDEA_IML));
+        StringBuilder projectModulesXml = new StringBuilder();
+        projectModulesXml
+                .append("<module fileurl=\"file://$PROJECT_DIR$/").append(targetImlName)
+                .append("\" filepath=\"$PROJECT_DIR$/").append(targetImlName)
+                .append("\" />");
+
+        ipr = ipr.replace("PROJECT_MODULES", projectModulesXml.toString());
+
+        Files.toFile(ipr, new File(targetIprName));
+
+        String iml = Files.toString(new File(templatesDirectory, DEFAULT_IDEA_IML));
 
         StringBuilder sourceRootsXml = new StringBuilder();
         for (File sourceRoot : c.sourceRoots) {
@@ -86,7 +106,7 @@ public class IntelliJ {
                 sourceRootsXml.toString() + excludeXml.toString());
         iml = iml.replace("JAR_ENTRIES", jarsXml.toString());
 
-        Files.toFile(iml, new File(IDEA_IML));
+        Files.toFile(iml, new File(targetImlName));
     }
 
     private static boolean isTests(File file) {

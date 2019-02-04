@@ -35,7 +35,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Configuration configuration = new Configuration();
-        IntelliJ.generateFrom(configuration);
+        String targetName = null;
+        if (args != null && args.length > 0){
+            targetName = args[0];
+        }
+        IntelliJ.generateFrom(configuration, targetName);
         Eclipse.generateFrom(configuration);
     }
 }
