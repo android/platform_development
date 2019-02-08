@@ -1,0 +1,11 @@
+Pkg.Desc=System Image ${TARGET_CPU_ABI}
+Pkg.Revision=1
+Pkg.Dependencies=emulator#28.1.6
+AndroidVersion.ApiLevel=${PLATFORM_SDK_VERSION}
+AndroidVersion.CodeName=${PLATFORM_VERSION_CODENAME}
+SystemImage.Abi=${TARGET_CPU_ABI}
+SystemImage.TagId=aosp
+SystemImage.TagDisplay=AOSP
+SystemImage.GpuSupport=true
+Addon.VendorId=google
+Addon.VendorDisplay=Google Inc.
