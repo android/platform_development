@@ -104,6 +104,7 @@ def ensure_linker(device, sysroot, is64bit):
         local_path += "64"
         remote_path += "64"
     if not os.path.exists(local_path):
+        os.makedirs(local_path)
         device.pull(remote_path, local_path)
 
 
