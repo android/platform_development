@@ -182,7 +182,7 @@ def start_gdbserver(device, gdbserver_local_path, gdbserver_remote_path,
     print("Redirecting gdbserver output to {}".format(gdbserver_output_path))
     gdbserver_output = file(gdbserver_output_path, 'w')
     return device.shell_popen(gdbserver_cmd, stdout=gdbserver_output,
-                              stderr=gdbserver_output)
+                              stderr=gdbserver_output, stdin=subprocess.PIPE)
 
 
 def forward_gdbserver_port(device, local, remote):
