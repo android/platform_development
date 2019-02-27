@@ -9,8 +9,8 @@ import time
 from utils import (
     AOSP_DIR, COMPRESSED_SOURCE_ABI_DUMP_EXT, SOURCE_ABI_DUMP_EXT,
     SOURCE_ABI_DUMP_EXT_END, SO_EXT, copy_reference_dumps, find_lib_lsdumps,
-    get_build_vars_for_product, get_module_variant_dir_name, make_libraries,
-    make_tree)
+    get_build_vars_for_product, get_lsdump_paths_file_path,
+    get_module_variant_dir_name, make_libraries, make_tree, read_lsdump_paths)
 
 
 PRODUCTS_DEFAULT = ['aosp_arm_ab', 'aosp_arm', 'aosp_arm64', 'aosp_x86_ab',
@@ -97,10 +97,10 @@ def get_ref_dump_dir_stem(args, vndk_or_ndk, product, chosen_vndk_version):
     return ref_dump_dir_stem
 
 
-def make_libs_for_product(libs, llndk_mode, product, variant):
+def make_libs_for_product(libs, llndk_mode, product, variant, targets):
     print('making libs for', product + '-' + variant)
     if libs:
-        make_libraries(libs, product, variant, llndk_mode)
+        make_libraries(product, variant, targets, libs, llndk_mode)
     else:
         make_tree(product, variant)
 
@@ -210,9 +210,12 @@ def create_source_abi_reference_dumps_for_all_products(args):
             # Build all the specified libs (or build the 'vndk' target if none
             # of them are specified.)
             make_libs_for_product(args.libs, args.llndk, product,
-                                  args.build_variant)
+                                  args.build_variant, targets)
 
-        lsdump_paths = get_lsdump_paths(product)
+        lsdump_paths_file_path = get_lsdump_paths_file_path(
+            product, args.build_variant)
+        lsdump_paths = read_lsdump_paths(lsdump_paths_file_path, targets)
+
         num_processed += create_source_abi_reference_dumps(
             args, product, chosen_vndk_version, lsdump_paths, targets)
 
