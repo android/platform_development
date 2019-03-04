@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9ae9294_0f22e091",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-03-04T06:04:52Z",
+      "side": 1,
+      "message": "This function is unused.",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "dd7e88acf9bed26035caca0ed52387a45e0958f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c2b4835_8d2c6447",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-03-04T06:04:52Z",
+      "side": 1,
+      "message": "It\u0027s a relative path. If the current directory is not $ANDROID_BUILD_TOP, read_lsdump_paths cannot find it.",
+      "range": {
+        "startLine": 166,
+        "startChar": 24,
+        "endLine": 166,
+        "endChar": 35
+      },
+      "revId": "dd7e88acf9bed26035caca0ed52387a45e0958f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
