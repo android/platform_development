@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ed5b1c72_26a145ec",
+        "filename": "vndk/tools/header-checker/utils/create_reference_dumps.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-05T06:35:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9ae9294_0f22e091",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "dd7e88acf9bed26035caca0ed52387a45e0958f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7c2b4835_8d2c6447",
         "filename": "vndk/tools/header-checker/utils/utils.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-04T06:04:52Z",
       "side": 1,
       "message": "It\u0027s a relative path. If the current directory is not $ANDROID_BUILD_TOP, read_lsdump_paths cannot find it.",
+      "range": {
+        "startLine": 166,
+        "startChar": 24,
+        "endLine": 166,
+        "endChar": 35
+      },
+      "revId": "dd7e88acf9bed26035caca0ed52387a45e0958f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "563c76a3_ce18058f",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-05T06:35:27Z",
+      "side": 1,
+      "message": "I still need relative path because this file path will become make build target.  In the latest PS, I prepend ${ANDROID_BUILD_TOP} to the file path before reading the file.",
+      "parentUuid": "7c2b4835_8d2c6447",
       "range": {
         "startLine": 166,
         "startChar": 24,
