@@ -1,0 +1,13 @@
+android_app {
+    name: "xmladapters",
+    // WARNING: Unknown module tag "samples"
+    // Only compile source java files in this apk.
+    srcs: ["src/**/*.java"],
+    optimize: {
+        enabled: false,
+    },
+    sdk_version: "8",
+    dex_preopt: {
+        enabled: false,
+    },
+}
