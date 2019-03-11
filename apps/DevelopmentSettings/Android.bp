@@ -1,0 +1,4 @@
+android_app {
+    name: "DevelopmentSettings",
+    sdk_version: "current",
+}
