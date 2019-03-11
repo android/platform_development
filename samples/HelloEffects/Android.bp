@@ -1,0 +1,13 @@
+android_app {
+    name: "HelloEffects",
+    // WARNING: Unknown module tag "samples"
+
+    srcs: ["**/*.java"],
+
+    sdk_version: "current",
+
+    dex_preopt: {
+        enabled: false,
+    },
+
+}

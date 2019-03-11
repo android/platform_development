@@ -1,0 +1,18 @@
+android_app {
+    name: "BusinessCard",
+    // WARNING: Unknown module tag "samples"
+
+    // Only compile source java files in this apk.
+    srcs: ["src/**/*.java"],
+
+    sdk_version: "current",
+
+    dex_preopt: {
+        enabled: false,
+    },
+
+    optimize: {
+        enabled: false,
+    },
+
+}

@@ -1,0 +1,12 @@
+android_app {
+    name: "LceDemo",
+    // WARNING: Unknown module tag "samples"
+    // WARNING: Module tags are not supported in Soong.
+    // For JUnit or instrumentataion app tests, use the "android_test" module type.
+
+    // Only compile source java files in this apk.
+    srcs: ["src/**/*.java"],
+
+    sdk_version: "current",
+
+}

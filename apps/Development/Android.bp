@@ -1,0 +1,14 @@
+android_app {
+    name: "Development",
+    libs: [
+        "android.test.runner.stubs",
+        "telephony-common",
+        "org.apache.http.legacy",
+    ],
+    srcs: [
+        "**/*.java",
+        "src/com/android/development/IRemoteService.aidl",
+    ],
+    platform_apis: true,
+    certificate: "platform",
+}
