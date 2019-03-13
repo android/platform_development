@@ -1,3 +1,8 @@
+android_app_certificate {
+    name: "development_apps_pushapiauthenticator",
+    certificate: "cert",
+}
+
 android_test {
     name: "PushApiAuthenticator",
     // Only compile source java files in this apk.
@@ -6,5 +11,6 @@ android_test {
     dex_preopt: {
         enabled: false,
     },
-    certificate: "cert",
+    certificate: ":development_apps_pushapiauthenticator",
+
 }

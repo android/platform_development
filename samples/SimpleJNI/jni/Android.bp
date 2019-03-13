@@ -26,7 +26,8 @@ cc_library_shared {
     srcs: ["native.cpp"],
 
     // All of the shared libraries we link against.
-    host_ldlibs: ["-llog"],
+    //host_ldlibs: ["-llog"],
+    shared_libs: ["liblog"],
 
     // No static libraries.
     static_libs: [],
