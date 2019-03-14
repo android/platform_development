@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93e7c9cf_2fc25ce6",
+        "filename": "apps/BuildWidget/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2019-03-14T17:05:01Z",
+      "side": 1,
+      "message": "We need to figure out what to do with samples still, don\u0027t we? (Potentially a new module type? I don\u0027t remember everything they do)",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 44
+      },
+      "revId": "daa8b6119e0df45d7778f3e58661d31a83f88b18",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
