@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "208fefe5_13114fe6",
+        "filename": "build/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2019-03-14T06:56:03Z",
+      "side": 1,
+      "message": "You\u0027ll need to depend on $(ZIPTIME) here",
+      "revId": "2d3e90cb2a7eab353c974b62f07e87e5f1b97b6a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
