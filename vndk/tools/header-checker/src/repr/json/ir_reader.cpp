@@ -136,7 +136,7 @@ GetElfSymbolBinding(const JsonObjectRef &elf_symbol) {
                    "Failed to convert JSON to ElfSymbolBinding");
 }
 
-bool JsonToIRReader::ReadDump(const std::string &dump_file) {
+bool JsonIRReader::ReadDump(const std::string &dump_file) {
   Json::Value tu_json;
   Json::Reader reader;
   std::ifstream input(dump_file);
@@ -173,13 +173,13 @@ bool JsonToIRReader::ReadDump(const std::string &dump_file) {
   return true;
 }
 
-void JsonToIRReader::ReadTagTypeInfo(const JsonObjectRef &type_decl,
-                                     TagTypeIR *tag_type_ir) {
+void JsonIRReader::ReadTagTypeInfo(const JsonObjectRef &type_decl,
+                                   TagTypeIR *tag_type_ir) {
   tag_type_ir->SetUniqueId(type_decl.GetString("unique_id"));
 }
 
-void JsonToIRReader::ReadTemplateInfo(const JsonObjectRef &type_decl,
-                                      TemplatedArtifactIR *template_ir) {
+void JsonIRReader::ReadTemplateInfo(const JsonObjectRef &type_decl,
+                                    TemplatedArtifactIR *template_ir) {
   TemplateInfoIR template_info_ir;
   for (auto &&referenced_type : type_decl.GetStrings("template_args")) {
     TemplateElementIR template_element_ir(referenced_type);
@@ -188,8 +188,8 @@ void JsonToIRReader::ReadTemplateInfo(const JsonObjectRef &type_decl,
   template_ir->SetTemplateInfo(std::move(template_info_ir));
 }
 
-void JsonToIRReader::ReadTypeInfo(const JsonObjectRef &type_decl,
-                                  TypeIR *type_ir) {
+void JsonIRReader::ReadTypeInfo(const JsonObjectRef &type_decl,
+                                TypeIR *type_ir) {
   type_ir->SetLinkerSetKey(type_decl.GetString("linker_set_key"));
   type_ir->SetSourceFile(type_decl.GetString("source_file"));
   type_ir->SetName(type_decl.GetString("name"));
@@ -199,8 +199,8 @@ void JsonToIRReader::ReadTypeInfo(const JsonObjectRef &type_decl,
   type_ir->SetAlignment(type_decl.GetUint("alignment"));
 }
 
-void JsonToIRReader::ReadRecordFields(const JsonObjectRef &record_type,
-                                      RecordTypeIR *record_ir) {
+void JsonIRReader::ReadRecordFields(const JsonObjectRef &record_type,
+                                    RecordTypeIR *record_ir) {
   for (auto &&field : record_type.GetObjects("fields")) {
     RecordFieldIR record_field_ir(
         field.GetString("field_name"), field.GetString("referenced_type"),
@@ -209,8 +209,8 @@ void JsonToIRReader::ReadRecordFields(const JsonObjectRef &record_type,
   }
 }
 
-void JsonToIRReader::ReadBaseSpecifiers(const JsonObjectRef &record_type,
-                                        RecordTypeIR *record_ir) {
+void JsonIRReader::ReadBaseSpecifiers(const JsonObjectRef &record_type,
+                                      RecordTypeIR *record_ir) {
   for (auto &&base_specifier : record_type.GetObjects("base_specifiers")) {
     CXXBaseSpecifierIR record_base_ir(
         base_specifier.GetString("referenced_type"),
@@ -219,8 +219,8 @@ void JsonToIRReader::ReadBaseSpecifiers(const JsonObjectRef &record_type,
   }
 }
 
-void JsonToIRReader::ReadVTableLayout(const JsonObjectRef &record_type,
-                                      RecordTypeIR *record_ir) {
+void JsonIRReader::ReadVTableLayout(const JsonObjectRef &record_type,
+                                    RecordTypeIR *record_ir) {
   VTableLayoutIR vtable_layout_ir;
   for (auto &&vtable_component : record_type.GetObjects("vtable_components")) {
     VTableComponentIR vtable_component_ir(
@@ -233,8 +233,8 @@ void JsonToIRReader::ReadVTableLayout(const JsonObjectRef &record_type,
   record_ir->SetVTableLayout(std::move(vtable_layout_ir));
 }
 
-void JsonToIRReader::ReadEnumFields(const JsonObjectRef &enum_type,
-                                    EnumTypeIR *enum_ir) {
+void JsonIRReader::ReadEnumFields(const JsonObjectRef &enum_type,
+                                  EnumTypeIR *enum_ir) {
   for (auto &&field : enum_type.GetObjects("enum_fields")) {
     EnumFieldIR enum_field_ir(field.GetString("name"),
                               field.GetInt("enum_field_value"));
@@ -242,7 +242,7 @@ void JsonToIRReader::ReadEnumFields(const JsonObjectRef &enum_type,
   }
 }
 
-void JsonToIRReader::ReadFunctionParametersAndReturnType(
+void JsonIRReader::ReadFunctionParametersAndReturnType(
     const JsonObjectRef &function, CFunctionLikeIR *function_ir) {
   function_ir->SetReturnType(function.GetString("return_type"));
   for (auto &&parameter : function.GetObjects("parameters")) {
@@ -253,7 +253,7 @@ void JsonToIRReader::ReadFunctionParametersAndReturnType(
   }
 }
 
-FunctionIR JsonToIRReader::FunctionJsonToIR(const JsonObjectRef &function) {
+FunctionIR JsonIRReader::FunctionJsonToIR(const JsonObjectRef &function) {
   FunctionIR function_ir;
   function_ir.SetLinkerSetKey(function.GetString("linker_set_key"));
   function_ir.SetName(function.GetString("function_name"));
@@ -265,7 +265,7 @@ FunctionIR JsonToIRReader::FunctionJsonToIR(const JsonObjectRef &function) {
 }
 
 FunctionTypeIR
-JsonToIRReader::FunctionTypeJsonToIR(const JsonObjectRef &function_type) {
+JsonIRReader::FunctionTypeJsonToIR(const JsonObjectRef &function_type) {
   FunctionTypeIR function_type_ir;
   ReadTypeInfo(function_type, &function_type_ir);
   ReadFunctionParametersAndReturnType(function_type, &function_type_ir);
@@ -273,7 +273,7 @@ JsonToIRReader::FunctionTypeJsonToIR(const JsonObjectRef &function_type) {
 }
 
 RecordTypeIR
-JsonToIRReader::RecordTypeJsonToIR(const JsonObjectRef &record_type) {
+JsonIRReader::RecordTypeJsonToIR(const JsonObjectRef &record_type) {
   RecordTypeIR record_type_ir;
   ReadTypeInfo(record_type, &record_type_ir);
   ReadTemplateInfo(record_type, &record_type_ir);
@@ -287,7 +287,7 @@ JsonToIRReader::RecordTypeJsonToIR(const JsonObjectRef &record_type) {
   return record_type_ir;
 }
 
-EnumTypeIR JsonToIRReader::EnumTypeJsonToIR(const JsonObjectRef &enum_type) {
+EnumTypeIR JsonIRReader::EnumTypeJsonToIR(const JsonObjectRef &enum_type) {
   EnumTypeIR enum_type_ir;
   ReadTypeInfo(enum_type, &enum_type_ir);
   enum_type_ir.SetUnderlyingType(enum_type.GetString("underlying_type"));
@@ -297,7 +297,7 @@ EnumTypeIR JsonToIRReader::EnumTypeJsonToIR(const JsonObjectRef &enum_type) {
   return enum_type_ir;
 }
 
-void JsonToIRReader::ReadGlobalVariables(const JsonObjectRef &tu) {
+void JsonIRReader::ReadGlobalVariables(const JsonObjectRef &tu) {
   for (auto &&global_variable : tu.GetObjects("global_vars")) {
     GlobalVarIR global_variable_ir;
     global_variable_ir.SetName(global_variable.GetString("name"));
@@ -315,7 +315,7 @@ void JsonToIRReader::ReadGlobalVariables(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadPointerTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadPointerTypes(const JsonObjectRef &tu) {
   for (auto &&pointer_type : tu.GetObjects("pointer_types")) {
     PointerTypeIR pointer_type_ir;
     ReadTypeInfo(pointer_type, &pointer_type_ir);
@@ -327,7 +327,7 @@ void JsonToIRReader::ReadPointerTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadBuiltinTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadBuiltinTypes(const JsonObjectRef &tu) {
   for (auto &&builtin_type : tu.GetObjects("builtin_types")) {
     BuiltinTypeIR builtin_type_ir;
     ReadTypeInfo(builtin_type, &builtin_type_ir);
@@ -338,7 +338,7 @@ void JsonToIRReader::ReadBuiltinTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadQualifiedTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadQualifiedTypes(const JsonObjectRef &tu) {
   for (auto &&qualified_type : tu.GetObjects("qualified_types")) {
     QualifiedTypeIR qualified_type_ir;
     ReadTypeInfo(qualified_type, &qualified_type_ir);
@@ -354,7 +354,7 @@ void JsonToIRReader::ReadQualifiedTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadArrayTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadArrayTypes(const JsonObjectRef &tu) {
   for (auto &&array_type : tu.GetObjects("array_types")) {
     ArrayTypeIR array_type_ir;
     ReadTypeInfo(array_type, &array_type_ir);
@@ -366,7 +366,7 @@ void JsonToIRReader::ReadArrayTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadLvalueReferenceTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadLvalueReferenceTypes(const JsonObjectRef &tu) {
   for (auto &&lvalue_reference_type : tu.GetObjects("lvalue_reference_types")) {
     LvalueReferenceTypeIR lvalue_reference_type_ir;
     ReadTypeInfo(lvalue_reference_type, &lvalue_reference_type_ir);
@@ -379,7 +379,7 @@ void JsonToIRReader::ReadLvalueReferenceTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadRvalueReferenceTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadRvalueReferenceTypes(const JsonObjectRef &tu) {
   for (auto &&rvalue_reference_type : tu.GetObjects("rvalue_reference_types")) {
     RvalueReferenceTypeIR rvalue_reference_type_ir;
     ReadTypeInfo(rvalue_reference_type, &rvalue_reference_type_ir);
@@ -392,7 +392,7 @@ void JsonToIRReader::ReadRvalueReferenceTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadFunctions(const JsonObjectRef &tu) {
+void JsonIRReader::ReadFunctions(const JsonObjectRef &tu) {
   for (auto &&function : tu.GetObjects("functions")) {
     FunctionIR function_ir = FunctionJsonToIR(function);
     if (!IsLinkableMessageInExportedHeaders(&function_ir)) {
@@ -403,7 +403,7 @@ void JsonToIRReader::ReadFunctions(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadRecordTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadRecordTypes(const JsonObjectRef &tu) {
   for (auto &&record_type : tu.GetObjects("record_types")) {
     RecordTypeIR record_type_ir = RecordTypeJsonToIR(record_type);
     if (!IsLinkableMessageInExportedHeaders(&record_type_ir)) {
@@ -417,7 +417,7 @@ void JsonToIRReader::ReadRecordTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadFunctionTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadFunctionTypes(const JsonObjectRef &tu) {
   for (auto &&function_type : tu.GetObjects("function_types")) {
     FunctionTypeIR function_type_ir = FunctionTypeJsonToIR(function_type);
     if (!IsLinkableMessageInExportedHeaders(&function_type_ir)) {
@@ -431,7 +431,7 @@ void JsonToIRReader::ReadFunctionTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadEnumTypes(const JsonObjectRef &tu) {
+void JsonIRReader::ReadEnumTypes(const JsonObjectRef &tu) {
   for (auto &&enum_type : tu.GetObjects("enum_types")) {
     EnumTypeIR enum_type_ir = EnumTypeJsonToIR(enum_type);
     if (!IsLinkableMessageInExportedHeaders(&enum_type_ir)) {
@@ -445,7 +445,7 @@ void JsonToIRReader::ReadEnumTypes(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadElfFunctions(const JsonObjectRef &tu) {
+void JsonIRReader::ReadElfFunctions(const JsonObjectRef &tu) {
   for (auto &&elf_function : tu.GetObjects("elf_functions")) {
     ElfFunctionIR elf_function_ir(elf_function.GetString("name"),
                                   GetElfSymbolBinding(elf_function));
@@ -454,7 +454,7 @@ void JsonToIRReader::ReadElfFunctions(const JsonObjectRef &tu) {
   }
 }
 
-void JsonToIRReader::ReadElfObjects(const JsonObjectRef &tu) {
+void JsonIRReader::ReadElfObjects(const JsonObjectRef &tu) {
   for (auto &&elf_object : tu.GetObjects("elf_objects")) {
     ElfObjectIR elf_object_ir(elf_object.GetString("name"),
                               GetElfSymbolBinding(elf_object));
