@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6213cf7b_a2c8e6b1",
+        "filename": "vndk/tools/header-checker/src/utils/collect_exported_headers.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-03-19T07:30:03Z",
+      "side": 1,
+      "message": "Can this be removed?",
+      "range": {
+        "startLine": 93,
+        "startChar": 9,
+        "endLine": 93,
+        "endChar": 16
+      },
+      "revId": "1aef3349578e91816a7fafcddeaea9e60f708ca9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
