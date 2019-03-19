@@ -22,6 +22,29 @@
       "revId": "daa8b6119e0df45d7778f3e58661d31a83f88b18",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77d78f51_6afcb0fa",
+        "filename": "apps/PushApiAuthenticator/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2019-03-19T18:03:07Z",
+      "side": 1,
+      "message": "Does \"cert\" work here?",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 56
+      },
+      "revId": "daa8b6119e0df45d7778f3e58661d31a83f88b18",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
