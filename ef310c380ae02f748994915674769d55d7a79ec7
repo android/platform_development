@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "4bf4c89a_98f8b238",
+        "filename": "vndk/tools/header-checker/src/dumper/abi_wrappers.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-03-20T08:18:16Z",
+      "side": 1,
+      "message": "Can these be removed?",
+      "range": {
+        "startLine": 17,
+        "startChar": 9,
+        "endLine": 18,
+        "endChar": 27
+      },
+      "revId": "ef310c380ae02f748994915674769d55d7a79ec7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9478469_ac6c4116",
+        "filename": "vndk/tools/header-checker/src/dumper/abi_wrappers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-03-20T08:18:16Z",
+      "side": 1,
+      "message": "Can this be removed?",
+      "range": {
+        "startLine": 19,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "ef310c380ae02f748994915674769d55d7a79ec7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc7f055b_1485b084",
         "filename": "vndk/tools/header-checker/src/repr/ir_representation_internal.h",
         "patchSetId": 1
