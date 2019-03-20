@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fdd1b09e_838b5dae",
+        "filename": "vndk/tools/header-checker/src/repr/ir_representation.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T09:31:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05ad54c9_4e58b21a",
+      "revId": "de6fde8ebdeb848c7d361875ad32eb74efe011b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ca00c40d_0f086da9",
         "filename": "vndk/tools/header-checker/src/repr/ir_representation.h",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2019-03-20T07:41:25Z",
       "side": 1,
       "message": "Will this be private?",
+      "range": {
+        "startLine": 885,
+        "startChar": 1,
+        "endLine": 885,
+        "endChar": 7
+      },
+      "revId": "de6fde8ebdeb848c7d361875ad32eb74efe011b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0289a5c9_da0b5c75",
+        "filename": "vndk/tools/header-checker/src/repr/ir_representation.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T09:31:50Z",
+      "side": 1,
+      "message": "Some code in src/repr/ir_reader.cpp must be fixed first.  And sure, it should become `private` eventually.",
+      "parentUuid": "ca00c40d_0f086da9",
       "range": {
         "startLine": 885,
         "startChar": 1,
