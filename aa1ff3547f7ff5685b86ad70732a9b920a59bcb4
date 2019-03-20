@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "de78d099_16601272",
+        "filename": "vndk/tools/header-checker/src/repr/ir_representation.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 853,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T09:28:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a671b85_a1932cf2",
+      "range": {
+        "startLine": 853,
+        "startChar": 58,
+        "endLine": 853,
+        "endChar": 67
+      },
+      "revId": "aa1ff3547f7ff5685b86ad70732a9b920a59bcb4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e82f8a15_718f5fc2",
         "filename": "vndk/tools/header-checker/src/repr/ir_representation.h",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-19T07:47:06Z",
       "side": 1,
       "message": "I think this can be \u0027ModuleIR module_;\u0027. Is there any reason for using unique_ptr?",
+      "range": {
+        "startLine": 1178,
+        "startChar": 2,
+        "endLine": 1178,
+        "endChar": 36
+      },
+      "revId": "aa1ff3547f7ff5685b86ad70732a9b920a59bcb4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea1600dc_514e9520",
+        "filename": "vndk/tools/header-checker/src/repr/ir_representation.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 1178,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T09:28:07Z",
+      "side": 1,
+      "message": "In the future, I would like to make ReadDump(path) return the ModuleIR and allow users to throw IRReader away (i.e. ModuleIR might live longer than IRReader).  Thus, it will be good to reduce the cost to move the instance of ModuleIR.",
+      "parentUuid": "e82f8a15_718f5fc2",
       "range": {
         "startLine": 1178,
         "startChar": 2,
