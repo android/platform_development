@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0b1d9c3d_a0c82113",
+        "filename": "vndk/tools/header-checker/src/repr/json/converter.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T09:27:43Z",
+      "side": 1,
+      "message": "I moved these 5 variables and default_*_ir (below) to convert.cpp and moved *_json_to_ir to ir_reader.cpp.  However, I am leaving *_ir_to_json as-is because the C++ global variables initialization order beyond a translation unit is not guaranteed.",
+      "parentUuid": "585563eb_adfa81d0",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 6
+      },
+      "revId": "d5e8331679130f627d319664ef2e18466cfd4840",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2ee23f65_f79b79b6",
         "filename": "vndk/tools/header-checker/src/repr/json/ir_dumper.cpp",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "30cb9056_a8d0f5ff",
+        "filename": "vndk/tools/header-checker/src/repr/json/ir_dumper.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T09:27:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ee23f65_f79b79b6",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "d5e8331679130f627d319664ef2e18466cfd4840",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "290a5460_69cad2f4",
         "filename": "vndk/tools/header-checker/src/repr/json/ir_reader.cpp",
         "patchSetId": 3
@@ -68,6 +116,30 @@
       "revId": "d5e8331679130f627d319664ef2e18466cfd4840",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bcbc6e0_443c1436",
+        "filename": "vndk/tools/header-checker/src/repr/json/ir_reader.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T09:27:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "290a5460_69cad2f4",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "d5e8331679130f627d319664ef2e18466cfd4840",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
