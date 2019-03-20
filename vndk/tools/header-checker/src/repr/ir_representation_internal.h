@@ -19,6 +19,8 @@
 
 #include <string>
 
+#include <llvm/Support/raw_ostream.h>
+
 
 namespace header_checker {
 namespace repr {
