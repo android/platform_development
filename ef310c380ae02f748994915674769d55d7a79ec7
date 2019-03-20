@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc7f055b_1485b084",
+        "filename": "vndk/tools/header-checker/src/repr/ir_representation_internal.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-03-20T07:58:21Z",
+      "side": 1,
+      "message": "Will be removed in the next PS",
+      "revId": "ef310c380ae02f748994915674769d55d7a79ec7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
