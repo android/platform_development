@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "46cca7e2_9aca73b6",
+        "filename": "vndk/tools/definition-tool/datasets/vndk-lib-extra-list-28.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-04-01T16:35:52Z",
+      "side": 1,
+      "message": "Don\u0027t we need the following?\n\n    VNDK-core: libclang_rt.scudo-aarch64-android.so\n    VNDK-core: libclang_rt.scudo-arm-android.so\n    VNDK-core: libclang_rt.scudo-i686-android.so\n    VNDK-core: libclang_rt.scudo-x86_64-android.so\n\n    VNDK-core: libclang_rt.scudo_minimal-aarch64-android.so\n    VNDK-core: libclang_rt.scudo_minimal-arm-android.so\n    VNDK-core: libclang_rt.scudo_minimal-i686-android.so\n    VNDK-core: libclang_rt.scudo_minimal-x86_64-android.so",
+      "revId": "33923859ff7e895b6474f484698f08508889d6cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c8ff4e2_e75f74e0",
+        "filename": "vndk/tools/definition-tool/datasets/vndk-lib-extra-list-28.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-04-01T16:35:52Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we leave the following for 28?\n\n    # Workaround for degenerated VDNK\n    VNDK-SP-private: libartbase.so\n    VNDK-SP-private: libdexfile.so\n    VNDK-SP-private: libziparchive.so",
+      "revId": "33923859ff7e895b6474f484698f08508889d6cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
