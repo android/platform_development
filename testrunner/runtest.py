@@ -329,9 +329,11 @@ class TestRunner(object):
           output = run_command.RunCommand(cmd, return_output=True, timeout_time=600)
           ## Chances are this failed because it didn't build the dependencies
         except errors.AbortError:
+          rm_cmd = 'rm -rf %s/out/.lock' %(self._root_path)
           logger.Log("make failed. Trying to rebuild all dependencies.")
           logger.Log("mmma -j%s %s" %(self._options.make_jobs, target_dir_build_string))
           # Try again with mma equivalent, which will build the dependencies
+          run_command.RunCommand(rm_cmd, return_output=False, timeout_time=600)
           run_command.RunCommand(alt_cmd, return_output=False, timeout_time=600)
           # Run mmm again to get the install paths only
           output = run_command.RunCommand(cmd, return_output=True, timeout_time=600)
