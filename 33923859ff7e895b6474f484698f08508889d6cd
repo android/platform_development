@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4f698635_0a4ab991",
+        "filename": "vndk/tools/definition-tool/datasets/vndk-lib-extra-list-28.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-04-02T03:37:56Z",
+      "side": 1,
+      "message": "They were added in Q. I don\u0027t think they need to be in the list of 28.",
+      "parentUuid": "46cca7e2_9aca73b6",
+      "revId": "33923859ff7e895b6474f484698f08508889d6cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2c8ff4e2_e75f74e0",
         "filename": "vndk/tools/definition-tool/datasets/vndk-lib-extra-list-28.txt",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "33923859ff7e895b6474f484698f08508889d6cd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "990681b0_2d2fd6f0",
+        "filename": "vndk/tools/definition-tool/datasets/vndk-lib-extra-list-28.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-04-02T03:37:56Z",
+      "side": 1,
+      "message": "Done\n\nIIUC, they are for the devices whose first_api_level \u003c\u003d 27, vndk_version is empty, and vndk.lite is true. In that case, the test cases load vndk-lib-extra-list-current.txt.",
+      "parentUuid": "2c8ff4e2_e75f74e0",
+      "revId": "33923859ff7e895b6474f484698f08508889d6cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
