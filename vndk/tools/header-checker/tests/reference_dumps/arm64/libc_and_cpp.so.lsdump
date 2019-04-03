@@ -22,9 +22,6 @@ record_types {
   }
   access: public_access
   record_kind: class_kind
-  tag_info {
-    unique_id: "_ZTS3Foo"
-  }
 }
 record_types {
   type_info {
@@ -50,9 +47,6 @@ record_types {
   }
   access: public_access
   record_kind: struct_kind
-  tag_info {
-    unique_id: "Cstruct"
-  }
 }
 record_types {
   type_info {
@@ -72,9 +66,6 @@ record_types {
   }
   access: public_access
   record_kind: struct_kind
-  tag_info {
-    unique_id: "Cinner"
-  }
 }
 pointer_types {
   type_info {

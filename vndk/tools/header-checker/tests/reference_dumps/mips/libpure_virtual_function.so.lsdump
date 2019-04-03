@@ -53,9 +53,6 @@ record_types {
   }
   access: public_access
   record_kind: class_kind
-  tag_info {
-    unique_id: "_ZTS10DerivedBar"
-  }
 }
 record_types {
   type_info {
@@ -107,9 +104,6 @@ record_types {
   }
   access: public_access
   record_kind: class_kind
-  tag_info {
-    unique_id: "_ZTS15PureVirtualBase"
-  }
 }
 pointer_types {
   type_info {

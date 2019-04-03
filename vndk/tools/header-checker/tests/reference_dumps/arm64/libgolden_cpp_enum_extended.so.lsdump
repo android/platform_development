@@ -54,9 +54,6 @@ record_types {
   }
   access: public_access
   record_kind: class_kind
-  tag_info {
-    unique_id: "_ZTS12SuperSpeaker"
-  }
 }
 record_types {
   type_info {
@@ -113,9 +110,6 @@ record_types {
   }
   access: public_access
   record_kind: class_kind
-  tag_info {
-    unique_id: "_ZTS17HighVolumeSpeaker"
-  }
 }
 record_types {
   type_info {
@@ -184,9 +178,6 @@ record_types {
   }
   access: public_access
   record_kind: class_kind
-  tag_info {
-    unique_id: "_ZTS16LowVolumeSpeaker"
-  }
 }
 enum_types {
   type_info {
@@ -220,9 +211,6 @@ enum_types {
     name: "SuperSpeaker::LouderThanLoudest"
   }
   access: private_access
-  tag_info {
-    unique_id: "_ZTSN12SuperSpeaker6VolumeE"
-  }
 }
 pointer_types {
   type_info {

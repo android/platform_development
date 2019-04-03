@@ -108,8 +108,7 @@
    "self_type" : "type-8",
    "size" : 4,
    "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/gold/include/abstract_class.h",
-   "underlying_type" : "type-6",
-   "unique_id" : "_ZTSN12SuperSpeaker6VolumeE"
+   "underlying_type" : "type-6"
   }
  ],
  "function_types" : [],
@@ -281,7 +280,6 @@
    "self_type" : "type-11",
    "size" : 8,
    "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/gold/include/high_volume_speaker.h",
-   "unique_id" : "_ZTS17HighVolumeSpeaker",
    "vtable_components" :
    [
     {
@@ -335,7 +333,6 @@
    "self_type" : "type-5",
    "size" : 16,
    "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/gold/include/low_volume_speaker.h",
-   "unique_id" : "_ZTS16LowVolumeSpeaker",
    "vtable_components" :
    [
     {
@@ -379,7 +376,6 @@
    "self_type" : "type-1",
    "size" : 8,
    "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/gold/include/abstract_class.h",
-   "unique_id" : "_ZTS12SuperSpeaker",
    "vtable_components" :
    [
     {
