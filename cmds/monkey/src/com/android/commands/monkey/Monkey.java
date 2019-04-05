@@ -1110,36 +1110,37 @@ public class Monkey {
         boolean shouldReportAnrTraces = false;
         boolean shouldReportDumpsysMemInfo = false;
         boolean shouldAbort = false;
+        boolean shouldReportProcrank = false;
         boolean systemCrashed = false;
+        String bugreportName = "";
 
         try {
             // TO DO : The count should apply to each of the script file.
             while (!systemCrashed && cycleCounter < mCount) {
                 synchronized (this) {
                     if (mRequestProcRank) {
-                        reportProcRank();
                         mRequestProcRank = false;
+                        shouldReportProcrank = true;
                     }
                     if (mRequestAnrTraces) {
                         mRequestAnrTraces = false;
                         shouldReportAnrTraces = true;
                     }
                     if (mRequestAnrBugreport){
-                        getBugreport("anr_" + mReportProcessName + "_");
                         mRequestAnrBugreport = false;
+                        bugreportName = "anr_" + mReportProcessName + "_";
                     }
                     if (mRequestWatchdogBugreport) {
-                        Logger.out.println("Print the watchdog report");
-                        getBugreport("anr_watchdog_");
                         mRequestWatchdogBugreport = false;
+                        bugreportName = "anr_watchdog_";
                     }
                     if (mRequestAppCrashBugreport){
-                        getBugreport("app_crash" + mReportProcessName + "_");
                         mRequestAppCrashBugreport = false;
+                        bugreportName = "app_crash" + mReportProcessName + "_";
                     }
                     if (mRequestPeriodicBugreport){
-                        getBugreport("Bugreport_");
                         mRequestPeriodicBugreport = false;
+                        bugreportName = "Bugreport_";
                     }
                     if (mRequestDumpsysMemInfo) {
                         mRequestDumpsysMemInfo = false;
@@ -1151,7 +1152,7 @@ public class Monkey {
                         if (checkNativeCrashes() && (eventCounter > 0)) {
                             Logger.out.println("** New native crash detected.");
                             if (mRequestBugreport) {
-                                getBugreport("native_crash_");
+                                bugreportName = "native_crash_";
                             }
                             mAbort = mAbort || !mIgnoreNativeCrashes || mKillProcessAfterError;
                         }
@@ -1175,6 +1176,16 @@ public class Monkey {
                 if (shouldReportDumpsysMemInfo) {
                     shouldReportDumpsysMemInfo = false;
                     reportDumpsysMemInfo();
+                }
+
+                if (shouldReportProcrank) {
+                    shouldReportProcrank = false;
+                    reportProcRank();
+                }
+
+                if (bugreportName != "") {
+                    getBugreport(bugreportName);
+                    bugreportName = "";
                 }
 
                 if (shouldAbort) {
