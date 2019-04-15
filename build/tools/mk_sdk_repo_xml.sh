@@ -394,12 +394,16 @@ while [[ -n "$1" ]]; do
         PROPS="$TMP_DIR/manifest.ini"
 
         # Parse the libs for an addon and generate the <libs> node
-        # libraries is a semi-colon separated list
-        LIBS=$(parse_attributes "$PROPS" "libraries")
+        # libraries is a semi-colon separated list that mat
+        LIBS=$( grep "^libraries=" "$PROPS" | cut -d = -f 2 | tr -d ' ' | tr -d '\r' )
         LIBS_XML="        <sdk:libs>"
         for LIB in ${LIBS//;/ }; do
+          LIB_INFO=$( grep "^$LIB=" "$PROPS" | cut -d = -f 2 | tr -d '\r' )
           LIBS_XML="$LIBS_XML
-           <sdk:lib><sdk:name>$LIB</sdk:name></sdk:lib>"
+           <sdk:lib>
+               <sdk:name>${LIB_INFO%;*}</sdk:name>
+               <sdk:description>${LIB_INFO#*;}</sdk:description>
+           </sdk:lib>"
         done
         LIBS_XML="$LIBS_XML
         </sdk:libs>"
