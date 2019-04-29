@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66594c8f_56ed3778",
+        "filename": "vndk/tools/definition-tool/datasets/vndk-lib-extra-list-current.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1373864
+      },
+      "writtenOn": "2019-04-29T13:22:18Z",
+      "side": 0,
+      "message": "Note that there\u0027s also a mention of this in a Python script that might be worth a look: http://cs/aosp-master/development/vndk/tools/definition-tool/tools/update_dataset.py?l\u003d205-210\u0026rcl\u003df504f3a6bac2b02bbc728b190409aa73271a15c6",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 30
+      },
+      "revId": "f504f3a6bac2b02bbc728b190409aa73271a15c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
