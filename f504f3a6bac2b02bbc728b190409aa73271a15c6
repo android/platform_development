@@ -22,6 +22,30 @@
       "revId": "f504f3a6bac2b02bbc728b190409aa73271a15c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7186698f_9f7feb6c",
+        "filename": "vndk/tools/definition-tool/datasets/vndk-lib-extra-list-current.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2019-04-29T14:56:54Z",
+      "side": 0,
+      "message": "Thanks. Updated the script as well.",
+      "parentUuid": "66594c8f_56ed3778",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 30
+      },
+      "revId": "f504f3a6bac2b02bbc728b190409aa73271a15c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
