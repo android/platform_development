@@ -1,0 +1,17 @@
+{
+ "functions" : [
+  {
+   "function_name" : "example",
+   "linker_set_key" : "example",
+   "parameters" : [],
+   "return_type" : "type-4",
+   "source_file" : ""
+  }
+ ],
+ "elf_functions" : [
+  {
+   "name" : "example",
+   "binding" : "weak"
+  }
+ ]
+}

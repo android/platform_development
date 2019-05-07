@@ -309,6 +309,25 @@ class HeaderCheckerTest(unittest.TestCase):
             ["-input-format-old", "Json", "-input-format-new", "Json",
              "-consider-opaque-types-different"])
 
+    def test_ignore_weak_symbols(self):
+        testdata_dir = os.path.join(SCRIPT_DIR, "abi_dumps", "weak_symbols")
+        old_lsdump = os.path.join(testdata_dir, "old_libtest.lsdump")
+        new_lsdump = os.path.join(testdata_dir, "new_libtest.lsdump")
+
+        # Compared to `old_libtest.lsdump`, a weak function has been removed
+        # from `new_libtest.lsdump`. `header-abi-diff` must return 0 when
+        # `-ignore-weak-symbols` is specified.
+        self.run_and_compare_abi_diff(
+            old_lsdump, new_lsdump, "libtest", "arm64", 0,
+            ["-input-format-old", "Json", "-input-format-new", "Json",
+             "-ignore-weak-symbols"])
+
+        # `header-abi-diff` must return 8 when `-ignore-weak-symbols` is not
+        # specified.
+        self.run_and_compare_abi_diff(
+            old_lsdump, new_lsdump, "libtest", "arm64", 8,
+            ["-input-format-old", "Json", "-input-format-new", "Json"])
+
     def test_linker_shared_object_file_and_version_script(self):
         base_dir = os.path.join(
             SCRIPT_DIR, 'integration', 'version_script_example')
