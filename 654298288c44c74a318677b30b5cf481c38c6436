@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9110f030_8dbf5816",
+        "filename": "vndk/tools/header-checker/src/diff/abi_diff.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1121338
+      },
+      "writtenOn": "2019-05-07T23:44:05Z",
+      "side": 1,
+      "message": "better to add this to DiffPolicyOptions instead ? otherwise the parameter list for this will keep growing and could get messy.",
+      "range": {
+        "startLine": 39,
+        "startChar": 16,
+        "endLine": 39,
+        "endChar": 41
+      },
+      "revId": "654298288c44c74a318677b30b5cf481c38c6436",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
