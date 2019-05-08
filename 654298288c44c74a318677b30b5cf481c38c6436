@@ -22,6 +22,30 @@
       "revId": "654298288c44c74a318677b30b5cf481c38c6436",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "322a9f93_1f42474d",
+        "filename": "vndk/tools/header-checker/src/diff/abi_diff.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-05-08T15:47:53Z",
+      "side": 1,
+      "message": "I would like to move the code out of src/repr, so I put this command line specific option here instead of DiffPolicyOptions.",
+      "parentUuid": "9110f030_8dbf5816",
+      "range": {
+        "startLine": 39,
+        "startChar": 16,
+        "endLine": 39,
+        "endChar": 41
+      },
+      "revId": "654298288c44c74a318677b30b5cf481c38c6436",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
