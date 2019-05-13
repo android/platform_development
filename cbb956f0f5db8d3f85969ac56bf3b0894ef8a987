@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9cce089_2ed5676d",
+        "filename": "vndk/tools/header-checker/src/utils/config_file.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-05-13T12:52:48Z",
+      "side": 1,
+      "message": "1 empty line between functions",
+      "revId": "cbb956f0f5db8d3f85969ac56bf3b0894ef8a987",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acb62552_92267172",
+        "filename": "vndk/tools/header-checker/src/utils/config_file.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-05-13T12:52:48Z",
+      "side": 1,
+      "message": "#include \u003ccassert\u003e",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 10
+      },
+      "revId": "cbb956f0f5db8d3f85969ac56bf3b0894ef8a987",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
