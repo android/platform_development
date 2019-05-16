@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b7371134_cdb7427d",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-05-16T10:02:31Z",
+      "side": 1,
+      "message": "\u0027boot image\u0027 looks better because we may use the boot image other than boot.img.",
+      "range": {
+        "startLine": 125,
+        "startChar": 29,
+        "endLine": 125,
+        "endChar": 37
+      },
+      "revId": "e4bfb348deb2c173e965334a50791f259edfc64c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
