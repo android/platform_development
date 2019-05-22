@@ -7088,6 +7088,7 @@
 		<method name="readCharacteristic(Landroid/bluetooth/BluetoothGattCharacteristic;)Z" />
 		<method name="readDescriptor(Landroid/bluetooth/BluetoothGattDescriptor;)Z" />
 		<method name="readRemoteRssi()Z" />
+		<method name="refresh()Z" />
 		<method name="requestConnectionPriority(I)Z" since="21" />
 		<method name="requestMtu(I)Z" since="21" />
 		<method name="setCharacteristicNotification(Landroid/bluetooth/BluetoothGattCharacteristic;Z)Z" />
