@@ -4126,8 +4126,24 @@ class CheckDepCommand(CheckDepCommandBase):
                            help='Do not check ordering of DT_NEEDED entries')
 
 
+    def _load_public_lib_names(self, system_dirs, vendor_dirs):
+        names = set()
+        for base in itertools.chain(system_dirs, vendor_dirs):
+            config_path = os.path.join(base, 'etc', 'public.libraries.txt')
+            try:
+                with open(config_path, 'r') as config_file:
+                    for line in config_file:
+                        line = line.strip()
+                        if not line or line.startswith('#'):
+                            continue
+                        names.add(line)
+            except FileNotFoundError:
+                pass
+        return names
+
+
     def _check_vendor_dep(self, graph, tagged_libs, lib_properties,
-                          module_info):
+                          module_info, public_lib_names):
         """Check whether vendor libs are depending on non-eligible libs."""
         num_errors = 0
 
@@ -4136,6 +4152,21 @@ class CheckDepCommand(CheckDepCommandBase):
 
         eligible_libs = (tagged_libs.ll_ndk | tagged_libs.vndk_sp |
                          tagged_libs.vndk_sp_private | tagged_libs.vndk)
+
+        def _is_app_lib(lib):
+            app_dirs = [
+                '/product/app',
+                '/product/priv-app',
+                '/product_services/app',
+                '/product_services/priv-app',
+                '/vendor/app',
+                '/vendor/priv-app',
+            ]
+            return any(_is_under_dir(d, lib.path) for d in app_dirs)
+
+        def _is_public_lib(lib):
+            lib_name = os.path.basename(lib.path)
+            return lib_name in public_lib_names
 
         for lib in sorted(vendor_libs):
             bad_deps = set()
@@ -4154,6 +4185,12 @@ class CheckDepCommand(CheckDepCommandBase):
             # Check whether vendor modules depend on ineligible libs.
             for dep in lib.deps_all:
                 if dep not in vendor_libs and dep not in eligible_libs:
+                    if _is_app_lib(lib) and _is_public_lib(dep):
+                        # It is fine for APK files to depend on public
+                        # libraries (including NDK or other explicitly exposed
+                        # libs).
+                        continue
+
                     num_errors += 1
                     bad_deps.add(dep)
 
@@ -4256,8 +4293,10 @@ class CheckDepCommand(CheckDepCommandBase):
         lib_properties = \
             LibProperties.load_from_path_or_default(lib_properties_path)
 
+        public_lib_names = self._load_public_lib_names(args.system, args.vendor)
+
         num_errors = self._check_vendor_dep(graph, tagged_libs, lib_properties,
-                                            module_info)
+                                            module_info, public_lib_names)
 
         if args.check_dt_needed_ordering:
             num_errors += self._check_dt_needed_ordering(graph)
