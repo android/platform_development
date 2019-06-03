@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62781082_25fbf363",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "Do you want to add a check that there is only one package line in the file ? Or do we assume it can\u0027t happen because the input file is generated anyway ?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 3
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d57bd805_f60d0099",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "I tend to find the following easier to understand and safer (runs no commands) :\n\n  local args\u003d${line#*(}\n  args\u003d${args%)*}\n\n...kind of a matter of style though, not opposed to your current code",
+      "range": {
+        "startLine": 25,
+        "startChar": 15,
+        "endLine": 25,
+        "endChar": 63
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bbb7c674_f4a8f2a7",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "It\u0027s a bit counterintuitive to me that you rely on this to ignore the argument names (and the commmas), especially as it would also have ignored the in|out|inout words you explicitly filter out above. Write a comment, and maybe even remove l.28 ?\n\nAlternatively, split on \u0027,\u0027 first with something like :\n\n  IFS\u003d\u0027,\u0027 args\u003d($args)\n\n\n...though I\u0027m not sure it\u0027s going to be much better.",
+      "range": {
+        "startLine": 32,
+        "startChar": 21,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77467fb1_16d706ed",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "How about making this an array instead ? Here you could add to it with\n\n  imports+\u003d(\"$import\")",
+      "range": {
+        "startLine": 37,
+        "startChar": 15,
+        "endLine": 37,
+        "endChar": 22
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "666303d5_5b5683f0",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "You\u0027re just not using this code any more. Remove ?",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 8
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a14732d6_34678468",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "[[:alnum:]] ?",
+      "range": {
+        "startLine": 63,
+        "startChar": 36,
+        "endLine": 63,
+        "endChar": 47
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53bb1c19_30cebfeb",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "I find this two-step process a bit contrived ; you could have removed l.63 by just replacing this part with [^ ]+",
+      "range": {
+        "startLine": 65,
+        "startChar": 47,
+        "endLine": 65,
+        "endChar": 56
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a21a1b2f_f5bd0fda",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "RemoteException ?",
+      "range": {
+        "startLine": 74,
+        "startChar": 17,
+        "endLine": 74,
+        "endChar": 22
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eae88f82_20803581",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "${ifacename#I} ?",
+      "range": {
+        "startLine": 86,
+        "startChar": 15,
+        "endLine": 86,
+        "endChar": 49
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da6a4bce_f2bf3a3c",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "Maybe move this into collectImports ? I find it a bit confusing that the contract for collectImports requires to send it a half-processed line",
+      "range": {
+        "startLine": 95,
+        "startChar": 8,
+        "endLine": 95,
+        "endChar": 50
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6062d157_6f53dc33",
+        "filename": "tools/core_connectivity/wrap_aidl.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1015428
+      },
+      "writtenOn": "2019-06-03T07:56:22Z",
+      "side": 1,
+      "message": "Maybe [[ $line \u003d~ \"(*)\" ]] ?\n\nAlso, you might want to consider making this slightly more robust for future versions by rejecting stuff you don\u0027t understand. For example, reject stuff that doesn\u0027t either :\n• start with \u0027package\u0027, \u0027interface\u0027, \u0027 *const\u0027, \u0027}\u0027\n• contain a return type, a method name and a pair of parentheses",
+      "range": {
+        "startLine": 165,
+        "startChar": 7,
+        "endLine": 165,
+        "endChar": 37
+      },
+      "revId": "f0e6ae6f8f4bae60e4f4b3d48cf80f7a3d84aa5d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
