@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb385a51_aff45ab8",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1229339
+      },
+      "writtenOn": "2019-06-08T00:57:27Z",
+      "side": 1,
+      "message": "I\u0027m wondering if I should just assume that \"llvm-readobj\" is in the PATH and simplify this.\n\nThe llvm-binutils-stable directory was added recently:\n\nhttps://android-review.googlesource.com/c/platform/prebuilts/clang/host/linux-x86/+/965695\nhttps://android-review.googlesource.com/c/platform/build/+/965493/",
+      "revId": "be00db4729f2f0f8f7abf6dd202a42f1d5211a65",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
