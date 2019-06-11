@@ -101,6 +101,30 @@
     },
     {
       "key": {
+        "uuid": "c6350f1f_6c59b5c1",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2019-06-11T15:28:38Z",
+      "side": 1,
+      "message": "\u003e I think we can eventually switch gdbrunner+adb as well, once the NDK bundles Python 3?\n\n(is that on our to-do list? as an addition, or instead of python 2?)",
+      "parentUuid": "cd27d597_e29d4dec",
+      "range": {
+        "startLine": 365,
+        "startChar": 40,
+        "endLine": 365,
+        "endChar": 42
+      },
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "401452d2_d4150abf",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 3
