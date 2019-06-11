@@ -77,6 +77,30 @@
     },
     {
       "key": {
+        "uuid": "cd27d597_e29d4dec",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1229339
+      },
+      "writtenOn": "2019-06-11T08:24:38Z",
+      "side": 1,
+      "message": "I\u0027m fine with switching the script to Python 3. My /usr/bin/python3 is 3.6.5.\n\nI think we can eventually switch gdbrunner+adb as well, once the NDK bundles Python 3? In the meantime, they\u0027d have to work as 2 or 3.\n\nMaybe switching makes life harder for macOS users. macOS\u0027s bundled Python 2.7 may be going away, though:\n\nhttps://developer.apple.com/documentation/macos_release_notes/macos_10_15_beta_release_notes#3318257",
+      "parentUuid": "444981ff_0ce993dd",
+      "range": {
+        "startLine": 365,
+        "startChar": 40,
+        "endLine": 365,
+        "endChar": 42
+      },
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "401452d2_d4150abf",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 3
@@ -112,6 +136,30 @@
       "side": 1,
       "message": "If this is just meant to be used for local debugging, then this path should definitely be ok. If you desire more stability (i.e you have this running in automation), I would strongly suggest checking in an upstream LLVM test that makes sure that the llvm-readobj output doesn\u0027t change for the arguments you are passing. Our plans for llvm-binutils-stable are really to keep it available for command line platform developers, so that they can just type llvm-readobj or llvm-objcopy/etc. to always have easy access to cross-platform debugging tools (with reasonably stable output, etc.).",
       "parentUuid": "401452d2_d4150abf",
+      "range": {
+        "startLine": 372,
+        "startChar": 41,
+        "endLine": 372,
+        "endChar": 63
+      },
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8da0442c_0fc18094",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1229339
+      },
+      "writtenOn": "2019-06-11T08:24:38Z",
+      "side": 1,
+      "message": "Currently I\u0027m only using llvm-readobj with gdbclient.py, not ndk-gdb.py.\n\nRather than reference llvm-binutils-stable, gdbclient.py could also invoke llvm-readobj from the PATH, like it does for adb (by default) and python (in the shebang). It uses an absolute path for gdb. lunch adds llvm-readobj to the PATH, but not gdb.\n\nI\u0027m using llvm-readobj in a mode that matches readelf\u0027s output. The output format is tested in upstream LLVM, but I don\u0027t know how much that helps us -- if someone changes the format, they\u0027d also change the test...",
+      "parentUuid": "4d760bc6_91f57b1b",
       "range": {
         "startLine": 372,
         "startChar": 41,
