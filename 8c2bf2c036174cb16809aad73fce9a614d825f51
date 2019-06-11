@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f083eb9_91f8b572",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1229339
+      },
+      "writtenOn": "2019-06-11T03:32:59Z",
+      "side": 1,
+      "message": "If the build system were to create symbols/system/bin/linker[_asan][64] files (which could be symlinks), then gdbclient.py could omit this \"symlink\" block of code.",
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
