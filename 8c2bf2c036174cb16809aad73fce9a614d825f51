@@ -125,6 +125,30 @@
     },
     {
       "key": {
+        "uuid": "0561674a_92618ff9",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-06-11T19:45:09Z",
+      "side": 1,
+      "message": "\u003e Maybe switching makes life harder for macOS users. macOS\u0027s bundled Python 2.7 may be going away, though:\n\nBest solution would be to make this a python_binary and use the platforms\u0027 Python anyway. I think catch is that a Python 3 python_binary actually uses the host\u0027s Python 3 because we\u0027re not building cpython3 yet...\n\n\u003e\u003e I think we can eventually switch gdbrunner+adb as well, once the NDK bundles Python 3?\n\u003e (is that on our to-do list? as an addition, or instead of python 2?)\n\nDepends on what the debugger lets us do. I\u0027d rather have only one, but the reason we had any in the first place is because we needed Python for gdb. If gdb/lldb don\u0027t need python 2 specifically, my vote would be to move entirely to Python 3. If not, I don\u0027t think it\u0027s worth shipping two versions in the NDK.",
+      "parentUuid": "c6350f1f_6c59b5c1",
+      "range": {
+        "startLine": 365,
+        "startChar": 40,
+        "endLine": 365,
+        "endChar": 42
+      },
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "401452d2_d4150abf",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 3
