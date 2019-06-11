@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ab6b84a7_82ee77b6",
+        "filename": "apps/BuildWidget/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-06-11T16:30:34Z",
+      "side": 1,
+      "message": "There used to be a target to build all the samples, but not anymore.",
+      "parentUuid": "93e7c9cf_2fc25ce6",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 44
+      },
+      "revId": "daa8b6119e0df45d7778f3e58661d31a83f88b18",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "77d78f51_6afcb0fa",
         "filename": "apps/PushApiAuthenticator/Android.bp",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "daa8b6119e0df45d7778f3e58661d31a83f88b18",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5985b12_103f7590",
+        "filename": "apps/PushApiAuthenticator/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-06-11T16:30:34Z",
+      "side": 1,
+      "message": "certificate:\"cert\" is going to look for cert.* in build/make/target/product/security",
+      "parentUuid": "77d78f51_6afcb0fa",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 56
+      },
+      "revId": "daa8b6119e0df45d7778f3e58661d31a83f88b18",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
