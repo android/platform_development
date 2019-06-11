@@ -100,6 +100,30 @@
     },
     {
       "key": {
+        "uuid": "4d760bc6_91f57b1b",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2019-06-11T06:23:05Z",
+      "side": 1,
+      "message": "If this is just meant to be used for local debugging, then this path should definitely be ok. If you desire more stability (i.e you have this running in automation), I would strongly suggest checking in an upstream LLVM test that makes sure that the llvm-readobj output doesn\u0027t change for the arguments you are passing. Our plans for llvm-binutils-stable are really to keep it available for command line platform developers, so that they can just type llvm-readobj or llvm-objcopy/etc. to always have easy access to cross-platform debugging tools (with reasonably stable output, etc.).",
+      "parentUuid": "401452d2_d4150abf",
+      "range": {
+        "startLine": 372,
+        "startChar": 41,
+        "endLine": 372,
+        "endChar": 63
+      },
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "499f65c3_f123aebe",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 3
