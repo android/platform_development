@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "932c027b_489275e2",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-06-11T04:12:02Z",
+      "side": 1,
+      "message": "Add a Returns: section?",
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6f083eb9_91f8b572",
         "filename": "scripts/gdbclient.py",
         "patchSetId": 3
@@ -13,6 +30,87 @@
       "writtenOn": "2019-06-11T03:32:59Z",
       "side": 1,
       "message": "If the build system were to create symbols/system/bin/linker[_asan][64] files (which could be symlinks), then gdbclient.py could omit this \"symlink\" block of code.",
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12b5a616_4fac5b57",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-06-11T04:12:02Z",
+      "side": 1,
+      "message": "+dwillemsen",
+      "parentUuid": "6f083eb9_91f8b572",
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "444981ff_0ce993dd",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-06-11T04:12:02Z",
+      "side": 1,
+      "message": "(can we assume python 3.6 yet?)",
+      "range": {
+        "startLine": 365,
+        "startChar": 40,
+        "endLine": 365,
+        "endChar": 42
+      },
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "401452d2_d4150abf",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-06-11T04:12:02Z",
+      "side": 1,
+      "message": "srhines: I know the *-stable directories were not necessarily what we wanted for a while... is this the right path?",
+      "range": {
+        "startLine": 372,
+        "startChar": 41,
+        "endLine": 372,
+        "endChar": 63
+      },
+      "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "499f65c3_f123aebe",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-06-11T04:12:02Z",
+      "side": 1,
+      "message": "Should be part of a try/finally to ensure cleanup in the event of an error.",
       "revId": "8c2bf2c036174cb16809aad73fce9a614d825f51",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
