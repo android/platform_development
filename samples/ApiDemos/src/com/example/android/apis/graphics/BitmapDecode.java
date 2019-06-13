@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.view.*;
 
 import java.io.InputStream;
+import java.io.IOException;
 import java.io.ByteArrayOutputStream;
 
 public class BitmapDecode extends GraphicsActivity {
@@ -79,6 +80,11 @@ public class BitmapDecode extends GraphicsActivity {
 
             opts.inJustDecodeBounds = false;    // this will request the bm
             opts.inSampleSize = 4;             // scaled down by 4
+            try {
+               is.reset();
+            } catch (IOException e) {
+            }
+
             bm = BitmapFactory.decodeStream(is, null, opts);
 
             mBitmap = bm;
