@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0245ed3_bae3dc05",
+        "filename": "samples/AdaptiveIconSample/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1060667
+      },
+      "writtenOn": "2019-06-13T16:45:40Z",
+      "side": 1,
+      "message": "Please remove.",
+      "revId": "711de8521b23b6194376420ed7cfec9c443eff6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8e4af28_4eba42b9",
+        "filename": "samples/AppNavigation/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1060667
+      },
+      "writtenOn": "2019-06-13T16:45:40Z",
+      "side": 1,
+      "message": "Please remove. I see some more like this. Can you track down and remove them all?",
+      "revId": "711de8521b23b6194376420ed7cfec9c443eff6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
