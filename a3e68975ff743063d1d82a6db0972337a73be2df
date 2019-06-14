@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7447b085_d137c0c8",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-06-14T01:29:10Z",
+      "side": 1,
+      "message": "We may get the search paths (partitions or directories) from the command line for broader use of the tool.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 36
+      },
+      "revId": "a3e68975ff743063d1d82a6db0972337a73be2df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
