@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ea1eb33_bc8b01ea",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-06-14T05:02:13Z",
+      "side": 1,
+      "message": "\u0027+\u0027 will work for your purpose.\nIt does not support \u00272+\u0027, so it will not be suitable for search_path, though.",
+      "range": {
+        "startLine": 96,
+        "startChar": 46,
+        "endLine": 96,
+        "endChar": 49
+      },
+      "revId": "29ac923c613446864960f9cd3436209f5e46b0a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
