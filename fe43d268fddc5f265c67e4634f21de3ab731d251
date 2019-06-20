@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d9eb9ac_b6f4ebb4",
+        "filename": "vndk/tools/image-diff-tool/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-06-20T10:08:43Z",
+      "side": 1,
+      "message": "How about \"compare_images\"?",
+      "range": {
+        "startLine": 18,
+        "startChar": 11,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "fe43d268fddc5f265c67e4634f21de3ab731d251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be94b1e4_2f29debd",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-06-20T10:08:43Z",
+      "side": 1,
+      "message": "image1 image2?",
+      "range": {
+        "startLine": 95,
+        "startChar": 117,
+        "endLine": 95,
+        "endChar": 131
+      },
+      "revId": "fe43d268fddc5f265c67e4634f21de3ab731d251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f119ae63_03ee927e",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-06-20T10:08:43Z",
+      "side": 1,
+      "message": "This must be updated as well.",
+      "range": {
+        "startLine": 95,
+        "startChar": 64,
+        "endLine": 95,
+        "endChar": 89
+      },
+      "revId": "fe43d268fddc5f265c67e4634f21de3ab731d251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
