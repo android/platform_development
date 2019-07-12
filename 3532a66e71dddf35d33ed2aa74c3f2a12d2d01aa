@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb9ee8eb_05f007a1",
+        "filename": "build/tools/mk_sdk_repo_xml.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1303480
+      },
+      "writtenOn": "2019-07-12T16:20:07Z",
+      "side": 1,
+      "message": "Missing the end of comment?",
+      "revId": "3532a66e71dddf35d33ed2aa74c3f2a12d2d01aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
