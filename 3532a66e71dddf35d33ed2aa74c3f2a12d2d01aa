@@ -16,6 +16,24 @@
       "revId": "3532a66e71dddf35d33ed2aa74c3f2a12d2d01aa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e71aa11e_645d72be",
+        "filename": "build/tools/mk_sdk_repo_xml.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1482681
+      },
+      "writtenOn": "2019-07-15T09:22:52Z",
+      "side": 1,
+      "message": "Oups, you\u0027re right I upload a new patchset",
+      "parentUuid": "eb9ee8eb_05f007a1",
+      "revId": "3532a66e71dddf35d33ed2aa74c3f2a12d2d01aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
