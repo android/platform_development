@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ac5913c1_9fa858a9",
+        "filename": "vndk/tools/image-diff-tool/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-07-16T05:03:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d9eb9ac_b6f4ebb4",
+      "range": {
+        "startLine": 18,
+        "startChar": 11,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "fe43d268fddc5f265c67e4634f21de3ab731d251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be94b1e4_2f29debd",
         "filename": "vndk/tools/image-diff-tool/diff.py",
         "patchSetId": 1
@@ -68,6 +92,54 @@
       "revId": "fe43d268fddc5f265c67e4634f21de3ab731d251",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bf05ce8_5401e517",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-07-16T05:03:19Z",
+      "side": 1,
+      "message": "Change them to dir1 dir2",
+      "parentUuid": "be94b1e4_2f29debd",
+      "range": {
+        "startLine": 95,
+        "startChar": 117,
+        "endLine": 95,
+        "endChar": 131
+      },
+      "revId": "fe43d268fddc5f265c67e4634f21de3ab731d251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64d6a50f_8c812de8",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-07-16T05:03:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f119ae63_03ee927e",
+      "range": {
+        "startLine": 95,
+        "startChar": 64,
+        "endLine": 95,
+        "endChar": 89
+      },
+      "revId": "fe43d268fddc5f265c67e4634f21de3ab731d251",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
