@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b6339dd_11303514",
+        "filename": "vndk/tools/image-diff-tool/compare_system.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-07-31T12:23:42Z",
+      "side": 1,
+      "message": "Do we have only the cases like this in the future as well, i.e. two targets for system image? Otherwise, we may use \"-t $1 -s $2\" and get parameter sets from the command line.",
+      "range": {
+        "startLine": 3,
+        "startChar": 15,
+        "endLine": 3,
+        "endChar": 33
+      },
+      "revId": "3e3e13c4d7a6f601178d8d2072a68ee59fc62660",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
