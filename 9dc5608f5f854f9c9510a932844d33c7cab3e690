@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2ffe980_35355ace",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-08-06T10:31:28Z",
+      "side": 1,
+      "message": "Hi Logan,\nThis means that core_shared_cfi overrides core_shared. Is it intended?",
+      "range": {
+        "startLine": 249,
+        "startChar": 37,
+        "endLine": 249,
+        "endChar": 60
+      },
+      "revId": "9dc5608f5f854f9c9510a932844d33c7cab3e690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
