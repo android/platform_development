@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5396678b_b8dab343",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-08-07T16:19:37Z",
+      "side": 1,
+      "message": "Do you have another CL that should set the same topic name?",
+      "revId": "9dc5608f5f854f9c9510a932844d33c7cab3e690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d2ffe980_35355ace",
         "filename": "vndk/tools/header-checker/utils/utils.py",
         "patchSetId": 4
@@ -13,6 +30,30 @@
       "writtenOn": "2019-08-06T10:31:28Z",
       "side": 1,
       "message": "Hi Logan,\nThis means that core_shared_cfi overrides core_shared. Is it intended?",
+      "range": {
+        "startLine": 249,
+        "startChar": 37,
+        "endLine": 249,
+        "endChar": 60
+      },
+      "revId": "9dc5608f5f854f9c9510a932844d33c7cab3e690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24982dc7_78e799d8",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-08-07T16:19:37Z",
+      "side": 1,
+      "message": "Yes.  It was my intention.",
+      "parentUuid": "d2ffe980_35355ace",
       "range": {
         "startLine": 249,
         "startChar": 37,
