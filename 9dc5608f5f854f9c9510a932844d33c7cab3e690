@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8b367cc8_1a998805",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-08-08T02:11:03Z",
+      "side": 1,
+      "message": "Yes. https://android-review.googlesource.com/q/topic:tag-lsdump",
+      "parentUuid": "5396678b_b8dab343",
+      "revId": "9dc5608f5f854f9c9510a932844d33c7cab3e690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2ffe980_35355ace",
         "filename": "vndk/tools/header-checker/utils/utils.py",
         "patchSetId": 4
@@ -63,6 +81,30 @@
       "revId": "9dc5608f5f854f9c9510a932844d33c7cab3e690",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc6e06fc_d1a0a07d",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-08-08T02:11:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "24982dc7_78e799d8",
+      "range": {
+        "startLine": 249,
+        "startChar": 37,
+        "endLine": 249,
+        "endChar": 60
+      },
+      "revId": "9dc5608f5f854f9c9510a932844d33c7cab3e690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
