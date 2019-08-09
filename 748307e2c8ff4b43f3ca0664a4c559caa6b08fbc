@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e6874_c368a860",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2019-08-09T08:29:58Z",
+      "side": 1,
+      "message": "why is this under except?",
+      "range": {
+        "startLine": 455,
+        "startChar": 0,
+        "endLine": 457,
+        "endChar": 59
+      },
+      "revId": "748307e2c8ff4b43f3ca0664a4c559caa6b08fbc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
