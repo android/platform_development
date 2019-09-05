@@ -17,7 +17,7 @@ To checkout the source tree, run the following commands:
 
 ## Build instructions
 
-To build `header-abi-dumper`, `header-abi-link` and `header-abi-diff`:
+To build `header-abi-dumper`, `header-abi-linker` and `header-abi-diff`:
 
     $ OUT_DIR=out \
           development/vndk/tools/header-checker/android/build-prebuilts.sh
@@ -28,12 +28,12 @@ To build `header-abi-dumper`, `header-abi-link` and `header-abi-diff`:
 If you have a full AOSP master branch source tree, you may build the tools
 with:
 
-    $ source build/envsetup
+    $ source build/envsetup.sh
 
     $ lunch aosp_arm64-userdebug
 
     $ cd development/vndk/tools/header-checker
 
-    $ source android/envsetup
+    $ source android/envsetup.sh
 
     $ mm

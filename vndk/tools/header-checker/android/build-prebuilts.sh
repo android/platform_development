@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-source "$(dirname "$0")/envsetup"
+source "$(dirname "$0")/envsetup.sh"
 
 if [ -z "${OUT_DIR}" ]; then
     echo "error: Must set OUT_DIR"
