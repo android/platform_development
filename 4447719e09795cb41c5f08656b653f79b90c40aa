@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11a49bd5_dfebe552",
+        "filename": "vndk/tools/header-checker/Documentation/Development.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-09-06T04:22:15Z",
+      "side": 1,
+      "message": "linker",
+      "range": {
+        "startLine": 20,
+        "startChar": 42,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "4447719e09795cb41c5f08656b653f79b90c40aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a85a3cbe_20d95af1",
+        "filename": "vndk/tools/header-checker/Documentation/Development.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-09-06T04:22:15Z",
+      "side": 1,
+      "message": "envsetup.sh",
+      "range": {
+        "startLine": 31,
+        "startChar": 19,
+        "endLine": 31,
+        "endChar": 27
+      },
+      "revId": "4447719e09795cb41c5f08656b653f79b90c40aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "514068ed_10f66d01",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2019-09-06T04:22:15Z",
+      "side": 1,
+      "message": "Is FORCE_BUILD_LLVM_COMPONENTS needed?",
+      "range": {
+        "startLine": 17,
+        "startChar": 24,
+        "endLine": 17,
+        "endChar": 32
+      },
+      "revId": "4447719e09795cb41c5f08656b653f79b90c40aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
