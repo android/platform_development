@@ -22,6 +22,30 @@
       "revId": "f76143d8bba1dedb605eea390566d5ef1c6fde8f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e10ba01e_f9ba00fe",
+        "filename": "build/product_sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1046320
+      },
+      "writtenOn": "2019-09-10T03:02:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fc25044e_f0741faa",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 4
+      },
+      "revId": "f76143d8bba1dedb605eea390566d5ef1c6fde8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
