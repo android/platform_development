@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "489a0e33_d72db73b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1042793
+      },
+      "writtenOn": "2019-09-10T21:17:21Z",
+      "side": 1,
+      "message": "Having \"Merged-In\" would make it more obvious that some downstream branches already have the original CL, so let\u0027s do that. (For googlers, see also http://go/automerger-help#using-merged-in )\n\nChange-Id: Ic592a1d2fb2da149220c8b503b522b3e864bcc77\nMerged-In: Ic592a1d2fb2da149220c8b503b522b3e864bcc77",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 52
+      },
+      "revId": "7f6c969770836e3612d45d73ca4339f7d6a436ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
