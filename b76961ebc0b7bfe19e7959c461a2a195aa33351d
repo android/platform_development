@@ -118,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "8eb6ff94_3aed0e95",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-12T23:57:44Z",
+      "side": 1,
+      "message": "GAPID is the consumer of this binary and all its output to stdout, as long as it returns non-zero then GAPID knows it fails",
+      "parentUuid": "d7c9ddae_a3708745",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 60
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50d31673_10f698d3",
         "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
         "patchSetId": 2
