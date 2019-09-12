@@ -1,0 +1,5 @@
+cc_binary {
+    name: "gpuCountersLoader",
+    srcs: ["gpuCountersLoader.cc"],
+    shared_libs: ["liblog"],
+}
