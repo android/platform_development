@@ -1,1 +1,6 @@
 subdirs = ["*"]
+cc_binary {
+    name: "gpuCountersExecutable",
+    srcs: ["gpucounter_harness/gpuCountersExecutable.cc"],
+    shared_libs: ["liblog"],
+}
