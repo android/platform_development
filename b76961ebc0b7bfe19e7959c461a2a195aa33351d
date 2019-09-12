@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "e0ca965b_65d2cb96",
+        "filename": "tools/gpucounter_harness/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-12T23:44:18Z",
+      "side": 1,
+      "message": "This file doesn\u0027t mean anything without proper context.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 109
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c3fd8a9_be80f75e",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-12T23:44:18Z",
+      "side": 1,
+      "message": "Probably rename the file to Loader instead of Executable.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 2
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88865764_ec0bb881",
         "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
         "patchSetId": 2
@@ -36,6 +82,30 @@
       "writtenOn": "2019-09-12T23:32:23Z",
       "side": 1,
       "message": "just return, no need to print",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 60
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7c9ddae_a3708745",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-12T23:44:18Z",
+      "side": 1,
+      "message": "Why won\u0027t we want something to be printed?",
+      "parentUuid": "51ceb22e_1fb49a35",
       "range": {
         "startLine": 24,
         "startChar": 4,
