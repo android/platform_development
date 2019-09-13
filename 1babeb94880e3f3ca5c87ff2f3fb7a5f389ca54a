@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96db5bf0_e29abdd7",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1562821
+      },
+      "writtenOn": "2019-09-13T01:47:30Z",
+      "side": 1,
+      "message": "This is required to flush any dlerror that has happened in the system no matter which program ran it. Was breaking my head why the dlysm below was failing with some random error.",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 12
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
