@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "d7867972_44eeba9a",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e143e11_f2dce5d0",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "start",
+      "range": {
+        "startLine": 23,
+        "startChar": 57,
+        "endLine": 23,
+        "endChar": 70
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7280d2d_2d09bd5f",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "whitespace before",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 5
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "96db5bf0_e29abdd7",
         "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
         "patchSetId": 4
@@ -22,6 +91,167 @@
       "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ad7f8d9b_2677f8eb",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "no extra whitespace",
+      "range": {
+        "startLine": 32,
+        "startChar": 33,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6bafaca_a4269008",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "nullptr",
+      "range": {
+        "startLine": 32,
+        "startChar": 29,
+        "endLine": 32,
+        "endChar": 33
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5718148_ee4e4870",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "if ((error \u003d dlerror()) !\u003d nullptr || handle \u003d\u003d nullptr) {\n  ...\n}",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 37
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd24319c_d7fe115e",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "Could you please do a typedef for the function pointer?",
+      "range": {
+        "startLine": 36,
+        "startChar": 2,
+        "endLine": 36,
+        "endChar": 26
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "229640a0_91950862",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "start, also define it as a const variable",
+      "range": {
+        "startLine": 37,
+        "startChar": 45,
+        "endLine": 37,
+        "endChar": 58
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f90dfcf_72aa3649",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "no extra whitespace",
+      "range": {
+        "startLine": 37,
+        "startChar": 27,
+        "endLine": 37,
+        "endChar": 28
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa541614_5381fc55",
+        "filename": "tools/gpucounter_harness/gpuCountersLoader.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T19:55:13Z",
+      "side": 1,
+      "message": "whitespace before",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 5
+      },
+      "revId": "1babeb94880e3f3ca5c87ff2f3fb7a5f389ca54a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
