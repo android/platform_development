@@ -407,6 +407,30 @@
       "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d4952de_45667c48",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-13T00:22:13Z",
+      "side": 1,
+      "message": "Probably best to check both.  I don\u0027t think it\u0027s possible, but if there is an error and pointer is not null, it would be better to fail right away instead of calling some unknown function and end up with a weird crash.",
+      "parentUuid": "1b6ca10e_7e1db0f9",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 39,
+        "endChar": 3
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
