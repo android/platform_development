@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "0d78f0cb_0e654b74",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-13T00:03:35Z",
+      "side": 1,
+      "message": "I am hesitant to call this producer for gpuCounters.  For example, the current version of qcom producer outputs both counters and render stages.",
+      "range": {
+        "startLine": 7,
+        "startChar": 48,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d10c9aa_7edf7940",
+        "filename": "tools/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-13T00:03:35Z",
+      "side": 1,
+      "message": "You should create an Android.bp in the gpucounter_harness directory instead.",
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e0ca965b_65d2cb96",
         "filename": "tools/gpucounter_harness/Makefile",
         "patchSetId": 2
@@ -41,6 +81,29 @@
         "startChar": 0,
         "endLine": 1,
         "endChar": 2
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06872ba6_9f018b08",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-13T00:03:35Z",
+      "side": 1,
+      "message": "Needs explanation of what this file is for.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
       },
       "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
@@ -142,6 +205,30 @@
     },
     {
       "key": {
+        "uuid": "b2c4820b_bdde5e20",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-13T00:03:35Z",
+      "side": 1,
+      "message": "Ya, but then whoever needs to debug why it\u0027s fails will have no idea without these error message.",
+      "parentUuid": "8eb6ff94_3aed0e95",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 60
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50d31673_10f698d3",
         "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
         "patchSetId": 2
@@ -222,6 +309,30 @@
       "writtenOn": "2019-09-12T23:32:23Z",
       "side": 1,
       "message": "no need to check dlerror here I think",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 39,
+        "endChar": 3
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "539e0c6c_22e2ac46",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1044651
+      },
+      "writtenOn": "2019-09-13T00:03:35Z",
+      "side": 1,
+      "message": "I don\u0027t understand why you would want to remove the error check.  If an error did occur, e.g., the library doesn\u0027t have the start function, wouldn\u0027t it be helpful to print out why it\u0027s not working?",
+      "parentUuid": "e29390eb_61237845",
       "range": {
         "startLine": 35,
         "startChar": 2,
