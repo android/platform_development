@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "8f3e88b8_ec7751b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T00:08:16Z",
+      "side": 1,
+      "message": "GPU counters collection.",
+      "range": {
+        "startLine": 7,
+        "startChar": 48,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4d10c9aa_7edf7940",
         "filename": "tools/Android.bp",
         "patchSetId": 2
@@ -36,6 +59,24 @@
       "writtenOn": "2019-09-13T00:03:35Z",
       "side": 1,
       "message": "You should create an Android.bp in the gpucounter_harness directory instead.",
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be1da9d0_90fb153f",
+        "filename": "tools/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T00:08:16Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "4d10c9aa_7edf7940",
       "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
@@ -333,6 +374,30 @@
       "side": 1,
       "message": "I don\u0027t understand why you would want to remove the error check.  If an error did occur, e.g., the library doesn\u0027t have the start function, wouldn\u0027t it be helpful to print out why it\u0027s not working?",
       "parentUuid": "e29390eb_61237845",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 39,
+        "endChar": 3
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b6ca10e_7e1db0f9",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1267775
+      },
+      "writtenOn": "2019-09-13T00:08:16Z",
+      "side": 1,
+      "message": "hmmmmm, I was under the impression that if dlsym fails, then the function pointer would be nullptr, so instead we should check the function pointer",
+      "parentUuid": "539e0c6c_22e2ac46",
       "range": {
         "startLine": 35,
         "startChar": 2,
