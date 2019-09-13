@@ -152,6 +152,30 @@
     },
     {
       "key": {
+        "uuid": "613a61f1_f3d30d73",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1562821
+      },
+      "writtenOn": "2019-09-13T18:22:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06872ba6_9f018b08",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "88865764_ec0bb881",
         "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
         "patchSetId": 2
@@ -172,6 +196,30 @@
       "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "286f25eb_6e519c83",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1562821
+      },
+      "writtenOn": "2019-09-13T18:22:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88865764_ec0bb881",
+      "range": {
+        "startLine": 23,
+        "startChar": 9,
+        "endLine": 23,
+        "endChar": 10
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -313,6 +361,30 @@
       "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "162e125a_07e0519f",
+        "filename": "tools/gpucounter_harness/gpuCountersExecutable.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1562821
+      },
+      "writtenOn": "2019-09-13T18:22:41Z",
+      "side": 1,
+      "message": "Needed for flushing if we are keeping error prints",
+      "parentUuid": "eefface2_734c616c",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 12
+      },
+      "revId": "b76961ebc0b7bfe19e7959c461a2a195aa33351d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
