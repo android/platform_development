@@ -29,10 +29,11 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.IBinder;
-import android.text.format.Time;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -81,12 +82,12 @@ public class WordWidget extends AppWidgetProvider {
             String[] monthNames = res.getStringArray(R.array.month_names);
 
             // Find current month and day
-            Time today = new Time();
-            today.setToNow();
+            Calendar calendar = new GregorianCalendar();
 
             // Build the page title for today, such as "March 21"
             String pageName = res.getString(R.string.template_wotd_title,
-                    monthNames[today.month], today.monthDay);
+                    monthNames[calendar.get(Calendar.MONTH)],
+                    calendar.get(Calendar.DAY_OF_MONTH));
             String pageContent = null;
 
             try {

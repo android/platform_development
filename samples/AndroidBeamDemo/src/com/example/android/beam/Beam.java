@@ -29,14 +29,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
 import android.provider.Settings;
-import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class Beam extends Activity implements CreateNdefMessageCallback,
@@ -70,10 +70,10 @@ public class Beam extends Activity implements CreateNdefMessageCallback,
      */
     @Override
     public NdefMessage createNdefMessage(NfcEvent event) {
-        Time time = new Time();
-        time.setToNow();
-        String text = ("Beam me up!\n\n" +
-                "Beam Time: " + time.format("%H:%M:%S"));
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+        String timeString = formatter.format(date);
+        String text = ("Beam me up!\n\n" + "Beam Time: " + timeString);
         NdefMessage msg = new NdefMessage(NdefRecord.createMime(
                 "application/com.example.android.beam", text.getBytes())
          /**

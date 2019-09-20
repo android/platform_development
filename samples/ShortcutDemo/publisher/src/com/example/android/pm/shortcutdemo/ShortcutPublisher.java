@@ -42,14 +42,17 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
+import java.util.TimeZone;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BooleanSupplier;
 
@@ -262,9 +265,9 @@ public class ShortcutPublisher extends Activity {
     }
 
     static String formatTime(long time) {
-        Time tobj = new Time();
-        tobj.set(time);
-        return tobj.format("%Y-%m-%d %H:%M:%S");
+        Date date = new Date(time);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return formatter.format(date);
     }
 
     public void onAddPressed(View view) {
