@@ -16,6 +16,24 @@
       "revId": "c5839fd02b474e23ee70541ac3a3d6a00a4e12cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eae0d918_92d481d1",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1307957
+      },
+      "writtenOn": "2019-10-02T22:51:20Z",
+      "side": 1,
+      "message": "Because of the weird decision made in python:\nhttps://github.com/python/cpython/blob/62dfd7d6fe11bfa0cd1d7376382c8e7b1275e38c/Lib/distutils/sysconfig.py#L148\n\nAnd that reflected in llvm:\nhttps://github.com/llvm-mirror/lldb/blob/master/source/Plugins/ScriptInterpreter/Python/ScriptInterpreterPython.cpp#L335\n\nActually lldb should be able to add this path automatically. But they did it wrong, specially for cross compile. I\u0027m thinking of fixing that upstream.",
+      "parentUuid": "14f23046_109f1acd",
+      "revId": "c5839fd02b474e23ee70541ac3a3d6a00a4e12cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
