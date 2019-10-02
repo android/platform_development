@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "14f23046_109f1acd",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-10-02T21:54:22Z",
+      "side": 1,
+      "message": "Weird. Why does this differ?",
+      "revId": "c5839fd02b474e23ee70541ac3a3d6a00a4e12cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
