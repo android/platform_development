@@ -19,32 +19,30 @@
 #
 # 1. sudo apt-get install lcov
 # 2. Build application/library with coverage information.
-# 3. Push the new binaries to the device.
-# 4. Run tests with the additional environment variables:
-#     * GCOV_PREFIX=/data/local/tmp/gcov
-#     * GCOV_PREFIX_STRIP=`echo $(ANDROID_BUILD_TOP) | grep -o / | wc -l`
-# 5. Run `acov`.
+#     * make NATIVE_COVERAGE=true COVERAGE_PATHS='*'
+# 3. Push the new binaries to the device with adb sync.
+# 4. Run tests with the additional environment variable:
+#     * GCOV_PREFIX=/data/misc/trace/testcoverage
+# 5. Run `acov /data/misc/trace/testcoverage`.
 #
 # acov will pull all coverage information from the device, push it to the right
 # directories, run lcov, and display the coverage report (currently by opening
 # it in your browser).
 #
 
+ANDROID_OUT=${OUT_DIR:-out}
+
 if [ "$1" = "--clean" ]; then
-  find $ANDROID_HOST_OUT \( -name '*.gcda' -o -name '*.gcno' \) -delete
-  find $ANDROID_PRODUCT_OUT \( -name '*.gcda' -o -name '*.gcno' \) -delete
+  if [ -d "$ANDROID_OUT" ]; then
+    find $ANDROID_OUT \( -name '*.gcda' -o -name '*.gcno' \) -delete
+  fi
   exit 0
 fi
 
 if [ "$1" = "--prep" ]; then
-  if [ -d "$ANDROID_HOST_OUT" ]; then
-    find $ANDROID_HOST_OUT -name '*.gcda' -delete
+  if [ -d "$ANDROID_OUT" ]; then
+    find $ANDROID_OUT -name '*.gcda' -delete
   fi
-
-  if [ -d "$ANDROID_PRODUCT_OUT" ]; then
-    find $ANDROID_PRODUCT_OUT -name '*.gcda' -delete
-  fi
-
   exit 0
 fi
 
@@ -54,22 +52,20 @@ if [ $? -ne 0 ]; then
   sudo apt-get install lcov
 fi
 
-HOST=false
-ANDROID_OUT=$ANDROID_PRODUCT_OUT
-EXTRA_ARGS="$@"
-if [ "$1" = "--host" ]; then
-  HOST=true
-  ANDROID_OUT=$ANDROID_HOST_OUT
-  EXTRA_ARGS="--gcov-tool=/usr/bin/gcov-4.6 ${@:2}"
+adb root
+if [ "$1" = "--flush" ]; then
+  adb shell kill -37 -1
+  shift
 fi
 
 cd $ANDROID_BUILD_TOP
 FILE=cov.info
 DIR=$(mktemp -d covreport-XXXXXX)
 
-if [ "$HOST" = "false" ]; then
-  adb pull /data/local/tmp/gcov
-fi
+adb pull $1/proc/self/cwd/$ANDROID_OUT
+shift
+
+EXTRA_ARGS="--gcov-tool=llvm-gcov $@"
 
 lcov -c -d $ANDROID_OUT -o $DIR/$FILE $EXTRA_ARGS
 echo "Generating coverage report at $DIR"
