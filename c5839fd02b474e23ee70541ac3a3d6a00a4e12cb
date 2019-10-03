@@ -34,6 +34,24 @@
       "revId": "c5839fd02b474e23ee70541ac3a3d6a00a4e12cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9705f4a1_a9f22331",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2019-10-03T01:34:02Z",
+      "side": 1,
+      "message": "\u003e I\u0027m thinking of fixing that upstream.\n\nThat\u0027d be nice, but agreed that this is fine for now.",
+      "parentUuid": "eae0d918_92d481d1",
+      "revId": "c5839fd02b474e23ee70541ac3a3d6a00a4e12cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
