@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "2def7bca_d31b281f",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-10-10T23:53:21Z",
+      "side": 1,
+      "message": "*typo\n\nAt least the following code:\n\n    #!/bin/bash\n    A\u003d(\n      \"a a\"\n      \"b b\"\n      \"c c\"\n    )\n    for i in \"${A[@]}\"; do\n      echo \"\\\"$i\\\"\"\n    done\n\nshows:\n\n    \"a a\"\n    \"b b\"\n    \"c c\"\n\nwhere as:\n\n    #!/bin/bash\n    A\u003d(\n      \"a a\"\n      \"b b\"\n      \"c c\"\n    )\n    for i in \"${A[*]}\"; do\n      echo \"\\\"$i\\\"\"\n    done\n\nshows:\n\n    \"a a b b c c\"",
+      "parentUuid": "5c1a2ba8_eb3d6e53",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 81
+      },
+      "revId": "1f5b7d2a9784a42bb2ae93c3818224bca75c0d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e2eb5f45_2dec79e9",
         "filename": "vndk/tools/build_mixed",
         "patchSetId": 2
