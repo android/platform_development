@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ec31e47_c75c99ef",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-10-10T17:49:58Z",
+      "side": 1,
+      "message": "Flip the condition so that the \"WARNING: ...\" can be closer to this condition?\n\n    if [ ! -f \"$OTATOOLS_ZIP\" ]; then\n      echo \"WARNING: ...\"\n    else\n      # ... the rest of lines ...\n    fi",
+      "range": {
+        "startLine": 171,
+        "startChar": 6,
+        "endLine": 171,
+        "endChar": 24
+      },
+      "revId": "1f5b7d2a9784a42bb2ae93c3818224bca75c0d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec8e3298_30512a51",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-10-10T17:49:58Z",
+      "side": 1,
+      "message": "Doesn\u0027t \"${EXTRACT_SYSTEM_FILE_LIST[@]}\" (with quote) work?",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 81
+      },
+      "revId": "1f5b7d2a9784a42bb2ae93c3818224bca75c0d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2eb5f45_2dec79e9",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-10-10T17:49:58Z",
+      "side": 1,
+      "message": "Indent by 2 spaces",
+      "range": {
+        "startLine": 265,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 2
+      },
+      "revId": "1f5b7d2a9784a42bb2ae93c3818224bca75c0d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
