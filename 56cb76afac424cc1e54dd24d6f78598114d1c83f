@@ -22,6 +22,30 @@
       "revId": "56cb76afac424cc1e54dd24d6f78598114d1c83f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb5bb2da_5f663aae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-10-10T03:25:25Z",
+      "side": 1,
+      "message": "I like to keep the indentation for the same reason, but the script has both 2 and 4 space indentation in one file. Before adding a new change, I decided to clean up the indentation first. :)",
+      "parentUuid": "d05e9cc8_3d4efe2e",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 11
+      },
+      "revId": "56cb76afac424cc1e54dd24d6f78598114d1c83f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
