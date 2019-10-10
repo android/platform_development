@@ -22,6 +22,30 @@
       "revId": "b9fe1426718671b0e12f1e5e4b58eb792b47bbe9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a243538_a5d0966c",
+        "filename": "vndk/snapshot/build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2019-10-10T23:43:55Z",
+      "side": 1,
+      "message": "Nope, \u0027-j\u0027 is default for now.",
+      "parentUuid": "80c83013_431bb809",
+      "range": {
+        "startLine": 22,
+        "startChar": 25,
+        "endLine": 22,
+        "endChar": 26
+      },
+      "revId": "b9fe1426718671b0e12f1e5e4b58eb792b47bbe9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
