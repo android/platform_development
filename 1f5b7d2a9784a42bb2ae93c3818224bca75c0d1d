@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "c7b922a8_2b7ecc62",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2019-10-11T00:34:36Z",
+      "side": 1,
+      "message": "Thank you Logan,\nIt works for me.\nUpdated the codes.",
+      "parentUuid": "2def7bca_d31b281f",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 81
+      },
+      "revId": "1f5b7d2a9784a42bb2ae93c3818224bca75c0d1d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2eb5f45_2dec79e9",
         "filename": "vndk/tools/build_mixed",
         "patchSetId": 2
