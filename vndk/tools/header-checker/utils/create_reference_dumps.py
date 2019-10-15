@@ -30,10 +30,10 @@ def choose_vndk_version(version, platform_vndk_version, board_vndk_version):
     return version
 
 
-def make_libs_for_product(libs, product, variant, targets):
+def make_libs_for_product(libs, product, variant, vndk_version, targets):
     print('making libs for', product + '-' + variant)
     if libs:
-        make_libraries(product, variant, targets, libs)
+        make_libraries(product, variant, vndk_version, targets, libs)
     else:
         make_tree(product, variant)
 
@@ -146,12 +146,13 @@ def create_source_abi_reference_dumps_for_all_products(args):
             args.libs)
 
         if not args.no_make_lib:
-            # Build all the specified libs (or build the 'vndk' target if none
-            # of them are specified.)
-            make_libs_for_product(args.libs, product,
-                                  args.build_variant, targets)
+            # Build all the specified libs, or build `findlsdumps` if no libs
+            # are specified.
+            make_libs_for_product(args.libs, product, args.build_variant,
+                                  platform_vndk_version, targets)
 
-        lsdump_paths = read_lsdump_paths(product, args.build_variant, targets,
+        lsdump_paths = read_lsdump_paths(product, args.build_variant,
+                                         platform_vndk_version, targets,
                                          build=False)
 
         num_processed += create_source_abi_reference_dumps(
