@@ -36,9 +36,6 @@ java_library_static {
     libs: [
         "stub-annotations",
     ],
-    static_libs: [
-        "private-stub-annotations-jar",
-    ],
     defaults: ["framework-stubs-default"],
 }
 
@@ -55,9 +52,6 @@ java_library_static {
     libs: [
         "stub-annotations",
     ],
-    static_libs: [
-        "private-stub-annotations-jar",
-    ],
     defaults: ["framework-stubs-default"],
 }
 
@@ -73,9 +67,6 @@ java_library_static {
     ],
     libs: [
         "stub-annotations",
-    ],
-    static_libs: [
-        "private-stub-annotations-jar",
     ],
     defaults: ["framework-stubs-default"],
 }
