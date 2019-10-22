@@ -41,7 +41,10 @@ java_library_static {
 
 java_system_modules {
     name: "android_stubs_current_system_modules",
-    libs: ["android_stubs_current"],
+    libs: [
+        "android_stubs_current",
+        "core-lambda-stubs-for-system-modules",
+    ],
 }
 
 java_library_static {
@@ -57,7 +60,10 @@ java_library_static {
 
 java_system_modules {
     name: "android_system_stubs_current_system_modules",
-    libs: ["android_system_stubs_current"],
+    libs: [
+        "android_system_stubs_current"
+        "core-lambda-stubs-for-system-modules",
+    ],
 }
 
 java_library_static {
@@ -73,5 +79,8 @@ java_library_static {
 
 java_system_modules {
     name: "android_test_stubs_current_system_modules",
-    libs: ["android_test_stubs_current"],
+    libs: [
+        "android_test_stubs_current"
+        "core-lambda-stubs-for-system-modules",
+    ],
 }
