@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8ce2463_3517fc5c",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-10-23T14:27:07Z",
+      "side": 1,
+      "message": "80-column",
+      "range": {
+        "startLine": 184,
+        "startChar": 80,
+        "endLine": 184,
+        "endChar": 84
+      },
+      "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0c75817_d480790c",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-10-23T14:27:07Z",
+      "side": 1,
+      "message": "Can be simplified as:\n\n    except (IOError, ValueError):\n        pass",
+      "range": {
+        "startLine": 192,
+        "startChar": 12,
+        "endLine": 195,
+        "endChar": 20
+      },
+      "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c340a325_50a5bd03",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-10-23T14:27:07Z",
+      "side": 1,
+      "message": "Add:\n\n    module_names and\n\nNeed to handle the `module_names is None` case here; otherwise, you will see the TypeError exception.",
+      "range": {
+        "startLine": 282,
+        "startChar": 14,
+        "endLine": 282,
+        "endChar": 15
+      },
+      "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
