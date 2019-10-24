@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "d968aaa7_4f869c2b",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2019-10-24T15:28:00Z",
+      "side": 1,
+      "message": "Is it okay to \u0027pass\u0027?",
+      "parentUuid": "e0c75817_d480790c",
+      "range": {
+        "startLine": 192,
+        "startChar": 12,
+        "endLine": 195,
+        "endChar": 20
+      },
+      "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c340a325_50a5bd03",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 1
