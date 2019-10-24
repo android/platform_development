@@ -3,7 +3,7 @@
  "builtin_types" :
  [
   {
-   "linker_set_key" : "void",
+   "linker_set_key" : "_ZTIv",
    "name" : "void",
    "referenced_type" : "type-1",
    "self_type" : "type-1"

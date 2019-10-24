@@ -28,13 +28,13 @@ record_types {
     name: "List<float>"
     size: 8
     alignment: 8
-    referenced_type: "type-34"
+    referenced_type: "type-36"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTI4ListIfE"
-    self_type: "type-34"
+    self_type: "type-36"
   }
   fields {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     field_offset: 0
     field_name: "middle"
     access: public_access
@@ -52,13 +52,13 @@ record_types {
     name: "List<int>"
     size: 8
     alignment: 8
-    referenced_type: "type-41"
+    referenced_type: "type-43"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTI4ListIiE"
-    self_type: "type-41"
+    self_type: "type-43"
   }
   fields {
-    referenced_type: "type-43"
+    referenced_type: "type-45"
     field_offset: 0
     field_name: "middle"
     access: public_access
@@ -125,19 +125,19 @@ record_types {
     name: "CPPHello"
     size: 56
     alignment: 8
-    referenced_type: "type-25"
+    referenced_type: "type-27"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTI8CPPHello"
-    self_type: "type-25"
+    self_type: "type-27"
   }
   fields {
-    referenced_type: "type-26"
+    referenced_type: "type-28"
     field_offset: 352
     field_name: "cpp_foo"
     access: public_access
   }
   fields {
-    referenced_type: "type-27"
+    referenced_type: "type-29"
     field_offset: 384
     field_name: "cpp_bar"
     access: public_access
@@ -192,10 +192,10 @@ record_types {
     name: "List<float>::_Node"
     size: 24
     alignment: 8
-    referenced_type: "type-35"
+    referenced_type: "type-37"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIN4ListIfE5_NodeE"
-    self_type: "type-35"
+    self_type: "type-37"
   }
   fields {
     referenced_type: "type-3"
@@ -204,13 +204,13 @@ record_types {
     access: private_access
   }
   fields {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     field_offset: 64
     field_name: "mpPrev"
     access: private_access
   }
   fields {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     field_offset: 128
     field_name: "mpNext"
     access: private_access
@@ -448,6 +448,48 @@ enum_types {
 }
 enum_types {
   type_info {
+    name: "Hello::(anonymous enum at /development/vndk/tools/header-checker/tests/input/example1.h:18:3)"
+    size: 4
+    alignment: 4
+    referenced_type: "type-26"
+    source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
+    linker_set_key: "_ZTIN5HelloUt0_E"
+    self_type: "type-26"
+  }
+  underlying_type: "type-9"
+  enum_fields {
+    enum_field_value: 0
+    name: "Hello::C"
+  }
+  enum_fields {
+    enum_field_value: 1
+    name: "Hello::D"
+  }
+  access: public_access
+}
+enum_types {
+  type_info {
+    name: "Hello::(anonymous enum at /development/vndk/tools/header-checker/tests/input/example1.h:17:3)"
+    size: 4
+    alignment: 4
+    referenced_type: "type-25"
+    source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
+    linker_set_key: "_ZTIN5HelloUt_E"
+    self_type: "type-25"
+  }
+  underlying_type: "type-9"
+  enum_fields {
+    enum_field_value: 0
+    name: "Hello::A"
+  }
+  enum_fields {
+    enum_field_value: 1
+    name: "Hello::B"
+  }
+  access: public_access
+}
+enum_types {
+  type_info {
     name: "test3::Kind"
     size: 4
     alignment: 4
@@ -472,10 +514,10 @@ enum_types {
     name: "CPPHello::Bla"
     size: 4
     alignment: 4
-    referenced_type: "type-29"
+    referenced_type: "type-31"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIN8CPPHello3BlaE"
-    self_type: "type-29"
+    self_type: "type-31"
   }
   underlying_type: "type-9"
   enum_fields {
@@ -500,10 +542,10 @@ pointer_types {
     name: "List<int> *"
     size: 8
     alignment: 8
-    referenced_type: "type-41"
+    referenced_type: "type-43"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIP4ListIiE"
-    self_type: "type-44"
+    self_type: "type-46"
   }
 }
 pointer_types {
@@ -511,10 +553,10 @@ pointer_types {
     name: "CPPHello *"
     size: 8
     alignment: 8
-    referenced_type: "type-25"
+    referenced_type: "type-27"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIP8CPPHello"
-    self_type: "type-28"
+    self_type: "type-30"
   }
 }
 pointer_types {
@@ -522,10 +564,10 @@ pointer_types {
     name: "StackNode<int> *"
     size: 8
     alignment: 8
-    referenced_type: "type-45"
+    referenced_type: "type-47"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIP9StackNodeIiE"
-    self_type: "type-46"
+    self_type: "type-48"
   }
 }
 pointer_types {
@@ -533,10 +575,10 @@ pointer_types {
     name: "const List<float>::_Node *"
     size: 8
     alignment: 8
-    referenced_type: "type-39"
+    referenced_type: "type-41"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIPKN4ListIfE5_NodeE"
-    self_type: "type-40"
+    self_type: "type-42"
   }
 }
 pointer_types {
@@ -544,10 +586,10 @@ pointer_types {
     name: "const char *"
     size: 8
     alignment: 8
-    referenced_type: "type-47"
+    referenced_type: "type-49"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIPKc"
-    self_type: "type-48"
+    self_type: "type-50"
   }
 }
 pointer_types {
@@ -555,10 +597,10 @@ pointer_types {
     name: "List<float>::_Node *"
     size: 8
     alignment: 8
-    referenced_type: "type-35"
+    referenced_type: "type-37"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIPN4ListIfE5_NodeE"
-    self_type: "type-36"
+    self_type: "type-38"
   }
 }
 pointer_types {
@@ -566,10 +608,10 @@ pointer_types {
     name: "List<int>::_Node *"
     size: 8
     alignment: 8
-    referenced_type: "type-42"
+    referenced_type: "type-44"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIPN4ListIiE5_NodeE"
-    self_type: "type-43"
+    self_type: "type-45"
   }
 }
 pointer_types {
@@ -591,7 +633,7 @@ pointer_types {
     referenced_type: "type-3"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIPf"
-    self_type: "type-33"
+    self_type: "type-35"
   }
 }
 pointer_types {
@@ -602,7 +644,7 @@ pointer_types {
     referenced_type: "type-2"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIPi"
-    self_type: "type-31"
+    self_type: "type-33"
   }
 }
 lvalue_reference_types {
@@ -610,10 +652,10 @@ lvalue_reference_types {
     name: "const float &"
     size: 8
     alignment: 8
-    referenced_type: "type-27"
+    referenced_type: "type-29"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIRKf"
-    self_type: "type-37"
+    self_type: "type-39"
   }
 }
 lvalue_reference_types {
@@ -624,7 +666,7 @@ lvalue_reference_types {
     referenced_type: "type-3"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIRf"
-    self_type: "type-38"
+    self_type: "type-40"
   }
 }
 lvalue_reference_types {
@@ -635,7 +677,7 @@ lvalue_reference_types {
     referenced_type: "type-2"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIRi"
-    self_type: "type-30"
+    self_type: "type-32"
   }
 }
 builtin_types {
@@ -656,10 +698,10 @@ builtin_types {
     name: "char"
     size: 1
     alignment: 1
-    referenced_type: "type-49"
+    referenced_type: "type-51"
     source_file: ""
     linker_set_key: "_ZTIc"
-    self_type: "type-49"
+    self_type: "type-51"
   }
   is_unsigned: false
   is_integral: true
@@ -761,10 +803,10 @@ qualified_types {
     name: "const CPPHello"
     size: 56
     alignment: 8
-    referenced_type: "type-25"
+    referenced_type: "type-27"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIK8CPPHello"
-    self_type: "type-32"
+    self_type: "type-34"
   }
   is_const: true
   is_volatile: false
@@ -775,10 +817,10 @@ qualified_types {
     name: "const List<float>::_Node"
     size: 24
     alignment: 8
-    referenced_type: "type-35"
+    referenced_type: "type-37"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIKN4ListIfE5_NodeE"
-    self_type: "type-39"
+    self_type: "type-41"
   }
   is_const: true
   is_volatile: false
@@ -789,10 +831,10 @@ qualified_types {
     name: "const char"
     size: 1
     alignment: 1
-    referenced_type: "type-49"
+    referenced_type: "type-51"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIKc"
-    self_type: "type-47"
+    self_type: "type-49"
   }
   is_const: true
   is_volatile: false
@@ -806,7 +848,7 @@ qualified_types {
     referenced_type: "type-3"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIKf"
-    self_type: "type-27"
+    self_type: "type-29"
   }
   is_const: true
   is_volatile: false
@@ -820,7 +862,7 @@ qualified_types {
     referenced_type: "type-2"
     source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
     linker_set_key: "_ZTIKi"
-    self_type: "type-26"
+    self_type: "type-28"
   }
   is_const: true
   is_volatile: false
@@ -842,12 +884,12 @@ functions {
   function_name: "ListMangle"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-44"
+    referenced_type: "type-46"
     default_arg: false
     is_this_ptr: false
   }
   parameters {
-    referenced_type: "type-46"
+    referenced_type: "type-48"
     default_arg: false
     is_this_ptr: false
   }
@@ -859,12 +901,12 @@ functions {
   function_name: "fooVariadic"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-30"
+    referenced_type: "type-32"
     default_arg: false
     is_this_ptr: false
   }
   parameters {
-    referenced_type: "type-31"
+    referenced_type: "type-33"
     default_arg: false
     is_this_ptr: false
   }
@@ -872,16 +914,16 @@ functions {
   access: public_access
 }
 functions {
-  return_type: "type-34"
+  return_type: "type-36"
   function_name: "castInterface"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-34"
+    referenced_type: "type-36"
     default_arg: false
     is_this_ptr: false
   }
   parameters {
-    referenced_type: "type-48"
+    referenced_type: "type-50"
     default_arg: false
     is_this_ptr: false
   }
@@ -912,17 +954,17 @@ functions {
   function_name: "boo"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-32"
-    default_arg: false
-    is_this_ptr: false
-  }
-  parameters {
-    referenced_type: "type-31"
+    referenced_type: "type-34"
     default_arg: false
     is_this_ptr: false
   }
   parameters {
     referenced_type: "type-33"
+    default_arg: false
+    is_this_ptr: false
+  }
+  parameters {
+    referenced_type: "type-35"
     default_arg: false
     is_this_ptr: false
   }
@@ -941,7 +983,7 @@ functions {
   function_name: "List<float>::_Node::PrivateNode"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     default_arg: false
     is_this_ptr: true
   }
@@ -949,11 +991,11 @@ functions {
   access: private_access
 }
 functions {
-  return_type: "type-38"
+  return_type: "type-40"
   function_name: "List<float>::_Node::getRef"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     default_arg: false
     is_this_ptr: true
   }
@@ -965,12 +1007,12 @@ functions {
   function_name: "List<float>::_Node::_Node"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     default_arg: false
     is_this_ptr: true
   }
   parameters {
-    referenced_type: "type-37"
+    referenced_type: "type-39"
     default_arg: false
     is_this_ptr: false
   }
@@ -982,12 +1024,12 @@ functions {
   function_name: "List<float>::_Node::_Node"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     default_arg: false
     is_this_ptr: true
   }
   parameters {
-    referenced_type: "type-37"
+    referenced_type: "type-39"
     default_arg: false
     is_this_ptr: false
   }
@@ -999,7 +1041,7 @@ functions {
   function_name: "List<float>::_Node::~_Node"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     default_arg: false
     is_this_ptr: true
   }
@@ -1011,7 +1053,7 @@ functions {
   function_name: "List<float>::_Node::~_Node"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-36"
+    referenced_type: "type-38"
     default_arg: false
     is_this_ptr: true
   }
@@ -1071,7 +1113,7 @@ functions {
   function_name: "CPPHello::again"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-28"
+    referenced_type: "type-30"
     default_arg: false
     is_this_ptr: true
   }
@@ -1083,7 +1125,7 @@ functions {
   function_name: "CPPHello::test_enum"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-28"
+    referenced_type: "type-30"
     default_arg: false
     is_this_ptr: true
   }
@@ -1095,7 +1137,7 @@ functions {
   function_name: "CPPHello::CPPHello"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-28"
+    referenced_type: "type-30"
     default_arg: false
     is_this_ptr: true
   }
@@ -1107,7 +1149,7 @@ functions {
   function_name: "CPPHello::CPPHello"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-28"
+    referenced_type: "type-30"
     default_arg: false
     is_this_ptr: true
   }
@@ -1115,11 +1157,11 @@ functions {
   access: public_access
 }
 functions {
-  return_type: "type-37"
+  return_type: "type-39"
   function_name: "List<float>::_Node::getRef"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   parameters {
-    referenced_type: "type-40"
+    referenced_type: "type-42"
     default_arg: false
     is_this_ptr: true
   }
@@ -1170,20 +1212,20 @@ global_vars {
   name: "float_list_test"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   linker_set_key: "float_list_test"
-  referenced_type: "type-34"
+  referenced_type: "type-36"
   access: public_access
 }
 global_vars {
   name: "int_list_test"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   linker_set_key: "int_list_test"
-  referenced_type: "type-41"
+  referenced_type: "type-43"
   access: public_access
 }
 global_vars {
   name: "node"
   source_file: "/development/vndk/tools/header-checker/tests/input/example1.h"
   linker_set_key: "node"
-  referenced_type: "type-35"
+  referenced_type: "type-37"
   access: public_access
 }
