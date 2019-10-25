@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d1d7c060_692350e8",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2019-10-25T06:03:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8ce2463_3517fc5c",
+      "range": {
+        "startLine": 184,
+        "startChar": 80,
+        "endLine": 184,
+        "endChar": 84
+      },
+      "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e0c75817_d480790c",
         "filename": "vndk/snapshot/gen_buildfiles.py",
         "patchSetId": 1
@@ -69,6 +93,30 @@
       "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ac9638e_fb131df4",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2019-10-25T06:03:23Z",
+      "side": 1,
+      "message": "logan: done\njooyung: yes, I\u0027ve added comments",
+      "parentUuid": "d968aaa7_4f869c2b",
+      "range": {
+        "startLine": 192,
+        "startChar": 12,
+        "endLine": 195,
+        "endChar": 20
+      },
+      "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
