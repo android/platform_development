@@ -12,6 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+system_module_classes = [
+    "java.**",
+    "javax.**",
+    "org.xml.**",
+    "org.w3c.dom.**",
+]
+
 java_defaults {
     name: "framework-stubs-default",
     errorprone: {
@@ -28,7 +35,7 @@ java_defaults {
     compile_dex: true,
 }
 
-java_library_static {
+java_library {
     name: "android_stubs_current",
     srcs: [
         ":api-stubs-docs",
@@ -44,10 +51,14 @@ java_library_static {
 
 java_system_modules {
     name: "android_stubs_current_system_modules",
-    libs: ["android_stubs_current"],
+    libs: [
+        "android_stubs_current",
+        "core-lambda-stubs-for-system-modules",
+    ],
+    classes: system_module_classes,
 }
 
-java_library_static {
+java_library {
     name: "android_system_stubs_current",
     srcs: [
         ":system-api-stubs-docs",
@@ -63,10 +74,14 @@ java_library_static {
 
 java_system_modules {
     name: "android_system_stubs_current_system_modules",
-    libs: ["android_system_stubs_current"],
+    libs: [
+        "android_system_stubs_current",
+        "core-lambda-stubs-for-system-modules",
+    ],
+    classes: system_module_classes,
 }
 
-java_library_static {
+java_library {
     name: "android_test_stubs_current",
     srcs: [
         ":test-api-stubs-docs",
@@ -82,5 +97,9 @@ java_library_static {
 
 java_system_modules {
     name: "android_test_stubs_current_system_modules",
-    libs: ["android_test_stubs_current"],
+    libs: [
+        "android_test_stubs_current",
+        "core-lambda-stubs-for-system-modules",
+    ],
+    classes: system_module_classes,
 }
