@@ -212,6 +212,30 @@
       "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "504874f1_5457e8ca",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2019-11-01T00:40:08Z",
+      "side": 1,
+      "message": "fixed. Thanks!",
+      "parentUuid": "bc4173e7_18df1dd3",
+      "range": {
+        "startLine": 282,
+        "startChar": 14,
+        "endLine": 282,
+        "endChar": 15
+      },
+      "revId": "b44b5da7a4f86c58f5a1021b61e0a2e2286555ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
