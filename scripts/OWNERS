@@ -1,6 +1,2 @@
-agampe@google.com
-cferris@google.com
-danalbert@google.com
-enh@google.com
-jmgao@google.com
-rprichard@google.com
+per-file * = cferris@google.com,danalbert@google.com,enh@google.com,jmgao@google.com,rprichard@google.com
+per-file cargo2android.py = chh@google.com,ivanlozano@google.com,mmaurer@google.com,srhines@google.com
