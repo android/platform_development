@@ -1,0 +1,6 @@
+system/build.prop=ro.system.build.date ro.system.build.fingerprint
+system/build.prop=ro.system.build.version.incremental
+system/build.prop=ro.build.display.id ro.build.version.incremental
+system/build.prop=ro.build.date ro.build.host
+system/build.prop=ro.build.product ro.build.flavor ro.build.description
+system/etc/NOTICE.xml.gz
