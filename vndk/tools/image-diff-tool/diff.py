@@ -56,10 +56,69 @@ def strip_and_sha1sum(filepath):
   return sha1sum(filepath)
 
 
-def main(all_targets, search_paths, ignore_signing_key=False):
-  def get_target_name(path):
-    return os.path.basename(os.path.normpath(path))
+def make_filter_from_whitelists(whitelists, all_targets):
+  """Creates a callable filter from a list of whitelist files.
 
+  Whitelist can contain pathnames or ignored lines. Pathnames are case
+  insensitive.
+
+  For example, this ignores the file "system/build.prop":
+    SYSTEM/build.prop
+
+  This ignores lines prefixed with pat1 or pat2 in file "system/build.prop":
+    SYSTEM/build.prop=pat1 pat2
+  """
+  whitelist_pathname = set()
+  whitelist_line = defaultdict(list)
+  for whitelist in whitelists:
+    if not os.path.isfile(whitelist):
+      continue
+    with open(whitelist, 'rb') as f:
+      for line in f:
+        pat = line.strip().decode()
+        if pat and pat[-1] == '\\':
+          pat = pat.rstrip('\\')
+        if '=' in pat:
+          filename, prefixes = pat.split('=', 1)
+          prefixes = prefixes.split()
+          if prefixes:
+            whitelist_line[filename.lower()].extend(prefixes)
+        elif pat:
+          whitelist_pathname.add(pat.lower())
+
+  def has_prefixes(line, prefixes):
+    for prefix in prefixes:
+      if line.startswith(prefix):
+        return True
+    return False
+
+  def diff_with_ignore_lines(filename, prefixes):
+    file_digest_respect_ignore = []
+    for target in all_targets:
+      pathname = os.path.join(target, filename)
+      if not os.path.isfile(pathname):
+        return False
+      sha1 = hashlib.sha1()
+      with open(pathname, 'rb') as f:
+        for line in f:
+          if not has_prefixes(line.decode(), prefixes):
+            sha1.update(line)
+      file_digest_respect_ignore.append(sha1.hexdigest())
+    return (len(file_digest_respect_ignore) == len(all_targets) and
+            len(set(file_digest_respect_ignore)) == 1)
+
+  def whitelist_filter(filename):
+    if filename.lower() in whitelist_pathname:
+      return True
+    if filename.lower() in whitelist_line:
+      ignored_prefixes = whitelist_line[filename.lower()]
+      return diff_with_ignore_lines(filename, ignored_prefixes)
+    return False
+
+  return whitelist_filter
+
+
+def main(all_targets, search_paths, whitelists, ignore_signing_key=False):
   def run(path):
     is_native_component = silent_call(["llvm-objdump", "-a", path])
     is_apk = path.endswith('.apk')
@@ -70,7 +129,7 @@ def main(all_targets, search_paths, ignore_signing_key=False):
     else:
       return sha1sum(path)
 
-  artifact_target_map = defaultdict(list)
+  artifact_sha1_target_map = defaultdict(lambda: defaultdict(list))
   for target in all_targets:
     paths = []
     for search_path in search_paths:
@@ -80,20 +139,40 @@ def main(all_targets, search_paths, ignore_signing_key=False):
 
     results = [(run(path), filename) for path, filename in paths]
 
+    target_basename = os.path.basename(os.path.normpath(target))
     for sha1, filename in results:
-      artifact_target_map[(sha1, filename)].append(get_target_name(target))
+      artifact_sha1_target_map[filename][sha1].append(target_basename)
 
   def pretty_print(sha1, filename, targets):
     return filename + ", " + sha1[:10] + ", " + ";".join(targets) + "\n"
 
-  header = "filename, sha1sum, targets\n"
+  def is_common(sha1_target_map):
+    for sha1, targets in sha1_target_map.items():
+      return len(sha1_target_map) == 1 and len(targets) == len(all_targets)
+    return False
 
-  def is_common(targets):
-    return len(targets) == len(all_targets)
-  common = sorted([pretty_print(sha1, filename, targets)
-                   for (sha1, filename), targets in artifact_target_map.items() if is_common(targets)])
-  diff = sorted([pretty_print(sha1, filename, targets)
-                 for (sha1, filename), targets in artifact_target_map.items() if not is_common(targets)])
+  whitelist_filter = make_filter_from_whitelists(whitelists, all_targets)
+
+  common = []
+  diff = []
+  whitelisted_diff = []
+  for filename, sha1_target_map in artifact_sha1_target_map.items():
+    if is_common(sha1_target_map):
+      for sha1, targets in sha1_target_map.items():
+        common.append(pretty_print(sha1, filename, targets))
+    else:
+      if whitelist_filter(filename):
+        for sha1, targets in sha1_target_map.items():
+          whitelisted_diff.append(pretty_print(sha1, filename, targets))
+      else:
+        for sha1, targets in sha1_target_map.items():
+          diff.append(pretty_print(sha1, filename, targets))
+
+  common = sorted(common)
+  diff = sorted(diff)
+  whitelisted_diff = sorted(whitelisted_diff)
+
+  header = "filename, sha1sum, targets\n"
 
   with open("common.csv", 'w') as fout:
     fout.write(header)
@@ -101,14 +180,18 @@ def main(all_targets, search_paths, ignore_signing_key=False):
   with open("diff.csv", 'w') as fout:
     fout.write(header)
     fout.writelines(diff)
+  with open("whitelisted_diff.csv", 'w') as fout:
+    fout.write(header)
+    fout.writelines(whitelisted_diff)
 
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(prog="compare_images", usage="compare_images -t model1 model2 [model...] -s dir1 [dir...] [-i] [-u]")
+  parser = argparse.ArgumentParser(prog="compare_images", usage="compare_images -t model1 model2 [model...] -s dir1 [dir...] [-i] [-u] [-w whitelist]")
   parser.add_argument("-t", "--target", nargs='+', required=True)
   parser.add_argument("-s", "--search_path", nargs='+', required=True)
   parser.add_argument("-i", "--ignore_signing_key", action='store_true')
   parser.add_argument("-u", "--unzip", action='store_true')
+  parser.add_argument("-w", "--whitelist", action="append", default=[])
   args = parser.parse_args()
   if len(args.target) < 2:
     parser.error("The number of targets has to be at least two.")
@@ -117,4 +200,4 @@ if __name__ == "__main__":
       unzip_cmd = ["unzip", "-qd", t, os.path.join(t, "*.zip")]
       unzip_cmd.extend([os.path.join(s, "*") for s in args.search_path])
       subprocess.call(unzip_cmd)
-  main(args.target, args.search_path, args.ignore_signing_key)
+  main(args.target, args.search_path, args.whitelist, args.ignore_signing_key)
