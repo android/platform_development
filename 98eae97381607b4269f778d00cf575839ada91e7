@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f6e0261b_d749461a",
+        "filename": "vndk/tools/image-diff-tool/whitelist.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-11-13T06:04:56Z",
+      "side": 1,
+      "message": "Does this file contain common whitelist file or line?",
+      "revId": "98eae97381607b4269f778d00cf575839ada91e7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
