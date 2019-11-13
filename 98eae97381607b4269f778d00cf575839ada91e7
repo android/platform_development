@@ -34,6 +34,24 @@
       "revId": "98eae97381607b4269f778d00cf575839ada91e7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b32da70_2a27bedc",
+        "filename": "vndk/tools/image-diff-tool/whitelist.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-11-13T08:08:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "40ac2acc_b3cb00f4",
+      "revId": "98eae97381607b4269f778d00cf575839ada91e7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
