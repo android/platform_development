@@ -16,6 +16,24 @@
       "revId": "98eae97381607b4269f778d00cf575839ada91e7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40ac2acc_b3cb00f4",
+        "filename": "vndk/tools/image-diff-tool/whitelist.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2019-11-13T06:14:22Z",
+      "side": 1,
+      "message": "Line 1-5: Ignore specific lines in system/build.prop. If the build.prop only have whitelisted difference, then build.prop will be in whitelisted_diff.csv.\nLine 6: Ignore file difference. If NOTICE.xml.gz is different, then it will show in whitelisted_diff.csv.\n\ncommon.csv: common files (exactly same sha1sum)\nwhitelisted_diff.csv: files that are expected to be different and the difference is defined by whitelist. Whitelist by file or whitelist specific lines.\ndiff.csv: files that are not expected to be different. compare_images_and_print.sh exit 1 when there are entries in this file.",
+      "parentUuid": "f6e0261b_d749461a",
+      "revId": "98eae97381607b4269f778d00cf575839ada91e7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
