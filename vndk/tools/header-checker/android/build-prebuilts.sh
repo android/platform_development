@@ -15,32 +15,17 @@
 # limitations under the License.
 
 source "$(dirname "$0")/envsetup.sh"
-
-if [ -z "${OUT_DIR}" ]; then
-    echo "error: Must set OUT_DIR"
-    exit 1
-fi
-
+: "${OUT_DIR:?Must set OUT_DIR}"
 TOP=$(pwd)
-
-UNAME="$(uname)"
-case "${UNAME}" in
-Linux)
-    OS='linux'
-    ;;
-Darwin)
-    OS='darwin'
-    ;;
-*)
-    echo "error: Unknown uname: ${UNAME}"
-    exit 1
-    ;;
-esac
+declare -Ar oses=([Linux]=linux [Darwin]=darwin)
+OS="${oses[$(uname)]:?Unknown uname: $(uname)}"
+clean=t
+[[ "${1:-}" == '--resume' ]] && clean=''
 
 # Setup Soong configuration
 SOONG_OUT="${OUT_DIR}/soong"
 SOONG_HOST_OUT="${OUT_DIR}/soong/host/${OS}-x86"
-rm -rf "${SOONG_OUT}"
+[[ -z "${clean}" ]] || rm -rf "${SOONG_OUT}"
 mkdir -p "${SOONG_OUT}"
 cat > "${SOONG_OUT}/soong.variables" << __EOF__
 {
@@ -56,6 +41,7 @@ SOONG_BINARIES=(
     "header-abi-dumper"
     "header-abi-diff"
     "merge-abi-diff"
+    "proto_metadata_plugin"
     "protoc_extractor"
     "versioner"
 )
