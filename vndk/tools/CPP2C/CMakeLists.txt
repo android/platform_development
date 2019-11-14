@@ -23,7 +23,7 @@ link_directories(${LLVM_LIBRARY_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
 # Now build our tools
-add_executable(cpp2c CPP2C.cpp)
+add_executable(cpp2c CPP2C.cpp Resources.h Resources.cpp Options.h OutputStreams.h OutputStreams.cpp Globals.h CTypeMetadata.h CTypeMetadata.cpp CTypeMetadataConverter.h CTypeMetadataConverter.cpp CFunctionConverter.h CFunctionConverter.cpp ClassMatchHandler.h ClassMatchHandler.cpp MyASTConsumer.h MyASTConsumer.cpp MyFrontendAction.h MyFrontendAction.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
