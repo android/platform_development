@@ -16,14 +16,14 @@ message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 # E.g. if using the C++ header files
 # you will need to enable C++11 support
 # for your compiler.
-SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
 include_directories(${LLVM_INCLUDE_DIRS})
 link_directories(${LLVM_LIBRARY_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
 # Now build our tools
-add_executable(cpp2c CPP2C.cpp)
+add_executable(cpp2c src/Cpp2c.cpp src/Resources.h src/Resources.cpp src/OutputStreams.h src/OutputStreams.cpp src/TypeMetadata.h src/TypeMetadata.cpp src/TypeConverter.h src/TypeConverter.cpp src/FunctionConverter.h src/FunctionConverter.cpp src/ClassMatchHandler.h src/ClassMatchHandler.cpp src/MyASTConsumer.h src/MyASTConsumer.cpp src/HeaderConverterFrontendAction.h src/HeaderConverterFrontendAction.cpp src/Utils.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
