@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "bbc62262_f0ecca4a",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2019-11-14T07:35:51Z",
+      "side": 1,
+      "message": "open(filename, \u0027r\u0027).read() \u003d\u003e yields string\nopen(filename, \u0027rb\u0027).read() \u003d\u003e yields bytes\n\nDiffing line-by-line assumes it is text file, so I think it doesn\u0027t really matter if we\u0027re using text or binary mode.\nHowever hashlib.sha1() accepts bytes, so I use binary mode here.",
+      "parentUuid": "2a3de19b_31ddf20a",
+      "range": {
+        "startLine": 127,
+        "startChar": 27,
+        "endLine": 127,
+        "endChar": 29
+      },
+      "revId": "afb305e27476937d1f649de2107749e66669d2a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "205dd121_0155db38",
         "filename": "vndk/tools/image-diff-tool/diff.py",
         "patchSetId": 7
