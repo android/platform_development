@@ -59,6 +59,7 @@ SOONG_BINARIES=(
     "proto_metadata_plugin"
     "protoc_extractor"
     "versioner"
+    "cpp2c"
 )
 
 binaries=()
