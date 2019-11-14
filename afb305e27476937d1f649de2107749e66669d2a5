@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da2e73cc_6c310aa4",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-11-14T06:00:43Z",
+      "side": 1,
+      "message": "if we use fnmatch, it should be SYSTEM/dontcare/*",
+      "revId": "afb305e27476937d1f649de2107749e66669d2a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0baabc76_7931cc0c",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-11-14T06:00:43Z",
+      "side": 1,
+      "message": "how about using fnmatch in this case?",
+      "range": {
+        "startLine": 103,
+        "startChar": 10,
+        "endLine": 109,
+        "endChar": 37
+      },
+      "revId": "afb305e27476937d1f649de2107749e66669d2a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a3de19b_31ddf20a",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-11-14T06:00:43Z",
+      "side": 1,
+      "message": "are some of targets binary file?",
+      "range": {
+        "startLine": 127,
+        "startChar": 27,
+        "endLine": 127,
+        "endChar": 29
+      },
+      "revId": "afb305e27476937d1f649de2107749e66669d2a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "205dd121_0155db38",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-11-14T06:00:43Z",
+      "side": 1,
+      "message": "any(fnmatch(filename, pattern) for pattern in patterns))?",
+      "range": {
+        "startLine": 138,
+        "startChar": 4,
+        "endLine": 143,
+        "endChar": 17
+      },
+      "revId": "afb305e27476937d1f649de2107749e66669d2a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
