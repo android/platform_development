@@ -1,3 +1,4 @@
 build/**
 .cproject
 .project
+test/output/**
