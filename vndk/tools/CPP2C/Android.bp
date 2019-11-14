@@ -1,0 +1,59 @@
+cc_binary_host {
+    name: "cpp2c",
+
+    defaults: [
+        "llvm-build-host-tools-defaults",
+    ],
+
+    header_libs: [
+        "clang-headers",
+    ],
+
+    srcs: [
+        "*.cpp", 
+        ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-UNDEBUG",
+    ],
+
+    cppflags: [
+        "-fno-exceptions",
+        "-std=c++17",
+    ],
+
+    target: {
+        windows: {
+            enabled: false,
+        },
+    },
+
+    shared_libs: [
+        "libLLVM_host",
+        "libclang_cxx_host",
+        "libc++_host",
+    ],
+
+    static_libs: [
+    	"libclangFrontend",
+  		"libclangSerialization",
+        "libclangDriver",
+        "libclangTooling",
+        "libclangParse",
+        "libclangSema",
+        "libclangAnalysis",
+        "libclangRewriteFrontend",
+        "libclangRewrite",
+        "libclangEdit",
+        "libclangAST",
+        "libclangLex",
+        "libclangBasic",
+        "libclangASTMatchers",
+    ],
+
+    compile_multilib: "64",
+    stl: "none",
+}
