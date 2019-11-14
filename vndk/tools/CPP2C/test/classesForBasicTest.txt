@@ -1,0 +1,4 @@
+CppClass
+CppDummyClass
+CppEnum
+CppStructTypedef
