@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19bce1a2_d3d0201b",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-11-14T18:31:55Z",
+      "side": 1,
+      "message": "I prefer the explicit usage of if statement to the variable expansion with error message.  Please keep the old one.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f61d6a47_600e6a0b",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-11-14T18:31:55Z",
+      "side": 1,
+      "message": "Same here.\n\nI prefer:\n\n    OS\u003d\"${oses[$(uname)]}\"\n    if [ -z \"${OS}\" ]; then\n        echo \"error: Unknown uname: ${UNAME}\"\n    fi\n\nAlso, please keep \"uname\" in the error message.  Users won\u0027t be able to understand what\u0027s wrong with \"Unknown blabla\".",
+      "range": {
+        "startLine": 21,
+        "startChar": 20,
+        "endLine": 21,
+        "endChar": 40
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a3fdc84_9fd8237c",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-11-14T18:31:55Z",
+      "side": 1,
+      "message": "if [ \"${1}\" \u003d \"--resume\" ]; then\n    resume\u003d\"true\"\nfi",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 40
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32c15a56_088287ac",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-11-14T18:31:55Z",
+      "side": 1,
+      "message": "if [ -z \"${resume}\" ]; then\n    rm -rf \"${SOONG_OUT}\"\nfi",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
