@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "143e4f10_a0c80738",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-11-15T03:35:05Z",
+      "side": 1,
+      "message": "This reduces 25 lines of boilerplate code to 10, and it is not really kludgy.",
+      "parentUuid": "19bce1a2_d3d0201b",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f61d6a47_600e6a0b",
         "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "269aa247edac11378ca164c50553e0276c7cae39",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3712def6_a26e1855",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-11-15T03:35:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f61d6a47_600e6a0b",
+      "range": {
+        "startLine": 21,
+        "startChar": 20,
+        "endLine": 21,
+        "endChar": 40
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
