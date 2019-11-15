@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "026cbfa5_d91b1aa7",
+        "filename": "vndk/tools/CPP2C/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006073
+      },
+      "writtenOn": "2019-11-15T02:12:58Z",
+      "side": 1,
+      "message": "Can you replace this with a Soong build file like https://android.googlesource.com/platform/development/+/refs/heads/master/vndk/tools/header-checker/Android.bp ?\n\n(That change can be part of the second patch.)",
+      "revId": "21bf909f6ee9dde479a8713f4c27385f43d5af41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fab74385_faa2db47",
+        "filename": "vndk/tools/CPP2C/CPP2C.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006073
+      },
+      "writtenOn": "2019-11-15T02:12:58Z",
+      "side": 1,
+      "message": "Could you change this to adopt Google C++ style?  The quickest way is probably to use clang-format (https://g3doc.corp.google.com/devtools/c/g3doc/clang-format/index.md?cl\u003dhead) and then to do some search-and-replaces for stuff like capitalization rules.\n\n(If it\u0027s too annoying to maintain the two-patch structure given the style change, it\u0027s fine to just do it on the second patch.)",
+      "revId": "21bf909f6ee9dde479a8713f4c27385f43d5af41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bf60393_cc175dd5",
+        "filename": "vndk/tools/CPP2C/LICENSE",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006073
+      },
+      "writtenOn": "2019-11-15T02:12:58Z",
+      "side": 1,
+      "message": "Please delete this and replace it with the mini-Apache-2.0 header on top of each source file, as is Android convention.\n\n(Legally, that is a no-op change, so you can do it in the second patch.)",
+      "revId": "21bf909f6ee9dde479a8713f4c27385f43d5af41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
