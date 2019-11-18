@@ -131,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "b38095aa_b5c3ef93",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-11-18T04:50:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bbc62262_f0ecca4a",
+      "range": {
+        "startLine": 127,
+        "startChar": 27,
+        "endLine": 127,
+        "endChar": 29
+      },
+      "revId": "afb305e27476937d1f649de2107749e66669d2a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "205dd121_0155db38",
         "filename": "vndk/tools/image-diff-tool/diff.py",
         "patchSetId": 7
