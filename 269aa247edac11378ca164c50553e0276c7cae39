@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "de659d97_73c39f19",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-11-19T18:56:07Z",
+      "side": 1,
+      "message": "After long consideration, I still can\u0027t sincerely love this syntax.  As I expect that I will read and maintain this script in the future, I really hope this script does not evolve to that style, regardless that style is idiomatic or not.  Thank you for your suggestion but may you split this out of this CL?\n\nAlternatively, since hsinyichen@ may maintain this script in the future as well.  If he prefers that style and willing to give CR+2 proactively, I am fine with it.\n\nBut in either cases, code refactoring and adding the --resume option should be done in separate CLs.  Please only do one thing in this CL: add \"proto_metadata_plugin\".",
+      "parentUuid": "abaf1049_715f1330",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f61d6a47_600e6a0b",
         "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
         "patchSetId": 1
@@ -180,6 +204,30 @@
       "side": 1,
       "message": "There is no need, :? takes care of that here, too:\n$ declare -Ar oses\u003d([xxLinux]\u003dlinux [Darwin]\u003ddarwin) ; OS\u003d\"${oses[$(uname)]:?Unknown uname: $(uname)}\" )\nbash: oses[$(uname)]: Unknown uname: Linux",
       "parentUuid": "ef009dd9_26900aff",
+      "range": {
+        "startLine": 21,
+        "startChar": 20,
+        "endLine": 21,
+        "endChar": 40
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f358e9b7_347edcee",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-11-19T18:56:07Z",
+      "side": 1,
+      "message": "Never mind on the \"bad array subscript\" part.  I was testing the array subscription with empty strings:\n\n    declare -Ar A\u003d([ABC]\u003d123 [DEF]\u003d456)\n    echo \"${A[\"${opt}\"]}\"\n\nSince $(uname) is unlikely to be expanded into empty strings, it might be fine.",
+      "parentUuid": "d6e964ae_e26e88ed",
       "range": {
         "startLine": 21,
         "startChar": 20,
