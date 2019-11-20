@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "8c2d9717_ba5744b8",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-11-20T02:19:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de659d97_73c39f19",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f61d6a47_600e6a0b",
         "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
         "patchSetId": 1
@@ -240,6 +264,30 @@
     },
     {
       "key": {
+        "uuid": "db0a40f7_8e4dbb71",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-11-20T02:19:06Z",
+      "side": 1,
+      "message": "As it turns out, Darwin uses bash from 2007, which has different associative array syntax.",
+      "parentUuid": "f358e9b7_347edcee",
+      "range": {
+        "startLine": 21,
+        "startChar": 20,
+        "endLine": 21,
+        "endChar": 40
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3fdc84_9fd8237c",
         "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
         "patchSetId": 1
@@ -260,6 +308,30 @@
       "revId": "269aa247edac11378ca164c50553e0276c7cae39",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc984659_28f05b07",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-11-20T02:19:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3fdc84_9fd8237c",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 40
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
