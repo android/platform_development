@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "632e2823_85a28c2e",
+        "filename": "vndk/tools/CPP2C/CPP2C.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1360983
+      },
+      "writtenOn": "2019-11-20T16:49:37Z",
+      "side": 1,
+      "message": "Did this in the second patch, I can easily do it here as well, I\u0027d rather just keep this as is. I ran clang-format as per go/clang-format and manually checked everything afterwards.",
+      "parentUuid": "fab74385_faa2db47",
+      "revId": "21bf909f6ee9dde479a8713f4c27385f43d5af41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2bf60393_cc175dd5",
         "filename": "vndk/tools/CPP2C/LICENSE",
         "patchSetId": 2
@@ -50,6 +68,24 @@
       "revId": "21bf909f6ee9dde479a8713f4c27385f43d5af41",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c307a50f_e2c4385a",
+        "filename": "vndk/tools/CPP2C/LICENSE",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1360983
+      },
+      "writtenOn": "2019-11-20T16:49:37Z",
+      "side": 1,
+      "message": "Done. Did this in the second patch.",
+      "parentUuid": "2bf60393_cc175dd5",
+      "revId": "21bf909f6ee9dde479a8713f4c27385f43d5af41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
