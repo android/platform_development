@@ -355,6 +355,30 @@
       "revId": "269aa247edac11378ca164c50553e0276c7cae39",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5cedc5a6_6f592860",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1344584
+      },
+      "writtenOn": "2019-11-23T00:04:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "32c15a56_088287ac",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "269aa247edac11378ca164c50553e0276c7cae39",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
