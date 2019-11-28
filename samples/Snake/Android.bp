@@ -1,3 +1,13 @@
+apex_defaults {
+    name: "com.example.android.snake-defaults",
+    file_contexts: ":apex.test-file_contexts",
+    key: "com.example.android.snake.key",
+    certificate: ":com.example.android.snake.certificate",
+
+    // Use a custom AndroidManifest.xml used for API targeting.
+    androidManifest: ":com.example.android.snake-androidManifest",
+}
+
 android_app {
     name: "Snake",
     // Only compile source java files in this apk.
@@ -7,3 +17,29 @@ android_app {
         enabled: false,
     },
 }
+
+apex {
+  name: "com.example.android.snake",
+  manifest: "manifest.json",
+  defaults: ["com.example.android.snake-defaults"],
+  apps: [
+    "Snake",
+  ],
+}
+
+apex_key {
+    name: "com.example.android.snake.key",
+    public_key: "com.example.android.snake.avbpubkey",
+    private_key: "com.example.android.snake.pem",
+}
+
+filegroup {
+    name: "com.example.android.snake-androidManifest",
+    srcs: ["AndroidManifest.xml"],
+}
+
+android_app_certificate {
+    name: "com.example.android.snake.certificate",
+    certificate: "com.example.android.snake",
+}
+

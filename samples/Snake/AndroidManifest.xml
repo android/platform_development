@@ -23,7 +23,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.example.android.snake">
 
-  <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="15" />
+  <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="29" />
   <!-- Declares that the app supports devices w/o touch, such as a Google TV device -->
   <uses-feature android:name="android.hardware.touchscreen"
     android:required="false" />
