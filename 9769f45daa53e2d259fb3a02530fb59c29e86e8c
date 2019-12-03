@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e9f6034a_74266eff",
+        "filename": "vndk/tools/CPP2C/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1360983
+      },
+      "writtenOn": "2019-12-03T17:07:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dac9aaf0_4bd6d5db",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12b62337_beef2db6",
         "filename": "vndk/tools/CPP2C/Android.bp",
         "patchSetId": 3
@@ -39,6 +63,24 @@
       "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bf53fb9_92d05be3",
+        "filename": "vndk/tools/CPP2C/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1360983
+      },
+      "writtenOn": "2019-12-03T17:07:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12b62337_beef2db6",
+      "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -62,6 +104,30 @@
       "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "160320c3_1b5a335c",
+        "filename": "vndk/tools/CPP2C/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1360983
+      },
+      "writtenOn": "2019-12-03T17:07:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51dc0425_ac43025a",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 6
+      },
+      "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
