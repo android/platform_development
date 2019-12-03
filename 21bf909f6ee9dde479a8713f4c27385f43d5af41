@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b9428c84_92bc111e",
+        "filename": "vndk/tools/CPP2C/CMakeLists.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1360983
+      },
+      "writtenOn": "2019-12-03T17:08:13Z",
+      "side": 1,
+      "message": "Done in the second patch.",
+      "parentUuid": "026cbfa5_d91b1aa7",
+      "revId": "21bf909f6ee9dde479a8713f4c27385f43d5af41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fab74385_faa2db47",
         "filename": "vndk/tools/CPP2C/CPP2C.cpp",
         "patchSetId": 2
