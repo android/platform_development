@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac9aaf0_4bd6d5db",
+        "filename": "vndk/tools/CPP2C/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-12-03T16:08:30Z",
+      "side": 1,
+      "message": "Remove this.  This is exported from external/clang.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12b62337_beef2db6",
+        "filename": "vndk/tools/CPP2C/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-12-03T16:08:30Z",
+      "side": 1,
+      "message": "Add:\n\n    \"-fno-rtti\",",
+      "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51dc0425_ac43025a",
+        "filename": "vndk/tools/CPP2C/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2019-12-03T16:08:30Z",
+      "side": 1,
+      "message": "Remove these.  These are exported from external/clang.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 6
+      },
+      "revId": "9769f45daa53e2d259fb3a02530fb59c29e86e8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
