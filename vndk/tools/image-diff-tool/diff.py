@@ -213,12 +213,16 @@ if __name__ == "__main__":
   parser.add_argument("-i", "--ignore_signing_key", action='store_true')
   parser.add_argument("-u", "--unzip", action='store_true')
   parser.add_argument("-w", "--whitelist", action="append", default=[])
+  parser.add_argument("-o", "--overwrite", action="store_true")
   args = parser.parse_args()
   if len(args.target) < 2:
     parser.error("The number of targets has to be at least two.")
   if args.unzip:
     for t in args.target:
-      unzip_cmd = ["unzip", "-qd", t, os.path.join(t, "*.zip")]
+      unzip_cmd = ["unzip"]
+      if args.overwrite:
+        unzip_cmd.extend(["-o"])
+      unzip_cmd.extend(["-qd", t, os.path.join(t, "*.zip")])
       unzip_cmd.extend([os.path.join(s, "*") for s in args.search_path])
       subprocess.call(unzip_cmd)
   main(args.target, args.search_path, args.whitelist, args.ignore_signing_key)
