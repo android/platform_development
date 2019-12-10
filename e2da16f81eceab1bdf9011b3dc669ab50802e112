@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6993b8b_9abd7a27",
+        "filename": "scripts/OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2019-12-10T07:55:43Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary, as you changed the OWNERS syntax to match the rest of Google, where global OWNERS aren\u0027t skipped on per-file directives. This would have been necessary for enh to approve changes to cargo2android.py in the past, but is just unnecessary now.",
+      "revId": "e2da16f81eceab1bdf9011b3dc669ab50802e112",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
