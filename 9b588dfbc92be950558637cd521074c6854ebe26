@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27c439a8_0a469ff7",
+        "filename": "vndk/tools/header-checker/src/linker/header_abi_linker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1114194
+      },
+      "writtenOn": "2019-12-10T01:27:30Z",
+      "side": 1,
+      "message": "IWYU",
+      "revId": "9b588dfbc92be950558637cd521074c6854ebe26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c511d313_c4b833af",
+        "filename": "vndk/tools/header-checker/src/repr/symbol/version_script_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1114194
+      },
+      "writtenOn": "2019-12-10T01:27:30Z",
+      "side": 1,
+      "message": "include what you use",
+      "revId": "9b588dfbc92be950558637cd521074c6854ebe26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
