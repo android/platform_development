@@ -34,6 +34,24 @@
       "revId": "af646f7981bfb7b408b7866924f690745c703ff0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "884b7244_b24ba0f1",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1479653
+      },
+      "writtenOn": "2019-12-13T18:56:38Z",
+      "side": 1,
+      "message": "Sure, that sounds good.",
+      "parentUuid": "329f850b_6f6d3aa3",
+      "revId": "af646f7981bfb7b408b7866924f690745c703ff0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
