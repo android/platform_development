@@ -16,6 +16,24 @@
       "revId": "af646f7981bfb7b408b7866924f690745c703ff0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "329f850b_6f6d3aa3",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-12-13T06:14:52Z",
+      "side": 1,
+      "message": "hmm, it might be in-place extract option for it?\nwith in-place option: it acts as current.\nwithout: extract in tmp file and clean up when it is terminated.",
+      "parentUuid": "d488974f_18ea657b",
+      "revId": "af646f7981bfb7b408b7866924f690745c703ff0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
