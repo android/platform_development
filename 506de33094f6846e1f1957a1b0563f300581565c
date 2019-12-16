@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d8e45e6_fb2245cf",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2019-12-16T12:29:37Z",
+      "side": 1,
+      "message": "nitpick: I think \"preserve\" or \"persist\" makes more sense..",
+      "range": {
+        "startLine": 223,
+        "startChar": 29,
+        "endLine": 223,
+        "endChar": 54
+      },
+      "revId": "506de33094f6846e1f1957a1b0563f300581565c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
