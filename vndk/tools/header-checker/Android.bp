@@ -33,6 +33,7 @@ cc_defaults {
         "-fno-exceptions",
         "-fno-rtti",
         "-std=c++14",
+        "-Wno-c++17-extensions",
     ],
 
     target: {
