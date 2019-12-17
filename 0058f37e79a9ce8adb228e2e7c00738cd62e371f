@@ -16,6 +16,24 @@
       "revId": "0058f37e79a9ce8adb228e2e7c00738cd62e371f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c912a538_cbf32f73",
+        "filename": "vndk/tools/image-diff-tool/diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1386891
+      },
+      "writtenOn": "2019-12-17T02:03:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdbe3c05_728c4620",
+      "revId": "0058f37e79a9ce8adb228e2e7c00738cd62e371f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
