@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6bf23f43_7aed9799",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2019-12-26T20:03:34Z",
+      "side": 1,
+      "message": "nit: lines cannot exceed 80 characters.",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 165,
+        "endChar": 91
+      },
+      "revId": "b9d356681e11a0603e4641bb7f22147e0911fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a950cabf_40255af1",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2019-12-26T20:03:34Z",
+      "side": 1,
+      "message": "Use single quotes.",
+      "range": {
+        "startLine": 614,
+        "startChar": 14,
+        "endLine": 614,
+        "endChar": 15
+      },
+      "revId": "b9d356681e11a0603e4641bb7f22147e0911fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb78599a_4a56a002",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2019-12-26T20:03:34Z",
+      "side": 1,
+      "message": "Use multiplication instead:\n\n   print(\u0027#\u0027 * 80)",
+      "range": {
+        "startLine": 614,
+        "startChar": 14,
+        "endLine": 614,
+        "endChar": 96
+      },
+      "revId": "b9d356681e11a0603e4641bb7f22147e0911fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
