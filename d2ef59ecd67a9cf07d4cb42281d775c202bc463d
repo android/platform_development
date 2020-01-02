@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3b1edc29_8e911c17",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-02T03:55:19Z",
+      "side": 1,
+      "message": "\u0027 \u0027*8",
+      "range": {
+        "startLine": 85,
+        "startChar": 49,
+        "endLine": 85,
+        "endChar": 63
+      },
+      "revId": "d2ef59ecd67a9cf07d4cb42281d775c202bc463d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b853fc5d_fb250c99",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-02T03:55:19Z",
+      "side": 1,
+      "message": "\u0027 \u0027*4",
+      "range": {
+        "startLine": 97,
+        "startChar": 47,
+        "endLine": 97,
+        "endChar": 53
+      },
+      "revId": "d2ef59ecd67a9cf07d4cb42281d775c202bc463d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7420059c_e971030d",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-02T03:55:19Z",
+      "side": 1,
+      "message": "\u0027 \u0027*4",
+      "range": {
+        "startLine": 118,
+        "startChar": 47,
+        "endLine": 118,
+        "endChar": 53
+      },
+      "revId": "d2ef59ecd67a9cf07d4cb42281d775c202bc463d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
