@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b94d9e9_25eb64f7",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-20T17:02:56Z",
+      "side": 1,
+      "message": "prop",
+      "range": {
+        "startLine": 45,
+        "startChar": 14,
+        "endLine": 45,
+        "endChar": 19
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e408fcfc_ba9c5d54",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-20T17:02:56Z",
+      "side": 1,
+      "message": "this will result \u0027prop:\u0027 which is syntactically incorrect. We should trigger an error here.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a9863b5_94f2c6f6",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-20T17:02:56Z",
+      "side": 1,
+      "message": "here as well",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 24
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "111d745c_302d7b5b",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-20T17:02:56Z",
+      "side": 1,
+      "message": "filter_out or just remove",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 10
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea002713_210935ae",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-20T17:02:56Z",
+      "side": 1,
+      "message": "why is this needed?",
+      "range": {
+        "startLine": 113,
+        "startChar": 7,
+        "endLine": 113,
+        "endChar": 35
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08331b3c_7e3cc9b2",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-01-20T17:02:56Z",
+      "side": 1,
+      "message": "why do we have to prepend include/ or configs/? i.e. why aren\u0027t they exist in the json side?",
+      "range": {
+        "startLine": 116,
+        "startChar": 18,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
