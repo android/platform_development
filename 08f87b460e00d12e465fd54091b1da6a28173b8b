@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "face3030_784e800e",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-01-21T05:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b94d9e9_25eb64f7",
+      "range": {
+        "startLine": 45,
+        "startChar": 14,
+        "endLine": 45,
+        "endChar": 19
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e408fcfc_ba9c5d54",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b8878b7_a4112a4d",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-01-21T05:09:06Z",
+      "side": 1,
+      "message": "Not actually. bp is updated at the end of the loop (Line 70).\n\nBut I admit that this code is hard to understand. I\u0027ve fixed.",
+      "parentUuid": "e408fcfc_ba9c5d54",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8299ba7b_830e9055",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-01-21T05:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a9863b5_94f2c6f6",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 24
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "111d745c_302d7b5b",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 2
@@ -91,6 +163,30 @@
       "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d68555d9_f9ec9770",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-01-21T05:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "111d745c_302d7b5b",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 10
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "b40a6290_ca9a12e6",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-01-21T05:09:06Z",
+      "side": 1,
+      "message": "Because some header files might be missing in the snapshot for now. Added some comments.\n\nFor config files, they must not be missing, so they\u0027re no longer checked.",
+      "parentUuid": "ea002713_210935ae",
+      "range": {
+        "startLine": 113,
+        "startChar": 7,
+        "endLine": 113,
+        "endChar": 35
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08331b3c_7e3cc9b2",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 2
@@ -137,6 +257,30 @@
       "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10fe828e_a0ebf4e7",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-01-21T05:09:06Z",
+      "side": 1,
+      "message": "fixed to prepend these in the json",
+      "parentUuid": "08331b3c_7e3cc9b2",
+      "range": {
+        "startLine": 116,
+        "startChar": 18,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "08f87b460e00d12e465fd54091b1da6a28173b8b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
