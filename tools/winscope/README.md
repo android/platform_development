@@ -3,9 +3,7 @@
 ## Developing WinScope
 When the trace is enabled, Window Manager and Surface Flinger capture and 
 save current state to a file at each point of interest.
-`frameworks/base/core/proto/android/server/windowmanagertrace.proto` and 
-`frameworks/native/services/surfaceflinger/layerproto/layerstrace.proto` 
-contain the proto definitions for their internal states.
+`frameworks/base/core/proto/android/server/windowmanagertrace.proto` and `frameworks/native/services/surfaceflinger/layerproto/layerstrace.proto` contain the proto definitions for their internal states.
 
 ### Checking out code and setting up environment
 * Install [Yarn](https://yarnpkg.com), a JS package manager

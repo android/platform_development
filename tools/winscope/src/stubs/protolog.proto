@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+package com.android.server.protolog;
+
+message ProtoLogMessage {}
+message ProtoLogFileProto {}

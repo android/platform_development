@@ -1,4 +1,4 @@
-import viewerConfig from "../../../../frameworks/base/data/etc/services.core.protolog.json"
+import viewerConfig from "ProtoLogJsonSafePath/services.core.protolog.json"
 
 import { nanos_to_string } from './transform.js'
 
