@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+package org.chromium.arc.wayland_composer;
+
+message TraceFileProto {}
+message OutputStateProto {}
