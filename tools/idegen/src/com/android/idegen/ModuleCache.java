@@ -52,12 +52,17 @@ public class ModuleCache {
     }
 
     public Module getAndCacheByDir(File moduleDir) throws IOException {
+        return getAndCacheByDir(moduleDir, null);
+    }
+
+    public Module getAndCacheByDir(File moduleDir, File makeFile)
+            throws IOException {
         Preconditions.checkNotNull(moduleDir);
 
         if (moduleDir.exists()) {
             Module module = getModule(moduleDir);
             if (module == null) {
-                module = new Module(moduleDir);
+                module = new Module(moduleDir, makeFile);
                 // Must put module before building it.  Otherwise infinite loop.
                 putModule(moduleDir, module);
                 module.build();
@@ -83,7 +88,7 @@ public class ModuleCache {
             return null;
         }
 
-        return getAndCacheByDir(makeFile.getParentFile());
+        return getAndCacheByDir(makeFile.getParentFile(), makeFile);
     }
 
     private void putModule(File moduleDir, Module module) throws IOException {

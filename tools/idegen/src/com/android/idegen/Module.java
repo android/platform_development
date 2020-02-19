@@ -89,13 +89,36 @@ public class Module {
     MakeFileParser makeFileParser;
     boolean parseMakeFileForSource;
 
-    public Module(File moduleDir) throws IOException {
-        this(moduleDir, true);
+    public Module(File moduleDir, File makeFile) throws IOException {
+        this(moduleDir, makeFile, true);
     }
 
     public Module(File moduleDir, boolean parseMakeFileForSource) throws IOException {
+        this(moduleDir, null, parseMakeFileForSource);
+    }
+
+    /**
+     * Setup a module.
+     *
+     * The default makefile name is assumed to be Android.mk, if makeFile is non null, then
+     * specified file will be used as makefile instead of default.
+     *
+     * @param moduleDir The directory for the module
+     * @param makeFile Makefile for the module, if null then default name of Android.mk will be
+     *                 assumed.
+     * @param parseMakeFileForSource Parse the makefile for source files
+     * @throws IOException
+     */
+    public Module(File moduleDir, File makeFile,
+                  boolean parseMakeFileForSource) throws IOException {
         this.moduleRoot = Preconditions.checkNotNull(moduleDir);
-        this.makeFile = new File(moduleDir, "Android.mk");
+        // The name of the Makefile is not always Android.mk, one example is
+        // out/soong/Android-<product>.mk
+        if (makeFile != null) {
+            this.makeFile = makeFile;
+        } else {
+            this.makeFile = new File(moduleDir, "Android.mk");
+        }
         this.relativeIntermediatesDir = calculateRelativePartToRepoRoot() + REL_OUT_APP_DIR +
                 File.separatorChar + getName() + "_intermediates" + File.separator + "src";
         this.parseMakeFileForSource = parseMakeFileForSource;
@@ -103,14 +126,14 @@ public class Module {
         // TODO: auto-detect when framework dependency is needed instead of using coded list.
         for (String dir : DIRS_WITH_AUTO_DEPENDENCIES) {
             // length + 2 to account for slash
-            boolean isDir = makeFile.getCanonicalPath().startsWith(
+            boolean isDir = this.makeFile.getCanonicalPath().startsWith(
                     DirectorySearch.getRepoRoot() + "/" + dir);
             if (isDir) {
                 Collections.addAll(this.explicitModuleNameDependencies, AUTO_DEPENDENCIES);
             }
         }
 
-        makeFileParser = new MakeFileParser(makeFile);
+        makeFileParser = new MakeFileParser(this.makeFile);
     }
 
     private String calculateRelativePartToRepoRoot() throws IOException {

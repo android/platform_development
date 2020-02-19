@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -42,10 +43,9 @@ import java.util.logging.Logger;
 public class MakeFileParser {
 
     private static final Logger logger = Logger.getLogger(MakeFileParser.class.getName());
-    public static final String VALUE_DELIMITER = "|";
 
     private File makeFile;
-    private HashMap<String, String> values;
+    private HashMap<String, Set<String>> values;
 
     /**
      * Create a parser for a given make file and module name.
@@ -59,11 +59,7 @@ public class MakeFileParser {
     }
 
     public Iterable<String> getValues(String key) {
-        String str = values.get(key);
-        if (str == null) {
-            return null;
-        }
-        return Splitter.on(VALUE_DELIMITER).trimResults().omitEmptyStrings().split(str);
+        return values.get(key);
     }
 
     /**
@@ -86,9 +82,6 @@ public class MakeFileParser {
     private class MakeFileLineProcessor implements LineProcessor<Object> {
 
         private StringBuilder lineBuffer;
-
-        // Keep a list of LOCAL_ variables to clear when CLEAR_VARS is encountered.
-        private HashSet<String> localVars = Sets.newHashSet();
 
         @Override
         public boolean processLine(String line) throws IOException {
@@ -232,11 +225,11 @@ public class MakeFileParser {
             // Check for single variable
             if (value.indexOf(' ') == -1) {
                 // Substitute.
-                value = values.get(value);
-                if (value == null) {
-                    value = "";
+                Set<String> set = values.get(value);
+                if (set == null) {
+                    return "";
                 }
-                return value;
+                return String.join(" ", set);
             } else {
                 return findVariables(value);
             }
@@ -255,11 +248,19 @@ public class MakeFileParser {
          * @param newValue The value to append.
          */
         private void appendValue(String key, String newValue) {
-            String value = values.get(key);
-            if (value == null) {
-                values.put(key, newValue);
-            } else {
-                values.put(key, value + VALUE_DELIMITER + newValue);
+            Set<String> value;
+            if (newValue != null) {
+                newValue = newValue.trim();
+                if (!newValue.isEmpty()) {
+                    if (values.containsKey(key)) {
+                        value = values.get(key);
+                        value.add(newValue);
+                    } else {
+                        value = new HashSet<>();
+                        value.add(newValue);
+                        values.put(key, value);
+                    }
+                }
             }
         }
     }
