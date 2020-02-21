@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8840966_cefd1a2b",
+        "filename": "vndk/tools/header-checker/src/repr/symbol/so_file_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1067098
+      },
+      "writtenOn": "2020-02-21T23:47:22Z",
+      "side": 1,
+      "message": "(Side note: do you want to treat STT_TLS and STT_OBJECT separately? They are incompatible, after all. And what about the other ELF types (e.g. you might see STT_NOTYPE in functions defined in .s files)? Probably something you can think about addressing in a followup.)",
+      "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
