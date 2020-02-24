@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "b674ece6_a6caaa52",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-02-24T09:19:13Z",
+      "side": 1,
+      "message": "Could you provide unit tests that demonstrate the source and the dump?",
+      "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b8840966_cefd1a2b",
         "filename": "vndk/tools/header-checker/src/repr/symbol/so_file_parser.cpp",
         "patchSetId": 1
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "Regarding STT_NOTYPE symbols: How about we require .s modules to always specify a non-STT_NOTYPE symbol type to symbols that are part of the ABI?",
       "parentUuid": "b8840966_cefd1a2b",
+      "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cee22ff_7462bf6f",
+        "filename": "vndk/tools/header-checker/src/repr/symbol/so_file_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-02-24T09:19:13Z",
+      "side": 1,
+      "message": "If we treat TLS like OBJECT, we won\u0027t be able to detect the type change. e.g., changing a symbol\u0027s type from STT_TLS to STT_OBJECT. It seems to be a rare case, so I think it is fine to submit this patch.\n\nBefore we decide to handle STT_NOTYPE, we should find and study how it is used in the codebase.",
+      "parentUuid": "5888b280_8fa25711",
       "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
