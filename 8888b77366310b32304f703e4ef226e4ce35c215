@@ -16,6 +16,24 @@
       "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5888b280_8fa25711",
+        "filename": "vndk/tools/header-checker/src/repr/symbol/so_file_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-02-24T06:46:13Z",
+      "side": 1,
+      "message": "Regarding STT_NOTYPE symbols: How about we require .s modules to always specify a non-STT_NOTYPE symbol type to symbols that are part of the ABI?",
+      "parentUuid": "b8840966_cefd1a2b",
+      "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
