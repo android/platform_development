@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "dc9c261f_7de94fe7",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2020-02-25T20:08:46Z",
+      "side": 1,
+      "message": "Write this to stderr instead, with a warning label.",
+      "range": {
+        "startLine": 351,
+        "startChar": 16,
+        "endLine": 353,
+        "endChar": 42
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "130f9e07_a07e43ad",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2020-02-25T20:08:46Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 378,
+        "startChar": 16,
+        "endLine": 380,
+        "endChar": 55
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ea14eeb0_c936f425",
         "filename": "tools/privapp_permissions/privapp_permissions.py",
         "patchSetId": 3
