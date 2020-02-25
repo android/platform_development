@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf4a8fce_2cac3115",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2020-02-25T20:05:56Z",
+      "side": 1,
+      "message": "Avoid using \\ to split lines. Use parens instead:\n\nself.system_privapp_apks, self.product_privapp_apks \u003d (\n    self._resolve_apks(apks)",
+      "range": {
+        "startLine": 159,
+        "startChar": 62,
+        "endLine": 159,
+        "endChar": 63
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea14eeb0_c936f425",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 1154978
+      },
+      "writtenOn": "2020-02-25T20:05:56Z",
+      "side": 1,
+      "message": "Can we change the flags to the script to write these files directly to disk? We can add default locations for them as well (./system.xml, ./product.xml).\n\nIn the past, the script would only generate the XML, meaning you can run:\n\n $ privapp_permissions ... \u003e filename.xml \u0026\u0026 adb push filename.xml ...\n\nThis would no longer work after this change due to having multiple XMLs and comments. We should support this workflow by allowing:\n\n $ privapp_permissions ... \u0026\u0026 adb push ./system.xml ... \u0026\u0026 adb push ./product.xml ...",
+      "range": {
+        "startLine": 631,
+        "startChar": 8,
+        "endLine": 651,
+        "endChar": 53
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
