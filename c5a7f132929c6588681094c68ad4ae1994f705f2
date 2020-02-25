@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "73017f46_64e7b7eb",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1093291
+      },
+      "writtenOn": "2020-02-25T21:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf4a8fce_2cac3115",
+      "range": {
+        "startLine": 159,
+        "startChar": 62,
+        "endLine": 159,
+        "endChar": 63
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc9c261f_7de94fe7",
         "filename": "tools/privapp_permissions/privapp_permissions.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "044e01dc_3f9c24d2",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1093291
+      },
+      "writtenOn": "2020-02-25T21:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc9c261f_7de94fe7",
+      "range": {
+        "startLine": 351,
+        "startChar": 16,
+        "endLine": 353,
+        "endChar": 42
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8b67b221_fcc6a791",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1093291
+      },
+      "writtenOn": "2020-02-25T21:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "130f9e07_a07e43ad",
+      "range": {
+        "startLine": 378,
+        "startChar": 16,
+        "endLine": 380,
+        "endChar": 55
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea14eeb0_c936f425",
         "filename": "tools/privapp_permissions/privapp_permissions.py",
         "patchSetId": 3
@@ -91,6 +163,30 @@
       "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70ab378a_fff6356a",
+        "filename": "tools/privapp_permissions/privapp_permissions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 1093291
+      },
+      "writtenOn": "2020-02-25T21:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea14eeb0_c936f425",
+      "range": {
+        "startLine": 631,
+        "startChar": 8,
+        "endLine": 651,
+        "endChar": 53
+      },
+      "revId": "c5a7f132929c6588681094c68ad4ae1994f705f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
