@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "812ccd25_1cf05163",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1067098
+      },
+      "writtenOn": "2020-02-25T19:37:08Z",
+      "side": 1,
+      "message": "Added, see vndk/tools/header-checker/tests/reference_dumps/*/libifunc.so.lsdump for dump.",
+      "parentUuid": "b674ece6_a6caaa52",
+      "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b8840966_cefd1a2b",
         "filename": "vndk/tools/header-checker/src/repr/symbol/so_file_parser.cpp",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "If we treat TLS like OBJECT, we won\u0027t be able to detect the type change. e.g., changing a symbol\u0027s type from STT_TLS to STT_OBJECT. It seems to be a rare case, so I think it is fine to submit this patch.\n\nBefore we decide to handle STT_NOTYPE, we should find and study how it is used in the codebase.",
       "parentUuid": "5888b280_8fa25711",
+      "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ae6c30f_ff4dbeed",
+        "filename": "vndk/tools/header-checker/src/repr/symbol/so_file_parser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1067098
+      },
+      "writtenOn": "2020-02-25T19:37:08Z",
+      "side": 1,
+      "message": "\u003e It seems to be a rare case, so I think it is fine to submit this patch.\n\nYeah, and I\u0027m not changing the behaviour here either (see implementation of getType()):\nhttp://llvm-cs.pcc.me.uk/include/llvm/Object/ELFObjectFile.h#587",
+      "parentUuid": "0cee22ff_7462bf6f",
       "revId": "8888b77366310b32304f703e4ef226e4ce35c215",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
