@@ -22,6 +22,30 @@
       "revId": "647525b7fcac5d1e686124782a63ef9776b8a85d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c7c9df3_8df83576",
+        "filename": "gsi/repack_super_image/repack_super_image.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-02-25T11:20:37Z",
+      "side": 1,
+      "message": "I wouldn\u0027t like to hardcode the partition names in the script, so I changed the rule for input images.",
+      "parentUuid": "53283206_e39cabb1",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 0
+      },
+      "revId": "647525b7fcac5d1e686124782a63ef9776b8a85d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
