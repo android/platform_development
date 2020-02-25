@@ -46,6 +46,30 @@
       "revId": "647525b7fcac5d1e686124782a63ef9776b8a85d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61defc2d_39d2a6a7",
+        "filename": "gsi/repack_super_image/repack_super_image.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1061057
+      },
+      "writtenOn": "2020-02-25T14:18:37Z",
+      "side": 1,
+      "message": "This is good but how are you going to deal with this from the caller side? We wouldn\u0027t want to hardcode it there either. How about adding some more information in misc_info.txt, say \"replaced_partition_list\" or \"embedded_partition_list\"?",
+      "parentUuid": "8c7c9df3_8df83576",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 0
+      },
+      "revId": "647525b7fcac5d1e686124782a63ef9776b8a85d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
