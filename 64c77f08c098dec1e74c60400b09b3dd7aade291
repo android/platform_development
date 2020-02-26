@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa644e47_14dc75e7",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-02-26T09:09:24Z",
+      "side": 1,
+      "message": "This line is not necessary.",
+      "range": {
+        "startLine": 376,
+        "startChar": 8,
+        "endLine": 376,
+        "endChar": 63
+      },
+      "revId": "64c77f08c098dec1e74c60400b09b3dd7aade291",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
