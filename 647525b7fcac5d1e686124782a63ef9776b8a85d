@@ -94,6 +94,30 @@
       "revId": "647525b7fcac5d1e686124782a63ef9776b8a85d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e89d81c7_843f6e7f",
+        "filename": "gsi/repack_super_image/repack_super_image.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1061057
+      },
+      "writtenOn": "2020-02-26T08:49:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f50b0ab8_63ccd07a",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 0
+      },
+      "revId": "647525b7fcac5d1e686124782a63ef9776b8a85d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
