@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0686eee6_a96db222",
+        "filename": "scripts/acov",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2020-03-04T21:24:27Z",
+      "side": 1,
+      "message": "I think we should sleep for $N seconds (order of 5-10) to be reasonably sure that all signal handlers get scheduled to run.",
+      "revId": "b2acc4e5c94e5c9dba1636117a43ccd17125e7f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b51c8658_069245d5",
+        "filename": "scripts/acov",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2020-03-04T21:24:27Z",
+      "side": 1,
+      "message": "Is this WAI that we\u0027ll kill all processes instead of only those which have a signal handler?\n\nLGTM either way.",
+      "revId": "b2acc4e5c94e5c9dba1636117a43ccd17125e7f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
