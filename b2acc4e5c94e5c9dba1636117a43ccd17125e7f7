@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "523bf701_6d280b7b",
+        "filename": "scripts/acov",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1345967
+      },
+      "writtenOn": "2020-03-04T22:40:57Z",
+      "side": 1,
+      "message": "Tested this with existing coverage builds, and some processes take up to ~1 minute to completely write out all its coverage. Added a sleep here to prevent errors during the `rm -rf`.",
+      "parentUuid": "0686eee6_a96db222",
+      "revId": "b2acc4e5c94e5c9dba1636117a43ccd17125e7f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b51c8658_069245d5",
         "filename": "scripts/acov",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2020-03-04T21:24:27Z",
       "side": 1,
       "message": "Is this WAI that we\u0027ll kill all processes instead of only those which have a signal handler?\n\nLGTM either way.",
+      "revId": "b2acc4e5c94e5c9dba1636117a43ccd17125e7f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39fb2b55_0f70a543",
+        "filename": "scripts/acov",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1345967
+      },
+      "writtenOn": "2020-03-04T22:40:57Z",
+      "side": 1,
+      "message": "Updated this to allow users to specify which processes to dump coverage for.",
+      "parentUuid": "b51c8658_069245d5",
       "revId": "b2acc4e5c94e5c9dba1636117a43ccd17125e7f7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
