@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb593074_f9890917",
+        "filename": "scripts/acov",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1001525
+      },
+      "writtenOn": "2020-03-04T16:22:57Z",
+      "side": 1,
+      "message": "I\u0027ve found that pulling a large number of files via adb is extremely slow, and this can be greatly sped up by doing something like this instead:\n\nadb shell tar -czf - -C /data/misc/trace/$USER_ID/proc/self/cwd $ANDROID_OUT | tar zxvf -\n\nThe above reduced the time it took to pull coverage files from CF for a single uid from 6 minutes to 23 seconds.",
+      "revId": "b9e09e5479a604a931513828eaebbbde4240545b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
