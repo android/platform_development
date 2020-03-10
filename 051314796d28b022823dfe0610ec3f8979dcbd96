@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "845c934a_320f6ff9",
+        "filename": "vndk/tools/elfcheck/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-10T05:02:47Z",
+      "side": 1,
+      "message": "the `required` field of `fix_android_bp_prebuilt`",
+      "range": {
+        "startLine": 25,
+        "startChar": 55,
+        "endLine": 26,
+        "endChar": 17
+      },
+      "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd8b5e1f_d5517633",
+        "filename": "vndk/tools/elfcheck/fix_android_bp_prebuilt.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-10T05:02:47Z",
+      "side": 1,
+      "message": "Does this work with some unusual inputs, e.g.\n\n    shared_libs: []\n\n?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 4
+      },
+      "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
