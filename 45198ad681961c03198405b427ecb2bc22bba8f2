@@ -16,6 +16,24 @@
       "revId": "45198ad681961c03198405b427ecb2bc22bba8f2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4adde54b_9ab95dc1",
+        "filename": "scripts/llvm-gcov",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1345967
+      },
+      "writtenOn": "2020-03-11T17:54:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6aa38b02_473bc3e0",
+      "revId": "45198ad681961c03198405b427ecb2bc22bba8f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
