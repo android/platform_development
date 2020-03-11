@@ -49,6 +49,29 @@
     },
     {
       "key": {
+        "uuid": "c12793d9_fb3922c9",
+        "filename": "vndk/tools/elfcheck/fix_android_bp_prebuilt.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-11T05:23:51Z",
+      "side": 1,
+      "message": "Is this correct?  My locally built bpmodify did not recognize -property.  I used -parameter instead.",
+      "range": {
+        "startLine": 58,
+        "startChar": 21,
+        "endLine": 58,
+        "endChar": 31
+      },
+      "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dd8b5e1f_d5517633",
         "filename": "vndk/tools/elfcheck/fix_android_bp_prebuilt.sh",
         "patchSetId": 2
@@ -93,6 +116,30 @@
       "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d54575ed_2ae79abd",
+        "filename": "vndk/tools/elfcheck/fix_android_bp_prebuilt.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-11T05:23:51Z",
+      "side": 1,
+      "message": "OK.  I just tested the bpmodify command.  It seem to be fine.\n\nOriginally, I was worried about whether bpmodify would print errors when the property already exists even though it is an empty list.  However, it turned out to be a set operation.",
+      "parentUuid": "f55d3881_7b1ff8ab",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 4
+      },
+      "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
