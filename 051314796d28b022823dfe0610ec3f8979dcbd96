@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "4a72a20a_e55f90e0",
+        "filename": "vndk/tools/elfcheck/fix_android_bp_prebuilt.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-11T05:25:02Z",
+      "side": 1,
+      "message": "Never mind.  I found your CL that added that flag.",
+      "parentUuid": "c12793d9_fb3922c9",
+      "range": {
+        "startLine": 58,
+        "startChar": 21,
+        "endLine": 58,
+        "endChar": 31
+      },
+      "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dd8b5e1f_d5517633",
         "filename": "vndk/tools/elfcheck/fix_android_bp_prebuilt.sh",
         "patchSetId": 2
