@@ -164,6 +164,30 @@
       "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "50320c0f_a82d0a97",
+        "filename": "vndk/tools/elfcheck/fix_android_bp_prebuilt.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-03-12T03:43:53Z",
+      "side": 1,
+      "message": "Thanks for the comments!",
+      "parentUuid": "d54575ed_2ae79abd",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 4
+      },
+      "revId": "051314796d28b022823dfe0610ec3f8979dcbd96",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
