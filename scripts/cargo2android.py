@@ -309,16 +309,7 @@ class Crate(object):
       arg = args[i]
       if arg == '--crate-name':
         self.crate_name = args[i + 1]
-        i += 2
-        # shorten imported crate main source path
-        self.main_src = re.sub('^/[^ ]*/registry/src/', '.../', args[i])
-        self.main_src = re.sub('^.../github.com-[0-9a-f]*/', '.../',
-                               self.main_src)
-        self.find_cargo_dir()
-        if self.cargo_dir and not self.runner.args.onefile:
-          # Write to Android.bp in the subdirectory with Cargo.toml.
-          self.outf_name = self.cargo_dir + '/Android.bp'
-          self.main_src = self.main_src[len(self.cargo_dir) + 1:]
+        i += 1
       elif arg == '--crate-type':
         i += 1
         if self.crate_type:
@@ -390,6 +381,19 @@ class Crate(object):
         self.emit_list = arg.replace('--emit=', '')
       elif arg.startswith('--edition='):
         self.edition = arg.replace('--edition=', '')
+      elif not arg.startswith('-') and not self.main_src:
+        # Assumes that the first argument we run into that doesn't start with a
+        # dash is the main source file.
+
+        # shorten imported crate main source path
+        self.main_src = re.sub('^/[^ ]*/registry/src/', '.../', args[i])
+        self.main_src = re.sub('^.../github.com-[0-9a-f]*/', '.../',
+                               self.main_src)
+        self.find_cargo_dir()
+        if self.cargo_dir and not self.runner.args.onefile:
+          # Write to Android.bp in the subdirectory with Cargo.toml.
+          self.outf_name = self.cargo_dir + '/Android.bp'
+          self.main_src = self.main_src[len(self.cargo_dir) + 1:]
       else:
         self.errors += 'ERROR: unknown ' + arg + '\n'
       i += 1
