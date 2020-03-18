@@ -144,7 +144,7 @@ def run_header_abi_dumper_on_file(input_path, output_path,
 
 
 def run_header_abi_linker(output_path, inputs, version_script, api, arch,
-                          flags=tuple()):
+                          flags=tuple(), input_dir=AOSP_DIR):
     """Link inputs, taking version_script into account"""
     cmd = ['header-abi-linker', '-o', output_path, '-v', version_script,
            '-api', api, '-arch', arch]
@@ -155,7 +155,7 @@ def run_header_abi_linker(output_path, inputs, version_script, api, arch,
         cmd += ['-output-format', DEFAULT_FORMAT]
     cmd += inputs
     subprocess.check_call(cmd)
-    return read_output_content(output_path, AOSP_DIR)
+    return read_output_content(output_path, input_dir)
 
 
 def make_targets(product, variant, targets):
