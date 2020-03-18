@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "repr/ir_representation.h"
+#include "linker/merged_module.h"
 #include "repr/ir_dumper.h"
 #include "repr/ir_reader.h"
+#include "repr/ir_representation.h"
 #include "repr/symbol/so_file_parser.h"
 #include "repr/symbol/version_script_parser.h"
 #include "utils/command_line_utils.h"
@@ -134,7 +135,7 @@ class HeaderAbiLinker {
                 const repr::AbiElementMap<T> &src,
                 const std::function<bool(const std::string &)> &symbol_filter);
 
-  std::unique_ptr<repr::IRReader> ReadInputDumpFiles();
+  std::unique_ptr<repr::MergedModuleIR> ReadInputDumpFiles();
 
   bool ReadExportedSymbols();
 
@@ -142,11 +143,13 @@ class HeaderAbiLinker {
 
   bool ReadExportedSymbolsFromSharedObjectFile();
 
-  bool LinkTypes(repr::ModuleIR &module, repr::ModuleIR *linked_module);
+  bool LinkTypes(const repr::ModuleIR &module, repr::ModuleIR *linked_module);
 
-  bool LinkFunctions(repr::ModuleIR &module, repr::ModuleIR *linked_module);
+  bool LinkFunctions(const repr::ModuleIR &module,
+                     repr::ModuleIR *linked_module);
 
-  bool LinkGlobalVars(repr::ModuleIR &module, repr::ModuleIR *linked_module);
+  bool LinkGlobalVars(const repr::ModuleIR &module,
+                      repr::ModuleIR *linked_module);
 
   bool LinkExportedSymbols(repr::ModuleIR *linked_module);
 
@@ -181,13 +184,13 @@ class HeaderAbiLinker {
   std::unique_ptr<repr::ExportedSymbolSet> version_script_symbols_;
 };
 
-static void DeDuplicateAbiElementsThread(
-    const std::vector<std::string> &dump_files,
-    const std::set<std::string> *exported_headers,
-    repr::IRReader *greader, std::mutex *greader_lock,
-    std::atomic<std::size_t> *cnt) {
-  std::unique_ptr<repr::IRReader> local_reader =
-      repr::IRReader::CreateIRReader(input_format, exported_headers);
+static void
+DeDuplicateAbiElementsThread(const std::vector<std::string> &dump_files,
+                             const std::set<std::string> *exported_headers,
+                             repr::MergedModuleIR *global_merged_module,
+                             std::mutex *global_merged_module_lock,
+                             std::atomic<std::size_t> *cnt) {
+  repr::MergedModuleIR local_merged_module(exported_headers);
 
   auto begin_it = dump_files.begin();
   std::size_t num_sources = dump_files.size();
@@ -205,18 +208,17 @@ static void DeDuplicateAbiElementsThread(
         llvm::errs() << "ReadDump failed\n";
         ::exit(1);
       }
-      local_reader->MergeGraphs(*reader);
+      local_merged_module.MergeGraphs(reader->GetModule());
     }
   }
 
-  std::lock_guard<std::mutex> lock(*greader_lock);
-  greader->MergeGraphs(*local_reader);
+  std::lock_guard<std::mutex> lock(*global_merged_module_lock);
+  global_merged_module->MergeGraphs(local_merged_module.GetModule());
 }
 
-std::unique_ptr<repr::IRReader>
-HeaderAbiLinker::ReadInputDumpFiles() {
-  std::unique_ptr<repr::IRReader> greader =
-      repr::IRReader::CreateIRReader(input_format, &exported_headers_);
+std::unique_ptr<repr::MergedModuleIR> HeaderAbiLinker::ReadInputDumpFiles() {
+  std::unique_ptr<repr::MergedModuleIR> merged_module(
+      new repr::MergedModuleIR(&exported_headers_));
 
   std::size_t max_threads = std::thread::hardware_concurrency();
   std::size_t num_threads =
@@ -225,19 +227,19 @@ HeaderAbiLinker::ReadInputDumpFiles() {
           : 1;
   std::vector<std::thread> threads;
   std::atomic<std::size_t> cnt(0);
-  std::mutex greader_lock;
+  std::mutex merged_module_lock;
   for (std::size_t i = 1; i < num_threads; i++) {
     threads.emplace_back(DeDuplicateAbiElementsThread, dump_files_,
-                         &exported_headers_, greader.get(), &greader_lock,
-                         &cnt);
+                         &exported_headers_, merged_module.get(),
+                         &merged_module_lock, &cnt);
   }
-  DeDuplicateAbiElementsThread(dump_files_, &exported_headers_, greader.get(),
-                               &greader_lock, &cnt);
+  DeDuplicateAbiElementsThread(dump_files_, &exported_headers_,
+                               merged_module.get(), &merged_module_lock, &cnt);
   for (auto &thread : threads) {
     thread.join();
   }
 
-  return greader;
+  return merged_module;
 }
 
 bool HeaderAbiLinker::LinkAndDump() {
@@ -251,9 +253,9 @@ bool HeaderAbiLinker::LinkAndDump() {
   exported_headers_ = CollectAllExportedHeaders(exported_header_dirs_);
 
   // Read all input ABI dumps.
-  auto greader = ReadInputDumpFiles();
+  auto merged_module = ReadInputDumpFiles();
 
-  repr::ModuleIR &module = greader->GetModule();
+  const repr::ModuleIR &module = merged_module->GetModule();
 
   // Link input ABI dumps.
   std::unique_ptr<repr::ModuleIR> linked_module(
@@ -308,7 +310,7 @@ bool HeaderAbiLinker::LinkDecl(
   return true;
 }
 
-bool HeaderAbiLinker::LinkTypes(repr::ModuleIR &module,
+bool HeaderAbiLinker::LinkTypes(const repr::ModuleIR &module,
                                 repr::ModuleIR *linked_module) {
   auto no_filter = [](const std::string &symbol) { return true; };
   return LinkDecl(linked_module, module.GetRecordTypes(), no_filter) &&
@@ -332,7 +334,7 @@ bool HeaderAbiLinker::IsSymbolExported(const std::string &name) const {
   return true;
 }
 
-bool HeaderAbiLinker::LinkFunctions(repr::ModuleIR &module,
+bool HeaderAbiLinker::LinkFunctions(const repr::ModuleIR &module,
                                     repr::ModuleIR *linked_module) {
   auto symbol_filter = [this](const std::string &linker_set_key) {
     return IsSymbolExported(linker_set_key);
@@ -340,7 +342,7 @@ bool HeaderAbiLinker::LinkFunctions(repr::ModuleIR &module,
   return LinkDecl(linked_module, module.GetFunctions(), symbol_filter);
 }
 
-bool HeaderAbiLinker::LinkGlobalVars(repr::ModuleIR &module,
+bool HeaderAbiLinker::LinkGlobalVars(const repr::ModuleIR &module,
                                      repr::ModuleIR *linked_module) {
   auto symbol_filter = [this](const std::string &linker_set_key) {
     return IsSymbolExported(linker_set_key);
