@@ -376,6 +376,10 @@ class HeaderCheckerTest(unittest.TestCase):
         self.prepare_and_absolute_diff_all_archs(
             "libifunc", "libifunc")
 
+    def test_merge_multi_definition(self):
+        self.prepare_and_absolute_diff_all_archs(
+            "libmerge_multi_definition", "libmerge_multi_definition")
+
 
 if __name__ == '__main__':
     unittest.main()
