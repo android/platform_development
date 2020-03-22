@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "add89a24_431a47b2",
+        "filename": "tools/idegen/src/Configuration.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-03-22T06:17:39Z",
+      "side": 1,
+      "message": "Can this be a static method?",
+      "range": {
+        "startLine": 113,
+        "startChar": 4,
+        "endLine": 113,
+        "endChar": 35
+      },
+      "revId": "ffd832c6b1fabdefa1c83985ab1386b1e615632d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
