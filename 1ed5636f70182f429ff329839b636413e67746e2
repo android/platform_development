@@ -1,0 +1,48 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000002063883",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1264919?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "bf567292_1d970f92",
+          "description": "Change to \"vndk/tools/header-checker/src/linker/merged_module.cpp\"",
+          "replacements": [
+            {
+              "path": "vndk/tools/header-checker/src/linker/merged_module.cpp",
+              "range": {
+                "startLine": 217,
+                "startChar": 12,
+                "endLine": 217,
+                "endChar": 21
+              },
+              "replacement": "facilitate"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "bd6bd143_9769dfbd",
+        "filename": "vndk/tools/header-checker/src/linker/merged_module.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1550585
+      },
+      "writtenOn": "2020-03-23T04:30:45Z",
+      "side": 1,
+      "message": "Common typo found: \"faciliate\" -- should it be \"facilitate\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line.",
+      "range": {
+        "startLine": 217,
+        "startChar": 12,
+        "endLine": 217,
+        "endChar": 21
+      },
+      "revId": "1ed5636f70182f429ff329839b636413e67746e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
