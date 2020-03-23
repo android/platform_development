@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd430d40_6e515c17",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-23T17:44:27Z",
+      "side": 0,
+      "message": "After removing this reference, I think this function can be prefixed with _ (become a local in utils.py).",
+      "range": {
+        "startLine": 128,
+        "startChar": 16,
+        "endLine": 128,
+        "endChar": 45
+      },
+      "revId": "a449b07824f8dce4c37130cc229362682d24135c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
