@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "096b0250_3064c65f",
+        "filename": "vndk/tools/header-checker/src/linker/merged_module.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-24T20:11:23Z",
+      "side": 1,
+      "message": "I feel \"IRLinker\", \"ModuleMerger\" or \"ModuleCombiner\" may be a better name for this class.  The linker/merger/combiner should be something that manipulates the IR and should not be a part of the IR.",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 20
+      },
+      "revId": "a1e5d7e81eb713442d398bac9a1fb15ba8cdcda7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
