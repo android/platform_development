@@ -22,6 +22,30 @@
       "revId": "4bc670f91d371631030b38189fd4a1398e015af7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eda1aaf1_4b836828",
+        "filename": "vndk/tools/header-checker/src/linker/module_merger.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-03-25T05:53:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9bf239f4_e9c4765f",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "4bc670f91d371631030b38189fd4a1398e015af7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
