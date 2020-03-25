@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9bf239f4_e9c4765f",
+        "filename": "vndk/tools/header-checker/src/linker/module_merger.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-25T03:47:56Z",
+      "side": 1,
+      "message": "Ideally, it would be great to rename this to linker (following the directory of the file).  But it\u0027s fine to do this later.",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "4bc670f91d371631030b38189fd4a1398e015af7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
