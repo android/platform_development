@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72ae867e_29f9de59",
+        "filename": "vndk/tools/header-checker/src/repr/ir_representation.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-03-25T03:51:32Z",
+      "side": 1,
+      "message": "Should be updated",
+      "range": {
+        "startLine": 922,
+        "startChar": 43,
+        "endLine": 922,
+        "endChar": 49
+      },
+      "revId": "b8304a27c05e82deeef9b66553fd8e8861d7a9e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
