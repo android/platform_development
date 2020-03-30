@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72ffde66_4e19f347",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-03-30T19:13:41Z",
+      "side": 1,
+      "message": "Ideally, these are in a finally block, so that you always clean up even in error conditions. That said, I don\u0027t expect this to fail often enough to matter.",
+      "revId": "8a3e910fee562a17be3bc0e3737d67ca5e04edd9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
