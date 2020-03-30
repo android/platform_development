@@ -16,6 +16,24 @@
       "revId": "8a3e910fee562a17be3bc0e3737d67ca5e04edd9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90500a5e_01521977",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-03-30T20:30:12Z",
+      "side": 1,
+      "message": "Ack. The only run time error I found so far are from strange packages that crates.io accepted one name but returned download path for a different name. So there is now using the files[0] as the \"real\" downloaded package name. If something strange happened in the future, I think the downloaded temp file will be useful. So when I called sys.exit(1), I also leave the tar_file and tmp_dir to debug.",
+      "parentUuid": "72ffde66_4e19f347",
+      "revId": "8a3e910fee562a17be3bc0e3737d67ca5e04edd9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
