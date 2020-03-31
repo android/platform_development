@@ -876,8 +876,11 @@ class Runner(object):
     cmd_tail = ' --target-dir ' + TARGET_TMP + ' >> cargo.out 2>&1'
     for c in self.cargo:
       features = ''
-      if self.args.features and c != 'clean':
-        features = ' --features ' + self.args.features
+      if c != 'clean':
+        if self.args.no_default_features or self.args.features is not None:
+          features = ' --no-default-features'
+        if self.args.features:
+          features += ' --features ' + self.args.features
       cmd = 'cargo -vv ' if self.args.vv else 'cargo -v '
       cmd += c + features + cmd_tail
       if self.args.rustflags and c != 'clean':
@@ -1077,6 +1080,11 @@ def parse_args():
       help='run cargo also for a default device target')
   parser.add_argument(
       '--features', type=str, help='passing features to cargo build')
+  parser.add_argument(
+      '--no-default-features',
+      action='store_true',
+      default=False,
+      help='pass --no-default-features to cargo')
   parser.add_argument(
       '--onefile',
       action='store_true',
