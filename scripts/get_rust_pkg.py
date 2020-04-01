@@ -39,6 +39,10 @@ PKG_VERSION_PATTERN = r"(.*)-([0-9]+\.[0-9]+\.[0-9]+.*)"
 
 PKG_VERSION_MATCHER = re.compile(PKG_VERSION_PATTERN)
 
+VERSION_PATTERN = r"([0-9]+)\.([0-9]+)\.([0-9]+)"
+
+VERSION_MATCHER = re.compile(VERSION_PATTERN)
+
 
 def parse_args():
   """Parse main arguments."""
@@ -72,6 +76,24 @@ def pkg_base_name(args, name):
   return base, version
 
 
+def get_version_numbers(version):
+  match = VERSION_MATCHER.match(version)
+  if match is not None:
+    return tuple(int(match.group(i)) for i in range(1, 4))
+  return (0, 0, 0)
+
+
+def is_newer_version(args, v1, id1, v2, id2):
+  """Return true if (v2,id2) is a newer version than (v1,id1)."""
+  echo(args, "checking version={}  id={}".format(v2, id2))
+  v1_version = get_version_numbers(v1)
+  v2_version = get_version_numbers(v2)
+  if v1_version != v2_version:
+    return v2_version > v1_version
+  # version with the largest publish id number is assumed to be the latest
+  return id2 > id1
+
+
 def find_dl_path(args, name):
   """Ask crates.io for the latest version download path."""
   base_name, version = pkg_base_name(args, name)
@@ -79,23 +101,32 @@ def find_dl_path(args, name):
   echo(args, "get versions at {}".format(url))
   with urllib.request.urlopen(url) as request:
     data = json.loads(request.read().decode())
-    versions = data["versions"]
     # version with the largest id number is assumed to be the latest
     last_id = 0
     dl_path = ""
-    for v in versions:
+    found_version = ""
+    for v in data["versions"]:
+      # Return the given version if it is found.
       if version == v["num"]:
         dl_path = v["dl_path"]
+        found_version = version
         break
-      if not version and int(v["id"]) > last_id:
+      if version:  # must find user specified version
+        continue
+      # Skip yanked version.
+      if v["yanked"]:
+        echo(args, "skip yanked version {}".format(v["num"]))
+        continue
+      # Remember the newest version.
+      if is_newer_version(args, found_version, last_id, v["num"], int(v["id"])):
         last_id = int(v["id"])
-        version = v["num"]
+        found_version = v["num"]
         dl_path = v["dl_path"]
     if not dl_path:
       print("ERROR: cannot find version {} of package {}"
             .format(version, base_name))
       sys.exit(1)
-    echo(args, "found download path for version {}".format(version))
+    echo(args, "found download path for version {}".format(found_version))
     return dl_path
 
 
