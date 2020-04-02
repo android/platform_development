@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "75fd72a5_4f751bcd",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-02T08:04:10Z",
+      "side": 1,
+      "message": "I had to think through what v1 and id1 referred to, so either a comment or renamed variables would help here. Personally, I think renaming the variables would help a lot with readability. Something like the following:\n\nv1  -\u003e previous_version\nid1 -\u003e previous_published_id\nv2  -\u003e check_version\nid2 -\u003e check_published_id",
+      "revId": "bbae8dbe8a197fcbd947029383c26901a1b3fa79",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
