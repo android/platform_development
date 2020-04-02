@@ -16,6 +16,24 @@
       "revId": "bbae8dbe8a197fcbd947029383c26901a1b3fa79",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7881de52_e6d0bf07",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-02T17:33:39Z",
+      "side": 1,
+      "message": "Done. Used a little bit shorter names and Python tuple comparison.",
+      "parentUuid": "75fd72a5_4f751bcd",
+      "revId": "bbae8dbe8a197fcbd947029383c26901a1b3fa79",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
