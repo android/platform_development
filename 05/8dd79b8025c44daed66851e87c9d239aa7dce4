@@ -1,0 +1,10 @@
+Open-Source-Licensing+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Verified+1: David Gross <dgross@google.com>
+Code-Review+2: David Gross <dgross@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Submitted-by: David Gross <dgross@google.com>
+Submitted-at: Fri, 03 Apr 2020 17:27:34 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1277958
+Project: platform/development
+Branch: refs/heads/master
