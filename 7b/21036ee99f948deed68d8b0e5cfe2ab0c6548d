@@ -1,0 +1,9 @@
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Code-Review+2: Bo Hu <bohu@google.com>
+Open-Source-Licensing+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Submitted-by: Bo Hu <bohu@google.com>
+Submitted-at: Mon, 06 Apr 2020 19:18:09 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1277932
+Project: platform/development
+Branch: refs/heads/master
