@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f2ea0b96_34b17397",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-07T17:50:48Z",
+      "side": 1,
+      "message": "It\u0027s intentional to check if a crate has exactly one \u0027test\u0027 crate type, not any others,\nalthough we have other checks to reject mixed test and other crate types.",
+      "parentUuid": "29398532_9f5a8fd7",
+      "range": {
+        "startLine": 232,
+        "startChar": 12,
+        "endLine": 232,
+        "endChar": 40
+      },
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cf194069_22c091ed",
         "filename": "scripts/cargo2android.py",
         "patchSetId": 1
@@ -39,6 +63,24 @@
       "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5597d5ed_88c79cdc",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-07T17:50:48Z",
+      "side": 1,
+      "message": "Done; added some example comment and escaped \u0027.\u0027 in the second re.sub command.",
+      "parentUuid": "cf194069_22c091ed",
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "b99c4d9d_5cbc3126",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-07T17:50:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6bfad7ab_78e60ea0",
+      "range": {
+        "startLine": 399,
+        "startChar": 52,
+        "endLine": 399,
+        "endChar": 55
+      },
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "64e63d0e_653a3020",
         "filename": "scripts/cargo2android.py",
         "patchSetId": 1
@@ -76,6 +142,24 @@
       "writtenOn": "2020-04-07T09:19:22Z",
       "side": 1,
       "message": "I\u0027m curious as to how this is possible.",
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc0b5fed_1b3f1656",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-07T17:50:48Z",
+      "side": 1,
+      "message": "Cargo uses \"-C extra-filename\u003d...\" and \"-C metadata\u003d...\" to distinguish multiple tests of the same crate name. We ignore -C and use claim_module_name to get unique sequential suffix.\nAdded more in code comments.",
+      "parentUuid": "64e63d0e_653a3020",
       "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
