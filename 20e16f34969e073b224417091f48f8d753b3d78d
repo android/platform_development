@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29398532_9f5a8fd7",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-07T09:19:22Z",
+      "side": 1,
+      "message": "\u0027test\u0027 in self.crate_types",
+      "range": {
+        "startLine": 232,
+        "startChar": 12,
+        "endLine": 232,
+        "endChar": 40
+      },
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf194069_22c091ed",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-07T09:19:22Z",
+      "side": 1,
+      "message": "Could there be an example here of the expected paths that are being shortened? It\u0027s hard to tell if you need to \u0027\\\u0027 escape any of these `...` patterns as-is.",
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bfad7ab_78e60ea0",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-07T09:19:22Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be \u0027or\u0027? Alternatively maybe say \u0027Error: must supply --crate-type or --test\u0027.",
+      "range": {
+        "startLine": 399,
+        "startChar": 52,
+        "endLine": 399,
+        "endChar": 55
+      },
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64e63d0e_653a3020",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-07T09:19:22Z",
+      "side": 1,
+      "message": "I\u0027m curious as to how this is possible.",
+      "revId": "20e16f34969e073b224417091f48f8d753b3d78d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
