@@ -79,7 +79,7 @@ std::string ABIWrapper::GetDeclSourceFile(const clang::Decl *decl,
   // belonging to the library.
   clang::SourceLocation expansion_location = sm.getExpansionLoc(location);
   llvm::StringRef file_name = sm.getFilename(expansion_location);
-  return utils::RealPath(file_name.str());
+  return file_name.str();
 }
 
 std::string ABIWrapper::GetCachedDeclSourceFile(

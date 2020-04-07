@@ -140,7 +140,7 @@ def _run_header_abi_dumper_on_file(input_path, output_path,
     # The export include dirs imply local include dirs.
     for dir in export_include_dirs:
         cmd += ['-I', dir]
-    subprocess.check_call(cmd)
+    subprocess.check_call(cmd, cwd=AOSP_DIR)
 
 
 def run_header_abi_linker(output_path, inputs, version_script, api, arch,
