@@ -97,9 +97,10 @@ def copy_reference_dump(lib_path, reference_dump_dir, compress):
     return reference_dump_path
 
 
-def read_output_content(output_path, replace_str):
+def read_output_content(output_path, replace_str=''):
     with open(output_path, 'r') as f:
-        return f.read().replace(replace_str, '')
+        content = f.read()
+        return content.replace(replace_str, '') if replace_str else content
 
 
 def run_header_abi_dumper(input_path, cflags=tuple(),
@@ -111,7 +112,7 @@ def run_header_abi_dumper(input_path, cflags=tuple(),
         output_path = os.path.join(tmp, os.path.basename(input_path)) + '.dump'
         _run_header_abi_dumper_on_file(input_path, output_path,
                                        export_include_dirs, cflags, flags)
-        return read_output_content(output_path, AOSP_DIR)
+        return read_output_content(output_path)
 
 
 def _run_header_abi_dumper_on_file(input_path, output_path,
@@ -119,6 +120,8 @@ def _run_header_abi_dumper_on_file(input_path, output_path,
                                    flags=tuple()):
     """Run header-abi-dumper to dump ABI from `input_path` and the output is
     written to `output_path`."""
+    input_path = os.path.relpath(input_path, AOSP_DIR)
+    export_include_dirs = tuple(os.path.relpath(d, AOSP_DIR) for d in export_include_dirs)
     input_ext = os.path.splitext(input_path)[1]
     cmd = ['header-abi-dumper', '-o', output_path, input_path]
     for dir in export_include_dirs:
@@ -140,7 +143,7 @@ def _run_header_abi_dumper_on_file(input_path, output_path,
     # The export include dirs imply local include dirs.
     for dir in export_include_dirs:
         cmd += ['-I', dir]
-    subprocess.check_call(cmd)
+    subprocess.check_call(cmd, cwd=AOSP_DIR)
 
 
 def run_header_abi_linker(output_path, inputs, version_script, api, arch,

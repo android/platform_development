@@ -17,24 +17,7 @@
     }
    ],
    "return_type" : "_ZTIRN11namespace_a1AE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
-  },
-  {
-   "access" : "private",
-   "function_name" : "InvalidClass::member_function",
-   "linker_set_key" : "_ZN12InvalidClass15member_functionE1E",
-   "parameters" :
-   [
-    {
-     "is_this_ptr" : true,
-     "referenced_type" : "_ZTIP12InvalidClass"
-    },
-    {
-     "referenced_type" : "_ZTI1E"
-    }
-   ],
-   "return_type" : "_ZTIN12InvalidClass1DE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   }
  ],
  "global_vars" :
@@ -43,25 +26,25 @@
    "linker_set_key" : "a",
    "name" : "a",
    "referenced_type" : "_ZTIN11namespace_a1AE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   },
   {
    "linker_set_key" : "b",
    "name" : "b",
    "referenced_type" : "_ZTIN11namespace_b10template_bIJPKNS_1BEEEE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   },
   {
    "linker_set_key" : "c",
    "name" : "c",
    "referenced_type" : "_ZTIKN11namespace_b10template_bIJPKNS_1BEEEE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   },
   {
    "linker_set_key" : "template_in_macro",
    "name" : "template_in_macro",
    "referenced_type" : "_ZTIP15TemplateInMacroIJ1FEE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   }
  ],
  "lvalue_reference_types" :
@@ -73,20 +56,11 @@
    "referenced_type" : "_ZTIN11namespace_a1AE",
    "self_type" : "_ZTIRN11namespace_a1AE",
    "size" : 8,
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   }
  ],
  "pointer_types" :
  [
-  {
-   "alignment" : 8,
-   "linker_set_key" : "_ZTIP12InvalidClass",
-   "name" : "InvalidClass *",
-   "referenced_type" : "_ZTI12InvalidClass",
-   "self_type" : "_ZTIP12InvalidClass",
-   "size" : 8,
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
-  },
   {
    "alignment" : 8,
    "linker_set_key" : "_ZTIP15TemplateInMacroIJ1FEE",
@@ -94,7 +68,7 @@
    "referenced_type" : "_ZTI15TemplateInMacroIJ1FEE",
    "self_type" : "_ZTIP15TemplateInMacroIJ1FEE",
    "size" : 8,
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   }
  ],
  "qualified_types" :
@@ -105,7 +79,7 @@
    "name" : "const namespace_b::template_b<const B *>",
    "referenced_type" : "_ZTIN11namespace_b10template_bIJPKNS_1BEEEE",
    "self_type" : "_ZTIKN11namespace_b10template_bIJPKNS_1BEEEE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
+   "source_file" : "/usr/local/google/home/hsinyichen/data/aosp-clang-tools/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   }
  ],
  "record_types" : [],
