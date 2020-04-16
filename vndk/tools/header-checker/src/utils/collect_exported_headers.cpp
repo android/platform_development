@@ -81,7 +81,7 @@ bool CollectExportedHeaderSet(const std::string &dir_name,
       continue;
     }
 
-    exported_headers->insert(RealPath(file_path));
+    exported_headers->insert(file_path);
   }
   return true;
 }

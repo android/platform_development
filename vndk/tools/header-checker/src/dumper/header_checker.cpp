@@ -135,7 +135,7 @@ int main(int argc, const char **argv) {
 
   // Initialize clang tools and run front-end action.
   std::vector<std::string> header_files{ header_file };
-  HeaderCheckerOptions options(RealPath(header_file), out_dump,
+  HeaderCheckerOptions options(header_file, out_dump,
                                std::move(exported_headers), output_format,
                                dump_function_declarations, suppress_errors);
 

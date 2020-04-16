@@ -18,23 +18,6 @@
    ],
    "return_type" : "_ZTIRN11namespace_a1AE",
    "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
-  },
-  {
-   "access" : "private",
-   "function_name" : "InvalidClass::member_function",
-   "linker_set_key" : "_ZN12InvalidClass15member_functionE1E",
-   "parameters" :
-   [
-    {
-     "is_this_ptr" : true,
-     "referenced_type" : "_ZTIP12InvalidClass"
-    },
-    {
-     "referenced_type" : "_ZTI1E"
-    }
-   ],
-   "return_type" : "_ZTIN12InvalidClass1DE",
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
   }
  ],
  "global_vars" :
@@ -78,15 +61,6 @@
  ],
  "pointer_types" :
  [
-  {
-   "alignment" : 8,
-   "linker_set_key" : "_ZTIP12InvalidClass",
-   "name" : "InvalidClass *",
-   "referenced_type" : "_ZTI12InvalidClass",
-   "self_type" : "_ZTIP12InvalidClass",
-   "size" : 8,
-   "source_file" : "/development/vndk/tools/header-checker/tests/integration/cpp/header/undeclared_types.h"
-  },
   {
    "alignment" : 8,
    "linker_set_key" : "_ZTIP15TemplateInMacroIJ1FEE",
