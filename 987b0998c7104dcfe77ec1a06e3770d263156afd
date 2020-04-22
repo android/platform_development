@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "542cb68a_2b514bfc",
+        "filename": "tools/ndk/build_ndk_docs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2020-04-22T22:20:44Z",
+      "side": 1,
+      "message": "oh, that\u0027s handy!",
+      "revId": "987b0998c7104dcfe77ec1a06e3770d263156afd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
