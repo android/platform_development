@@ -116,6 +116,30 @@
       "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3366a17_90688e09",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2020-04-23T09:22:37Z",
+      "side": 1,
+      "message": "OK, got it.\n\nAfter offline discussion, I realized that \u0027workspace\u0027 is either ./downstream or ./upstream. (not the current directory that I used to run \u0027repo init\u0027).\n\nThen this SGTM.\n\nJust felt that the commit message is easier for me to understand tho:\n\ne.g., cannot repo init to a directory outside of |workspace|.",
+      "parentUuid": "7bda3f4e_c03f3cf6",
+      "range": {
+        "startLine": 88,
+        "startChar": 22,
+        "endLine": 88,
+        "endChar": 75
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
