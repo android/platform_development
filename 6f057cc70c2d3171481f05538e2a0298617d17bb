@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c427231d_1d600cb0",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-04-23T10:01:15Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f419b8c6_29ef7485",
+      "range": {
+        "startLine": 65,
+        "startChar": 5,
+        "endLine": 65,
+        "endChar": 64
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df378a44_f238f4c8",
         "filename": "tools/repo_diff/repo_diff_android.py",
         "patchSetId": 1
@@ -69,6 +93,30 @@
       "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c5e5da8_b35dd16a",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-04-23T10:01:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58dd416d_d1665796",
+      "range": {
+        "startLine": 86,
+        "startChar": 27,
+        "endLine": 86,
+        "endChar": 38
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -131,6 +179,30 @@
       "side": 1,
       "message": "OK, got it.\n\nAfter offline discussion, I realized that \u0027workspace\u0027 is either ./downstream or ./upstream. (not the current directory that I used to run \u0027repo init\u0027).\n\nThen this SGTM.\n\nJust felt that the commit message is easier for me to understand tho:\n\ne.g., cannot repo init to a directory outside of |workspace|.",
       "parentUuid": "7bda3f4e_c03f3cf6",
+      "range": {
+        "startLine": 88,
+        "startChar": 22,
+        "endLine": 88,
+        "endChar": 75
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a442b66_3845806e",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-04-23T10:01:15Z",
+      "side": 1,
+      "message": "How about the error message now?",
+      "parentUuid": "e3366a17_90688e09",
       "range": {
         "startLine": 88,
         "startChar": 22,
