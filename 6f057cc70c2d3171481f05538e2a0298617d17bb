@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "58dd416d_d1665796",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-04-23T08:28:30Z",
+      "side": 1,
+      "message": "Not really, running `repo` or `repo help` only tells if repo is installed in the current directory or its parent.\nWhat I need here is to check if repo is installed in parent but not in current directory.",
+      "parentUuid": "df378a44_f238f4c8",
+      "range": {
+        "startLine": 86,
+        "startChar": 27,
+        "endLine": 86,
+        "endChar": 38
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8fc87c89_1889eec8",
         "filename": "tools/repo_diff/repo_diff_android.py",
         "patchSetId": 1
