@@ -27,6 +27,8 @@ DEFAULT_UPSTREAM_MANIFEST_BRANCH = "android-8.0.0_r1"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_EXCLUSIONS_FILE = os.path.join(SCRIPT_DIR, "android_exclusions.txt")
 
+REPO_MAIN = os.path.join(".repo", "repo", "main.py")
+
 
 def parse_args():
   """Parse args."""
@@ -59,6 +61,19 @@ def parse_args():
   return parser.parse_args()
 
 
+def locate_repo(cwd):
+  """Locate repo installation in cwd and its parent directories."""
+
+  while True:
+    repo_path = os.path.join(cwd, REPO_MAIN)
+    if os.path.isfile(repo_path):
+      return (repo_path, cwd)
+    if cwd == os.path.dirname(cwd):
+      break
+    cwd = os.path.dirname(cwd)
+  return (None, None)
+
+
 def repo_init(url, rev, workspace):
   """Repo init with specific url and rev.
 
@@ -67,6 +82,11 @@ def repo_init(url, rev, workspace):
     rev: manifest branch, or rev
     workspace: the folder to init and sync code
   """
+
+  repo_path, android_top = locate_repo(workspace)
+  if repo_path and android_top != workspace:
+    raise ValueError("cannot repo-init workspace (%s) inside of an existing "
+                     "tree (%s)." % (workspace, android_top))
 
   print("repo init:\n  url: %s\n  rev: %s\n  workspace: %s" %
         (url, rev, workspace))
