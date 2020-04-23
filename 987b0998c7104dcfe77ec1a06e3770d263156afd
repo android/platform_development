@@ -16,6 +16,24 @@
       "revId": "987b0998c7104dcfe77ec1a06e3770d263156afd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "525191e3_69cb6ff5",
+        "filename": "tools/ndk/build_ndk_docs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2020-04-23T00:08:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "542cb68a_2b514bfc",
+      "revId": "987b0998c7104dcfe77ec1a06e3770d263156afd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
