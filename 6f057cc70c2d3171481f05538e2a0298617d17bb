@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f419b8c6_29ef7485",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2020-04-23T08:08:40Z",
+      "side": 1,
+      "message": "How about being more specific about the return types?\n\ne.g., Returns a tuple of (repo_path, android_top), where the latter is the parent directory containing the .repo subdir.",
+      "range": {
+        "startLine": 65,
+        "startChar": 5,
+        "endLine": 65,
+        "endChar": 64
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "df378a44_f238f4c8",
         "filename": "tools/repo_diff/repo_diff_android.py",
         "patchSetId": 1
@@ -18,6 +41,29 @@
         "startChar": 27,
         "endLine": 86,
         "endChar": 38
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fc87c89_1889eec8",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2020-04-23T08:08:40Z",
+      "side": 1,
+      "message": "how about (to match the !\u003d above):  \n  cannot repo-init another tree (%s) outside of the current workspace (%s).",
+      "range": {
+        "startLine": 88,
+        "startChar": 22,
+        "endLine": 88,
+        "endChar": 75
       },
       "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
