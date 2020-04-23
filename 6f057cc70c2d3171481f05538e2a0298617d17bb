@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df378a44_f238f4c8",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2020-04-23T07:56:31Z",
+      "side": 1,
+      "message": "Does running \u0027repo\u0027 in workspace and checking the result get what you need here?",
+      "range": {
+        "startLine": 86,
+        "startChar": 27,
+        "endLine": 86,
+        "endChar": 38
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
