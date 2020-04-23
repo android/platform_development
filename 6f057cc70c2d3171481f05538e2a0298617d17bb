@@ -212,6 +212,30 @@
       "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "301db716_de2bfbf8",
+        "filename": "tools/repo_diff/repo_diff_android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2020-04-23T10:13:19Z",
+      "side": 1,
+      "message": "LGTM! (after knowing that workspace is ./sub_dir).",
+      "parentUuid": "9a442b66_3845806e",
+      "range": {
+        "startLine": 88,
+        "startChar": 22,
+        "endLine": 88,
+        "endChar": 75
+      },
+      "revId": "6f057cc70c2d3171481f05538e2a0298617d17bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
