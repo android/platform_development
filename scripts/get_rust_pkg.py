@@ -30,6 +30,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 import tarfile
 import tempfile
@@ -43,6 +44,8 @@ VERSION_PATTERN = r"([0-9]+)\.([0-9]+)\.([0-9]+)"
 
 VERSION_MATCHER = re.compile(VERSION_PATTERN)
 
+cargo_not_found = False
+
 
 def parse_args():
   """Parse main arguments."""
@@ -53,6 +56,9 @@ def parse_args():
   parser.add_argument(
       "-o", metavar="out_dir", default=".",
       help="output directory")
+  parser.add_argument(
+      "-tree", action="store_true", default=False,
+      help="find all dependent packages")
   parser.add_argument(
       dest="pkgs", metavar="pkg_name", nargs="+",
       help="name of Rust package to be fetched from crates.io")
@@ -148,7 +154,7 @@ def fetch_pkg(args, dl_path):
     dest_dir = os.path.join(args.o, files[0])
     if os.path.exists(dest_dir):
       print("ERROR: do not overwrite existing {}".format(dest_dir))
-      return False  # leave tar_file and tmp_dir
+      return None  # leave tar_file and tmp_dir
     else:
       echo(args, "move {} to {}".format(pkg_tmp_dir, dest_dir))
       shutil.move(pkg_tmp_dir, dest_dir)
@@ -157,7 +163,74 @@ def fetch_pkg(args, dl_path):
   echo(args, "delete temp directory {}".format(tmp_dir))
   shutil.rmtree(tmp_dir)
   print("SUCCESS: downloaded package in {}".format(dest_dir))
+  return dest_dir
+
+
+def call_cargo_tree_cmd(dest_dir, roots, cmd, kind, deps):
+  """Call cargo tree with given cmd and add dependent pkgs into deps."""
+  proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, cwd=dest_dir)
+  out = proc.stdout.read()
+  if proc.wait():
+    print("ERROR: {}".format(" ".join(cmd)))
+    return False
+  lines = out.decode("utf-8").split("\n")
+  # The 1st line is the current package; the last is empty.
+  root = re.sub(r" \(.*\)", "", lines[0])
+  others = set()
+  for line in lines[1:-1]:
+    pkg = line.split(" ")[0]
+    if pkg not in roots:
+      others.add(pkg)
+      deps.add(pkg)
+  others = sorted(others)
+  print("NOTE: {} {}-dependent packages of {}: {}".
+        format(len(others), kind, root, others))
   return True
+
+
+def call_cargo_tree(dest_dir, roots, deps, dev_deps):
+  """Call cargo tree to find and fetch dependent packages of pkg in dest_dir."""
+  global cargo_not_found
+  if cargo_not_found:
+    return False
+  try:
+    cmd1 = ["cargo", "tree", "--no-indent", "--quiet", "--no-dev-dependencies"]
+    # If cargo tree works with "--no-dev-dependencies", try without that flag.
+    if call_cargo_tree_cmd(dest_dir, roots, cmd1, "without-dev", deps):
+      cmd2 = ["cargo", "tree", "--no-indent", "--quiet"]
+      if call_cargo_tree_cmd(dest_dir, roots, cmd2, "with-dev", dev_deps):
+        return True
+  except FileNotFoundError:
+    cargo_not_found = True
+    print("ERROR: cannot find cargo tree")
+  return False
+
+
+def check_dependencies(args, packages, dirs):
+  """Calls cargo tree to check dependent packages."""
+  roots = set()
+  for pkg in packages:
+    match = PKG_VERSION_MATCHER.match(pkg)
+    if match is not None:
+      roots.add(match.group(1))
+    else:
+      roots.add(pkg)
+  deps = set()  # dependent pkgs excluding dev-dependencies
+  dev_deps = set()  # dependent pkgs including dev-dependencies
+  success = True
+  for dest_dir in dirs:
+    pkg = os.path.basename(dest_dir)
+    echo(args, "checking dependent packages of {}".format(pkg))
+    if not call_cargo_tree(dest_dir, roots, deps, dev_deps):
+      print("ERROR: failed to check dependent packages of {}".format(pkg))
+      success = False
+  print("NOTE: for all {} root package(s): {}".
+        format(len(roots), sorted(roots)))
+  print("NOTE: found {} non-dev-dependent package(s): {}".
+        format(len(deps), sorted(deps)))
+  print("NOTE: found {} dependent package(s): {}".
+        format(len(dev_deps), sorted(dev_deps)))
+  return success
 
 
 def main():
@@ -165,14 +238,28 @@ def main():
   packages = list(dict.fromkeys(args.pkgs))
   echo(args, "to fetch packags = {}".format(packages))
   errors = []
+  dirs = []
+  found_packages = []
   for pkg in packages:
     echo(args, "trying to fetch package {}".format(pkg))
-    if not fetch_pkg(args, find_dl_path(args, pkg)):
+    try:
+      dest_dir = fetch_pkg(args, find_dl_path(args, pkg))
+      if dest_dir:
+        dirs.append(dest_dir)
+        found_packages.append(pkg)
+      else:
+        errors.append(pkg)
+    except urllib.error.HTTPError:
       errors.append(pkg)
+  success = True
+  if args.tree and dirs:
+    success = check_dependencies(args, found_packages, dirs)
   if errors:
     for pkg in errors:
       print("ERROR: failed to fetch {}".format(pkg))
     sys.exit(1)
+  if not success:
+    sys.exit(2)
 
 
 if __name__ == "__main__":
