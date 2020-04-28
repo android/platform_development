@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4039e2fe_50436675",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-28T09:41:39Z",
+      "side": 1,
+      "message": "packages",
+      "range": {
+        "startLine": 166,
+        "startChar": 23,
+        "endLine": 166,
+        "endChar": 30
+      },
+      "revId": "23a7406de1f294eed67c3c700f18052f3d947c68",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
