@@ -1,0 +1,23 @@
+cc_binary_host {
+    name: "linker-gc-symbols",
+
+    defaults: ["llvm-build-host-tools-defaults"],
+
+    srcs: [
+        "linker-gc-symbols.cpp",
+    ],
+
+    cflags: [
+        "-Wno-unused-parameter",
+    ],
+
+    shared_libs: [
+        "libLLVM_host",
+    ],
+
+    target: {
+        windows: {
+            enabled: false,
+        },
+    },
+}
