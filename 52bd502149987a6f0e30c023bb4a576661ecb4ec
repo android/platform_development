@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "82690ac7_89ab7edd",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-30T20:41:22Z",
+      "side": 1,
+      "message": "Renamed deps and dev_deps and added more comments.",
+      "parentUuid": "3af1759f_af1abc2f",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a896211_b910d609",
         "filename": "scripts/get_rust_pkg.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "8609297b_181d5814",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-30T20:41:22Z",
+      "side": 1,
+      "message": "I had the simpler but incorrect ordering rule in Patchset 7.\nSome pkg1 can be build-dependent (non-dev-dependent) on pkg2,\nwhen pkg2 is only test-dependent (dev-dependent) on pkg1.\nThis is not really a build dependency cycle, because pkg2 can be built before pkg1, but tested after pkg1. So the ordering is based on build_deps first, and then dev_deps.\nRenamed (deps, dev_deps) to (build_deps, dev_deps).\nWhen we collect from cargo tree output, the dev_deps should be a super set of build_deps.",
+      "parentUuid": "1a896211_b910d609",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "760e7db1_ae475dc8",
         "filename": "scripts/get_rust_pkg.py",
         "patchSetId": 8
@@ -50,6 +86,24 @@
       "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52bf1cc8_f8d6d4f5",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-30T20:41:22Z",
+      "side": 1,
+      "message": "This should not happen if the main function has correctly removed duplication.\nThis extra check ensures that topological sort won\u0027t have trouble of duplicated entries.\nNow this function will return a false value on any unexpected situation, so we can check the exit status.",
+      "parentUuid": "760e7db1_ae475dc8",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -76,6 +130,30 @@
     },
     {
       "key": {
+        "uuid": "8db9cc73_e45ca24b",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-30T20:41:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fec4f920_9d5fb7e5",
+      "range": {
+        "startLine": 309,
+        "startChar": 46,
+        "endLine": 309,
+        "endChar": 47
+      },
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ce4e557_69b934df",
         "filename": "scripts/get_rust_pkg.py",
         "patchSetId": 8
@@ -99,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "d9afd477_57574b46",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-30T20:41:22Z",
+      "side": 1,
+      "message": "Fixed the typo, but allow the duplication. When I fed this script a long list of packages collected from various sources, it\u0027s easier to ignore duplicated ones at command line here.",
+      "parentUuid": "2ce4e557_69b934df",
+      "range": {
+        "startLine": 351,
+        "startChar": 13,
+        "endLine": 351,
+        "endChar": 19
+      },
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "94d0d927_f26f8c55",
         "filename": "scripts/get_rust_pkg.py",
         "patchSetId": 8
@@ -113,6 +215,24 @@
       "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd49dc21_3be5ba47",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-04-30T20:41:22Z",
+      "side": 1,
+      "message": "I would like to always check dependencies if there is something to check.\nWhen given a long list of packages to fetch, some may fail but we can still get useful info from the dependency check.",
+      "parentUuid": "94d0d927_f26f8c55",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
