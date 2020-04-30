@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3af1759f_af1abc2f",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-30T10:01:48Z",
+      "side": 1,
+      "message": "It would be good to have something that describes the layout of a `pkg` tuple here. I see the comment on line 246, but it is further into reading the code, and thus makes it harder to understand. We could reorder these functions and/or put `compare_pkg_deps` inside `sort_found_deps`.\n\nAlternatively, you could define this as a proper class and provide this method, as well as the `remove_*_names` functions there.",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a896211_b910d609",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-30T10:01:48Z",
+      "side": 1,
+      "message": "This really should be part of the same comparison as deps2. Something like:\n\n```\nif base 1 in deps2 or base1 in dev_deps2:\n  return -1\n```\n\nThat condenses the logic of the code and makes it look more like the comparison that I would expect to see here.",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "760e7db1_ae475dc8",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-30T10:01:48Z",
+      "side": 1,
+      "message": "Do we actually want to continue here or fail the check? Or is this actually going to appear in logs if we have the same package depended upon multiple times? If that is the case, we shouldn\u0027t be printing an ERROR, and should be able to determine whether that is acceptable/expected or not.",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fec4f920_9d5fb7e5",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-30T10:01:48Z",
+      "side": 1,
+      "message": "This is a string, and since we specified `{:*s}` everywhere else, we should put the \u0027s\u0027 here as well.",
+      "range": {
+        "startLine": 309,
+        "startChar": 46,
+        "endLine": 309,
+        "endChar": 47
+      },
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ce4e557_69b934df",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-30T10:01:48Z",
+      "side": 1,
+      "message": "WARNING typo\n\nAlso, this should really be an error if we don\u0027t expect to handle duplicates here.",
+      "range": {
+        "startLine": 351,
+        "startChar": 13,
+        "endLine": 351,
+        "endChar": 19
+      },
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94d0d927_f26f8c55",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-04-30T10:01:48Z",
+      "side": 1,
+      "message": "Do we want to move this up before running `check_dependencies`? Is there a reason to run that if you couldn\u0027t fetch all the necessary ones?",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
