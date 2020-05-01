@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "75455c96_40cdf831",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-05-01T16:41:46Z",
+      "side": 1,
+      "message": "The response isn\u0027t JSON if it doesn\u0027t start with a XSSI token.",
+      "range": {
+        "startLine": 182,
+        "startChar": 14,
+        "endLine": 183,
+        "endChar": 29
+      },
+      "revId": "298069b6bf1055f2a188f3edfaa9effab6b246b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
