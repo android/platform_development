@@ -22,6 +22,30 @@
       "revId": "298069b6bf1055f2a188f3edfaa9effab6b246b3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6f78187_55dbb708",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-05-04T03:25:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75455c96_40cdf831",
+      "range": {
+        "startLine": 182,
+        "startChar": 14,
+        "endLine": 183,
+        "endChar": 29
+      },
+      "revId": "298069b6bf1055f2a188f3edfaa9effab6b246b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
