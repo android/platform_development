@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c5c82c1_fd5f772c",
+        "filename": "tools/linker-gc-symbols/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1114194
+      },
+      "writtenOn": "2020-05-04T17:12:13Z",
+      "side": 1,
+      "message": "if you leave the parameter unnamed, does this warning still fire?  I find that cleaner than this warning.",
+      "revId": "b49f8b29a7caf913d00d412842b14f14fca446ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f07e5586_58d06027",
+        "filename": "tools/linker-gc-symbols/linker-gc-symbols.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1114194
+      },
+      "writtenOn": "2020-05-04T17:12:13Z",
+      "side": 1,
+      "message": "does the set need to be ordered?",
+      "revId": "b49f8b29a7caf913d00d412842b14f14fca446ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a33427e_bdcceed9",
+        "filename": "tools/linker-gc-symbols/linker-gc-symbols.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1114194
+      },
+      "writtenOn": "2020-05-04T17:12:13Z",
+      "side": 1,
+      "message": "you can leave off the else and reindent L52",
+      "revId": "b49f8b29a7caf913d00d412842b14f14fca446ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
