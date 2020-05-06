@@ -1,0 +1,48 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000002822706",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1295964?revision\u003d18",
+      "fixSuggestions": [
+        {
+          "fixId": "0779024c_85e6fe2f",
+          "description": "Change to \"scripts/get_rust_pkg.py\"",
+          "replacements": [
+            {
+              "path": "scripts/get_rust_pkg.py",
+              "range": {
+                "startLine": 326,
+                "startChar": 44,
+                "endLine": 326,
+                "endChar": 51
+              },
+              "replacement": "package"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "787271bf_944d4892",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1550585
+      },
+      "writtenOn": "2020-05-06T00:06:56Z",
+      "side": 1,
+      "message": "Common typo found: \"pacakge\" -- should it be \"package\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line.",
+      "range": {
+        "startLine": 326,
+        "startChar": 44,
+        "endLine": 326,
+        "endChar": 51
+      },
+      "revId": "982ef24ceed7fea9b4381663cbc067dd02c2dd28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
