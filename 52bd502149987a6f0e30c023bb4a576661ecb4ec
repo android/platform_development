@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "eec5b10b_fb3a647d",
+        "filename": "scripts/get_rust_pkg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-05-06T10:04:54Z",
+      "side": 1,
+      "message": "Great! The updated writeup is excellent.",
+      "parentUuid": "8609297b_181d5814",
+      "revId": "52bd502149987a6f0e30c023bb4a576661ecb4ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "760e7db1_ae475dc8",
         "filename": "scripts/get_rust_pkg.py",
         "patchSetId": 8
