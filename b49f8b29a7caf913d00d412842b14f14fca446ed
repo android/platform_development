@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "78674172_406d635d",
+        "filename": "tools/linker-gc-symbols/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2020-05-06T22:54:46Z",
+      "side": 1,
+      "message": "This warning fires from LLVM headers.  We have to do something like `(void)p;` or add an attribute to silence that warning and may not be worth the extra noise in the code.",
+      "parentUuid": "8c5c82c1_fd5f772c",
+      "revId": "b49f8b29a7caf913d00d412842b14f14fca446ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f07e5586_58d06027",
         "filename": "tools/linker-gc-symbols/linker-gc-symbols.cpp",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3dedf272_b2da2fe8",
+        "filename": "tools/linker-gc-symbols/linker-gc-symbols.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2020-05-06T22:54:46Z",
+      "side": 1,
+      "message": "Switched to unordered_set in the change for the backend (http://cl/310028325).",
+      "parentUuid": "f07e5586_58d06027",
+      "revId": "b49f8b29a7caf913d00d412842b14f14fca446ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5a33427e_bdcceed9",
         "filename": "tools/linker-gc-symbols/linker-gc-symbols.cpp",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2020-05-04T17:12:13Z",
       "side": 1,
       "message": "you can leave off the else and reindent L52",
+      "revId": "b49f8b29a7caf913d00d412842b14f14fca446ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4361beee_042d2967",
+        "filename": "tools/linker-gc-symbols/linker-gc-symbols.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2020-05-06T22:54:46Z",
+      "side": 1,
+      "message": "Ditto.",
+      "parentUuid": "5a33427e_bdcceed9",
       "revId": "b49f8b29a7caf913d00d412842b14f14fca446ed",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
