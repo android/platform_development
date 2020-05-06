@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c2f83f6f_1e19f69e",
+        "filename": "gsi/repack_super_image/repack_super_image.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-05-06T08:49:59Z",
+      "side": 1,
+      "message": "args_part_imgs are the partition-image pairs from the command line arguments.\nunpacked_part_imgs are the pairs from the unpacked super.img.\nBoth are dynamic partitions.",
+      "parentUuid": "e59b4d3e_5f5aaff8",
+      "range": {
+        "startLine": 76,
+        "startChar": 4,
+        "endLine": 76,
+        "endChar": 18
+      },
+      "revId": "42fa1a9bebb9e4e0d861e172d43ec59a85304320",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0939939_40cc1006",
         "filename": "gsi/repack_super_image/repack_super_image.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "42fa1a9bebb9e4e0d861e172d43ec59a85304320",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ed9dc75_574cc3f5",
+        "filename": "gsi/repack_super_image/repack_super_image.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-05-06T08:49:59Z",
+      "side": 1,
+      "message": "Yes, it\u0027s a convention. https://cs.android.com/android/platform/superproject/+/master:system/core/fs_mgr/liblp/utility.cpp;l\u003d168\nlpunpack extracts both _a and _b images.\n\nbuild_super_image builds _a and leaves _b empty, so this script assumes that _a is the active slot in the input and output images.",
+      "parentUuid": "c0939939_40cc1006",
+      "range": {
+        "startLine": 109,
+        "startChar": 58,
+        "endLine": 109,
+        "endChar": 60
+      },
+      "revId": "42fa1a9bebb9e4e0d861e172d43ec59a85304320",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
