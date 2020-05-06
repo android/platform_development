@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e59b4d3e_5f5aaff8",
+        "filename": "gsi/repack_super_image/repack_super_image.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2020-05-06T08:24:29Z",
+      "side": 1,
+      "message": "nit: How about renaming them to:\n\n+ args_part_imgs \u003d\u003e physical_part_imgs (or phy_part_imgs)\n+ unpacked_part_imgs \u003d\u003e dynamic_part_imgs (or dyn_part_imgs)\n\n(internal link for the layout, FYI):\nhttps://docs.google.com/document/d/1J6G-uBtReYpsAWUnQrIT2HnVwRS7aq4x1a_OMop_hGQ/edit#heading\u003dh.bv19ovzfymq7",
+      "range": {
+        "startLine": 76,
+        "startChar": 4,
+        "endLine": 76,
+        "endChar": 18
+      },
+      "revId": "42fa1a9bebb9e4e0d861e172d43ec59a85304320",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0939939_40cc1006",
+        "filename": "gsi/repack_super_image/repack_super_image.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2020-05-06T08:24:29Z",
+      "side": 1,
+      "message": "nit: is _a a convention by lpunpack? maybe a a comment above\n\n# lpunpack assumes slot suffix _a is the active slot.",
+      "range": {
+        "startLine": 109,
+        "startChar": 58,
+        "endLine": 109,
+        "endChar": 60
+      },
+      "revId": "42fa1a9bebb9e4e0d861e172d43ec59a85304320",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
