@@ -633,8 +633,12 @@ class Crate(object):
       # self.root_pkg can have multiple test modules, with different *_tests[n]
       # names, but their executables can all be installed under the same _tests
       # directory. When built from Cargo.toml, all tests should have different
-      # file or crate names.
-      self.write('    relative_install_path: "' + self.root_pkg + '_tests",')
+      # file or crate names. So we used (root_pkg + '_tests') name as the
+      # relative_install_path.
+      # However, some package like 'slab' can have non-mergeable tests that
+      # must be separated by different module names. So, here we no longer
+      # emit relative_install_path.
+      # self.write('    relative_install_path: "' + self.root_pkg + '_tests",')
       self.write('    test_suites: ["general-tests"],')
       self.write('    auto_gen_config: true,')
 
@@ -1014,6 +1018,8 @@ class Runner(object):
       for c in self.crates:
         if c.merge(crate, 'Android.bp'):
           return
+      # If not merged, decide module type and name now.
+      crate.decide_module_type()
       self.crates.append(crate)
 
   def find_warning_owners(self):
