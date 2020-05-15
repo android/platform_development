@@ -136,20 +136,21 @@ class GPLChecker(object):
                             rev=revision, proj=git_project_path))
             return True
 
-        if not _check_rev_list(revision):
-            # VNDK snapshots built from a *-release branch will have merge
-            # CLs in the manifest because the *-dev branch is merged to the
-            # *-release branch periodically. In order to extract the
-            # revision relevant to the source of the git_project_path,
-            # we fetch the *-release branch and get the revision of the
-            # parent commit with FETCH_HEAD^2.
+        def _get_2nd_parent_if_merge_commit(revision):
+            """Checks if the commit is merge commit.
+
+            Returns:
+              revision: string, the 2nd parent which is the merged commit.
+              If the commit is not a merge commit returns None.
+            """
             logging.info(
                 'Checking if the parent of revision {rev} exists in {proj}'.
                 format(rev=revision, proj=git_project_path))
             try:
                 cmd = ['git', '-C', path, 'fetch', self._remote_git, revision]
                 utils.check_call(cmd)
-                cmd = ['git', '-C', path, 'rev-parse', 'FETCH_HEAD^2']
+                cmd = [
+                    'git', '-C', path, 'rev-parse', '--verify', 'FETCH_HEAD^2']
                 parent_revision = utils.check_output(cmd).strip()
             except subprocess.CalledProcessError as error:
                 logging.error(
@@ -157,11 +158,20 @@ class GPLChecker(object):
                     '{err}'.format(
                         rev=revision, remote=self._remote_git, err=error))
                 logging.error('Try --remote to manually set remote name')
-                raise
+                return None
             else:
-                if not _check_rev_list(parent_revision):
-                    return False
+                return parent_revision
 
+        while not _check_rev_list(revision):
+            # VNDK snapshots built from a *-release branch will have merge
+            # CLs in the manifest because the *-dev branch is merged to the
+            # *-release branch periodically. In order to extract the
+            # revision relevant to the source of the git_project_path,
+            # we find the parent of the merge commit.
+            parent_merged = _get_2nd_parent_if_merge_commit(revision)
+            if not parent_merged:
+                return False
+            revision = parent_merged
         return True
 
     def check_gpl_projects(self):
