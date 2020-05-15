@@ -22,6 +22,30 @@
       "revId": "8c272d78f9b45f883401de95069854dc7ef93eff",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a3193e4_b4056fed",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-05-15T10:37:01Z",
+      "side": 1,
+      "message": "It will return _check_revision_exists function with \u0027False\u0027. So that we can get the final result instead of stoping here.",
+      "parentUuid": "1c643e8c_fef35409",
+      "range": {
+        "startLine": 161,
+        "startChar": 16,
+        "endLine": 161,
+        "endChar": 27
+      },
+      "revId": "8c272d78f9b45f883401de95069854dc7ef93eff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
