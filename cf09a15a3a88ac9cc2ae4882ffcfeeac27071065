@@ -1,0 +1,48 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000002991312",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/36458?revision\u003d2",
+      "fixSuggestions": [
+        {
+          "fixId": "a8ccee5d_3335e275",
+          "description": "Change to \"samples/SimpleJNI_aprof/src/com/example/android/simplejni_aprof/SimpleJNI.java\"",
+          "replacements": [
+            {
+              "path": "samples/SimpleJNI_aprof/src/com/example/android/simplejni_aprof/SimpleJNI.java",
+              "range": {
+                "startLine": 36,
+                "startChar": 25,
+                "endLine": 36,
+                "endChar": 32
+              },
+              "replacement": "Destroy"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "35ef019b_a7a2854f",
+        "filename": "samples/SimpleJNI_aprof/src/com/example/android/simplejni_aprof/SimpleJNI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1550585
+      },
+      "writtenOn": "2020-05-15T22:53:32Z",
+      "side": 1,
+      "message": "Common typo found: \"Destory\" -- should it be \"Destroy\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line.",
+      "range": {
+        "startLine": 36,
+        "startChar": 25,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "cf09a15a3a88ac9cc2ae4882ffcfeeac27071065",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
