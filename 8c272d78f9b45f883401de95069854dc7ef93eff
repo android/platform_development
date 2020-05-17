@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f987edd8_641235c8",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-05-17T12:59:25Z",
+      "side": 1,
+      "message": "You don\u0027t need to do this multiple times because a single `git fetch` call will get the entire tree reachable from revision.",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 37
+      },
+      "revId": "8c272d78f9b45f883401de95069854dc7ef93eff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1c643e8c_fef35409",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 2
