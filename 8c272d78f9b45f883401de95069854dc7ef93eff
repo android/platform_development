@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "296ade3f_967e5456",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-05-18T02:37:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f987edd8_641235c8",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 37
+      },
+      "revId": "8c272d78f9b45f883401de95069854dc7ef93eff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c643e8c_fef35409",
         "filename": "vndk/snapshot/check_gpl_license.py",
         "patchSetId": 2
@@ -69,6 +93,30 @@
       "revId": "8c272d78f9b45f883401de95069854dc7ef93eff",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efc9f8ce_90409e7e",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-05-18T02:37:07Z",
+      "side": 1,
+      "message": "resolving the comment.",
+      "parentUuid": "7a3193e4_b4056fed",
+      "range": {
+        "startLine": 161,
+        "startChar": 16,
+        "endLine": 161,
+        "endChar": 27
+      },
+      "revId": "8c272d78f9b45f883401de95069854dc7ef93eff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
