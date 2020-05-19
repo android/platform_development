@@ -1,0 +1,10 @@
+Autosubmit+1: Dan Albert <danalbert@google.com>
+Open-Source-Licensing+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Code-Review+2: Josh Gao <jmgao@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Tue, 19 May 2020 03:36:42 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1306185
+Project: platform/development
+Branch: refs/heads/master
