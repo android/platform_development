@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efbef95e_2ff51854",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-05-21T06:38:22Z",
+      "side": 1,
+      "message": "from the API doc: https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#submit-change\nsubmit endpoint doesn\u0027t need \"message\" field\n\nYou probably want \"--submit\" to be store true, and this method signature to be \"sudmit(url_opener, gerrit_url, change_id)\"",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 33
+      },
+      "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
