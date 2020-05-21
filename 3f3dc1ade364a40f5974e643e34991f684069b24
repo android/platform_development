@@ -46,6 +46,30 @@
       "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4dffb993_8fb58490",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-05-21T07:20:15Z",
+      "side": 1,
+      "message": "That would need to use another endpoint, such as https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#set-review",
+      "parentUuid": "233ed9c4_e451ce53",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 33
+      },
+      "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
