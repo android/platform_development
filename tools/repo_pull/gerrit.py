@@ -200,6 +200,18 @@ def set_review(url_opener, gerrit_url, change_id, labels, message):
     return _make_json_post_request(url_opener, url, data)
 
 
+def submit(url_opener, gerrit_url, change_id, message):
+    """Submit a change list."""
+
+    url = '{}/a/changes/{}/submit'.format(gerrit_url, change_id)
+
+    data = {}
+    if message:
+        data['message'] = message
+
+    return _make_json_post_request(url_opener, url, data)
+
+
 def abandon(url_opener, gerrit_url, change_id, message):
     """Abandon a change list."""
 
