@@ -70,6 +70,30 @@
       "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ed972a7_b3084e38",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2020-05-21T07:34:54Z",
+      "side": 1,
+      "message": "I think \u0027repo_review.py ... --message \"Merged by BotBot\" --submit\u0027 can do what I need.",
+      "parentUuid": "4dffb993_8fb58490",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 33
+      },
+      "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
