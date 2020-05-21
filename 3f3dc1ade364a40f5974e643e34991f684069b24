@@ -22,6 +22,30 @@
       "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "233ed9c4_e451ce53",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1120915
+      },
+      "writtenOn": "2020-05-21T07:12:53Z",
+      "side": 1,
+      "message": "Done. I thought I could --submit \"This CL is submitted by a bot\" or something..",
+      "parentUuid": "efbef95e_2ff51854",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 33
+      },
+      "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
