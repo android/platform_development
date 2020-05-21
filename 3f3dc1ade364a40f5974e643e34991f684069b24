@@ -94,6 +94,30 @@
       "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f66ca70_da8fcd72",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-05-21T07:55:50Z",
+      "side": 1,
+      "message": "Yes right! I didn\u0027t realize we already have that option.",
+      "parentUuid": "5ed972a7_b3084e38",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 33
+      },
+      "revId": "3f3dc1ade364a40f5974e643e34991f684069b24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
