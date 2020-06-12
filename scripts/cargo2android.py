@@ -242,25 +242,22 @@ class Crate(object):
   def merge(self, other, outf_name):
     """Try to merge crate into self."""
     should_merge_host_device = self.merge_host_device(other)
-    should_merge_test = False
-    if not should_merge_host_device:
-      should_merge_test = self.merge_test(other)
     # A for-device test crate can be merged with its for-host version,
     # or merged with a different test for the same host or device.
     # Since we run cargo once for each device or host, test crates for the
     # first device or host will be merged first. Then test crates for a
     # different device or host should be allowed to be merged into a
     # previously merged one, maybe for a different device or host.
-    if should_merge_host_device or should_merge_test:
+    if should_merge_host_device:
       self.runner.init_bp_file(outf_name)
       with open(outf_name, 'a') as outf:  # to write debug info
         self.outf = outf
         other.outf = outf
-        self.do_merge(other, should_merge_test)
+        self.do_merge(other)
       return True
     return False
 
-  def do_merge(self, other, should_merge_test):
+  def do_merge(self, other):
     """Merge attributes of other to self."""
     if self.debug:
       self.write('\n// Before merge definition (1):')
@@ -276,18 +273,6 @@ class Crate(object):
     # decide_module_type sets up default self.stem,
     # which can be changed if self is a merged test module.
     self.decide_module_type()
-    if should_merge_test:
-      self.srcs.append(other.main_src)
-      # use a short unique name as the merged module name.
-      prefix = self.root_pkg + '_tests'
-      self.module_name = self.runner.claim_module_name(prefix, self, 0)
-      self.stem = self.module_name
-      # This normalized root_pkg name although might be the same
-      # as other module's crate_name, it is not actually used for
-      # output file name. A merged test module always have multiple
-      # source files and each source file base name is used as
-      # its output file name.
-      self.crate_name = pkg2crate_name(self.root_pkg)
     if self.debug:
       self.write('\n// After merge definition (1):')
       self.dump_debug_info()
@@ -639,7 +624,10 @@ class Crate(object):
       # must be separated by different module names. So, here we no longer
       # emit relative_install_path.
       # self.write('    relative_install_path: "' + self.root_pkg + '_tests",')
-      self.write('    test_suites: ["general-tests"],')
+      self.write('    test_suites: [\n' +
+                 '        "general-tests",\n' +
+                 '        "' + self.root_pkg + '",\n' +
+                 '    ],')
       self.write('    auto_gen_config: true,')
 
   def dump_android_externs(self):
