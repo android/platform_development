@@ -1,0 +1,10 @@
+Open-Source-Licensing+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Code-Review+1: allenhair <allenhair@google.com>
+Code-Review+2: Dan Albert <danalbert@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Roland Levillain <rpl@google.com>
+Submitted-at: Mon, 15 Jun 2020 10:12:06 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1329073
+Project: platform/development
+Branch: refs/heads/master
