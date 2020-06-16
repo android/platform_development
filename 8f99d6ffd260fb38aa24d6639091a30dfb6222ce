@@ -22,6 +22,30 @@
       "revId": "8f99d6ffd260fb38aa24d6639091a30dfb6222ce",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "523e9ee3_f4661dd6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-06-16T02:41:08Z",
+      "side": 1,
+      "message": "Yeah, I can see empty modules in various files. Some examples are\n\nv29/x86/binder32/Android.bp:2791\nv29/x86/Android.bp:2633\nv29/arm64/Android.bp:3132\nv29/arm64/Android.bp:3144\n\nI think the bug is b/142796811. I marked it a duplicate of b/154777533.",
+      "parentUuid": "c8a72e80_f7d37c9d",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 42
+      },
+      "revId": "8f99d6ffd260fb38aa24d6639091a30dfb6222ce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
