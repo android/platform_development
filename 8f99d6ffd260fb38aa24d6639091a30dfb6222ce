@@ -70,6 +70,30 @@
       "revId": "8f99d6ffd260fb38aa24d6639091a30dfb6222ce",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79e73e2e_0e8a5a76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-06-16T02:49:13Z",
+      "side": 1,
+      "message": "Confirmed that they still exist. e.g.\n\nhttps://android.googlesource.com/platform/prebuilts/vndk/v29/+/da70d9a2d97c65571f1fa353c221afdef2da081a/arm/binder32/Android.bp#2527",
+      "parentUuid": "6a5aec79_98f848a3",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 42
+      },
+      "revId": "8f99d6ffd260fb38aa24d6639091a30dfb6222ce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
