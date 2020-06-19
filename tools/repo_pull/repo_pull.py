@@ -29,6 +29,7 @@ import os
 import os.path
 import re
 import sys
+import tempfile
 import xml.dom.minidom
 
 from gerrit import create_url_opener_from_args, query_change_lists
@@ -154,16 +155,14 @@ class ChangeList(object):
         return len(self.parents) > 1
 
 
-def find_manifest_xml(dir_path):
+def generate_manifest_xml():
     """Find the path to manifest.xml for this Android source tree."""
-    dir_path_prev = None
-    while dir_path != dir_path_prev:
-        path = os.path.join(dir_path, '.repo', 'manifest.xml')
-        if os.path.exists(path):
-            return path
-        dir_path_prev = dir_path
-        dir_path = os.path.dirname(dir_path)
-    raise ValueError('.repo dir not found')
+    path = tempfile.mktemp()
+    manifest = run(["repo", "manifest"], stdout=PIPE)
+    fp = open(path, "wb")
+    fp.write(manifest.stdout)
+    fp.close()
+    return path
 
 
 def build_project_name_dir_dict(manifest_path):
@@ -177,7 +176,11 @@ def build_project_name_dir_dict(manifest_path):
         include_path = include.getAttribute('name')
         if not os.path.isabs(include_path):
             manifest_dir = os.path.dirname(os.path.realpath(manifest_path))
-            include_path = os.path.join(manifest_dir, include_path)
+            tmp = os.path.join(manifest_dir, include_path)
+            if os.path.exists(tmp):
+               include_path = tmp
+            else:
+               include_path = os.path.join(os.getcwd(), ".repo", "manifests", include_path)
         project_dirs.update(build_project_name_dir_dict(include_path))
 
     projects = parsed_xml.getElementsByTagName('project')
@@ -443,7 +446,7 @@ def _get_manifest_xml_from_args(args):
     """Get the path to manifest.xml from args."""
     manifest_path = args.manifest
     if not args.manifest:
-        manifest_path = find_manifest_xml(os.getcwd())
+        manifest_path = generate_manifest_xml()
     return manifest_path
 
 
