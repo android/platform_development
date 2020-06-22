@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78145ace_e9ae53cf",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-22T11:51:48Z",
+      "side": 1,
+      "message": "This assumes the CWD is at $TOP, I hope we don\u0027t add this new requirement. We should instead use the output of `repo` command to construct the manifest.\n\nThere\u0027s no need to save the manifest in a temp file, we should just delegate the manifest merging logic to `repo`:\n\n```\nmanifest_cmd \u003d [\u0027repo\u0027, \u0027manifest\u0027]\nif args.manifest:\n  manifest_cmd.extend([\u0027-m\u0027, args.manifest])\nraw_manifest \u003d run(manifest_cmd, stdout\u003dPIPE, check\u003dTrue).stdout\nbuild_project_name_dir_dict(raw_manifest)\n```\n\nbuild_project_name_dir_dict should be rewritten to accept a \"manifest string/bytes\" instead of file path.\nThis works because `repo manifest` outputs a \"flat\" manifest, it doesn\u0027t output manifest with \"include\"",
+      "range": {
+        "startLine": 183,
+        "startChar": 43,
+        "endLine": 183,
+        "endChar": 54
+      },
+      "revId": "f9cfff9aeaa7960a43b641b5d74ec25121c8c744",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
