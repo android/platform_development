@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa8f8244_56a386bd",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-06-23T16:56:25Z",
+      "side": 1,
+      "message": "How about `find_repo_top`?",
+      "range": {
+        "startLine": 157,
+        "startChar": 4,
+        "endLine": 157,
+        "endChar": 20
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32a23d2b_f15c008d",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-06-23T16:56:25Z",
+      "side": 1,
+      "message": "git-repo source tree",
+      "range": {
+        "startLine": 158,
+        "startChar": 24,
+        "endLine": 158,
+        "endChar": 43
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1800e2a4_5ba9fd9a",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-06-23T16:56:25Z",
+      "side": 1,
+      "message": "Maybe remove this one, and simply detect `curdir + \u0027.repo\u0027`?",
+      "range": {
+        "startLine": 161,
+        "startChar": 54,
+        "endLine": 161,
+        "endChar": 62
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3bb02f7f_b2a1a2ee",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-06-23T16:56:25Z",
+      "side": 1,
+      "message": "In this file, I use single quote \u0027 for strings (except the docstrings).",
+      "range": {
+        "startLine": 161,
+        "startChar": 47,
+        "endLine": 161,
+        "endChar": 48
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7b3da27_ba11d4e3",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-06-23T16:56:25Z",
+      "side": 1,
+      "message": "Considering the non-Android usage of the git-repo command, it might make sense to use the original message.",
+      "range": {
+        "startLine": 165,
+        "startChar": 21,
+        "endLine": 165,
+        "endChar": 49
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c89c5b3e_162ff906",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-06-23T16:56:25Z",
+      "side": 1,
+      "message": "Is it possible not to rely on os.chdir?  Since os.chdir is something like global variable, I would like to avoid it whenever possible.  I remembered I passed cwd\u003d... to subprocess.run() to achieve that.",
+      "range": {
+        "startLine": 364,
+        "startChar": 4,
+        "endLine": 364,
+        "endChar": 12
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
