@@ -281,6 +281,30 @@
       "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c23f17a_7046a79f",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-24T10:55:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66445b4c_dafde4c2",
+      "range": {
+        "startLine": 364,
+        "startChar": 4,
+        "endLine": 364,
+        "endChar": 12
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
