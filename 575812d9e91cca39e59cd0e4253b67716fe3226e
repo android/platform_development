@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "43e5a9c3_7a0395d0",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-24T10:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa8f8244_56a386bd",
+      "range": {
+        "startLine": 157,
+        "startChar": 4,
+        "endLine": 157,
+        "endChar": 20
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "32a23d2b_f15c008d",
         "filename": "tools/repo_pull/repo_pull.py",
         "patchSetId": 6
@@ -45,6 +69,30 @@
       "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba353df7_1a051cc8",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-24T10:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32a23d2b_f15c008d",
+      "range": {
+        "startLine": 158,
+        "startChar": 24,
+        "endLine": 158,
+        "endChar": 43
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,54 @@
     },
     {
       "key": {
+        "uuid": "d01a2094_bac3e966",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-24T10:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1800e2a4_5ba9fd9a",
+      "range": {
+        "startLine": 161,
+        "startChar": 54,
+        "endLine": 161,
+        "endChar": 62
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2ef0d74_8f3a93b8",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-24T10:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bb02f7f_b2a1a2ee",
+      "range": {
+        "startLine": 161,
+        "startChar": 47,
+        "endLine": 161,
+        "endChar": 48
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c7b3da27_ba11d4e3",
         "filename": "tools/repo_pull/repo_pull.py",
         "patchSetId": 6
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "00aa1d3a_de3c513a",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-24T10:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7b3da27_ba11d4e3",
+      "range": {
+        "startLine": 165,
+        "startChar": 21,
+        "endLine": 165,
+        "endChar": 49
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c89c5b3e_162ff906",
         "filename": "tools/repo_pull/repo_pull.py",
         "patchSetId": 6
@@ -128,6 +248,30 @@
       "writtenOn": "2020-06-23T16:56:25Z",
       "side": 1,
       "message": "Is it possible not to rely on os.chdir?  Since os.chdir is something like global variable, I would like to avoid it whenever possible.  I remembered I passed cwd\u003d... to subprocess.run() to achieve that.",
+      "range": {
+        "startLine": 364,
+        "startChar": 4,
+        "endLine": 364,
+        "endChar": 12
+      },
+      "revId": "575812d9e91cca39e59cd0e4253b67716fe3226e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66445b4c_dafde4c2",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-06-24T10:38:29Z",
+      "side": 1,
+      "message": "The \"cwd\u003dproject_path\" still don\u0027t work because the project_path is relative to repo_top.\n\nLet me see if I can change _main_pull to concat \"repo_top\" \u0026 \"project_path\"",
+      "parentUuid": "c89c5b3e_162ff906",
       "range": {
         "startLine": 364,
         "startChar": 4,
