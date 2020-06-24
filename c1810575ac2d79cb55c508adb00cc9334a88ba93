@@ -22,6 +22,30 @@
       "revId": "c1810575ac2d79cb55c508adb00cc9334a88ba93",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7443e244_7ae0faf1",
+        "filename": "vndk/tools/header-checker/src/dumper/abi_wrappers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-06-24T06:39:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19989bf2_7fed1409",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 3
+      },
+      "revId": "c1810575ac2d79cb55c508adb00cc9334a88ba93",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
