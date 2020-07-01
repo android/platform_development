@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60ab11e9_10720ca2",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-01T12:41:42Z",
+      "side": 1,
+      "message": "ValueError(\u0027cannot find gerrit URL from manifest\u0027)",
+      "range": {
+        "startLine": 344,
+        "startChar": 10,
+        "endLine": 344,
+        "endChar": 21
+      },
+      "revId": "e3f5cf643356253b4819abce109f59b734d864a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a50704c9_f31ab9bd",
+        "filename": "tools/repo_pull/gerrit.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-01T12:41:42Z",
+      "side": 1,
+      "message": "except:\n\nto catch all exceptions.",
+      "range": {
+        "startLine": 369,
+        "startChar": 8,
+        "endLine": 369,
+        "endChar": 25
+      },
+      "revId": "e3f5cf643356253b4819abce109f59b734d864a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
