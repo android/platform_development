@@ -165,6 +165,24 @@ def find_repo_top(curdir):
     raise ValueError('.repo dir not found')
 
 
+def find_gerrit_name():
+    """Find the gerrit instance specified in the default remote."""
+    manifest_cmd = ['repo', 'manifest']
+    raw_manifest_xml = run(manifest_cmd, stdout=PIPE, check=True).stdout
+
+    manifest_xml = xml.dom.minidom.parseString(raw_manifest_xml)
+    default_remote = manifest_xml.getElementsByTagName('default')[0]
+    default_remote_name = default_remote.getAttribute('remote')
+    for remote in manifest_xml.getElementsByTagName('remote'):
+        name = remote.getAttribute('name')
+        review = remote.getAttribute('review')
+        if review and name == default_remote_name:
+            return review
+
+    print('gerrit instance not found, use [-g GERRIT]')
+    sys.exit(1)
+
+
 def build_project_name_dir_dict(manifest_name):
     """Build the mapping from Gerrit project name to source tree project
     directory path."""
@@ -404,7 +422,7 @@ def _parse_args():
                         help='Commands')
 
     parser.add_argument('query', help='Change list query string')
-    parser.add_argument('-g', '--gerrit', required=True,
+    parser.add_argument('-g', '--gerrit', default=find_gerrit_name(),
                         help='Gerrit review URL')
 
     parser.add_argument('--gitcookies',
