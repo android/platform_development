@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42eca47e_b45735da",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-01T11:48:54Z",
+      "side": 1,
+      "message": "how about moving this to gerrit.py as a helper function, this way both repo_pull and repo_review can use it",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 42
+      },
+      "revId": "aff5b87f8335a1fc274e913f682ae2ce87587825",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5626c03_b6268bc1",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-01T11:48:54Z",
+      "side": 1,
+      "message": "I think raising an error or return None here fits the programming style better",
+      "range": {
+        "startLine": 181,
+        "startChar": 0,
+        "endLine": 184,
+        "endChar": 0
+      },
+      "revId": "aff5b87f8335a1fc274e913f682ae2ce87587825",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97d387c7_51f24b58",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-01T11:48:54Z",
+      "side": 1,
+      "message": "I think we should first check the value of args.gerrit, if args.gerrit is empty then we call find_gerrit_instance(), so we don\u0027t need to worry about find_gerrit...() may throw error or not.",
+      "range": {
+        "startLine": 425,
+        "startChar": 42,
+        "endLine": 425,
+        "endChar": 69
+      },
+      "revId": "aff5b87f8335a1fc274e913f682ae2ce87587825",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
