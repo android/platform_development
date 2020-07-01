@@ -19,6 +19,7 @@
 #include "utils/command_line_utils.h"
 #include "utils/header_abi_util.h"
 
+#include <clang/Driver/Driver.h>
 #include <clang/Frontend/FrontendActions.h>
 #include <clang/Tooling/CommonOptionsParser.h>
 #include <clang/Tooling/CompilationDatabase.h>
@@ -91,6 +92,24 @@ static llvm::cl::opt<TextFormatIR> output_format(
     llvm::cl::init(TextFormatIR::Json),
     llvm::cl::cat(header_checker_category));
 
+static llvm::cl::opt<bool> print_resource_dir(
+    "print-resource-dir",
+    llvm::cl::desc("Print default real path to resource directory"),
+    llvm::cl::Optional, llvm::cl::cat(header_checker_category));
+
+int main(int argc, const char **argv);
+
+static bool PrintResourceDir(const char *argv_0) {
+  std::string program_path =
+      llvm::sys::fs::getMainExecutable(argv_0, (void *)main);
+  if (program_path.empty()) {
+    llvm::errs() << "Failed to get program path\n";
+    return false;
+  }
+  llvm::outs() << clang::driver::Driver::GetResourcesPath(program_path) << "\n";
+  return true;
+}
+
 int main(int argc, const char **argv) {
   HideIrrelevantCommandLineOptions(header_checker_category);
 
@@ -112,8 +131,18 @@ int main(int argc, const char **argv) {
   }
 
   // Parse the command line options
-  llvm::cl::ParseCommandLineOptions(
-      fixed_argv.GetArgc(), fixed_argv.GetArgv(), "header-checker");
+  bool is_command_valid = llvm::cl::ParseCommandLineOptions(
+      fixed_argv.GetArgc(), fixed_argv.GetArgv(), "header-checker",
+      &llvm::errs());
+
+  if (print_resource_dir) {
+    bool ok = PrintResourceDir(fixed_argv.GetArgv()[0]);
+    ::exit(ok ? 0 : 1);
+  }
+
+  if (!is_command_valid) {
+    ::exit(1);
+  }
 
   // Print an error message if we failed to create the compilation database
   // from the command line arguments. This check is intentionally performed
