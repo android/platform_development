@@ -24,7 +24,7 @@ from __future__ import print_function
 import argparse
 import os
 
-from gerrit import create_url_opener_from_args, query_change_lists, get_patch
+from gerrit import create_url_opener_from_args, find_gerrit_name, query_change_lists, get_patch
 
 
 def _parse_args():
@@ -32,8 +32,7 @@ def _parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('query', help='Change list query string')
-    parser.add_argument('-g', '--gerrit', required=True,
-                        help='Gerrit review URL')
+    parser.add_argument('-g', '--gerrit', help='Gerrit review URL')
 
     parser.add_argument('--gitcookies',
                         default=os.path.expanduser('~/.gitcookies'),
@@ -47,6 +46,13 @@ def _parse_args():
 def main():
     """Main function"""
     args = _parse_args()
+
+    if not args.gerrit:
+        try:
+            args.gerrit = find_gerrit_name()
+        except:
+            print('gerrit instance not found, use [-g GERRIT]')
+            sys.exit(1)
 
     # Query change lists
     url_opener = create_url_opener_from_args(args)
