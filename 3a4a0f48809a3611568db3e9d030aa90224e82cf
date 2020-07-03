@@ -22,6 +22,30 @@
       "revId": "3a4a0f48809a3611568db3e9d030aa90224e82cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "787501b1_7b175c9f",
+        "filename": "vndk/tools/header-checker/src/dumper/header_checker.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-07-03T06:37:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33a76719_1d1adef4",
+      "range": {
+        "startLine": 138,
+        "startChar": 6,
+        "endLine": 138,
+        "endChar": 24
+      },
+      "revId": "3a4a0f48809a3611568db3e9d030aa90224e82cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
