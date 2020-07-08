@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "46c089a0_6ed2bf95",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-07-08T16:29:31Z",
+      "side": 1,
+      "message": "In which case do we still need this string replacement?  Do we still need this in normal workflow?",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 61
+      },
+      "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
