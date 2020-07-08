@@ -1,2 +1,6 @@
 Pkg.UserSrc=false
+<<<<<<< HEAD   (bccb8b Merge "Merge cherrypicks of [1326087, 1326294] into sdk-rele)
 Pkg.Revision=30.0.3
+=======
+Pkg.Revision=30.0.4
+>>>>>>> BRANCH (f942ac Merge "Increment platform-tools version to 30.0.4.")
