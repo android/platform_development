@@ -22,6 +22,30 @@
       "revId": "751c2638ba780f82e57ded7aa14fc3e5c292c28a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6c8dde8_89f44240",
+        "filename": "tools/repo_pull/repo_pull.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-08T19:46:14Z",
+      "side": 1,
+      "message": "I think multiline parentheses, but not back slash line break, fits out coding style better\n\n```\nfrom gerrit import (... ,\n  ..., ...)\n```",
+      "parentUuid": "6c0219f5_f987ae8b",
+      "range": {
+        "startLine": 34,
+        "startChar": 65,
+        "endLine": 34,
+        "endChar": 89
+      },
+      "revId": "751c2638ba780f82e57ded7aa14fc3e5c292c28a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
