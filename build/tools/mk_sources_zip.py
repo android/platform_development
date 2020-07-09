@@ -38,12 +38,21 @@ class Params(object):
         self.CNT_USED = 0
         self.CNT_NOPKG = 0
         # DIR is the list of directories to scan in TOPDIR.
-        self.DIR = "frameworks libcore"
-        self.IGNORE_DIR = [ "hosttests", "tools", "tests", "samples" ]
+        self.DIR = [ "frameworks/base",
+                     "frameworks/opt",
+                     "libcore",
+                     # Directories named "test" are excluded via IGNORE_DIR.
+                     # So explicitly include directories holding classes of the
+                     # "android.test" Java package.
+                     "frameworks/base/test-runner/src/android/test",
+                     "frameworks/base/test-base/src/android/test",
+                     "frameworks/base/test-mock/src/android/test" ]
+        self.IGNORE_DIR = [ "hosttests", "tools", "tests", "samples",
+                            "test", "benchmarks", "apct-tests", "robotests"]
         # IGNORE is a list of namespaces to ignore. Must be java
         # package definitions (e.g. "com.blah.foo.")
         self.IGNORE = [ "sun.", "libcore.", "dalvik.",
-                        "com.test.", "com.google.",
+                        "com.test.", "com.google.", "com.android.",
                         "coretestutils.", "test.", "test2.", "tests." ]
         self.zipfile = None
 
@@ -104,7 +113,7 @@ def parseArgs(argv):
                 VERBOSE = True
             elif o in [ "-s", "--sourcedir" ]:
                 # The source directories to process (space separated list)
-                p.DIR = a
+                p.DIR = a.split()
             elif o in [ "-z", "--exec-zip" ]:
                 # Don't use Python zip, instead call the 'zip' system exec.
                 p.EXEC_ZIP = True
@@ -232,7 +241,7 @@ def main():
             else:
                 p.zipfile = z = zipfile.ZipFile(p.DST, "w", zipfile.ZIP_DEFLATED)
                 z.write(p.PROPS, TOP_FOLDER + "/source.properties")
-        for d in p.DIR.split():
+        for d in p.DIR:
             if d:
                 parseSrcDir(p, os.path.join(p.SRC, d))
         if p.EXEC_ZIP and not p.DRY:
