@@ -16,6 +16,23 @@
       "revId": "2a4a8c016a90c7227cabeffbf4b459954d876f53",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51060c17_e47080cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019769
+      },
+      "writtenOn": "2020-07-09T22:33:56Z",
+      "side": 1,
+      "message": "Jerome: You\u0027ve been suggested to me as reviewer for this change.",
+      "revId": "2a4a8c016a90c7227cabeffbf4b459954d876f53",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
