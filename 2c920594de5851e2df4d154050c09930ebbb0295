@@ -22,6 +22,30 @@
       "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff3d095e_98525a59",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-07-09T02:14:15Z",
+      "side": 1,
+      "message": "We need to replace the path following \"#ODR:\"\nhttps://cs.android.com/android/platform/superproject/+/master:development/vndk/tools/header-checker/tests/reference_dumps/arm64/libmerge_multi_definitions.so.lsdump;l\u003d69?q\u003d%23ODR%5C:%20f:header-checker\u0026ss\u003dandroid%2Fplatform%2Fsuperproject\n\nThis code path is not in the normal workflow (create_reference_dumps.py) where the type ID is \"#ODR:out/soong/.intermediates/...\" unless the user sets OUT_DIR to an absolute path.",
+      "parentUuid": "46c089a0_6ed2bf95",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 61
+      },
+      "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
