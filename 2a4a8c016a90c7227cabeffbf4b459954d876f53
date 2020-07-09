@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6ea153d_b9b5e193",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019769
+      },
+      "writtenOn": "2020-07-09T15:42:37Z",
+      "side": 1,
+      "message": "The list of files this change removes from the zip can be found here: https://gist.github.com/cketti/3cd380757e824d457c5f834bda165ed8",
+      "revId": "2a4a8c016a90c7227cabeffbf4b459954d876f53",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
