@@ -87,6 +87,29 @@
       "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "080322a0_14fec177",
+        "filename": "vndk/tools/header-checker/tests/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-09T03:43:06Z",
+      "side": 1,
+      "message": "extra \u0027()\u0027",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 55
+      },
+      "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
