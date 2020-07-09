@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dbdc30d4_c01a607c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-07-09T02:21:58Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "46c089a0_6ed2bf95",
         "filename": "vndk/tools/header-checker/tests/module.py",
         "patchSetId": 2
@@ -46,6 +63,30 @@
       "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e46957d_f3eeb23d",
+        "filename": "vndk/tools/header-checker/tests/module.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-07-09T02:21:58Z",
+      "side": 1,
+      "message": "I think that we would like to use relative paths there as well in the long term, but OK for now.",
+      "parentUuid": "ff3d095e_98525a59",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 61
+      },
+      "revId": "2c920594de5851e2df4d154050c09930ebbb0295",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
