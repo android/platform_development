@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "879159c4_264962cc",
+        "filename": "tools/repo_pull/repo_patch.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-07-13T18:00:58Z",
+      "side": 1,
+      "message": "Please fix this one as well.  Thanks.",
+      "range": {
+        "startLine": 27,
+        "startChar": 80,
+        "endLine": 27,
+        "endChar": 95
+      },
+      "revId": "6262e4349e7dd6bb6c550b671d5f3a11da794bfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
