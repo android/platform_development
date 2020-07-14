@@ -1,0 +1,48 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000003870361",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1362349?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "ee2962d7_15da0e75",
+          "description": "Change to \"scripts/cargo2android.py\"",
+          "replacements": [
+            {
+              "path": "scripts/cargo2android.py",
+              "range": {
+                "startLine": 543,
+                "startChar": 23,
+                "endLine": 543,
+                "endChar": 31
+              },
+              "replacement": "defaults"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "02ede396_43bd0fe0",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1550585
+      },
+      "writtenOn": "2020-07-14T23:56:02Z",
+      "side": 1,
+      "message": "Common typo found: \"defualts\" -- should it be \"defaults\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line.",
+      "range": {
+        "startLine": 543,
+        "startChar": 23,
+        "endLine": 543,
+        "endChar": 31
+      },
+      "revId": "d033b85cd3a063e42d18e1dc0b6fc50e4fd63e22",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
