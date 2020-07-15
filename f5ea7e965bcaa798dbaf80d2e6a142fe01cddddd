@@ -52,6 +52,24 @@
       "revId": "f5ea7e965bcaa798dbaf80d2e6a142fe01cddddd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5edeaf0_e0197952",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1014807
+      },
+      "writtenOn": "2020-07-15T16:47:39Z",
+      "side": 1,
+      "message": "I prefer not submitting this CL.  I wish we can maintain PY2 compatibility for a few more years at least until git-repo[1] drops PY2 support.\n\n[1] https://github.com/GerritCodeReview/git-repo/blob/master/setup.py",
+      "parentUuid": "96e76566_f45d3bd6",
+      "revId": "f5ea7e965bcaa798dbaf80d2e6a142fe01cddddd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
