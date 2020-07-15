@@ -87,8 +87,7 @@ def _parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('query', help='Change list query string')
-    parser.add_argument('-g', '--gerrit', required=True,
-                        help='Gerrit review URL')
+    parser.add_argument('-g', '--gerrit', help='Gerrit review URL')
 
     parser.add_argument('--gitcookies',
                         default=os.path.expanduser('~/.gitcookies'),
