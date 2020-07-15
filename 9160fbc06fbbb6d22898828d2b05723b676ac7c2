@@ -22,6 +22,30 @@
       "revId": "9160fbc06fbbb6d22898828d2b05723b676ac7c2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5cd14341_a75eaabf",
+        "filename": "tools/repo_pull/repo_review.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2020-07-15T08:53:08Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "158d542b_2184556c",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "9160fbc06fbbb6d22898828d2b05723b676ac7c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
