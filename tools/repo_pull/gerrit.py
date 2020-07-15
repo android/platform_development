@@ -47,7 +47,7 @@ try:
 except ImportError:
     from subprocess import CalledProcessError, PIPE, Popen
 
-    class CompletedProcess(object):
+    class CompletedProcess():
         """Process execution result returned by subprocess.run()."""
         # pylint: disable=too-few-public-methods
 
