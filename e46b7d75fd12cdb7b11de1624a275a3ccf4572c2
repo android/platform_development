@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c010bd89_8e4fff92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2020-07-15T09:21:59Z",
+      "side": 1,
+      "message": "We may want to track more specific exceptions, but we don\u0027t really care given we exit as soon as possible",
+      "revId": "e46b7d75fd12cdb7b11de1624a275a3ccf4572c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
