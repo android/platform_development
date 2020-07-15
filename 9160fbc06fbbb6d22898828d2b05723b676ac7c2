@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "158d542b_2184556c",
+        "filename": "tools/repo_pull/repo_review.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-07-15T08:49:59Z",
+      "side": 0,
+      "message": "please `import find_gerrit_name` we missed this too .. 😮",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "9160fbc06fbbb6d22898828d2b05723b676ac7c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
