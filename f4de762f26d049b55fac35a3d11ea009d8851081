@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2306f6f9_68560b0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1424137
+      },
+      "writtenOn": "2020-07-17T09:11:37Z",
+      "side": 1,
+      "message": "when set Cube Live Wallpaper on android 11, can\u0027t load the res and then crash, error log: E AndroidRuntime: java.lang.RuntimeException: Unable to create service com.example.android.livecubes.cube1.CubeWallpaper1: java.lang.ClassNotFoundException: Didn\u0027t find class\"com.example.android.livecubes.cube1.CubeWallpaper1\" on path: DexPathList[[zip file\"/system/app/CubeLiveWallpapers/CubeLiveWallpapers.apk\"],nativeLibraryDirectories\u003d[/system/app/CubeLiveWallpapers/lib/arm64, /system/lib64, /product/lib64, /system/lib64, /product/lib64]]\n\nCube 3d live Wallpaper works well on android 10, by comparison, makefile convert from .mk to .bp, and the added attribute \"installable: false\" causes this issue.\nafter set it to \"true\", this issue is fixed.\n\ncould you please help to review this patch?\nThanks a lot!",
+      "revId": "f4de762f26d049b55fac35a3d11ea009d8851081",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
