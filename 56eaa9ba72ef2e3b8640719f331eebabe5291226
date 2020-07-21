@@ -16,6 +16,23 @@
       "revId": "56eaa9ba72ef2e3b8640719f331eebabe5291226",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1dedc7a2_9ebe6317",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1039338
+      },
+      "writtenOn": "2020-07-21T16:17:33Z",
+      "side": 1,
+      "message": "Just because these targets aren\u0027t used in the build doesn\u0027t mean that they aren\u0027t used. It is possible that someone somewhere (or a build script) uses these targets. Presumably if that is the case then this will be easy to revert.",
+      "revId": "56eaa9ba72ef2e3b8640719f331eebabe5291226",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
