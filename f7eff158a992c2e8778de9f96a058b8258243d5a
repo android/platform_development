@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd1d8281_def4f235",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-21T20:50:30Z",
+      "side": 1,
+      "message": "Stephen, Joel, could you take a look of the new Patchset 2? Thanks.\n",
+      "revId": "f7eff158a992c2e8778de9f96a058b8258243d5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
