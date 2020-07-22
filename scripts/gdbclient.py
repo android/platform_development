@@ -457,7 +457,10 @@ def do_main():
                                              remote="tcp:{}".format(args.port))
 
         if use_lldb:
-            debugger_path = os.path.join(toolchain_path, "bin", "lldb")
+            for lldb_name in ['lldb.sh', 'lldb.cmd', 'lldb', 'lldb.exe']:
+                debugger_path = os.path.join(toolchain_path, "bin", lldb_name)
+                if os.path.isfile(debugger_path):
+                    break
             debugger = 'lldb'
         else:
             debugger_path = os.path.join(
