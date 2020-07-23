@@ -1,0 +1,9 @@
+Open-Source-Licensing+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Code-Review+2: Elliott Hughes <enh@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Submitted-by: Haibo Huang <hhb@google.com>
+Submitted-at: Thu, 23 Jul 2020 02:43:17 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1371359
+Project: platform/development
+Branch: refs/heads/master
