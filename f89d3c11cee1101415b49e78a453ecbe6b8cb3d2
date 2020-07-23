@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0bf7ff53_66d77e2b",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2020-07-23T02:04:02Z",
+      "side": 1,
+      "message": "Is this always the right thing to do?  Could we not have a newer version of the toolchain in tree but still be using an older rustc, which could cause problems?  You do that for LLVM, right?\n\nFor that matter, what rustc does this script use?  Does it specify one or does it use whatever\u0027s on the path?",
+      "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
