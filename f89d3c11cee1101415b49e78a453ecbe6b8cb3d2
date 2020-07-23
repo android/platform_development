@@ -16,6 +16,24 @@
       "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18c2b5a0_631c4b9d",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-23T18:36:03Z",
+      "side": 1,
+      "message": "This script calls cargo decided from these rules, and then the cargo picks rustc.\n\nYes, sometimes a developer will want a cargo not in the \"newest\" version directory.\nIn that case, the new \"--cargo_bin\" flag can be used.\nI think this \"default to newest version\" will be simpler to maintain than hard-code-and-manually-update the version number.",
+      "parentUuid": "0bf7ff53_66d77e2b",
+      "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }

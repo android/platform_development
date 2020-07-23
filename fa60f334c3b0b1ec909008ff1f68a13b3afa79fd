@@ -16,6 +16,24 @@
       "revId": "fa60f334c3b0b1ec909008ff1f68a13b3afa79fd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16606069_e4be8f0d",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-23T18:36:03Z",
+      "side": 0,
+      "message": "These are for \"pass all -C flags to rustc in .bp files\" in the commit message.\nThe output for self.cap_lints and self.cfgs are not changed.\nThe self.codegens were not output, a bug, but luckily only 2 or 3 external/rust/crates were missing some non-critical -C flags. This change will fix that error and emit -C for them, except some that were already filtered out before this change.",
+      "parentUuid": "d4ee5569_fce04e6d",
+      "revId": "fa60f334c3b0b1ec909008ff1f68a13b3afa79fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
