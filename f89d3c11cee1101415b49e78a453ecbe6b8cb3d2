@@ -52,6 +52,24 @@
       "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48a8a947_edf2205a",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-23T21:36:46Z",
+      "side": 1,
+      "message": "We cannot call rustc -version to find the version, because we don\u0027t know which rustc to call yet. However, we can try to grep RustDefaultVersion in build/soong/rust/config/global.go to find the version number first. Does that sound right?",
+      "parentUuid": "d7d14fd9_cf960ccd",
+      "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
