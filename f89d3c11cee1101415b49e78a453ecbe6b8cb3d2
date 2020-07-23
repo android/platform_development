@@ -88,6 +88,24 @@
       "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd250cc5_b31e7f29",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-23T23:07:23Z",
+      "side": 1,
+      "message": "Done, please see new patchset and commit message for the new lookup rules.",
+      "parentUuid": "0a8330b4_01b7b2d3",
+      "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
