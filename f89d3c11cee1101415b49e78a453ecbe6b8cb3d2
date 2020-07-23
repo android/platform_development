@@ -34,6 +34,24 @@
       "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7d14fd9_cf960ccd",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2020-07-23T20:49:25Z",
+      "side": 1,
+      "message": "I was more thinking along the lines of how Soong decides which rustc to use.  I assume it could be an older version.  In cases like that, developers could use the new flag to get around that, but they probably wouldn\u0027t notice the difference until something like the inconsistency we discovered.  So I\u0027m wondering if we can somehow query Soong or something to find the right version?  Or maybe lunch and then run rustc -version or something?",
+      "parentUuid": "18c2b5a0_631c4b9d",
+      "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
