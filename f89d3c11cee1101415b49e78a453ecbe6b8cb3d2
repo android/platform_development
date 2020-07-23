@@ -70,6 +70,24 @@
       "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a8330b4_01b7b2d3",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2020-07-23T22:03:51Z",
+      "side": 1,
+      "message": "Ah, lunch doesn\u0027t add rustc to the path?  Then yes, something like this would probably work.  What do you think?",
+      "parentUuid": "48a8a947_edf2205a",
+      "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
