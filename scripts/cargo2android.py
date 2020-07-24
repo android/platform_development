@@ -74,6 +74,7 @@ RENAME_MAP = {
     'libbacktrace': 'libbacktrace_rust',
     'libgcc': 'libgcc_rust',
     'liblog': 'liblog_rust',
+    'libminijail': 'libminijail_rust',
     'libsync': 'libsync_rust',
     'libx86_64': 'libx86_64_rust',
     'protoc_gen_rust': 'protoc-gen-rust',
@@ -501,6 +502,8 @@ class Crate(object):
     pkg = self.main_src
     if pkg.startswith('.../'):  # keep only the main package name
       pkg = re.sub('/.*', '', pkg[4:])
+    elif pkg.startswith('/'): # use relative path for a local package
+      pkg = os.path.relpath(pkg)
     if not self.features:
       return pkg
     return pkg + ' "' + ','.join(self.features) + '"'
@@ -605,6 +608,8 @@ class Crate(object):
     self.defaults = name
     self.write('\nrust_defaults {')
     self.write('    name: "' + name + '",')
+    if self.runner.args.global_defaults:
+      self.write('    defaults: ["' + self.runner.args.global_defaults + '"],')
     self.write('    crate_name: "' + self.crate_name + '",')
     if len(self.srcs) == 1:  # only one source file; share it in defaults
       self.default_srcs = True
@@ -784,6 +789,8 @@ class Crate(object):
     # see properties shared by dump_defaults_module
     if self.defaults:
       self.write('    defaults: ["' + self.defaults + '"],')
+    elif self.runner.args.global_defaults:
+      self.write('    defaults: ["' + self.runner.args.global_defaults + '"],')
     if self.stem != self.module_name:
       self.write('    stem: "' + self.stem + '",')
     if self.has_warning and not self.cap_lints and not self.default_srcs:
@@ -1163,16 +1170,31 @@ class Runner(object):
     """Calls cargo -v and save its output to ./cargo.out."""
     if self.skip_cargo:
       return self
-    cargo = './Cargo.toml'
-    if not os.access(cargo, os.R_OK):
-      print('ERROR: Cannot find or read', cargo)
+    cargo_toml = './Cargo.toml'
+    cargo_out = './cargo.out'
+    if not os.access(cargo_toml, os.R_OK):
+      print('ERROR: Cannot find or read', cargo_toml)
       return self
-    if not self.dry_run and os.path.exists('cargo.out'):
-      os.remove('cargo.out')
-    cmd_tail = ' --target-dir ' + TARGET_TMP + ' >> cargo.out 2>&1'
+    if not self.dry_run and os.path.exists(cargo_out):
+      os.remove(cargo_out)
+    cmd_tail = ' --target-dir ' + TARGET_TMP + ' >> ' + cargo_out + ' 2>&1'
     # set up search PATH for cargo to find the correct rustc
     saved_path = os.environ['PATH']
     os.environ['PATH'] = os.path.dirname(self.cargo_path) + ':' + saved_path
+    # Add [workspace] to Cargo.toml if it is not there.
+    added_workspace = False
+    if self.args.add_workspace:
+      with open(cargo_toml, 'r') as in_file:
+        cargo_toml_lines = in_file.readlines()
+      found_workspace = '[workspace]\n' in cargo_toml_lines
+      if found_workspace:
+        print('### WARNING: found [workspace] in Cargo.toml')
+      else:
+        with open(cargo_toml, 'a') as out_file:
+          out_file.write('[workspace]\n')
+          added_workspace = True
+          if self.args.verbose:
+            print('### INFO: added [workspace] to Cargo.toml')
     for c in self.cargo:
       features = ''
       if c != 'clean':
@@ -1190,9 +1212,14 @@ class Runner(object):
       else:
         if self.args.verbose:
           print('Running:', cmd)
-        with open('cargo.out', 'a') as cargo_out:
-          cargo_out.write('### Running: ' + cmd + '\n')
+        with open(cargo_out, 'a') as out_file:
+          out_file.write('### Running: ' + cmd + '\n')
         os.system(cmd)
+    if added_workspace:  # restore original Cargo.toml
+      with open(cargo_toml, 'w') as out_file:
+        out_file.writelines(cargo_toml_lines)
+      if self.args.verbose:
+        print('### INFO: restored original Cargo.toml')
     os.environ['PATH'] = saved_path
     return self
 
@@ -1368,6 +1395,12 @@ def parse_args():
   """Parse main arguments."""
   parser = argparse.ArgumentParser('cargo2android')
   parser.add_argument(
+      '--add_workspace',
+      action='store_true',
+      default=False,
+      help=('append [workspace] to Cargo.toml before calling cargo,' +
+            ' to treat current directory as root of package source'))
+  parser.add_argument(
       '--cargo',
       action='append',
       metavar='args_string',
@@ -1393,10 +1426,14 @@ def parse_args():
       default=False,
       help='run cargo also for a default device target')
   parser.add_argument(
-      '--no-host',
-      action='store_true',
-      default=False,
-      help='do not run cargo for the host; only for the device target')
+      '--global_defaults',
+      type=str,
+      help='add a defaults name to every module')
+  parser.add_argument(
+      '--features',
+      type=str,
+      help=('pass features to cargo build, ' +
+            'empty string means no default features'))
   parser.add_argument(
       '--host-first-multilib',
       action='store_true',
@@ -1404,10 +1441,10 @@ def parse_args():
       help=('add a compile_multilib:"first" property ' +
             'to Android.bp host modules.'))
   parser.add_argument(
-      '--features',
-      type=str,
-      help=('pass features to cargo build, ' +
-            'empty string means no default features'))
+      '--no-host',
+      action='store_true',
+      default=False,
+      help='do not run cargo for the host; only for the device target')
   parser.add_argument(
       '--onefile',
       action='store_true',
