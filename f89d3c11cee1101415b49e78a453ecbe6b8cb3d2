@@ -106,6 +106,24 @@
       "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04e41b53_0fd0c41d",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2020-07-24T14:58:20Z",
+      "side": 1,
+      "message": "Looks good.  Thanks!",
+      "parentUuid": "dd250cc5_b31e7f29",
+      "revId": "f89d3c11cee1101415b49e78a453ecbe6b8cb3d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
