@@ -1,0 +1,31 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000004089314",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1376076?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "cd3bf3b1_be3f9d15",
+        "filename": "vndk/tools/image-diff-tool/compare_images_and_print.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1550585
+      },
+      "writtenOn": "2020-07-29T11:21:55Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027deny list\u0027 or \u0027allow list\u0027; see https://developers.google.com/style/word-list#blacklist for more details.",
+      "range": {
+        "startLine": 44,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 16
+      },
+      "revId": "32eb6e0de90abf9d05bc2ae0efd297bcf1a5ecf3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
