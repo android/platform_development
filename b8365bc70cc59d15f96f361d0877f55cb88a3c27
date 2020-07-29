@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee35f96e_a1717678",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-07-29T17:30:36Z",
+      "side": 1,
+      "message": "It doesn\u0027t have to be this CL, but I think this file is due for a refactor. All of the state is stored in a 31 variable class, the file is over 1500 lines long, and `Crate.parse` has a cyclomatic complexity of 40. I worry about the ability of anyone but you to correctly modify this script going forwards.",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "327868fd_8a9da637",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-07-29T17:30:36Z",
+      "side": 1,
+      "message": "Nit (typo): subdirectory",
+      "range": {
+        "startLine": 454,
+        "startChar": 35,
+        "endLine": 454,
+        "endChar": 47
+      },
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c27b28f2_98a41634",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1130,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-07-29T17:30:36Z",
+      "side": 1,
+      "message": "Could we consult `self.runner.args.no_subdir` instead of checking for `\u0027/dev/null\u0027` specifically? Maybe we could even skip dumping it then rather than calling `.dump(\u0027/dev/null\u0027)`",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47a5b0ff_d72c5b9e",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-07-29T17:30:36Z",
+      "side": 1,
+      "message": "Why is this a flag? Why not just do this unconditionally?",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec487cac_2a2cbcc5",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-07-29T17:30:36Z",
+      "side": 1,
+      "message": "If we keep this flag, the help text should explain why you would want to do this, not just what the flag does.",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7b12927_2c26a431",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1441,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-07-29T17:30:36Z",
+      "side": 1,
+      "message": "Is the idea that if this argument is specified, the user is required to manually define a default with that name?",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
