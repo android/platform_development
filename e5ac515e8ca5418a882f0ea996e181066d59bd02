@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd7969e7_62784e2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2020-07-29T19:10:30Z",
+      "side": 1,
+      "message": "What\u0027s up with adding BugId: to CLs instead of Bug: -- I don\u0027t think it actually works for tracking does it?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 5
+      },
+      "revId": "e5ac515e8ca5418a882f0ea996e181066d59bd02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd2e9307_db9f41ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2020-07-29T19:10:30Z",
+      "side": 1,
+      "message": "Could you explain what the syntax error is? Looks like just a whitespace change",
+      "revId": "e5ac515e8ca5418a882f0ea996e181066d59bd02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
