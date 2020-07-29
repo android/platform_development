@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fd794226_c58a6a07",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1659435
+      },
+      "writtenOn": "2020-07-29T19:08:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a96c6b34_45e819b2",
+      "range": {
+        "startLine": 289,
+        "startChar": 26,
+        "endLine": 289,
+        "endChar": 33
+      },
+      "revId": "161085103305b11bd84b488f20bb59002f46dacd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "00dec0d1_7136d34a",
         "filename": "vndk/tools/build_mixed",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "161085103305b11bd84b488f20bb59002f46dacd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4667d795_d520b951",
+        "filename": "vndk/tools/build_mixed",
+        "patchSetId": 3
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1659435
+      },
+      "writtenOn": "2020-07-29T19:08:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00dec0d1_7136d34a",
+      "range": {
+        "startLine": 294,
+        "startChar": 0,
+        "endLine": 295,
+        "endChar": 49
+      },
+      "revId": "161085103305b11bd84b488f20bb59002f46dacd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
