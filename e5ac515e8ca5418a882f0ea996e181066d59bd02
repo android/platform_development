@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b4302444_ed31bfb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1659435
+      },
+      "writtenOn": "2020-07-29T19:21:05Z",
+      "side": 1,
+      "message": "Reflex from the previous job :(.",
+      "parentUuid": "bd7969e7_62784e2c",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 5
+      },
+      "revId": "e5ac515e8ca5418a882f0ea996e181066d59bd02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dd2e9307_db9f41ec",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2020-07-29T19:10:30Z",
       "side": 1,
       "message": "Could you explain what the syntax error is? Looks like just a whitespace change",
+      "revId": "e5ac515e8ca5418a882f0ea996e181066d59bd02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2c00a88_36fa3b49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1659435
+      },
+      "writtenOn": "2020-07-29T19:21:05Z",
+      "side": 1,
+      "message": "This is the error I get atm, missing command between `if` and `then`:\n\n+ cp /tmp/build_mixed_7xHunZr2/system_artifacts/IMAGES/system.img /tmp/build_mixed_7xHunZr2/device_archive_artifacts/IMAGES/\n+ [[ true \u003d\u003d true ]]\n+ [[ -f /tmp/build_mixed_7xHunZr2/system_artifacts/IMAGES/product.img ]]\n+ rm -f /tmp/build_mixed_7xHunZr2/device_archive_artifacts/IMAGES/product.img\n+ sed -i \u0027/partition-exists\u003dproduct$/d\u0027 /tmp/build_mixed_7xHunZr2/device_archive_artifacts/IMAGES/android-info.txt\ndevelopment/vndk/tools/build_mixed: line 289: syntax error near unexpected token `else\u0027\n++ cleanup_and_exit\n++ readonly result\u003d2\n++ result\u003d2\n++ rm -rf /tmp/build_mixed_7xHunZr2\n++ exit 2",
+      "parentUuid": "dd2e9307_db9f41ec",
       "revId": "e5ac515e8ca5418a882f0ea996e181066d59bd02",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
