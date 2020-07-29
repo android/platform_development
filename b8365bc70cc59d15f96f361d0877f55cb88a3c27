@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e3a36ace_8061df0a",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-29T22:25:35Z",
+      "side": 1,
+      "message": "Agree. I do plan to split it into modules later.",
+      "parentUuid": "ee35f96e_a1717678",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "327868fd_8a9da637",
         "filename": "scripts/cargo2android.py",
         "patchSetId": 5
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "9d4032f2_1f25bc6c",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-29T22:25:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "327868fd_8a9da637",
+      "range": {
+        "startLine": 454,
+        "startChar": 35,
+        "endLine": 454,
+        "endChar": 47
+      },
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c27b28f2_98a41634",
         "filename": "scripts/cargo2android.py",
         "patchSetId": 5
@@ -56,6 +98,24 @@
       "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46738880_9a93fe26",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1130,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-29T22:25:35Z",
+      "side": 1,
+      "message": "Done. Thanks.",
+      "parentUuid": "c27b28f2_98a41634",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "eebe71cf_3394d8e4",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-29T22:25:35Z",
+      "side": 1,
+      "message": "Although doing unconditionally might have no impact to output .bp files for existing packages, i am not sure in the future. For one reason now, we don\u0027t need to touch/write to Cargo.toml unless this action is really needed. If it is default now, we might also need a reverse flag later.",
+      "parentUuid": "47a5b0ff_d72c5b9e",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ec487cac_2a2cbcc5",
         "filename": "scripts/cargo2android.py",
         "patchSetId": 5
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "e6e02abb_3e443250",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-29T22:25:35Z",
+      "side": 1,
+      "message": "Done, added two more lines of help comment.",
+      "parentUuid": "ec487cac_2a2cbcc5",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7b12927_2c26a431",
         "filename": "scripts/cargo2android.py",
         "patchSetId": 5
@@ -107,6 +203,24 @@
       "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2ec2bd9_9b38ef26",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1441,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-07-29T22:25:35Z",
+      "side": 1,
+      "message": "Yes, in the crosvm case, the default is manually defined in the parent directory,\nand this flag is used to generate .bp in a subdirectory.\nThis is probably only for history reason or temporary, as the crosvm global default now does not provide a lot for subdirectories.",
+      "parentUuid": "b7b12927_2c26a431",
+      "revId": "b8365bc70cc59d15f96f361d0877f55cb88a3c27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
