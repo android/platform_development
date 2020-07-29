@@ -286,6 +286,7 @@ fi
 
 if [[ "$SKIP_VBMETA_REPLACE" == true ]]; then
     # Totally skip the vbmeta.img replacement 
+    echo "Skip vbmeta.img replace."
 else
     # Only override vbmeta if it is already present since fastboot update will try
     # to flash whatever is in the archive.
