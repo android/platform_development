@@ -1,4 +1,4 @@
-# Common whitelist
+# Common allowlist
 system/build.prop=ro.system.build.date
 system/build.prop=ro.system.build.fingerprint
 system/build.prop=ro.system.build.version.incremental
