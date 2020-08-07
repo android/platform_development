@@ -16,6 +16,24 @@
       "revId": "36d90eeea24e9c5bd7708c3608a8f57633a257a3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c00f520a_1d2f23bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-08-07T05:07:34Z",
+      "side": 1,
+      "message": "functions in gerrit.py assumes the url to not have trailing slash, because the functions append slash to the url. if we don\u0027t strip it, the functions would assemble urls like \u003cgerrit url\u003e//a/\u003csome restful endpoint\u003e. this causes any error because gerrit treats with and without extra slash differently.",
+      "parentUuid": "b73f0ee2_5c713b14",
+      "revId": "36d90eeea24e9c5bd7708c3608a8f57633a257a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
