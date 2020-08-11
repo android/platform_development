@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # Copyright (C) 2017 The Android Open Source Project
 #
@@ -120,7 +120,7 @@ class GPLChecker(object):
                 cmd = [
                     'git', '-C', path, 'rev-list', 'HEAD..{}'.format(revision)
                 ]
-                output = utils.check_output(cmd).strip()
+                output = str(utils.check_output(cmd), 'utf-8').strip()
             except subprocess.CalledProcessError as error:
                 logging.error('Error: {}'.format(error))
                 return False
@@ -150,7 +150,7 @@ class GPLChecker(object):
                 cmd = [
                     'git', '-C', path, 'rev-parse', '--verify',
                     '{}^2'.format(revision)]
-                parent_revision = utils.check_output(cmd).strip()
+                parent_revision = str(utils.check_output(cmd), 'utf-8').strip()
             except subprocess.CalledProcessError as error:
                 logging.error(
                     'Failed to get parent of revision {rev} from "{remote}": '
