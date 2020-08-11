@@ -118,6 +118,30 @@
       "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f00cce5f_98d6f819",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-08-11T07:58:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b3256b9f_fbb0b06d",
+      "range": {
+        "startLine": 101,
+        "startChar": 27,
+        "endLine": 101,
+        "endChar": 50
+      },
+      "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
