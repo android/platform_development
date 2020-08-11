@@ -70,6 +70,30 @@
       "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ded94e2_b53a03a3",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-11T07:22:01Z",
+      "side": 1,
+      "message": "Well, okay. Let me try to handle both cases.",
+      "parentUuid": "f4750f4f_c3fa5af9",
+      "range": {
+        "startLine": 101,
+        "startChar": 27,
+        "endLine": 101,
+        "endChar": 50
+      },
+      "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
