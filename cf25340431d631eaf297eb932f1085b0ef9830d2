@@ -94,6 +94,30 @@
       "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3256b9f_fbb0b06d",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-11T07:54:30Z",
+      "side": 1,
+      "message": "Better off leaving this as-is and fix if any issues happen.",
+      "parentUuid": "9ded94e2_b53a03a3",
+      "range": {
+        "startLine": 101,
+        "startChar": 27,
+        "endLine": 101,
+        "endChar": 50
+      },
+      "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
