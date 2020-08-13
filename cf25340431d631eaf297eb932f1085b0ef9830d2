@@ -168,6 +168,30 @@
     },
     {
       "key": {
+        "uuid": "9c3545cd_7863a489",
+        "filename": "vndk/snapshot/check_gpl_license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-13T00:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68693733_6dddcc07",
+      "range": {
+        "startLine": 123,
+        "startChar": 52,
+        "endLine": 123,
+        "endChar": 62
+      },
+      "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e942a4cb_f7c8b4c0",
         "filename": "vndk/snapshot/utils.py",
         "patchSetId": 1
@@ -188,6 +212,54 @@
       "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18872a2a_0f4cc87b",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-13T00:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e942a4cb_f7c8b4c0",
+      "range": {
+        "startLine": 55,
+        "startChar": 40,
+        "endLine": 55,
+        "endChar": 41
+      },
+      "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "162d5474_597068ee",
+        "filename": "vndk/snapshot/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-13T00:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e942a4cb_f7c8b4c0",
+      "range": {
+        "startLine": 55,
+        "startChar": 40,
+        "endLine": 55,
+        "endChar": 41
+      },
+      "revId": "cf25340431d631eaf297eb932f1085b0ef9830d2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
