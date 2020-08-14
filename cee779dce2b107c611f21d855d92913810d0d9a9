@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "c97dd4a0_f1e26788",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-14T07:25:37Z",
+      "side": 1,
+      "message": "Well this is done by pyformat. Removed",
+      "parentUuid": "d7ef12cc_910e9add",
+      "range": {
+        "startLine": 166,
+        "startChar": 35,
+        "endLine": 167,
+        "endChar": 20
+      },
+      "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b69e280b_7bea898e",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 2
@@ -65,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "08740fc9_9549af35",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-14T07:25:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b69e280b_7bea898e",
+      "range": {
+        "startLine": 324,
+        "startChar": 23,
+        "endLine": 324,
+        "endChar": 40
+      },
+      "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "876ad962_51057f18",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 2
@@ -85,6 +133,30 @@
       "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c80fd82a_a3e55915",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-08-14T07:25:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "876ad962_51057f18",
+      "range": {
+        "startLine": 434,
+        "startChar": 0,
+        "endLine": 437,
+        "endChar": 44
+      },
+      "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
