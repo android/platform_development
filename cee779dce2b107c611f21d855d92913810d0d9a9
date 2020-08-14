@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "511208ef_aadcfc07",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-08-14T06:31:01Z",
+      "side": 1,
+      "message": "A few stylistic concerns, but overall LGTM.",
+      "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7ef12cc_910e9add",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-08-14T06:31:01Z",
+      "side": 1,
+      "message": "wrong line break?",
+      "range": {
+        "startLine": 166,
+        "startChar": 35,
+        "endLine": 167,
+        "endChar": 20
+      },
+      "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b69e280b_7bea898e",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-08-14T06:31:01Z",
+      "side": 1,
+      "message": "why is this given as an argument? Can\u0027t it be created inside this function?",
+      "range": {
+        "startLine": 324,
+        "startChar": 23,
+        "endLine": 324,
+        "endChar": 40
+      },
+      "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "876ad962_51057f18",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-08-14T06:31:01Z",
+      "side": 1,
+      "message": "tempfile.TemporaryDirectory could be used to avoid this manual cleanup",
+      "range": {
+        "startLine": 434,
+        "startChar": 0,
+        "endLine": 437,
+        "endChar": 44
+      },
+      "revId": "cee779dce2b107c611f21d855d92913810d0d9a9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
