@@ -198,30 +198,7 @@ def gen_bp_module(variation, name, version, target_arch, arch_props, bp_dir):
     bp += '}\n\n'
     return bp
 
-def get_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        'snapshot_version',
-        type=int,
-        help='Vendor snapshot version to install, e.g. "30".')
-    parser.add_argument(
-        '-v',
-        '--verbose',
-        action='count',
-        default=0,
-        help='Increase output verbosity, e.g. "-v", "-vv".')
-    return parser.parse_args()
-
-def main():
-    """Program entry point."""
-    args = get_args()
-    verbose_map = (logging.WARNING, logging.INFO, logging.DEBUG)
-    verbosity = min(args.verbose, 2)
-    logging.basicConfig(
-        format='%(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
-        level=verbose_map[verbosity])
-    install_dir = os.path.join('prebuilts', 'vendor', 'v'+str(args.snapshot_version))
-
+def gen_bp_files(install_dir, snapshot_version):
     # props[target_arch]["static"|"shared"|"binary"|"header"][name][arch] : json
     props = dict()
 
@@ -285,12 +262,153 @@ def main():
                 androidbp += gen_bp_module(
                     variation,
                     name,
-                    args.snapshot_version,
+                    snapshot_version,
                     target_arch,
                     props[target_arch][variation][name],
                     bp_dir)
         with open(os.path.join(bp_dir, 'Android.bp'), 'w') as f:
+            logging.info('Generating Android.bp to: {}'.format(f.name))
             f.write(androidbp)
+
+def check_call(cmd):
+    logging.debug('Running `{}`'.format(' '.join(cmd)))
+    subprocess.check_call(cmd)
+
+def fetch_artifact(branch, build, target, pattern, destination):
+    """Fetches build artifacts from Android Build server.
+
+    Args:
+      branch: string, branch to pull build artifacts from
+      build: string, build number to pull build artifacts from
+      target: string, target name to pull build artifacts from
+      pattern: string, pattern of build artifact file name
+      destination: string, destination to pull build artifact to
+    """
+    fetch_artifact_path = '/google/data/ro/projects/android/fetch_artifact'
+    cmd = [
+        fetch_artifact_path, '--branch', branch, '--target', target, '--bid',
+        build, pattern, destination
+    ]
+    check_call(cmd)
+
+def install_artifacts(branch, build, target, local_dir, install_dir, temp_artifact_dir):
+    """Installs vendor snapshot build artifacts to {install_dir}/v{version}.
+
+    1) Fetch build artifacts from Android Build server or from local_dir
+    2) Unzip build artifacts
+
+    Args:
+      branch: string or None, branch name of build artifacts
+      build: string or None, build number of build artifacts
+      target: string or None, target name of build artifacts
+      local_dir: string or None, local dir to pull artifacts from
+      install_dir: string, directory to install vendor snapshot
+      temp_artifact_dir: string, temp directory to hold build artifacts fetched
+        from Android Build server. For 'local' option, is set to None.
+    """
+    artifact_pattern = 'vendor-*.zip'
+
+    if branch and build:
+        artifact_dir = temp_artifact_dir
+        logging.info('Fetching {pattern} from {branch} (bid: {build}, target: {target})'.format(
+            pattern=artifact_pattern, branch=branch, build=build, target=target))
+        fetch_artifact(branch, build, target, artifact_pattern, artifact_dir)
+    elif local_dir:
+        logging.info('Fetching local VNDK snapshot from {}'.format(local_dir))
+        artifact_dir = local_dir
+
+    artifacts = glob.glob(os.path.join(artifact_dir, artifact_pattern))
+    for artifact in artifacts:
+        logging.info('Unzipping Vendor snapshot: {}'.format(artifact))
+        check_call(['unzip', '-qn', artifact, '-d', install_dir])
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'snapshot_version',
+        type=int,
+        help='Vendor snapshot version to install, e.g. "30".')
+    parser.add_argument('--branch', help='Branch to pull build from.')
+    parser.add_argument('--build', help='Build number to pull.')
+    parser.add_argument('--target', help='Target to pull.')
+    parser.add_argument(
+        '--local',
+        help=('Fetch local vendor snapshot artifacts from specified local '
+              'directory instead of Android Build server. '
+              'Example: --local /path/to/local/dir'))
+    parser.add_argument(
+        '--install-dir',
+        help=('Base directory to which vendor snapshot artifacts are installed. '
+              'Example: --install-dir vendor/<company name>/vendor_snapshot/v30'))
+
+    parser.add_argument(
+        '-v',
+        '--verbose',
+        action='count',
+        default=0,
+        help='Increase output verbosity, e.g. "-v", "-vv".')
+    return parser.parse_args()
+
+def main():
+    """Program entry point."""
+    args = get_args()
+
+    local = None
+    if args.local:
+        local = os.path.expanduser(args.local)
+
+    if local:
+        if args.build or args.branch or args.target:
+            raise ValueError(
+                'When --local option is set, --branch, --build or --target cannot be '
+                'specified.')
+        elif not os.path.isdir(local):
+            raise RuntimeError(
+                'The specified local directory, {}, does not exist.'.format(
+                    local))
+    else:
+        if not (args.build and args.branch):
+            raise ValueError(
+                'Please provide --branch, --build and --target. Or set --local '
+                'option.')
+
+    if not args.install_dir:
+        raise ValueError(
+            'Please provide --install-dir option.')
+
+    snapshot_version = args.snapshot_version
+
+    verbose_map = (logging.WARNING, logging.INFO, logging.DEBUG)
+    verbosity = min(args.verbose, 2)
+    logging.basicConfig(
+        format='%(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
+        level=verbose_map[verbosity])
+
+    install_dir = os.path.expanduser(args.install_dir)
+    if os.path.exists(install_dir):
+        resp = input('Directory {} already exists. IT WILL BE REMOVED.\n'
+                'Are you sure? (yes/no): '.format(install_dir))
+        if resp == 'yes':
+            logging.info('Removing {}'.format(install_dir))
+            check_call(['rm', '-rf', install_dir])
+        elif resp == 'no':
+            logging.info('Cancelled snapshot install.')
+            return
+        else:
+            raise ValueError('Did not understand: ' + resp)
+    check_call(['mkdir', '-p', install_dir])
+
+    temp_artifact_dir = None
+    if not local:
+        temp_artifact_dir = tempfile.mkdtemp()
+
+    try:
+        install_artifacts(branch=args.branch, build=args.build, target=args.target, local_dir=local, install_dir=install_dir, temp_artifact_dir=temp_artifact_dir)
+        gen_bp_files(install_dir, snapshot_version)
+    finally:
+        if temp_artifact_dir:
+            logging.debug('Removing temp directory {}'.format(temp_artifact_dir))
+            shutil.rmtree(temp_artifact_dir)
 
 if __name__ == '__main__':
     main()
