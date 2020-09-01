@@ -1,0 +1,13 @@
+Open-Source-Licensing+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Verified+1: SzuWei Lin <szuweilin@google.com>
+Lint+2: SzuWei Lin <szuweilin@google.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Presubmit-Verified-1: Treehugger Robot <treehugger-gerrit@google.com>
+Code-Review+2: Hung-ying Tyan <tyanh@google.com>
+DrNo-Review+1: Hung-ying Tyan <tyanh@google.com>
+Bypass-Presubmit+1: SzuWei Lin <szuweilin@google.com>
+Submitted-by: Hung-ying Tyan <tyanh@google.com>
+Submitted-at: Tue, 01 Sep 2020 05:07:01 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1413615
+Project: platform/development
+Branch: refs/heads/android10-gsi
