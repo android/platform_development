@@ -39,6 +39,30 @@
       "revId": "d879e8a490c3c13424d470e23fed555a5bff4ff2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f5b1f87_ca2579b3",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1067793
+      },
+      "writtenOn": "2020-09-09T04:12:07Z",
+      "side": 1,
+      "message": "fixed, please take a look again.",
+      "parentUuid": "856675a8_effe9204",
+      "range": {
+        "startLine": 135,
+        "startChar": 23,
+        "endLine": 135,
+        "endChar": 29
+      },
+      "revId": "d879e8a490c3c13424d470e23fed555a5bff4ff2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
