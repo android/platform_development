@@ -1,0 +1,10 @@
+Build-Cop-Override+1: Xin Li <delphij@google.com>
+Open-Source-Licensing+1: Lint 🤖 <android-build-ayeaye@system.gserviceaccount.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Lint+1: Lint 🤖 <android-build-ayeaye@system.gserviceaccount.com>
+Bypass-Presubmit+1: Xin Li <delphij@google.com>
+Submitted-by: Xin Li <delphij@google.com>
+Submitted-at: Thu, 10 Sep 2020 17:21:09 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1422289
+Project: platform/development
+Branch: refs/heads/master
