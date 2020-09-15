@@ -52,6 +52,24 @@
       "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05e21681_61136604",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1307957
+      },
+      "writtenOn": "2020-09-15T18:56:02Z",
+      "side": 1,
+      "message": "\u003e so your \"lldb, no-lldb\" group has two booleans that are always the opposite of each other?\n\nMutually exclusive means that they can not be set at the same time. If people say both --lldb --no-lldb the script will show an error.\n\nOn the other hand if the user didn\u0027t set any option, both of them will be False. So strictly speaking they will not always be opposite to each other...",
+      "parentUuid": "a3163e65_e9880f6b",
+      "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
