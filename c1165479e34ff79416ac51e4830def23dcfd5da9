@@ -16,6 +16,24 @@
       "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "950268dd_41593a3b",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1307957
+      },
+      "writtenOn": "2020-09-15T18:09:15Z",
+      "side": 1,
+      "message": "Which four choices do you think of? lldb, no-lldb, gdb, no-gdb?\n\nBy saying this I feel maybe it is better to have just --lldb and --gdb... Is it a little weird to say gdbclient.py --gdb?\n\nAlso should we show a warning \"If you want gdb use this option\"?",
+      "parentUuid": "fc2f0ca9_7e6774c8",
+      "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
