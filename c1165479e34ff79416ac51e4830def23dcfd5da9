@@ -34,6 +34,24 @@
       "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3163e65_e9880f6b",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2020-09-15T18:15:44Z",
+      "side": 1,
+      "message": "\u003e Which four choices do you think of? lldb, no-lldb, gdb, no-gdb?\n\nno, sorry, i was just imagining a \"mutually exclusive group\" on L120 of (say) \"hearts, spades, clubs, diamonds\" --- presumably _all_ the booleans are available? so your \"lldb, no-lldb\" group has two booleans that are always the opposite of each other?\n\n\u003e Is it a little weird to say gdbclient.py --gdb?\n\nyeah, but that\u0027s a separate issue. i think we should have another script, either with a generic name if you can think of one, or just lldbclient.py --- that way folks upset by saying \"gdbclient\" to get lldb can switch (but we also don\u0027t need to update the docs because we\u0027ll leave the old name around indefinitely).\n\nwe could also then have lldbclient not say anything extra, but gdbclient explicitly warn you that it\u0027s going to use lldb instead because gdb is deprecated and going to be removed.\n\n\u003e Also should we show a warning \"If you want gdb use this option\"?\n\ni don\u0027t think so, since we actively plan to remove gdb within the next year. i think it would be more useful to print a warning if you say --no-lldb that makes it clear that gdb is deprecated, so if there\u0027s a reason you can\u0027t use lldb you need to file a bug asap.",
+      "parentUuid": "950268dd_41593a3b",
+      "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
