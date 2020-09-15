@@ -70,6 +70,24 @@
       "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac1d4e92_8596ced5",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2020-09-15T20:15:02Z",
+      "side": 1,
+      "message": "ah, *that* was what i hadn\u0027t understood.",
+      "parentUuid": "05e21681_61136604",
+      "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
