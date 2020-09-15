@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "deabc612_ad10e7be",
+        "filename": "python-packages/gdbrunner/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2020-09-15T18:18:06Z",
+      "side": 1,
+      "message": "running",
+      "range": {
+        "startLine": 212,
+        "startChar": 64,
+        "endLine": 212,
+        "endChar": 67
+      },
+      "revId": "0db573897bd71940139bedd8a4ee521690d87bac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
