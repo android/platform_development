@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc2f0ca9_7e6774c8",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2020-09-15T17:04:07Z",
+      "side": 1,
+      "message": "does it work to just say `args.lldb` instead? (\"otherwise presumably a four-choice mutually exclusive group is unusable?\" he says, not actually knowing what\u0027s going on behind the scenes here but guessing from the names :-) )",
+      "revId": "c1165479e34ff79416ac51e4830def23dcfd5da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
