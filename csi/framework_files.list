@@ -1,0 +1,7 @@
+META/apkcerts.txt
+META/filesystem_config.txt
+META/root_filesystem_config.txt
+META/update_engine_config.txt
+ROOT/*
+SYSTEM/*
+IMAGES/system.img
