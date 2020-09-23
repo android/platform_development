@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5eccf504_99de0492",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2020-09-23T15:29:36Z",
+      "side": 1,
+      "message": "seems fine as a work-around to help unblock anyone wanting to debug, but +dwillemsen/ccross because i assume this is a bug and that RBE shouldn\u0027t be causing this? (iirc they go to a lot of trouble to avoid this kind of thing in the build system.)",
+      "revId": "987436c90b82b765b55c72471d015c10ae917f37",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
