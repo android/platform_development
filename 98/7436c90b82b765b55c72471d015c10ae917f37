@@ -1,0 +1,10 @@
+Autosubmit+1: Haibo Huang <hhb@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <android-build-ayeaye@system.gserviceaccount.com>
+Code-Review+2: Elliott Hughes <enh@google.com>
+Open-Source-Licensing+1: Lint 🤖 <android-build-ayeaye@system.gserviceaccount.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Wed, 23 Sep 2020 15:29:48 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/development/+/1434681
+Project: platform/development
+Branch: refs/heads/master
