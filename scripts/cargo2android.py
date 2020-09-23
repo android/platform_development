@@ -68,6 +68,22 @@ import sys
 # This set contains all such excluded crate names.
 EXCLUDED_CRATES = set(['protobuf_bin_gen_rust_do_not_use'])
 
+# Some Rust libraries are designed only for rlib, not dylib.
+RLIB_ONLY_LIBRARIES = set([
+    'libbitflags',
+    'libcfg_if',
+    'liblazycell',
+    # 'liblibc',  # TODO(chh): many .bp files will be changed
+    'libpin_project',
+    'libpin_project_lite',
+    'libpin_utils',
+    'libppv_lite86',
+    'libproc_macro_nested',
+    'libunicode_segmentation',
+    'libunicode_width',
+    'libunicode_xid',
+])
+
 RENAME_MAP = {
     # This map includes all changes to the default rust module names
     # to resolve name conflicts, avoid confusion, or work as plugin.
@@ -731,12 +747,11 @@ class Crate(object):
       self.stem = altered_stem(self.crate_name)
       self.module_name = altered_name(self.crate_name)
     elif crate_type == 'lib':  # rust_library[_host]
-      # TODO(chh): should this be rust_library[_host]?
-      # Assuming that Cargo.toml do not use both 'lib' and 'rlib',
-      # because we map them both to rlib.
       self.module_type = 'rust_library' + host
       self.stem = 'lib' + self.crate_name
       self.module_name = altered_name(self.stem)
+      if self.module_name in RLIB_ONLY_LIBRARIES:
+        self.module_type += '_rlib'
     elif crate_type == 'rlib':  # rust_library[_host]
       self.module_type = 'rust_library' + host
       self.stem = 'lib' + self.crate_name
@@ -828,6 +843,7 @@ class Crate(object):
   def dump_android_externs(self):
     """Dump the dependent rlibs and dylibs property."""
     so_libs = list()
+    rlib_libs = ''
     rust_libs = ''
     deps_libname = re.compile('^.* = lib(.*)-[0-9a-f]*.(rlib|so|rmeta)$')
     for lib in self.externs:
@@ -841,11 +857,17 @@ class Crate(object):
         lib_name = re.sub(' .*$', '', lib)
       if lib.endswith('.rlib') or lib.endswith('.rmeta'):
         # On MacOS .rmeta is used when Linux uses .rlib or .rmeta.
-        rust_libs += '        "' + altered_name('lib' + lib_name) + '",\n'
+        lib_name = altered_name('lib' + lib_name)
+        if lib_name in RLIB_ONLY_LIBRARIES:
+          rlib_libs += '        "' + lib_name + '",\n'
+        else:
+          rust_libs += '        "' + lib_name + '",\n'
       elif lib.endswith('.so'):
         so_libs.append(lib_name)
       elif lib != 'proc_macro':  # --extern proc_macro is special and ignored
         rust_libs += '        // ERROR: unknown type of lib ' + lib + '\n'
+    if rlib_libs:
+      self.write('    rlibs: [\n' + rlib_libs + '    ],')
     if rust_libs:
       self.write('    rustlibs: [\n' + rust_libs + '    ],')
     # Are all dependent .so files proc_macros?
