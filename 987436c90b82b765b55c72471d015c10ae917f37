@@ -16,6 +16,24 @@
       "revId": "987436c90b82b765b55c72471d015c10ae917f37",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d67ecec_ae75dbb7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2020-09-23T16:43:22Z",
+      "side": 1,
+      "message": "Yes, please file a bug for this.  We have a workaround that attempts to set the source path to /proc/self/cwd/, so the files produced by RBE should be identical to the ones built locally.",
+      "parentUuid": "5eccf504_99de0492",
+      "revId": "987436c90b82b765b55c72471d015c10ae917f37",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
