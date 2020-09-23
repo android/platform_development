@@ -1,0 +1,10 @@
+avb_system_hashtree_enable
+avb_system_add_hashtree_footer_args
+avb_product_hashtree_enable
+avb_product_add_hashtree_footer_args
+avb_system_ext_hashtree_enable
+avb_system_ext_add_hashtree_footer_args
+root_dir
+ab_update
+default_system_dev_certificate
+building_system_image
