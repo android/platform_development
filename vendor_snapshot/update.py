@@ -213,7 +213,7 @@ def gen_bp_files(install_dir, snapshot_version):
     props = dict()
 
     # {target_arch}/{arch}/{variation}/{module}.json
-    for root, _, files in os.walk(install_dir):
+    for root, _, files in os.walk(install_dir, followlinks = True):
         for file_name in sorted(files):
             if not file_name.endswith('.json'):
                 continue
@@ -300,17 +300,19 @@ def fetch_artifact(branch, build, target, pattern, destination):
     ]
     check_call(cmd)
 
-def install_artifacts(branch, build, target, local_dir, install_dir):
+def install_artifacts(branch, build, target, local_dir, symlink, install_dir):
     """Installs vendor snapshot build artifacts to {install_dir}/v{version}.
 
     1) Fetch build artifacts from Android Build server or from local_dir
-    2) Unzip build artifacts
+    2) Unzip or create symlinks to build artifacts
 
     Args:
       branch: string or None, branch name of build artifacts
       build: string or None, build number of build artifacts
       target: string or None, target name of build artifacts
       local_dir: string or None, local dir to pull artifacts from
+      symlink: boolean, whether to use symlinks instead of unzipping the
+        vendor snapshot zip
       install_dir: string, directory to install vendor snapshot
       temp_artifact_dir: string, temp directory to hold build artifacts fetched
         from Android Build server. For 'local' option, is set to None.
@@ -335,8 +337,23 @@ def install_artifacts(branch, build, target, local_dir, install_dir):
             fetch_artifact(branch, build, target, artifact_pattern, tmpdir)
             unzip_artifacts(tmpdir)
     elif local_dir:
-        logging.info('Fetching local VNDK snapshot from {}'.format(local_dir))
-        unzip_artifacts(local_dir)
+        if symlink:
+            # This assumes local_dir is the location of vendor-snapshot in the
+            # build (e.g., out/soong/vendor-snapshot).
+            archs = ['arm64']
+            for arch in archs:
+                dest_dir = os.path.join(install_dir, arch)
+                check_call(['mkdir', '-p', dest_dir])
+                src_dir = os.path.join(local_dir, arch)
+                for item in os.listdir(src_dir):
+                    src_item = os.path.join(src_dir, item)
+                    logging.info('Creating symlink from {} in {}'.format(
+                        src_item, dest_dir))
+                    os.symlink(src_item, os.path.join(dest_dir, item))
+        else:
+            logging.info('Fetching local VNDK snapshot from {}'.format(
+                local_dir))
+            unzip_artifacts(local_dir)
     else:
         raise RuntimeError('Neither local nor remote fetch information given.')
 
@@ -354,6 +371,10 @@ def get_args():
         help=('Fetch local vendor snapshot artifacts from specified local '
               'directory instead of Android Build server. '
               'Example: --local /path/to/local/dir'))
+    parser.add_argument(
+        '--symlink',
+        action='store_true',
+        help='Use symlinks instead of unzipping vendor snapshot zip')
     parser.add_argument(
         '--install-dir',
         help=(
@@ -432,6 +453,7 @@ def main():
         build=args.build,
         target=args.target,
         local_dir=local,
+        symlink=args.symlink,
         install_dir=install_dir)
     gen_bp_files(install_dir, snapshot_version)
 
