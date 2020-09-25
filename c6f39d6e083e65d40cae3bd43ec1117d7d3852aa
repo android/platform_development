@@ -63,6 +63,30 @@
       "revId": "c6f39d6e083e65d40cae3bd43ec1117d7d3852aa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57a76889_ed9221d2",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-09-25T02:28:32Z",
+      "side": 1,
+      "message": "If this CL is not urgent, it would be better to read the list from the local_dir, so that it can be used for the different archs.",
+      "parentUuid": "ab91a1c4_bb68bd28",
+      "range": {
+        "startLine": 343,
+        "startChar": 21,
+        "endLine": 343,
+        "endChar": 28
+      },
+      "revId": "c6f39d6e083e65d40cae3bd43ec1117d7d3852aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
