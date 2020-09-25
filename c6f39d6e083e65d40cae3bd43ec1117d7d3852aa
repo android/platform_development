@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7ee03435_cceb613c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2020-09-25T02:25:10Z",
+      "side": 1,
+      "message": "Thanks!",
+      "revId": "c6f39d6e083e65d40cae3bd43ec1117d7d3852aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2217304d_49de70f8",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 1
@@ -13,6 +30,30 @@
       "writtenOn": "2020-09-25T01:42:47Z",
       "side": 1,
       "message": "Why do you define a hard-coded arch list here, instead of reading it from the local_dir? Does the local_dir have more directories than the archs?",
+      "range": {
+        "startLine": 343,
+        "startChar": 21,
+        "endLine": 343,
+        "endChar": 28
+      },
+      "revId": "c6f39d6e083e65d40cae3bd43ec1117d7d3852aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab91a1c4_bb68bd28",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2020-09-25T02:25:10Z",
+      "side": 1,
+      "message": "No, it currently only contains arm64. I could read and create the first level directories from local_dir if you prefer.",
+      "parentUuid": "2217304d_49de70f8",
       "range": {
         "startLine": 343,
         "startChar": 21,
