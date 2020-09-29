@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "582ce210_f800f503",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-09-29T21:28:04Z",
+      "side": 1,
+      "message": "See the bug. Additionally, even if we decide to go with the rlib approach, having a list of libraries with this property is not the right way to do it, we should instead either autodetect it or encode it as a flag. Otherwise, it will not be possible to land a new rlib-only crate without editing the source of your script.",
+      "revId": "8c189b2d926185638794dd60959e516663d11c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
