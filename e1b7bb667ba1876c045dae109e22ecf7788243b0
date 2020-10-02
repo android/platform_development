@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92c4948e_b5b33911",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-10-02T03:34:17Z",
+      "side": 1,
+      "message": "Andrew, could you test this new change with your current work on vsock and nix?\nThanks.\n",
+      "revId": "e1b7bb667ba1876c045dae109e22ecf7788243b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
