@@ -16,6 +16,24 @@
       "revId": "e1b7bb667ba1876c045dae109e22ecf7788243b0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7280371e_70948538",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1380243
+      },
+      "writtenOn": "2020-10-02T12:25:34Z",
+      "side": 1,
+      "message": "This works for the vsock crate.\n\nHowever, why is the device build using x86_64-unknown-linux-gnu? Shouldn\u0027t it be x86_64-linux-android or aarch64-linux-android?",
+      "parentUuid": "92c4948e_b5b33911",
+      "revId": "e1b7bb667ba1876c045dae109e22ecf7788243b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
