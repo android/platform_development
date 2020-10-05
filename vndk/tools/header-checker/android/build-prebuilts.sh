@@ -88,6 +88,9 @@ cp -R "${CLANG_LIB_DIR}/share" "${CLANG_LIB_DIR_OUT}/share"
 cp -R "${CLANG_LIB_DIR}/include" "${CLANG_LIB_DIR_OUT}/include"
 ln -s "lib64/clang/${LLVM_RELEASE_VERSION}/include" "${SOONG_DIST}/clang-headers"
 
+# Copy libxml2, which is needed by libLLVM
+cp ${CLANG_DIR}/lib64/libxml2.* "${SOONG_DIST}/lib64"
+
 # Normalize library file names.  All library file names must match their soname.
 function extract_soname () {
     local file="$1"
