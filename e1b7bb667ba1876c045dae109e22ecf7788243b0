@@ -34,6 +34,24 @@
       "revId": "e1b7bb667ba1876c045dae109e22ecf7788243b0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4b7b8f9_47386eeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-10-06T08:25:08Z",
+      "side": 1,
+      "message": "If we run cargo build on host with other targets, we will need to set up necessary device libraries to link and run tests. At beginning, I kept this script simple to use and collect host/device independent flags to generate .bp files.",
+      "parentUuid": "7280371e_70948538",
+      "revId": "e1b7bb667ba1876c045dae109e22ecf7788243b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
