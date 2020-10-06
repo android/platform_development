@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f503f8fc_92ac04ec",
+        "filename": "vndk/tools/header-checker/android/build-prebuilts.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2020-10-06T02:53:29Z",
+      "side": 1,
+      "message": "\"${CLANG_DIR}/lib64/libxml2.\"*",
+      "range": {
+        "startLine": 92,
+        "startChar": 3,
+        "endLine": 92,
+        "endChar": 31
+      },
+      "revId": "bab4bccee2e6fd6a5a56a6e9887eede646649fde",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
