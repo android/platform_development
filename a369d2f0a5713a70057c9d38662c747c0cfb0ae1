@@ -39,6 +39,23 @@
       "message": "Override false positive Open-Source-Licensing Lint vote.\n",
       "revId": "a369d2f0a5713a70057c9d38662c747c0cfb0ae1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e76085a8_a55cb152",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-10-08T21:52:29Z",
+      "side": 1,
+      "message": "According to b/170259388 comment, we need another person to +2 on Open-Source-Licensing to override the Lint -1.\n",
+      "revId": "a369d2f0a5713a70057c9d38662c747c0cfb0ae1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
