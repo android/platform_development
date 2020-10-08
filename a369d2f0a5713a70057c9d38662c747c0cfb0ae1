@@ -22,6 +22,23 @@
       },
       "revId": "a369d2f0a5713a70057c9d38662c747c0cfb0ae1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8eff1f8c_690d812c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-10-08T21:51:21Z",
+      "side": 1,
+      "message": "Override false positive Open-Source-Licensing Lint vote.\n",
+      "revId": "a369d2f0a5713a70057c9d38662c747c0cfb0ae1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
