@@ -90,6 +90,23 @@
       "message": "Elliott, is the change to OWNERS okay?\n",
       "revId": "a369d2f0a5713a70057c9d38662c747c0cfb0ae1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68540986_a1f57fc5",
+        "filename": "scripts/OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2020-10-14T03:26:52Z",
+      "side": 1,
+      "message": "It might be better/easier to keep this in alphabetical order, but maybe that\u0027s not that important.",
+      "revId": "a369d2f0a5713a70057c9d38662c747c0cfb0ae1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
