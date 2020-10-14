@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f2ddaea_2c5c9cf9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-10-14T05:34:20Z",
+      "side": 1,
+      "message": "The Lint -1 vote bug shows up again. We need another +2 vote on Open-Source-Licensing to override it.\n",
+      "revId": "3d24aed831b8225be03741b2a28beefc564a7c23",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
