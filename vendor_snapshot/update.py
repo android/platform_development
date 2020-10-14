@@ -285,6 +285,193 @@ def gen_bp_files(image, install_dir, snapshot_version):
             f.write(androidbp)
 
 
+def find_all_installed_files(install_dir):
+    installed_files = dict()
+    for root, _, files in os.walk(install_dir, followlinks = True):
+        for file_name in sorted(files):
+            if file_name.endswith('.json'):
+                continue
+            if file_name.endswith('Android.bp'):
+                continue
+            full_path = os.path.join(root, file_name)
+            size = os.stat(full_path).st_size
+            installed_files[full_path] = size
+
+    print('')
+    for f in sorted(installed_files.keys()):
+        print(f)
+    print('')
+    print('found %d installed files' % len(installed_files))
+    print('')
+    return installed_files
+
+
+def find_files_in_props(target_arch, arch_install_dir, variation, name, props, file_to_info):
+    print(target_arch, arch_install_dir, variation, name, props)
+
+    def add_info(file, name, variation, arch, is_cfi, is_header):
+        info = (name, variation, arch, is_cfi, is_header)
+        info_list = file_to_info.get(file)
+        if not info_list:
+            info_list = []
+            file_to_info[file] = info_list
+        info_list.append(info)
+
+    def find_file_in_list(dict, key, is_cfi):
+        list = dict.get(key)
+        print('    %s' % key, list)
+        if list:
+            for item in list:
+                item_path = os.path.join(arch_install_dir, item)
+                add_info(item_path, name, variation, arch, is_cfi, False)
+
+    def find_file_in_dirs(dict, key, is_cfi, is_header):
+        dirs = dict.get(key)
+        print('    %s' % key, dirs)
+        if dirs:
+            for dir in dirs:
+                dir_path = os.path.join(arch_install_dir, dir)
+                print ('        scanning', dir_path)
+                for root, _, files in os.walk(dir_path, followlinks = True):
+                    for file_name in sorted(files):
+                        item_path = os.path.join(root, file_name)
+                        add_info(item_path, name, variation, arch, is_cfi, is_header)
+
+    def find_file_in_dict(dict, is_cfi):
+        print('    arch', arch)
+        print('    name', name)
+        print('    is_cfi', is_cfi)
+
+        src = dict.get('src')
+        print('    src', src)
+        if src:
+            src_path = os.path.join(arch_install_dir, src)
+            add_info(src_path, name, variation, arch, is_cfi, False)
+
+        notice = dict.get('notice')
+        print('    notice', notice)
+        if notice:
+            notice_path = os.path.join(arch_install_dir, notice)
+            add_info(notice_path, name, variation, arch, is_cfi, False)
+
+        find_file_in_list(dict, 'init_rc', is_cfi)
+        find_file_in_list(dict, 'vintf_fragments', is_cfi)
+
+        find_file_in_dirs(dict, 'export_include_dirs', is_cfi, True)
+        find_file_in_dirs(dict, 'export_system_include_dirs', is_cfi, True)
+
+    for arch in sorted(props):
+        name = props[arch]['name']
+        find_file_in_dict(props[arch], False)
+        cfi = props[arch].get('cfi')
+        if cfi:
+            find_file_in_dict(cfi, True)
+
+
+def find_all_props_files(install_dir):
+
+    # This function builds a database of filename to module. This means that we
+    # need to dive into the json to find the files that the vendor snapshot
+    # provides, and link these back to modules that provide them.
+
+    file_to_info = dict()
+
+    props = build_props(install_dir)
+    for target_arch in sorted(props):
+        arch_install_dir = os.path.join(install_dir, target_arch)
+        for variation in sorted(props[target_arch]):
+            for name in sorted(props[target_arch][variation]):
+                find_files_in_props(
+                    target_arch,
+                    arch_install_dir,
+                    variation,
+                    name,
+                    props[target_arch][variation][name],
+                    file_to_info)
+
+    print('')
+    for f in sorted(file_to_info.keys()):
+        print(f)
+    print('')
+    print('found %d props files' % len(file_to_info))
+    print('')
+    return file_to_info
+
+
+def get_ninja_inputs(ninja_binary, ninja_build_file, modules):
+    """Returns the set of input file path strings for the given modules.
+
+    Uses the `ninja -t inputs` tool.
+
+    Args:
+        ninja_binary: The path to a ninja binary.
+        ninja_build_file: The path to a .ninja file from a build.
+        modules: The list of modules to scan for inputs.
+    """
+    inputs = set()
+    cmd = [
+        ninja_binary,
+        "-f",
+        ninja_build_file,
+        "-t",
+        "inputs",
+        "-d",
+    ] + list(modules)
+    print('invoke ninja', cmd)
+    inputs = inputs.union(set(
+        subprocess.check_output(cmd).decode().strip("\n").split("\n")))
+
+    return inputs
+
+
+def check_module_usage(install_dir, ninja_binary, ninja_file, goals):
+    all_installed_files = find_all_installed_files(install_dir)
+    all_props_files = find_all_props_files(install_dir)
+
+    ninja_inputs = get_ninja_inputs(ninja_binary, ninja_file, goals)
+    print('')
+    print('ninja inputs')
+    for ni in ninja_inputs:
+        print(ni)
+
+    print('found %d ninja_inputs for goals' % len(ninja_inputs), goals)
+
+    # Intersect the file_to_info dict with the ninja_inputs to determine
+    # which items from the vendor snapshot are actually used by the goals.
+
+    total_size = 0
+    used_size = 0
+    used_file_to_info = dict()
+
+    for file, size in all_installed_files.items():
+        total_size += size
+        if file in ninja_inputs:
+            print('used: %s' % file)
+            used_size += size
+            info = all_props_files.get(file)
+
+            if info:
+                used_file_to_info[file] = info
+            else:
+                used_file_to_info[file] = 'no info'
+
+    print('')
+    print('used items')
+
+    used_modules = set()
+
+    for f, i in sorted(used_file_to_info.items()):
+        print(f, i)
+        for m in i:
+            key = 'n=%s,v=%s,a=%s,c=%s,h=%s' % m
+            (name, variation, arch, is_cfi, is_header) = m
+            if not is_header:
+                used_modules.add(key)
+
+    with open('out/used_modules.txt', 'w') as f:
+        for m in sorted(used_modules):
+            f.write('%s\n' % m)
+
 def check_call(cmd):
     logging.debug('Running `{}`'.format(' '.join(cmd)))
     subprocess.check_call(cmd)
@@ -404,6 +591,17 @@ def get_args():
         action='store_true',
         help=(
             'If provided, does not ask before overwriting the install-dir.'))
+    parser.add_argument(
+        '--check-module-usage',
+        action='store_true',
+        help='Check which modules are used.')
+    parser.add_argument(
+        '--check-module-usage-goal',
+        action='append',
+        help='Goal(s) for which --check-module-usage is calculated.')
+    parser.add_argument(
+        '--check-module-usage-ninja-file',
+        help='Ninja file for which --check-module-usage is calculated.')
 
     parser.add_argument(
         '-v',
@@ -417,6 +615,24 @@ def get_args():
 def main():
     """Program entry point."""
     args = get_args()
+
+    if not args.install_dir:
+        raise ValueError('Please provide --install-dir option.')
+    install_dir = os.path.expanduser(args.install_dir)
+
+    if args.check_module_usage:
+        ninja_binary = './prebuilts/build-tools/linux-x86/bin/ninja'
+
+        if not args.check_module_usage_goal:
+            raise ValueError('Please provide --check-module-usage-goal option.')
+        if not args.check_module_usage_ninja_file:
+            raise ValueError(
+                'Please provide --check-module-usage-ninja-file option.')
+
+        check_module_usage(install_dir, ninja_binary,
+                           args.check_module_usage_ninja_file,
+                           args.check_module_usage_goal)
+        return
 
     local = None
     if args.local:
@@ -437,9 +653,6 @@ def main():
                 'Please provide --branch, --build and --target. Or set --local '
                 'option.')
 
-    if not args.install_dir:
-        raise ValueError('Please provide --install-dir option.')
-
     snapshot_version = args.snapshot_version
 
     verbose_map = (logging.WARNING, logging.INFO, logging.DEBUG)
@@ -448,7 +661,6 @@ def main():
         format='%(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
         level=verbose_map[verbosity])
 
-    install_dir = os.path.expanduser(args.install_dir)
     if os.path.exists(install_dir):
         def remove_dir():
             logging.info('Removing {}'.format(install_dir))
