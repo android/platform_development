@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56fc9318_b5cd409d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2020-10-20T07:47:35Z",
+      "side": 1,
+      "message": "Nice improvement. I just ran into this not recognizing MIT licenses last night, so thanks for the fix.",
+      "revId": "03f14e4b4f0e23fc0454a36715b3f22a1a8467eb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
