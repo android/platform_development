@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4aec27d_5be44fec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-10-21T13:13:56Z",
+      "side": 1,
+      "message": "Hung-ying, Andrew, Would you help move this patch forward?\n`bpflatten` parses the bp file, `bpmodify` rewrites the bp file, and the script `fix_android_bp_prebuilt.sh` is virtually a \"super glue\" that glues this two bp parsing component together.",
+      "revId": "cfff3e58c303bf7239e2f38a5b869b8c584341f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
