@@ -18,6 +18,23 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b383071_0aaae6f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-11-18T22:18:25Z",
+      "side": 1,
+      "message": "This breaks current basic use cases of cargo2android.py, which need to run on any (sub)directories independently and in parallel. Note that a crate might not be the root package, and can even depend on other local crates. Finding the right dependent TEST_MAPPING file is complicated.\nTo solve original problem in b/168167373, please consider two approaches: (1) use that issue\u0027s comment #1, #79, #80; add one TH presubmit build/test triggered by all rust crate changes, (2) use an independent script to scan wanted directories; if it wants to change any TEST_MAPPING file it should add required patch files so that the next auto update will keep the changes.\nI think (1) is easier to implement and maintain, and matches Android TEST_MAPPING and TH designs.\n",
+      "revId": "b8d216123faa7a986ef79605839d3fed69d67400",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0374eae_ec08c5af",
