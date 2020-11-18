@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cc4cf9d_de629820",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-11-18T19:42:06Z",
+      "side": 1,
+      "message": "Seems good, one thing that doesn\u0027t need to be fixed in this CL that we should think about:\n\nA depends on B.\nB generates a TEST_MAPPING.\nA updates, and renames or deletes its tests.\n\nHow do we handle this? If A is an extremely popular crate, going through and regenerating all the TEST_MAPPINGs could get quite tedious...",
+      "revId": "b8d216123faa7a986ef79605839d3fed69d67400",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0374eae_ec08c5af",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-11-18T19:42:06Z",
+      "side": 1,
+      "message": "Nit: space (maybe pylint to catch this sort of thing?)",
+      "range": {
+        "startLine": 121,
+        "startChar": 71,
+        "endLine": 121,
+        "endChar": 72
+      },
+      "revId": "b8d216123faa7a986ef79605839d3fed69d67400",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a678a449_a9a504b7",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-11-18T19:42:06Z",
+      "side": 1,
+      "message": "Nit: space after comma",
+      "range": {
+        "startLine": 129,
+        "startChar": 73,
+        "endLine": 129,
+        "endChar": 74
+      },
+      "revId": "b8d216123faa7a986ef79605839d3fed69d67400",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb02ae63_975c15ed",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2020-11-18T19:42:06Z",
+      "side": 1,
+      "message": "Is it worth considering taking a list of paths to regenerate here? My argument would be:\n\n* If this is a standalone tool, intended to be used for maintenance, we should allow people to list all packages they want to regenerate.\n* If this is only to be invoked by the main update script, we should remove the main() altogether.",
+      "revId": "b8d216123faa7a986ef79605839d3fed69d67400",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
