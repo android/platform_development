@@ -53,6 +53,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be57129b_761679f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-11-19T18:36:52Z",
+      "side": 1,
+      "message": "Let\u0027s continue discussion at b/168167373.",
+      "parentUuid": "8850e469_3bacaecc",
+      "revId": "b8d216123faa7a986ef79605839d3fed69d67400",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0374eae_ec08c5af",
