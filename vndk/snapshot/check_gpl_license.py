@@ -257,7 +257,7 @@ def get_args():
     parser.add_argument(
         'vndk_version',
         type=int,
-        help='VNDK snapshot version to check, e.g. "27".')
+        help='VNDK snapshot version to check, e.g. "30".')
     parser.add_argument('-b', '--branch', help='Branch to pull manifest from.')
     parser.add_argument('--build', help='Build number to pull manifest from.')
     parser.add_argument(
