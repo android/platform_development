@@ -16,6 +16,24 @@
       "message": "How will vndkproduct.libraries.txt be generated?",
       "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce804172_8c3bbd0b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-11-30T02:28:22Z",
+      "side": 1,
+      "message": "That will be generated with aosp/1479577. It is similar to vndkprivate.libraries.txt and will update the current.txt file for vndk file list.",
+      "parentUuid": "1d7f9045_6e969d13",
+      "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
