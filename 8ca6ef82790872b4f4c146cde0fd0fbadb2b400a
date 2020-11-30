@@ -128,6 +128,30 @@
       },
       "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "713e6c02_8db94bb9",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-11-30T04:21:30Z",
+      "side": 1,
+      "message": "Then touch can\u0027t be used I think.",
+      "parentUuid": "740ff5ac_e655f6ed",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 35
+      },
+      "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
