@@ -117,6 +117,30 @@
       },
       "revId": "ec04c14aab411038d81a1c0f30d4c461bda4da0e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d747f546_8a09b2fe",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-11-30T06:31:23Z",
+      "side": 1,
+      "message": "Jooyung also has concern on it. Let me update the libs described from the VENDOR_COMPAT dictionary.",
+      "parentUuid": "81bd3c77_1911555f",
+      "range": {
+        "startLine": 350,
+        "startChar": 0,
+        "endLine": 355,
+        "endChar": 54
+      },
+      "revId": "ec04c14aab411038d81a1c0f30d4c461bda4da0e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
