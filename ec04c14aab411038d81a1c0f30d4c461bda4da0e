@@ -94,6 +94,29 @@
       },
       "revId": "ec04c14aab411038d81a1c0f30d4c461bda4da0e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81bd3c77_1911555f",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-11-30T04:56:34Z",
+      "side": 1,
+      "message": "This seems to be very specific about the proto libs. Unless we can use this function for other libraries, I wish we rename this function to emphasize that it\u0027s for the proto libs.",
+      "range": {
+        "startLine": 350,
+        "startChar": 0,
+        "endLine": 355,
+        "endChar": 54
+      },
+      "revId": "ec04c14aab411038d81a1c0f30d4c461bda4da0e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
