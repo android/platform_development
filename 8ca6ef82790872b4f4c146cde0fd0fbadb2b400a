@@ -57,6 +57,29 @@
       },
       "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85469088_4939fcdc",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-11-30T03:45:58Z",
+      "side": 1,
+      "message": "nit; how about using touch of pathlib?\n\nfrom pathlib import Path\n\nPath(file_name).touch(exist_ok\u003dTrue)",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 35
+      },
+      "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
