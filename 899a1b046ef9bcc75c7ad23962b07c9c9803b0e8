@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2350c63_c4890a81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-11-30T00:08:09Z",
+      "side": 1,
+      "message": "Let me split this CL into fixes for each bug.",
+      "revId": "899a1b046ef9bcc75c7ad23962b07c9c9803b0e8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
