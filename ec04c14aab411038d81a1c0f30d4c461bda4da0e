@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90fe4502_12af5f3a",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2020-11-30T03:13:29Z",
+      "side": 1,
+      "message": "nit: is this too generic?\n\nDo we want to add more of \"VENDOR_COMPAT\" while _gen_prebuilt_library_shared is not so generic(see shared_libs)? Can we just hard-code \"28\", \"protobuf\".. etc?",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 159,
+        "endChar": 69
+      },
+      "revId": "ec04c14aab411038d81a1c0f30d4c461bda4da0e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
