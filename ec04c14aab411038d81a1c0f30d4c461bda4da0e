@@ -46,6 +46,30 @@
       },
       "revId": "ec04c14aab411038d81a1c0f30d4c461bda4da0e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e334f83_197fb056",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2020-11-30T04:23:04Z",
+      "side": 1,
+      "message": "It\u0027s your call. I\u0027m fine with the current. I just wanted to point out _gen_prebuilt_library_shared is not generic enough to be used with other modules. (It hard-coded shared_libs list).",
+      "parentUuid": "cbe28c1c_8242c52a",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 159,
+        "endChar": 69
+      },
+      "revId": "ec04c14aab411038d81a1c0f30d4c461bda4da0e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
