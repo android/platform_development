@@ -61,6 +61,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "17c1d1a3_5b27f62f",
+        "filename": "vndk/snapshot/gen_buildfiles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-11-30T03:57:18Z",
+      "side": 1,
+      "message": "This is intentional.\nFor the VNDKs, not defining product_available will not create product variant, while \u0027product_available: false\u0027 will create VNDK-private library.\nIf defined, it must have the same value with the value of the vendor_available since it cannot be private to vendor but not to product.",
+      "parentUuid": "7a60140e_c9f0fd55",
+      "range": {
+        "startLine": 569,
+        "startChar": 43,
+        "endLine": 569,
+        "endChar": 59
+      },
+      "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "85469088_4939fcdc",
         "filename": "vndk/snapshot/update.py",
         "patchSetId": 2
@@ -72,6 +96,30 @@
       "writtenOn": "2020-11-30T03:45:58Z",
       "side": 1,
       "message": "nit; how about using touch of pathlib?\n\nfrom pathlib import Path\n\nPath(file_name).touch(exist_ok\u003dTrue)",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 35
+      },
+      "revId": "8ca6ef82790872b4f4c146cde0fd0fbadb2b400a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "740ff5ac_e655f6ed",
+        "filename": "vndk/snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2020-11-30T03:57:18Z",
+      "side": 1,
+      "message": "Thanks for the suggestion.\nI didn\u0027t want to change the timestamp if it already exist.\nI may replace \u0027open(path).close()\u0027 with \u0027Path(path).touch()\u0027, but I am not sure the differences between these two.",
+      "parentUuid": "85469088_4939fcdc",
       "range": {
         "startLine": 133,
         "startChar": 0,
