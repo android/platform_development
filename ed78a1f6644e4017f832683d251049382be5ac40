@@ -22,6 +22,30 @@
       },
       "revId": "ed78a1f6644e4017f832683d251049382be5ac40",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87cc49d9_a7294e91",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2020-12-01T01:52:23Z",
+      "side": 1,
+      "message": "There is no such thing (if anyone uses this, they have a custom build system, see b/127523215). Methodology for fixing this, after enh/danalbert meeting is in b/160624671#comment6.",
+      "parentUuid": "54281658_a549239b",
+      "range": {
+        "startLine": 181,
+        "startChar": 120,
+        "endLine": 181,
+        "endChar": 147
+      },
+      "revId": "ed78a1f6644e4017f832683d251049382be5ac40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
