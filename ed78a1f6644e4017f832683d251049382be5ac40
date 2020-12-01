@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54281658_a549239b",
+        "filename": "build/sdk.atree",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2020-12-01T01:46:04Z",
+      "side": 1,
+      "message": "shouldn\u0027t we have another change (in gradle and in the NDK build system) so that this path is added to the include path?",
+      "range": {
+        "startLine": 181,
+        "startChar": 120,
+        "endLine": 181,
+        "endChar": 147
+      },
+      "revId": "ed78a1f6644e4017f832683d251049382be5ac40",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
