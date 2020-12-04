@@ -674,6 +674,13 @@ class Crate(object):
       self.dump_edition_flags_libs()
     if self.runner.args.host_first_multilib and self.host_supported and crate_type != 'test':
       self.write('    compile_multilib: "first",')
+    if crate_type != 'test' and self.device_supported:
+      self.dump_android_property_list('apex_available', '"%s"', [
+          '//apex_available:anyapex',
+          '//apex_available:platform',
+      ])
+      self.write('    min_sdk_version: "29",')
+
     self.write('}')
 
   def dump_android_flags(self):
