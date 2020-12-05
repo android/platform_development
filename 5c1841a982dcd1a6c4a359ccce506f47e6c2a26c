@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f98fcef3_a10f2cf9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2020-12-05T00:39:12Z",
+      "side": 1,
+      "message": "Let\u0027s follow up in b/174862583. It doesn\u0027t seem right to make this default setting for all modules. Maybe it could be an option for some modules, or we can use post c2a patches for needed .bp files.\n",
+      "revId": "5c1841a982dcd1a6c4a359ccce506f47e6c2a26c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
