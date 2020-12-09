@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "636b1054_634aa8e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2020-12-09T22:41:22Z",
+      "side": 1,
+      "message": "This script is not python3 either, which I\u0027ll fix in the next version.",
+      "revId": "49eda0e908580842501eb0cf560cda31f62d01fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
