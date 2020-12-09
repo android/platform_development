@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1180468_bbd64df4",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2020-12-09T22:46:00Z",
+      "side": 0,
+      "message": "glad to see the back of this kind of crap!",
+      "revId": "0c4a338b683a509be1f0d06e36e252a84069a2b8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
