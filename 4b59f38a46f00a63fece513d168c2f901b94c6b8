@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d553a568_ac5f3437",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2020-12-16T02:08:39Z",
+      "side": 1,
+      "message": "update this to support both images?",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 327,
+        "endChar": 37
+      },
+      "revId": "4b59f38a46f00a63fece513d168c2f901b94c6b8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
