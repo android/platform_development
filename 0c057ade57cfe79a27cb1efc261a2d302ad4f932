@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5391c68c_ad57b1d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-01-09T01:46:08Z",
+      "side": 1,
+      "message": "Note that OWNER review was still \"required\" on this until I changed Verified to +1 (i.e. changed the status of something irrelevant). I\u0027ll point this out to the new Find-Owners folks, since this seems like a bug.",
+      "revId": "0c057ade57cfe79a27cb1efc261a2d302ad4f932",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
