@@ -56,6 +56,30 @@
       },
       "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1cf22f6_476b91a9",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-01-12T20:02:31Z",
+      "side": 1,
+      "message": "Agreed.  My intention was to leave it in case we needed it later, especially since I\u0027m not familiar with this codebase at all.  But if you\u0027d like I can remove it now.\n\nAn alternative design I considered was to continue adding host tests but not print them.  Again, since I don\u0027t know the code very well, I wasn\u0027t sure if that might facilitate things later.",
+      "parentUuid": "7e81630e_b88d9637",
+      "range": {
+        "startLine": 662,
+        "startChar": 63,
+        "endLine": 662,
+        "endChar": 68
+      },
+      "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
