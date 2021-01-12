@@ -16,6 +16,46 @@
       "message": "I\u0027m not too familiar with this script, so reviews are of course appreciated.\n\nCCing Ivan as this affects the flags for the rust_test_host Soong module.",
       "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56f9aec5_16f777da",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-01-12T19:55:38Z",
+      "side": 1,
+      "message": "I think remove this line because it just rots otherwise.",
+      "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e81630e_b88d9637",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-01-12T19:55:38Z",
+      "side": 1,
+      "message": "This `host` parameter is now unused, since all `add_test()` calls use `False`. There\u0027s a bit of cleanup that can remove the host aspect.",
+      "range": {
+        "startLine": 662,
+        "startChar": 63,
+        "endLine": 662,
+        "endChar": 68
+      },
+      "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
