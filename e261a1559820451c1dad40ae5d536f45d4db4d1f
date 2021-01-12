@@ -35,6 +35,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32ffc1d6_3de308b6",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-01-12T22:59:03Z",
+      "side": 1,
+      "message": "Marking this resolved since I think it can get removed in a follow-up that actually eliminates the host parameter.",
+      "parentUuid": "56f9aec5_16f777da",
+      "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e81630e_b88d9637",
@@ -72,6 +90,30 @@
       "side": 1,
       "message": "Agreed.  My intention was to leave it in case we needed it later, especially since I\u0027m not familiar with this codebase at all.  But if you\u0027d like I can remove it now.\n\nAn alternative design I considered was to continue adding host tests but not print them.  Again, since I don\u0027t know the code very well, I wasn\u0027t sure if that might facilitate things later.",
       "parentUuid": "7e81630e_b88d9637",
+      "range": {
+        "startLine": 662,
+        "startChar": 63,
+        "endLine": 662,
+        "endChar": 68
+      },
+      "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d569fc5_6aecf241",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-01-12T22:59:03Z",
+      "side": 1,
+      "message": "I\u0027m generally not a fan of making code more complex for some possible future use. It would be easy enough to add the host tests to a list if we find out we need that list later. Also, it\u0027s ok to just clean this up in a follow-up, to make this particular change more incremental (i.e. remove host tests from the list now, get rid of the host parameter next, ...).",
+      "parentUuid": "a1cf22f6_476b91a9",
       "range": {
         "startLine": 662,
         "startChar": 63,
