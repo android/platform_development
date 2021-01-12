@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64b74df2_fd7f5249",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-01-12T19:39:33Z",
+      "side": 1,
+      "message": "I\u0027m not too familiar with this script, so reviews are of course appreciated.\n\nCCing Ivan as this affects the flags for the rust_test_host Soong module.",
+      "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
