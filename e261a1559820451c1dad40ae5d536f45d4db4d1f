@@ -122,6 +122,30 @@
       },
       "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1f46cab_2e09a350",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-01-13T16:20:11Z",
+      "side": 1,
+      "message": "Sounds good to me.  I\u0027ll merge this now and start working on a follow-up to clean it up.",
+      "parentUuid": "1d569fc5_6aecf241",
+      "range": {
+        "startLine": 662,
+        "startChar": 63,
+        "endLine": 662,
+        "endChar": 68
+      },
+      "revId": "e261a1559820451c1dad40ae5d536f45d4db4d1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
