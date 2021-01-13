@@ -16,6 +16,24 @@
       "message": "Was this what you had in mind, Stephen?",
       "revId": "4319a7e8a5bb4aaf03f3e1457a4d7f4f2374da85",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7491ad7a_3843867c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-01-13T19:00:09Z",
+      "side": 1,
+      "message": "Yes, thanks for cleaning this up.",
+      "parentUuid": "670add4e_eca66950",
+      "revId": "4319a7e8a5bb4aaf03f3e1457a4d7f4f2374da85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
