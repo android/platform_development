@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca2a0171_abffe868",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-01-15T16:59:25Z",
+      "side": 1,
+      "message": "It\u0027s probably worth removing this comment since you remove the corresponding line for device tests.",
+      "revId": "b23d868f5f7f4cabb4525cc100961ccff7c1c7a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "753fc826_9a52102b",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-01-15T16:59:25Z",
+      "side": 1,
+      "message": "I assume this returns the tests for the module itself (as they of course depend on it).  But where is this filtering out host tests?",
+      "revId": "b23d868f5f7f4cabb4525cc100961ccff7c1c7a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
