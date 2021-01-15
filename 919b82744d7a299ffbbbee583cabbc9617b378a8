@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58cf79b3_fe7f4ace",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-01-15T19:45:55Z",
+      "side": 1,
+      "message": "2021",
+      "range": {
+        "startLine": 3,
+        "startChar": 16,
+        "endLine": 3,
+        "endChar": 20
+      },
+      "revId": "919b82744d7a299ffbbbee583cabbc9617b378a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
