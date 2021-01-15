@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ce526a8_4947fa0e",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2021-01-15T18:35:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca2a0171_abffe868",
+      "revId": "b23d868f5f7f4cabb4525cc100961ccff7c1c7a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "753fc826_9a52102b",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-01-15T16:59:25Z",
       "side": 1,
       "message": "I assume this returns the tests for the module itself (as they of course depend on it).  But where is this filtering out host tests?",
+      "revId": "b23d868f5f7f4cabb4525cc100961ccff7c1c7a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2749ba93_ed32a6c2",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2021-01-15T18:35:21Z",
+      "side": 1,
+      "message": "Line 85 omits \"rust_test_host\"",
+      "parentUuid": "753fc826_9a52102b",
       "revId": "b23d868f5f7f4cabb4525cc100961ccff7c1c7a3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
