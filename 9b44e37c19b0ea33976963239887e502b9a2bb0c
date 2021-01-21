@@ -25,6 +25,32 @@
       },
       "revId": "9b44e37c19b0ea33976963239887e502b9a2bb0c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000007485368",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1556702?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "f3848be8_5e8af66d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-01-21T21:09:51Z",
+      "side": 1,
+      "message": "Third-party license (CC_BY_SA) disallowed in repository platform/development:\nCreative Commons Attribution-ShareAlike\n",
+      "range": {
+        "startLine": 9,
+        "startChar": 44,
+        "endLine": 10,
+        "endChar": 23
+      },
+      "revId": "9b44e37c19b0ea33976963239887e502b9a2bb0c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
