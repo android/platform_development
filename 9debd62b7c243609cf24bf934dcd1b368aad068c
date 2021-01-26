@@ -16,6 +16,23 @@
       "message": "PTAL\n\nAdded comment\n",
       "revId": "9debd62b7c243609cf24bf934dcd1b368aad068c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b782359a_1e5dfac4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-01-26T22:32:38Z",
+      "side": 1,
+      "message": "Seems odd for there to be a METADATA file here at all, since this isn\u0027t in external/.",
+      "revId": "9debd62b7c243609cf24bf934dcd1b368aad068c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
