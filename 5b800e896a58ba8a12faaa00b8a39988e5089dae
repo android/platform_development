@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a63cc03a_d41d3036",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2021-01-26T01:19:37Z",
+      "side": 1,
+      "message": "We should support any targets.",
+      "range": {
+        "startLine": 622,
+        "startChar": 0,
+        "endLine": 622,
+        "endChar": 46
+      },
+      "revId": "5b800e896a58ba8a12faaa00b8a39988e5089dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
