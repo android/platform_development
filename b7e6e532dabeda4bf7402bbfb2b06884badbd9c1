@@ -22,6 +22,30 @@
       },
       "revId": "b7e6e532dabeda4bf7402bbfb2b06884badbd9c1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c372b822_e95e8541",
+        "filename": "apps/SdkSetup/src/com/android/sdksetup/DefaultActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1121388
+      },
+      "writtenOn": "2021-01-27T19:03:14Z",
+      "side": 1,
+      "message": "That\u0027s actually true. I checked with `adb shell getprop`. So I will just no check in this CL until we figure out what to do with all the property name from qemu-props. The only property I see starts with \"vendor\" is vendor.qemu.dev.bootcomplete.",
+      "parentUuid": "f6f70f22_113e0d8b",
+      "range": {
+        "startLine": 48,
+        "startChar": 54,
+        "endLine": 48,
+        "endChar": 81
+      },
+      "revId": "b7e6e532dabeda4bf7402bbfb2b06884badbd9c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
