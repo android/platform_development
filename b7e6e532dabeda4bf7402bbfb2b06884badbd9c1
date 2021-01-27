@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6f70f22_113e0d8b",
+        "filename": "apps/SdkSetup/src/com/android/sdksetup/DefaultActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1278660
+      },
+      "writtenOn": "2021-01-27T18:42:19Z",
+      "side": 1,
+      "message": "Is it set? It looks like our qemu-props has a very bad typo: we prepend \"vendor.\" into final_prop_name, but use temp anyway.\n\nhttps://android.googlesource.com/device/generic/goldfish/+/refs/heads/master/qemu-props/qemu-props.cpp#131",
+      "range": {
+        "startLine": 48,
+        "startChar": 54,
+        "endLine": 48,
+        "endChar": 81
+      },
+      "revId": "b7e6e532dabeda4bf7402bbfb2b06884badbd9c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
