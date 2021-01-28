@@ -37,6 +37,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "54d2c0cb_0879d88f",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2021-01-28T03:56:32Z",
+      "side": 1,
+      "message": "Are these only for debugging? They are defined but not used.",
+      "range": {
+        "startLine": 442,
+        "startChar": 4,
+        "endLine": 443,
+        "endChar": 17
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3c6ebb1_b71946e8",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 4
@@ -53,6 +76,52 @@
         "startChar": 0,
         "endLine": 457,
         "endChar": 0
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef034bf7_f6c5b3a6",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2021-01-28T03:56:32Z",
+      "side": 1,
+      "message": "I think we need \u0027required\u003dTrue\u0027 option for this if it is a mandatory argument.",
+      "range": {
+        "startLine": 585,
+        "startChar": 8,
+        "endLine": 585,
+        "endChar": 24
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5112c1d8_c3c9b972",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2021-01-28T03:56:32Z",
+      "side": 1,
+      "message": "Are the goals module names?",
+      "range": {
+        "startLine": 601,
+        "startChar": 14,
+        "endLine": 601,
+        "endChar": 21
       },
       "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
