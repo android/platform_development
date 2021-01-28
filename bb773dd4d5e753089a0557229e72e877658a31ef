@@ -58,6 +58,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "351212f9_3237cc84",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-01-28T17:12:24Z",
+      "side": 1,
+      "message": "Added debug statements using those.",
+      "parentUuid": "54d2c0cb_0879d88f",
+      "range": {
+        "startLine": 442,
+        "startChar": 4,
+        "endLine": 443,
+        "endChar": 17
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3c6ebb1_b71946e8",
@@ -104,6 +128,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "293d0af6_6ee9e510",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-01-28T17:12:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef034bf7_f6c5b3a6",
+      "range": {
+        "startLine": 585,
+        "startChar": 8,
+        "endLine": 585,
+        "endChar": 24
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5112c1d8_c3c9b972",
@@ -117,6 +165,30 @@
       "writtenOn": "2021-01-28T03:56:32Z",
       "side": 1,
       "message": "Are the goals module names?",
+      "range": {
+        "startLine": 601,
+        "startChar": 14,
+        "endLine": 601,
+        "endChar": 21
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb133610_119e7282",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-01-28T17:12:24Z",
+      "side": 1,
+      "message": "No, those are build goals, for instance \n\n--check-module-usage-goal\u003dout/target/product/kona/vendor.img",
+      "parentUuid": "5112c1d8_c3c9b972",
       "range": {
         "startLine": 601,
         "startChar": 14,
