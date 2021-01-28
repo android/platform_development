@@ -107,6 +107,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "86023b24_cb71f3dc",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1395887
+      },
+      "writtenOn": "2021-01-28T22:59:30Z",
+      "side": 1,
+      "message": "That seems like a better way to handle it. However, I wonder if it will create a lot of noise with header files (I\u0027m not sure that it would). Since both the fake snapshot and the directed snapshot include all headers (do I understand that correctly?) If printing an error here causes a lot of noise, perhaps ignoring headers would be a way around that. See comment above about ignoring headers.",
+      "parentUuid": "e3c6ebb1_b71946e8",
+      "range": {
+        "startLine": 455,
+        "startChar": 0,
+        "endLine": 457,
+        "endChar": 0
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ef034bf7_f6c5b3a6",
         "filename": "vendor_snapshot/update.py",
         "patchSetId": 4
