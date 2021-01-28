@@ -153,6 +153,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c2df7a8_3e76e9f6",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-01-28T23:27:00Z",
+      "side": 1,
+      "message": "I added a warning. The warning never gets printed when I run it. Even header\nfiles have info, is that expected?",
+      "parentUuid": "86023b24_cb71f3dc",
+      "range": {
+        "startLine": 455,
+        "startChar": 0,
+        "endLine": 457,
+        "endChar": 0
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef034bf7_f6c5b3a6",

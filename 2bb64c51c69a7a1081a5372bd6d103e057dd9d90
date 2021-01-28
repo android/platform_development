@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e28de46e_4853e3c6",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-01-28T23:27:00Z",
+      "side": 1,
+      "message": "See comment below.",
+      "parentUuid": "8f6c2dff_7a7f4f94",
+      "range": {
+        "startLine": 292,
+        "startChar": 12,
+        "endLine": 292,
+        "endChar": 14
+      },
+      "revId": "2bb64c51c69a7a1081a5372bd6d103e057dd9d90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "53066917_6528e6f3",
@@ -54,6 +78,30 @@
       "writtenOn": "2021-01-28T22:59:30Z",
       "side": 1,
       "message": "If we add a --output or -o option, that might make it a bit easier to run the script for multiple snapshots in the the same build in the future. The caller could pass \"-o out/vendor_snapshot_used_modules.txt\" or similar.",
+      "range": {
+        "startLine": 475,
+        "startChar": 15,
+        "endLine": 475,
+        "endChar": 35
+      },
+      "revId": "2bb64c51c69a7a1081a5372bd6d103e057dd9d90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b79d53a_44646f05",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-01-28T23:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53066917_6528e6f3",
       "range": {
         "startLine": 475,
         "startChar": 15,
