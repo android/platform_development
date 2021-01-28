@@ -82,6 +82,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bd4021c_3a9cda1c",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1395887
+      },
+      "writtenOn": "2021-01-28T23:04:09Z",
+      "side": 1,
+      "message": "These were originally added to see how much of the snapshot was actually used, to get an idea of the size savings. They seem non-functional when used with an installed fake snapshot since each size is always 1. I guess we could still run the script with an installed speculative snapshot, and if you run the script against a speculative snapshot, it could still be useful.",
+      "parentUuid": "351212f9_3237cc84",
+      "range": {
+        "startLine": 442,
+        "startChar": 4,
+        "endLine": 443,
+        "endChar": 17
+      },
+      "revId": "bb773dd4d5e753089a0557229e72e877658a31ef",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3c6ebb1_b71946e8",
