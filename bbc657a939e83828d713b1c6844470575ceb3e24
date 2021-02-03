@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd81bd70_7db82f72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2021-02-03T20:43:06Z",
+      "side": 1,
+      "message": "This line would throw an exception if the output of cargo2android failed to build:\nhttps://android-review.googlesource.com/c/platform/development/+/1573140/2/scripts/update_crate_tests.py#b51",
+      "parentUuid": "498bcbfd_5aff7d91",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "bbc657a939e83828d713b1c6844470575ceb3e24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46e33a07_3ce8e759",
@@ -37,6 +61,24 @@
       "writtenOn": "2021-02-03T18:47:12Z",
       "side": 1,
       "message": "Move that comment into an error message in the `sys.exit()` call so people know why the program just exited early?",
+      "revId": "bbc657a939e83828d713b1c6844470575ceb3e24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2061c9c_5a2caf72",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2021-02-03T20:43:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46e33a07_3ce8e759",
       "revId": "bbc657a939e83828d713b1c6844470575ceb3e24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -64,6 +106,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4808a2d5_d1a3503b",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2021-02-03T20:43:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cfe9d8b_31fb7435",
+      "range": {
+        "startLine": 60,
+        "startChar": 56,
+        "endLine": 60,
+        "endChar": 67
+      },
+      "revId": "bbc657a939e83828d713b1c6844470575ceb3e24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d694bed5_fb4a7f5c",
@@ -77,6 +143,24 @@
       "writtenOn": "2021-02-03T18:47:12Z",
       "side": 1,
       "message": "Maybe move the print into the sys.exit?",
+      "revId": "bbc657a939e83828d713b1c6844470575ceb3e24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa6bfa00_144e234a",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2021-02-03T20:43:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d694bed5_fb4a7f5c",
       "revId": "bbc657a939e83828d713b1c6844470575ceb3e24",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
