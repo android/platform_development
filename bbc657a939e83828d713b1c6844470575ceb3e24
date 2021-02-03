@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48c13875_339d1b25",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2021-02-03T23:10:33Z",
+      "side": 1,
+      "message": "`sys.exit()` (which is what you do now if that fails) also throws an exception? Do we just mean that it prints prettier?",
+      "parentUuid": "cd81bd70_7db82f72",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "bbc657a939e83828d713b1c6844470575ceb3e24",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46e33a07_3ce8e759",
