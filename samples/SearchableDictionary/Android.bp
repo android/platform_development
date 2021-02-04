@@ -1,3 +1,12 @@
+package {
+// http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // the below license kinds from "development_license":
+    //   SPDX-license-identifier-Apache-2.0
+    //   SPDX-license-identifier-CPL-1.0
+    default_applicable_licenses: ["development_license"],
+}
+
 android_app {
     name: "SearchableDictionary",
     srcs: ["**/*.java"],
