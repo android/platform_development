@@ -2,6 +2,14 @@
 //
 // Copies files into the directory structure described by a manifest
 
+package {
+    // http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // the below license kinds from "development_license":
+    //   legacy_restricted
+    default_applicable_licenses: ["development_license"],
+}
+
 cc_binary_host {
     name: "line_endings",
     srcs: ["line_endings.c"],
