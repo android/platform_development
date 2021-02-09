@@ -34,6 +34,24 @@
       "parentUuid": "7e4eda96_542c7c35",
       "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6eea169d_438d5919",
+        "filename": "tools/ndk/ndkabidump/soong.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2021-02-09T11:07:42Z",
+      "side": 1,
+      "message": "Looking at the build.ninja the rules for the other architectures weren\u0027t generated. They *are* generated as part of the regular build though. It\u0027s either something different about using soong_ui directly instead of `m --skip-make`, or it has something to do with the many-ABI build itself. Not sure why that would be when the build-ndk-prebuilts.sh works fine though... will need to dig more.",
+      "parentUuid": "0b093242_9b05a50b",
+      "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
