@@ -52,6 +52,24 @@
       "parentUuid": "0b093242_9b05a50b",
       "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecbc711b_26794ea6",
+        "filename": "tools/ndk/ndkabidump/soong.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-02-09T18:34:26Z",
+      "side": 1,
+      "message": "Do you need --skip-make here too?",
+      "parentUuid": "6eea169d_438d5919",
+      "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
