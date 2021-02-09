@@ -555,10 +555,9 @@ def check_module_usage(install_dir, ninja_binary, ninja_file, goals, output):
     for f, i in sorted(used_file_to_info.items()):
         logging.debug('{} {}'.format(f, i))
         for m in i:
-            key = 'n=%s,v=%s,a=%s,c=%s,h=%s' % m
             (name, variation, arch, is_cfi, is_header) = m
             if not is_header:
-                used_modules.add(key)
+                used_modules.add(name)
 
     with open(output, 'w') as f:
         for m in sorted(used_modules):
