@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e4eda96_542c7c35",
+        "filename": "tools/ndk/ndkabidump/soong.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2021-02-09T00:45:57Z",
+      "side": 1,
+      "message": "ccross: does this look right to you? This with the following soong.variables is only building 32-bit arm:\n\n{\n  \"DeviceName\": \"generic_arm64\",\n  \"Exclude_draft_ndk_apis\": true,\n  \"HostArch\": \"x86_64\",\n  \"Malloc_not_svelte\": false,\n  \"Ndk_abis\": true,\n  \"Platform_sdk_version\": \"30\",\n  \"Platform_version_active_codenames\": [\n    \"S\"\n  ],\n  \"Safestack\": false\n}\n\nThere doesn\u0027t seem to be much difference between what I have here and build-ndk-prebults.sh aside from the fact that build-ndk-prebuilts.sh does envsetup (but no lunch) and uses m. Neither of those seems to set up any environment that would account for the difference though.",
+      "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
