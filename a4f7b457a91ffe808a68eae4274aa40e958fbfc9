@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3938fdb3_aa3037e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-02-09T17:59:32Z",
+      "side": 1,
+      "message": "Thanks! PTAL",
+      "revId": "a4f7b457a91ffe808a68eae4274aa40e958fbfc9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd14b99a_af469a42",
@@ -24,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "380a57f8_b80d53b1",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-02-09T17:59:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd14b99a_af469a42",
+      "range": {
+        "startLine": 563,
+        "startChar": 8,
+        "endLine": 563,
+        "endChar": 11
+      },
+      "revId": "a4f7b457a91ffe808a68eae4274aa40e958fbfc9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "970af84d_b6ba053b",
@@ -37,6 +78,30 @@
       "writtenOn": "2021-02-09T17:04:51Z",
       "side": 1,
       "message": "And print the module name with a trailing backslash \"  \u003cmodule name\u003e \\\"?",
+      "range": {
+        "startLine": 564,
+        "startChar": 12,
+        "endLine": 564,
+        "endChar": 31
+      },
+      "revId": "a4f7b457a91ffe808a68eae4274aa40e958fbfc9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cabb6d6e_9f3e2e27",
+        "filename": "vendor_snapshot/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1380269
+      },
+      "writtenOn": "2021-02-09T17:59:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "970af84d_b6ba053b",
       "range": {
         "startLine": 564,
         "startChar": 12,
