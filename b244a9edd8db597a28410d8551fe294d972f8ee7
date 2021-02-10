@@ -70,6 +70,24 @@
       "parentUuid": "6eea169d_438d5919",
       "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19e00fec_9e8582ea",
+        "filename": "tools/ndk/ndkabidump/soong.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2021-02-10T21:36:47Z",
+      "side": 1,
+      "message": "It seems the lunch target is affecting it. If I build in an unlunched environment I get only arm32. If I build in a bonito environment I get arm32 and arm64. The Ndk_abis setting in soong.variables has no effect for some reason.",
+      "parentUuid": "ecbc711b_26794ea6",
+      "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
