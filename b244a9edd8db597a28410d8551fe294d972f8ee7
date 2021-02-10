@@ -88,6 +88,24 @@
       "parentUuid": "ecbc711b_26794ea6",
       "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1afd08b2_82561ec6",
+        "filename": "tools/ndk/ndkabidump/soong.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-02-10T21:43:46Z",
+      "side": 1,
+      "message": "soong_ui doesn\u0027t imply a soong-only build, you still need to add --skip-make.  Otherwise it is ovewriting your soong.variables with the Make-generated one.",
+      "parentUuid": "19e00fec_9e8582ea",
+      "revId": "b244a9edd8db597a28410d8551fe294d972f8ee7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
