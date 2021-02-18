@@ -1,0 +1,47 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000008259912",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1594452?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "c34d6c4e_9c6ba8a3",
+          "description": "Change to \"scripts/cargo2android.py\"",
+          "replacements": [
+            {
+              "path": "scripts/cargo2android.py",
+              "range": {
+                "startLine": 94,
+                "startChar": 51,
+                "endLine": 94,
+                "endChar": 60
+              },
+              "replacement": "overridden"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "a44a6a98_66bf139b",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-02-18T16:29:23Z",
+      "side": 1,
+      "message": "Common typo found: \"overriden\" -- should it be \"overridden\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 94,
+        "startChar": 51,
+        "endLine": 94,
+        "endChar": 60
+      },
+      "revId": "6e6f240a527bffe137e4ce7097950f2ec272a2b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
