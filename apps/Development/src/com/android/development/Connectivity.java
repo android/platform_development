@@ -281,27 +281,27 @@ public class Connectivity extends Activity {
         private static final String TAG = "DevToolsNetworkCallback";
 
         public void onPreCheck(Network network) {
-            Log.d(TAG, "onPreCheck: " + network.netId);
+            Log.d(TAG, "onPreCheck: " + network.getNetId());
         }
 
         public void onAvailable(Network network) {
-            Log.d(TAG, "onAvailable: " + network.netId);
+            Log.d(TAG, "onAvailable: " + network.getNetId());
         }
 
         public void onCapabilitiesChanged(Network network, NetworkCapabilities nc) {
-            Log.d(TAG, "onCapabilitiesChanged: " + network.netId + " " + nc.toString());
+            Log.d(TAG, "onCapabilitiesChanged: " + network.getNetId() + " " + nc.toString());
         }
 
         public void onLinkPropertiesChanged(Network network, LinkProperties lp) {
-            Log.d(TAG, "onLinkPropertiesChanged: " + network.netId + " " + lp.toString());
+            Log.d(TAG, "onLinkPropertiesChanged: " + network.getNetId() + " " + lp.toString());
         }
 
         public void onLosing(Network network, int maxMsToLive) {
-            Log.d(TAG, "onLosing: " + network.netId + " " + maxMsToLive);
+            Log.d(TAG, "onLosing: " + network.getNetId() + " " + maxMsToLive);
         }
 
         public void onLost(Network network) {
-            Log.d(TAG, "onLost: " + network.netId);
+            Log.d(TAG, "onLost: " + network.getNetId());
         }
     }
     private DevToolsNetworkCallback mCallback;
