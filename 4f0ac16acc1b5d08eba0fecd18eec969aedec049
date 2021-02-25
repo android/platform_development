@@ -22,6 +22,30 @@
       },
       "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a03cc0c9_315f7faa",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1307979
+      },
+      "writtenOn": "2021-02-25T21:49:43Z",
+      "side": 1,
+      "message": "The directory structure is different for vendor and framework tests. Unfortunately I can\u0027t just replace a prefix, I also have to remove one level from the directory hierarchy.\n\nFramework tests:\n\n- out: data/nativetest[bit suffix]/[test name]/[test name]\n- device: /data/local/tmp/[test name]/[arch]/[test name]\n\nVendor tests:\n\n- out: data/nativetest[bit suffix]/vendor/[test name]/[test name]\n- device: /data/local/tests/vendor/[test name]/[arch]/[test name]\n\n[bit suffix] is either empty or 64.",
+      "parentUuid": "72adf480_f89e3998",
+      "range": {
+        "startLine": 396,
+        "startChar": 27,
+        "endLine": 396,
+        "endChar": 45
+      },
+      "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
