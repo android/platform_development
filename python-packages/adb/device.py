@@ -242,6 +242,10 @@ def version(adb_path=None):
     return int(result.group(1))
 
 
+class ShellResultParseError(RuntimeError):
+    """The error raised when the shell result cannot be parsed."""
+
+
 class AndroidDevice(object):
     # Delimiter string to indicate the start of the exit code.
     _RETURN_CODE_DELIMITER = 'x'
@@ -318,7 +322,8 @@ class AndroidDevice(object):
             search_text = search_text[-self._RETURN_CODE_SEARCH_LENGTH:]
         partition = search_text.rpartition(self._RETURN_CODE_DELIMITER)
         if partition[1] == '':
-            raise RuntimeError('Could not find exit status in shell output.')
+            raise ShellResultParseError(
+                f'Could not find exit status in shell output: {search_text}')
         result = int(partition[2])
         # partition[0] won't contain the full text if search_text was
         # truncated, pull from the original string instead.
@@ -358,6 +363,7 @@ class AndroidDevice(object):
             An (exit_code, stdout, stderr) tuple. Stderr may be combined
             into stdout if the device doesn't support separate streams.
         """
+        orig_cmd = cmd
         cmd = self._make_shell_cmd(cmd)
         logging.info(' '.join(cmd))
         p = _subprocess_Popen(
@@ -368,7 +374,13 @@ class AndroidDevice(object):
         if self.has_shell_protocol():
             exit_code = p.returncode
         else:
-            exit_code, stdout = self._parse_shell_output(stdout)
+            try:
+                exit_code, stdout = self._parse_shell_output(stdout)
+            except ShellResultParseError as ex:
+                message = f'Could not run {orig_cmd}'
+                if self.serial is not None:
+                    message = f'{message} on {self.serial}'
+                raise RuntimeError(message) from ex
         return exit_code, stdout, stderr
 
     def shell_popen(self, cmd, kill_atexit=True, preexec_fn=None,
