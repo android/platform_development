@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72adf480_f89e3998",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2021-02-25T21:28:17Z",
+      "side": 1,
+      "message": "Is the directory structure under this directory the same as the structure under /data/nativetestXX/? If so, you could get rid of the special case vendor check and just lop off everything after /data/local/tests/ and leave it as is.\n\nFor example, is the structure:\n\n/data/local/tests/vendor/XXX\n\nDoes the real library/test look like:\n\n/data/nativetest64/vendor/XXX\n\nI looked and /data/local/tmp does not appear to always be like this (at least for some of the tests I tried).\n\nI\u0027m not sure that there is a guaranteed way to find the right executable/shared library when a crash goes through a file in /data/local/tmp or /data/local/tests.",
+      "range": {
+        "startLine": 396,
+        "startChar": 27,
+        "endLine": 396,
+        "endChar": 45
+      },
+      "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
