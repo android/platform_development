@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab3e09f9_4dd760b7",
+        "filename": "scripts/update_crate_tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1812258
+      },
+      "writtenOn": "2021-03-08T11:51:49Z",
+      "side": 1,
+      "message": "Shall we remove the TEST_MAPPING if exists in that case?",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 65
+      },
+      "revId": "8939b30595b0b9118db17c998ca06d5cde61a5c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
