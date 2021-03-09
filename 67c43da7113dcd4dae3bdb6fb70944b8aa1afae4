@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a78da27_9aae6e2c",
+        "filename": "vndk/tools/sourcedr/blueprint/blueprint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 1061057
+      },
+      "writtenOn": "2021-03-09T03:40:20Z",
+      "side": 1,
+      "message": "How about moving the block to line 864 and just \u0027continue\u0027 if .out-dir exists?",
+      "range": {
+        "startLine": 871,
+        "startChar": 12,
+        "endLine": 873,
+        "endChar": 33
+      },
+      "revId": "67c43da7113dcd4dae3bdb6fb70944b8aa1afae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
