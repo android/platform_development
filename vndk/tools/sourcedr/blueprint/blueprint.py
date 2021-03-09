@@ -868,6 +868,9 @@ class RecursiveParser(object):
                 if basedir == rootdir and name == 'out':
                     continue
                 new_dirnames.append(name)
+            if '.out-dir' in filenames:
+                # Stop at OUT_DIR
+                new_dirnames = []
             dirnames[:] = new_dirnames
 
             # Parse blueprint files
