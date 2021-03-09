@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e24fd853_19cf9dfb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2021-03-09T22:33:39Z",
+      "side": 1,
+      "message": "If you want, I can pick up the last few changes on this cl if you don\u0027t have time to finish this.\n\nJust let me know.",
+      "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7fdc2510_48b6a254",
