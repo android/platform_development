@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c18190b8_10047ce4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1307979
+      },
+      "writtenOn": "2021-03-12T02:14:52Z",
+      "side": 1,
+      "message": "Sorry for the delay, I was sprinting to get some P21 stuff completed and then got sick.",
+      "parentUuid": "e24fd853_19cf9dfb",
+      "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7fdc2510_48b6a254",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-03-01T22:11:58Z",
       "side": 1,
       "message": "There should be mention that this occurs when running tests using atest. Or if there is some other method whereby this occurs.",
+      "range": {
+        "startLine": 394,
+        "startChar": 8,
+        "endLine": 395,
+        "endChar": 23
+      },
+      "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fb98701_7e479c24",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1307979
+      },
+      "writtenOn": "2021-03-12T02:14:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fdc2510_48b6a254",
       "range": {
         "startLine": 394,
         "startChar": 8,
@@ -112,6 +154,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb68d4d3_63842526",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1307979
+      },
+      "writtenOn": "2021-03-12T02:14:52Z",
+      "side": 1,
+      "message": "Will mark this resolved as I\u0027m not sure there\u0027s an action item here.",
+      "parentUuid": "d9a35adf_06de3c45",
+      "range": {
+        "startLine": 396,
+        "startChar": 27,
+        "endLine": 396,
+        "endChar": 45
+      },
+      "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3779aac6_b458dd90",
@@ -125,6 +191,30 @@
       "writtenOn": "2021-03-01T22:11:58Z",
       "side": 1,
       "message": "This should probably be vendor/ to make sure this only happens if something is in the vendor directory.",
+      "range": {
+        "startLine": 401,
+        "startChar": 47,
+        "endLine": 401,
+        "endChar": 53
+      },
+      "revId": "4f0ac16acc1b5d08eba0fecd18eec969aedec049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dd22bbb_557a621f",
+        "filename": "scripts/stack_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1307979
+      },
+      "writtenOn": "2021-03-12T02:14:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3779aac6_b458dd90",
       "range": {
         "startLine": 401,
         "startChar": 47,
