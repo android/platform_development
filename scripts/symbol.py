@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #
-# Copyright (C) 2013 The Android Open Source Project
+# Copyright (C) 2021 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,12 +28,7 @@ import signal
 import subprocess
 import unittest
 
-try:
-  ANDROID_BUILD_TOP = str(os.environ["ANDROID_BUILD_TOP"])
-  if not ANDROID_BUILD_TOP:
-    ANDROID_BUILD_TOP = "."
-except:
-  ANDROID_BUILD_TOP = "."
+ANDROID_BUILD_TOP = os.environ.get("ANDROID_BUILD_TOP", ".")
 
 def FindSymbolsDir():
   saveddir = os.getcwd()
@@ -96,7 +91,7 @@ class ProcessCache:
     return pipe
 
   def SpawnProcess(self, cmd):
-     return subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+     return subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
 
   def TerminateProcess(self, pipe):
     pipe.stdin.close()
@@ -156,7 +151,7 @@ def FindToolchain():
 
   _CACHED_TOOLCHAIN = llvm_binutils_dir
   _CACHED_TOOLCHAIN_ARCH = ARCH
-  print("Using %s toolchain from: %s" % (_CACHED_TOOLCHAIN_ARCH, _CACHED_TOOLCHAIN))
+  print("Using", _CACHED_TOOLCHAIN_ARCH, "toolchain from:", _CACHED_TOOLCHAIN)
   return _CACHED_TOOLCHAIN
 
 
