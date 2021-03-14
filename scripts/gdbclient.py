@@ -371,6 +371,7 @@ end
 
 def generate_lldb_script(root, sysroot, binary_name, port, solib_search_path):
     commands = []
+    commands.append('log enable lldb dyld')
     commands.append(
         'settings append target.exec-search-paths {}'.format(' '.join(solib_search_path)))
 
