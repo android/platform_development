@@ -16,6 +16,23 @@
       "message": "depending on changes in external/kythe to compile with new r412851",
       "revId": "af6b5af52194542c9b05ecaac6e11b6f92ecff80",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b99ca090_5d36c5e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2021-03-17T17:20:41Z",
+      "side": 1,
+      "message": "aosp/1641359 updates external/kythe.",
+      "revId": "af6b5af52194542c9b05ecaac6e11b6f92ecff80",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
