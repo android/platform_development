@@ -33,6 +33,24 @@
       "message": "It would be good to have an example here, but I verified for both a newer licensed Android.bp file, and an older no-license-block Android.bp file that the layout here is correct.",
       "revId": "7ea17dc7f696ff7dc9d93b2d58fcbefee5e6c553",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd7e11ba_8b573943",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1130,
+      "author": {
+        "id": 1307957
+      },
+      "writtenOn": "2021-03-19T22:16:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "72bfd000_a47c24a7",
+      "revId": "7ea17dc7f696ff7dc9d93b2d58fcbefee5e6c553",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
