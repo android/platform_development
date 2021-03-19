@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7965f31b_8ce4785e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-03-19T21:52:49Z",
+      "side": 1,
+      "message": "Feel free to ignore my request for a comment with the \"expected format\", but this took longer to verify because I wasn\u0027t sure how those blocks are being constructed these days.",
+      "revId": "7ea17dc7f696ff7dc9d93b2d58fcbefee5e6c553",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72bfd000_a47c24a7",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1130,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-03-19T21:52:49Z",
+      "side": 1,
+      "message": "It would be good to have an example here, but I verified for both a newer licensed Android.bp file, and an older no-license-block Android.bp file that the layout here is correct.",
+      "revId": "7ea17dc7f696ff7dc9d93b2d58fcbefee5e6c553",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
