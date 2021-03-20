@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af448d50_e4d3f5c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-20T08:59:20Z",
+      "side": 1,
+      "message": "Clay, Is this the right place for contributors to send patches? Or should they send to *aidegen* instead? \n\nhttps://android.googlesource.com/platform/tools/asuite/+/refs/heads/master/aidegen/README.md",
+      "revId": "926b01325d2d9a8c828450afb76767dab4723e3c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
