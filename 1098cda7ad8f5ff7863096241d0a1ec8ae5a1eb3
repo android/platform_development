@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69da5649_f64ee1f2",
+        "filename": "scripts/acov-llvm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1345967
+      },
+      "writtenOn": "2021-03-30T21:52:48Z",
+      "side": 1,
+      "message": "Jacoco also stores coverage files in /data/misc/trace now. This should be restricted to .profraw files.",
+      "revId": "1098cda7ad8f5ff7863096241d0a1ec8ae5a1eb3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
