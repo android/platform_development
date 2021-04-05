@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4562f46d_fec8af7d",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1175,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-04-05T18:32:44Z",
+      "side": 1,
+      "message": "Jeff, you know the Bazel stuff best.  Can you think of a better way to handle this?  Or do we know why it wasn\u0027t like this in the first place?",
+      "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
