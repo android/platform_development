@@ -1131,8 +1131,8 @@ class Runner(object):
       # Firstly skip ANDROID_BP_HEADER
       while line.startswith('//'):
         line = intf.readline()
-      # Read all lines until we see a rust_* rule.
-      while line != '' and not line.startswith('rust_'):
+      # Read all lines until we see a rust_* or genrule rule.
+      while line != '' and not (line.startswith('rust_') or line.startswith('genrule {')):
         license += line
         line = intf.readline()
     return license.strip()
@@ -1172,7 +1172,7 @@ class Runner(object):
     """Dump all TEST_MAPPING files."""
     if self.dry_run:
       print('Dry-run skip dump of TEST_MAPPING')
-    else:
+    elif self.args.tests:
       test_mapping = TestMapping(None)
       for bp_file_name in self.bp_files:
         test_mapping.create_test_mapping(os.path.dirname(bp_file_name))
