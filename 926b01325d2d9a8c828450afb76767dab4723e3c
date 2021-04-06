@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "80d90fe5_12dc0a9d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2021-04-06T09:35:26Z",
+      "side": 1,
+      "message": "Sorry, please skip this comment.",
+      "parentUuid": "26fbbc33_b58cc450",
+      "revId": "926b01325d2d9a8c828450afb76767dab4723e3c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "af448d50_e4d3f5c2",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
