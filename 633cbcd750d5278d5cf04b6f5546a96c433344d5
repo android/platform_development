@@ -16,6 +16,24 @@
       "message": "Jeff, you know the Bazel stuff best.  Can you think of a better way to handle this?  Or do we know why it wasn\u0027t like this in the first place?",
       "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "906be49f_f8e7c1ce",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1175,
+      "author": {
+        "id": 1054468
+      },
+      "writtenOn": "2021-04-06T11:24:39Z",
+      "side": 1,
+      "message": "I don\u0027t think this is what we want. The intent is to build and run tests for all reverse dependencies and place them in TEST_MAPPING. So even if the crate that we\u0027re running cargo2android doesn\u0027t have tests, we still want to create a TEST_MAPPING file.\n\nDespite how annoyingly long Bazel takes, I think this is still better than not doing it, since this makes it so that TreeHugger builds/runs/tests reverse dependencies instead of the CL reviewer having to do it.",
+      "parentUuid": "4562f46d_fec8af7d",
+      "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
