@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "26fbbc33_b58cc450",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128729
+      },
+      "writtenOn": "2021-04-06T09:26:30Z",
+      "side": 1,
+      "message": "I think you still need bug ID.",
+      "revId": "926b01325d2d9a8c828450afb76767dab4723e3c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "af448d50_e4d3f5c2",
