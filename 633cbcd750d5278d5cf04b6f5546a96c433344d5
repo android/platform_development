@@ -34,6 +34,24 @@
       "parentUuid": "4562f46d_fec8af7d",
       "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da6736ca_93c3ea9d",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1175,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-04-06T14:29:18Z",
+      "side": 1,
+      "message": "In that case, can we add a separate flag for whether or not to run Bazel?  It significantly slows down what otherwise usually takes only a few seconds and therefore significantly increases debugging time.",
+      "parentUuid": "906be49f_f8e7c1ce",
+      "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
