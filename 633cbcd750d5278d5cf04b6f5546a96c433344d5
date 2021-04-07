@@ -52,6 +52,24 @@
       "parentUuid": "906be49f_f8e7c1ce",
       "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bb516e3_5b8001c3",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1175,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-04-07T08:40:56Z",
+      "side": 1,
+      "message": "+1 for adding a flag to skip the bazel part (if only just for debugging).",
+      "parentUuid": "da6736ca_93c3ea9d",
+      "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
