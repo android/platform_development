@@ -88,6 +88,24 @@
       "parentUuid": "7bb516e3_5b8001c3",
       "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d8e4f31_e028f65b",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1175,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-04-07T15:22:09Z",
+      "side": 1,
+      "message": "SGTM",
+      "parentUuid": "63492711_12176807",
+      "revId": "633cbcd750d5278d5cf04b6f5546a96c433344d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
