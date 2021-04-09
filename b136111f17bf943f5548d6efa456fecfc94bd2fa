@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c1aa6f1_7e600e04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2021-04-09T20:22:33Z",
+      "side": 1,
+      "message": "Didn\u0027t notice this before, but no need to update the copyright statement.",
+      "revId": "b136111f17bf943f5548d6efa456fecfc94bd2fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
