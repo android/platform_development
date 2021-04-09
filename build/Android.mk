@@ -65,16 +65,7 @@ android_jar_intermediates := $(call intermediates-dir-for,PACKAGING,android_jar,
 android_jar_full_target := $(android_jar_intermediates)/android.jar
 android_jar_src_target := $(android_jar_intermediates)/android-stubs-src.jar
 
-# unzip and zip android.jar before packaging it. (workaround for b/127733650)
-full_target_repackaged := $(android_jar_intermediates)/repackaged/repackaged.jar
-$(full_target_repackaged): $(full_target) | $(ZIPTIME)
-	@echo Repackaging SDK jar: $@
-	$(hide) rm -rf $(dir $@) && mkdir -p $(dir $@)
-	unzip -q $< -d $(dir $@)
-	cd $(dir $@) && zip -rqX $(notdir $@) *
-	$(remove-timestamps-from-package)
-
-$(android_jar_full_target): $(full_target_repackaged)
+$(android_jar_full_target): $(full_target)
 	@echo Package SDK Stubs: $@
 	$(copy-file-to-target)
 
