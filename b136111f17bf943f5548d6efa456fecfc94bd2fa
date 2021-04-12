@@ -16,6 +16,23 @@
       "message": "Didn\u0027t notice this before, but no need to update the copyright statement.",
       "revId": "b136111f17bf943f5548d6efa456fecfc94bd2fa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2cf4e95_e085fd19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019050
+      },
+      "writtenOn": "2021-04-12T16:26:52Z",
+      "side": 1,
+      "message": "Since I made changes on top of the original changes, I wanted a second opinion to make sure nothing seems amiss.",
+      "revId": "b136111f17bf943f5548d6efa456fecfc94bd2fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
