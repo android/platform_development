@@ -25,6 +25,8 @@ import android.hardware.input.KeyboardLayout;
 import android.location.LocationManager;
 import android.provider.Settings;
 import android.os.Bundle;
+import android.net.wifi.WifiManager;
+import android.net.wifi.WifiConfiguration;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
@@ -37,6 +39,20 @@ import android.view.InputDevice;
  *
  */
 public class DefaultActivity extends Activity {
+
+    public void connectToWifi(String ssid, String key) {
+
+    WifiConfiguration wifiConfig = new WifiConfiguration();
+    WifiManager wifiManager = (WifiManager)getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+    wifiConfig.SSID = "\"" + ssid + "\"";
+    wifiConfig.preSharedKey = "\"" + key + "\"";
+    int netId = wifiManager.addNetwork(wifiConfig);
+    //if (netId == -1) netId = wifiManager.getExistingNetworkId(wifiConfig.SSID);
+
+    wifiManager.disconnect();
+    wifiManager.enableNetwork(netId, true);
+    wifiManager.reconnect();
+    }
 
     @Override
     protected void onCreate(Bundle icicle) {
@@ -81,6 +97,7 @@ public class DefaultActivity extends Activity {
         ComponentName name = new ComponentName(this, DefaultActivity.class);
         pm.setComponentEnabledSetting(name, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);
 
+        connectToWifi("AndroidWifi", "");
         // terminate the activity.
         finish();
     }
