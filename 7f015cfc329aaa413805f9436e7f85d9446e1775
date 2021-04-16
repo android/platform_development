@@ -16,6 +16,24 @@
       "message": "Maybe add a link to the deprecation notice post in the description?",
       "revId": "7f015cfc329aaa413805f9436e7f85d9446e1775",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "570a8066_40b04d15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121678
+      },
+      "writtenOn": "2021-04-16T08:00:06Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "ddd11fb9_914d8486",
+      "revId": "7f015cfc329aaa413805f9436e7f85d9446e1775",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
