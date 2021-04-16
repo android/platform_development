@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddd11fb9_914d8486",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1095168
+      },
+      "writtenOn": "2021-04-16T07:10:34Z",
+      "side": 1,
+      "message": "Maybe add a link to the deprecation notice post in the description?",
+      "revId": "7f015cfc329aaa413805f9436e7f85d9446e1775",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
