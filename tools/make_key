@@ -50,10 +50,10 @@ read -p "Enter password for '$1' (blank for none; password will be visible): " \
   password
 
 if [ "${3}" = "rsa" -o "$#" -eq 2 ]; then
-  ( openssl genrsa -f4 2048 | tee ${one} > ${two} ) &
+  gen_key_cmd="openssl genrsa -f4 2048"
   hash="-sha256"
 elif [ "${3}" = "ec" ]; then
-  ( openssl ecparam -name prime256v1 -genkey -noout | tee ${one} > ${two} ) &
+  gen_key_cmd="openssl ecparam -name prime256v1 -genkey -noout"
   hash="-sha256"
 else
   echo "Only accepts RSA or EC keytypes."
@@ -65,14 +65,16 @@ openssl req -new -x509 ${hash} -key ${two} -out $1.x509.pem \
 
 if [ "${password}" == "" ]; then
   echo "creating ${1}.pk8 with no password"
-  openssl pkcs8 -in ${one} -topk8 -outform DER -out $1.pk8 -nocrypt
+  openssl pkcs8 -in ${one} -topk8 -outform DER -out $1.pk8 -nocrypt &
 else
   echo "creating ${1}.pk8 with password [${password}]"
   export password
   openssl pkcs8 -in ${one} -topk8 -outform DER -out $1.pk8 \
-    -passout env:password
+    -passout env:password &
   unset password
 fi
+
+eval $gen_key_cmd | tee ${one} > ${two}
 
 wait
 wait
