@@ -23,6 +23,8 @@ import android.content.pm.PackageManager;
 import android.hardware.input.InputManager;
 import android.hardware.input.KeyboardLayout;
 import android.location.LocationManager;
+import android.net.wifi.WifiManager;
+import android.net.wifi.WifiConfiguration;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -30,6 +32,7 @@ import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.Build;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.InputDevice;
 
 /**
@@ -37,6 +40,7 @@ import android.view.InputDevice;
  *
  */
 public class DefaultActivity extends Activity {
+    private static final String TAG = "SdkSetup";
 
     @Override
     protected void onCreate(Bundle icicle) {
@@ -74,6 +78,18 @@ public class DefaultActivity extends Activity {
 
             TelephonyManager mTelephony = getApplicationContext().getSystemService(TelephonyManager.class);
             mTelephony.setPreferredNetworkTypeBitmask(TelephonyManager.NETWORK_TYPE_BITMASK_NR);
+
+            // Add network with SSID "AndroidWifi"
+            WifiConfiguration config = new WifiConfiguration();
+            config.SSID = "\"AndroidWifi\"";
+            config.setSecurityParams(WifiConfiguration.SECURITY_TYPE_OPEN);
+            WifiManager mWifiManager = getApplicationContext().getSystemService(WifiManager.class);
+            int ret = mWifiManager.addNetwork(config);
+            if (ret == -1) {
+                 Log.w(TAG, "WifiManager failed to add network \"AndroidWifi \".");
+            } else {
+                 mWifiManager.enableNetwork(ret, true);
+            }
         }
 
         // remove this activity from the package manager.
