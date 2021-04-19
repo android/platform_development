@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e60b7cd_36094492",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1071150
+      },
+      "writtenOn": "2021-04-19T13:29:16Z",
+      "side": 1,
+      "message": "Could you add \"Bug: 73711890\" too?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "8d4c407d9e69b1c8405ba91fa7fc90a1de5b30f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
