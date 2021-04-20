@@ -24,6 +24,7 @@ import glob
 import os
 import platform
 import re
+import shutil
 import signal
 import subprocess
 import unittest
@@ -132,7 +133,9 @@ for sig in (signal.SIGABRT, signal.SIGINT, signal.SIGTERM):
 
 
 def ToolPath(tool, toolchain=None):
-  """Return a fully-qualified path to the specified tool"""
+  """Return a fully-qualified path to the specified tool, or just the tool if it's on PATH """
+  if shutil.which(tool) is not None:
+      return tool
   if not toolchain:
     toolchain = FindToolchain()
   return os.path.join(toolchain, tool)
@@ -434,14 +437,18 @@ def CallCppFilt(mangled_symbol):
   # TODO: Replace with llvm-cxxfilt when available.
   global _CACHED_CXX_FILT
   if not _CACHED_CXX_FILT:
-    os_name = platform.system().lower()
-    toolchains = glob.glob("%s/prebuilts/gcc/%s-*/host/*-linux-*/bin/*c++filt" %
+    if shutil.which("x86_64-linux-c++filt") is not None:
+      toolchains = ["x86_64-linux-c++filt"]
+    if not toolchains:
+      os_name = platform.system().lower()
+      toolchains = glob.glob("%s/prebuilts/gcc/%s-*/host/*-linux-*/bin/*c++filt" %
                            (ANDROID_BUILD_TOP, os_name))
     if not toolchains:
       raise Exception("Could not find gcc c++filt tool")
     _CACHED_CXX_FILT = sorted(toolchains)[-1]
 
   cmd = [_CACHED_CXX_FILT]
+  print("CMD", cmd)
   process = _PIPE_CPPFILT_CACHE.GetProcess(cmd)
   process.stdin.write(mangled_symbol)
   process.stdin.write("\n")
