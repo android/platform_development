@@ -24,6 +24,7 @@ import glob
 import os
 import platform
 import re
+import shutil
 import signal
 import subprocess
 import unittest
@@ -434,8 +435,11 @@ def CallCppFilt(mangled_symbol):
   # TODO: Replace with llvm-cxxfilt when available.
   global _CACHED_CXX_FILT
   if not _CACHED_CXX_FILT:
-    os_name = platform.system().lower()
-    toolchains = glob.glob("%s/prebuilts/gcc/%s-*/host/*-linux-*/bin/*c++filt" %
+    if shutil.which("x86_64-linux-c++filt") is not None:
+      toolschains = "x86_64-linux-c++filt"
+    if not toolchains:
+      os_name = platform.system().lower()
+      toolchains = glob.glob("%s/prebuilts/gcc/%s-*/host/*-linux-*/bin/*c++filt" %
                            (ANDROID_BUILD_TOP, os_name))
     if not toolchains:
       raise Exception("Could not find gcc c++filt tool")
