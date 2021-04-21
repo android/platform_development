@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b26831ee_05c1757a",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2021-04-21T16:47:19Z",
+      "side": 1,
+      "message": "llvm-cxxfilt has been packaged in the toolchain prebuilts for a while and aosp/1683468 adds the llvm-cxxfilt symlink.  We should be able to switch now.",
+      "revId": "fe08da3d1d365fc0ab9361637afaba80ca844ef3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
