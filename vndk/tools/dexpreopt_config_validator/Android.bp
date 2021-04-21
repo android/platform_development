@@ -1,0 +1,15 @@
+python_binary_host {
+    name: "dexpreopt_config_validator",
+    srcs: [
+        "dexpreopt_config_validator.py",
+    ],
+    version: {
+        py2: {
+            enabled: false,
+        },
+        py3: {
+            enabled: true,
+            embedded_launcher: true,
+        }
+    },
+}
