@@ -67,6 +67,24 @@
       "message": "lol, yeah --- definitely time to do that.\n\n(we can look at doing it if you prefer!)",
       "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0d18853_9fce5258",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-04-22T00:52:39Z",
+      "side": 1,
+      "message": "if it\u0027s a simple substitution, i have all the CLs locally so i can just do it it\u0027s quicker.",
+      "parentUuid": "53e77a4c_934f169b",
+      "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
