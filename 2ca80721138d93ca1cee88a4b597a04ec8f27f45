@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "838fb731_33f44951",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-04-22T15:41:44Z",
+      "side": 1,
+      "message": "odd, but \"not a regression\", so fine by me...",
+      "range": {
+        "startLine": 443,
+        "startChar": 54,
+        "endLine": 443,
+        "endChar": 63
+      },
+      "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

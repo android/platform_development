@@ -85,6 +85,24 @@
       "parentUuid": "53e77a4c_934f169b",
       "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc97cc7a_7cd07ce2",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-04-22T15:41:44Z",
+      "side": 1,
+      "message": "(yes, it\u0027s supposed to be a drop-in replacement. if it\u0027s not, that\u0027s _definitely_ a bug for us :-) )",
+      "parentUuid": "d0d18853_9fce5258",
+      "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
