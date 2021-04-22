@@ -23,21 +23,30 @@ import android.content.pm.PackageManager;
 import android.hardware.input.InputManager;
 import android.hardware.input.KeyboardLayout;
 import android.location.LocationManager;
+import android.net.wifi.WifiManager;
+import android.net.wifi.WifiConfiguration;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.Build;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.InputDevice;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Entry point for SDK SetupWizard.
  *
  */
 public class DefaultActivity extends Activity {
-
+    private static final String TAG = "SdkSetup";
+    private static final int MAX_RETRIES = 10;
+    private static final int RETRY_SLEEP_DURATION_BASE_MS = 1000;
+    private static final int ADD_NETWORK_FAIL = -1;
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -80,6 +89,44 @@ public class DefaultActivity extends Activity {
         PackageManager pm = getPackageManager();
         ComponentName name = new ComponentName(this, DefaultActivity.class);
         pm.setComponentEnabledSetting(name, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);
+
+        // Add network with SSID "AndroidWifi"
+        WifiConfiguration config = new WifiConfiguration();
+        config.SSID = "\"AndroidWifi\"";
+        WifiManager mWifiManager = getApplicationContext().getSystemService(WifiManager.class);
+        int netId = mWifiManager.addNetwork(config);
+        int retriesLeft = MAX_RETRIES;
+        final int durationNextSleep = RETRY_SLEEP_DURATION_BASE_MS;
+        while(netId == ADD_NETWORK_FAIL && retriesLeft > 0) {
+            Log.e(TAG, "Retrying add network in " + durationNextSleep + " ms.");
+            SystemClock.sleep(durationNextSleep);
+            retriesLeft--;
+            netId = mWifiManager.addNetwork(config);
+        }
+        if (netId != ADD_NETWORK_FAIL) {
+            retriesLeft = MAX_RETRIES;
+            mWifiManager.enableNetwork(netId, true);
+            mWifiManager.saveConfiguration();
+            mWifiManager.reconnect();
+            SystemClock.sleep(durationNextSleep);
+
+            // Check if connected to "AndroidWifi"
+            while (!config.SSID.equals(mWifiManager.getConnectionInfo().getSSID())
+                    && retriesLeft > 0) {
+                SystemClock.sleep(durationNextSleep);
+                mWifiManager.enableNetwork(netId, true);
+                mWifiManager.saveConfiguration();
+                mWifiManager.reconnect();
+                retriesLeft--;
+                Log.e(TAG, "Retrying connect to network in " + durationNextSleep + " ms.");
+            }
+            if (!config.SSID.equals(mWifiManager.getConnectionInfo().getSSID())) {
+                Log.e(TAG, "Unable to connect to network Android Wifi");
+            }
+
+        } else {
+            Log.e(TAG, "Unable to add network AndroidWifi");
+        }
 
         // terminate the activity.
         finish();
