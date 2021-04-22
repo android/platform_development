@@ -22,6 +22,30 @@
       },
       "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d707da2_e95085d3",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-04-22T20:28:32Z",
+      "side": 1,
+      "message": "Wait, this is missing a `*` before the `bin/` part. This won\u0027t find an llvm-cxxfilt.",
+      "parentUuid": "838fb731_33f44951",
+      "range": {
+        "startLine": 443,
+        "startChar": 54,
+        "endLine": 443,
+        "endChar": 63
+      },
+      "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
