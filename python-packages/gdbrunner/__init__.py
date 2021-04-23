@@ -308,7 +308,16 @@ def find_executable_path(device, executable_name, run_as_cmd=None):
 
 def find_binary(device, pid, sysroot, run_as_cmd=None):
     """Finds a device executable file corresponding to |pid|."""
-    return find_file(device, "/proc/{}/exe".format(pid), sysroot, run_as_cmd)
+    procdir = '/proc/{}'.format(pid)
+    try:
+        cmdline = device.shell(['cat', procdir + '/cmdline'])[0]
+        path = sysroot + cmdline.split(' ')[0].rstrip('\x00')
+        if os.path.isfile(path):
+            return (open(path, "r"), True)
+    except adb.ShellError:
+        pass
+
+    return find_file(device, procdir + '/exe', sysroot, run_as_cmd)
 
 
 def get_binary_arch(binary_file):
