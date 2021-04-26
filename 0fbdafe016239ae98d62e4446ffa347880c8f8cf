@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0664b7dd_d7ebbfe2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-04-26T18:55:44Z",
+      "side": 1,
+      "message": "I decided to have the config file re-use the command-line arg data structures and whatnot to touch as little of the code as possible.",
+      "revId": "0fbdafe016239ae98d62e4446ffa347880c8f8cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
