@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab9364b9_551f24c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-04-26T18:56:10Z",
+      "side": 1,
+      "message": "Does this seem like the right API for apexes?  I could imagine something slightly cleaner but a lot more complicated.",
+      "revId": "d9c4de6fe33332a0e87091fee585d278a5aa8460",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
