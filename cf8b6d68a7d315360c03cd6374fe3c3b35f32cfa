@@ -16,6 +16,46 @@
       "message": "Thanks Pirama for the follow up. Resolving some of the open comments.",
       "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b3a3ef4_157d8908",
+        "filename": "scripts/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-05-05T15:51:59Z",
+      "side": 1,
+      "message": "does someone on your team plan to go through the whole tree removing these later then? (what\u0027s the default? i\u0027m assuming we can\u0027t _already_ delete this? but that seems like something someone should be looking into, given that python2 is end of life and has started to be removed from machines?)",
+      "range": {
+        "startLine": 59,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 10
+      },
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe320107_c683db9c",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-05-05T15:51:59Z",
+      "side": 1,
+      "message": "add a comment here, explaining that the intent here is to support CI where the llvm-cxxfilt binary is bundled with the script?\n\ni don\u0027t think shutil.which() is what you want here though, because this would also find an llvm-cxxfilt in /usr/bin. since the idea is to be hermetic, don\u0027t you need to look _exactly_ where the test infrastructure will have put the llvm-cxxfilt binary? (which i guess is the current directory? so something more like os.path.exists(\u0027llvm-cxxfilt\u0027)?)",
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
