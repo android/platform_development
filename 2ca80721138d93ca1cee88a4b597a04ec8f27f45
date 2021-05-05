@@ -118,6 +118,30 @@
       },
       "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16eead04_9ea91be7",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-05-05T15:48:18Z",
+      "side": 1,
+      "message": "Right, but why are we changing this to something that is guaranteed to not work? There\u0027s no `bin/` directory in there. We should just delete this entire section if that\u0027s preferable.",
+      "parentUuid": "2deb6dbb_4cf52dfe",
+      "range": {
+        "startLine": 443,
+        "startChar": 54,
+        "endLine": 443,
+        "endChar": 63
+      },
+      "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
