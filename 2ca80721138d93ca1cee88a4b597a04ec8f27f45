@@ -46,6 +46,30 @@
       },
       "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10d912dd_a3b8c710",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:27:44Z",
+      "side": 1,
+      "message": "it obviously can be done better or more robust.\nJust trying to get an initial version at least working 😊\n\nI can add a TODO if you want so it appears somewhere?",
+      "parentUuid": "838fb731_33f44951",
+      "range": {
+        "startLine": 443,
+        "startChar": 54,
+        "endLine": 443,
+        "endChar": 63
+      },
+      "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

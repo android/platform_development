@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4287da0d_f7c3be35",
+        "filename": "scripts/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:27:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b0a0261_44d72c40",
+      "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8fb8d9a8_4b784937",
@@ -35,6 +53,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1dcf416_d757fba1",
+        "filename": "scripts/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:27:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fb8d9a8_4b784937",
+      "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b010ba5_c922690e",
@@ -48,6 +84,24 @@
       "writtenOn": "2021-04-22T00:02:44Z",
       "side": 1,
       "message": "can\u0027t we just remove py2 at this point and force py3? it\u0027s 2021 :-)",
+      "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45d58b3a_cc14c5d5",
+        "filename": "scripts/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:27:44Z",
+      "side": 1,
+      "message": "isn\u0027t that what enabled:false is for? \n\nI think default would be enabled but I can also just remove it altogether.",
+      "parentUuid": "2b010ba5_c922690e",
       "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -100,6 +154,24 @@
       "writtenOn": "2021-04-22T15:41:44Z",
       "side": 1,
       "message": "(yes, it\u0027s supposed to be a drop-in replacement. if it\u0027s not, that\u0027s _definitely_ a bug for us :-) )",
+      "parentUuid": "d0d18853_9fce5258",
+      "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82225d32_b7071023",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:27:44Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "d0d18853_9fce5258",
       "revId": "f143ba554ad3e1d8cd1e082af531456566ef2677",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
