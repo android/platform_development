@@ -134,6 +134,24 @@
       "parentUuid": "31bd2771_a4286765",
       "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2303b8f5_a73c1d60",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-05-05T16:14:25Z",
+      "side": 1,
+      "message": "http://b/187231324 is Pirama\u0027s attempt to remove the hardcoding (while making this deterministic).",
+      "parentUuid": "37a7009d_c495f360",
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
