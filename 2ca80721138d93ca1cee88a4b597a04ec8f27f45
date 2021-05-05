@@ -70,6 +70,30 @@
       },
       "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63309201_744e9a45",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-05-05T15:29:57Z",
+      "side": 1,
+      "message": "This won\u0027t find anything. There is no directory named like this, so it\u0027s always going to return no matches as written.You need a * between the `linux-x86/` and `bin/` to have it actually search for one of these.",
+      "parentUuid": "10d912dd_a3b8c710",
+      "range": {
+        "startLine": 443,
+        "startChar": 54,
+        "endLine": 443,
+        "endChar": 63
+      },
+      "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
