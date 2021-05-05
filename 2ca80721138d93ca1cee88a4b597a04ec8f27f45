@@ -94,6 +94,30 @@
       },
       "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2deb6dbb_4cf52dfe",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:40:24Z",
+      "side": 1,
+      "message": "No i meant for the shutil to be more robust.\n\nThat explicit path thing should go away IMO. If the data are declared properly, the libs/binary should be on the PATH which shutil should find.\nI can fix it, but it\u0027s not great because it might hide issues with dependencies declaration.",
+      "parentUuid": "63309201_744e9a45",
+      "range": {
+        "startLine": 443,
+        "startChar": 54,
+        "endLine": 443,
+        "endChar": 63
+      },
+      "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
