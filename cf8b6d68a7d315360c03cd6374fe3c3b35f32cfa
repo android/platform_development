@@ -116,6 +116,24 @@
       "parentUuid": "2a512504_173ce9de",
       "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37a7009d_c495f360",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-05-05T16:10:57Z",
+      "side": 1,
+      "message": "yeah, the normal use-case is to invoke this directly, and we _always_ want to be running the prebuilt. we _never_ want \"some random binary that happens to be on your path\".\n\n\u003e The challenge is that it\u0027s not necessary in the flat same directory (could be in some subdir).\n\nbut surely it\u0027s deterministic? if not, that seems to be the first problem to solve. then it\u0027s easy to just have this script look exactly there?",
+      "parentUuid": "31bd2771_a4286765",
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
