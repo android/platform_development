@@ -98,6 +98,24 @@
       "parentUuid": "fe320107_c683db9c",
       "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31bd2771_a4286765",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T16:01:12Z",
+      "side": 1,
+      "message": "also that brings, do you want to keep the searching thing for */prebuilts/ stuff too then? so you can invoke it standalone i am guessing ?",
+      "parentUuid": "2a512504_173ce9de",
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
