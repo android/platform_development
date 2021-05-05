@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1dd1fcc_17fd886b",
+        "filename": "scripts/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:56:57Z",
+      "side": 1,
+      "message": "I am not familiar with the Android tree plan on this. Might defer to Soong folks for their plan :)",
+      "parentUuid": "0b3a3ef4_157d8908",
+      "range": {
+        "startLine": 59,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 10
+      },
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe320107_c683db9c",
@@ -54,6 +78,24 @@
       "writtenOn": "2021-05-05T15:51:59Z",
       "side": 1,
       "message": "add a comment here, explaining that the intent here is to support CI where the llvm-cxxfilt binary is bundled with the script?\n\ni don\u0027t think shutil.which() is what you want here though, because this would also find an llvm-cxxfilt in /usr/bin. since the idea is to be hermetic, don\u0027t you need to look _exactly_ where the test infrastructure will have put the llvm-cxxfilt binary? (which i guess is the current directory? so something more like os.path.exists(\u0027llvm-cxxfilt\u0027)?)",
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a512504_173ce9de",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:56:57Z",
+      "side": 1,
+      "message": "The challenge is that it\u0027s not necessary in the flat same directory (could be in some subdir).\n\nI made sure the runner add them to the $PATH before invoking them, but i might have done it in a way that respect the existing $PATH vars priority, i could invert it though to ensure that bundled resources have priorities (which makes sense to me)",
+      "parentUuid": "fe320107_c683db9c",
       "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }

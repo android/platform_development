@@ -142,6 +142,30 @@
       },
       "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95127f88_8b2de158",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-05T15:56:57Z",
+      "side": 1,
+      "message": "Oh for sure, sorry was waiting to make i understood the underlying issue before changing the CL.",
+      "parentUuid": "16eead04_9ea91be7",
+      "range": {
+        "startLine": 443,
+        "startChar": 54,
+        "endLine": 443,
+        "endChar": 63
+      },
+      "revId": "2ca80721138d93ca1cee88a4b597a04ec8f27f45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
