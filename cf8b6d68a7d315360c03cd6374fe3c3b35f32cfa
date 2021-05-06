@@ -170,6 +170,24 @@
       "parentUuid": "2303b8f5_a73c1d60",
       "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcaaf915_e15647f5",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-05-06T21:14:18Z",
+      "side": 1,
+      "message": "ok presubmit happy.\n\nhttps://android-build.googleplex.com/builds/tests/view?invocationId\u003dI57600008771361060\u0026testResultId\u003dTR30022413410230932",
+      "parentUuid": "48e76fc8_46f7ebcd",
+      "revId": "cf8b6d68a7d315360c03cd6374fe3c3b35f32cfa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
