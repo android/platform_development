@@ -22,6 +22,30 @@
       },
       "revId": "98ef4e2750a250295c1b6f85f41bcda1d0a2e491",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "180f0166_e74c0cfe",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2021-05-07T08:23:49Z",
+      "side": 1,
+      "message": "Oh yeah you\u0027re right. We don\u0027t need this change. Thank you!",
+      "parentUuid": "c1b3150e_5443c633",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 48
+      },
+      "revId": "98ef4e2750a250295c1b6f85f41bcda1d0a2e491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
