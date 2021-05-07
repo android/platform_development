@@ -120,6 +120,9 @@ def parse_args():
               "'--no-lldb' is passed. 'vscode' with llbd and 'vscode-lldb' both " +
               "require the 'vadimcn.vscode-lldb' extension. 'vscode' with '--no-lldb' " +
               "and 'vscode-gdb' require the 'ms-vscode.cpptools' extension."))
+    parser.add_argument(
+        "--no-verify", action='store_true',
+        help="Don't check if the environment matches the attached device.")
 
     lldb_group = parser.add_mutually_exclusive_group()
     lldb_group.add_argument("--lldb", action="store_true", help="Use lldb.")
@@ -450,7 +453,8 @@ def do_main():
     sysroot = os.path.join(os.environ["ANDROID_PRODUCT_OUT"], "symbols")
 
     # Make sure the environment matches the attached device.
-    verify_device(root, device)
+    if not args.no_verify:
+        verify_device(root, device)
 
     debug_socket = "/data/local/tmp/debug_socket"
     pid = None
