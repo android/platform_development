@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1b3150e_5443c633",
+        "filename": "scripts/gdbclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2021-05-07T08:15:48Z",
+      "side": 1,
+      "message": "`TARGET_PRODUCT\u003dmicrodroid gdbclient.py` will satisfy this, right? Then do we still need this change?",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 48
+      },
+      "revId": "98ef4e2750a250295c1b6f85f41bcda1d0a2e491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
