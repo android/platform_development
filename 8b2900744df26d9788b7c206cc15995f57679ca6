@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd83429a_1e41aab8",
+        "filename": "cmds/monkey/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-05-08T00:25:53Z",
+      "side": 1,
+      "message": "A java_binary would be better, replacing both the java_library and the cc_prebuilt_binary:\n\n java_binary {\n     name: \"monkey\",\n     srcs: [\"**/*.java\"],\n     wrapper: [\"monkey\"],\n }",
+      "revId": "8b2900744df26d9788b7c206cc15995f57679ca6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
