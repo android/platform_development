@@ -16,6 +16,24 @@
       "message": "A java_binary would be better, replacing both the java_library and the cc_prebuilt_binary:\n\n java_binary {\n     name: \"monkey\",\n     srcs: [\"**/*.java\"],\n     wrapper: [\"monkey\"],\n }",
       "revId": "8b2900744df26d9788b7c206cc15995f57679ca6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca6cf510_7c3018e1",
+        "filename": "cmds/monkey/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2021-05-08T09:28:40Z",
+      "side": 1,
+      "message": "Oh cool, didn\u0027t know it could target _target_.",
+      "parentUuid": "fd83429a_1e41aab8",
+      "revId": "8b2900744df26d9788b7c206cc15995f57679ca6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
