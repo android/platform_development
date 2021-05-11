@@ -1,0 +1,10 @@
+sh_binary_host {
+    name: "extract_every_apex",
+    src: "extract_every_apex",
+    required: ["extract_apex"],
+}
+
+sh_binary_host {
+    name: "extract_apex",
+    src: "extract_apex",
+}
