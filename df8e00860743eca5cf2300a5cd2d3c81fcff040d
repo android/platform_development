@@ -16,6 +16,24 @@
       "message": "Given a vndk_prebuilt_shared module, how do we distinguish between vndk and llndk? By checking vndk: { enabled: true } ?",
       "revId": "df8e00860743eca5cf2300a5cd2d3c81fcff040d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fab3529_f8b6642f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2021-05-13T12:40:24Z",
+      "side": 1,
+      "message": "Yes. I tried adding a new property, but it is not required to the build system. The vndk apex only requires to check if the prebuilt is vndk or not by checking vndk.enabled property. prebuilt_vndk_shared is uninstallable module by default outside of vndk apex.",
+      "parentUuid": "5d4d8c0f_911aef58",
+      "revId": "df8e00860743eca5cf2300a5cd2d3c81fcff040d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
