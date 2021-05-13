@@ -102,6 +102,8 @@ class GenBuildFile(object):
         self._snapshot_archs = utils.get_snapshot_archs(install_dir)
         self._root_bpfile = os.path.join(install_dir, utils.ROOT_BP_PATH)
         self._common_bpfile = os.path.join(install_dir, utils.COMMON_BP_PATH)
+        self._llndk = self._parse_lib_list(
+            os.path.basename(self._etc_paths['llndk.libraries.txt']))
         self._vndk_core = self._parse_lib_list(
             os.path.basename(self._etc_paths['vndkcore.libraries.txt']))
         self._vndk_sp = self._parse_lib_list(
@@ -232,15 +234,27 @@ class GenBuildFile(object):
             vndk_core_buildrules = self._gen_vndk_shared_prebuilts(
                 self._vndk_core[arch],
                 arch,
+                is_llndk=False,
                 is_vndk_sp=False,
                 is_binder32=is_binder32,
                 module_names=module_names)
             vndk_sp_buildrules = self._gen_vndk_shared_prebuilts(
                 self._vndk_sp[arch],
                 arch,
+                is_llndk=False,
                 is_vndk_sp=True,
                 is_binder32=is_binder32,
                 module_names=module_names)
+            include_llndk = self._vndk_version > 30
+            if include_llndk:
+                llndk_buildrules = self._gen_vndk_shared_prebuilts(
+                    self._llndk[arch],
+                    arch,
+                    is_llndk=True,
+                    is_vndk_sp=False,
+                    is_binder32=is_binder32,
+                    module_names=module_names,
+                    bp_dir=variant_path)
 
             with open(bpfile_path, 'w') as bpfile:
                 bpfile.write(self._gen_autogen_msg('/'))
@@ -248,6 +262,9 @@ class GenBuildFile(object):
                 bpfile.write('\n'.join(vndk_core_buildrules))
                 bpfile.write('\n')
                 bpfile.write('\n'.join(vndk_sp_buildrules))
+                if include_llndk:
+                    bpfile.write('\n')
+                    bpfile.write('\n'.join(llndk_buildrules))
 
             variant_include_path = os.path.join(variant_path, 'include')
             include_path = os.path.join(self._install_dir, arch, 'include')
@@ -409,17 +426,21 @@ class GenBuildFile(object):
     def _gen_vndk_shared_prebuilts(self,
                                    prebuilts,
                                    arch,
+                                   is_llndk,
                                    is_vndk_sp,
                                    is_binder32,
-                                   module_names):
+                                   module_names,
+                                   bp_dir=None):
         """Returns list of build rules for given prebuilts.
 
         Args:
           prebuilts: list of VNDK shared prebuilts
           arch: string, VNDK snapshot arch (e.g. 'arm64')
+          is_llndk: bool, True if the prebuilts are LLNDK stubs
           is_vndk_sp: bool, True if prebuilts are VNDK_SP libs
           is_binder32: bool, True if binder interface is 32-bit
           module_names: dict, module names for given prebuilts
+          bp_dir: string, directory containing Android.bp
         """
 
         build_rules = []
@@ -427,9 +448,11 @@ class GenBuildFile(object):
             bp_module = self._gen_vndk_shared_prebuilt(
                 prebuilt,
                 arch,
+                is_llndk=is_llndk,
                 is_vndk_sp=is_vndk_sp,
                 is_binder32=is_binder32,
-                module_names=module_names)
+                module_names=module_names,
+                bp_dir=bp_dir)
             if bp_module:
                 build_rules.append(bp_module)
         return build_rules
@@ -437,18 +460,22 @@ class GenBuildFile(object):
     def _gen_vndk_shared_prebuilt(self,
                                   prebuilt,
                                   arch,
+                                  is_llndk,
                                   is_vndk_sp,
                                   is_binder32,
-                                  module_names):
+                                  module_names,
+                                  bp_dir=None):
         """Returns build rule for given prebuilt, or an empty string if the
         prebuilt is invalid (e.g. srcs doesn't exist).
 
         Args:
           prebuilt: string, name of prebuilt object
           arch: string, VNDK snapshot arch (e.g. 'arm64')
+          is_llndk: bool, True if prebuilt is a LLNDK stub
           is_vndk_sp: bool, True if prebuilt is a VNDK_SP lib
           is_binder32: bool, True if binder interface is 32-bit
           module_names: dict, module names for given prebuilts
+          bp_dir: string, directory containing Android.bp
         """
 
         def get_notice_file(prebuilt):
@@ -504,6 +531,18 @@ class GenBuildFile(object):
                             dirs=dirs,
                             name=name))
 
+            # Remove non-existent dirs from given list. Emits warning for such
+            # dirs.
+            def remove_invalid_dirs(paths, bp_dir, module_name):
+                ret = []
+                for path in paths:
+                    if os.path.isdir(os.path.join(bp_dir, path)):
+                        ret.append(path)
+                    else:
+                        logging.warning('Dir "%s" of module "%s" does not exist',
+                                        path, module_name)
+                return ret
+
             for src in sorted(src_paths):
                 include_dirs = ''
                 system_include_dirs = ''
@@ -521,9 +560,13 @@ class GenBuildFile(object):
                         props['RelativeInstallPath'] = 'hw'
                 if 'ExportedDirs' in props:
                     l = ['include/%s' % d for d in props['ExportedDirs']]
+                    if bp_dir:
+                        l = remove_invalid_dirs(l, bp_dir, name)
                     include_dirs = list_to_prop_value(l, 'export_include_dirs')
                 if 'ExportedSystemDirs' in props:
                     l = ['include/%s' % d for d in props['ExportedSystemDirs']]
+                    if bp_dir:
+                        l = remove_invalid_dirs(l, bp_dir, name)
                     system_include_dirs = list_to_prop_value(l, 'export_system_include_dirs')
                 if 'ExportedFlags' in props:
                     flags = list_to_prop_value(props['ExportedFlags'], 'export_flags')
@@ -569,21 +612,35 @@ class GenBuildFile(object):
         else:
             name = os.path.splitext(prebuilt)[0]
 
-        product_available = ''
-        # if vndkproduct.libraries.txt is empty, make the VNDKs available to product by default.
-        if not self._vndk_product[arch] or prebuilt in self._vndk_product[arch]:
-            product_available = '{ind}product_available: true,\n'.format(
-                ind=self.INDENT)
+        vndk_props = ''
+        if not is_llndk:
+            product_available = ''
+            # if vndkproduct.libraries.txt is empty, make the VNDKs available to product by default.
+            if not self._vndk_product[arch] or prebuilt in self._vndk_product[arch]:
+                product_available = '{ind}product_available: true,\n'.format(
+                    ind=self.INDENT)
 
-        vndk_sp = ''
-        if is_vndk_sp:
-            vndk_sp = '{ind}{ind}support_system_process: true,\n'.format(
-                ind=self.INDENT)
+            vndk_sp = ''
+            if is_vndk_sp:
+                vndk_sp = '{ind}{ind}support_system_process: true,\n'.format(
+                    ind=self.INDENT)
 
-        vndk_private = ''
-        if prebuilt in self._vndk_private[arch]:
-            vndk_private = '{ind}{ind}private: true,\n'.format(
-                ind=self.INDENT)
+            vndk_private = ''
+            if prebuilt in self._vndk_private[arch]:
+                vndk_private = '{ind}{ind}private: true,\n'.format(
+                    ind=self.INDENT)
+
+            vndk_props = ('{ind}vendor_available: true,\n'
+                          '{product_available}'
+                          '{ind}vndk: {{\n'
+                          '{ind}{ind}enabled: true,\n'
+                          '{vndk_sp}'
+                          '{vndk_private}'
+                          '{ind}}},\n'.format(
+                              ind=self.INDENT,
+                              product_available=product_available,
+                              vndk_sp=vndk_sp,
+                              vndk_private=vndk_private))
 
         notice = get_notice_file(prebuilt)
         arch_props = get_arch_props(prebuilt, arch, src_paths)
@@ -597,13 +654,7 @@ class GenBuildFile(object):
                 '{ind}version: "{ver}",\n'
                 '{ind}target_arch: "{target_arch}",\n'
                 '{binder32bit}'
-                '{ind}vendor_available: true,\n'
-                '{product_available}'
-                '{ind}vndk: {{\n'
-                '{ind}{ind}enabled: true,\n'
-                '{vndk_sp}'
-                '{vndk_private}'
-                '{ind}}},\n'
+                '{vndk_props}'
                 '{notice}'
                 '{arch_props}'
                 '}}\n'.format(
@@ -612,9 +663,7 @@ class GenBuildFile(object):
                     ver=self._vndk_version,
                     target_arch=arch,
                     binder32bit=binder32bit,
-                    product_available=product_available,
-                    vndk_sp=vndk_sp,
-                    vndk_private=vndk_private,
+                    vndk_props=vndk_props,
                     notice=notice,
                     arch_props=arch_props))
 
