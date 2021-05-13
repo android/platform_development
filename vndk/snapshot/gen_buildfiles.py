@@ -102,6 +102,8 @@ class GenBuildFile(object):
         self._snapshot_archs = utils.get_snapshot_archs(install_dir)
         self._root_bpfile = os.path.join(install_dir, utils.ROOT_BP_PATH)
         self._common_bpfile = os.path.join(install_dir, utils.COMMON_BP_PATH)
+        self._llndk = self._parse_lib_list(
+            os.path.basename(self._etc_paths['llndk.libraries.txt']))
         self._vndk_core = self._parse_lib_list(
             os.path.basename(self._etc_paths['vndkcore.libraries.txt']))
         self._vndk_sp = self._parse_lib_list(
@@ -241,6 +243,12 @@ class GenBuildFile(object):
                 is_vndk_sp=True,
                 is_binder32=is_binder32,
                 module_names=module_names)
+            llndk_buildrules = self._gen_vndk_shared_prebuilts(
+                self._llndk[arch],
+                arch,
+                is_vndk_sp=False,
+                is_binder32=is_binder32,
+                module_names=module_names)
 
             with open(bpfile_path, 'w') as bpfile:
                 bpfile.write(self._gen_autogen_msg('/'))
@@ -248,6 +256,8 @@ class GenBuildFile(object):
                 bpfile.write('\n'.join(vndk_core_buildrules))
                 bpfile.write('\n')
                 bpfile.write('\n'.join(vndk_sp_buildrules))
+                bpfile.write('\n')
+                bpfile.write('\n'.join(llndk_buildrules))
 
             variant_include_path = os.path.join(variant_path, 'include')
             include_path = os.path.join(self._install_dir, arch, 'include')
