@@ -16,6 +16,24 @@
       "message": "This seems reasonable, but is the cargo.out file not good enough?  Or perhaps instead of this we should cat its contents if there\u0027s an error?  I\u0027m slightly worried that extra flags like this could make their way into the actual Android.bp header.",
       "revId": "4c6be43fd8670228fbdc4ab3012679c899c1176e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3b5cb0e_692ef646",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2021-05-14T22:55:31Z",
+      "side": 1,
+      "message": "Good point on this probably getting persisted to the Android.bp file.\n\ncat on error would work for me. As someone new to the tool it was very non-obvious how to debug anything, since I didn\u0027t know to look for a cargo.out (and in general I don\u0027t want extra steps to be able to see error messages for the thing I just ran). I\u0027d also be in favor of just showing output by default.\n\nlmk which you prefer.",
+      "parentUuid": "35930ddd_3f0d5914",
+      "revId": "4c6be43fd8670228fbdc4ab3012679c899c1176e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
