@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "881dfe90_60cf3240",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2021-05-14T04:20:45Z",
+      "side": 1,
+      "message": "This is fine for now, but ultimately I want to introduce a variable or a new module explicitly specifying this is \"llndk\". WDYT?",
+      "revId": "dba5e0f214d3880599a76b7ba69b5f00f571c67b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
