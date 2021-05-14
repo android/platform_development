@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35930ddd_3f0d5914",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-05-14T21:31:34Z",
+      "side": 1,
+      "message": "This seems reasonable, but is the cargo.out file not good enough?  Or perhaps instead of this we should cat its contents if there\u0027s an error?  I\u0027m slightly worried that extra flags like this could make their way into the actual Android.bp header.",
+      "revId": "4c6be43fd8670228fbdc4ab3012679c899c1176e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
