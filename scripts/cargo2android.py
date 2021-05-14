@@ -1243,7 +1243,11 @@ class Runner(object):
         os.remove(cargo_out)
       if not self.args.use_cargo_lock and had_cargo_lock:  # save it
         os.rename(cargo_lock, cargo_lock_saved)
-    cmd_tail = ' --target-dir ' + TARGET_TMP + ' >> ' + cargo_out + ' 2>&1'
+    if self.args.show_cargo_output:
+      redirect = f' 2>&1 | tee {cargo_out}'
+    else:
+      redirect = f' >> {cargo_out} 2>&1'
+    cmd_tail = f' --target-dir {TARGET_TMP} {redirect}'
     # set up search PATH for cargo to find the correct rustc
     saved_path = os.environ['PATH']
     os.environ['PATH'] = os.path.dirname(self.cargo_path) + ':' + saved_path
@@ -1612,6 +1616,10 @@ def get_parser():
       action='store_true',
       default=False,
       help='run cargo with -vv instead of default -v')
+  parser.add_argument(
+      '--show-cargo-output',
+      action='store_true',
+      help='Show the output of executed cargo commands when running.')
   parser.add_argument(
       '--dump-config-and-exit',
       type=str,
