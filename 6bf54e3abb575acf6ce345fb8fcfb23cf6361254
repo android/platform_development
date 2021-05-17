@@ -16,6 +16,24 @@
       "message": "This is a potential alternative approach to aosp/1709006.\n\nDan, what do you think of this?  At first I was printing the full output on an error, but this way seemed a bit better.",
       "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8db32d30_3011172f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2021-05-17T20:55:35Z",
+      "side": 1,
+      "message": "It\u0027s an improvement that would have saved me time but anything that requires extra steps to see error output is still going to result in me sending a patch 😊",
+      "parentUuid": "7da62299_19054a9d",
+      "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
