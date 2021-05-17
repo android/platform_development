@@ -52,6 +52,24 @@
       "parentUuid": "8db32d30_3011172f",
       "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a62559e_fa2d46c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2021-05-17T21:12:20Z",
+      "side": 1,
+      "message": "Well, I did also suggest showing output by default 😊\n\nI hadn\u0027t noticed that these were being dumped into the CWD and assumed there were going to temp, which would have made it difficult to do `cargo2android.py || cat cargo.out`. I still think tools that make me go elsewhere to see what went wrong are odd, but if I have a workaround that\u0027s good enough.",
+      "parentUuid": "9c0ba371_5a69082a",
+      "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
