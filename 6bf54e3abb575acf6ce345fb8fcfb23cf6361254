@@ -70,6 +70,24 @@
       "parentUuid": "9c0ba371_5a69082a",
       "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db1d7ba6_dd2d56bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-05-17T21:25:25Z",
+      "side": 1,
+      "message": "Yeah, it already should handle making sure cargo.out is in the right place, so it should be easy to use (and then people can open it however they wish).\n\nMy problem with showing the whole output is that it can easily contain thousands of extremely long lines, which will make it very difficult to go through any log containing it (such as a run of the updater, which calls this many times).  Showing just the last few lines as a hint could work, but even they\u0027re kind of long, and I\u0027m not sure the actual error will always be right at the end.",
+      "parentUuid": "2a62559e_fa2d46c5",
+      "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
