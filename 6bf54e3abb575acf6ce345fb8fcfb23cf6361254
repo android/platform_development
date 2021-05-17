@@ -34,6 +34,24 @@
       "parentUuid": "7da62299_19054a9d",
       "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c0ba371_5a69082a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-05-17T21:01:41Z",
+      "side": 1,
+      "message": "So what would you suggest?  aosp/1709006 still requires an extra step since you have to re-run it with the new arg, so you\u0027d have to patch that as well. \u003d)\n\nMy previous version of this printed the entire output on an error, which removes that extra step at the cost of adding lots of noise to the output and making it difficult e.g., to run a bulk upgrade and look for errors.  What do you think?",
+      "parentUuid": "8db32d30_3011172f",
+      "revId": "6bf54e3abb575acf6ce345fb8fcfb23cf6361254",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
