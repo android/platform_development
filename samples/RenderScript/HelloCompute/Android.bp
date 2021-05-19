@@ -23,6 +23,10 @@ android_app {
     name: "RsHelloCompute",
     srcs: [
         "src/**/*.java",
+        ":RsHelloCompute-rscript-java",
+    ],
+    resource_zips: [
+        ":RsHelloCompute-rscript-res",
     ],
     sdk_version: "14",
 
@@ -34,4 +38,44 @@ android_app {
     //  -I ~/aosp/frameworks/rs/script_api/include $file; done'
     // More details about this command can be found below,
     // https://cs.android.com/android/platform/superproject/+/master:frameworks/compile/slang/README.rst
+}
+
+genrule {
+    name: "RsHelloCompute-rscript-java",
+    srcs: [
+        "src/**/*.rscript",
+        ":rs_script_api",
+        ":rs_clang_headers",
+    ],
+    tools: [
+        "llvm-rs-cc",
+        "soong_zip",
+    ],
+    out: ["RsHelloCompute.srcjar"],
+    cmd: "mkdir $(genDir)/include && " +
+        "cp $(locations :rs_script_api) $(locations :rs_clang_headers) $(genDir)/include && " +
+        "for f in $(locations src/**/*.rscript); do " +
+        "  $(location llvm-rs-cc) -target-api 14 -o $(genDir)/res/raw -p $(genDir)/src -I $(genDir)/include $${f}; " +
+        "done && " +
+        "$(location soong_zip) -srcjar -o $(out) -C $(genDir)/src -D $(genDir)/src",
+}
+
+genrule {
+    name: "RsHelloCompute-rscript-res",
+    srcs: [
+        "src/**/*.rscript",
+        ":rs_script_api",
+        ":rs_clang_headers",
+    ],
+    tools: [
+        "llvm-rs-cc",
+        "soong_zip",
+    ],
+    out: ["RsHelloCompute.res.zip"],
+    cmd: "mkdir $(genDir)/include && " +
+        "cp $(locations :rs_script_api) $(locations :rs_clang_headers) $(genDir)/include && " +
+        "for f in $(locations src/**/*.rscript); do " +
+        "  $(location llvm-rs-cc) -target-api 14 -o $(genDir)/res/raw -p $(genDir)/src -I $(genDir)/include $${f}; " +
+        "done && " +
+        "$(location soong_zip) -o $(out) -C $(genDir)/res -D $(genDir)/res",
 }
