@@ -189,6 +189,8 @@ def do_report(args):
         '--show-region-summary=false'
     ] + object_flags + source_dirs)
 
+    print(f'Coverage report data written in {temp_dir}')
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
