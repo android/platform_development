@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75650218_c8e3a1a0",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-24T09:17:30Z",
+      "side": 1,
+      "message": "why not \u0027^apex(\\d+)$\u0027?\nCould there be any prefix?",
+      "range": {
+        "startLine": 184,
+        "startChar": 26,
+        "endLine": 184,
+        "endChar": 28
+      },
+      "revId": "a392a1de8f0d583987d7f30b87a71e242d336d72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1be45ca_6455febc",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-24T09:17:30Z",
+      "side": 1,
+      "message": "Could there be multiple matches? Or can we \"break\" here immediately?",
+      "range": {
+        "startLine": 186,
+        "startChar": 45,
+        "endLine": 186,
+        "endChar": 46
+      },
+      "revId": "a392a1de8f0d583987d7f30b87a71e242d336d72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
