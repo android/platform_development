@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "781a0146_015b72ce",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-05-24T10:09:16Z",
+      "side": 1,
+      "message": "re.match matches from the beginning but not the full string.\nhttps://docs.python.org/3/library/re.html#re.Pattern.match",
+      "parentUuid": "75650218_c8e3a1a0",
+      "range": {
+        "startLine": 184,
+        "startChar": 26,
+        "endLine": 184,
+        "endChar": 28
+      },
+      "revId": "a392a1de8f0d583987d7f30b87a71e242d336d72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1be45ca_6455febc",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-05-24T09:17:30Z",
       "side": 1,
       "message": "Could there be multiple matches? Or can we \"break\" here immediately?",
+      "range": {
+        "startLine": 186,
+        "startChar": 45,
+        "endLine": 186,
+        "endChar": 46
+      },
+      "revId": "a392a1de8f0d583987d7f30b87a71e242d336d72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4a28e08_a6fdbd6c",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-05-24T10:09:16Z",
+      "side": 1,
+      "message": "There are no multiple matches in the lsdump_paths.txt attached to the bug.",
+      "parentUuid": "f1be45ca_6455febc",
       "range": {
         "startLine": 186,
         "startChar": 45,
