@@ -93,6 +93,30 @@
       },
       "revId": "a392a1de8f0d583987d7f30b87a71e242d336d72",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0712238_d78e7413",
+        "filename": "vndk/tools/header-checker/utils/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-24T11:09:55Z",
+      "side": 1,
+      "message": "In that case, just return immediately on first match?\n\n```\nfor variant in suffix.split(\u0027_\u0027):\n  match \u003d re.match(r\u0027apex(\\d+)$\u0027, variant)\n  if match:\n    return (int(match.group(1)), suffix)\nreturn (-1, suffix)\n```",
+      "parentUuid": "e4a28e08_a6fdbd6c",
+      "range": {
+        "startLine": 186,
+        "startChar": 45,
+        "endLine": 186,
+        "endChar": 46
+      },
+      "revId": "a392a1de8f0d583987d7f30b87a71e242d336d72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
