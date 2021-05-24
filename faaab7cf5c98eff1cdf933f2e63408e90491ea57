@@ -39,6 +39,30 @@
       },
       "revId": "faaab7cf5c98eff1cdf933f2e63408e90491ea57",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49236e9f_40d7dcc2",
+        "filename": "tools/otagui/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-05-24T16:42:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d506d776_9763a8f4",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 4
+      },
+      "revId": "faaab7cf5c98eff1cdf933f2e63408e90491ea57",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
