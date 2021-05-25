@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8a0c11f_a2abb1ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-05-25T01:00:53Z",
+      "side": 1,
+      "message": "Note that this means that if the patch fails to apply we will not copy over the partially-applied file.  I sort of like this, as it\u0027s not immediately obvious what was applied and what wasn\u0027t, but it makes debugging it a bit trickier.",
+      "revId": "7e8247e2eb07e4ccc5d3d3fef77f2d7fb548279d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
