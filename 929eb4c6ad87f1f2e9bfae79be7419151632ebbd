@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2067bb49_fc726ad1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-01T21:00:20Z",
+      "side": 1,
+      "message": "Add a newline before this line, so that rest of commit messages don\u0027t show up in gerrit\u0027s webpage title.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3fb79f9_d6c18277",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-01T21:00:20Z",
+      "side": 1,
+      "message": "Prefer async/await over .then callback chaining",
+      "range": {
+        "startLine": 21,
+        "startChar": 7,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26e17fdb_e4c76018",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-01T21:00:20Z",
+      "side": 1,
+      "message": "Can be simplified to\n```\ntry {\n    this.jobs \u003d await ApiService.GetJobs().data\n} catch ...\n```",
+      "range": {
+        "startLine": 33,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "814d13c2_780e14bb",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-01T21:00:20Z",
+      "side": 1,
+      "message": "Move Source Package Path above target file path, as this matches the order in CLI",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 8
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04a3f4b3_ac0d1d53",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-01T21:00:20Z",
+      "side": 1,
+      "message": "Make this a proper class and turn these into instance methods, in case we want to create multiple instances.",
+      "range": {
+        "startLine": 31,
+        "startChar": 5,
+        "endLine": 31,
+        "endChar": 16
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6383ea69_a735d1f3",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-01T21:00:20Z",
+      "side": 1,
+      "message": "We can probably simply this to `if \u0027incremental\u0027 in args` . No need to add a separate flag to mark this as an incremental OTA",
+      "range": {
+        "startLine": 69,
+        "startChar": 11,
+        "endLine": 69,
+        "endChar": 36
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "926d6550_afc3c415",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-01T21:00:20Z",
+      "side": 1,
+      "message": "When possible, do all checking upfront at beginning of this function.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 29
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
