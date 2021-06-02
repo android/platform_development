@@ -68,6 +68,24 @@
       "parentUuid": "b9ed04e4_afe4b4cb",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc09726d_20535a55",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2021-06-02T15:17:58Z",
+      "side": 1,
+      "message": "In the CL llvm-cxxfilt is part of filegroups which are packaged as a relative path to the test binary which is the logic you see here.\n\nThat works through Atest/CI.\n\nThere was a conversation about keeping the fallback for pure local invocation of the binary, and my understanding was that there was a bunch of follow ups needed anyway (was it by pirama?) to not hardcode the version (todo above) and restore the local look up.",
+      "parentUuid": "b9aae95f_c63e9728",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
