@@ -140,6 +140,24 @@
       "parentUuid": "07f56f1c_70c796d5",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51637f90_4ae1f5b6",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2021-06-02T16:56:30Z",
+      "side": 1,
+      "message": "\u003e can we set an ANDROID_LLVM_BIN or something in envsetup.sh instead?\n\nccross@: WDYT?  The last time we talked about this a few years ago, I think the answer was that the clang version parsing happens during build (`m`) and so is not available during envsetup.  But this may be feasible now.",
+      "parentUuid": "2fe9569c_087ca042",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
