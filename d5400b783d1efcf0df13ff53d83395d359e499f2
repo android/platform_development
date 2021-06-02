@@ -16,6 +16,24 @@
       "message": "You can remove this file, it is created by RsHelloCompute-rscript-res",
       "revId": "d5400b783d1efcf0df13ff53d83395d359e499f2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74120347_8c98c227",
+        "filename": "samples/RenderScript/HelloCompute/res/raw/mono.bc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1863140
+      },
+      "writtenOn": "2021-06-02T23:49:17Z",
+      "side": 1,
+      "message": "Oh, yes, I should remove it as well. Thanks!",
+      "parentUuid": "5aeb8f9f_98e3d96c",
+      "revId": "d5400b783d1efcf0df13ff53d83395d359e499f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
