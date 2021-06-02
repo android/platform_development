@@ -176,6 +176,24 @@
       "parentUuid": "51637f90_4ae1f5b6",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "402e5d9c_cdae5fad",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2021-06-02T20:43:33Z",
+      "side": 1,
+      "message": "We could add a script to build/soong/scripts that parses the .go file and returns the version.\n\n(We\u0027d still have to fallback to the glob for CI but it\u0027s ok since there\u0027s just going to be one version in that scenario).",
+      "parentUuid": "ee80361f_2a282d08",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
