@@ -104,6 +104,24 @@
       "parentUuid": "fc09726d_20535a55",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07f56f1c_70c796d5",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2021-06-02T16:48:51Z",
+      "side": 1,
+      "message": "b/187231324 is about hardcoding the version name in prebuilts/clang/host/linux-x86/Android.bp.  There\u0027s soong logic needed there to infer the current version (which is tracked in build/soong).\n\nI was not aware of this TODO.  The clang version is available during local usage (from build/soong [1]) but not available here during CI.  We should do the following here:\n  - for local usage: parse https://android.googlesource.com/platform/build/soong/+/refs/heads/master/cc/config/global.go and look for clang version in ClangDefaultVersion\n  - for CI: glob for ./clang-r*\n  \n[1] \u0027ANDROID_BUILD_TOP\u0027 is used at the top of this file so I presume we only support local usage from an Android tree.",
+      "parentUuid": "89e3c69b_55a4723f",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
