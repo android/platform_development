@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5aeb8f9f_98e3d96c",
+        "filename": "samples/RenderScript/HelloCompute/res/raw/mono.bc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-06-02T23:45:58Z",
+      "side": 1,
+      "message": "You can remove this file, it is created by RsHelloCompute-rscript-res",
+      "revId": "d5400b783d1efcf0df13ff53d83395d359e499f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
