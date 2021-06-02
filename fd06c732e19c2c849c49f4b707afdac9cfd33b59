@@ -212,6 +212,24 @@
       "parentUuid": "402e5d9c_cdae5fad",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82010a0a_68e133d7",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-06-02T21:11:33Z",
+      "side": 1,
+      "message": "How about putting a json config file in prebuilts/host/clang/linux-x86 and have Soong load the clang config from there?",
+      "parentUuid": "395b9cf1_54700fd0",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
