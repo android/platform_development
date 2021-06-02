@@ -16,6 +16,24 @@
       "message": "Here\u0027s a proposal using a genrule instead of checked in files.   I think it will be more accurate (in this case monoBitCode.java was left over from an earlier llvm-rs-cc run and shouldn\u0027t have been checked in), although it is very verbose.  It requires two other changes:\n\nIn external/clang/lib/Android.bp:\n\nfilegroup {\n    name: \"rs_clang_headers\",\n    srcs: [\"Headers/*.h\"],\n    path: \"Headers\",\n}\n\nIn frameworks/rs/script_api/Android.bp:\n\nfilegroup {\n    name: \"rs_script_api\",\n    srcs: [\"include/*.rsh\"],\n    path: \"include\",\n}\n\n",
       "revId": "ed14b5758b32767132b0d192f0fe66a0552cfbf5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2360bf05_56dca1c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1863140
+      },
+      "writtenOn": "2021-06-02T19:38:56Z",
+      "side": 1,
+      "message": "Hi Colin, do you mind that I plan to put all the related Cls together (into a topic) and then run a pre-submit first?",
+      "parentUuid": "520d5675_2d4291c0",
+      "revId": "ed14b5758b32767132b0d192f0fe66a0552cfbf5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
