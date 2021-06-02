@@ -34,6 +34,24 @@
       "parentUuid": "520d5675_2d4291c0",
       "revId": "ed14b5758b32767132b0d192f0fe66a0552cfbf5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4d28da3_84e14463",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-06-02T21:12:53Z",
+      "side": 1,
+      "message": "Sure, or if this is the way you plan to go I\u0027d suggest just squashing this into your CL.",
+      "parentUuid": "2360bf05_56dca1c0",
+      "revId": "ed14b5758b32767132b0d192f0fe66a0552cfbf5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
