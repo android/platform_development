@@ -50,6 +50,24 @@
       "message": "This breaks local development\u0027s case. Why did we remove the regexp from before? Should this at least have \u0027prebuilts\u0027 before the clang directory?",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9aae95f_c63e9728",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-06-02T15:14:49Z",
+      "side": 1,
+      "message": "I even mentioned this exact case in https://android-review.googlesource.com/c/platform/development/+/1682228/5..8/scripts/symbol.py#b443. This shouldn\u0027t be hard-coded here, especially not to an invalid value.",
+      "parentUuid": "b9ed04e4_afe4b4cb",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
