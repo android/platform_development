@@ -230,6 +230,24 @@
       "parentUuid": "395b9cf1_54700fd0",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5634c85_84c99b66",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1058860
+      },
+      "writtenOn": "2021-06-02T21:19:58Z",
+      "side": 1,
+      "message": "That SGTM.  Is there any reference code in soong for doing this?\n\n(It\u0027s possible to override this version using the LLVM_PREBUILTS_VERSION environment variable but this usage is not likely to interfere with this script).",
+      "parentUuid": "82010a0a_68e133d7",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
