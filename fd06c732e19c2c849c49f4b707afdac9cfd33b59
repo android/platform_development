@@ -122,6 +122,24 @@
       "parentUuid": "89e3c69b_55a4723f",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fe9569c_087ca042",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-06-02T16:52:35Z",
+      "side": 1,
+      "message": "can we set an ANDROID_LLVM_BIN or something in envsetup.sh instead? it seems like this \"go do weird stuff like grepping a .go file\" crops up quite often, and it seems like it would be better if we owned that part and just moved everyone over to using the one true source of truth?",
+      "parentUuid": "07f56f1c_70c796d5",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
