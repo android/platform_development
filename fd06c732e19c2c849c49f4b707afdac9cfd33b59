@@ -194,6 +194,24 @@
       "parentUuid": "ee80361f_2a282d08",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "395b9cf1_54700fd0",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-06-02T20:58:00Z",
+      "side": 1,
+      "message": "that sounds good too. i\u0027m not attached to any specific mechanism, i just want to have _one_ place that knows how to do this (especially if \"this\" is \"grep a .go source file\"). we already have too many \u0027clang-r12345\u0027s lying around, and getting a similar number of copy \u0026 paste greps sounds even worse!",
+      "parentUuid": "402e5d9c_cdae5fad",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
