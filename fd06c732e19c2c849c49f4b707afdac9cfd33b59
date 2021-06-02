@@ -158,6 +158,24 @@
       "parentUuid": "2fe9569c_087ca042",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee80361f_2a282d08",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-06-02T19:52:45Z",
+      "side": 1,
+      "message": "ANDROID_LLVM_BIN is computed in Soong, which isn\u0027t called during envsetup.sh.  Also, envsetup.sh is generally not a hard requirement to run a build, although maybe it is for atest.",
+      "parentUuid": "51637f90_4ae1f5b6",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
