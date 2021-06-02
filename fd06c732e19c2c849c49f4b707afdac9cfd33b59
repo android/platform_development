@@ -248,6 +248,24 @@
       "parentUuid": "82010a0a_68e133d7",
       "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1abe274_13896a76",
+        "filename": "scripts/symbol.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2021-06-02T21:22:26Z",
+      "side": 1,
+      "message": "See https://cs.android.com/android/platform/superproject/+/master:build/soong/android/config.go;l\u003d1035;drc\u003d8fab6f86af918c37592a51aed09a05e09e1172e9 and https://cs.android.com/android/platform/superproject/+/master:build/soong/dexpreopt/config.go;l\u003d220;drc\u003d0e4ccebb1681ba464d4ae816347fbd86159d354c",
+      "parentUuid": "f5634c85_84c99b66",
+      "revId": "fd06c732e19c2c849c49f4b707afdac9cfd33b59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
