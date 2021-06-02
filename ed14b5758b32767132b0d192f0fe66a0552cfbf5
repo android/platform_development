@@ -52,6 +52,24 @@
       "parentUuid": "2360bf05_56dca1c0",
       "revId": "ed14b5758b32767132b0d192f0fe66a0552cfbf5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d25b91f5_44a164fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1863140
+      },
+      "writtenOn": "2021-06-02T22:54:04Z",
+      "side": 1,
+      "message": "Okay, will modify my CL (for easier management if needed in the future). Thanks!",
+      "parentUuid": "b4d28da3_84e14463",
+      "revId": "ed14b5758b32767132b0d192f0fe66a0552cfbf5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
