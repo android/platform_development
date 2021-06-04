@@ -13,6 +13,22 @@ export default {
   getJobs() {
     return apiClient.get("/check")
   },
+  getJobById(id) {
+    return apiClient.get("/check/" + id)
+  },
+  getFileList(path) {
+    return apiClient.get("/file" + path)
+  },
+  uploadTarget(file, onUploadProgress) {
+    let formData = new FormData()
+    formData.append('file', file)
+    console.log(formData)
+    return apiClient.post("/file/" + file.name, 
+      formData, 
+      {
+        onUploadProgress
+      })
+  },
   async postInput(input, id) {
     try {
       const response = await apiClient.post(
