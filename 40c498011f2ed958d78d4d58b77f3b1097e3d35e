@@ -16,6 +16,24 @@
       "message": "LGTM. BTW, do we have Soong test for vendor_snapshot_rlib usage?",
       "revId": "40c498011f2ed958d78d4d58b77f3b1097e3d35e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58a3743e_fc86d408",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115178
+      },
+      "writtenOn": "2021-06-04T12:55:35Z",
+      "side": 1,
+      "message": "Yup, I added various tests as part of the rlib snapshot support.\n\nSee https://cs.android.com/android/platform/superproject/+/master:build/soong/rust/vendor_snapshot_test.go;drc\u003d3149e6ed1882786fc9e1defd0b5540c0147a0209;l\u003d979 for the check to make sure the vendor snapshot variant of rlibs are used.",
+      "parentUuid": "329186c5_c78c84cd",
+      "revId": "40c498011f2ed958d78d4d58b77f3b1097e3d35e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
