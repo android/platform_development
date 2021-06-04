@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "329186c5_c78c84cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2021-06-04T12:21:04Z",
+      "side": 1,
+      "message": "LGTM. BTW, do we have Soong test for vendor_snapshot_rlib usage?",
+      "revId": "40c498011f2ed958d78d4d58b77f3b1097e3d35e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
