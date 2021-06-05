@@ -1,0 +1,212 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "a12bb4ba_8e6e5084",
+        "filename": "tools/otagui/package-lock.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 10586,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 10586,
+        "startChar": 61,
+        "endLine": 10586,
+        "endChar": 64
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "67fdb77b_19f4d3c5",
+        "filename": "tools/otagui/package-lock.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 12792,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 12792,
+        "startChar": 77,
+        "endLine": 12792,
+        "endChar": 80
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "828a298c_7a5e9012",
+        "filename": "tools/otagui/package-lock.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 23379,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 23379,
+        "startChar": 61,
+        "endLine": 23379,
+        "endChar": 64
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "f24e5aba_7fa01763",
+        "filename": "tools/otagui/package-lock.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 25248,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 25248,
+        "startChar": 77,
+        "endLine": 25248,
+        "endChar": 80
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "1d9780bb_ab47d14f",
+        "filename": "tools/otagui/src/components/BaseSelect.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 3,
+        "startChar": 9,
+        "endLine": 3,
+        "endChar": 10
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "917e8798_9981372e",
+        "filename": "tools/otagui/src/components/BaseSelect.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "463d68b8_009f3347",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 35,
+        "startChar": 62,
+        "endLine": 35,
+        "endChar": 63
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011465561",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1723254?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "7e1d4747_660a1073",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-05T00:18:21Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
