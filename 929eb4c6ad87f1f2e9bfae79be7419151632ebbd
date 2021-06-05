@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3f4cc92_18676b1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-05T00:19:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2067bb49_fc726ad1",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3fb79f9_d6c18277",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-01T21:00:20Z",
       "side": 1,
       "message": "Prefer async/await over .then callback chaining",
+      "range": {
+        "startLine": 21,
+        "startChar": 7,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d217ed6e_7729b965",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-05T00:19:17Z",
+      "side": 1,
+      "message": "Changed to async/await.",
+      "parentUuid": "e3fb79f9_d6c18277",
       "range": {
         "startLine": 21,
         "startChar": 7,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13fd3852_aa47062e",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-05T00:19:17Z",
+      "side": 1,
+      "message": "Changed to async/awit.",
+      "parentUuid": "26e17fdb_e4c76018",
+      "range": {
+        "startLine": 33,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "814d13c2_780e14bb",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-06-01T21:00:20Z",
       "side": 1,
       "message": "Move Source Package Path above target file path, as this matches the order in CLI",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 8
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a7ff508_00b9fdb1",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-05T00:19:17Z",
+      "side": 1,
+      "message": "Changed.",
+      "parentUuid": "814d13c2_780e14bb",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebf598bf_ff59afcb",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-05T00:19:17Z",
+      "side": 1,
+      "message": "Changed to a class.",
+      "parentUuid": "04a3f4b3_ac0d1d53",
+      "range": {
+        "startLine": 31,
+        "startChar": 5,
+        "endLine": 31,
+        "endChar": 16
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6383ea69_a735d1f3",
@@ -139,6 +259,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d553906_e65013df",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-05T00:19:17Z",
+      "side": 1,
+      "message": "Changed.",
+      "parentUuid": "6383ea69_a735d1f3",
+      "range": {
+        "startLine": 69,
+        "startChar": 11,
+        "endLine": 69,
+        "endChar": 36
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "926d6550_afc3c415",
@@ -152,6 +296,30 @@
       "writtenOn": "2021-06-01T21:00:20Z",
       "side": 1,
       "message": "When possible, do all checking upfront at beginning of this function.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 29
+      },
+      "revId": "929eb4c6ad87f1f2e9bfae79be7419151632ebbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c1cbfd6_e4f47828",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-05T00:19:17Z",
+      "side": 1,
+      "message": "Add a pre-validation at the beginning of the function.",
+      "parentUuid": "926d6550_afc3c415",
       "range": {
         "startLine": 74,
         "startChar": 0,
