@@ -95,6 +95,29 @@
       },
       "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97ec84e5_75c5ff6e",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-06T22:13:00Z",
+      "side": 1,
+      "message": "Prefer 0.0.0.0 so server an accept connection from everywhere(if host has multiple IP addr)",
+      "range": {
+        "startLine": 25,
+        "startChar": 16,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
