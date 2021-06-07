@@ -25,6 +25,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13823bd6_97761aa0",
+        "filename": "tools/otagui/src/components/BaseSelect.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-07T03:10:54Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "4432c99b_a188fd2a",
+      "range": {
+        "startLine": 3,
+        "startChar": 9,
+        "endLine": 3,
+        "endChar": 10
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc840422_f1c5aaf3",
@@ -39,6 +63,30 @@
       "side": 1,
       "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
       "parentUuid": "917e8798_9981372e",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9bbeaad_1ba32b3f",
+        "filename": "tools/otagui/src/components/BaseSelect.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-07T03:10:54Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "cc840422_f1c5aaf3",
       "range": {
         "startLine": 14,
         "startChar": 5,
@@ -73,6 +121,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "196f16ec_e8add9d7",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-07T03:10:54Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "8d6491d4_ff8abae4",
+      "range": {
+        "startLine": 35,
+        "startChar": 62,
+        "endLine": 35,
+        "endChar": 63
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0258325_141b8e59",
@@ -87,6 +159,30 @@
       "side": 1,
       "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
       "parentUuid": "7e1d4747_660a1073",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ac2b338_76b312fa",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-07T03:10:54Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "f0258325_141b8e59",
       "range": {
         "startLine": 10,
         "startChar": 40,
@@ -120,6 +216,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d135dfc8_55938c46",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-07T03:10:54Z",
+      "side": 1,
+      "message": "Changed.",
+      "parentUuid": "97ec84e5_75c5ff6e",
+      "range": {
+        "startLine": 25,
+        "startChar": 16,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1efbb53_f238a44b",
@@ -133,6 +253,30 @@
       "writtenOn": "2021-06-06T22:22:49Z",
       "side": 1,
       "message": "Move to a different file, the logic to generate OTA/interact with OTA tooling should be decoupled from server code.",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 20
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e489ca43_af39ad41",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-07T03:10:54Z",
+      "side": 1,
+      "message": "I can\u0027t agree more. But it\u0027s better to decouple other functions that are unrelated to HTTP operations as well, that might take a bit work - can we start another CL dealing with this?",
+      "parentUuid": "c1efbb53_f238a44b",
       "range": {
         "startLine": 61,
         "startChar": 8,
@@ -180,6 +324,30 @@
       "side": 1,
       "message": "NVM... they are all caps, I missed something.",
       "parentUuid": "be96c582_a21f91d8",
+      "range": {
+        "startLine": 169,
+        "startChar": 4,
+        "endLine": 169,
+        "endChar": 13
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77674f8a_adfbbe88",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-07T03:10:54Z",
+      "side": 1,
+      "message": "Yes they are consistent in this patch. But I changed it to lowercase in the next version, for the style reason.",
+      "parentUuid": "e6554e74_1773403e",
       "range": {
         "startLine": 169,
         "startChar": 4,
