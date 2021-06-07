@@ -287,6 +287,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e70de060_543d6d32",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-07T13:27:56Z",
+      "side": 1,
+      "message": "Sure",
+      "parentUuid": "e489ca43_af39ad41",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 20
+      },
+      "revId": "7a712b03c4ad473727c927f1caeb23b62a31f527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be96c582_a21f91d8",
