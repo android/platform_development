@@ -1,0 +1,52 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c60aa994_336beb51",
+        "filename": "tools/otagui/src/components/UploadFile.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-07T13:33:24Z",
+      "side": 1,
+      "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
+      "parentUuid": "b7f06255_4652a111",
+      "range": {
+        "startLine": 35,
+        "startChar": 22,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "a5d9b50b59dd1c8243fc5ae1d2e1359d60f117cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2fb85e0_7eb029ae",
+        "filename": "tools/otagui/src/components/UploadFile.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-07T13:33:24Z",
+      "side": 1,
+      "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
+      "parentUuid": "a8d73b6e_fca520f7",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 6
+      },
+      "revId": "a5d9b50b59dd1c8243fc5ae1d2e1359d60f117cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
