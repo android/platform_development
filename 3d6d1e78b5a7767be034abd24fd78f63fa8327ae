@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd726ee4_09b2a488",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-06-07T22:12:46Z",
+      "side": 1,
+      "message": "Python is weird...",
+      "revId": "3d6d1e78b5a7767be034abd24fd78f63fa8327ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
