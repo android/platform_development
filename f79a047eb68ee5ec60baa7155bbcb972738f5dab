@@ -401,6 +401,30 @@
       },
       "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9cbec20_76b0240e",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:55:56Z",
+      "side": 1,
+      "message": "Thank you for pointing out, put two related document links in the comments.",
+      "parentUuid": "86e265f7_9d844e8f",
+      "range": {
+        "startLine": 126,
+        "startChar": 31,
+        "endLine": 126,
+        "endChar": 58
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
