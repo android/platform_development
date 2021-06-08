@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "303fc781_1f013fc0",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T13:55:44Z",
+      "side": 1,
+      "message": "ota_interface should return data in a structured way, for example, return a map from id to current status. The caller can decide how to present the data, and perform necessary formating.",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 43
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3eca6e2_aadc45f1",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T13:55:44Z",
+      "side": 1,
+      "message": "Again, return structured data, let caller do all serialization.",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 32
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6eeec746_872bb419",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T13:55:44Z",
+      "side": 1,
+      "message": "Is there an anticipated use-case of passing a custom ID? If not we should remove this parameter, and let ota_interface pick its own ID. This function should then return the chosen ID back to caller.",
+      "range": {
+        "startLine": 60,
+        "startChar": 33,
+        "endLine": 60,
+        "endChar": 37
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48a37b55_2422189c",
+        "filename": "tools/otagui/src/components/UploadFile.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T13:55:44Z",
+      "side": 1,
+      "message": "Looks like this is a tab character? Try to use consistent spacing. (Either use all tabs or all spaces, don\u0027t mix them)",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 1
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3373df2b_3e313741",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T13:55:44Z",
+      "side": 1,
+      "message": "Use spaces(to be consistent with rest of your source code)",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f434ac0_0dcb4719",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T13:55:44Z",
+      "side": 1,
+      "message": "Why *2 + 4... add comment to explain the logic here. What\u0027s the expected format of the wrapper?",
+      "range": {
+        "startLine": 126,
+        "startChar": 31,
+        "endLine": 126,
+        "endChar": 58
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
