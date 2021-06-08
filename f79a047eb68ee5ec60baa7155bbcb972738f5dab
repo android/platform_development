@@ -353,6 +353,30 @@
       },
       "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3a9b919_4acc8aaf",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:48:07Z",
+      "side": 1,
+      "message": "You mean in the comment?\nThe top one looks like:\n\u0027---------------------------WebKit\u0027\n\nand the bottom one is like:\n\u0027---------------------------WebKit--\u0027",
+      "parentUuid": "d8a158a7_2e2751c7",
+      "range": {
+        "startLine": 126,
+        "startChar": 31,
+        "endLine": 126,
+        "endChar": 58
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
