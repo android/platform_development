@@ -142,6 +142,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1af8183_0b80451b",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26f82d45_be498dee",
+      "range": {
+        "startLine": 60,
+        "startChar": 33,
+        "endLine": 60,
+        "endChar": 37
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48a37b55_2422189c",
