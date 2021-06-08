@@ -1,0 +1,108 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011519908",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1728650?revision\u003d3",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "44ffffa2_8ab5f707",
+        "filename": "tools/otagui/src/services/ApiService.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-08T04:32:02Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 26,
+        "startChar": 47,
+        "endLine": 26,
+        "endChar": 48
+      },
+      "revId": "717717b9eb4e5a717d808ce6937ffee599223e7b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011519908",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1728650?revision\u003d3",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "1ca20a17_063527f5",
+        "filename": "tools/otagui/src/services/ApiService.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-08T04:32:02Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 27,
+        "startChar": 15,
+        "endLine": 27,
+        "endChar": 16
+      },
+      "revId": "717717b9eb4e5a717d808ce6937ffee599223e7b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011519908",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1728650?revision\u003d3",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "abbe3f03_cca87019",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-08T04:32:02Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 3,
+        "startChar": 33,
+        "endLine": 3,
+        "endChar": 34
+      },
+      "revId": "717717b9eb4e5a717d808ce6937ffee599223e7b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011519908",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1728650?revision\u003d3",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "b79fb1f9_3a4a6998",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-08T04:32:02Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 15,
+        "startChar": 46,
+        "endLine": 15,
+        "endChar": 47
+      },
+      "revId": "717717b9eb4e5a717d808ce6937ffee599223e7b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
