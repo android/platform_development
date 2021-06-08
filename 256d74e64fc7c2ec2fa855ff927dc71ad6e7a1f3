@@ -22,6 +22,30 @@
       },
       "revId": "256d74e64fc7c2ec2fa855ff927dc71ad6e7a1f3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f54ac73d_069641b8",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1626,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-06-08T22:08:57Z",
+      "side": 1,
+      "message": "Like this?",
+      "parentUuid": "082e5a9f_a35fb648",
+      "range": {
+        "startLine": 1626,
+        "startChar": 34,
+        "endLine": 1626,
+        "endChar": 38
+      },
+      "revId": "256d74e64fc7c2ec2fa855ff927dc71ad6e7a1f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
