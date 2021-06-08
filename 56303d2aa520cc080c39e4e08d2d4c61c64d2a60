@@ -1,6 +1,30 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e7a7efb_d7b00dbb",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T04:32:40Z",
+      "side": 1,
+      "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
+      "parentUuid": "df0309d7_61e7062c",
+      "range": {
+        "startLine": 4,
+        "startChar": 17,
+        "endLine": 4,
+        "endChar": 18
+      },
+      "revId": "56303d2aa520cc080c39e4e08d2d4c61c64d2a60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a961eee3_34cf96a2",
@@ -15,6 +39,30 @@
       "side": 1,
       "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
       "parentUuid": "fbecb715_9cc25545",
+      "range": {
+        "startLine": 19,
+        "startChar": 13,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "56303d2aa520cc080c39e4e08d2d4c61c64d2a60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7cf5740_f207446f",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T04:32:40Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "a961eee3_34cf96a2",
       "range": {
         "startLine": 19,
         "startChar": 13,
@@ -49,6 +97,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0925b130_9b9b1ef7",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T04:32:40Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "a390ac7c_47d44c8c",
+      "range": {
+        "startLine": 20,
+        "startChar": 21,
+        "endLine": 20,
+        "endChar": 22
+      },
+      "revId": "56303d2aa520cc080c39e4e08d2d4c61c64d2a60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a6fbda4b_18b3521b",
@@ -73,6 +145,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5493d1e3_17a799ce",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T04:32:40Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "a6fbda4b_18b3521b",
+      "range": {
+        "startLine": 67,
+        "startChar": 73,
+        "endLine": 67,
+        "endChar": 74
+      },
+      "revId": "56303d2aa520cc080c39e4e08d2d4c61c64d2a60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7320622c_702babfc",
@@ -87,6 +183,30 @@
       "side": 1,
       "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
       "parentUuid": "764e2df9_75a52f4c",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 4
+      },
+      "revId": "56303d2aa520cc080c39e4e08d2d4c61c64d2a60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b9c8495_3d47e277",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T04:32:40Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "7320622c_702babfc",
       "range": {
         "startLine": 80,
         "startChar": 0,
