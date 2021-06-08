@@ -22,6 +22,30 @@
       },
       "revId": "147a72d5ee2265d492762c7741f22532ad6bcc3f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ffa78fb_5d532ca6",
+        "filename": "samples/RenderScript/HelloCompute/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1863140
+      },
+      "writtenOn": "2021-06-08T18:07:08Z",
+      "side": 1,
+      "message": "Removed. Thanks!",
+      "parentUuid": "d854e60c_5b9e820b",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 104
+      },
+      "revId": "147a72d5ee2265d492762c7741f22532ad6bcc3f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
