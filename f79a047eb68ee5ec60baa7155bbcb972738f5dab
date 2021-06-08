@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6348b64c_b47e2af1",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:36:40Z",
+      "side": 1,
+      "message": "Solved.",
+      "parentUuid": "303fc781_1f013fc0",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 43
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3eca6e2_aadc45f1",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-08T13:55:44Z",
       "side": 1,
       "message": "Again, return structured data, let caller do all serialization.",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 32
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd0aad3f_505432d1",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:36:40Z",
+      "side": 1,
+      "message": "Solved.",
+      "parentUuid": "b3eca6e2_aadc45f1",
       "range": {
         "startLine": 58,
         "startChar": 8,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "26f82d45_be498dee",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:36:40Z",
+      "side": 1,
+      "message": "Yes, the front end will generate a 128-bits UUID for each job submission. This UUID will be used to store and track the status and output of that submitted job on the server side. \n\nLater the UUID will also be used in database.",
+      "parentUuid": "6eeec746_872bb419",
+      "range": {
+        "startLine": 60,
+        "startChar": 33,
+        "endLine": 60,
+        "endChar": 37
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48a37b55_2422189c",
         "filename": "tools/otagui/src/components/UploadFile.vue",
         "patchSetId": 4
@@ -83,6 +155,30 @@
       "writtenOn": "2021-06-08T13:55:44Z",
       "side": 1,
       "message": "Looks like this is a tab character? Try to use consistent spacing. (Either use all tabs or all spaces, don\u0027t mix them)",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 1
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd815eba_ccb1482a",
+        "filename": "tools/otagui/src/components/UploadFile.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:36:40Z",
+      "side": 1,
+      "message": "I changed it.",
+      "parentUuid": "48a37b55_2422189c",
       "range": {
         "startLine": 50,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20acc65b_46408dcf",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:36:40Z",
+      "side": 1,
+      "message": "Fixed. This is unexpected... I tried to make sure my indents are consistent, but for whatever reasons, my editor failed to put correct indent sometime under certain environments...",
+      "parentUuid": "3373df2b_3e313741",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f434ac0_0dcb4719",
@@ -129,6 +249,30 @@
       "writtenOn": "2021-06-08T13:55:44Z",
       "side": 1,
       "message": "Why *2 + 4... add comment to explain the logic here. What\u0027s the expected format of the wrapper?",
+      "range": {
+        "startLine": 126,
+        "startChar": 31,
+        "endLine": 126,
+        "endChar": 58
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b9ed571_5352d597",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-08T16:36:40Z",
+      "side": 1,
+      "message": "I put more comments to explain.",
+      "parentUuid": "7f434ac0_0dcb4719",
       "range": {
         "startLine": 126,
         "startChar": 31,
