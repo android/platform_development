@@ -377,6 +377,30 @@
       },
       "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86e265f7_9d844e8f",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T16:48:55Z",
+      "side": 1,
+      "message": "Yea... Put an example like this in the comment, so readers know exactly what are you trying to unwrap.",
+      "parentUuid": "c3a9b919_4acc8aaf",
+      "range": {
+        "startLine": 126,
+        "startChar": 31,
+        "endLine": 126,
+        "endChar": 58
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
