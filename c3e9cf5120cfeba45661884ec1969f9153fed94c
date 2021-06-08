@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd1150bc_6dbf42cb",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T16:41:08Z",
+      "side": 1,
+      "message": "this whole thing can be simplified down to\n\n```\nreturn [self.get_status_by_ID(id) for id in self.get_keys()]\n```",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "c3e9cf5120cfeba45661884ec1969f9153fed94c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

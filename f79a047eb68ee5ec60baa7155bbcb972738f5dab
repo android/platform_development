@@ -166,6 +166,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76e39409_d2248ee1",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T16:41:08Z",
+      "side": 1,
+      "message": "It\u0027s generally more preferable to generate these UUIDs on the backend and return to front-end(for security reasons). For this project we don\u0027t care about security so much, so it\u0027s okay to leave it as is for now.",
+      "parentUuid": "b1af8183_0b80451b",
+      "range": {
+        "startLine": 60,
+        "startChar": 33,
+        "endLine": 60,
+        "endChar": 37
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48a37b55_2422189c",
@@ -297,6 +321,30 @@
       "side": 1,
       "message": "I put more comments to explain.",
       "parentUuid": "7f434ac0_0dcb4719",
+      "range": {
+        "startLine": 126,
+        "startChar": 31,
+        "endLine": 126,
+        "endChar": 58
+      },
+      "revId": "f79a047eb68ee5ec60baa7155bbcb972738f5dab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8a158a7_2e2751c7",
+        "filename": "tools/otagui/web_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-08T16:41:08Z",
+      "side": 1,
+      "message": "Put an example to demonstrate the format of wrapper lines?",
+      "parentUuid": "7b9ed571_5352d597",
       "range": {
         "startLine": 126,
         "startChar": 31,
