@@ -1,7 +1,7 @@
 Pkg.Desc=Android SDK System Image
 Pkg.UserSrc=false
 Pkg.Revision=7
-Pkg.Dependencies=emulator#29.1.11
+Pkg.Dependencies=emulator#30.7.3
 AndroidVersion.ApiLevel=${PLATFORM_SDK_VERSION}
 AndroidVersion.CodeName=${PLATFORM_VERSION_CODENAME}
 SystemImage.Abi=x86
