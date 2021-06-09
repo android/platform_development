@@ -675,7 +675,8 @@ class Crate(object):
   def dump_edition_flags_libs(self):
     if self.edition:
       self.write('    edition: "' + self.edition + '",')
-    self.dump_android_property_list('features', '"%s"', self.features)
+    features = [f for f in self.features if not f in self.runner.args.feature_blocklist]
+    self.dump_android_property_list('features', '"%s"', features)
     cfgs = [cfg for cfg in self.cfgs if not cfg in self.runner.args.cfg_blocklist]
     self.dump_android_property_list('cfgs', '"%s"', cfgs)
     self.dump_android_flags()
@@ -1635,6 +1636,11 @@ def get_parser():
       nargs='*',
       default=[],
       help='Do not emit the given cfg.')
+  parser.add_argument(
+      '--feature-blocklist',
+      nargs='*',
+      default=[],
+      help='Do not emit the given feature.')
   parser.add_argument(
       '--no-test-mapping',
       action='store_true',
