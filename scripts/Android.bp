@@ -78,5 +78,8 @@ python_test_host {
     ],
     libs: [
         "pyfakefs",
-    ]
+    ],
+    test_options: {
+        unit_test: true,
+    },
 }
