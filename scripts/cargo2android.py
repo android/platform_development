@@ -659,6 +659,8 @@ class Crate(object):
       self.write('    ],')
     if self.runner.args.min_sdk_version and crate_type == 'lib':
       self.write('    min_sdk_version: "%s",' % self.runner.args.min_sdk_version)
+    if self.runner.args.add_module_block:
+      self.write('    %s,' % self.runner.args.add_module_block.replace('\n', '\n    '))
     self.write('}')
 
   def dump_android_flags(self):
@@ -1378,6 +1380,8 @@ class Runner(object):
             if lib_name not in dumped_libs:
               dumped_libs.add(lib_name)
               lib.dump()
+        if self.args.add_toplevel_block:
+          self.append_to_bp('\n' + self.args.add_toplevel_block + '\n')
         if self.args.dependencies and self.dependencies:
           self.dump_dependencies()
         if self.errors:
@@ -1642,6 +1646,14 @@ def get_parser():
       default=[],
       help='Do not emit the given feature.')
   parser.add_argument(
+      '--add-toplevel-block',
+      type=str,
+      help='Add the given string to the top level of the Android.bp.')
+  parser.add_argument(
+      '--add-module-block',
+      type=str,
+      help='Add the given string to the main module.')
+  parser.add_argument(
       '--no-test-mapping',
       action='store_true',
       default=False,
@@ -1675,7 +1687,7 @@ def parse_args(parser):
   # Use the values specified in a config file if one was found.
   if args.config:
     with open(args.config, 'r') as f:
-      config = json.load(f)
+      config = json.load(f, strict=False)
       args_dict = vars(args)
       for arg in config:
         args_dict[arg.replace('-', '_')] = config[arg]
