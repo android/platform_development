@@ -16,6 +16,24 @@
       "message": "Can you explain why we aren\u0027t just listing only the features we want on input? This feature blocklist hack will not necessarily work for crates which compute cfg flags based on features, which our other mechanism (selecting features to pass to cargo) works with.",
       "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f454c900_3b6c50c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-06-10T19:52:12Z",
+      "side": 1,
+      "message": "I\u0027m just emulating the behavior of the existing patch, which deleted a feature.  If people want to allowlist features, they can do that instead.",
+      "parentUuid": "6343778c_b458b972",
+      "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
