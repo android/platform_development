@@ -33,6 +33,24 @@
       "message": "I think we should either support file inputs here rather than strings (so that we can have bp fragments, formatted by bpfmt), or we should support json input that gets transformed to blueprint.\n\nHaving big strings with meaningful newlines/indentation in the middle of a json file sounds unfun.",
       "revId": "e25f2eee5f6988307d9bd6a9cc9c00890b1ab2ee",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "126b6e7d_64b4ddef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-06-10T17:45:19Z",
+      "side": 1,
+      "message": "That was my first thought before I realized that I could get JSON to support newlines in strings.  Once I realized this, I think I prefer this approach, as it saves us from having potentially multiple extra files sitting around that we have to be sure to add/copy everywhere.",
+      "parentUuid": "b982605c_6b91288d",
+      "revId": "e25f2eee5f6988307d9bd6a9cc9c00890b1ab2ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
