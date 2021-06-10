@@ -69,6 +69,24 @@
       "parentUuid": "126b6e7d_64b4ddef",
       "revId": "e25f2eee5f6988307d9bd6a9cc9c00890b1ab2ee",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64aff9ae_91ab8d3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-06-10T17:50:35Z",
+      "side": 1,
+      "message": "E.g., in the updater when copying files back and forth.\n\nI\u0027m not sure about your second point: what exactly is the difference?",
+      "parentUuid": "1a4767db_2286bdb0",
+      "revId": "e25f2eee5f6988307d9bd6a9cc9c00890b1ab2ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
