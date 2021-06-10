@@ -51,6 +51,24 @@
       "parentUuid": "b982605c_6b91288d",
       "revId": "e25f2eee5f6988307d9bd6a9cc9c00890b1ab2ee",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a4767db_2286bdb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2021-06-10T17:48:07Z",
+      "side": 1,
+      "message": "What do you mean add/copy everywhere? Shouldn\u0027t these files live only in that repo?\n\nAlso, a benefit of the structured-json version (though it would be harder to implement) is that it would give you a generalized form of your main-module feature - you could parse Android.bp, then do a dictionary merge between the parsed value and the json value, then serialize it back out.",
+      "parentUuid": "126b6e7d_64b4ddef",
+      "revId": "e25f2eee5f6988307d9bd6a9cc9c00890b1ab2ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
