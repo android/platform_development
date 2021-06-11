@@ -16,6 +16,24 @@
       "message": "go/android.bp says this is the default",
       "revId": "ec99ed348b32a80a4ad4008f0a2c301d8281ea06",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2f4201e_fce537ad",
+        "filename": "scripts/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1561651
+      },
+      "writtenOn": "2021-06-11T06:34:08Z",
+      "side": 1,
+      "message": "Thanks, I was following outdated internal doc.",
+      "parentUuid": "0fb34f61_9d08b4e3",
+      "revId": "ec99ed348b32a80a4ad4008f0a2c301d8281ea06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
