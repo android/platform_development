@@ -1,10 +1,10 @@
 <template>
   <input
     type="checkbox"
-    :checked="modelValue"
     class="field"
     v-bind="$attrs"
-    @change="$emit('update:modelValue', $event.target.checked)"
+    :checked="value"
+    @change="$emit('change-partition', $event.target.checked)"
   >
   <label v-if="label"> {{ label }} </label>
 </template>
@@ -16,7 +16,7 @@ export default {
       type: String,
       default: ''
     },
-    modelValue: {
+    value: {
       type: Boolean,
       default: false
     }
