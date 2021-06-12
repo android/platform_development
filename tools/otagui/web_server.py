@@ -22,12 +22,14 @@ from http.server import BaseHTTPRequestHandler, SimpleHTTPRequestHandler, HTTPSe
 from socketserver import ThreadingMixIn
 from threading import Lock
 from ota_interface import ProcessesManagement
+import target_lib
 import logging
 import json
 import pipes
 import cgi
 import subprocess
 import os
+import sys
 
 LOCAL_ADDRESS = '0.0.0.0'
 
@@ -77,7 +79,7 @@ class RequestHandler(CORSSimpleHTTPHandler):
             )
             return
         elif self.path.startswith('/file'):
-            file_list = jobs.get_list(self.path[6:])
+            file_list = jobs.get_builds_list(self.path[6:])
             self._set_response(type='application/json')
             self.wfile.write(
                 json.dumps(file_list).encode()
@@ -133,6 +135,7 @@ class RequestHandler(CORSSimpleHTTPHandler):
                 file_length -= len(self.rfile.readline())
                 file_length -= len(self.rfile.readline())
                 output_file.write(self.rfile.read(file_length))
+                target_lib.new_build(self.path[6:], file_name)
             self._set_response(code=201)
             self.wfile.write(
                 "File received, saved into {}".format(
@@ -165,7 +168,11 @@ if __name__ == '__main__':
     from sys import argv
     print(argv)
     jobs = ProcessesManagement()
-    if len(argv) == 2:
-        run_server(port=int(argv[1]))
-    else:
-        run_server()
+    target_lib.init()
+    try:
+        if len(argv) == 2:
+            run_server(port=int(argv[1]))
+        else:
+            run_server()
+    except KeyboardInterrupt:
+        sys.exit(0)
