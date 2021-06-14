@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d398ea53_e907b3d9",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Technically this function isn\u0027t part of the logic to interact with OTA tooling. It\u0027s for managing target files, so probabbly target_lib.py is a better place for it.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 38
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7264b090_a68f095a",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Consider using names like \"isPartialOTA\" or \"isPartial\" instead of \"partialstatus\". The same applies for incrementalStatus, but that can be fixed in a separate CL.",
+      "range": {
+        "startLine": 35,
+        "startChar": 25,
+        "endLine": 35,
+        "endChar": 38
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7423741_604cf123",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Can we make each partition an actual checkbox, instead of an add button + a minus button? It might also be worth re-factoring this into a MultiSelect component, which receives a list of options as props, then render a list of checkbox.",
+      "range": {
+        "startLine": 39,
+        "startChar": 10,
+        "endLine": 54,
+        "endChar": 21
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dc8ee4f_7a828248",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "API service should never return something that the caller needs to do additional parsing. Either let the backend return structured data, or make API service handle any additional parsing. Caller should not be aware of the storage format of data.",
+      "range": {
+        "startLine": 132,
+        "startChar": 34,
+        "endLine": 132,
+        "endChar": 44
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf7ab766_5c763c11",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Consider using https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 57
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3af39ab3_60b377c8",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Seems less ideal that we are storing partial partition list as a raw string and manipulating it here. Consider storing partial partition list as a map or set, and format to a string whenever we need to display/transmit it.",
+      "range": {
+        "startLine": 205,
+        "startChar": 19,
+        "endLine": 205,
+        "endChar": 26
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77ddd44f_9538d174",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Try not to make everything global unless really needed... Turn it into a class, with name/path of database passed in(can also add a default value). This makes it easy for us to add unittest in the future.",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcba72bd_a0a941a4",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Same here, consider using named tuple(or dataclass https://docs.python.org/3/library/dataclasses.html) if possible",
+      "range": {
+        "startLine": 80,
+        "startChar": 4,
+        "endLine": 80,
+        "endChar": 14
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96031087_c4ab0808",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "Consider turning `target_info` into a named tuple instead of dynamic dictionary, because we actually know all possible fields on this dictionary.",
+      "range": {
+        "startLine": 119,
+        "startChar": 8,
+        "endLine": 119,
+        "endChar": 19
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f64447f1_7428179a",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T14:15:08Z",
+      "side": 1,
+      "message": "It\u0027s generally less ideal to store JSON as string in databases, as we would just use NoSQL in that case. It\u0027s okay to do it here for simplicity, but your `sql_to_dict` function should then de-serialize Partitions into a list of string.",
+      "range": {
+        "startLine": 132,
+        "startChar": 79,
+        "endLine": 132,
+        "endChar": 89
+      },
+      "revId": "571ae5a0cba27a2b5f7c908ef3c04f8fe7e8d13f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
