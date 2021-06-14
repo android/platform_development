@@ -70,6 +70,24 @@
       "parentUuid": "1d77f0b5_608dde1a",
       "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1aa5ed0_5230eef0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2021-06-14T19:28:05Z",
+      "side": 1,
+      "message": "We would do it by listing in an allowlist all the features they want to use.\n\nThe problem with post-cargo feature removal is that all the metadata we extracted was done as though that feature *was* enabled.",
+      "parentUuid": "9a6ec5ab_c5926cc0",
+      "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
