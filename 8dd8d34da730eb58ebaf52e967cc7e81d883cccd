@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92bc27ad_981cdb64",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "This \"SimpleForm\" component has grown quite a bit, and it\u0027s no longer a \"Simple\" form. Consider moving the build library part to a separate component. Same for partial partition select part.",
+      "range": {
+        "startLine": 67,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 7
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "621fac1d_259682ec",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Consider passing the entire `targetDetail` , so caller doesn\u0027t need to filter target list with path.",
+      "range": {
+        "startLine": 91,
+        "startChar": 39,
+        "endLine": 91,
+        "endChar": 51
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80f7354a_9031453f",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Select as incremental should come before select as target",
+      "range": {
+        "startLine": 97,
+        "startChar": 20,
+        "endLine": 97,
+        "endChar": 37
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c5d4096_6818cd19",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Consider something like \n```\ntargetList \u003d response.data.map(entry \u003d\u003e entry.file_name)\n```",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 47
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47e80497_bd242ed9",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "How is this different from `targetDetails \u003d response.data` ?",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 40
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bae6f8be_1fa14e90",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "use spaces",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 1
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba233f19_bdec9bf3",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Consider making \"partial\" a computed property",
+      "range": {
+        "startLine": 214,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 7
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d49032ea_1a94f853",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Consider replace this loop with `this.targetList \u003d response.data.map(d \u003d\u003e d.FileName)`\n\nWhy is `FileName` not camel cased... Rest of variable names are camel cased, try to keep using a consistent convention.",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 57
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e0ddb76_0cfe1616",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Please don\u0027t do this. If you want to conditionally run some init logic, add another function that takes in an BuildInfo object and populate missing fields, or a function that takes in a path and return a parsed BuildInfo.",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 15
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25206851_cd761404",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Store as a list of string? This class is intended for in-memory use, so it should be maximally structured.",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 14
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36d0d230_186a18bf",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "This won\u0027t work, resulting partition names will include quotation marks and brackets. Consider using json.loads, or simply store partitions as a comma separated list.",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d263d01_0cc98762",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-14T22:38:57Z",
+      "side": 1,
+      "message": "Return a BuildInfo object to caller, instead of a dict",
+      "range": {
+        "startLine": 132,
+        "startChar": 15,
+        "endLine": 132,
+        "endChar": 30
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
