@@ -34,6 +34,24 @@
       "parentUuid": "6343778c_b458b972",
       "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d77f0b5_608dde1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416371
+      },
+      "writtenOn": "2021-06-14T18:48:15Z",
+      "side": 1,
+      "message": "I\u0027m saying that as a feature of cargo2android.py, this will get things wrong - dependencies, cfg flags, etc. will be set as though this feature is active, then you will build with it inactive.\n\nThe patch you\u0027re doing this for was doing it wrong too, but that doesn\u0027t mean we should codify an API to do the wrong thing.",
+      "parentUuid": "f454c900_3b6c50c8",
+      "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
