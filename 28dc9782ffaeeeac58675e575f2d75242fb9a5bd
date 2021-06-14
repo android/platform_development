@@ -88,6 +88,24 @@
       "parentUuid": "9a6ec5ab_c5926cc0",
       "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1dfed25e_8cb81b81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-06-14T19:32:34Z",
+      "side": 1,
+      "message": "So then how would we handle cases like ahash and tokio, both of which I believe were doing this?  Both chose not to use the allowlist approach (which could also be dangerous since it would override the default).",
+      "parentUuid": "d1aa5ed0_5230eef0",
+      "revId": "28dc9782ffaeeeac58675e575f2d75242fb9a5bd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
