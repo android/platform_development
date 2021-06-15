@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "96939366_f7e3ed78",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Will do in a separate CL.",
+      "parentUuid": "92bc27ad_981cdb64",
+      "range": {
+        "startLine": 67,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 7
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "621fac1d_259682ec",
         "filename": "tools/otagui/src/views/SimpleForm.vue",
         "patchSetId": 6
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-14T22:38:57Z",
       "side": 1,
       "message": "Consider passing the entire `targetDetail` , so caller doesn\u0027t need to filter target list with path.",
+      "range": {
+        "startLine": 91,
+        "startChar": 39,
+        "endLine": 91,
+        "endChar": 51
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ed78b54_f94d6afb",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Since the path is always unique, i think it is ok to use path as a filter (if there isn\u0027t too many uploaded builds)?",
+      "parentUuid": "621fac1d_259682ec",
       "range": {
         "startLine": 91,
         "startChar": 39,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5694ce55_c57bf523",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Moved.",
+      "parentUuid": "80f7354a_9031453f",
+      "range": {
+        "startLine": 97,
+        "startChar": 20,
+        "endLine": 97,
+        "endChar": 37
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c5d4096_6818cd19",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-06-14T22:38:57Z",
       "side": 1,
       "message": "Consider something like \n```\ntargetList \u003d response.data.map(entry \u003d\u003e entry.file_name)\n```",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 47
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d204eb3_2a1999d6",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Now targetList is removed.",
+      "parentUuid": "1c5d4096_6818cd19",
       "range": {
         "startLine": 178,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf2562c1_6cdd7a4c",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "They are essentially the same thing. Changed to a simplified expression.",
+      "parentUuid": "47e80497_bd242ed9",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 40
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bae6f8be_1fa14e90",
@@ -129,6 +249,30 @@
       "writtenOn": "2021-06-14T22:38:57Z",
       "side": 1,
       "message": "use spaces",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 1
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ccbe292_d9eef917",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Changed.",
+      "parentUuid": "bae6f8be_1fa14e90",
       "range": {
         "startLine": 192,
         "startChar": 0,
@@ -162,6 +306,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93416409_b1e75028",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Now partialList is a computed/watch property.",
+      "parentUuid": "ba233f19_bdec9bf3",
+      "range": {
+        "startLine": 214,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 7
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d49032ea_1a94f853",
@@ -175,6 +343,30 @@
       "writtenOn": "2021-06-14T22:38:57Z",
       "side": 1,
       "message": "Consider replace this loop with `this.targetList \u003d response.data.map(d \u003d\u003e d.FileName)`\n\nWhy is `FileName` not camel cased... Rest of variable names are camel cased, try to keep using a consistent convention.",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 57
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a37a0829_e221263a",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Actually, there is no need to keep this.targetList now... Because this.targetDetails will do the same thing.\nI deleted all lines that are associated with it.",
+      "parentUuid": "d49032ea_1a94f853",
       "range": {
         "startLine": 226,
         "startChar": 0,
@@ -208,6 +400,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d8c7dba_919002ae",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Ok. I renamed the __post_init__ as a analyse_buildprop, it will only be ran when first uploading a build into the database.",
+      "parentUuid": "8e0ddb76_0cfe1616",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 15
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25206851_cd761404",
@@ -221,6 +437,30 @@
       "writtenOn": "2021-06-14T22:38:57Z",
       "side": 1,
       "message": "Store as a list of string? This class is intended for in-memory use, so it should be maximally structured.",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 14
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70bf7e66_5fe49e13",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Okay, I think this might be better: the partition list will be stored as an array in BuildInfo Class; but will be joined by commas when stored into SQL. When reading from SQL, the partition list will be parsed again into a list of string.",
+      "parentUuid": "25206851_cd761404",
       "range": {
         "startLine": 25,
         "startChar": 4,
@@ -256,6 +496,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7696738a_df259aab",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "That might be related to a change in the manner of storage. Did you use a .db file from last version?",
+      "parentUuid": "36d0d230_186a18bf",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d263d01_0cc98762",
         "filename": "tools/otagui/target_lib.py",
         "patchSetId": 6
@@ -267,6 +531,30 @@
       "writtenOn": "2021-06-14T22:38:57Z",
       "side": 1,
       "message": "Return a BuildInfo object to caller, instead of a dict",
+      "range": {
+        "startLine": 132,
+        "startChar": 15,
+        "endLine": 132,
+        "endChar": 30
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd30454c_4ac7b1a5",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T05:21:20Z",
+      "side": 1,
+      "message": "Ok, but in the end I still have to pass a json to frontend. So I write a .to_json in BuildInfo class, which will be used when sending response.",
+      "parentUuid": "2d263d01_0cc98762",
       "range": {
         "startLine": 132,
         "startChar": 15,
