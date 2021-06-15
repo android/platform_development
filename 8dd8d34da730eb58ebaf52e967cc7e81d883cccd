@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbbe4559_492bdb32",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-15T13:01:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "96939366_f7e3ed78",
+      "range": {
+        "startLine": 67,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 7
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "621fac1d_259682ec",
@@ -508,6 +532,30 @@
       "side": 1,
       "message": "That might be related to a change in the manner of storage. Did you use a .db file from last version?",
       "parentUuid": "36d0d230_186a18bf",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bc2d45a_5b308926",
+        "filename": "tools/otagui/target_lib.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-15T13:01:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7696738a_df259aab",
       "range": {
         "startLine": 129,
         "startChar": 8,

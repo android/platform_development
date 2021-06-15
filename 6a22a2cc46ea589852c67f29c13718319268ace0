@@ -1,0 +1,100 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14b8ae06_be06d26c",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-15T13:01:45Z",
+      "side": 1,
+      "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
+      "parentUuid": "280feba9_08665dfc",
+      "range": {
+        "startLine": 38,
+        "startChar": 24,
+        "endLine": 38,
+        "endChar": 25
+      },
+      "revId": "6a22a2cc46ea589852c67f29c13718319268ace0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee68a12f_037cfd9e",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-15T13:01:45Z",
+      "side": 1,
+      "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
+      "parentUuid": "79369c35_3531fc77",
+      "range": {
+        "startLine": 43,
+        "startChar": 36,
+        "endLine": 43,
+        "endChar": 37
+      },
+      "revId": "6a22a2cc46ea589852c67f29c13718319268ace0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36877a9c_8fdd3a70",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-15T13:01:45Z",
+      "side": 1,
+      "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
+      "parentUuid": "33f80853_df7c68ff",
+      "range": {
+        "startLine": 136,
+        "startChar": 27,
+        "endLine": 136,
+        "endChar": 28
+      },
+      "revId": "6a22a2cc46ea589852c67f29c13718319268ace0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71af4176_580d9eb4",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-15T13:01:45Z",
+      "side": 1,
+      "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
+      "parentUuid": "a4284f43_6cb18a92",
+      "range": {
+        "startLine": 139,
+        "startChar": 17,
+        "endLine": 139,
+        "endChar": 18
+      },
+      "revId": "6a22a2cc46ea589852c67f29c13718319268ace0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
