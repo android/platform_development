@@ -119,6 +119,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53e3c4aa_ba51077a",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-15T16:21:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ed78b54_f94d6afb",
+      "range": {
+        "startLine": 91,
+        "startChar": 39,
+        "endLine": 91,
+        "endChar": 51
+      },
+      "revId": "8dd8d34da730eb58ebaf52e967cc7e81d883cccd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80f7354a_9031453f",
