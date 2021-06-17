@@ -1,6 +1,25 @@
 <template>
   <div v-if="job">
     <h3>Job. {{ job.id }} {{ job.status }}</h3>
+    <ul>
+      <li>Start Time: {{ formDate(job.start_time) }} </li>
+      <li
+        v-if="job.finish_time > 0"
+      >
+        Finish Time: {{ formDate(job.finish_time) }}
+      </li>
+      <li v-if="job.isIncremental"> 
+        Incremental source: {{ job.incremental_name }}
+      </li>
+      <li v-if="job.isIncremental"> 
+        Incremental source version: {{ job.incremental_build_version }}
+      </li>
+      <li> Target source: {{ job.target_name }} </li>
+      <li> Target source version: {{ job.target_build_version }} </li>
+      <li v-if="job.isPartial">
+        Partial: {{ job.partial }}
+      </li>
+    </ul>
     <div>
       <h4>STDERR</h4>
       <div class="stderr">
@@ -32,7 +51,7 @@ export default {
   },
   computed: {
     download() {
-      return 'http://localhost:8000/download/' + this.job.path
+      return 'http://localhost:8000/download/' + this.job.output
     },
   },
   created() {
@@ -52,6 +71,22 @@ export default {
       if (this.job.status == 'Running') {
         setTimeout(this.updateStatus, 1000)
       }
+    },
+    formDate(unixTime) {
+      let formTime = new Date(unixTime * 1000)
+      let date =
+        formTime.getFullYear() +
+        '-' +
+        (formTime.getMonth() + 1) +
+        '-' +
+        formTime.getDate()
+      let time =
+        formTime.getHours() +
+        ':' +
+        formTime.getMinutes() +
+        ':' +
+        formTime.getSeconds()
+      return date + ' ' + time
     },
   },
 }
