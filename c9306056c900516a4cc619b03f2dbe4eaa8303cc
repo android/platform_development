@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4011fd54_27f7a596",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-17T21:29:51Z",
+      "side": 1,
+      "message": "Probably do this before starting the thread? Just in case the job finishes before you could insert database record.",
+      "range": {
+        "startLine": 205,
+        "startChar": 12,
+        "endLine": 205,
+        "endChar": 55
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed339144_0c453d97",
+        "filename": "tools/otagui/src/components/JobDisplay.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-17T21:29:51Z",
+      "side": 1,
+      "message": "I think I\u0027ve seen this a couple of times, can we extract this to a common util function?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 4
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2031ddbd_a5e47375",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-17T21:29:51Z",
+      "side": 1,
+      "message": "Share this code with the Job Display component? Maybe make job display component reference JobDetails",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e6b884d_d0939b13",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-17T21:29:51Z",
+      "side": 1,
+      "message": "Instead of toggling overStatus, pass true to mouseOver() on @mouseover, and pass false to mouseOver() on @mouseout. This way we can avoid potential issues in terms of events not paired or out of sync.",
+      "range": {
+        "startLine": 8,
+        "startChar": 18,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
