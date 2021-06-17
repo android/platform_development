@@ -162,7 +162,8 @@ export default {
         partial: '',
         isPartial: false,
         extra: '',
-      }
+      },
+      this.partitionInclude = new Map()
     },
     async sendForm(e) {
       try {
