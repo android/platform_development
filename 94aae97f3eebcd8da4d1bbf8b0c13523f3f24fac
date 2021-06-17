@@ -1,0 +1,134 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011851796",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1736940?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "63ee6159_f86fff49",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-17T01:14:08Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 142,
+        "startChar": 37,
+        "endLine": 142,
+        "endChar": 40
+      },
+      "revId": "94aae97f3eebcd8da4d1bbf8b0c13523f3f24fac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011851796",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1736940?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "ae9efe45_d4415ce4",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-17T01:14:08Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 144,
+        "startChar": 58,
+        "endLine": 144,
+        "endChar": 59
+      },
+      "revId": "94aae97f3eebcd8da4d1bbf8b0c13523f3f24fac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011851796",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1736940?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "a17292c7_5de029be",
+        "filename": "tools/otagui/src/components/JobDisplay.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-17T01:14:08Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 14,
+        "startChar": 39,
+        "endLine": 14,
+        "endChar": 40
+      },
+      "revId": "94aae97f3eebcd8da4d1bbf8b0c13523f3f24fac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011851796",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1736940?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "f67f1471_566cc342",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-17T01:14:08Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 11,
+        "startChar": 35,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "94aae97f3eebcd8da4d1bbf8b0c13523f3f24fac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000011851796",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1736940?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "e2ac828e_d258a4a8",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-17T01:14:08Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 14,
+        "startChar": 35,
+        "endLine": 14,
+        "endChar": 36
+      },
+      "revId": "94aae97f3eebcd8da4d1bbf8b0c13523f3f24fac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
