@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "888e0d72_b2b03132",
+        "filename": "tools/otagui/ota_interface.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-21T19:19:42Z",
+      "side": 1,
+      "message": "This could happen, so I move the thread.start() after database insertion.\n\nAnother modification is also required - if the \u0027ota_from_target_files\u0027 is not properly set up, the subprocess.Popen will raise an error. I got to catch that error and update the status in database to \u0027Error\u0027.",
+      "parentUuid": "4011fd54_27f7a596",
+      "range": {
+        "startLine": 205,
+        "startChar": 12,
+        "endLine": 205,
+        "endChar": 55
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ed339144_0c453d97",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-17T21:29:51Z",
       "side": 1,
       "message": "I think I\u0027ve seen this a couple of times, can we extract this to a common util function?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 4
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe1422b9_b5303a67",
+        "filename": "tools/otagui/src/components/JobDisplay.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-21T19:19:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed339144_0c453d97",
       "range": {
         "startLine": 39,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55d58351_d850c5bb",
+        "filename": "tools/otagui/src/views/JobDetails.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-21T19:19:42Z",
+      "side": 1,
+      "message": "Now this is moved to a new file called \u0027JobConfiguration.vue\u0027, which can be called to render this detail list.",
+      "parentUuid": "2031ddbd_a5e47375",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e6b884d_d0939b13",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-06-17T21:29:51Z",
       "side": 1,
       "message": "Instead of toggling overStatus, pass true to mouseOver() on @mouseover, and pass false to mouseOver() on @mouseout. This way we can avoid potential issues in terms of events not paired or out of sync.",
+      "range": {
+        "startLine": 8,
+        "startChar": 18,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "c9306056c900516a4cc619b03f2dbe4eaa8303cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae8260b1_a539a49d",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-21T19:19:42Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9e6b884d_d0939b13",
       "range": {
         "startLine": 8,
         "startChar": 18,
