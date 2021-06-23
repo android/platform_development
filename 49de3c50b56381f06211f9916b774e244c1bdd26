@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de0cc34d_6cfea3e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1863140
+      },
+      "writtenOn": "2021-06-23T20:36:35Z",
+      "side": 1,
+      "message": "Please review when you have time, thanks!\nFYI: this same CL (with minor diff) has been merged in the `internal_master` branch, due to `build conflicts`.",
+      "revId": "49de3c50b56381f06211f9916b774e244c1bdd26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
