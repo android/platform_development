@@ -125,3 +125,12 @@ $(call dist-for-goals,sdk win_sdk,$(full_target):data/annotations.zip)
 # ============ SDK AIDL ============
 $(eval $(call copy-one-file,$(FRAMEWORK_AIDL),$(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING/framework.aidl))
 ALL_SDK_FILES += $(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING/framework.aidl
+
+# Define Platform Tools Component
+my_prefix := HOST_
+include $(LOCAL_PATH)/platform-tools.mk
+
+ifeq ($(HOST_CROSS_OS),windows)
+my_prefix := HOST_CROSS_
+include $(LOCAL_PATH)/platform-tools.mk
+endif
