@@ -136,6 +136,8 @@ SDK_SYSIMG_DEPS += \
 # All these go in the main repository.xml
 $(eval $(call mk-sdk-repo-pkg-2,SDK_REPO_XML_ARGS,$(HOST_OS),$(MAIN_SDK_ZIP),build-tools))
 $(eval $(call mk-sdk-repo-pkg-1,SDK_REPO_XML_ARGS,$(HOST_OS),$(MAIN_SDK_ZIP),platform-tools))
+SDK_REPO_XML_ARGS += platform-tools $(HOST_OS) \
+    $(call intermediates-dir-for,PACKAGING,sdk_repo_platform-tools,HOST)/sdk-repo-$(HOST_OS)-platform-tools.zip:sdk-repo-$(HOST_OS)-platform-tools-$(FILE_NAME_TAG).zip
 $(eval $(call mk-sdk-repo-pkg-1,SDK_REPO_XML_ARGS,$(HOST_OS),$(MAIN_SDK_ZIP),docs))
 $(eval $(call mk-sdk-repo-pkg-2,SDK_REPO_XML_ARGS,$(HOST_OS),$(MAIN_SDK_ZIP),platforms))
 $(eval $(call mk-sdk-repo-pkg-2,SDK_REPO_XML_ARGS,$(HOST_OS),$(MAIN_SDK_ZIP),samples))
@@ -143,7 +145,7 @@ $(eval $(call mk-sdk-repo-sources,SDK_REPO_XML_ARGS,$(HOST_OS),$(MAIN_SDK_ZIP),s
 
 SDK_REPO_DEPS += \
     $(call sdk-repo-pkg-zip,$(HOST_OS),$(MAIN_SDK_ZIP),build-tools) \
-    $(call sdk-repo-pkg-zip,$(HOST_OS),$(MAIN_SDK_ZIP),platform-tools) \
+    $(call intermediates-dir-for,PACKAGING,sdk_repo_platform-tools,HOST)/sdk-repo-$(HOST_OS)-platform-tools.zip \
     $(call sdk-repo-pkg-zip,$(HOST_OS),$(MAIN_SDK_ZIP),docs) \
     $(call sdk-repo-pkg-zip,$(HOST_OS),$(MAIN_SDK_ZIP),platforms) \
     $(call sdk-repo-pkg-zip,$(HOST_OS),$(MAIN_SDK_ZIP),samples) \
@@ -158,11 +160,12 @@ ifneq ($(WIN_SDK_ZIP),)
 
 # docs, platforms and samples have nothing OS-dependent right now.
 $(eval $(call mk-sdk-repo-pkg-2,SDK_REPO_XML_ARGS,windows,$(WIN_SDK_ZIP),build-tools))
-$(eval $(call mk-sdk-repo-pkg-1,SDK_REPO_XML_ARGS,windows,$(WIN_SDK_ZIP),platform-tools))
+SDK_REPO_XML_ARGS += platform-tools windows \
+    $(call intermediates-dir-for,PACKAGING,sdk_repo_platform-tools,HOST_CROSS)/sdk-repo-windows-platform-tools.zip:sdk-repo-windows-platform-tools-$(FILE_NAME_TAG).zip
 
 SDK_REPO_DEPS += \
     $(call sdk-repo-pkg-zip,windows,$(WIN_SDK_ZIP),build-tools) \
-    $(call sdk-repo-pkg-zip,windows,$(WIN_SDK_ZIP),platform-tools)
+    $(call intermediates-dir-for,PACKAGING,sdk_repo_platform-tools,HOST_CROSS)/sdk-repo-windows-platform-tools.zip
 
 endif
 
