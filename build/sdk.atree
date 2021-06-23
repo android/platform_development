@@ -30,33 +30,6 @@ frameworks/base/docs/docs-redirect.html documentation.html
 
 
 ##############################################################################
-# Platform Tools Component
-##############################################################################
-
-development/sdk/sdk_files_NOTICE.txt          platform-tools/NOTICE.txt
-development/sdk/plat_tools_source.properties  platform-tools/source.properties
-
-# host tools from out/host/$(HOST_OS)-$(HOST_ARCH)/
-bin/adb                                 strip platform-tools/adb
-bin/fastboot                            strip platform-tools/fastboot
-bin/mke2fs                              strip platform-tools/mke2fs
-bin/mke2fs.conf                         platform-tools/mke2fs.conf
-bin/e2fsdroid                           strip platform-tools/e2fsdroid
-bin/make_f2fs                           strip platform-tools/make_f2fs
-bin/make_f2fs_casefold                  strip platform-tools/make_f2fs_casefold
-bin/sload_f2fs                          strip platform-tools/sload_f2fs
-bin/sqlite3                             strip platform-tools/sqlite3
-bin/dmtracedump                         strip platform-tools/dmtracedump
-bin/etc1tool                            strip platform-tools/etc1tool
-bin/hprof-conv                          strip platform-tools/hprof-conv
-
-# systrace
-external/chromium-trace/catapult/                                         platform-tools/systrace/catapult/
-external/chromium-trace/systrace.py                                       platform-tools/systrace/systrace.py
-external/chromium-trace/NOTICE                                            platform-tools/systrace/NOTICE
-external/chromium-trace/UPSTREAM_REVISION                                 platform-tools/systrace/UPSTREAM_REVISION
-
-##############################################################################
 # Build Tools Component
 ##############################################################################
 # Note that the build-tools sub-folder uses the platform-name as a placeholder
