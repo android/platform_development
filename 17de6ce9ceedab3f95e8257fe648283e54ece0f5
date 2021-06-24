@@ -33,6 +33,24 @@
       "message": "The file lifetimes here are gross but that looks to be a pre-existing condition. The first one changed here could be fixed easily enough, but the other would require changing the API of the containing function...",
       "revId": "17de6ce9ceedab3f95e8257fe648283e54ece0f5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70071fc5_1135f491",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-06-24T23:13:09Z",
+      "side": 1,
+      "message": "i\u0027m assuming we\u0027ll be back... if nothing else, i\u0027ll probably remove the \"gdb\" bits!",
+      "parentUuid": "e9ad585e_f2717d17",
+      "revId": "17de6ce9ceedab3f95e8257fe648283e54ece0f5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
