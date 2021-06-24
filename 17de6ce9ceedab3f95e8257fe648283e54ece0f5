@@ -16,6 +16,23 @@
       "message": "ps2 also makes sure we know what version of python we\u0027re using, now we\u0027re in a weird state where half the population has python \u003d\u003d python2 and the other half has python \u003d\u003d python3 :-(",
       "revId": "17de6ce9ceedab3f95e8257fe648283e54ece0f5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9ad585e_f2717d17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043845
+      },
+      "writtenOn": "2021-06-24T23:07:14Z",
+      "side": 1,
+      "message": "The file lifetimes here are gross but that looks to be a pre-existing condition. The first one changed here could be fixed easily enough, but the other would require changing the API of the containing function...",
+      "revId": "17de6ce9ceedab3f95e8257fe648283e54ece0f5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
