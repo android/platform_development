@@ -1,0 +1,2330 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "3e653b3c_a5eb34ad",
+        "filename": "tools/otagui/src/components/OperationDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 57,
+        "startChar": 47,
+        "endLine": 57,
+        "endChar": 48
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "aca5cdd9_a8f3b224",
+        "filename": "tools/otagui/src/components/OperationDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 62,
+        "startChar": 47,
+        "endLine": 62,
+        "endChar": 48
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "454a254d_6dcbaf29",
+        "filename": "tools/otagui/src/components/OperationDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 63,
+        "startChar": 51,
+        "endLine": 63,
+        "endChar": 52
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "0c80a849_9dae245f",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 24,
+        "startChar": 10,
+        "endLine": 24,
+        "endChar": 11
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "511212fa_86f8978b",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 25,
+        "startChar": 36,
+        "endLine": 25,
+        "endChar": 37
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "49715bf4_e59cc16c",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 26,
+        "startChar": 50,
+        "endLine": 26,
+        "endChar": 51
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "051ac50e_9bb521df",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 10
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "323f4cdf_a8462fff",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 28,
+        "startChar": 65,
+        "endLine": 28,
+        "endChar": 66
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "b8179062_2e1ab697",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 36,
+        "startChar": 30,
+        "endLine": 36,
+        "endChar": 31
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "83045ed2_0d6af72f",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 9
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "91d3b7d4_aeb11c9a",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 2,
+        "startChar": 53,
+        "endLine": 2,
+        "endChar": 54
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "4bbf46b9_f8704e92",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 3,
+        "startChar": 50,
+        "endLine": 3,
+        "endChar": 51
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "6f6a4e50_011e9b9a",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 4,
+        "startChar": 50,
+        "endLine": 4,
+        "endChar": 51
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "68642612_bdc4e731",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 22,
+        "startChar": 64,
+        "endLine": 22,
+        "endChar": 65
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "58405047_af65cdae",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 46,
+        "startChar": 58,
+        "endLine": 46,
+        "endChar": 59
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "a60fe5d3_e678d167",
+          "description": "Change to \"tools/otagui/src/services/payload.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/payload.js",
+              "range": {
+                "startLine": 47,
+                "startChar": 5,
+                "endLine": 47,
+                "endChar": 13
+              },
+              "replacement": "@return"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "ca77dc02_f37fa943",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@returns\" -- should it be \"@return\"?\ngo/javastyle, go/jsstyle and go/tsstyle prefer @return, while go/cppstyle prefers plain English in comments\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 47,
+        "startChar": 5,
+        "endLine": 47,
+        "endChar": 13
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "517701af_8ef88895",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 124,
+        "startChar": 57,
+        "endLine": 124,
+        "endChar": 58
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "193d1831_6a10b1fb",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 35,
+                "startChar": 3,
+                "endLine": 35,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "11b922a1_1cc11048",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 35,
+        "startChar": 3,
+        "endLine": 35,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "7bc35f51_a91848dd",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 56,
+                "startChar": 3,
+                "endLine": 56,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "cebb4d6d_c3c0102c",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 56,
+        "startChar": 3,
+        "endLine": 56,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "f43933ea_e367831e",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 77,
+                "startChar": 3,
+                "endLine": 77,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "881dc349_6df17368",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 77,
+        "startChar": 3,
+        "endLine": 77,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "f793d503_c445043c",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 98,
+                "startChar": 3,
+                "endLine": 98,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "12f739bc_7b949e05",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 98,
+        "startChar": 3,
+        "endLine": 98,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "de57872c_c3de5498",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 119,
+                "startChar": 3,
+                "endLine": 119,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "f3fc8c88_65f3b30c",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 119,
+        "startChar": 3,
+        "endLine": 119,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "d85846d2_fd6ee7f6",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 140,
+                "startChar": 3,
+                "endLine": 140,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "de4a4bb9_1fd0466f",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 140,
+        "startChar": 3,
+        "endLine": 140,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "079e3a53_44539ce9",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 161,
+                "startChar": 3,
+                "endLine": 161,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "2cf43174_95f0c300",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 161,
+        "startChar": 3,
+        "endLine": 161,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "8c317a9f_1be38334",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 182,
+                "startChar": 3,
+                "endLine": 182,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "904475cb_673f87bb",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 182,
+        "startChar": 3,
+        "endLine": 182,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "de380623_510f444e",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 203,
+                "startChar": 3,
+                "endLine": 203,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "0b47736f_163939c4",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 203,
+        "startChar": 3,
+        "endLine": 203,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "989c3664_18a34a8b",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 224,
+                "startChar": 3,
+                "endLine": 224,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "a46a4a3a_612f443e",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 224,
+        "startChar": 3,
+        "endLine": 224,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "5d2a93a8_5744d22f",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 245,
+                "startChar": 3,
+                "endLine": 245,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "5353fd2c_16513958",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 245,
+        "startChar": 3,
+        "endLine": 245,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "9cc34cb5_724dd992",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 266,
+                "startChar": 3,
+                "endLine": 266,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "44ba2b45_4700a3b2",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 266,
+        "startChar": 3,
+        "endLine": 266,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "9607a168_541ad178",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 287,
+                "startChar": 3,
+                "endLine": 287,
+                "endChar": 27
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "03a131eb_726165bf",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {Array\u003d} opt_data\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 287,
+        "startChar": 3,
+        "endLine": 287,
+        "endChar": 27
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "a0b33cb6_0b61811e",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 317,
+                "startChar": 3,
+                "endLine": 317,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "5fa193d9_a6a80435",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 317,
+        "startChar": 3,
+        "endLine": 317,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "6c09c131_1e8af553",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 520,
+                "startChar": 3,
+                "endLine": 520,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "01b51a40_9e61763c",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 520,
+        "startChar": 3,
+        "endLine": 520,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "95a3f529_77118f28",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 635,
+                "startChar": 3,
+                "endLine": 635,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "28bfdad6_ac2f871e",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 635,
+        "startChar": 3,
+        "endLine": 635,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "63fdccfd_bc1a86f9",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 913,
+                "startChar": 3,
+                "endLine": 913,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "6ac11603_3a4fc051",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 913,
+        "startChar": 3,
+        "endLine": 913,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "be2021a1_5e37f903",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 941,
+                "startChar": 3,
+                "endLine": 941,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "afb8926c_563444ac",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 941,
+        "startChar": 3,
+        "endLine": 941,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "b45424ed_0c4e4180",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 1161,
+                "startChar": 3,
+                "endLine": 1161,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "2e8e9bbc_e3c2bd54",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1161,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 1161,
+        "startChar": 3,
+        "endLine": 1161,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "7224bdc5_bbf7320d",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 1556,
+                "startChar": 3,
+                "endLine": 1556,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "e861d98f_915f20a0",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1556,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 1556,
+        "startChar": 3,
+        "endLine": 1556,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "e1dd977e_d821ae6b",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 1904,
+                "startChar": 3,
+                "endLine": 1904,
+                "endChar": 59
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "3da1d809_05cd63c0",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1904,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {!proto.chromeos_update_engine.Extent\u003d} opt_value\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 1904,
+        "startChar": 3,
+        "endLine": 1904,
+        "endChar": 59
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "00880600_edceaceb",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 1905,
+                "startChar": 3,
+                "endLine": 1905,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "8b343e09_c4ba34d0",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1905,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 1905,
+        "startChar": 3,
+        "endLine": 1905,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "db13d762_2b1fbcef",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 1978,
+                "startChar": 3,
+                "endLine": 1978,
+                "endChar": 59
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "cc039d55_cc336a99",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1978,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {!proto.chromeos_update_engine.Extent\u003d} opt_value\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 1978,
+        "startChar": 3,
+        "endLine": 1978,
+        "endChar": 59
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "65aa0446_957ae59e",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 1979,
+                "startChar": 3,
+                "endLine": 1979,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "cfd734e7_2744e2f3",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1979,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 1979,
+        "startChar": 3,
+        "endLine": 1979,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "8ac18c38_d5662f5a",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 2163,
+                "startChar": 3,
+                "endLine": 2163,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "4be133ea_a5150b92",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 2163,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 2163,
+        "startChar": 3,
+        "endLine": 2163,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "b6494e31_7221302c",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 2427,
+                "startChar": 3,
+                "endLine": 2427,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "53f7c431_0178f11d",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 2427,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 2427,
+        "startChar": 3,
+        "endLine": 2427,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "82cd1fc0_721a2486",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 2930,
+                "startChar": 3,
+                "endLine": 2930,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "3efcd3b6_4cd8676b",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 2930,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 2930,
+        "startChar": 3,
+        "endLine": 2930,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "97ff1997_12059989",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 3042,
+                "startChar": 3,
+                "endLine": 3042,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "3b64086c_abba71cc",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3042,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 3042,
+        "startChar": 3,
+        "endLine": 3042,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "1caa8aa7_7dc1657b",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 3432,
+                "startChar": 3,
+                "endLine": 3432,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "5f7256af_6b9fd139",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3432,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 3432,
+        "startChar": 3,
+        "endLine": 3432,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "53b78eb4_6e65dc6a",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 3503,
+                "startChar": 3,
+                "endLine": 3503,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "c54ea0ca_b337e999",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3503,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 3503,
+        "startChar": 3,
+        "endLine": 3503,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "427d2b7d_33653d9b",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 3720,
+                "startChar": 3,
+                "endLine": 3720,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "2ce282f7_4ca66697",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3720,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 3720,
+        "startChar": 3,
+        "endLine": 3720,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "8a03192b_8d08dd75",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 3755,
+                "startChar": 3,
+                "endLine": 3755,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "d9499d45_b71fe36d",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3755,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 3755,
+        "startChar": 3,
+        "endLine": 3755,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "58b3c428_e7148c23",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 3928,
+                "startChar": 3,
+                "endLine": 3928,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "ba9388fd_bc7b66ed",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3928,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 3928,
+        "startChar": 3,
+        "endLine": 3928,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "37034320_2ac3fbd8",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 4100,
+                "startChar": 3,
+                "endLine": 4100,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "d0219f42_f522564f",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4100,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 4100,
+        "startChar": 3,
+        "endLine": 4100,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "d34c4991_45f76b08",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 4399,
+                "startChar": 3,
+                "endLine": 4399,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "7a119dc8_bfba2502",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4399,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 4399,
+        "startChar": 3,
+        "endLine": 4399,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "6afefa47_6e83667b",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 4524,
+                "startChar": 3,
+                "endLine": 4524,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "2e733b42_d94dafc1",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4524,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 4524,
+        "startChar": 3,
+        "endLine": 4524,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "6b6f5734_4d344457",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 4559,
+                "startChar": 3,
+                "endLine": 4559,
+                "endChar": 40
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "48ac99e0_f58d3f88",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4559,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {boolean\u003d} opt_includeInstance\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 4559,
+        "startChar": 3,
+        "endLine": 4559,
+        "endChar": 40
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "f754d177_ed49b86e",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 4899,
+                "startChar": 3,
+                "endLine": 4899,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "4cee2458_4592830f",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4899,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 4899,
+        "startChar": 3,
+        "endLine": 4899,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "df5985d1_a82e01e8",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 4937,
+                "startChar": 3,
+                "endLine": 4937,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "6a4a90b1_d5f63a90",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4937,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 4937,
+        "startChar": 3,
+        "endLine": 4937,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "90837512_5da8e02e",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 5341,
+                "startChar": 3,
+                "endLine": 5341,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "6bd39bdd_8a70573a",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 5341,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 5341,
+        "startChar": 3,
+        "endLine": 5341,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260864",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "f9c5ea5f_b6266e4c",
+          "description": "Change to \"tools/otagui/src/services/update_metadata_pb.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/update_metadata_pb.js",
+              "range": {
+                "startLine": 5488,
+                "startChar": 3,
+                "endLine": 5488,
+                "endChar": 29
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "f7bb6d0f_10c03a2b",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 5488,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Common typo found: \"@param {number\u003d} opt_index\" -- should it be \"\"?\nThe opt_ prefix for optional parameters is discouraged. See go/js-style#features-functions-default-parameters or go/tsstyle#naming-style. Tip: go/yt-es6-tool can automatically fix optional params.\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 5488,
+        "startChar": 3,
+        "endLine": 5488,
+        "endChar": 29
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "951220bb_28b5ae80",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 3,
+        "startChar": 13,
+        "endLine": 3,
+        "endChar": 14
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "c41fe857_1a10d3b4",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 4,
+        "startChar": 35,
+        "endLine": 4,
+        "endChar": 36
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "210e036e_fc2b5272",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 5,
+        "startChar": 30,
+        "endLine": 5,
+        "endChar": 31
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012260862",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1748540?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "83081ee3_e07e2ff9",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-25T15:59:04Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "a4e6fed146a797bd3a87e7d894fc8c76a74780fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
