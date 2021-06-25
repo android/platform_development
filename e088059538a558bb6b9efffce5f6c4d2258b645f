@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dace35a3_8fe0ffdc",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "Refactor into a separate \"PartitionDetail\" component. This way PayloadDetail no longer need to maintain a map of toggle state, each \"PartitionDetail\" component will keep track of its own state.",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 15
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e21d5c2_10f1116f",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "We really only need the first manifest_len + header_size bytes. This will read the entire OTA package into memory. It\u0027s fine for now, but leave a // TODO comment for future improvements.",
+      "range": {
+        "startLine": 34,
+        "startChar": 35,
+        "endLine": 34,
+        "endChar": 42
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf67c5fe_b221a7f0",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "Is toObject() async? don\u0027t await it if it\u0027s not. Async/Await have some overheads. They are great for doing concurrent I/O, but not very helpful for CPU intensive computations.",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 16
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff820232_625c6545",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "slice() isn\u0027t async",
+      "range": {
+        "startLine": 102,
+        "startChar": 42,
+        "endLine": 102,
+        "endChar": 47
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5af3fe6_573f5efc",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "Same, no need to await",
+      "range": {
+        "startLine": 109,
+        "startChar": 8,
+        "endLine": 109,
+        "endChar": 16
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e383454_88b74e5d",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "This file contains way too many lint errors, upload in a separate CL?",
+      "range": {
+        "startLine": 1,
+        "startChar": 11,
+        "endLine": 1,
+        "endChar": 26
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7e1ea56_1b8c5808",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "Payload does not have async constructor. No need to await.",
+      "range": {
+        "startLine": 35,
+        "startChar": 33,
+        "endLine": 35,
+        "endChar": 40
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b45e258b_6d8f121a",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-25T18:23:38Z",
+      "side": 1,
+      "message": "Probably alert the user saying OTA package isn\u0027t legit?",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 24
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
