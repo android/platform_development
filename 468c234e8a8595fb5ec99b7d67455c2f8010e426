@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1619b5cf_b0a54240",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-06-25T20:48:41Z",
+      "side": 1,
+      "message": "i\u0027m _assuming that this is unused since it hasn\u0027t changed since 2015, but if i\u0027m wrong, it might be worth moving it under art/ and losing the \"dalvik\" anyway? (i\u0027m also assuming that anyone not on the ART team is just using lldb via Android Studio.)",
+      "revId": "468c234e8a8595fb5ec99b7d67455c2f8010e426",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
