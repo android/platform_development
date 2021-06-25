@@ -1,0 +1,459 @@
+{
+  "nested": {
+    "chromeos_update_engine": {
+      "options": {
+        "optimize_for": "LITE_RUNTIME"
+      },
+      "nested": {
+        "Extent": {
+          "fields": {
+            "startBlock": {
+              "type": "uint64",
+              "id": 1
+            },
+            "numBlocks": {
+              "type": "uint64",
+              "id": 2
+            }
+          }
+        },
+        "Signatures": {
+          "fields": {
+            "signatures": {
+              "rule": "repeated",
+              "type": "Signature",
+              "id": 1
+            }
+          },
+          "nested": {
+            "Signature": {
+              "fields": {
+                "version": {
+                  "type": "uint32",
+                  "id": 1,
+                  "options": {
+                    "deprecated": true
+                  }
+                },
+                "data": {
+                  "type": "bytes",
+                  "id": 2
+                },
+                "unpaddedSignatureSize": {
+                  "type": "fixed32",
+                  "id": 3
+                }
+              }
+            }
+          }
+        },
+        "PartitionInfo": {
+          "fields": {
+            "size": {
+              "type": "uint64",
+              "id": 1
+            },
+            "hash": {
+              "type": "bytes",
+              "id": 2
+            }
+          }
+        },
+        "ImageInfo": {
+          "fields": {
+            "board": {
+              "type": "string",
+              "id": 1,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "key": {
+              "type": "string",
+              "id": 2,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "channel": {
+              "type": "string",
+              "id": 3,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "version": {
+              "type": "string",
+              "id": 4,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "buildChannel": {
+              "type": "string",
+              "id": 5,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "buildVersion": {
+              "type": "string",
+              "id": 6,
+              "options": {
+                "deprecated": true
+              }
+            }
+          }
+        },
+        "InstallOperation": {
+          "fields": {
+            "type": {
+              "rule": "required",
+              "type": "Type",
+              "id": 1
+            },
+            "dataOffset": {
+              "type": "uint64",
+              "id": 2
+            },
+            "dataLength": {
+              "type": "uint64",
+              "id": 3
+            },
+            "srcExtents": {
+              "rule": "repeated",
+              "type": "Extent",
+              "id": 4
+            },
+            "srcLength": {
+              "type": "uint64",
+              "id": 5
+            },
+            "dstExtents": {
+              "rule": "repeated",
+              "type": "Extent",
+              "id": 6
+            },
+            "dstLength": {
+              "type": "uint64",
+              "id": 7
+            },
+            "dataSha256Hash": {
+              "type": "bytes",
+              "id": 8
+            },
+            "srcSha256Hash": {
+              "type": "bytes",
+              "id": 9
+            }
+          },
+          "nested": {
+            "Type": {
+              "values": {
+                "REPLACE": 0,
+                "REPLACE_BZ": 1,
+                "MOVE": 2,
+                "BSDIFF": 3,
+                "SOURCE_COPY": 4,
+                "SOURCE_BSDIFF": 5,
+                "REPLACE_XZ": 8,
+                "ZERO": 6,
+                "DISCARD": 7,
+                "BROTLI_BSDIFF": 10,
+                "PUFFDIFF": 9
+              }
+            }
+          }
+        },
+        "CowMergeOperation": {
+          "fields": {
+            "type": {
+              "type": "Type",
+              "id": 1
+            },
+            "srcExtent": {
+              "type": "Extent",
+              "id": 2
+            },
+            "dstExtent": {
+              "type": "Extent",
+              "id": 3
+            }
+          },
+          "nested": {
+            "Type": {
+              "values": {
+                "COW_COPY": 0
+              }
+            }
+          }
+        },
+        "PartitionUpdate": {
+          "fields": {
+            "partitionName": {
+              "rule": "required",
+              "type": "string",
+              "id": 1
+            },
+            "runPostinstall": {
+              "type": "bool",
+              "id": 2
+            },
+            "postinstallPath": {
+              "type": "string",
+              "id": 3
+            },
+            "filesystemType": {
+              "type": "string",
+              "id": 4
+            },
+            "newPartitionSignature": {
+              "rule": "repeated",
+              "type": "Signatures.Signature",
+              "id": 5
+            },
+            "oldPartitionInfo": {
+              "type": "PartitionInfo",
+              "id": 6
+            },
+            "newPartitionInfo": {
+              "type": "PartitionInfo",
+              "id": 7
+            },
+            "operations": {
+              "rule": "repeated",
+              "type": "InstallOperation",
+              "id": 8
+            },
+            "postinstallOptional": {
+              "type": "bool",
+              "id": 9
+            },
+            "hashTreeDataExtent": {
+              "type": "Extent",
+              "id": 10
+            },
+            "hashTreeExtent": {
+              "type": "Extent",
+              "id": 11
+            },
+            "hashTreeAlgorithm": {
+              "type": "string",
+              "id": 12
+            },
+            "hashTreeSalt": {
+              "type": "bytes",
+              "id": 13
+            },
+            "fecDataExtent": {
+              "type": "Extent",
+              "id": 14
+            },
+            "fecExtent": {
+              "type": "Extent",
+              "id": 15
+            },
+            "fecRoots": {
+              "type": "uint32",
+              "id": 16,
+              "options": {
+                "default": 2
+              }
+            },
+            "version": {
+              "type": "string",
+              "id": 17
+            },
+            "mergeOperations": {
+              "rule": "repeated",
+              "type": "CowMergeOperation",
+              "id": 18
+            },
+            "estimateCowSize": {
+              "type": "uint64",
+              "id": 19
+            }
+          }
+        },
+        "DynamicPartitionGroup": {
+          "fields": {
+            "name": {
+              "rule": "required",
+              "type": "string",
+              "id": 1
+            },
+            "size": {
+              "type": "uint64",
+              "id": 2
+            },
+            "partitionNames": {
+              "rule": "repeated",
+              "type": "string",
+              "id": 3
+            }
+          }
+        },
+        "DynamicPartitionMetadata": {
+          "fields": {
+            "groups": {
+              "rule": "repeated",
+              "type": "DynamicPartitionGroup",
+              "id": 1
+            },
+            "snapshotEnabled": {
+              "type": "bool",
+              "id": 2
+            },
+            "vabcEnabled": {
+              "type": "bool",
+              "id": 3
+            },
+            "vabcCompressionParam": {
+              "type": "string",
+              "id": 4
+            },
+            "cowVersion": {
+              "type": "uint32",
+              "id": 5
+            }
+          }
+        },
+        "ApexInfo": {
+          "fields": {
+            "packageName": {
+              "type": "string",
+              "id": 1
+            },
+            "version": {
+              "type": "int64",
+              "id": 2
+            },
+            "isCompressed": {
+              "type": "bool",
+              "id": 3
+            },
+            "decompressedSize": {
+              "type": "int64",
+              "id": 4
+            }
+          }
+        },
+        "ApexMetadata": {
+          "fields": {
+            "apexInfo": {
+              "rule": "repeated",
+              "type": "ApexInfo",
+              "id": 1
+            }
+          }
+        },
+        "DeltaArchiveManifest": {
+          "fields": {
+            "installOperations": {
+              "rule": "repeated",
+              "type": "InstallOperation",
+              "id": 1,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "kernelInstallOperations": {
+              "rule": "repeated",
+              "type": "InstallOperation",
+              "id": 2,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "blockSize": {
+              "type": "uint32",
+              "id": 3,
+              "options": {
+                "default": 4096
+              }
+            },
+            "signaturesOffset": {
+              "type": "uint64",
+              "id": 4
+            },
+            "signaturesSize": {
+              "type": "uint64",
+              "id": 5
+            },
+            "oldKernelInfo": {
+              "type": "PartitionInfo",
+              "id": 6,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "newKernelInfo": {
+              "type": "PartitionInfo",
+              "id": 7,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "oldRootfsInfo": {
+              "type": "PartitionInfo",
+              "id": 8,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "newRootfsInfo": {
+              "type": "PartitionInfo",
+              "id": 9,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "oldImageInfo": {
+              "type": "ImageInfo",
+              "id": 10,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "newImageInfo": {
+              "type": "ImageInfo",
+              "id": 11,
+              "options": {
+                "deprecated": true
+              }
+            },
+            "minorVersion": {
+              "type": "uint32",
+              "id": 12,
+              "options": {
+                "default": 0
+              }
+            },
+            "partitions": {
+              "rule": "repeated",
+              "type": "PartitionUpdate",
+              "id": 13
+            },
+            "maxTimestamp": {
+              "type": "int64",
+              "id": 14
+            },
+            "dynamicPartitionMetadata": {
+              "type": "DynamicPartitionMetadata",
+              "id": 15
+            },
+            "partialUpdate": {
+              "type": "bool",
+              "id": 16
+            },
+            "apexInfo": {
+              "rule": "repeated",
+              "type": "ApexInfo",
+              "id": 17
+            }
+          }
+        }
+      }
+    }
+  }
+}
