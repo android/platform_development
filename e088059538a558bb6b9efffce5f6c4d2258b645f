@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b641543a_cf0d0731",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Create a new component called \u0027PartitionDetail\u0027.",
+      "parentUuid": "dace35a3_8fe0ffdc",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 15
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e21d5c2_10f1116f",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-25T18:23:38Z",
       "side": 1,
       "message": "We really only need the first manifest_len + header_size bytes. This will read the entire OTA package into memory. It\u0027s fine for now, but leave a // TODO comment for future improvements.",
+      "range": {
+        "startLine": 34,
+        "startChar": 35,
+        "endLine": 34,
+        "endChar": 42
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "554dbb30_3ec698a4",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Add a //TODO.\nDid some research, seems like zip.js does not support partial read in. But should be easy to implement? I might send the author a PR later.",
+      "parentUuid": "6e21d5c2_10f1116f",
       "range": {
         "startLine": 34,
         "startChar": 35,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fc25af7_b25a931d",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf67c5fe_b221a7f0",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 16
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff820232_625c6545",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-06-25T18:23:38Z",
       "side": 1,
       "message": "slice() isn\u0027t async",
+      "range": {
+        "startLine": 102,
+        "startChar": 42,
+        "endLine": 102,
+        "endChar": 47
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08142929_b3751cdf",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff820232_625c6545",
       "range": {
         "startLine": 102,
         "startChar": 42,
@@ -116,6 +212,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c744311_75166b44",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5af3fe6_573f5efc",
+      "range": {
+        "startLine": 109,
+        "startChar": 8,
+        "endLine": 109,
+        "endChar": 16
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e383454_88b74e5d",
@@ -129,6 +249,30 @@
       "writtenOn": "2021-06-25T18:23:38Z",
       "side": 1,
       "message": "This file contains way too many lint errors, upload in a separate CL?",
+      "range": {
+        "startLine": 1,
+        "startChar": 11,
+        "endLine": 1,
+        "endChar": 26
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11076797_36dd0672",
+        "filename": "tools/otagui/src/services/update_metadata_pb.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Okay, I will add this as a separate CL (right follow this one.)",
+      "parentUuid": "8e383454_88b74e5d",
       "range": {
         "startLine": 1,
         "startChar": 11,
@@ -162,6 +306,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "087008b5_957193af",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Yes, this await should be added in the next line actually.",
+      "parentUuid": "b7e1ea56_1b8c5808",
+      "range": {
+        "startLine": 35,
+        "startChar": 33,
+        "endLine": 35,
+        "endChar": 40
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b45e258b_6d8f121a",
@@ -175,6 +343,30 @@
       "writtenOn": "2021-06-25T18:23:38Z",
       "side": 1,
       "message": "Probably alert the user saying OTA package isn\u0027t legit?",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 24
+      },
+      "revId": "e088059538a558bb6b9efffce5f6c4d2258b645f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e7ed1fa_487f7969",
+        "filename": "tools/otagui/src/views/PackageAnalysis.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-25T20:26:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b45e258b_6d8f121a",
       "range": {
         "startLine": 38,
         "startChar": 0,
