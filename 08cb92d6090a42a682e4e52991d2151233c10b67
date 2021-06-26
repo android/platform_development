@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a5a51bc_74540de4",
+        "filename": "tools/otagui/src/components/OperationDetail.vue",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-26T04:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3207ef9_23a28d15",
+      "range": {
+        "startLine": 47,
+        "startChar": 28,
+        "endLine": 47,
+        "endChar": 33
+      },
+      "revId": "08cb92d6090a42a682e4e52991d2151233c10b67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9fe64e74_f53e5927",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-25T22:43:39Z",
       "side": 1,
       "message": "no need to await",
+      "range": {
+        "startLine": 48,
+        "startChar": 23,
+        "endLine": 48,
+        "endChar": 28
+      },
+      "revId": "08cb92d6090a42a682e4e52991d2151233c10b67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34f9d943_275e3fa2",
+        "filename": "tools/otagui/src/components/OperationDetail.vue",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-26T04:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fe64e74_f53e5927",
       "range": {
         "startLine": 48,
         "startChar": 23,
