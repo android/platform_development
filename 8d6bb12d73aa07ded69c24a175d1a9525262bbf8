@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7103090c_e0ef9cf8",
+        "filename": "tools/otagui/src/components/OperationDetail.vue",
+        "patchSetId": 12
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-28T19:22:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a26927a6_6bebb29a",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 13
+      },
+      "revId": "8d6bb12d73aa07ded69c24a175d1a9525262bbf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d47a3b4_3f436986",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-28T18:35:31Z",
       "side": 1,
       "message": "use ext.startBlock",
+      "range": {
+        "startLine": 60,
+        "startChar": 27,
+        "endLine": 60,
+        "endChar": 37
+      },
+      "revId": "8d6bb12d73aa07ded69c24a175d1a9525262bbf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d560b9a_6f8f4513",
+        "filename": "tools/otagui/src/components/OperationDetail.vue",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-28T19:22:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d47a3b4_3f436986",
       "range": {
         "startLine": 60,
         "startChar": 27,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3869a964_27d2710d",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-28T19:22:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1cda497e_9bb28c2f",
+      "range": {
+        "startLine": 48,
+        "startChar": 12,
+        "endLine": 48,
+        "endChar": 18
+      },
+      "revId": "8d6bb12d73aa07ded69c24a175d1a9525262bbf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d58bca4_b9d8732a",
@@ -93,6 +165,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "222efc64_b715dd9f",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-28T19:22:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d58bca4_b9d8732a",
+      "range": {
+        "startLine": 52,
+        "startChar": 12,
+        "endLine": 52,
+        "endChar": 18
+      },
+      "revId": "8d6bb12d73aa07ded69c24a175d1a9525262bbf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "34262022_f1785289",
@@ -106,6 +202,30 @@
       "writtenOn": "2021-06-28T18:35:31Z",
       "side": 1,
       "message": "Don\u0027t make it a method if the function doesn\u0027t need to access internal prop/data of this component",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 6
+      },
+      "revId": "8d6bb12d73aa07ded69c24a175d1a9525262bbf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "864916b9_519e70e7",
+        "filename": "tools/otagui/src/components/PayloadDetail.vue",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-28T19:22:39Z",
+      "side": 1,
+      "message": "Moved it out, but still have to include one entry in the methods part, because this function is called \u0027indirectly\u0027 in a component\u0027s template.",
+      "parentUuid": "34262022_f1785289",
       "range": {
         "startLine": 57,
         "startChar": 0,
