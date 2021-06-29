@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49e37aac_41f5ac70",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-29T17:14:16Z",
+      "side": 1,
+      "message": "This CL is for payload composition analysis.",
+      "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
