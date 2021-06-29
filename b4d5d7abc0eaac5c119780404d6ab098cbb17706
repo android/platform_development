@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "152d1900_d44c5ff4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-29T17:13:50Z",
+      "side": 1,
+      "message": "This CL is for visualization (using Echarts).",
+      "revId": "b4d5d7abc0eaac5c119780404d6ab098cbb17706",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
