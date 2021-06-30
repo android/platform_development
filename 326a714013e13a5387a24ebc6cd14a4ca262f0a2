@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1fd5179_40095232",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-30T21:44:29Z",
+      "side": 1,
+      "message": "Looks like this CL is merged into \"use pie chart for visualization of analysis result\". Probably need to revert back..",
+      "revId": "326a714013e13a5387a24ebc6cd14a4ca262f0a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
