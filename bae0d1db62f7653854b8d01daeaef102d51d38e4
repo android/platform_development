@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f12e9ae_ba201268",
+        "filename": "tools/otagui/src/components/PayloadComposition.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-30T21:37:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "424442e7_6931a7c0",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d96c59b0_455a0828",
@@ -64,6 +88,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "400df4e8_71e4704a",
+        "filename": "tools/otagui/src/components/PayloadComposition.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-30T21:37:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d96c59b0_455a0828",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd5c04f8_0c0380db",
@@ -77,6 +125,30 @@
       "writtenOn": "2021-06-30T19:56:33Z",
       "side": 1,
       "message": "Add comment that this class is intended to be forwarded to PieChart\u0027s :echartsData property, so readers know what to expect.",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a086c1d_68c3286a",
+        "filename": "tools/otagui/src/services/echarts_data.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-30T21:37:22Z",
+      "side": 1,
+      "message": "I add one line:\n// This function will be used later for generating a pie chart through eCharts",
+      "parentUuid": "dd5c04f8_0c0380db",
       "range": {
         "startLine": 1,
         "startChar": 13,
