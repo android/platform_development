@@ -125,6 +125,7 @@ export default {
   },
   computed: {
     updatePartitions() {
+      if (!this.input.target) return []
       let target = this.targetDetails.filter(
         (d) => d.path === this.input.target
       )
@@ -141,11 +142,20 @@ export default {
     },
   },
   watch: {
+    updatePartitions: {
+      handler: function() {
+        // Once the partitions list is updated, set the default selection
+        // of each partition to be true.
+        for (let key of this.updatePartitions) {
+          this.partitionInclude.set(key, true)
+        }
+      }
+    },
     partitionList: {
       handler: function () {
         this.input.partial = this.partitionList
       },
-    },
+    }
   },
   created() {
     this.resetInput()
