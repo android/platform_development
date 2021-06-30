@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69ff1df2_8346f3aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121388
+      },
+      "writtenOn": "2021-06-30T18:29:25Z",
+      "side": 1,
+      "message": "Not sure if the parsing error in https://b.corp.google.com/issues/185242318#comment40 is caused by the syntax error. Will give it try in go/aog.",
+      "revId": "40d46a5673781588c17ebff8fc6a393bbffd8d12",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
