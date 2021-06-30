@@ -16,6 +16,75 @@
       "message": "This CL is for payload composition analysis.",
       "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "424442e7_6931a7c0",
+        "filename": "tools/otagui/src/components/PayloadComposition.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-30T19:56:33Z",
+      "side": 1,
+      "message": "Follow css naming convention and use something like \"list-data\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d96c59b0_455a0828",
+        "filename": "tools/otagui/src/components/PayloadComposition.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-30T19:56:33Z",
+      "side": 1,
+      "message": "can probably use foreach instead if you don\u0027t need the return value of map.",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd5c04f8_0c0380db",
+        "filename": "tools/otagui/src/services/echarts_data.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-06-30T19:56:33Z",
+      "side": 1,
+      "message": "Add comment that this class is intended to be forwarded to PieChart\u0027s :echartsData property, so readers know what to expect.",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "bae0d1db62f7653854b8d01daeaef102d51d38e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
