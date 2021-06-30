@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "490efeac_8eca6795",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-06-30T18:11:44Z",
+      "side": 1,
+      "message": "Changed a bit. Move the initialization process to partialcheckbox.vue (to reuse the initialization).",
+      "revId": "9be60f98b932900b56b6d846002c628192704a9d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
