@@ -1,5 +1,10 @@
 <template>
   <ul v-bind="$attrs">
+    <button
+      @click="revertAllSelection"
+      v-text="selectAllText[selectAll]"
+    />
+    <br>
     <li
       v-for="label in labels"
       :key="label"
@@ -27,11 +32,23 @@ export default {
       default: new Map(),
     },
   },
+  data () {
+    return {
+      selectAll: 1,
+      selectAllText: ['Select All', 'Unselect All']
+    }
+  },
   methods: {
     updateSelected(newSelect) {
       this.modelValue.set(newSelect, !this.modelValue.get(newSelect))
       this.$emit('update:modelValue', this.modelValue)
     },
+    revertAllSelection() {
+      this.selectAll = 1 - this.selectAll
+      for (let key of this.modelValue.keys()) {
+        this.modelValue.set(key, Boolean(this.selectAll))
+      }
+    }
   },
 }
 </script>
