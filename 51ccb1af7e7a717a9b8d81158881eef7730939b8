@@ -1,0 +1,30 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012547744",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1752405?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "b9dbdd1a_57c27521",
+        "filename": "tools/otagui/src/components/PartialCheckbox.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-06-30T17:37:20Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 3,
+        "startChar": 11,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "51ccb1af7e7a717a9b8d81158881eef7730939b8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
