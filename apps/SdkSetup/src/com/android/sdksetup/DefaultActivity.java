@@ -78,17 +78,18 @@ public class DefaultActivity extends Activity {
 
             TelephonyManager mTelephony = getApplicationContext().getSystemService(TelephonyManager.class);
             mTelephony.setPreferredNetworkTypeBitmask(TelephonyManager.NETWORK_TYPE_BITMASK_NR);
+
+            // Add network with SSID "AndroidWifi"
+            WifiConfiguration config = new WifiConfiguration();
+            config.SSID = "\"AndroidWifi\"";
+            config.setSecurityParams(WifiConfiguration.SECURITY_TYPE_OPEN);
+            WifiManager mWifiManager = getApplicationContext().getSystemService(WifiManager.class);
+            int netId = mWifiManager.addNetwork(config);
+            if (netId == ADD_NETWORK_FAIL || mWifiManager.enableNetwork(netId, true)) {
+                Log.e(TAG, "Unable to add Wi-Fi network AndroidWifi.");
+            }
         }
 
-        // Add network with SSID "AndroidWifi"
-        WifiConfiguration config = new WifiConfiguration();
-        config.SSID = "\"AndroidWifi\"";
-        config.setSecurityParams(WifiConfiguration.SECURITY_TYPE_OPEN);
-        WifiManager mWifiManager = getApplicationContext().getSystemService(WifiManager.class);
-        int netId = mWifiManager.addNetwork(config);
-        if (netId == ADD_NETWORK_FAIL || mWifiManager.enableNetwork(netId, true)) {
-            Log.e(TAG, "Unable to add Wi-Fi network AndroidWifi.");
-        }
         // remove this activity from the package manager.
         PackageManager pm = getPackageManager();
         ComponentName name = new ComponentName(this, DefaultActivity.class);
