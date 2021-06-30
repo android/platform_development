@@ -49,11 +49,6 @@ export default {
       })
     },
   },
-  mounted() {
-    this.manifest.partitions.map((partition) => {
-      this.partitionInclude.set(partition.partitionName, true)
-    })
-  },
   methods: {
     updateChart(metrics) {
       let partitionSelected = this.manifest.partitions.filter((partition) =>
