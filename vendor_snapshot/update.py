@@ -418,6 +418,51 @@ def gen_bp_files(image, vndk_dir, install_dir, snapshot_version):
             logging.info('Generating Android.bp to: {}'.format(f.name))
             f.write(androidbp)
 
+def host_bp_str_manifest(mod,mod_type,mod_dir):
+    """ Convert manifest entry for host module """
+    out=''
+    tname = mod["ModuleStemName"]
+    if(tname ==''):
+        tname = mod["ModuleName"]
+
+    reqs = []
+    if "Required" in mod:
+        reqs  = mod["Required"]
+
+    prop = {
+        'name'             : mod["ModuleName"],
+        'stem'             : tname,
+        'host_supported'   : True,
+        'device_supported' : False,
+        'prefer'           : True,
+        'stl'              : 'none',
+        'required'         : reqs,
+        'target'           : {
+            'host'         : {
+                'srcs'     : [os.path.join(mod["InstallPath"],tname)]
+            },
+        }
+        }
+
+
+    ret = ('%s {\n' % (mod_type)) + gen_bp_prop(prop,INDENT) +'}\n'
+    return(ret)
+
+def gen_host_bp(install_dir):
+    """ Generate Android.bp for host snapshot """
+    manifest_filename="host_tools.json"
+    bpfilename="Android.bp"
+
+    with open(os.path.join(install_dir,manifest_filename),'r') as fp:
+        data=json.load(fp)
+
+    bpfile=''
+    for mod in data['bin']:
+        line=host_bp_str_manifest(mod,'cc_prebuilt_binary','bin')
+        bpfile+=line
+
+    with open(os.path.join(install_dir,bpfilename),'w') as fp:
+        fp.write(bpfile)
 
 def find_all_installed_files(install_dir):
     installed_files = dict()
@@ -707,7 +752,7 @@ def get_args():
     parser.add_argument(
         '--image',
         help=('Image whose snapshot is being updated (e.g., vendor, '
-              'recovery , ramdisk, etc.)'),
+              'recovery , ramdisk, host, etc.)'),
         default='vendor')
     parser.add_argument('--branch', help='Branch to pull build from.')
     parser.add_argument('--build', help='Build number to pull.')
@@ -845,7 +890,11 @@ def main():
         local_dir=local,
         symlink=args.symlink,
         install_dir=install_dir)
-    gen_bp_files(args.image, vndk_dir, install_dir, snapshot_version)
+
+    if(args.image == "host"):
+        gen_host_bp(install_dir)
+    else:
+        gen_bp_files(args.image, vndk_dir, install_dir, snapshot_version)
 
 if __name__ == '__main__':
     main()
