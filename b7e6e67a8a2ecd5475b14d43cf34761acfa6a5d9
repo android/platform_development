@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9be0d50d_994118c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-01T20:50:29Z",
+      "side": 1,
+      "message": "Add support for the analysis of cow merge operations.",
+      "revId": "b7e6e67a8a2ecd5475b14d43cf34761acfa6a5d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
