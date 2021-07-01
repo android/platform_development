@@ -1,0 +1,177 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012644026",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1754472?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "5c8caf42_b28330f8",
+        "filename": "tools/otagui/src/components/PayloadComposition.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-01T20:39:51Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 57,
+        "startChar": 16,
+        "endLine": 57,
+        "endChar": 17
+      },
+      "revId": "984edd732ecf83821865320680d0f6d4e0504681",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012644026",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1754472?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "2c0e0d38_62b8d7ec",
+        "filename": "tools/otagui/src/services/payload.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-01T20:39:51Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 140,
+        "startChar": 45,
+        "endLine": 140,
+        "endChar": 46
+      },
+      "revId": "984edd732ecf83821865320680d0f6d4e0504681",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012644026",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1754472?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "0d1d05a1_a9de47cc",
+        "filename": "tools/otagui/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-01T20:39:51Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 13,
+        "startChar": 19,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "984edd732ecf83821865320680d0f6d4e0504681",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012644026",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1754472?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "a7e44493_112c7aac",
+        "filename": "tools/otagui/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-01T20:39:51Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 14,
+        "startChar": 22,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "984edd732ecf83821865320680d0f6d4e0504681",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012644026",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1754472?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "1656f021_9ff4cade",
+        "filename": "tools/otagui/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-01T20:39:51Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 15,
+        "startChar": 24,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "984edd732ecf83821865320680d0f6d4e0504681",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012644030",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1754472?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "cd62aad2_c41ec491",
+          "description": "Change to \"tools/otagui/src/services/payload_composition.js\"",
+          "replacements": [
+            {
+              "path": "tools/otagui/src/services/payload_composition.js",
+              "range": {
+                "startLine": 62,
+                "startChar": 8,
+                "endLine": 62,
+                "endChar": 20
+              },
+              "replacement": "subtracting"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "f1914e6e_e20711c1",
+        "filename": "tools/otagui/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-01T20:39:51Z",
+      "side": 1,
+      "message": "Common typo found: \"substracting\" -- should it be \"subtracting\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 20
+      },
+      "revId": "984edd732ecf83821865320680d0f6d4e0504681",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
