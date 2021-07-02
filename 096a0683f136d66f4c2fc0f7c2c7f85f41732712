@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9cb01ab0_fd8e29a2",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1640,
+      "author": {
+        "id": 1208973
+      },
+      "writtenOn": "2021-07-02T14:08:43Z",
+      "side": 1,
+      "message": "Can you add something here saying that it doesn\u0027t do anything (which is a bit more than just being deprecated)?",
+      "revId": "096a0683f136d66f4c2fc0f7c2c7f85f41732712",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
