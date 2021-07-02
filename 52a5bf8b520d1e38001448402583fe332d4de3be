@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efcd8132_68a0ec8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-02T14:19:50Z",
+      "side": 1,
+      "message": "Add few comments, just to be consistent with google javascript style:\nhttps://google.github.io/styleguide/jsguide.html#jsdoc-top-file-level-comments",
+      "revId": "52a5bf8b520d1e38001448402583fe332d4de3be",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
