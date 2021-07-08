@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0298b5fc_6638f36a",
+        "filename": "tools/ota_analysis/src/components/UploadFile.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-08T16:00:12Z",
+      "side": 1,
+      "message": "Do we need this file? Why is ota analyze uploading files?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "c83bddcd38b993d4d80e208d8f0ede027cf331a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
