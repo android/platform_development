@@ -1,0 +1,108 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012943168",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760530?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "53465eb3_562fd416",
+        "filename": "tools/ota_analysis/package-lock.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 11560,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-08T15:34:17Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 11560,
+        "startChar": 61,
+        "endLine": 11560,
+        "endChar": 64
+      },
+      "revId": "c9cebf06b49ac491628487e52cc351dc58bcf3fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012943168",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760530?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "03d24eb9_9e1917f7",
+        "filename": "tools/ota_analysis/package-lock.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 14058,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-08T15:34:17Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 14058,
+        "startChar": 77,
+        "endLine": 14058,
+        "endChar": 80
+      },
+      "revId": "c9cebf06b49ac491628487e52cc351dc58bcf3fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012943168",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760530?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "8f338600_1f2a77ef",
+        "filename": "tools/ota_analysis/package-lock.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 24998,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-08T15:34:17Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 24998,
+        "startChar": 61,
+        "endLine": 24998,
+        "endChar": 64
+      },
+      "revId": "c9cebf06b49ac491628487e52cc351dc58bcf3fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012943168",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760530?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "bba7d813_106fbaf4",
+        "filename": "tools/ota_analysis/package-lock.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 27088,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-08T15:34:17Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027they\u0027, \u0027them\u0027, or \u0027person\u0027; see https://developers.google.com/style/word-list#gender for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 27088,
+        "startChar": 77,
+        "endLine": 27088,
+        "endChar": 80
+      },
+      "revId": "c9cebf06b49ac491628487e52cc351dc58bcf3fe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
