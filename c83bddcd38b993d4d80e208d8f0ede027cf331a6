@@ -22,6 +22,30 @@
       },
       "revId": "c83bddcd38b993d4d80e208d8f0ede027cf331a6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f770399_8d3906e8",
+        "filename": "tools/ota_analysis/src/components/UploadFile.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-08T16:05:54Z",
+      "side": 1,
+      "message": "Actually, this component is only for uploading files to backend and not required here... I deleted this one.",
+      "parentUuid": "0298b5fc_6638f36a",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "c83bddcd38b993d4d80e208d8f0ede027cf331a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
