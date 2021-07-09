@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.hardware.input.InputManager;
 import android.hardware.input.KeyboardLayout;
 import android.location.LocationManager;
+import android.net.ConnectivitySettingsManager;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiConfiguration;
 import android.provider.Settings;
@@ -48,6 +49,8 @@ public class DefaultActivity extends Activity {
 
         // Edit Settings only for Emulator
         if (Build.IS_EMULATOR) {
+            // Always request WiFi even if Ethernet is available
+            ConnectivitySettingsManager.setWifiAlwaysRequested(getApplicationContext(), true);
             // Add network with SSID "AndroidWifi"
             WifiConfiguration config = new WifiConfiguration();
             config.SSID = "\"AndroidWifi\"";
