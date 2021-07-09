@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "653d5d0d_f4ad4440",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-07-09T10:11:50Z",
+      "side": 1,
+      "message": "I intend to submit aosp/1760699 after this one.",
+      "revId": "ec5e6ca99ad0e5576362f2548793743de6cf8b7f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
