@@ -1,0 +1,608 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "f5cdbc69_83de66a7",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 19,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 10
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "2f8201b4_12f2cf18",
+          "description": "Change to \"tools/ota_analysis/src/services/map_parser.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/map_parser.js",
+              "range": {
+                "startLine": 3,
+                "startChar": 36,
+                "endLine": 3,
+                "endChar": 42
+              },
+              "replacement": "address"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "04192948_2ef579fb",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"adress\" -- should it be \"address\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 3,
+        "startChar": 36,
+        "endLine": 3,
+        "endChar": 42
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "9ed8f3e1_09c2425e",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 5,
+        "startChar": 56,
+        "endLine": 5,
+        "endChar": 57
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "652ee123_5af49114",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 14,
+        "startChar": 23,
+        "endLine": 14,
+        "endChar": 24
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "b996d6f0_f09f6ee0",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 39,
+        "startChar": 34,
+        "endLine": 39,
+        "endChar": 35
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "7a38c8a1_d719fee7",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 40,
+        "startChar": 32,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "769284e3_5a913721",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 48,
+        "startChar": 32,
+        "endLine": 48,
+        "endChar": 33
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "4ce34bea_82c24f7d",
+          "description": "Change to \"tools/ota_analysis/src/services/map_parser.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/map_parser.js",
+              "range": {
+                "startLine": 54,
+                "startChar": 31,
+                "endLine": 54,
+                "endChar": 37
+              },
+              "replacement": "address"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "69d5fc79_45fd40e9",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"adress\" -- should it be \"address\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 54,
+        "startChar": 31,
+        "endLine": 54,
+        "endChar": 37
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "305e92f0_513aceab",
+          "description": "Change to \"tools/ota_analysis/src/services/map_parser.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/map_parser.js",
+              "range": {
+                "startLine": 108,
+                "startChar": 42,
+                "endLine": 108,
+                "endChar": 48
+              },
+              "replacement": "address"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "5058b879_83d72e76",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"adress\" -- should it be \"address\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 108,
+        "startChar": 42,
+        "endLine": 108,
+        "endChar": 48
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "ca231192_ef73e981",
+          "description": "Change to \"tools/ota_analysis/src/services/map_parser.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/map_parser.js",
+              "range": {
+                "startLine": 110,
+                "startChar": 19,
+                "endLine": 110,
+                "endChar": 25
+              },
+              "replacement": "address"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "a28c0a2c_415f8208",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"adress\" -- should it be \"address\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 110,
+        "startChar": 19,
+        "endLine": 110,
+        "endChar": 25
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "263992e7_97a214fa",
+          "description": "Change to \"tools/ota_analysis/src/services/map_parser.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/map_parser.js",
+              "range": {
+                "startLine": 112,
+                "startChar": 23,
+                "endLine": 112,
+                "endChar": 29
+              },
+              "replacement": "address"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "55409cf6_408b5af4",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"adress\" -- should it be \"address\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 112,
+        "startChar": 23,
+        "endLine": 112,
+        "endChar": 29
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "2f8a93d8_826f8991",
+          "description": "Change to \"tools/ota_analysis/src/services/map_parser.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/map_parser.js",
+              "range": {
+                "startLine": 113,
+                "startChar": 13,
+                "endLine": 113,
+                "endChar": 19
+              },
+              "replacement": "address"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "2f158433_a75735cd",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"adress\" -- should it be \"address\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 113,
+        "startChar": 13,
+        "endLine": 113,
+        "endChar": 19
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "1f186bfa_45b4c8f3",
+        "filename": "tools/ota_analysis/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 96,
+        "startChar": 45,
+        "endLine": 96,
+        "endChar": 46
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "104275c8_bee566fe",
+        "filename": "tools/ota_analysis/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 97,
+        "startChar": 28,
+        "endLine": 97,
+        "endChar": 29
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "a2e5cd89_9bd82c8e",
+        "filename": "tools/ota_analysis/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 98,
+        "startChar": 27,
+        "endLine": 98,
+        "endChar": 28
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "8837b5f6_12e35f3c",
+          "description": "Change to \"tools/ota_analysis/src/services/payload_composition.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/payload_composition.js",
+              "range": {
+                "startLine": 99,
+                "startChar": 3,
+                "endLine": 99,
+                "endChar": 11
+              },
+              "replacement": "@return"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "951385e0_8a1abbad",
+        "filename": "tools/ota_analysis/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"@returns\" -- should it be \"@return\"?\ngo/javastyle, go/jsstyle and go/tsstyle prefer @return, while go/cppstyle prefers plain English in comments\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 99,
+        "startChar": 3,
+        "endLine": 99,
+        "endChar": 11
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972255",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "4466de0b_f5fc9259",
+        "filename": "tools/ota_analysis/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 99,
+        "startChar": 17,
+        "endLine": 99,
+        "endChar": 18
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000012972251",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1760909?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "b9a08daa_c2087b16",
+          "description": "Change to \"tools/ota_analysis/src/services/payload_composition.js\"",
+          "replacements": [
+            {
+              "path": "tools/ota_analysis/src/services/payload_composition.js",
+              "range": {
+                "startLine": 243,
+                "startChar": 12,
+                "endLine": 243,
+                "endChar": 18
+              },
+              "replacement": "unknown"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "d3ffc563_2516b1a0",
+        "filename": "tools/ota_analysis/src/services/payload_composition.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-09T04:20:52Z",
+      "side": 1,
+      "message": "Common typo found: \"unkown\" -- should it be \"unknown\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 243,
+        "startChar": 12,
+        "endLine": 243,
+        "endChar": 18
+      },
+      "revId": "d9dd9cb9d684d0c29ceae66634d1beb9601b37a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
