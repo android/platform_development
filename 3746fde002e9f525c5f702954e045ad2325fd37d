@@ -140,6 +140,30 @@
       },
       "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a83448f_b8dfd174",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-09T17:44:45Z",
+      "side": 1,
+      "message": "It\u0027s OK to assume that, just document this assumption in comment.",
+      "parentUuid": "40ba6ad0_2d46960e",
+      "range": {
+        "startLine": 88,
+        "startChar": 35,
+        "endLine": 88,
+        "endChar": 45
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
