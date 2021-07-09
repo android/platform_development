@@ -164,6 +164,30 @@
       },
       "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "226ea717_751b87a5",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-09T18:24:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a83448f_b8dfd174",
+      "range": {
+        "startLine": 88,
+        "startChar": 35,
+        "endLine": 88,
+        "endChar": 45
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
