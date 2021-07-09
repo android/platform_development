@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be527382_e0331c81",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-09T17:08:17Z",
+      "side": 1,
+      "message": "Maybe use something like \"targetFile\" so reader know that a target_file.zip is expected(instead of OTA.zip)",
+      "range": {
+        "startLine": 16,
+        "startChar": 14,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f38188_3ccf4066",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-09T17:08:17Z",
+      "side": 1,
+      "message": "Move this to the constructor?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69404cb3_b8311c8f",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-09T17:08:17Z",
+      "side": 1,
+      "message": "Looks like we are only querying the start block. Is this intended?",
+      "range": {
+        "startLine": 88,
+        "startChar": 35,
+        "endLine": 88,
+        "endChar": 45
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
