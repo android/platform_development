@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cedf3e0_6cd40cef",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-09T17:31:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be527382_e0331c81",
+      "range": {
+        "startLine": 16,
+        "startChar": 14,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2f38188_3ccf4066",
@@ -47,6 +71,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0b3ea06_fd797b8d",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-09T17:31:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2f38188_3ccf4066",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69404cb3_b8311c8f",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-07-09T17:08:17Z",
       "side": 1,
       "message": "Looks like we are only querying the start block. Is this intended?",
+      "range": {
+        "startLine": 88,
+        "startChar": 35,
+        "endLine": 88,
+        "endChar": 45
+      },
+      "revId": "3746fde002e9f525c5f702954e045ad2325fd37d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40ba6ad0_2d46960e",
+        "filename": "tools/ota_analysis/src/services/map_parser.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-09T17:31:36Z",
+      "side": 1,
+      "message": "Yes, I assume that all consecutive blocks belong to the same file. I think this is a fair assumption, correct me if I am wrong here.\n\nBut anyway, because I am use a hashtable without conflict resolution. When switched to interval/segment tree, I will query all blocks.",
+      "parentUuid": "69404cb3_b8311c8f",
       "range": {
         "startLine": 88,
         "startChar": 35,
