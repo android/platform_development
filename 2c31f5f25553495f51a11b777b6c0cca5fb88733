@@ -1,0 +1,82 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000013105349",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1763227?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "da64028f_7d115a80",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-12T23:45:27Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 13,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 14
+      },
+      "revId": "2c31f5f25553495f51a11b777b6c0cca5fb88733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000013105349",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1763227?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "76e9ea0b_eb23fcc4",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-12T23:45:27Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 44,
+        "startChar": 22,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "2c31f5f25553495f51a11b777b6c0cca5fb88733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000013105349",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1763227?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "4cc83953_6383e83e",
+        "filename": "tools/ota_analysis/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-07-12T23:45:27Z",
+      "side": 1,
+      "message": "Please remove the trailing whitespace.",
+      "range": {
+        "startLine": 16,
+        "startChar": 10,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "2c31f5f25553495f51a11b777b6c0cca5fb88733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
