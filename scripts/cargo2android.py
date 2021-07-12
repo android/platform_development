@@ -681,8 +681,11 @@ class Crate(object):
     self.dump_android_flags()
     if self.externs:
       self.dump_android_externs()
-    static_libs = [lib for lib in self.static_libs if not lib in self.runner.args.lib_blocklist]
+    all_static_libs = [lib for lib in self.static_libs if not lib in self.runner.args.lib_blocklist]
+    static_libs = [lib for lib in all_static_libs if not lib in self.runner.args.whole_static_libs]
     self.dump_android_property_list('static_libs', '"lib%s"', static_libs)
+    whole_static_libs = [lib for lib in all_static_libs if lib in self.runner.args.whole_static_libs]
+    self.dump_android_property_list('whole_static_libs', '"lib%s"', whole_static_libs)
     shared_libs = [lib for lib in self.shared_libs if not lib in self.runner.args.lib_blocklist]
     self.dump_android_property_list('shared_libs', '"lib%s"', shared_libs)
 
@@ -1605,6 +1608,11 @@ def get_parser():
       action='store_true',
       default=False,
       help='Make the main library an rlib.')
+  parser.add_argument(
+      '--whole-static-libs',
+      nargs='*',
+      default=[],
+      help='Make the given libraries whole_static_libs.')
   parser.add_argument(
       '--dependency-blocklist',
       nargs='*',
