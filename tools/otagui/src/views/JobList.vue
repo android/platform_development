@@ -1,4 +1,8 @@
 <template>
+  <DataTable
+    v-if="jobs"
+    :jobs="jobs"
+  />
   <div class="jobs">
     <JobDisplay
       v-for="job in jobs"
@@ -20,11 +24,13 @@
 <script>
 import JobDisplay from '@/components/JobDisplay.vue'
 import ApiService from '../services/ApiService.js'
+import DataTable from '@/components/DataTable.vue'
 
 export default {
   name: 'JobList',
   components: {
     JobDisplay,
+    DataTable
   },
   data() {
     return {
