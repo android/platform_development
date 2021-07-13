@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1380c6f8_92bc11e8",
+        "filename": "vndk/tools/header-checker/src/dumper/header_checker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-07-13T09:49:37Z",
+      "side": 1,
+      "message": "Curious. Can this be const? I\u0027m not sure how const and std::move() interact...",
+      "range": {
+        "startLine": 179,
+        "startChar": 2,
+        "endLine": 179,
+        "endChar": 27
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2db8346_7eadea18",
