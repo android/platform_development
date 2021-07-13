@@ -70,6 +70,30 @@
       },
       "revId": "ef876b7e39dcca4174be40df88dd2f8dfeed6b51",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fe98dda_a776d7e0",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T15:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d05633e_a62bc1d2",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "ef876b7e39dcca4174be40df88dd2f8dfeed6b51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
