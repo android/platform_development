@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "634fe8d7_3976dbed",
+        "filename": "scripts/cargo2android.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1615,
+      "author": {
+        "id": 1115178
+      },
+      "writtenOn": "2021-07-13T15:52:33Z",
+      "side": 1,
+      "message": "Can you mention the \u0027lib\u0027 prefix is expected to not be included? (Also in dependency-blocklist and lib-blocklist)",
+      "range": {
+        "startLine": 1615,
+        "startChar": 0,
+        "endLine": 1615,
+        "endChar": 57
+      },
+      "revId": "65cdfe72a8d8dc554b0fe511a3d0367bb8aa78c9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
