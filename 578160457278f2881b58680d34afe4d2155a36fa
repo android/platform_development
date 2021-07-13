@@ -22,6 +22,30 @@
       },
       "revId": "578160457278f2881b58680d34afe4d2155a36fa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e53e0320_d266bf3d",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T20:09:45Z",
+      "side": 1,
+      "message": "Will apply in a separate CL, for responsive designs like this.",
+      "parentUuid": "6ba715a4_48e27dbd",
+      "range": {
+        "startLine": 3,
+        "startChar": 11,
+        "endLine": 3,
+        "endChar": 19
+      },
+      "revId": "578160457278f2881b58680d34afe4d2155a36fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
