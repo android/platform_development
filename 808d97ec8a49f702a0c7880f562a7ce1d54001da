@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2db8346_7eadea18",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-07-13T09:28:35Z",
+      "side": 1,
+      "message": "Can this be just \"NormalizePath(path, /*root_dirs \u003d */ {})\"?\n\nLess local variable \u003d\u003e Less mental burden IMO",
+      "range": {
+        "startLine": 66,
+        "startChar": 47,
+        "endLine": 66,
+        "endChar": 59
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf85a71e_0e2f7327",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-07-13T09:28:35Z",
+      "side": 1,
+      "message": "should we also check if there are duplicating paths?",
+      "range": {
+        "startLine": 72,
+        "startChar": 2,
+        "endLine": 73,
+        "endChar": 23
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3be34fd_4fbfdb32",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-07-13T09:28:35Z",
+      "side": 1,
+      "message": "Is this testing \u003d\u003d or endswith()?\n\nAlso, can we do this check in ParseRootDirs()? We can strip trailing separator there, and NormalizePath can just unconditionally \"return root_dir.replacement_ + suffix.str();\"",
+      "range": {
+        "startLine": 103,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 0
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3609fb98_10b1047e",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-07-13T09:28:35Z",
+      "side": 1,
+      "message": "These are public fields, so no need the trailing underscore.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 0
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
