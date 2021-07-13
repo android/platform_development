@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05da534f_dc68944b",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-13T16:57:29Z",
+      "side": 1,
+      "message": "Since this component is specifically for displaying list of jobs, name it something like \"OTAJobTable\" instead of generic \"DataTable\"",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 45
+      },
+      "revId": "7fd8971f09ca919e4761f2113148287d24422bc5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
