@@ -25,6 +25,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d56249cd_de652ba4",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T03:04:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e5d5e99_0332110f",
+      "range": {
+        "startLine": 13,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 14
+      },
+      "revId": "2c31f5f25553495f51a11b777b6c0cca5fb88733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a9d9ea46_b19bf69b",
@@ -49,6 +73,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2496569_4c2af04b",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T03:04:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9d9ea46_b19bf69b",
+      "range": {
+        "startLine": 44,
+        "startChar": 22,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "2c31f5f25553495f51a11b777b6c0cca5fb88733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1490c78e_944229ea",
@@ -63,6 +111,30 @@
       "side": 1,
       "message": "\u003e Please remove the trailing whitespace.\n\nPlease fix.",
       "parentUuid": "4cc83953_6383e83e",
+      "range": {
+        "startLine": 16,
+        "startChar": 10,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "2c31f5f25553495f51a11b777b6c0cca5fb88733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28b055f5_21f3f1fd",
+        "filename": "tools/ota_analysis/src/components/PayloadDetail.vue",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T03:04:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1490c78e_944229ea",
       "range": {
         "startLine": 16,
         "startChar": 10,

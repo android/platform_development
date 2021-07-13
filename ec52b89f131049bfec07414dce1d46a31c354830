@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5611519_8e088d9b",
+        "filename": "tools/ota_analysis/src/components/BaseFile.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T03:04:23Z",
+      "side": 1,
+      "message": "Separate this to a new CL.",
+      "parentUuid": "5183e823_714a3332",
+      "range": {
+        "startLine": 5,
+        "startChar": 3,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "ec52b89f131049bfec07414dce1d46a31c354830",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "86f4dd71_9d297024",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-12T23:53:24Z",
       "side": 1,
       "message": "Can v-if be applied on custom component? Why wrapping another div here",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 45
+      },
+      "revId": "ec52b89f131049bfec07414dce1d46a31c354830",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "315389a8_c15ddae6",
+        "filename": "tools/ota_analysis/src/views/PackageAnalysis.vue",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T03:04:23Z",
+      "side": 1,
+      "message": "I guess that is also achievable.",
+      "parentUuid": "86f4dd71_9d297024",
       "range": {
         "startLine": 22,
         "startChar": 11,
