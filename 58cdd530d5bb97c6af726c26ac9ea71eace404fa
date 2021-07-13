@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbe13331_d3820090",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-13T15:26:44Z",
+      "side": 1,
+      "message": "Why is this needed?",
+      "range": {
+        "startLine": 166,
+        "startChar": 5,
+        "endLine": 166,
+        "endChar": 8
+      },
+      "revId": "58cdd530d5bb97c6af726c26ac9ea71eace404fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c2438f5_dd74e780",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-13T15:26:44Z",
+      "side": 1,
+      "message": "What\u0027s the extra parenthesis for?",
+      "range": {
+        "startLine": 175,
+        "startChar": 7,
+        "endLine": 176,
+        "endChar": 7
+      },
+      "revId": "58cdd530d5bb97c6af726c26ac9ea71eace404fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
