@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74203aac_24a8244a",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-13T15:22:42Z",
+      "side": 1,
+      "message": "Put these in a new row as well",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 12
+      },
+      "revId": "4b40502111999f0b6d4507c8f7b66101635c8466",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
