@@ -22,6 +22,30 @@
       },
       "revId": "ef876b7e39dcca4174be40df88dd2f8dfeed6b51",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be856e44_0893dfb6",
+        "filename": "tools/ota_analysis/src/components/PayloadComposition.vue",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T14:59:18Z",
+      "side": 1,
+      "message": "Was planning to make a 2*2 grid. Maybe should start a new row?",
+      "parentUuid": "ddf5a722_95f58079",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "ef876b7e39dcca4174be40df88dd2f8dfeed6b51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
