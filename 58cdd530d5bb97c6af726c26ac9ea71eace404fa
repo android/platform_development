@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cafc439b_2ad31fe0",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T15:33:16Z",
+      "side": 1,
+      "message": "No it\u0027s not needed... This is confusing. I didn\u0027t mean to add this...",
+      "parentUuid": "dbe13331_d3820090",
+      "range": {
+        "startLine": 166,
+        "startChar": 5,
+        "endLine": 166,
+        "endChar": 8
+      },
+      "revId": "58cdd530d5bb97c6af726c26ac9ea71eace404fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c2438f5_dd74e780",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-13T15:26:44Z",
       "side": 1,
       "message": "What\u0027s the extra parenthesis for?",
+      "range": {
+        "startLine": 175,
+        "startChar": 7,
+        "endLine": 176,
+        "endChar": 7
+      },
+      "revId": "58cdd530d5bb97c6af726c26ac9ea71eace404fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ab9bf36_6b6a6ab1",
+        "filename": "tools/otagui/src/views/SimpleForm.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-13T15:33:16Z",
+      "side": 1,
+      "message": "This really confuses me as well.... Didn\u0027t intend to add this. Seems useless. My bad.",
+      "parentUuid": "0c2438f5_dd74e780",
       "range": {
         "startLine": 175,
         "startChar": 7,
