@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8e4e04b_a653233f",
+        "filename": "vndk/tools/header-checker/src/dumper/header_checker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-07-14T07:41:06Z",
+      "side": 1,
+      "message": "No. std::move makes no effect on a constant variable. The variable is always copied.",
+      "parentUuid": "1380c6f8_92bc11e8",
+      "range": {
+        "startLine": 179,
+        "startChar": 2,
+        "endLine": 179,
+        "endChar": 27
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2db8346_7eadea18",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-13T09:28:35Z",
       "side": 1,
       "message": "Can this be just \"NormalizePath(path, /*root_dirs \u003d */ {})\"?\n\nLess local variable \u003d\u003e Less mental burden IMO",
+      "range": {
+        "startLine": 66,
+        "startChar": 47,
+        "endLine": 66,
+        "endChar": 59
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83b0a5f9_e476b43d",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-07-14T07:41:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2db8346_7eadea18",
       "range": {
         "startLine": 66,
         "startChar": 47,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9de4fcb_1c140f2e",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-07-14T07:41:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf85a71e_0e2f7327",
+      "range": {
+        "startLine": 72,
+        "startChar": 2,
+        "endLine": 73,
+        "endChar": 23
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f3be34fd_4fbfdb32",
@@ -93,6 +165,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4923d87_8267892b",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-07-14T07:41:06Z",
+      "side": 1,
+      "message": "llvm does not have a function to determine if a path is a root directory, and I think endswith is better than root_dir \u003d\u003d separator.\n\nIf the trailing separator is removed, empty string and \"/\" are not distinguishable. The return values at line 96 and line 101 would be incorrect.",
+      "parentUuid": "f3be34fd_4fbfdb32",
+      "range": {
+        "startLine": 103,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 0
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3609fb98_10b1047e",
@@ -106,6 +202,30 @@
       "writtenOn": "2021-07-13T09:28:35Z",
       "side": 1,
       "message": "These are public fields, so no need the trailing underscore.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 0
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc779ef2_c799b462",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-07-14T07:41:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3609fb98_10b1047e",
       "range": {
         "startLine": 28,
         "startChar": 0,
