@@ -189,6 +189,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97e27e96_921f99ff",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-07-14T08:28:23Z",
+      "side": 1,
+      "message": "Oh I see. This works because remove_dots(norm_replacement, true), despite its name, also removes trailing and running slashes, so the only case that replacement would end with \u0027/\u0027 is when the replacement is root? This looks rather fragile to me as this behavior could change if llvm developers decides so.\nCould we write our own path canonicalizer that calls both remove_dots() to rid \u0027./\u0027 \u0026 \u0027../\u0027 and strips any trailing slash if not root?",
+      "parentUuid": "b4923d87_8267892b",
+      "range": {
+        "startLine": 103,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 0
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3609fb98_10b1047e",
