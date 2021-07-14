@@ -237,6 +237,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b089fd0d_d5a67f78",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-07-14T11:14:26Z",
+      "side": 1,
+      "message": "\u003e  we will notice that in the dumps or the unit tests.\n\nAck",
+      "parentUuid": "cbd4a04f_b65bdc7b",
+      "range": {
+        "startLine": 103,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 0
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3609fb98_10b1047e",
