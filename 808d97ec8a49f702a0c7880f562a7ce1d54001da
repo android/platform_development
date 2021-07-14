@@ -213,6 +213,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbd4a04f_b65bdc7b",
+        "filename": "vndk/tools/header-checker/src/utils/source_path_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2021-07-14T10:31:08Z",
+      "side": 1,
+      "message": "The logic isn\u0027t so simple. I don\u0027t like to implement it by myself.\nhttps://cs.android.com/android/platform/superproject/+/master:external/llvm-project/llvm/lib/Support/Path.cpp;l\u003d714\nIn case the behavior changes, we will notice that in the dumps or the unit tests.",
+      "parentUuid": "97e27e96_921f99ff",
+      "range": {
+        "startLine": 103,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 0
+      },
+      "revId": "808d97ec8a49f702a0c7880f562a7ce1d54001da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3609fb98_10b1047e",
