@@ -22,6 +22,30 @@
       },
       "revId": "7fd8971f09ca919e4761f2113148287d24422bc5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fa826c2_cee1b3a7",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-14T17:43:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05da534f_dc68944b",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 45
+      },
+      "revId": "7fd8971f09ca919e4761f2113148287d24422bc5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
