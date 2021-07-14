@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2ff0886_b7d86216",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2021-07-14T17:58:33Z",
+      "side": 1,
+      "message": "Is this referenced in CSS of this component?",
+      "range": {
+        "startLine": 12,
+        "startChar": 13,
+        "endLine": 12,
+        "endChar": 17
+      },
+      "revId": "2ad7328834808ff8254c952fb4c8ab10f16cebdc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
