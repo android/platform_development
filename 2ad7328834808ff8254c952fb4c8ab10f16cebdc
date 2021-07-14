@@ -22,6 +22,30 @@
       },
       "revId": "2ad7328834808ff8254c952fb4c8ab10f16cebdc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa33f47b_0b0a7753",
+        "filename": "tools/otagui/src/views/JobList.vue",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1880180
+      },
+      "writtenOn": "2021-07-14T18:13:05Z",
+      "side": 1,
+      "message": "Yes, this is an built-in class in vuetify, a short hands for \"Margin\" \"All direction\" \"level-5\".",
+      "parentUuid": "c2ff0886_b7d86216",
+      "range": {
+        "startLine": 12,
+        "startChar": 13,
+        "endLine": 12,
+        "endChar": 17
+      },
+      "revId": "2ad7328834808ff8254c952fb4c8ab10f16cebdc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
